@@ -32,10 +32,10 @@
 
 \mainmatter
 
-\chapter*{Introduction}
-\addcontentsline{toc}{chapter}{Introduction}
 
-\section{Background}
+% Chapter - Introduction
+\chapter{Introduction}
+
 \indent In the following pages one will find an introductory text to one of the key subjects within mathematical sciences. The text is composed by four chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of this lecture notes is to make both probability and statistical analysis an easy, interesting and engaging topic for anyone interested, without the need for prior experience with mathematical training.\\
 
 First, we will introduce and explore the concept of probability itself, and we will discuss how to model information, surprise, and various random processes, also referred to as \textit{stochastic}. Then we will introduce the idea of a function and how functions need to be adapted to implement uncertainty when discussing random events.\\
@@ -44,7 +44,8 @@ In the second part we will address the difference between prediction and inferen
 
 Finally, we will discuss bayesian statistics.
 
-\chapter{Introduction to probability theory}
+% Chapter - Introduction to probability and random events
+\chapter{Introduction to probability and random events}
 
 \section{What is probability?}
 Probability theory is one of the oldest subjects within mathematical studies. Paradoxically, almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. (...)\\
@@ -67,10 +68,7 @@ Once we have a definition for probability in the abstract case, we should have a
 	P(\text{A happening}) = \frac{\text{Number of times A happens}}{\text{Total number of trials}}
 \end{equation}
 
-Probabilities must follow a property we call unitarity.
-
-
-Unitarity ensures that, if we consider and add up the probabilities for all possible events in a given experiment, we get the total. That means, at least one of the scenarios will happen.\\
+Probabilities must follow a property we call unitarity. Unitarity ensures that, if we consider and add up the probabilities for all possible events in a given experiment, we get the total. That means, at least one of the scenarios will happen.\\
 
 Indeed, the literal meaning of probability comes from latin probabilis. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances."[12] However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence.\\
 
@@ -80,63 +78,102 @@ Like other theories, the theory of probability is a representation of its concep
 
 There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details.\\
 
+\section{Discrete and continous}
+Discrete and continous
 
-\section{Discrete probability distributions}
+\section{Probability distributions}
 Once we are comfortable with the idea of random events, and we have been introduced to probability as a number to quantify surprise, we can agree that not all random phenomena are equal. A basic way to classify and separate random events is according to how their probabilities are distributed.
 
-\subsection{Binomial distribution}
+\subsection*{Binomial distribution}
 What is the probability of obtaining $x$ successes in $N$ trials, if the probability of success each time is $p$
 
-
-\subsection{Poisson distribution}
+\subsection*{Poisson distribution}
 What is the probability of counting $x$ events in a time interval, if the observed average is given by $\lambda$
 
-\section{Continuous probability distributions}
-Your content for Chapter 1 goes here.
-
-\subsection{Uniform distribution}
+\subsection*{Uniform distribution}
 Uniform distribution
 
-\subsection{Exponential distribution}
+\subsection*{Exponential distribution}
 Exponential distribution
 
-\subsection{Gaussian distribution}
+\subsection*{Gaussian distribution}
 Gaussian distribution
 
-\chapter{Linear models}
 
-\section{Functions and variables}
-Probability theory is one of the oldest subjects within mathematical studies. Paradoxically, almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. (...)\\
+% Chapter - Parameter estimation
+\chapter{Parameter estimation}
 
-So let's first ask ourselves the question. What is probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty. A number we will use to describe the amount of information we have about a random, or stochastic, event. For simplicity, we can make it range from 0 to 1, in the following way.
+\section{Prediction vs inference}
+Prediction vs inference
+
+\section{Parameter estimation}
+Parameter estimation
+
+\section{The law of large numbers}
+The law of large numbers
+
+\section{The central limit theorem}
+The central limit theorem
 
 
-\section{Modelling uncertainty in random events}
-Your content for Chapter 2 goes here.
-
+% Chapter - Introduction to statistical inference
 \chapter{Introduction to statistical inference}
+
+\section{Prediction vs inference}
 
 \section{Hypothesis testing}
 Probability theory is one of the oldest subjects within mathematical studies. Paradoxically, almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. (...)\\
 
 So let's first ask ourselves the question. What is probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty. A number we will use to describe the amount of information we have about a random, or stochastic, event. For simplicity, we can make it range from 0 to 1, in the following way.
 
+\section{Significance and p-values}
+Significance and p-values
 
-\section{The idea of significance and p-values}
-Your content for Chapter 3 goes here.
+\section{Statistic tests}
+Statistic tests
 
-\section{Parametric and non parametric tests}
-Your content for Chapter 3 goes here.
+\subsection*{Compare sample mean with hypothesized value - One sample t-test}
 
+The one-sample t-test is used to determine whether the mean of a single sample differs significantly from a known or hypothesized population mean. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
+\[
+    t = \frac{\bar{x} - \mu}{s / \sqrt{n}},
+\]
+where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.
+\newpageifneeded
+
+\subsection*{Compare sample means of two groups - Two sample t-test}
+
+\subsection*{Compare sample variances of two groups - Fisher test}
+
+\subsection*{Compare more than two groups - ANOVA}
+
+\subsection*{Compare distributions - $\chi^{2}$ test}
+
+\section{Parametric and non-parametric}
+
+
+% Chapter - Introduction to bayesian statistics
 \chapter{Introduction to bayesian statistics}
 
-\section{Frequentist and bayesian approach}
-Probability theory is one of the oldest subjects within mathematical studies. Paradoxically, almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. (...)\\
+\section{The Bayes' theorem}
+The Bayes' theorem.
 
-So let's first ask ourselves the question. What is probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty. A number we will use to describe the amount of information we have about a random, or stochastic, event. For simplicity, we can make it range from 0 to 1, in the following way.
+\section{Bayesian vs frequentist}
+Bayesian vs frequentist.
 
 \section{Bayesian statistics}
-Your content for Chapter 4 goes here.
+Bayesian statistics.
+
+
+% Chapter - Stochasticity and Markov processes
+\chapter{Stochasticity and Markov processes}
+
+\section{Stochasticity and Markov processes}
+
+\section{Markov chains and hidden Markov models}
+
+\section{Modern applications}
+
 
 \backmatter
 

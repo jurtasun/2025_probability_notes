@@ -1,23 +1,26 @@
 \contentsline {chapter}{Index}{v}{}%
-\contentsline {chapter}{Introduction}{1}{}%
-\contentsline {section}{\numberline {0.1}Background}{1}{}%
-\contentsline {chapter}{\numberline {1}Introduction to probability theory}{3}{}%
-\contentsline {section}{\numberline {1.1}What is probability?}{3}{}%
-\contentsline {section}{\numberline {1.2}Discrete probability distributions}{4}{}%
-\contentsline {subsection}{\numberline {1.2.1}Binomial distribution}{4}{}%
-\contentsline {subsection}{\numberline {1.2.2}Poisson distribution}{4}{}%
-\contentsline {section}{\numberline {1.3}Continuous probability distributions}{4}{}%
-\contentsline {subsection}{\numberline {1.3.1}Uniform distribution}{4}{}%
-\contentsline {subsection}{\numberline {1.3.2}Exponential distribution}{4}{}%
-\contentsline {subsection}{\numberline {1.3.3}Gaussian distribution}{4}{}%
-\contentsline {chapter}{\numberline {2}Linear models}{5}{}%
-\contentsline {section}{\numberline {2.1}Functions and variables}{5}{}%
-\contentsline {section}{\numberline {2.2}Modelling uncertainty in random events}{5}{}%
-\contentsline {chapter}{\numberline {3}Introduction to statistical inference}{7}{}%
-\contentsline {section}{\numberline {3.1}Hypothesis testing}{7}{}%
-\contentsline {section}{\numberline {3.2}The idea of significance and p-values}{7}{}%
-\contentsline {section}{\numberline {3.3}Parametric and non parametric tests}{7}{}%
-\contentsline {chapter}{\numberline {4}Introduction to bayesian statistics}{9}{}%
-\contentsline {section}{\numberline {4.1}Frequentist and bayesian approach}{9}{}%
-\contentsline {section}{\numberline {4.2}Bayesian statistics}{9}{}%
-\contentsline {chapter}{Bibliography}{11}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {chapter}{\numberline {2}Introduction to probability and random events}{3}{}%
+\contentsline {section}{\numberline {2.1}What is probability?}{3}{}%
+\contentsline {section}{\numberline {2.2}Discrete and continous}{4}{}%
+\contentsline {section}{\numberline {2.3}Probability distributions}{4}{}%
+\contentsline {chapter}{\numberline {3}Parameter estimation}{5}{}%
+\contentsline {section}{\numberline {3.1}Prediction vs inference}{5}{}%
+\contentsline {section}{\numberline {3.2}Parameter estimation}{5}{}%
+\contentsline {section}{\numberline {3.3}The law of large numbers}{5}{}%
+\contentsline {section}{\numberline {3.4}The central limit theorem}{5}{}%
+\contentsline {chapter}{\numberline {4}Introduction to statistical inference}{7}{}%
+\contentsline {section}{\numberline {4.1}Prediction vs inference}{7}{}%
+\contentsline {section}{\numberline {4.2}Hypothesis testing}{7}{}%
+\contentsline {section}{\numberline {4.3}Significance and p-values}{7}{}%
+\contentsline {section}{\numberline {4.4}Statistic tests}{7}{}%
+\contentsline {section}{\numberline {4.5}Parametric and non-parametric}{8}{}%
+\contentsline {chapter}{\numberline {5}Introduction to bayesian statistics}{9}{}%
+\contentsline {section}{\numberline {5.1}The Bayes' theorem}{9}{}%
+\contentsline {section}{\numberline {5.2}Bayesian vs frequentist}{9}{}%
+\contentsline {section}{\numberline {5.3}Bayesian statistics}{9}{}%
+\contentsline {chapter}{\numberline {6}Stochasticity and Markov processes}{11}{}%
+\contentsline {section}{\numberline {6.1}Stochasticity and Markov processes}{11}{}%
+\contentsline {section}{\numberline {6.2}Markov chains and hidden Markov models}{11}{}%
+\contentsline {section}{\numberline {6.3}Modern applications}{11}{}%
+\contentsline {chapter}{Bibliography}{13}{}%
