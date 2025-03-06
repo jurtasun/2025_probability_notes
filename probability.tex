@@ -1,33 +1,38 @@
 \documentclass{book}
 
-\usepackage{makeidx}
-\usepackage{indentfirst}
-\usepackage{amsmath}
+\usepackage{makeidx, cite, indentfirst}
+\usepackage{amsmath, amssymb, amsfonts, graphicx}
+\usepackage[english, greek]{babel}
 \usepackage[margin=1in]{geometry} 
 
 \makeindex
 
 \begin{document}
+\selectlanguage{english} 
 
 \frontmatter
 
 \begin{titlepage}
     \centering
-    \vspace*{\fill}
+    % Insert the figure on the title page
+    \includegraphics[width=0.5\textwidth]{figures/icl_logo.jpeg} 
+    \vfill
     {\Huge\bfseries Introduction to probability theory and statistical inference\par}
     \vspace{1cm}
     {\Large Jes\'us Urtasun Elizari\par}
     \vspace{1cm}
-     {\Large Imperial College London\par}
+     {\Large Research Computing and Data Science\par}
     \vspace{1cm}
     {\large\today\par}
     \vspace*{\fill}
 \end{titlepage}
 
+\selectlanguage{english}
 \tableofcontents
 
 \chapter*{Index}
 \addcontentsline{toc}{chapter}{Index}
+\clearpage
 \printindex
 
 \mainmatter
@@ -38,19 +43,47 @@
 
 \indent In the following pages one will find an introductory text to one of the key subjects within mathematical sciences. The text is composed by four chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of this lecture notes is to make both probability and statistical analysis an easy, interesting and engaging topic for anyone interested, without the need for prior experience with mathematical training.\\
 
-First, we will introduce and explore the concept of probability itself, and we will discuss how to model information, surprise, and various random processes, also referred to as \textit{stochastic}. Then we will introduce the idea of a function and how functions need to be adapted to implement uncertainty when discussing random events.\\
-
+First, we will introduce and explore the concept of probability itself, and we will discuss how to model information, surprise, and various random processes, also referred to as \textit{stochastic}. Then we will introduce the idea of a function and how functions need to be adapted to implement uncertainty when discussing random events.
 In the second part we will address the difference between prediction and inference, and discuss a set of subjects normally grouped under the name of hypothesis testing. Here we will introduce how to quantify certainty and bias, and how to model significance and false positives, that is, to compute p-values.\\
 
-Finally, we will discuss bayesian statistics.
+Finally, we will discuss bayesian statistics (...).\\
+
+Probability theory is the mathematical framework for quantifying uncertainty and randomness. It provides the foundation for understanding and modeling various real-world phenomena, ranging from gambling and statistical inference to machine learning and quantum mechanics. At its core, probability assigns numerical values to the likelihood of different outcomes in an experiment. The fundamental concepts include sample spaces, events, and probability measures that adhere to axioms established by Andrey Kolmogorov.\\
+
+The idea of stochasticity and randomness has deep historical roots. Ancient civilizations, including the Babylonians, Egyptians, and Greeks, grappled with the concept of uncertainty in games of chance, commerce, and divination. The oldest known dice date back over 5,000 years, indicating an early human fascination with randomness. While these cultures did not develop formal mathematical probability, they recognized patterns in random events and attempted to predict outcomes based on empirical observations and superstitions.
+Greek philosophers such as Democritus and Aristotle debated the nature of chance and determinism. The Roman philosopher Cicero distinguished between chance events and those governed by fate, foreshadowing later discussions on probability. In medieval times, scholars like Gerolamo Cardano (1501–1576) made early contributions by analyzing gambling problems and laying the groundwork for probability theory.
+The formalization of probability as a mathematical discipline began in the 17th century with the correspondence between Blaise Pascal and Pierre de Fermat, who devised combinatorial methods to solve problems related to games of chance. Their work introduced fundamental ideas such as expected value and laid the foundation for later advances by Christiaan Huygens, Jacob Bernoulli, and Abraham de Moivre. Bernoulli’s 	\textit{Ars Conjectandi} (1713) introduced the Law of Large Numbers, establishing that observed frequencies converge to theoretical probabilities over many trials.\\
+
+A stochastic process extends probability theory by modeling systems that evolve randomly over time. Unlike deterministic processes, where the outcome is fixed by initial conditions, stochastic processes incorporate uncertainty at each step. These models are essential in diverse fields such as finance (stock price fluctuations), physics (Brownian motion), and engineering (signal processing). A stochastic process is defined as a collection of random variables indexed by time or space, commonly represented as $\{X_t\}_{t \in T}$, where $T$ is an index set.\\
+
+One of the most fundamental stochastic processes is the Markov process, which exhibits the Markov property: the future state depends only on the present state, not on past history. This property makes Markov chains particularly useful in modeling systems with memoryless transitions, such as queueing networks and genetic sequences. Another significant class of stochastic processes is the Poisson process, which describes the occurrence of rare events over time, such as radioactive decay or network traffic.\\
+
+Information theory, developed by Claude Shannon, is deeply intertwined with probability and stochastic processes. It quantifies the amount of uncertainty or surprise in a system and provides a mathematical foundation for data compression and communication. The fundamental measure in information theory is entropy, defined as:
+\begin{equation}
+    H(X) = -\sum_{i} P(x_i) \log P(x_i),
+\end{equation}
+where $P(x_i)$ is the probability of observing outcome $x_i$. Entropy captures the unpredictability of a source of information, with higher entropy indicating greater uncertainty.\\
+
+Shannon also introduced the concept of mutual information, which measures the reduction in uncertainty about one random variable given knowledge of another. This concept is crucial in signal processing, machine learning, and cryptography, where efficient information transfer and encoding are essential.\\
+
+Together, probability theory, stochastic processes, and information theory form a powerful toolkit for modelling and analyzing uncertainty. Their applications span numerous disciplines, from physics and biology to artificial intelligence and cybersecurity. Understanding these concepts allows for the development of efficient algorithms, accurate predictions, and optimized decision-making strategies in uncertain environments.
+
+Here are three important textbooks in the field of probability and statistics:
+\begin{itemize}
+\item A simple, intuitive introduction to statistics with few mathematical concepts is provided in Spiegelhalter's \textit{The Art of Statistics: How to Learn from Data} \cite{spiegelhalter2019art}. 
+\item A more foundational textbook, with more advanced mathematical approach, can be found at DeGroot and Schervish's \textit{Probability and Statistics} \cite{degroot2012probability}.   
+\item For a philosophical and historical perspective on probability and statistics, pleas find McFadden's \textit{The Philosophy of Statistics} \cite{mcfadden2011philosophy}.
+\end{itemize}
 
 % Chapter - Introduction to probability and random events
 \chapter{Introduction to probability and random events}
 
 \section{What is probability?}
-Probability theory is one of the oldest subjects within mathematical studies. Paradoxically, almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. (...)\\
+As already mentioned in the introduction, probability theory is one of the oldest subjects within mathematical studies. Ideas such as probability or chance, together with measurement, information, inference, can be traced back to ancient times. Paradoxically, almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. Concepts like distributions, gaussian behaviour, p-values, hypothesis testing or normalization, are introduced and formalized in the XXth century by mathematicians such as Pearson and Fisher. For the purpose of this course, we will assume a specific framework, where we will understand probability as a number representing information, or \textit{surprise}. For a detailed discussion on foundations of these topics, please see [...]. For more mathematically advanced texts, check [...]  and [...].
 
-So let's first ask ourselves the question. What \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty. A number we will use to describe the amount of information we have about a random, or stochastic, event. For simplicity, we can make it range from 0 to 1, in the following way.
+Broadly speaking, probability, and later statistical inference, are branches of mathematics dealing with chance, also referred to as \textit{random} events, or \textit{stochastic} processes. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός}, which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such random events.\\
+
+So let's first ask ourselves the question. What \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random, or stochastic, event. For simplicity, we can make it range from 0 to 1, in the following way.
 
 \begin{itemize}
 \item If I'm sure A will never happen, P(A) = 0.
@@ -78,27 +111,145 @@ Like other theories, the theory of probability is a representation of its concep
 
 There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details.\\
 
-\section{Discrete and continous}
-Discrete and continous
+\section{Discrete and continuous}
+Discrete and continuous
+
+\newpage
 
 \section{Probability distributions}
 Once we are comfortable with the idea of random events, and we have been introduced to probability as a number to quantify surprise, we can agree that not all random phenomena are equal. A basic way to classify and separate random events is according to how their probabilities are distributed.
 
-\subsection*{Binomial distribution}
-What is the probability of obtaining $x$ successes in $N$ trials, if the probability of success each time is $p$
+\subsection{Binomial distribution}
+The binomial distribution models the number of successes in a fixed number of independent trials, each with the same probability of success. It was developed by Jacob Bernoulli in the 17th century while studying the probability of repeated Bernoulli trials. His work laid the foundation for the Law of Large Numbers.
 
-\subsection*{Poisson distribution}
-What is the probability of counting $x$ events in a time interval, if the observed average is given by $\lambda$
+Intuitively, this distribution is useful when considering repeated experiments with two possible outcomes (success or failure). For example, flipping a fair coin multiple times follows a binomial pattern.
 
-\subsection*{Uniform distribution}
-Uniform distribution
+The probability mass function is given by:
+\begin{equation}
+    P(X = k) = \binom{n}{k} p^k (1-p)^{n-k},
+\end{equation}
+where $n$ is the number of trials and $p$ is the probability of success.
 
-\subsection*{Exponential distribution}
-Exponential distribution
+\textbf{Example:} Suppose we flip a fair coin 5 times ($n=5$) and want to find the probability of getting exactly 3 heads ($p=0.5$):
+\begin{equation}
+    P(X=3) = \binom{5}{3} (0.5)^3 (0.5)^2 = 10 \times 0.125 \times 0.25 = 0.3125.
+\end{equation}
 
-\subsection*{Gaussian distribution}
-Gaussian distribution
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
+    \caption{Binomial distribution.}
+    \label{fig:random}
+\end{figure}
 
+\newpage
+\subsection{Poisson distribution}
+Named after Sim\'eon Denis Poisson, this distribution was introduced in the early 19th century to model rare events. It is particularly useful for counting occurrences over a fixed interval of time or space.
+
+Intuitively, the Poisson distribution applies to events happening randomly but with a known average rate, such as the number of emails received per hour.
+
+Named after Sim\'eon Denis Poisson, this distribution was introduced in the early 19th century to model rare events. It is particularly useful for counting occurrences over a fixed interval of time or space.
+
+Intuitively, the Poisson distribution applies to events happening randomly but with a known average rate, such as the number of emails received per hour.
+
+The probability mass function is:
+\begin{equation}
+    P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!},
+\end{equation}
+where $\lambda$ is the expected number of occurrences.
+
+\textbf{Example:} If a bookstore sells an average of 3 books per hour ($\lambda = 3$), the probability of selling exactly 5 books in an hour is:
+\begin{equation}
+    P(X=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008.
+\end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
+    \caption{Poisson distribution.}
+    \label{fig:random}
+\end{figure}
+
+\newpage
+\subsection{Uniform distribution}
+The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely. This distribution has been used since antiquity, especially in early probability and gambling studies.
+
+Intuitively, it is useful when every possible outcome is equally probable, such as rolling a fair die.
+
+The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely. This distribution has been used since antiquity, especially in early probability and gambling studies.
+
+Intuitively, it is useful when every possible outcome is equally probable, such as rolling a fair die.
+
+The probability density function is:
+\begin{equation}
+    f(x) = \frac{1}{b-a}, \quad a \leq x \leq b.
+\end{equation}
+
+\textbf{Example:} If a random number is chosen from the interval [2, 10], the probability density is:
+\begin{equation}
+    f(x) = \frac{1}{10-2} = 0.125.
+\end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
+    \caption{Uniform distribution.}
+    \label{fig:random}
+\end{figure}
+
+\newpage
+\subsection{Gaussian distribution}
+Introduced by Carl Friedrich Gauss, the normal distribution became central to statistics due to the Central Limit Theorem (CLT). It describes how averages of large samples tend to form a bell-shaped curve.
+
+Intuitively, many natural and social phenomena follow a normal distribution, such as human heights and test scores.
+
+Introduced by Carl Friedrich Gauss, the normal distribution became central to statistics due to the Central Limit Theorem (CLT). It describes how averages of large samples tend to form a bell-shaped curve.
+
+Intuitively, many natural and social phenomena follow a normal distribution, such as human heights and test scores.
+
+The probability density function is:
+\begin{equation}
+    f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+\end{equation}
+
+\textbf{Example:} If human heights are normally distributed with mean $\mu=170$ cm and standard deviation $\sigma=10$ cm, the probability density of someone being exactly 180 cm is:
+\begin{equation}
+    f(180) = \frac{1}{10 \sqrt{2\pi}} e^{-\frac{(180-170)^2}{2(10)^2}} \approx 0.0242.
+\end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
+    \caption{Gaussian distribution.}
+    \label{fig:random}
+\end{figure}
+
+\newpage
+\subsection{Exponential distribution}
+The exponential distribution models waiting times between Poisson process events. It has been widely applied in reliability analysis and survival studies.
+
+Intuitively, it describes situations where the probability of waiting a certain time between events remains constant, such as time between bus arrivals.
+
+The exponential distribution models waiting times between Poisson process events. It has been widely applied in reliability analysis and survival studies.
+
+Intuitively, it describes situations where the probability of waiting a certain time between events remains constant, such as time between bus arrivals.
+
+The probability density function is:
+\begin{equation}
+    f(x) = \lambda e^{-\lambda x}, \quad x \geq 0.
+\end{equation}
+
+\textbf{Example:} If a call center receives calls at an average rate of $\lambda = 2$ per minute, the probability that the next call arrives after more than 2 minutes is:
+\begin{equation}
+    P(X > 2) = e^{-2(2)} = e^{-4} \approx 0.0183.
+\end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
+    \caption{Exponential distribution.}
+    \label{fig:random}
+\end{figure}
 
 % Chapter - Parameter estimation
 \chapter{Parameter estimation}
@@ -109,12 +260,74 @@ Prediction vs inference
 \section{Parameter estimation}
 Parameter estimation
 
-\section{The law of large numbers}
-The law of large numbers
+\section{Law of Large Numbers (LLN)}
 
-\section{The central limit theorem}
-The central limit theorem
+\subsection{Definition}
+The Law of Large Numbers states that as the sample size increases, the sample mean approaches the expected value. Formally, if $X_1, X_2, \dots, X_n$ are independent and identically distributed (i.i.d.) random variables with expected value $\mathbb{E}[X] = \mu$, then:
+\begin{equation}
+    \bar{X}_n = \frac{1}{n} \sum_{i=1}^{n} X_i \to \mu \quad \text{as } n \to \infty.
+\end{equation}
 
+\subsection{Intuition}
+Consider flipping a fair coin multiple times. The proportion of heads observed converges to 0.5 as the number of flips increases. This illustrates that the observed average stabilizes around the theoretical probability.
+
+\section{Law of Large Numbers (LLN)}
+
+\subsection{Introduction}
+The Law of Large Numbers (LLN) is one of the fundamental theorems of probability theory. It was first formulated by Jacob Bernoulli in the late 17th century and later refined by other mathematicians, including Pafnuty Chebyshev. Bernoulli's work aimed to formalize how relative frequencies of events stabilize as the number of trials increases, providing the foundation for statistical inference. LLN plays a crucial role in statistics, finance, and machine learning, ensuring that averages computed from large samples are reliable estimates of expected values.
+
+\subsection{Definition}
+The Law of Large Numbers states that as the sample size increases, the sample mean approaches the expected value. Formally, if $X_1, X_2, \dots, X_n$ are independent and identically distributed (i.i.d.) random variables with expected value $\mathbb{E}[X] = \mu$, then:
+\begin{equation}
+    \bar{X}_n = \frac{1}{n} \sum_{i=1}^{n} X_i \to \mu \quad \text{as } n \to \infty.
+\end{equation}
+
+\subsection{Intuition}
+Consider flipping a fair coin multiple times. The proportion of heads observed converges to 0.5 as the number of flips increases. This illustrates that the observed average stabilizes around the theoretical probability.
+
+\subsection{Types of LLN}
+\begin{itemize}
+    \item \textbf{Weak Law of Large Numbers (WLLN)}: Convergence in probability, i.e., for any $\epsilon > 0$, 
+    \begin{equation}
+        P(|\bar{X}_n - \mu| \geq \epsilon) \to 0 \quad \text{as } n \to \infty.
+    \end{equation}
+    \item \textbf{Strong Law of Large Numbers (SLLN)}: Almost sure convergence, i.e.,
+    \begin{equation}
+        P\left( \lim_{n \to \infty} \bar{X}_n = \mu \right) = 1.
+    \end{equation}
+\end{itemize}
+
+\subsection{Example}
+Suppose we roll a fair six-sided die multiple times. The expected value of a roll is:
+\begin{equation}
+    \mathbb{E}[X] = \frac{1+2+3+4+5+6}{6} = 3.5.
+\end{equation}
+As we roll more dice, the sample mean of observed values gets closer to 3.5.
+
+\section{Central Limit Theorem (CLT)}
+
+\subsection{Introduction}
+The Central Limit Theorem (CLT) was first discovered in the 18th century by Abraham de Moivre and later developed by Pierre-Simon Laplace and Carl Friedrich Gauss. It formalizes the idea that the distribution of sample means tends toward a normal distribution, regardless of the shape of the original population distribution. The CLT is fundamental in inferential statistics, allowing researchers to make predictions and construct confidence intervals for population parameters based on sample data.
+
+\subsection{Definition}
+The Central Limit Theorem states that for a large enough sample size, the sampling distribution of the sample mean follows a normal distribution, regardless of the original population distribution. Formally, if $X_1, X_2, \dots, X_n$ are i.i.d. random variables with mean $\mu$ and variance $\sigma^2$, then the standardized sample mean:
+\begin{equation}
+    Z = \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}}
+\end{equation}
+converges in distribution to a standard normal distribution $\mathcal{N}(0,1)$ as $n \to \infty$.
+
+\subsection{Intuition}
+No matter the shape of the original distribution, when we take many samples and compute their means, the histogram of these sample means will resemble a normal curve as the sample size grows.
+
+\subsection{Example}
+Consider rolling a fair six-sided die multiple times and computing the average outcome for groups of $n$ rolls. As $n$ increases, the distribution of these sample means approaches a normal distribution, centered at $\mu=3.5$.
+
+\subsection{Applications}
+\begin{itemize}
+    \item Used in inferential statistics to approximate sampling distributions.
+    \item Forms the basis for hypothesis testing and confidence intervals.
+    \item Justifies the normality assumption in many statistical models.
+\end{itemize}
 
 % Chapter - Introduction to statistical inference
 \chapter{Introduction to statistical inference}
@@ -126,11 +339,11 @@ Probability theory is one of the oldest subjects within mathematical studies. Pa
 
 So let's first ask ourselves the question. What is probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty. A number we will use to describe the amount of information we have about a random, or stochastic, event. For simplicity, we can make it range from 0 to 1, in the following way.
 
-\section{Significance and p-values}
-Significance and p-values
-
 \section{Statistic tests}
 Statistic tests
+
+\section{P-values and significance}
+P-values and significance
 
 \subsection*{Compare sample mean with hypothesized value - One sample t-test}
 
@@ -139,7 +352,7 @@ The one-sample t-test is used to determine whether the mean of a single sample d
     t = \frac{\bar{x} - \mu}{s / \sqrt{n}},
 \]
 where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.
-\newpageifneeded
+\newpage
 
 \subsection*{Compare sample means of two groups - Two sample t-test}
 
@@ -151,6 +364,8 @@ where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sam
 
 \section{Parametric and non-parametric}
 
+\section{Comparing data and normalization}
+Comparing data and normalization
 
 % Chapter - Introduction to bayesian statistics
 \chapter{Introduction to bayesian statistics}
@@ -176,10 +391,24 @@ Bayesian statistics.
 
 
 \backmatter
+ 
+\begin{thebibliography}{999}
 
-\chapter*{Bibliography}
-\addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{plain} % Choose your bibliography style
-\bibliography{your_bibliography_file} % Replace with your actual .bib file
+\bibitem{spiegelhalter2019art} 
+David Spiegelhalter. 
+\textit{The Art of Statistics: How to Learn from Data}. 
+Basic Books, 2019.
+
+\bibitem{degroot2012probability}
+Morris H. DeGroot and Mark J. Schervish.
+\textit{Probability and Statistics} (4th ed.).
+Pearson, 2012.
+
+\bibitem{mcfadden2011philosophy}
+J. A. F. McFadden.
+\textit{The Philosophy of Statistics}.
+Wiley-Blackwell, 2011.
+
+\end{thebibliography}
 
 \end{document}
