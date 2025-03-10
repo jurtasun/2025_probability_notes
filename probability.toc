@@ -16,32 +16,29 @@
 \contentsline {section}{\numberline {3.1}Prediction vs inference}{11}{}%
 \contentsline {section}{\numberline {3.2}Parameter estimation}{11}{}%
 \contentsline {section}{\numberline {3.3}Law of Large Numbers (LLN)}{11}{}%
-\contentsline {subsection}{\numberline {3.3.1}Definition}{11}{}%
-\contentsline {subsection}{\numberline {3.3.2}Intuition}{11}{}%
-\contentsline {section}{\numberline {3.4}Law of Large Numbers (LLN)}{11}{}%
-\contentsline {subsection}{\numberline {3.4.1}Introduction}{11}{}%
+\contentsline {subsection}{\numberline {3.3.1}Introduction}{11}{}%
+\contentsline {subsection}{\numberline {3.3.2}Definition}{12}{}%
+\contentsline {subsection}{\numberline {3.3.3}Intuition}{12}{}%
+\contentsline {subsection}{\numberline {3.3.4}Types of LLN}{12}{}%
+\contentsline {subsection}{\numberline {3.3.5}Example}{12}{}%
+\contentsline {section}{\numberline {3.4}Central Limit Theorem (CLT)}{12}{}%
+\contentsline {subsection}{\numberline {3.4.1}Introduction}{12}{}%
 \contentsline {subsection}{\numberline {3.4.2}Definition}{12}{}%
-\contentsline {subsection}{\numberline {3.4.3}Intuition}{12}{}%
-\contentsline {subsection}{\numberline {3.4.4}Types of LLN}{12}{}%
-\contentsline {subsection}{\numberline {3.4.5}Example}{12}{}%
-\contentsline {section}{\numberline {3.5}Central Limit Theorem (CLT)}{12}{}%
-\contentsline {subsection}{\numberline {3.5.1}Introduction}{12}{}%
-\contentsline {subsection}{\numberline {3.5.2}Definition}{12}{}%
-\contentsline {subsection}{\numberline {3.5.3}Intuition}{13}{}%
-\contentsline {subsection}{\numberline {3.5.4}Example}{13}{}%
-\contentsline {subsection}{\numberline {3.5.5}Applications}{13}{}%
+\contentsline {subsection}{\numberline {3.4.3}Intuition}{13}{}%
+\contentsline {subsection}{\numberline {3.4.4}Example}{13}{}%
+\contentsline {subsection}{\numberline {3.4.5}Applications}{13}{}%
 \contentsline {chapter}{\numberline {4}Introduction to statistical inference}{15}{}%
 \contentsline {section}{\numberline {4.1}Prediction vs inference}{15}{}%
 \contentsline {section}{\numberline {4.2}Hypothesis testing}{15}{}%
 \contentsline {section}{\numberline {4.3}Statistic tests}{15}{}%
 \contentsline {section}{\numberline {4.4}P-values and significance}{15}{}%
-\contentsline {section}{\numberline {4.5}Parametric and non-parametric}{16}{}%
-\contentsline {section}{\numberline {4.6}Comparing data and normalization}{16}{}%
-\contentsline {chapter}{\numberline {5}Introduction to bayesian statistics}{17}{}%
-\contentsline {section}{\numberline {5.1}The Bayes' theorem}{17}{}%
-\contentsline {section}{\numberline {5.2}Bayesian vs frequentist}{17}{}%
-\contentsline {section}{\numberline {5.3}Bayesian statistics}{17}{}%
-\contentsline {chapter}{\numberline {6}Stochasticity and Markov processes}{19}{}%
-\contentsline {section}{\numberline {6.1}Stochasticity and Markov processes}{19}{}%
-\contentsline {section}{\numberline {6.2}Markov chains and hidden Markov models}{19}{}%
-\contentsline {section}{\numberline {6.3}Modern applications}{19}{}%
+\contentsline {section}{\numberline {4.5}Parametric and non-parametric}{17}{}%
+\contentsline {section}{\numberline {4.6}Comparing data and normalization}{17}{}%
+\contentsline {chapter}{\numberline {5}Introduction to bayesian statistics}{19}{}%
+\contentsline {section}{\numberline {5.1}The Bayes' theorem}{19}{}%
+\contentsline {section}{\numberline {5.2}Bayesian vs frequentist}{19}{}%
+\contentsline {section}{\numberline {5.3}Bayesian statistics}{19}{}%
+\contentsline {chapter}{\numberline {6}Stochasticity and Markov processes}{21}{}%
+\contentsline {section}{\numberline {6.1}Stochasticity and Markov processes}{21}{}%
+\contentsline {section}{\numberline {6.2}Markov chains and hidden Markov models}{21}{}%
+\contentsline {section}{\numberline {6.3}Modern applications}{21}{}%

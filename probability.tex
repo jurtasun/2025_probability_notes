@@ -41,18 +41,15 @@
 % Chapter - Introduction
 \chapter{Introduction}
 
-\indent In the following pages one will find an introductory text to one of the key subjects within mathematical sciences. The text is composed by four chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of this lecture notes is to make both probability and statistical analysis an easy, interesting and engaging topic for anyone interested, without the need for prior experience with mathematical training.\\
+\indent In the following pages one will find an introductory course to probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also modern tools to deal with modern problems. The text is composed by six chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of this lecture notes is to make both probability and statistical analysis an easy, interesting and engaging topic for anyone interested, without the need for prior experience with mathematical training.\\
 
-First, we will introduce and explore the concept of probability itself, and we will discuss how to model information, surprise, and various random processes, also referred to as \textit{stochastic}. Then we will introduce the idea of a function and how functions need to be adapted to implement uncertainty when discussing random events.
-In the second part we will address the difference between prediction and inference, and discuss a set of subjects normally grouped under the name of hypothesis testing. Here we will introduce how to quantify certainty and bias, and how to model significance and false positives, that is, to compute p-values.\\
-
-Finally, we will discuss bayesian statistics (...).\\
+First, we will introduce and explore the concept of probability itself, and we will discuss how to model information and chance. Then we will discuss a series of mathematical approaches to such quantities and formally define random processes, also referred to as \textit{stochastic}. We will introduce the idea of a function and how functions need to be adapted to implement uncertainty when discussing random events. In the second part we will address the difference between prediction and inference, and discuss a set of subjects normally grouped under the name of \textit{hypothesis testing}. Here we will introduce how to quantify certainty and bias, how to model significance and the idea of hypothesis tests. Finally, we will briefly discuss more modern topics, such as bayesian statistics, stochasticity and Markov processes.\\
 
 Probability theory is the mathematical framework for quantifying uncertainty and randomness. It provides the foundation for understanding and modeling various real-world phenomena, ranging from gambling and statistical inference to machine learning and quantum mechanics. At its core, probability assigns numerical values to the likelihood of different outcomes in an experiment. The fundamental concepts include sample spaces, events, and probability measures that adhere to axioms established by Andrey Kolmogorov.\\
 
 The idea of stochasticity and randomness has deep historical roots. Ancient civilizations, including the Babylonians, Egyptians, and Greeks, grappled with the concept of uncertainty in games of chance, commerce, and divination. The oldest known dice date back over 5,000 years, indicating an early human fascination with randomness. While these cultures did not develop formal mathematical probability, they recognized patterns in random events and attempted to predict outcomes based on empirical observations and superstitions.
 Greek philosophers such as Democritus and Aristotle debated the nature of chance and determinism. The Roman philosopher Cicero distinguished between chance events and those governed by fate, foreshadowing later discussions on probability. In medieval times, scholars like Gerolamo Cardano (1501–1576) made early contributions by analyzing gambling problems and laying the groundwork for probability theory.
-The formalization of probability as a mathematical discipline began in the 17th century with the correspondence between Blaise Pascal and Pierre de Fermat, who devised combinatorial methods to solve problems related to games of chance. Their work introduced fundamental ideas such as expected value and laid the foundation for later advances by Christiaan Huygens, Jacob Bernoulli, and Abraham de Moivre. Bernoulli’s 	\textit{Ars Conjectandi} (1713) introduced the Law of Large Numbers, establishing that observed frequencies converge to theoretical probabilities over many trials.\\
+The formalization of probability as a mathematical discipline began in the 17th century with the correspondence between Blaise Pascal and Pierre de Fermat, who devised combinatorial methods to solve problems related to games of chance. Their work introduced fundamental ideas such as expected value and laid the foundation for later advances by Christiaan Huygens, Jacob Bernoulli, and Abraham de Moivre. Bernoulli’s \textit{Ars Conjectandi} (1713) introduced the Law of Large Numbers, establishing that observed frequencies converge to theoretical probabilities over many trials.\\
 
 A stochastic process extends probability theory by modeling systems that evolve randomly over time. Unlike deterministic processes, where the outcome is fixed by initial conditions, stochastic processes incorporate uncertainty at each step. These models are essential in diverse fields such as finance (stock price fluctuations), physics (Brownian motion), and engineering (signal processing). A stochastic process is defined as a collection of random variables indexed by time or space, commonly represented as $\{X_t\}_{t \in T}$, where $T$ is an index set.\\
 
@@ -86,11 +83,12 @@ Broadly speaking, probability, and later statistical inference, are branches of 
 So let's first ask ourselves the question. What \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random, or stochastic, event. For simplicity, we can make it range from 0 to 1, in the following way.
 
 \begin{itemize}
-\item If I'm sure A will never happen, P(A) = 0.
-\item If I'm sure A will always happen,  P(A) = 1.
-\item Anything in between, if exists degree of surprise, P(A) in [0, 1]
+\item If I'm sure A will never happen, $P(A) = 0$.
+\item If I'm sure A will always happen,  $P(A) = 1$.
+\item For anything in between, there is a level of surprise, and hence $P(A)$ will be a number between 0 and 1.
 \end{itemize}
 
+We will denote all possible outcomes of an experiment $x_{1}$, $x_{2}$, ..., $x_{n}$. And we will require that the sum of probabilities of all possible outcomes add up to 1. This is a crucial property we will refer as \textit{normalization}	
 \begin{equation}
 	\sum_{i = 0}^{n} \; p(x_{i}) = 1
 \end{equation}
@@ -112,7 +110,9 @@ Like other theories, the theory of probability is a representation of its concep
 There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details.\\
 
 \section{Discrete and continuous}
-Discrete and continuous
+Once we have an insight on random events, and a mathematical quantity representing that uncertainty, we are ready to deal with real problems. From tossing coins, to rolling dice, to making measurements, the first thing we realize is that not \textit{all} random events are equal. In some cases, like rolling a fair dice, all outcomes are equally probable, and in other cases, such as counting, we may encounter somre results which happen much more often than others. The main criteria we will use for differentiate among random events, is what we will call their \textit{distribution}.\\
+
+We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous}.
 
 \newpage
 
@@ -255,22 +255,18 @@ The probability density function is:
 \chapter{Parameter estimation}
 
 \section{Prediction vs inference}
-Prediction vs inference
+In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
 
 \section{Parameter estimation}
-Parameter estimation
+Another key difference we will discuss now, and quite a subtle one from the mathematical perspective, is that one between a \textit{variable} and a \textit{parameter}. Consider the example of a binomial experiment, e.g. tossing coins and asking for the probability of measuring a specific number of heads. There, we would write it as 
 
-\section{Law of Large Numbers (LLN)}
-
-\subsection{Definition}
-The Law of Large Numbers states that as the sample size increases, the sample mean approaches the expected value. Formally, if $X_1, X_2, \dots, X_n$ are independent and identically distributed (i.i.d.) random variables with expected value $\mathbb{E}[X] = \mu$, then:
 \begin{equation}
-    \bar{X}_n = \frac{1}{n} \sum_{i=1}^{n} X_i \to \mu \quad \text{as } n \to \infty.
+    P(x; n, p) = \binom{n}{k} p^x (1-p)^{n-x},
 \end{equation}
+where $n$ is the number of trials and $p$ is the probability of success.
 
-\subsection{Intuition}
-Consider flipping a fair coin multiple times. The proportion of heads observed converges to 0.5 as the number of flips increases. This illustrates that the observed average stabilizes around the theoretical probability.
-
+In our previous examples, we have treated just $x$ as our variable of interest, but we could think about P as a function of three independent variables. The number of times we want to observe heads, the total number of trials, and the probability of success for each toss. Normally, we will call \textit{parameters}, to all these variables we will freeze for the purpose of our calculations, and either consider them either known, or fit them from data (...).
+ 
 \section{Law of Large Numbers (LLN)}
 
 \subsection{Introduction}
@@ -333,6 +329,7 @@ Consider rolling a fair six-sided die multiple times and computing the average o
 \chapter{Introduction to statistical inference}
 
 \section{Prediction vs inference}
+In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
 
 \section{Hypothesis testing}
 Probability theory is one of the oldest subjects within mathematical studies. Paradoxically, almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. (...)\\
