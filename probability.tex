@@ -126,21 +126,31 @@ Intuitively, this distribution is useful when considering repeated experiments w
 
 The probability mass function is given by:
 \begin{equation}
-    P(X = k) = \binom{n}{k} p^k (1-p)^{n-k},
+    P(x; n, k) = \binom{n}{x} p^x (1-p)^{n-x},
 \end{equation}
 where $n$ is the number of trials and $p$ is the probability of success.
 
-\textbf{Example:} Suppose we flip a fair coin 5 times ($n=5$) and want to find the probability of getting exactly 3 heads ($p=0.5$):
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial.png}
+    \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
+    \label{fig:random}
+\end{figure}
+
+\textbf{Example 1:} Suppose we flip a fair coin 5 times ($n=5$) and want to find the probability of getting exactly 3 heads ($p=0.5$):
 \begin{equation}
     P(X=3) = \binom{5}{3} (0.5)^3 (0.5)^2 = 10 \times 0.125 \times 0.25 = 0.3125.
 \end{equation}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
-    \caption{Binomial distribution.}
-    \label{fig:random}
-\end{figure}
+\textbf{Example 2:} Suppose we flip a fair coin 5 times ($n=5$) and want to find the probability of getting exactly 3 heads ($p=0.5$):
+\begin{equation}
+    P(X=3) = \binom{5}{3} (0.5)^3 (0.5)^2 = 10 \times 0.125 \times 0.25 = 0.3125.
+\end{equation}
+
+\textbf{Example 3:} Suppose we flip a fair coin 5 times ($n=5$) and want to find the probability of getting exactly 3 heads ($p=0.5$):
+\begin{equation}
+    P(X=3) = \binom{5}{3} (0.5)^3 (0.5)^2 = 10 \times 0.125 \times 0.25 = 0.3125.
+\end{equation}
 
 \newpage
 \subsection{Poisson distribution}
@@ -154,21 +164,31 @@ Intuitively, the Poisson distribution applies to events happening randomly but w
 
 The probability mass function is:
 \begin{equation}
-    P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!},
+    P(x; \lambda) = \frac{\lambda^x e^{-\lambda}}{x!},
 \end{equation}
 where $\lambda$ is the expected number of occurrences.
 
-\textbf{Example:} If a bookstore sells an average of 3 books per hour ($\lambda = 3$), the probability of selling exactly 5 books in an hour is:
-\begin{equation}
-    P(X=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008.
-\end{equation}
-
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
-    \caption{Poisson distribution.}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/poisson.png}
+    \caption{Representation of the Poisson distribution of a random variable $x$, given the number of observations $\lambda$ as a parameter.}
     \label{fig:random}
 \end{figure}
+
+\textbf{Example 1:} If a bookstore sells an average of 3 books per hour ($\lambda = 3$), the probability of selling exactly 5 books in an hour is:
+\begin{equation}
+    P(x=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008.
+\end{equation}
+
+\textbf{Example 2:} If a bookstore sells an average of 3 books per hour ($\lambda = 3$), the probability of selling exactly 5 books in an hour is:
+\begin{equation}
+    P(x=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008.
+\end{equation}
+
+\textbf{Example 3:} If a bookstore sells an average of 3 books per hour ($\lambda = 3$), the probability of selling exactly 5 books in an hour is:
+\begin{equation}
+    P(x=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008.
+\end{equation}
 
 \newpage
 \subsection{Uniform distribution}
@@ -185,17 +205,27 @@ The probability density function is:
     f(x) = \frac{1}{b-a}, \quad a \leq x \leq b.
 \end{equation}
 
-\textbf{Example:} If a random number is chosen from the interval [2, 10], the probability density is:
-\begin{equation}
-    f(x) = \frac{1}{10-2} = 0.125.
-\end{equation}
-
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
-    \caption{Uniform distribution.}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/uniform.png}
+    \caption{Representation of the uniform distribution of a random variable $x$, given the boundary parameters $a$, $b$.}
     \label{fig:random}
 \end{figure}
+
+\textbf{Example 1:} If a random number is chosen from the interval [2, 10], the probability density is:
+\begin{equation}
+    f(x; a, b) = \frac{1}{10-2} = 0.125.
+\end{equation}
+
+\textbf{Example 2:} If a random number is chosen from the interval [2, 10], the probability density is:
+\begin{equation}
+    f(x; a, b) = \frac{1}{10-2} = 0.125.
+\end{equation}
+
+\textbf{Example 3:} If a random number is chosen from the interval [2, 10], the probability density is:
+\begin{equation}
+    f(x; a, b) = \frac{1}{10-2} = 0.125.
+\end{equation}
 
 \newpage
 \subsection{Gaussian distribution}
@@ -209,20 +239,30 @@ Intuitively, many natural and social phenomena follow a normal distribution, suc
 
 The probability density function is:
 \begin{equation}
-    f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
-\end{equation}
-
-\textbf{Example:} If human heights are normally distributed with mean $\mu=170$ cm and standard deviation $\sigma=10$ cm, the probability density of someone being exactly 180 cm is:
-\begin{equation}
-    f(180) = \frac{1}{10 \sqrt{2\pi}} e^{-\frac{(180-170)^2}{2(10)^2}} \approx 0.0242.
+    f(x; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
 \end{equation}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
-    \caption{Gaussian distribution.}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/normal.png}
+    \caption{Representation of the gaussian distribution of a random variable $x$, given the mean value $\mu$ and standard deviation $\sigma$ parameters.}
     \label{fig:random}
 \end{figure}
+
+\textbf{Example 1:} If human heights are normally distributed with mean $\mu=170$ cm and standard deviation $\sigma=10$ cm, the probability density of someone being exactly 180 cm is:
+\begin{equation}
+    f(180) = \frac{1}{10 \sqrt{2\pi}} e^{-\frac{(180-170)^2}{2(10)^2}} \approx 0.0242.
+\end{equation}
+
+\textbf{Example 2:} If human heights are normally distributed with mean $\mu=170$ cm and standard deviation $\sigma=10$ cm, the probability density of someone being exactly 180 cm is:
+\begin{equation}
+    f(180) = \frac{1}{10 \sqrt{2\pi}} e^{-\frac{(180-170)^2}{2(10)^2}} \approx 0.0242.
+\end{equation}
+
+\textbf{Example 3:} If human heights are normally distributed with mean $\mu=170$ cm and standard deviation $\sigma=10$ cm, the probability density of someone being exactly 180 cm is:
+\begin{equation}
+    f(180) = \frac{1}{10 \sqrt{2\pi}} e^{-\frac{(180-170)^2}{2(10)^2}} \approx 0.0242.
+\end{equation}
 
 \newpage
 \subsection{Exponential distribution}
@@ -236,26 +276,50 @@ Intuitively, it describes situations where the probability of waiting a certain 
 
 The probability density function is:
 \begin{equation}
-    f(x) = \lambda e^{-\lambda x}, \quad x \geq 0.
-\end{equation}
-
-\textbf{Example:} If a call center receives calls at an average rate of $\lambda = 2$ per minute, the probability that the next call arrives after more than 2 minutes is:
-\begin{equation}
-    P(X > 2) = e^{-2(2)} = e^{-4} \approx 0.0183.
+    f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0.
 \end{equation}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/gaussian.png}
-    \caption{Exponential distribution.}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/exponential.png}
+    \caption{Representation of the exponential distribution of a random variable $x$, given the decay rate $\lambda$.}
     \label{fig:random}
 \end{figure}
+
+\textbf{Example 1:} If a call center receives calls at an average rate of $\lambda = 2$ per minute, the probability that the next call arrives after more than 2 minutes is:
+\begin{equation}
+    P(X > 2) = e^{-2(2)} = e^{-4} \approx 0.0183.
+\end{equation}
+
+\textbf{Example 2:} If a call center receives calls at an average rate of $\lambda = 2$ per minute, the probability that the next call arrives after more than 2 minutes is:
+\begin{equation}
+    P(X > 2) = e^{-2(2)} = e^{-4} \approx 0.0183.
+\end{equation}
+
+\textbf{Example 3:} If a call center receives calls at an average rate of $\lambda = 2$ per minute, the probability that the next call arrives after more than 2 minutes is:
+\begin{equation}
+    P(X > 2) = e^{-2(2)} = e^{-4} \approx 0.0183.
+\end{equation}
 
 % Chapter - Parameter estimation
 \chapter{Parameter estimation}
 
 \section{Prediction vs inference}
 In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
+
+The difference between prediction and inference has been a topic of interest in statistics and data science for centuries. While both concepts involve drawing conclusions from data, their goals, methodologies, and historical development differ significantly.\\
+
+The roots of inference trace back to classical statistics, particularly the work of Pierre-Simon Laplace (1749–1827) and Carl Friedrich Gauss (1777–1855), who developed probability theory and the method of least squares. Their work laid the foundation for statistical inference, which aims to understand relationships between variables and make generalizable conclusions about populations from samples.\\
+
+For example, Laplace used probability theory to estimate the population of France, introducing Bayesian inference, which provides a framework for updating beliefs based on observed data. Gauss contributed the normal distribution and least squares estimation, which became essential for making inferences about unknown parameters.\\
+
+On the other hand, prediction as a primary goal gained traction much later, particularly in the 20th century with the rise of machine learning. The focus shifted from understanding relationships to optimizing models that generalize well to unseen data. In 2001, Leo Breiman, in his seminal paper "Statistical Modeling: The Two Cultures," highlighted the distinction, arguing that traditional statistics emphasized inference, whereas modern machine learning prioritized prediction.\\
+
+Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a dataset, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis help researchers understand these relationships. The emphasis is on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
+
+Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. A key contributor to predictive modeling was Andrey Kolmogorov (1903–1987), who formalized probability theory and stochastic processes. His work laid the foundation for modern probabilistic models used in machine learning and artificial intelligence. Later, Vapnik and Chervonenkis (1971) developed statistical learning theory, which introduced VC dimension, a measure of a model’s ability to generalize. This work led to the development of Support Vector Machines (SVMs), a key predictive tool in machine learning.\\
+
+While Breiman’s paper emphasized the divide between the two approaches, modern data science integrates both. In many cases, understanding causal relationships (inference) can improve predictive performance, and accurate prediction can guide further investigations into causality. For example, epidemiologists use inference to understand how diseases spread, but they also use predictive models to forecast outbreaks. In finance, analysts infer factors affecting stock prices while using machine learning to predict market trends. By combining both approaches, we gain a more comprehensive understanding of data, allowing for both insightful interpretations and powerful predictions.
 
 \section{Parameter estimation}
 Another key difference we will discuss now, and quite a subtle one from the mathematical perspective, is that one between a \textit{variable} and a \textit{parameter}. Consider the example of a binomial experiment, e.g. tossing coins and asking for the probability of measuring a specific number of heads. There, we would write it as 
@@ -266,6 +330,8 @@ Another key difference we will discuss now, and quite a subtle one from the math
 where $n$ is the number of trials and $p$ is the probability of success.
 
 In our previous examples, we have treated just $x$ as our variable of interest, but we could think about P as a function of three independent variables. The number of times we want to observe heads, the total number of trials, and the probability of success for each toss. Normally, we will call \textit{parameters}, to all these variables we will freeze for the purpose of our calculations, and either consider them either known, or fit them from data (...).
+ 
+ \newpage 
  
 \section{Law of Large Numbers (LLN)}
 
@@ -293,12 +359,21 @@ Consider flipping a fair coin multiple times. The proportion of heads observed c
     \end{equation}
 \end{itemize}
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter3/law_large_numbers.png}
+    \caption{Representation of the law or large numbers. The sample mean tends to the population mean as the number of rolls $n$ increases.}
+    \label{fig:random}
+\end{figure}
+
 \subsection{Example}
 Suppose we roll a fair six-sided die multiple times. The expected value of a roll is:
 \begin{equation}
     \mathbb{E}[X] = \frac{1+2+3+4+5+6}{6} = 3.5.
 \end{equation}
 As we roll more dice, the sample mean of observed values gets closer to 3.5.
+
+\newpage
 
 \section{Central Limit Theorem (CLT)}
 
@@ -314,6 +389,13 @@ converges in distribution to a standard normal distribution $\mathcal{N}(0,1)$ a
 
 \subsection{Intuition}
 No matter the shape of the original distribution, when we take many samples and compute their means, the histogram of these sample means will resemble a normal curve as the sample size grows.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter3/law_large_numbers.png}
+    \caption{Representation of the law or large numbers. The sample mean follows a gaussian distribution as the sample size $n$ increases.}
+    \label{fig:random}
+\end{figure}
 
 \subsection{Example}
 Consider rolling a fair six-sided die multiple times and computing the average outcome for groups of $n$ rolls. As $n$ increases, the distribution of these sample means approaches a normal distribution, centered at $\mu=3.5$.
