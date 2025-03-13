@@ -117,18 +117,16 @@ We will distinguish two main families of random events. These in which the numbe
 \newpage
 
 \section{Probability distributions}
-Once we are comfortable with the idea of random events, and we have been introduced to probability as a number to quantify surprise, we can agree that not all random phenomena are equal. A basic way to classify and separate random events is according to how their probabilities are distributed.
+So far we have introduced the idea of random events, and the concept of probability as a number to quantify surprise. For our present chapter, we will try to model such stochastic events such that we can make predictions. For that purpose, we will model that probability we just defined to be a descriptive, or \textit{predictive} quantity. Let's begin by saying that not all random phenomena are equal. Hence, a basic way to classify and separate random events, is according to how their probabilities are \textit{distributed}.
 
 \subsection{Binomial distribution}
-The binomial distribution models the number of successes in a fixed number of independent trials, each with the same probability of success. It was developed by Jacob Bernoulli in the 17th century while studying the probability of repeated Bernoulli trials. His work laid the foundation for the Law of Large Numbers.
+The simplest case of random event we will describe are the so-called \textit{binomial} events. Cases where we make a certain number of measurements $n$, each with two or more possible outcomes, and we want to know the number of successes. For instance, what would be the probability of measuring, or observing, 5 heads if I toss 10 coins? Or what would be the probability of obtaining 5 times a 6, out of a total of 100 dice rolls? In all these cases we will call $x$ the number of successes we want to observe, $n$ the total number of trials, and $p$ the probability of success in each individual trial. The binomial distribution models the number of successes in a fixed number of independent trials, each with the same probability of success. It was developed by Jacob Bernoulli in the 17th century while studying the probability of repeated Bernoulli trials. His work laid the foundation for the Law of Large Numbers.\\
 
-Intuitively, this distribution is useful when considering repeated experiments with two possible outcomes (success or failure). For example, flipping a fair coin multiple times follows a binomial pattern.
-
-The probability mass function is given by:
+Intuitively, this distribution is useful when considering repeated experiments with two possible outcomes (success or failure). For example, flipping a fair coin multiple times follows a binomial pattern. We will say that the probability of observing $x$ successes in $n$ total tries, given individual probability of success $p$, is given by:
 \begin{equation}
     P(x; n, k) = \binom{n}{x} p^x (1-p)^{n-x},
 \end{equation}
-where $n$ is the number of trials and $p$ is the probability of success.
+This is normally referred to as a probability \textit{mass} distribution. The reason for that, as we will discuss later, is to distinguish such events from other types of events called continuous, for which we will define \text{density} distributions. For now, just keep probability mass distribution as a fancy name, or probability distribution, for simplicity. Let's break this expression down in a couple of examples.
 
 \begin{figure}[ht]
     \centering
@@ -138,35 +136,31 @@ where $n$ is the number of trials and $p$ is the probability of success.
 \end{figure}
 
 \textbf{Example 1:} Suppose we flip a fair coin 5 times ($n=5$) and want to find the probability of getting exactly 3 heads ($p=0.5$):
-\begin{equation}
-    P(X=3) = \binom{5}{3} (0.5)^3 (0.5)^2 = 10 \times 0.125 \times 0.25 = 0.3125.
-\end{equation}
+\begin{align}
+    P\bigg(x=5; n = 10; p = \frac{1}{2}\bigg) = &\binom{5}{3} \bigg(\frac{1}{2}\bigg)^3 \bigg(1 - \frac{1}{2}\bigg)^2  \notag \\
+    &\binom{5}{3} \bigg(\frac{1}{2}\bigg)^3 \bigg(1 - \frac{1}{2}\bigg)^2  \notag \times 0.25 = 0.3125.
+\end{align}\\
 
 \textbf{Example 2:} Suppose we flip a fair coin 5 times ($n=5$) and want to find the probability of getting exactly 3 heads ($p=0.5$):
 \begin{equation}
-    P(X=3) = \binom{5}{3} (0.5)^3 (0.5)^2 = 10 \times 0.125 \times 0.25 = 0.3125.
-\end{equation}
+    P\bigg(x=5; n = 10; p = \frac{1}{3}\bigg) = \binom{5}{3} \bigg(\frac{1}{2}\bigg)^3 \bigg(1 - \frac{1}{2}\bigg)^2 = 10 \times 0.125 \times 0.25 = 0.3125. \notag
+\end{equation}\\
 
 \textbf{Example 3:} Suppose we flip a fair coin 5 times ($n=5$) and want to find the probability of getting exactly 3 heads ($p=0.5$):
 \begin{equation}
-    P(X=3) = \binom{5}{3} (0.5)^3 (0.5)^2 = 10 \times 0.125 \times 0.25 = 0.3125.
-\end{equation}
+    P\bigg(x=5; n = 10; p = \frac{1}{6}\bigg) = \binom{5}{3} \bigg(\frac{1}{2}\bigg)^3 \bigg(1 - \frac{1}{2}\bigg)^2 = 10 \times 0.125 \times 0.25 = 0.3125. \notag
+\end{equation}\\
 
 \newpage
 \subsection{Poisson distribution}
-Named after Sim\'eon Denis Poisson, this distribution was introduced in the early 19th century to model rare events. It is particularly useful for counting occurrences over a fixed interval of time or space.
+The next kind of random event we will discuss are the \textit{Poisson} distributed, named after the french mathematician Sim\'eon Denis Poisson, who tried to model to events that were random but with a known average rate, such as the number of people crossing a street per day, or the number of customers entering a store, or emails received per hour.
+As a note, this distribution was introduced in quite recent times, in the early 19th century to model rare events. It is particularly useful for counting occurrences over a fixed interval of time or space. 
 
-Intuitively, the Poisson distribution applies to events happening randomly but with a known average rate, such as the number of emails received per hour.
-
-Named after Sim\'eon Denis Poisson, this distribution was introduced in the early 19th century to model rare events. It is particularly useful for counting occurrences over a fixed interval of time or space.
-
-Intuitively, the Poisson distribution applies to events happening randomly but with a known average rate, such as the number of emails received per hour.
-
-The probability mass function is:
+The probability mass function for observing a number of events $x$ if we know the average rate $\lambda$ is:
 \begin{equation}
     P(x; \lambda) = \frac{\lambda^x e^{-\lambda}}{x!},
 \end{equation}
-where $\lambda$ is the expected number of occurrences.
+Again, let's consider a couple of examples to illustrate Poisson distributed events.
 
 \begin{figure}[ht]
     \centering
@@ -175,34 +169,33 @@ where $\lambda$ is the expected number of occurrences.
     \label{fig:random}
 \end{figure}
 
-\textbf{Example 1:} If a bookstore sells an average of 3 books per hour ($\lambda = 3$), the probability of selling exactly 5 books in an hour is:
+\textbf{Example 1:} We would like to know the probability of observing exactly 5 cancer patients in a hospital over a week, if we know the average number ($\lambda = 3$) patients per week.
 \begin{equation}
-    P(x=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008.
-\end{equation}
+    P(x=5; \lambda = 3) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008. \notag
+\end{equation}\\
 
-\textbf{Example 2:} If a bookstore sells an average of 3 books per hour ($\lambda = 3$), the probability of selling exactly 5 books in an hour is:
-\begin{equation}
-    P(x=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008.
-\end{equation}
+\textbf{Example 2:} Let's now ask a similar, but different question. So far, we have only focused on the probability of observing \textit{exactly} one particular outcome. But we could ask as well, what would be the probability observing 5 \textit{or less} cancer patients in that same hospital ($\lambda = 3$) patients per week.
+\begin{align}
+    P(x \leq 5; \lambda = 3) &= P(x=0; \lambda = 3) + P(x=1; \lambda = 3) + P(x=2; \lambda = 3) \notag \\
+    &\quad + P(x=3; \lambda = 3) + P(x=4; \lambda = 3) + P(x=5; \lambda = 3) \notag
+\end{align}\\
 
-\textbf{Example 3:} If a bookstore sells an average of 3 books per hour ($\lambda = 3$), the probability of selling exactly 5 books in an hour is:
+This sum of probabilities up to a given value is normally referred to as the \textit{cumulative probability}, \textit{cumulative distribution function}, or cdf.\\
+
+\textbf{Example 3:} Now let's ask the opposite question. What would be the probability of observing \textit{at least} 5 patients in that same hospital?
 \begin{equation}
-    P(x=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008.
+    P(x=5; \lambda = 3) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008. \notag
 \end{equation}
 
 \newpage
 \subsection{Uniform distribution}
-The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely. This distribution has been used since antiquity, especially in early probability and gambling studies.
-
-Intuitively, it is useful when every possible outcome is equally probable, such as rolling a fair die.
+The last example of such discrete random - remember that by discrete we mean \textit{countable} number of outcomes -  will be those which are \textit{uniformly} distributed. That means that all possible outcomes are equally probable, such as rolling a fair die, or tossing a coin.
 
 The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely. This distribution has been used since antiquity, especially in early probability and gambling studies.
 
-Intuitively, it is useful when every possible outcome is equally probable, such as rolling a fair die.
-
-The probability density function is:
+The probability of observing a particular result $x$ in a given range $[a, b]$ is:
 \begin{equation}
-    f(x) = \frac{1}{b-a}, \quad a \leq x \leq b.
+    f(x; a, b) = \frac{1}{b-a}, \quad a \leq x \leq b.
 \end{equation}
 
 \begin{figure}[ht]
@@ -226,6 +219,12 @@ The probability density function is:
 \begin{equation}
     f(x; a, b) = \frac{1}{10-2} = 0.125.
 \end{equation}
+
+\newpage
+
+So far we have focused on discrete events, that is, scenarios where the number of possible outcomes was an integer number. Now we will encounter a second family of stochastic processes, the ones we will refer to as continuous. In the discrete case, we were implicitly using the frequentist definition of probability, as a number that represents the ratio of how many times we will observe a particular result, if we endlessly repeat (...).\\
+
+But let's try to face a different scenario.
 
 \newpage
 \subsection{Gaussian distribution}
