@@ -10,8 +10,8 @@
 \contentsline {subsection}{\numberline {2.3.1}Binomial distribution}{5}{}%
 \contentsline {subsection}{\numberline {2.3.2}Poisson distribution}{7}{}%
 \contentsline {subsection}{\numberline {2.3.3}Uniform distribution}{9}{}%
-\contentsline {subsection}{\numberline {2.3.4}Gaussian distribution}{10}{}%
-\contentsline {subsection}{\numberline {2.3.5}Exponential distribution}{11}{}%
+\contentsline {subsection}{\numberline {2.3.4}Gaussian distribution}{11}{}%
+\contentsline {subsection}{\numberline {2.3.5}Exponential distribution}{12}{}%
 \contentsline {chapter}{\numberline {3}Parameter estimation}{13}{}%
 \contentsline {section}{\numberline {3.1}Prediction vs inference}{13}{}%
 \contentsline {section}{\numberline {3.2}Parameter estimation}{14}{}%
