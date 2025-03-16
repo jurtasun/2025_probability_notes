@@ -3,42 +3,42 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Index}{\EnsureStandardFontEncoding {v}}{}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{}%
-\contentsline {chapter}{\numberline {2}Introduction to probability and random events}{3}{}%
-\contentsline {section}{\numberline {2.1}What is probability?}{3}{}%
-\contentsline {section}{\numberline {2.2}Discrete and continuous}{4}{}%
-\contentsline {section}{\numberline {2.3}Probability distributions}{5}{}%
-\contentsline {subsection}{\numberline {2.3.1}Binomial distribution}{5}{}%
-\contentsline {subsection}{\numberline {2.3.2}Poisson distribution}{7}{}%
-\contentsline {subsection}{\numberline {2.3.3}Uniform distribution}{9}{}%
-\contentsline {subsection}{\numberline {2.3.4}Gaussian distribution}{11}{}%
-\contentsline {subsection}{\numberline {2.3.5}Exponential distribution}{12}{}%
-\contentsline {chapter}{\numberline {3}Parameter estimation}{13}{}%
-\contentsline {section}{\numberline {3.1}Prediction vs inference}{13}{}%
-\contentsline {section}{\numberline {3.2}Parameter estimation}{14}{}%
-\contentsline {section}{\numberline {3.3}Law of Large Numbers (LLN)}{15}{}%
-\contentsline {subsection}{\numberline {3.3.1}Introduction}{15}{}%
-\contentsline {subsection}{\numberline {3.3.2}Definition}{15}{}%
-\contentsline {subsection}{\numberline {3.3.3}Intuition}{15}{}%
-\contentsline {subsection}{\numberline {3.3.4}Types of LLN}{15}{}%
-\contentsline {subsection}{\numberline {3.3.5}Example}{16}{}%
-\contentsline {section}{\numberline {3.4}Central Limit Theorem (CLT)}{17}{}%
-\contentsline {subsection}{\numberline {3.4.1}Introduction}{17}{}%
-\contentsline {subsection}{\numberline {3.4.2}Definition}{17}{}%
-\contentsline {subsection}{\numberline {3.4.3}Intuition}{17}{}%
-\contentsline {subsection}{\numberline {3.4.4}Example}{17}{}%
-\contentsline {subsection}{\numberline {3.4.5}Applications}{17}{}%
-\contentsline {chapter}{\numberline {4}Introduction to statistical inference}{19}{}%
-\contentsline {section}{\numberline {4.1}Prediction vs inference}{19}{}%
-\contentsline {section}{\numberline {4.2}Hypothesis testing}{19}{}%
-\contentsline {section}{\numberline {4.3}Statistic tests}{19}{}%
-\contentsline {section}{\numberline {4.4}P-values and significance}{19}{}%
-\contentsline {section}{\numberline {4.5}Parametric and non-parametric}{21}{}%
-\contentsline {section}{\numberline {4.6}Comparing data and normalization}{21}{}%
-\contentsline {chapter}{\numberline {5}Introduction to bayesian statistics}{23}{}%
-\contentsline {section}{\numberline {5.1}The Bayes' theorem}{23}{}%
-\contentsline {section}{\numberline {5.2}Bayesian vs frequentist}{23}{}%
-\contentsline {section}{\numberline {5.3}Bayesian statistics}{23}{}%
-\contentsline {chapter}{\numberline {6}Stochasticity and Markov processes}{25}{}%
-\contentsline {section}{\numberline {6.1}Stochasticity and Markov processes}{25}{}%
-\contentsline {section}{\numberline {6.2}Markov chains and hidden Markov models}{25}{}%
-\contentsline {section}{\numberline {6.3}Modern applications}{25}{}%
+\contentsline {chapter}{\numberline {2}Introduction to probability and random events}{5}{}%
+\contentsline {section}{\numberline {2.1}What is probability?}{5}{}%
+\contentsline {section}{\numberline {2.2}Discrete and continuous}{6}{}%
+\contentsline {section}{\numberline {2.3}Probability distributions}{7}{}%
+\contentsline {subsection}{\numberline {2.3.1}Binomial distribution}{7}{}%
+\contentsline {subsection}{\numberline {2.3.2}Poisson distribution}{9}{}%
+\contentsline {subsection}{\numberline {2.3.3}Uniform distribution}{11}{}%
+\contentsline {subsection}{\numberline {2.3.4}Gaussian distribution}{13}{}%
+\contentsline {subsection}{\numberline {2.3.5}Exponential distribution}{14}{}%
+\contentsline {chapter}{\numberline {3}Parameter estimation}{15}{}%
+\contentsline {section}{\numberline {3.1}Prediction vs inference}{15}{}%
+\contentsline {section}{\numberline {3.2}Parameter estimation}{16}{}%
+\contentsline {section}{\numberline {3.3}Law of Large Numbers (LLN)}{17}{}%
+\contentsline {subsection}{\numberline {3.3.1}Definition}{17}{}%
+\contentsline {subsection}{\numberline {3.3.2}Intuition}{17}{}%
+\contentsline {subsection}{\numberline {3.3.3}Types of LLN}{17}{}%
+\contentsline {section}{\numberline {3.4}Central Limit Theorem (CLT)}{19}{}%
+\contentsline {subsection}{\numberline {3.4.1}Definition}{19}{}%
+\contentsline {subsection}{\numberline {3.4.2}Intuition}{19}{}%
+\contentsline {subsection}{\numberline {3.4.3}Applications}{19}{}%
+\contentsline {chapter}{\numberline {4}Introduction to statistical inference}{21}{}%
+\contentsline {section}{\numberline {4.1}Prediction vs inference}{21}{}%
+\contentsline {section}{\numberline {4.2}Hypothesis testing}{21}{}%
+\contentsline {section}{\numberline {4.3}Statistic tests, p-values and significance}{22}{}%
+\contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{22}{}%
+\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two groups - Two sample t-test}{24}{}%
+\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher test}{26}{}%
+\contentsline {subsection}{\numberline {4.3.4}Compare more than two groups - ANOVA}{28}{}%
+\contentsline {subsection}{\numberline {4.3.5}Compare distributions - $\chi ^{2}$ test}{30}{}%
+\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{32}{}%
+\contentsline {section}{\numberline {4.5}Comparing data and normalization}{33}{}%
+\contentsline {chapter}{\numberline {5}Introduction to bayesian statistics}{35}{}%
+\contentsline {section}{\numberline {5.1}The Bayes' theorem}{35}{}%
+\contentsline {section}{\numberline {5.2}Bayesian vs frequentist}{35}{}%
+\contentsline {section}{\numberline {5.3}Bayesian statistics}{35}{}%
+\contentsline {chapter}{\numberline {6}Stochasticity and Markov processes}{37}{}%
+\contentsline {section}{\numberline {6.1}Stochasticity and Markov processes}{37}{}%
+\contentsline {section}{\numberline {6.2}Markov chains and hidden Markov models}{37}{}%
+\contentsline {section}{\numberline {6.3}Modern applications}{37}{}%
