@@ -157,8 +157,46 @@ We will distinguish two main families of random events. These in which the numbe
 
 \newpage
 
+\section{Bernoulli trials}
+
+A \textbf{Bernoulli trial} is a random experiment with exactly two possible outcomes: \emph{success} (usually coded as 1) and \emph{failure} (coded as 0). The probability of success is denoted by \( p \), and the probability of failure is \( 1 - p \).
+
+Mathematically, for a single Bernoulli trial with random variable \( X \),
+\[
+P(X = 1) = p \quad \text{and} \quad P(X = 0) = 1 - p,
+\]
+where \( p \in [0, 1] \).
+
+The concept is named after Swiss mathematician \textbf{Jacob Bernoulli} (1655–1705), who was one of the pioneers of probability theory. His work \emph{Ars Conjectandi}, published posthumously in 1713, laid the groundwork for the law of large numbers and formalized many concepts still used today.
+
+\textbf{Example 1: Coin Toss}
+
+A fair coin toss is a Bernoulli trial with
+\[
+p = P(\text{Heads}) = 0.5.
+\]
+We can model it as:
+\[
+X = 
+\begin{cases}
+1 & \text{if Heads} \\
+0 & \text{if Tails}
+\end{cases}
+\]
+
+\textbf{Example 2: Quality Control}
+
+Suppose a machine produces components with a 2\% defect rate. Checking a single part is a Bernoulli trial where:
+\[
+P(\text{Defective}) = 0.02, \quad P(\text{Not Defective}) = 0.98.
+\]
+
+Bernoulli trials form the basis for more complex models such as the \textbf{Binomial distribution}, which models the number of successes in a fixed number of independent Bernoulli trials.
+
+\newpage
+
 \section{Probability distributions}
-So far we have introduced the idea of random events, and the concept of probability as a number to quantify surprise. For our present chapter, we will try to model such stochastic events such that we can make predictions. For that purpose, we will model that probability we just defined to be a descriptive, or \textit{predictive} quantity. Let's begin by saying that not all random phenomena are equal. Hence, a basic way to classify and separate random events, is according to how their probabilities are \textit{distributed}.
+So far we have introduced the idea of random events, and the concept of probability as a number to quantify surprise. For our present chapter, we will try to model such stochastic events such that we can make predictions. For that purpose, we will model that probability we just defined to be a descriptive - even better, \textit{predictive} - quantity. Let's begin by saying that not all random phenomena are equal. Hence, a basic way to classify and separate random events, is according to how their probabilities are \textit{distributed}.
 
 \subsection{Binomial distribution}
 The simplest case of random event we will describe are the so-called \textit{binomial} events. Cases where we make a certain number of measurements $n$, each with two or more possible outcomes, and we want to know the number of successes. For instance, what would be the probability of measuring, or observing, 5 heads if I toss 10 coins? Or what would be the probability of obtaining 5 times a 6, out of a total of 100 dice rolls? In all these cases we will call $x$ the number of successes we want to observe, $n$ the total number of trials, and $p$ the probability of success in each individual trial. The binomial distribution models the number of successes in a fixed number of independent trials, each with the same probability of success. It was developed by Jacob Bernoulli in the 17th century while studying the probability of repeated Bernoulli trials. His work laid the foundation for the Law of Large Numbers.\\
@@ -401,7 +439,7 @@ In our previous examples, we have treated just $x$ as our variable of interest, 
  
  \newpage 
  
-\section{Law of Large Numbers (LLN)}
+\section{The Law of Large Numbers}
 
 \subsection*{Introduction}
 The Law of Large Numbers (LLN) is one of the fundamental theorems of probability theory. It was first formulated by Jacob Bernoulli in the late 17th century and later refined by other mathematicians, including Pafnuty Chebyshev. Bernoulli's work aimed to formalize how relative frequencies of events stabilize as the number of trials increases, providing the foundation for statistical inference. LLN plays a crucial role in statistics, finance, and machine learning, ensuring that averages computed from large samples are reliable estimates of expected values.
@@ -442,7 +480,7 @@ As we roll more dice, the sample mean of observed values gets closer to 3.5.
 
 \newpage
 
-\section{Central Limit Theorem (CLT)}
+\section{The Central Limit Theorem}
 
 \subsection*{Introduction}
 The Central Limit Theorem (CLT) was first discovered in the 18th century by Abraham de Moivre and later developed by Pierre-Simon Laplace and Carl Friedrich Gauss. It formalizes the idea that the distribution of sample means tends toward a normal distribution, regardless of the shape of the original population distribution. The CLT is fundamental in inferential statistics, allowing researchers to make predictions and construct confidence intervals for population parameters based on sample data.

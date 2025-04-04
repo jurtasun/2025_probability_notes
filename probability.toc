@@ -6,20 +6,21 @@
 \contentsline {chapter}{\numberline {2}Introduction to probability and random events}{5}{}%
 \contentsline {section}{\numberline {2.1}What is probability?}{5}{}%
 \contentsline {section}{\numberline {2.2}Discrete and continuous}{7}{}%
-\contentsline {section}{\numberline {2.3}Probability distributions}{8}{}%
-\contentsline {subsection}{\numberline {2.3.1}Binomial distribution}{8}{}%
-\contentsline {subsection}{\numberline {2.3.2}Poisson distribution}{10}{}%
-\contentsline {subsection}{\numberline {2.3.3}Uniform distribution}{12}{}%
-\contentsline {subsection}{\numberline {2.3.4}Gaussian distribution}{14}{}%
-\contentsline {subsection}{\numberline {2.3.5}Exponential distribution}{15}{}%
+\contentsline {section}{\numberline {2.3}Bernoulli trials}{8}{}%
+\contentsline {section}{\numberline {2.4}Probability distributions}{9}{}%
+\contentsline {subsection}{\numberline {2.4.1}Binomial distribution}{9}{}%
+\contentsline {subsection}{\numberline {2.4.2}Poisson distribution}{11}{}%
+\contentsline {subsection}{\numberline {2.4.3}Uniform distribution}{13}{}%
+\contentsline {subsection}{\numberline {2.4.4}Gaussian distribution}{15}{}%
+\contentsline {subsection}{\numberline {2.4.5}Exponential distribution}{16}{}%
 \contentsline {chapter}{\numberline {3}Parameter estimation}{17}{}%
 \contentsline {section}{\numberline {3.1}Prediction vs inference}{17}{}%
 \contentsline {section}{\numberline {3.2}Parameter estimation}{18}{}%
-\contentsline {section}{\numberline {3.3}Law of Large Numbers (LLN)}{19}{}%
+\contentsline {section}{\numberline {3.3}The Law of Large Numbers}{19}{}%
 \contentsline {subsection}{\numberline {3.3.1}Definition}{19}{}%
 \contentsline {subsection}{\numberline {3.3.2}Intuition}{19}{}%
 \contentsline {subsection}{\numberline {3.3.3}Types of LLN}{19}{}%
-\contentsline {section}{\numberline {3.4}Central Limit Theorem (CLT)}{21}{}%
+\contentsline {section}{\numberline {3.4}The Central Limit Theorem}{21}{}%
 \contentsline {subsection}{\numberline {3.4.1}Definition}{21}{}%
 \contentsline {subsection}{\numberline {3.4.2}Intuition}{21}{}%
 \contentsline {subsection}{\numberline {3.4.3}Applications}{21}{}%
