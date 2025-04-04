@@ -101,30 +101,46 @@ Where we denote the sum of all elements with the greek letter $\sum$, starting w
 \chapter{Introduction to probability and random events}
 
 \section{What is probability?}
-As already mentioned in the introduction, probability theory is one of the oldest subjects within mathematical studies. Ideas such as probability or chance, together with measurement, information, inference, can be traced back to ancient times. Paradoxically, almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. Concepts like distributions, gaussian behaviour, p-values, hypothesis testing or normalization, are introduced and formalized in the XXth century by mathematicians such as Pearson and Fisher. For the purpose of this course, we will assume a specific framework, where we will understand probability as a number representing information, or \textit{surprise}. For a detailed discussion on foundations of these topics, please see [...]. For more mathematically advanced texts, check [...]  and [...].
+As already mentioned in the introduction, probability theory is one of the oldest subjects within mathematical studies. Ideas related to chance and random events, together with measurement, information, inference, etc, can be traced back to very ancient times. It could sound surprising, though, that almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. Concepts like distributions, gaussian behaviour, p-values, hypothesis testing or normalization, were introduced and formalized in the XVIII, XIX and XXth century by mathematicians such as Pearson and Fisher (...).\\
 
-Broadly speaking, probability, and later statistical inference, are branches of mathematics dealing with chance, also referred to as \textit{random} events, or \textit{stochastic} processes. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός}, which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such random events.\\
+The first question we could ask ourselves, is what actually \textit{are} random events? What do we mean by \textit{probability}? Since the times of Cardano and Gauss [...], there have been many attempts to explore and describe these, but we will keep it simple. For a more technical introduction to these topics, please see [...]. Broadly speaking, probability, and later statistical inference, are branches of mathematics dealing with chance, also referred to as \textit{random} events, or \textit{stochastic} processes. By random, or stochastic, we will mean simply a process whose output we \textit{ignore}, and as examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός}, which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events.\\
 
-So let's first ask ourselves the question. What \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random, or stochastic, event. For simplicity, we can make it range from 0 to 1, in the following way.
+So let's now ask ourselves the following question. What \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way.
 
 \begin{itemize}
 \item If I'm sure A will never happen, $P(A) = 0$.
 \item If I'm sure A will always happen,  $P(A) = 1$.
-\item For anything in between, there is a level of surprise, and hence $P(A)$ will be a number between 0 and 1.
+\item For anything in between, $P(A) \in [0, 1]$.
 \end{itemize}
 
-We will denote all possible outcomes of an experiment $x_{1}$, $x_{2}$, ..., $x_{n}$. And we will require that the sum of probabilities of all possible outcomes add up to 1. This is a crucial property we will refer as \textit{normalization}	
-\begin{equation}
-	\sum_{i = 0}^{n} \; p(x_{i}) = 1
-\end{equation}
+With the symbol $ \in$ we simply denote that $P(A)$ will be a number between 0 and 1. It could also be read "$P(A)$ is \textit{contained} in the interval $[0, 1]$". In all those cases where we are not sure it we will get one result or another, we say that there is a level of \textit{uncertainty}, or \textit{surprise}. Let's think on a coins toss, as an example. To model such case, the simplest example of a stochastic process, we would have two possible outcomes. Heads ($H$), and tails ($T$)
 
-Once we have a definition for probability in the abstract case, we should have a way to compute for particular cases. A way of doing that, referred to as frequentist approach, is by dividing the number of favorable outcomes by the total number of outcomes.
+\begin{itemize}
+\item If I'm sure I will get heads, $P(H) = 0$, and $P(T) = 0$.
+\item If I'm sure I will get heads, $P(H) = 1$, and $P(0) = 0$.
+\item For anything in between, $P(H) = P(T) = \frac{1}{2}$.
+\end{itemize}
+
+Let's stop here for a moment. When we say that the probability of getting heads - or tails - in a normal coin - a fair one, that is not biased, we are implicitly assuming some things. We implicitly assume that If we repeated the toss many times, half of them we would get one result, and the other half the remaining result. This is normally referred to as the \textit{frequentist} definition of probability, because we are defining its value as the ratio of how many times we get a specific result, and the number of total possible outcomes.
 
 \begin{equation}
 	P(\text{A happening}) = \frac{\text{Number of times A happens}}{\text{Total number of trials}}
 \end{equation}
 
-Probabilities must follow a property we call unitarity. Unitarity ensures that, if we consider and add up the probabilities for all possible events in a given experiment, we get the total. That means, at least one of the scenarios will happen.\\
+Which in the case of the coin, if I toss 100 times, and obtain 55 heads against 45 tails, would lead to 
+
+\begin{equation}
+	P(\text{H}) = \frac{55}{100} = \simeq \frac{1}{2}
+\end{equation}
+
+Ideally we expect that these frequencies, as we increase the number of repetitions, would approach a perfect $frac{1}{2}$. We will revisit this concept when we talk about the Law of Large Number and the Central Limit Theorem, in Chapter 2\\
+
+But this is not the only thing we assume about such a quantity. For probabilities to represent the real behaviour of random processes and information, they must follow another property, called \textit{unitarity}. Unitarity ensures that, if we consider and add up the probabilities for all possible events in a given experiment, we get the total. That means, at least one of the scenarios will happen.\\
+
+Let's denote all possible outcomes of an experiment $x_{1}$, $x_{2}$, ..., $x_{n}$. In the case of coins these will be just $x_{1} = H$, $x_{2} = T$, and with dice, $x_{1} = 1$, $x_{2} = 2$, ..., $x_{6} = 6$. By \textit{unitarity}, mean that the sum of probabilities of all possible outcomes \text{add up to 1}. This is a crucial property we will refer as \textit{normalization}
+\begin{equation}
+	\sum_{i = 0}^{n} \; P(x_{i}) = 1
+\end{equation}
 
 Indeed, the literal meaning of probability comes from latin probabilis. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances."[12] However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence.\\
 
