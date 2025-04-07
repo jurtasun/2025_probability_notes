@@ -41,7 +41,7 @@
 % Chapter - Introduction
 \chapter{Introduction}
 
-\indent In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian inference and hypothesis testing. The text is composed by six chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience or deep mathematical training.\\
+In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian inference and hypothesis testing. The text is composed by six chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience or deep mathematical training.\\
 
 First, we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}. We will introduce the idea of \textit{distribution}, uncertainty and variability, and we will learn how to build quantities - we will call them \textit{estimators}, or \textit{expected values} - that represent the information we have about such random measurements. 
 
@@ -121,14 +121,13 @@ Here three example textbooks covering introduction to probability and statistica
 \end{itemize}
 
 % Chapter - Introduction to probability and random events
-\chapter{Introduction to probability and random events}
+\chapter{Probability and random events}
 
 \section{What is probability?}
-As already mentioned in the introduction, probability theory is one of the oldest subjects within mathematical studies. Ideas related to chance and random events, together with measurement, information, inference, etc, can be traced back to very ancient times. It could sound surprising, though, that almost every topic explained nowadays in modern courses of statistics is extremely new, ranging broadly a century. Concepts like distributions, gaussian behaviour, p-values, hypothesis testing or normalization, were introduced and formalized in the XVIII, XIX and XXth century by mathematicians such as Pearson and Fisher (...).\\
 
-The first question we could ask ourselves, is what actually \textit{are} random events? What do we mean by \textit{probability}? Since the times of Cardano and Gauss [...], there have been many attempts to explore and describe these, but we will keep it simple. For a more technical introduction to these topics, please see [...]. Broadly speaking, probability, and later statistical inference, are branches of mathematics dealing with chance, also referred to as \textit{random} events, or \textit{stochastic} processes. By random, or stochastic, we will mean simply a process whose output we \textit{ignore}, and as examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός}, which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events.\\
+As already mentioned in the introduction, probability is a branch of mathematics dealing with information and random events. Hence, a fair question to begin with, would be what \textit{are} random events? Random events, also referred to as \textit{stochastic}, we will mean simply a process whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός}, which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events.\\
 
-So let's now ask ourselves the following question. What \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way.
+Let's now ask ourselves the following question. What \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way.
 
 \begin{itemize}
 \item If I'm sure A will never happen, $P(A) = 0$.
@@ -136,40 +135,37 @@ So let's now ask ourselves the following question. What \textit{is} probability 
 \item For anything in between, $P(A) \in [0, 1]$.
 \end{itemize}
 
-With the symbol $ \in$ we simply denote that $P(A)$ will be a number between 0 and 1. It could also be read "$P(A)$ is \textit{contained} in the interval $[0, 1]$". In all those cases where we are not sure it we will get one result or another, we say that there is a level of \textit{uncertainty}, or \textit{surprise}. Let's think on a coins toss, as an example. To model such case, the simplest example of a stochastic process, we would have two possible outcomes. Heads ($H$), and tails ($T$)
+With the symbol $ \in$ we simply denote that $P(A)$ will be a number between 0 and 1. It could also be read as $P(A)$ is \textit{contained} in the interval $[0, 1]$. In all those cases where we are not sure it we will get one result or another, we say that there is a level of \textit{uncertainty}, or \textit{surprise}. Let's think on a coins toss, as an example. To model such case, the simplest example of a stochastic process, we would have two possible outcomes: heads ($H$), and tails ($T$)
 
 \begin{itemize}
-\item If I'm sure I will get heads, $P(H) = 0$, and $P(T) = 0$.
-\item If I'm sure I will get heads, $P(H) = 1$, and $P(0) = 0$.
+\item If I'm sure I will get heads, $P(H) = 1$, and $P(T) = 1$.
+\item If I'm sure I will get tails, $P(H) = 0$, and $P(T) = 1$.
 \item For anything in between, $P(H) = P(T) = \frac{1}{2}$.
 \end{itemize}
 
-Let's stop here for a moment. When we say that the probability of getting heads - or tails - in a normal coin - a fair one, that is not biased, we are implicitly assuming some things. We implicitly assume that If we repeated the toss many times, half of them we would get one result, and the other half the remaining result. This is normally referred to as the \textit{frequentist} definition of probability, because we are defining its value as the ratio of how many times we get a specific result, and the number of total possible outcomes.
+The example of the coin, where we have just two possible results, is what we will call a \textit{Bernoulli} trial, which we will describe soon, but let's use it as a prior example now to introduce the idea of probability.\\
+
+The cases in which I am certain, of either one case of the other, are clear. But for the third one, where we assign a value to the probability which is not 0 or 1, we should stop for a second. When we say that the probability of getting heads - or tails - in a normal coin that is not biased is $P = \frac{1}{2}$, we are implicitly assuming some things. We implicitly assume that if we repeated the toss many times, half of them we would get one result (e.g., heads), and the other half the remaining result (e.g., tails). This is normally referred to as the \textit{frequentist} definition of probability, because we are defining its value as the ratio of how many times we get a specific result $n$, and the number of total trials $N$.
 
 \begin{equation}
-	P(\text{A happening}) = \frac{\text{Number of times A happens}}{\text{Total number of trials}}
+	P(\text{A happening}) = \frac{\text{Number of times A happens}}{\text{Total number of trials}} = \frac{n}{N}
 \end{equation}
 
-Which in the case of the coin, if I toss 100 times, and obtain 55 heads against 45 tails, would lead to 
+In the case of the coin, if I toss 100 times, and obtain 55 heads against 45 tails, would lead to 
 
 \begin{equation}
-	P(\text{H}) = \frac{55}{100} = \simeq \frac{1}{2}
+	P(\text{H}) = \frac{55}{100} \simeq \frac{1}{2} \nonumber
 \end{equation}
 
-Ideally we expect that these frequencies, as we increase the number of repetitions, would approach a perfect $frac{1}{2}$. We will revisit this concept when we talk about the Law of Large Number and the Central Limit Theorem, in Chapter 2\\
+Ideally we expect that these frequencies, as we increase the number of repetitions, would approach a perfect $\frac{1}{2}$. We will revisit this concept when we talk about the Law of Large Number and the Central Limit Theorem, in Chapter 2\\
 
-But this is not the only thing we assume about such a quantity. For probabilities to represent the real behaviour of random processes and information, they must follow another property, called \textit{unitarity}. Unitarity ensures that, if we consider and add up the probabilities for all possible events in a given experiment, we get the total. That means, at least one of the scenarios will happen.\\
+But this is not the only thing we assume about such a quantity. For probabilities to represent the real behaviour of random processes and information, they must follow another property, called \textit{unitarity}. Unitarity ensures that, if we consider and add up the probabilities for all possible events in a given experiment, we recover the total. That means, at least one of the scenarios will happen.\\
 
-Let's denote all possible outcomes of an experiment $x_{1}$, $x_{2}$, ..., $x_{n}$. In the case of coins these will be just $x_{1} = H$, $x_{2} = T$, and with dice, $x_{1} = 1$, $x_{2} = 2$, ..., $x_{6} = 6$. By \textit{unitarity}, mean that the sum of probabilities of all possible outcomes \text{add up to 1}. This is a crucial property we will refer as \textit{normalization}
-\begin{equation}
-	\sum_{i = 0}^{n} \; P(x_{i}) = 1
+The formal definition of unitarity can be written as follows. Let's denote all possible outcomes of an experiment $x_{1}$, $x_{2}$, ..., $x_{n}$. In the case of coins these will be just $x_{1} = H$, $x_{2} = T$, and with dice, $x_{1} = 1$, $x_{2} = 2$, ..., $x_{6} = 6$. By \textit{unitarity}, we mean that the sum of probabilities of all possible outcomes \text{add up to 1}. \begin{equation}
+	\sum_{i = 1}^{n} \; P(x_{i}) = 1
 \end{equation}
 
-Indeed, the literal meaning of probability comes from latin probabilis. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances."[12] However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence.\\
-
-The sixteenth-century Italian polymath Girolamo Cardano demonstrated the efficacy of defining odds as the ratio of favourable to unfavourable outcomes (which implies that the probability of an event is given by the ratio of favourable outcomes to the total number of possible outcomes[14]). Aside from the elementary work by Cardano, the doctrine of probabilities dates to the correspondence of Pierre de Fermat and Blaise Pascal (1654). Christiaan Huygens (1657) gave the earliest known scientific treatment of the subject.[15] Jakob Bernoulli's Ars Conjectandi (posthumous, 1713) and Abraham de Moivre's Doctrine of Chances (1718) treated the subject as a branch of mathematics.[16] See Ian Hacking's The Emergence of Probability[10] and James Franklin's The Science of Conjecture[17] for histories of the early development of the very concept of mathematical probability.\\
-
-Like other theories, the theory of probability is a representation of its concepts in formal terms – that is, in terms that can be considered separately from their meaning. These formal terms are manipulated by the rules of mathematics and logic, and any results are interpreted or translated back into the problem domain.\\
+Indeed, the literal meaning of probability comes from latin \textit{probabilis}. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances."[12] However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence.\\
 
 There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details.\\
 
@@ -182,37 +178,40 @@ We will distinguish two main families of random events. These in which the numbe
 
 \section{Bernoulli trials}
 
-A \textbf{Bernoulli trial} is a random experiment with exactly two possible outcomes: \emph{success} (usually coded as 1) and \emph{failure} (coded as 0). The probability of success is denoted by \( p \), and the probability of failure is \( 1 - p \).
+The simplest case we can think of is the \textbf{Bernoulli trial}, named after Swiss mathematician Jacob Bernoulli in late 1600s. A Bernoulli trial is a random experiment with exactly two possible outcomes: \textit{success}, usually labeled as 1, and \textit{failure}, labeled as 0. The probability of success is denoted by $p$, and the probability of failure is $1 - p$.
+Mathematically, for a single Bernoulli trial with random variable $x$,
 
-Mathematically, for a single Bernoulli trial with random variable \( X \),
-\[
-P(X = 1) = p \quad \text{and} \quad P(X = 0) = 1 - p,
-\]
-where \( p \in [0, 1] \).
+\begin{equation}
+P(x = 1) = p \quad \text{and} \quad P(x = 0) = 1 - p,
+\end{equation}
 
-The concept is named after Swiss mathematician \textbf{Jacob Bernoulli} (1655–1705), who was one of the pioneers of probability theory. His work \emph{Ars Conjectandi}, published posthumously in 1713, laid the groundwork for the law of large numbers and formalized many concepts still used today.
+where $p \in [0, 1]$. Note that both probabilities do sum 1, and hence if they properly obey the unitarity property. As well, you can see that this is a generalization of the case of the coin, in which the two outcomes had the same probability $p = 0.1$.\\
 
-\textbf{Example 1: Coin Toss}
+Jacob Bernoulli (1655–1705) was one indeed of the pioneers of probability theory. His work \textit{Ars Conjectandi}, published posthumously in 1713, laid the groundwork for the law of large numbers and formalized many concepts still used today.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli.png}
+    \caption{Representation of the bernoulli distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
+    \label{fig:bernoulli1}
+\end{figure}
+
+\textbf{Example 1: Coin Toss}\\
 
 A fair coin toss is a Bernoulli trial with
-\[
-p = P(\text{Heads}) = 0.5.
-\]
-We can model it as:
-\[
-X = 
+
+\begin{equation}
+p = P(\text{Heads}) = P(\text{Tails}) = 0.5.
+\end{equation}
+
+And we can model it as:
+\begin{equation}
+x = 
 \begin{cases}
 1 & \text{if Heads} \\
 0 & \text{if Tails}
 \end{cases}
-\]
-
-\textbf{Example 2: Quality Control}
-
-Suppose a machine produces components with a 2\% defect rate. Checking a single part is a Bernoulli trial where:
-\[
-P(\text{Defective}) = 0.02, \quad P(\text{Not Defective}) = 0.98.
-\]
+\end{equation}
 
 Bernoulli trials form the basis for more complex models such as the \textbf{Binomial distribution}, which models the number of successes in a fixed number of independent Bernoulli trials.
 
@@ -234,7 +233,7 @@ This is normally referred to as a probability \textit{mass} distribution. The re
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial.png}
     \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
-    \label{fig:random}
+    \label{fig:binomial1}
 \end{figure}
 
 \textbf{Example 1:} Suppose we flip a fair coin 5 times ($n=5$) and want to find the probability of getting exactly 3 heads ($p=0.5$):
@@ -268,7 +267,7 @@ Again, let's consider a couple of examples to illustrate Poisson distributed eve
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/poisson.png}
     \caption{Representation of the Poisson distribution of a random variable $x$, given the number of observations $\lambda$ as a parameter.}
-    \label{fig:random}
+    \label{fig:poisson1}
 \end{figure}
 
 \textbf{Example 1:} We would like to know the probability of observing exactly 5 cancer patients in a hospital over a week, if we know the average number ($\lambda = 3$) patients per week.
@@ -284,10 +283,23 @@ Again, let's consider a couple of examples to illustrate Poisson distributed eve
 
 This sum of probabilities up to a given value is normally referred to as the \textit{cumulative probability}, \textit{cumulative distribution function}, or cdf.\\
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/poisson_highlight.png}
+    \caption{Representation of the Poisson distribution of a random variable $x$, given the number of observations $\lambda$ as a parameter.}
+    \label{fig:poisson2}
+\end{figure}
+
 \textbf{Example 3:} Now let's ask the opposite question. What would be the probability of observing \textit{at least} 5 patients in that same hospital?
+\begin{align}
+    P(x \leq 5; \lambda = 3) &= P(x=0; \lambda = 3) + P(x=1; \lambda = 3) + P(x=2; \lambda = 3) \notag \\
+    &\quad + P(x=3; \lambda = 3) + P(x=4; \lambda = 3) + P(x=5; \lambda = 3) \notag
+\end{align}\\
+
+Given unitarity, we can just compute it as
 \begin{equation}
-    P(x=5; \lambda = 3) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008. \notag
-\end{equation}
+    P(x > 5; \lambda = 3) = 1 - P(x \leq 5; \lambda = 3) = 1 - CDF(5; \lambda = 3). \notag
+\end{equation}\\
 
 \newpage
 \subsection{Uniform distribution}
@@ -304,7 +316,7 @@ The probability of observing a particular result $x$ in a given range $[a, b]$ i
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/uniform.png}
     \caption{Representation of the uniform distribution of a random variable $x$, given the boundary parameters $a$, $b$.}
-    \label{fig:random}
+    \label{fig:uniform1}
 \end{figure}
 
 \textbf{Example 1:} If a random number is chosen from the interval [2, 10], the probability density is:
@@ -375,7 +387,7 @@ The probability density function is:
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/normal.png}
     \caption{Representation of the gaussian distribution of a random variable $x$, given the mean value $\mu$ and standard deviation $\sigma$ parameters.}
-    \label{fig:random}
+    \label{fig:gaussian1}
 \end{figure}
 
 \textbf{Example 1:} If human heights are normally distributed with mean $\mu=170$ cm and standard deviation $\sigma=10$ cm, the probability density of someone being exactly 180 cm is:
@@ -412,7 +424,7 @@ The probability density function is:
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/exponential.png}
     \caption{Representation of the exponential distribution of a random variable $x$, given the decay rate $\lambda$.}
-    \label{fig:random}
+    \label{fig:exponential1}
 \end{figure}
 
 \textbf{Example 1:} If a call center receives calls at an average rate of $\lambda = 2$ per minute, the probability that the next call arrives after more than 2 minutes is:
@@ -473,7 +485,6 @@ The Law of Large Numbers states that as the sample size increases, the sample me
     \bar{X}_n = \frac{1}{n} \sum_{i=1}^{n} X_i \to \mu \quad \text{as } n \to \infty.
 \end{equation}
 
-\subsection{Intuition}
 Consider flipping a fair coin multiple times. The proportion of heads observed converges to 0.5 as the number of flips increases. This illustrates that the observed average stabilizes around the theoretical probability.
 
 \subsection{Types of LLN}
@@ -515,7 +526,6 @@ The Central Limit Theorem states that for a large enough sample size, the sampli
 \end{equation}
 converges in distribution to a standard normal distribution $\mathcal{N}(0,1)$ as $n \to \infty$.
 
-\subsection{Intuition}
 No matter the shape of the original distribution, when we take many samples and compute their means, the histogram of these sample means will resemble a normal curve as the sample size grows.
 
 \begin{figure}[ht]

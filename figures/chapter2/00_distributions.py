@@ -7,12 +7,24 @@ from scipy.stats import binom, poisson, norm, uniform, expon
 figsize = (6, 4)
 color = "#1f77b4"  # Nice blue color
 
+# Bernoulli Distribution
+p = 0.5
+x_bernoulli = [0, 1]
+y_bernoulli = [1 - p, p]
+plt.figure(figsize=figsize)
+plt.bar(x_bernoulli, y_bernoulli, color=color, edgecolor='black', linewidth=1.0, alpha=0.7)
+plt.xlabel("x")
+plt.ylabel("p(x)")
+plt.xticks([0, 1])
+plt.savefig("bernoulli.png")
+plt.close()
+
 # Binomial Distribution
 fig, ax = plt.subplots(figsize=figsize)
 n, p = 20, 0.5
 x_binom = np.arange(0, n+1)
 y_binom = binom.pmf(x_binom, n, p)
-ax.bar(x_binom, y_binom, color=color, alpha=0.7)
+ax.bar(x_binom, y_binom, color=color, edgecolor='black', linewidth=1.0, alpha=0.7)
 ax.set_xlabel("x")
 ax.set_ylabel("p(x)")
 plt.savefig("binomial.png")
@@ -23,7 +35,7 @@ fig, ax = plt.subplots(figsize=figsize)
 lambda_ = 5
 x_poisson = np.arange(0, 20)
 y_poisson = poisson.pmf(x_poisson, lambda_)
-ax.bar(x_poisson, y_poisson, color=color, alpha=0.7)
+ax.bar(x_poisson, y_poisson, color=color, edgecolor='black', linewidth=1.0, alpha=0.7)
 ax.set_xlabel("x")
 ax.set_ylabel("p(x)")
 plt.savefig("poisson.png")
