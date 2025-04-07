@@ -41,55 +41,78 @@
 % Chapter - Introduction
 \chapter{Introduction}
 
-\indent In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian inference and hypothesis testing. The text is composed by six chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience or mathematical training.\\
+\indent In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian inference and hypothesis testing. The text is composed by six chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience or deep mathematical training.\\
 
-First, we will introduce the concept of probability itself, and we will discuss basic ideas on how to model information and chance. Then we will discuss a series of mathematical approaches to such quantities and formally define random processes, also referred to as \textit{stochastic}. We will introduce the idea of a function and how functions need to be adapted to implement uncertainty when discussing random events. In the second part we will address the difference between prediction and inference, and discuss a set of subjects normally grouped under the name of \textit{hypothesis testing}. Here we will introduce how to quantify certainty and bias, how to model significance and the idea of hypothesis tests. Finally, we will briefly discuss more modern topics, such as bayesian statistics, stochasticity and Markov processes.\\
+First, we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}. We will introduce the idea of \textit{distribution}, uncertainty and variability, and we will learn how to build quantities - we will call them \textit{estimators}, or \textit{expected values} - that represent the information we have about such random measurements. 
 
-Probability theory is the branch of mathematics that aims to quantify uncertainty, chance and information in the so-called and random events. It provides the foundation for understanding and modelling various real-world phenomena, ranging from gambling and statistical inference to machine learning and quantum mechanics. In the same way we learn to count and measure, we could try to assign numerical values to the likelihood of different outcomes in an experiment, or quantify the level of certainty - or \textit{surprise} for such unknown result. The modern approach to probability and its fundamental concepts are summarized in the axioms established by the russian mathematician Andrey Kolmogorov, in the early 1930s. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover these concepts in Chapter 1, but first, let's look a bit further in history to explore where the intuitions about chance and information came to appear.\\
+In the second part we will address the difference between prediction and inference, and discuss a set of subjects normally grouped under the name of \textit{hypothesis testing}. Here we will introduce how to quantify certainty and bias, how to model significance and the idea of hypothesis tests. Finally, we will briefly discuss more modern topics, such as bayesian statistics, and further stochasticity with the so-called Markov processes.\\
 
-The idea of stochasticity and randomness has deep historical roots. Ancient civilizations, including the Babylonians, Egyptians, and Greeks, grappled with the concept of uncertainty in games of chance, commerce, and divination. The oldest known dice date back over 5,000 years, indicating an early human fascination with randomness. While these cultures did not develop formal mathematical probability, they recognized patterns in random events and attempted to predict outcomes based on empirical observations and superstitions.\\
-\indent Greek philosophers such as Democritus and Aristotle debated the nature of chance and determinism[...]. The Roman philosopher Cicero distinguished between chance events and those governed by fate, foreshadowing later discussions on probability. It would not be until medieval times, where scholars like Gerolamo Cardano (1501–1576) made early contributions by analyzing gambling problems and laying the groundwork for probability theory.\\
+Ideas such as stochasticity and randomness have deep historical roots. Ancient civilizations, from Babylonians, Egyptians, and Greeks, faced uncertainty in games of chance, commerce, and divination, among others. The oldest known dice date back over 5,000 years, indicating an early human fascination with randomness. While these cultures did not develop formal mathematical probability, they recognized patterns in random events and attempted to predict outcomes based on empirical observations and superstitions.\\
+\indent Greek philosophers such as Democritus and Aristotle debated the nature of chance and determinism [...]. The Roman philosopher Cicero distinguished between chance events and those governed by fate, foreshadowing later discussions on probability. It would not be until medieval times, where mathematicians like Gerolamo Cardano (1501–1576) made early contributions by analyzing gambling problems and laying the groundwork for probability theory.\\
 
-The first formalization of probability as a mathematical discipline began in the 17th century with the correspondence between Blaise Pascal and Pierre de Fermat, who devised combinatorial methods to solve problems related to games of chance. Their work introduced fundamental ideas such as expected value and laid the foundation for later advances by Christiaan Huygens, Jacob Bernoulli, and Abraham de Moivre. Bernoulli’s \textit{Ars Conjectandi} (1713) introduced the Law of Large Numbers, establishing that observed frequencies converge to theoretical probabilities over many trials, a topic we will extensively cover in Chapter 2.\\
+Such intuitions properly formalized probability as a mathematical discipline in the 17th century, with the correspondence between Blaise Pascal and Pierre de Fermat, who devised combinatorial methods to solve problems related to games of chance. Their work introduced fundamental ideas such as expected value and laid the foundation for later advances by Christiaan Huygens, Jacob Bernoulli, and Abraham de Moivre. Bernoulli’s \textit{Ars Conjectandi} (1713) introduced the Law of Large Numbers, establishing that observed frequencies converge to theoretical probabilities over many trials. All these names and topics will be covered in detail through chapters 2 and 3.\\
 
-As we will cover in the first chapter, the main object of study in probability and chance are the so-called \textit{stochastic} process. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός}, which literally means \textit{to guess}. By stochastic, we just mean a process, or a system, that evolves randomly over time. Unlike deterministic processes, where the outcome is fixed by initial conditions, stochastic processes incorporate uncertainty at each step. The reader could anticipate here that almost \textit{any} process can be modelled as a stochastic process, from the brownian motion of particles in physics, to signal processing in engineering, population behaviours, and stock price fluctuations in finance. A stochastic process will be defined as a collection of random variables indexed by time or space, commonly represented as $x$. The probability of a variable $x$ to take a specific value $x_{0}$ when measured will be given by $P(x = x_{0})$\\
+At the end of each chapter there will be a series of exercises and coding examples to illustrate and demonstrate the concepts discussed. To avoid misconceptions, let us emphasize here that both, probability and statistics are branches of mathematics that aim to quantify uncertainty, chance and information in the random events, \textit{much earlier} than computers, coding languages, Python, R or P-values were even conceived. The data-oriented, practical ways in which we nowadays focus probability and stats, heavily relying on computation, is just a consequence of the fact that automatized measurements are nowadays available and trendy in modern times.
 
-One of the most fundamental stochastic processes is the Markov process, which exhibits the Markov property: the future state depends only on the present state, not on past history. This property makes Markov chains particularly useful in modelling systems with memoryless transitions, such as queueing networks and genetic sequences. Another significant class of stochastic processes is the Poisson process, which describes the occurrence of rare events over time, such as radioactive decay or network traffic.\\
+As one could guess already, a proper understanding of such topics - uncertainty, variation, probability, chance - can be applied to describing a vas amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis in physics, biology, machine learning and quantum mechanics. In the same way we learn to count and measure, we could try to assign numerical values to the likelihood of different outcomes in an experiment, or quantify the level of certainty - or \textit{surprise} - for such unknown result. The modern approach to probability and its fundamental concepts are summarized in the axioms established by the Russian mathematician Andrey Kolmogorov, in the early 1930s. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover this with a bit more detail in Chapter 1.\\
 
-Information theory, developed by Claude Shannon, is deeply intertwined with probability and stochastic processes. It quantifies the amount of uncertainty or surprise in a system and provides a mathematical foundation for data compression and communication. The fundamental measure in information theory is entropy, defined as:
-\begin{equation}
-    H(X) = -\sum_{i} P(x_i) \log P(x_i),
-\end{equation}
-where $P(x_i)$ is the probability of observing outcome $x_i$. Entropy captures the unpredictability of a source of information, with higher entropy indicating greater uncertainty.\\
+This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are behind.
 
-Shannon also introduced the concept of mutual information, which measures the reduction in uncertainty about one random variable given knowledge of another. This concept is crucial in signal processing, machine learning, and cryptography, where efficient information transfer and encoding are essential.\\
-
-Together, probability theory, stochastic processes, and information theory form a powerful toolkit for modelling and analyzing uncertainty. Their applications span numerous disciplines, from physics and biology to artificial intelligence and cybersecurity. Understanding these concepts allows for the development of efficient algorithms, accurate predictions, and optimized decision-making strategies in uncertain environments.\\
-
-	This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are behind. Let's start with an example of quantities most students are already familiar with, and for which they may have some intuition, but that are not always properly introduced at the mathematical level. Let's illustrate with an example how to properly define the \textit{mean} and \textit{variance} of a set of observations.\\
+Let's start defining a couple of quantities most people are already familiar with, and for which they may have some intuition, as a warmup example. Let's illustrate with an example how to properly define the \textit{mean} and \textit{variance} of a set of observations.\\
 	
-	Imagine we are doing an experiment and we measure some variable $x$ (position, energy, concentration, ...). We repeat the measurement three times and we get first 1, then 2, and the last time 3. We will write our $x = {1, 2, 3}$. We define the \textit{mean} - or \textit{average} - $\bar{x}$as the sum of all element and divided by the total.
+Imagine we are doing an experiment and we measure some variable - let's call it $x$ - that can be anything (position at a given time, energy of some system, concentration, ...). We repeat the measurement three times and we get first 1, then 2, and the last time 3. That will be our set of observations, or our \textit{sample}, $x_{1}$. We could write it as a list, or a \textit{vector} - in the following way as
 
 \begin{equation}
-\bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_{i}
+x_{1} = \{1, 2, 3\} \nonumber. 
 \end{equation}
 
-Where we denote the sum of all elements with the greek letter $\sum$, starting with the first one $i = 1$ and until the last one $i = N$. If we now substitute that expression for our set of $N = 3$ observations
-\begin{equation}
-\bar{x} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2
-\end{equation}
+Keep in mind that from the mathematics perspective the word \textit{vector} has a different meaning, with subtleties related to algebraic operations and relations they should satisfy, but for the purpose of this course, where we prioritize above all simplicity, a vector and a list of numbers will be essentially the same thing.\\
 
-In a similar way, we can define the \textit{variance} as a quantity that captures how far are the elements of the set from the mean value.
-Here are three important textbooks in the field of probability and statistics:
+We define the \textit{mean} - or \textit{average} - $\bar{x}$ of an arbitrary large sample of $N$ observations, as the sum of all elements divided by the total.
 
 \begin{equation}
-\bar{x} = \frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}
+\bar{x} = \frac{1}{N} (x_{1} + x_{2} + ... + x_{N}) = \frac{1}{N} \sum_{i = 1}^{N} x_{i}
 \end{equation}
 
-Where we denote the sum of all elements with the greek letter $\sum$, starting with the first one $i = 1$ and until the last one $i = N$. If we now substitute that expression for our set of $N = 3$ observations
+Here we denote the sum of all elements with the greek letter $\sum$, starting with the first one ($i = 1$) and until the last one ($i = N$). If we now substitute that expression for our set $x_{1}$, which has just $N = 3$ observations, we get
+
 \begin{equation}
-\bar{x} = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1
+\bar{x}_{1} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2 \nonumber
 \end{equation}
+
+As we see, the mean is just a quantity that captures some information about the "central" value, where the bulk of event are. In a similar way, we can define the \textit{variance} as a quantity that captures how far are the elements of the sample from the mean value.
+
+\begin{equation}
+s^{2} = \frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}. 
+\end{equation}
+
+Again, just by substituting that expression for our set $x_{1}$, which has just $N = 3$ observations, we get
+
+\begin{equation}
+s_{1}^{2} = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \nonumber
+\end{equation}
+
+which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean.
+
+As an exercise, try to compute both the mean and variance for a second sample, let's say
+
+\begin{equation}
+x_{2} = \{4, 5, 6\} \nonumber. 
+\end{equation}
+
+You should get: 
+
+\begin{equation}
+\bar{x}_{2} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (4 + 5 + 6) = 5 \nonumber
+\end{equation}
+
+\begin{equation}
+s^{2}_{2} = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((4 - 5)^{2} + (5 - 5)^{2} + (6 - 5)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \nonumber
+\end{equation}
+
+Again, our mean $\bar{x}_{2} = 5$ encodes the information about the "central" value, where the bulk of event are. The variance $s^{2}_{2} = 1$ indicates that, as in the previous example, .\\
+
+Here three example textbooks covering introduction to probability and statistical inference, for further reading.
 
 \begin{itemize}
 \item A simple, intuitive introduction to statistics with few mathematical concepts is provided in Spiegelhalter's \textit{The Art of Statistics: How to Learn from Data} \cite{spiegelhalter2019art}. 
