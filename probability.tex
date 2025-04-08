@@ -5,8 +5,6 @@
 \usepackage[english, greek]{babel}
 \usepackage[margin=1in]{geometry} 
 
-\makeindex
-
 \begin{document}
 \selectlanguage{english} 
 
@@ -30,7 +28,6 @@
 \selectlanguage{english}
 \tableofcontents
 
-\chapter*{Index}
 \addcontentsline{toc}{chapter}{Index}
 \clearpage
 \printindex
@@ -52,11 +49,11 @@ Ideas such as stochasticity and randomness have deep historical roots. Ancient c
 
 Such intuitions properly formalized probability as a mathematical discipline in the 17th century, with the correspondence between Blaise Pascal and Pierre de Fermat, who devised combinatorial methods to solve problems related to games of chance. Their work introduced fundamental ideas such as expected value and laid the foundation for later advances by Christiaan Huygens, Jacob Bernoulli, and Abraham de Moivre. Bernoulli’s \textit{Ars Conjectandi} (1713) introduced the Law of Large Numbers, establishing that observed frequencies converge to theoretical probabilities over many trials. All these names and topics will be covered in detail through chapters 2 and 3.\\
 
-At the end of each chapter there will be a series of exercises and coding examples to illustrate and demonstrate the concepts discussed. To avoid misconceptions, let us emphasize here that both, probability and statistics are branches of mathematics that aim to quantify uncertainty, chance and information in the random events, \textit{much earlier} than computers, coding languages, Python, R or P-values were even conceived. The data-oriented, practical ways in which we nowadays focus probability and stats, heavily relying on computation, is just a consequence of the fact that automatized measurements are nowadays available and trendy in modern times.
+At the end of each chapter there will be a series of exercises and coding examples to illustrate and demonstrate the concepts discussed. To avoid misconceptions, let us emphasize here that both, probability and statistics are branches of mathematics that aim to quantify uncertainty, chance and information in the random events, \textit{much earlier} than computers, coding languages, Python, R or P-values were even conceived. The data-oriented, practical ways in which we nowadays focus probability and stats, heavily relying on computation, is just a consequence of the fact that automatized measurements are nowadays available and trendy in modern times.\\
 
 As one could guess already, a proper understanding of such topics - uncertainty, variation, probability, chance - can be applied to describing a vas amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis in physics, biology, machine learning and quantum mechanics. In the same way we learn to count and measure, we could try to assign numerical values to the likelihood of different outcomes in an experiment, or quantify the level of certainty - or \textit{surprise} - for such unknown result. The modern approach to probability and its fundamental concepts are summarized in the axioms established by the Russian mathematician Andrey Kolmogorov, in the early 1930s. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover this with a bit more detail in Chapter 1.\\
 
-This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are behind.
+This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are behind.\\
 
 Let's start defining a couple of quantities most people are already familiar with, and for which they may have some intuition, as a warmup example. Let's illustrate with an example how to properly define the \textit{mean} and \textit{variance} of a set of observations.\\
 	
@@ -100,7 +97,7 @@ As an exercise, try to compute both the mean and variance for a second sample, l
 x_{2} = \{4, 5, 6\} \nonumber. 
 \end{equation}
 
-You should get: 
+Buy substituting in the general expressions of $\bar{x}$ and $s^{2}$ you should get the following results: 
 
 \begin{equation}
 \bar{x}_{2} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (4 + 5 + 6) = 5 \nonumber
@@ -111,8 +108,22 @@ s^{2}_{2} = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2}
 \end{equation}
 
 Again, our mean $\bar{x}_{2} = 5$ encodes the information about the "central" value, where the bulk of event are. The variance $s^{2}_{2} = 1$ indicates that, as in the previous example, .\\
+Another useful quantity used to characterize variability is the so called \textit{standard deviation}, which is just the square root of the variance
 
-Here three example textbooks covering introduction to probability and statistical inference, for further reading.
+\begin{equation}
+s = \sqrt{\frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}}. 
+\end{equation}
+
+Sometimes it is useful to use the standard deviation and sometimes the the variance, depending on the question and topic [...]\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter1/normal_hist.png}
+    \caption{Histogram representing the mean and standard deviation for a set of gaussian observations. The mean shows the central value where the bulk of events lie, where the standard deviation is a measure of the variability, how spread the observations are with respect to the mean}
+    \label{fig:mean_gaussian}
+\end{figure}
+
+Example textbooks covering introduction to probability and statistical inference, for further reading [...].
 
 \begin{itemize}
 \item A simple, intuitive introduction to statistics with few mathematical concepts is provided in Spiegelhalter's \textit{The Art of Statistics: How to Learn from Data} \cite{spiegelhalter2019art}. 
@@ -169,14 +180,12 @@ Indeed, the literal meaning of probability comes from latin \textit{probabilis}.
 
 There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details.\\
 
-\section{Discrete and continuous}
-Once we have an insight on random events, and a mathematical quantity representing that uncertainty, we are ready to deal with real problems. From tossing coins, to rolling dice, to making measurements, the first thing we realize is that not \textit{all} random events are equal. In some cases, like rolling a fair dice, all outcomes are equally probable, and in other cases, such as counting, we may encounter somre results which happen much more often than others. The main criteria we will use for differentiate among random events, is what we will call their \textit{distribution}.\\
-
-We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous}.
-
 \newpage
 
-\section{Bernoulli trials}
+\section{Probability distributions}
+So far we have introduced the idea of random events, and the concept of probability as a number to quantify surprise. For our present chapter, we will try to model such stochastic events such that we can make predictions. For that purpose, we will model that probability we just defined to be a descriptive - even better, \textit{predictive} - quantity. Let's begin by saying that not all random phenomena are equal. Hence, a basic way to classify and separate random events, is according to how their probabilities are \textit{distributed}.
+ 
+ \subsection{Bernoulli distribution}
 
 The simplest case we can think of is the \textbf{Bernoulli trial}, named after Swiss mathematician Jacob Bernoulli in late 1600s. A Bernoulli trial is a random experiment with exactly two possible outcomes: \textit{success}, usually labeled as 1, and \textit{failure}, labeled as 0. The probability of success is denoted by $p$, and the probability of failure is $1 - p$.
 Mathematically, for a single Bernoulli trial with random variable $x$,
@@ -216,9 +225,6 @@ x =
 Bernoulli trials form the basis for more complex models such as the \textbf{Binomial distribution}, which models the number of successes in a fixed number of independent Bernoulli trials.
 
 \newpage
-
-\section{Probability distributions}
-So far we have introduced the idea of random events, and the concept of probability as a number to quantify surprise. For our present chapter, we will try to model such stochastic events such that we can make predictions. For that purpose, we will model that probability we just defined to be a descriptive - even better, \textit{predictive} - quantity. Let's begin by saying that not all random phenomena are equal. Hence, a basic way to classify and separate random events, is according to how their probabilities are \textit{distributed}.
 
 \subsection{Binomial distribution}
 The simplest case of random event we will describe are the so-called \textit{binomial} events. Cases where we make a certain number of measurements $n$, each with two or more possible outcomes, and we want to know the number of successes. For instance, what would be the probability of measuring, or observing, 5 heads if I toss 10 coins? Or what would be the probability of obtaining 5 times a 6, out of a total of 100 dice rolls? In all these cases we will call $x$ the number of successes we want to observe, $n$ the total number of trials, and $p$ the probability of success in each individual trial. The binomial distribution models the number of successes in a fixed number of independent trials, each with the same probability of success. It was developed by Jacob Bernoulli in the 17th century while studying the probability of repeated Bernoulli trials. His work laid the foundation for the Law of Large Numbers.\\
@@ -303,11 +309,9 @@ Given unitarity, we can just compute it as
 
 \newpage
 \subsection{Uniform distribution}
-The last example of such discrete random - remember that by discrete we mean \textit{countable} number of outcomes -  will be those which are \textit{uniformly} distributed. That means that all possible outcomes are equally probable, such as rolling a fair die, or tossing a coin.
 
-The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely. This distribution has been used since antiquity, especially in early probability and gambling studies.
+The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely. The probability of observing a particular result $x$ in a given range $[a, b]$ is:
 
-The probability of observing a particular result $x$ in a given range $[a, b]$ is:
 \begin{equation}
     f(x; a, b) = \frac{1}{b-a}, \quad a \leq x \leq b.
 \end{equation}
@@ -319,22 +323,44 @@ The probability of observing a particular result $x$ in a given range $[a, b]$ i
     \label{fig:uniform1}
 \end{figure}
 
-\textbf{Example 1:} If a random number is chosen from the interval [2, 10], the probability density is:
+\newpage
+
+\subsection{Gaussian distribution}
+Introduced by Carl Friedrich Gauss, the normal distribution became central to statistics due to the Central Limit Theorem (CLT). It describes how averages of large samples tend to form a bell-shaped curve. Intuitively, many natural and social phenomena follow a normal distribution, such as human heights and test scores.
+
+The probability density function is:
 \begin{equation}
-    f(x; a, b) = \frac{1}{10-2} = 0.125.
+    f(x; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
 \end{equation}
 
-\textbf{Example 2:} If a random number is chosen from the interval [2, 10], the probability density is:
-\begin{equation}
-    f(x; a, b) = \frac{1}{10-2} = 0.125.
-\end{equation}
-
-\textbf{Example 3:} If a random number is chosen from the interval [2, 10], the probability density is:
-\begin{equation}
-    f(x; a, b) = \frac{1}{10-2} = 0.125.
-\end{equation}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/normal.png}
+    \caption{Representation of the gaussian distribution of a random variable $x$, given the mean value $\mu$ and standard deviation $\sigma$ parameters.}
+    \label{fig:gaussian1}
+\end{figure}
 
 \newpage
+
+\subsection{Exponential distribution}
+The exponential distribution models waiting times between. Intuitively, it describes situations where the probability of waiting a certain time between events remains constant, such as time between bus arrivals.\\
+
+The probability density function is:
+\begin{equation}
+    f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0.
+\end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/exponential.png}
+    \caption{Representation of the exponential distribution of a random variable $x$, given the decay rate $\lambda$.}
+    \label{fig:exponential1}
+\end{figure}
+
+\section{Discrete and continuous}
+Once we have an insight on random events, and a mathematical quantity representing that uncertainty, we are ready to deal with real problems. From tossing coins, to rolling dice, to making measurements, the first thing we realize is that not \textit{all} random events are equal. In some cases, like rolling a fair dice, all outcomes are equally probable, and in other cases, such as counting, we may encounter somre results which happen much more often than others. The main criteria we will use for differentiate among random events, is what we will call their \textit{distribution}.\\
+
+We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous}. [...]
 
 So far we have focused on discrete events, that is, scenarios where the number of possible outcomes was an integer number. Now we will encounter a second family of stochastic processes, the ones we will refer to as continuous. In the discrete case, we were implicitly using the frequentist definition of probability, as a number that represents the ratio of how many times we will observe a particular result, if we endlessly repeat (...).\\
 
@@ -368,99 +394,24 @@ For such cases we will define a mathematical quantity, similar to that we called
 
 In the same way we imposed that probability needs to obey unitarity, we will impose that property in our recently defined probability density $f(x)$. The way we represent the sum for all possible cases in the continuous case, is just imposing that the integral of the function $f(x)$ is 1. This is just an example of \textit{normalization}, that we will explore further in chapter 4.
 
-\newpage
-\subsection{Gaussian distribution}
-Introduced by Carl Friedrich Gauss, the normal distribution became central to statistics due to the Central Limit Theorem (CLT). It describes how averages of large samples tend to form a bell-shaped curve.
-
-Intuitively, many natural and social phenomena follow a normal distribution, such as human heights and test scores.
-
-Introduced by Carl Friedrich Gauss, the normal distribution became central to statistics due to the Central Limit Theorem (CLT). It describes how averages of large samples tend to form a bell-shaped curve.
-
-Intuitively, many natural and social phenomena follow a normal distribution, such as human heights and test scores.
-
-The probability density function is:
-\begin{equation}
-    f(x; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
-\end{equation}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/normal.png}
-    \caption{Representation of the gaussian distribution of a random variable $x$, given the mean value $\mu$ and standard deviation $\sigma$ parameters.}
-    \label{fig:gaussian1}
-\end{figure}
-
-\textbf{Example 1:} If human heights are normally distributed with mean $\mu=170$ cm and standard deviation $\sigma=10$ cm, the probability density of someone being exactly 180 cm is:
-\begin{equation}
-    f(180) = \frac{1}{10 \sqrt{2\pi}} e^{-\frac{(180-170)^2}{2(10)^2}} \approx 0.0242.
-\end{equation}
-
-\textbf{Example 2:} If human heights are normally distributed with mean $\mu=170$ cm and standard deviation $\sigma=10$ cm, the probability density of someone being exactly 180 cm is:
-\begin{equation}
-    f(180) = \frac{1}{10 \sqrt{2\pi}} e^{-\frac{(180-170)^2}{2(10)^2}} \approx 0.0242.
-\end{equation}
-
-\textbf{Example 3:} If human heights are normally distributed with mean $\mu=170$ cm and standard deviation $\sigma=10$ cm, the probability density of someone being exactly 180 cm is:
-\begin{equation}
-    f(180) = \frac{1}{10 \sqrt{2\pi}} e^{-\frac{(180-170)^2}{2(10)^2}} \approx 0.0242.
-\end{equation}
-
-\newpage
-\subsection{Exponential distribution}
-The exponential distribution models waiting times between Poisson process events. It has been widely applied in reliability analysis and survival studies.
-
-Intuitively, it describes situations where the probability of waiting a certain time between events remains constant, such as time between bus arrivals.
-
-The exponential distribution models waiting times between Poisson process events. It has been widely applied in reliability analysis and survival studies.
-
-Intuitively, it describes situations where the probability of waiting a certain time between events remains constant, such as time between bus arrivals.
-
-The probability density function is:
-\begin{equation}
-    f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0.
-\end{equation}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/exponential.png}
-    \caption{Representation of the exponential distribution of a random variable $x$, given the decay rate $\lambda$.}
-    \label{fig:exponential1}
-\end{figure}
-
-\textbf{Example 1:} If a call center receives calls at an average rate of $\lambda = 2$ per minute, the probability that the next call arrives after more than 2 minutes is:
-\begin{equation}
-    P(X > 2) = e^{-2(2)} = e^{-4} \approx 0.0183.
-\end{equation}
-
-\textbf{Example 2:} If a call center receives calls at an average rate of $\lambda = 2$ per minute, the probability that the next call arrives after more than 2 minutes is:
-\begin{equation}
-    P(X > 2) = e^{-2(2)} = e^{-4} \approx 0.0183.
-\end{equation}
-
-\textbf{Example 3:} If a call center receives calls at an average rate of $\lambda = 2$ per minute, the probability that the next call arrives after more than 2 minutes is:
-\begin{equation}
-    P(X > 2) = e^{-2(2)} = e^{-4} \approx 0.0183.
-\end{equation}
-
 % Chapter - Parameter estimation
 \chapter{Parameter estimation}
 
 \section{Prediction vs inference}
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
+
+In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory - prediction - experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if a given set of assumptions are compatible with the obtained data. Indeed, most modern data analysis and hypothesis testing lie in the \textit{inferential} statistics, rather than \textit{predictive} probability.\\
+
+Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a some set of observations, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices?
 
 The difference between prediction and inference has been a topic of interest in statistics and data science for centuries. While both concepts involve drawing conclusions from data, their goals, methodologies, and historical development differ significantly.\\
 
-The roots of inference trace back to classical statistics, particularly the work of Pierre-Simon Laplace (1749–1827) and Carl Friedrich Gauss (1777–1855), who developed probability theory and the method of least squares. Their work laid the foundation for statistical inference, which aims to understand relationships between variables and make generalizable conclusions about populations from samples.\\
+The roots of inference trace back to classical statistics, particularly the work of Pierre-Simon Laplace (1749–1827) and Carl Friedrich Gauss (1777–1855), who developed probability theory and the method of least squares. Their work laid the foundation for statistical inference, which aims to understand relationships between variables and make generalizable conclusions about populations from samples. For example, Laplace used probability theory to estimate the population of France, introducing Bayesian inference, which provides a framework for updating beliefs based on observed data. Gauss contributed the normal distribution and least squares estimation, which became essential for making inferences about unknown parameters.\\
 
-For example, Laplace used probability theory to estimate the population of France, introducing Bayesian inference, which provides a framework for updating beliefs based on observed data. Gauss contributed the normal distribution and least squares estimation, which became essential for making inferences about unknown parameters.\\
+Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis aim to understand and describe these relationships. The emphasis lies on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions [...]. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
 
-On the other hand, prediction as a primary goal gained traction much later, particularly in the 20th century with the rise of machine learning. The focus shifted from understanding relationships to optimizing models that generalize well to unseen data. In 2001, Leo Breiman, in his seminal paper "Statistical Modeling: The Two Cultures," highlighted the distinction, arguing that traditional statistics emphasized inference, whereas modern machine learning prioritized prediction.\\
+Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data.\\
 
-Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a dataset, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis help researchers understand these relationships. The emphasis is on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
-
-Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. A key contributor to predictive modeling was Andrey Kolmogorov (1903–1987), who formalized probability theory and stochastic processes. His work laid the foundation for modern probabilistic models used in machine learning and artificial intelligence. Later, Vapnik and Chervonenkis (1971) developed statistical learning theory, which introduced VC dimension, a measure of a model’s ability to generalize. This work led to the development of Support Vector Machines (SVMs), a key predictive tool in machine learning.\\
-
-While Breiman’s paper emphasized the divide between the two approaches, modern data science integrates both. In many cases, understanding causal relationships (inference) can improve predictive performance, and accurate prediction can guide further investigations into causality. For example, epidemiologists use inference to understand how diseases spread, but they also use predictive models to forecast outbreaks. In finance, analysts infer factors affecting stock prices while using machine learning to predict market trends. By combining both approaches, we gain a more comprehensive understanding of data, allowing for both insightful interpretations and powerful predictions.
+Focus shifted from understanding relationships to optimizing models that generalize well to unseen data [...]. In 2001, Leo Breiman, in his seminal paper "Statistical Modeling: The Two Cultures," highlighted the distinction, arguing that traditional statistics emphasized inference, whereas modern machine learning prioritized prediction.\\
 
 \section{Parameter estimation}
 Another key difference we will discuss now, and quite a subtle one from the mathematical perspective, is that one between a \textit{variable} and a \textit{parameter}. Consider the example of a binomial experiment, e.g. tossing coins and asking for the probability of measuring a specific number of heads. There, we would write it as 
@@ -476,10 +427,8 @@ In our previous examples, we have treated just $x$ as our variable of interest, 
  
 \section{The Law of Large Numbers}
 
-\subsection*{Introduction}
-The Law of Large Numbers (LLN) is one of the fundamental theorems of probability theory. It was first formulated by Jacob Bernoulli in the late 17th century and later refined by other mathematicians, including Pafnuty Chebyshev. Bernoulli's work aimed to formalize how relative frequencies of events stabilize as the number of trials increases, providing the foundation for statistical inference. LLN plays a crucial role in statistics, finance, and machine learning, ensuring that averages computed from large samples are reliable estimates of expected values.
+The Law of Large Numbers (LLN) is one of the fundamental theorems of probability theory. It was first formulated by Jacob Bernoulli in the late 17th century and later refined by other mathematicians, such as Pafnuty Chebyshev. Bernoulli's work aimed to formalize how relative frequencies of events stabilize as the number of trials increases, providing the foundation for statistical inference. LLN plays a crucial role in statistics, finance, and machine learning, ensuring that averages computed from large samples are reliable estimates of expected values.\\
 
-\subsection{Definition}
 The Law of Large Numbers states that as the sample size increases, the sample mean approaches the expected value. Formally, if $X_1, X_2, \dots, X_n$ are independent and identically distributed (i.i.d.) random variables with expected value $\mathbb{E}[X] = \mu$, then:
 \begin{equation}
     \bar{X}_n = \frac{1}{n} \sum_{i=1}^{n} X_i \to \mu \quad \text{as } n \to \infty.
@@ -487,7 +436,6 @@ The Law of Large Numbers states that as the sample size increases, the sample me
 
 Consider flipping a fair coin multiple times. The proportion of heads observed converges to 0.5 as the number of flips increases. This illustrates that the observed average stabilizes around the theoretical probability.
 
-\subsection{Types of LLN}
 \begin{itemize}
     \item \textbf{Weak Law of Large Numbers (WLLN)}: Convergence in probability, i.e., for any $\epsilon > 0$, 
     \begin{equation}
@@ -516,10 +464,8 @@ As we roll more dice, the sample mean of observed values gets closer to 3.5.
 
 \section{The Central Limit Theorem}
 
-\subsection*{Introduction}
-The Central Limit Theorem (CLT) was first discovered in the 18th century by Abraham de Moivre and later developed by Pierre-Simon Laplace and Carl Friedrich Gauss. It formalizes the idea that the distribution of sample means tends toward a normal distribution, regardless of the shape of the original population distribution. The CLT is fundamental in inferential statistics, allowing researchers to make predictions and construct confidence intervals for population parameters based on sample data.
+The Central Limit Theorem (CLT) was first discovered in the 18th century by Abraham de Moivre and later developed by Pierre-Simon Laplace and Carl Friedrich Gauss. It formalizes the idea that the distribution of sample means tends toward a normal distribution, regardless of the shape of the original population distribution. The CLT is fundamental in inferential statistics, allowing researchers to make predictions and construct confidence intervals for population parameters based on sample data.\\
 
-\subsection{Definition}
 The Central Limit Theorem states that for a large enough sample size, the sampling distribution of the sample mean follows a normal distribution, regardless of the original population distribution. Formally, if $X_1, X_2, \dots, X_n$ are i.i.d. random variables with mean $\mu$ and variance $\sigma^2$, then the standardized sample mean:
 \begin{equation}
     Z = \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}}
@@ -530,14 +476,13 @@ No matter the shape of the original distribution, when we take many samples and 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter3/law_large_numbers.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter3/central_limit_theorem.png}
     \caption{Representation of the law or large numbers. The sample mean follows a gaussian distribution as the sample size $n$ increases.}
     \label{fig:random}
 \end{figure}
 
-\textbf{Example}: Consider rolling a fair six-sided die multiple times and computing the average outcome for groups of $n$ rolls. As $n$ increases, the distribution of these sample means approaches a normal distribution, centered at $\mu=3.5$.
+\textbf{Example}: Consider rolling a fair six-sided die multiple times and computing the average outcome for groups of $n$ rolls. As $n$ increases, the distribution of these sample means approaches a normal distribution, centered at $\mu=3.5$.\\
 
-\subsection{Applications}
 \begin{itemize}
     \item Used in inferential statistics to approximate sampling distributions.
     \item Forms the basis for hypothesis testing and confidence intervals.
@@ -561,170 +506,60 @@ Statistic tests, p-values and significance
 
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
 
-Let's begin with the simplest example of hypothesis testing we can think of. The so-called \textit{one-sample t-test} is used to determine whether the mean of a single sample differs significantly from a known or hypothesized population mean. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
+The so-called \textit{one-sample t-test} is used to determine whether the mean of a single sample differs significantly from a known or hypothesized population mean. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
 \[
     t = \frac{\bar{x} - \mu}{\sqrt{n}},
 \]
 where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.
 
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/t_1_sample_observations.png}
-    \caption{Observations following gaussian distribution.}
-    \label{fig:t_1_sample_obs}
-\end{figure}
-
-Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a dataset, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis help researchers understand these relationships. The emphasis is on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
-
-Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. A key contributor to predictive modeling was Andrey Kolmogorov (1903–1987), who formalized probability theory and stochastic processes. His work laid the foundation for modern probabilistic models used in machine learning and artificial intelligence. Later, Vapnik and Chervonenkis (1971) developed statistical learning theory, which introduced VC dimension, a measure of a model’s ability to generalize. This work led to the development of Support Vector Machines (SVMs), a key predictive tool in machine learning.\\
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/t_1_sample_distribution.png}
-    \caption{Representation of the Student's t distribution for given $t_{obs}$ value.}
-    \label{fig:t_1_sample_dist}
-\end{figure}
-
-While Breiman’s paper emphasized the divide between the two approaches, modern data science integrates both. In many cases, understanding causal relationships (inference) can improve predictive performance, and accurate prediction can guide further investigations into causality. For example, epidemiologists use inference to understand how diseases spread, but they also use predictive models to forecast outbreaks. In finance, analysts infer factors affecting stock prices while using machine learning to predict market trends. By combining both approaches, we gain a more comprehensive understanding of data, allowing for both insightful interpretations and powerful predictions.
-
 \newpage
+
 \subsection{Compare sample means of two groups - Two sample t-test}
 
-The next example we will encounter is an extension of the same question., The so-called \textit{two-sample t-test} is used to determine whether the sample means of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
+The next example we will encounter is an extension of the same question. The so-called \textit{two-sample t-test} is used to determine whether the sample means of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
 \[
-    t = \frac{\bar{x_{1}} - \bar{x_{2}}}{\sqrt{\big(n_{1} - 1)^{2} + (n_{2} - 1)^{2}\big)}},
+    t = \frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{\big(n_{1} - 1)^{2} + (n_{2} - 1)^{2}\big)}},
 \]
-where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.
-
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/t_2_samples_observations.png}
-    \caption{Observations following gaussian distribution.}
-    \label{fig:t_2_sample_obs}
-\end{figure}
-
-Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a dataset, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis help researchers understand these relationships. The emphasis is on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
-
-Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. A key contributor to predictive modeling was Andrey Kolmogorov (1903–1987), who formalized probability theory and stochastic processes. His work laid the foundation for modern probabilistic models used in machine learning and artificial intelligence. Later, Vapnik and Chervonenkis (1971) developed statistical learning theory, which introduced VC dimension, a measure of a model’s ability to generalize. This work led to the development of Support Vector Machines (SVMs), a key predictive tool in machine learning.\\
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/t_2_samples_distribution.png}
-    \caption{Representation of the Student's t distribution for given $t_{obs}$ value.}
-    \label{fig:t_2_sample_obs}
-\end{figure}
-
-While Breiman’s paper emphasized the divide between the two approaches, modern data science integrates both. In many cases, understanding causal relationships (inference) can improve predictive performance, and accurate prediction can guide further investigations into causality. For example, epidemiologists use inference to understand how diseases spread, but they also use predictive models to forecast outbreaks. In finance, analysts infer factors affecting stock prices while using machine learning to predict market trends. By combining both approaches, we gain a more comprehensive understanding of data, allowing for both insightful interpretations and powerful predictions.
+where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.\\
 
 \newpage
+
 \subsection{Compare sample variances of two groups - Fisher test}
 
 The next example we will encounter is an extension of the same question., The so-called \textit{Fisher t-test}, or just $F$ test, is used to determine whether the sample variances of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
 \[
-    f(x; d_{1}, d_{2}) = \frac{s_1}{s_2},
+    f(x; d_{1}, d_{2}) = \frac{s_1^{2}}{s_2^{2}},
 \]
-where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.
-
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/f_observations.png}
-    \caption{Observations following gaussian distribution.}
-    \label{fig:f_obs}
-\end{figure}
-
-Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a dataset, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis help researchers understand these relationships. The emphasis is on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
-
-Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. A key contributor to predictive modeling was Andrey Kolmogorov (1903–1987), who formalized probability theory and stochastic processes. His work laid the foundation for modern probabilistic models used in machine learning and artificial intelligence. Later, Vapnik and Chervonenkis (1971) developed statistical learning theory, which introduced VC dimension, a measure of a model’s ability to generalize. This work led to the development of Support Vector Machines (SVMs), a key predictive tool in machine learning.\\
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/f_distribution.png}
-    \caption{Representation of the Fisher distribution for given $F_{obs}$ value.}
-    \label{fig:f_dist}
-\end{figure}
-
-While Breiman’s paper emphasized the divide between the two approaches, modern data science integrates both. In many cases, understanding causal relationships (inference) can improve predictive performance, and accurate prediction can guide further investigations into causality. For example, epidemiologists use inference to understand how diseases spread, but they also use predictive models to forecast outbreaks. In finance, analysts infer factors affecting stock prices while using machine learning to predict market trends. By combining both approaches, we gain a more comprehensive understanding of data, allowing for both insightful interpretations and powerful predictions.
+where $s_1^{2}$ and $s_2^{2}$ are the sample variances, and the degrees of freedom are $d_1 = n_1 - 1$ and $d_2 = n_2 - 1$.\\
 
 \newpage
-\subsection{Compare more than two groups - ANOVA}
 
-The next example we will encounter is an extension of the same question., The so-called \textit{Fisher t-test}, or just $F$ test, is used to determine whether the sample variances of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
+\subsection{Compare variation on more than two groups - ANOVA}
+
+The so-called Analysis of Variance, or just \textit{ANOVAt}, is used to determine whether the variation of a dataset comes primary from variation within the samples themselves, or from variation between the groups. It is an special case of the Fisher test, where the F statistic is computed as:
 \[
-    f(x; d_{1}, d_{2}) = \frac{s_1}{s_2},
+    f(x; d_{1}, d_{2}) = \frac{s_between^{2}}{s_within^{2}},
 \]
-where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.
-
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/f_observations.png}
-    \caption{Observations following gaussian distribution.}
-    \label{fig:f_obs}
-\end{figure}
-
-Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a dataset, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis help researchers understand these relationships. The emphasis is on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
-
-Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. A key contributor to predictive modeling was Andrey Kolmogorov (1903–1987), who formalized probability theory and stochastic processes. His work laid the foundation for modern probabilistic models used in machine learning and artificial intelligence. Later, Vapnik and Chervonenkis (1971) developed statistical learning theory, which introduced VC dimension, a measure of a model’s ability to generalize. This work led to the development of Support Vector Machines (SVMs), a key predictive tool in machine learning.\\
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/f_distribution.png}
-    \caption{Representation of the Fisher distribution for given $F_{obs}$ value.}
-    \label{fig:f_dist}
-\end{figure}
-
-While Breiman’s paper emphasized the divide between the two approaches, modern data science integrates both. In many cases, understanding causal relationships (inference) can improve predictive performance, and accurate prediction can guide further investigations into causality. For example, epidemiologists use inference to understand how diseases spread, but they also use predictive models to forecast outbreaks. In finance, analysts infer factors affecting stock prices while using machine learning to predict market trends. By combining both approaches, we gain a more comprehensive understanding of data, allowing for both insightful interpretations and powerful predictions.
+where $s_1^{2}$ and $s_2^{2}$ are the sample variances, and the degrees of freedom are $d_1 = n_1 - 1$ and $d_2 = n_2 - 1$.\\
 
 \newpage
-\subsection{Compare distributions - $\chi^{2}$ test}
 
-The next example we will encounter is an extension of the same question., The so-called \textit{Fisher t-test}, or just $F$ test, is used to determine whether the sample variances of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
+\subsection{Compare distributions and testing for normality - $\chi^{2}$ test}
+
+The so-called Pearson $\chi^{2}$-test is used to determine whether the set of observations is significantly different from some expected - or hypothesized - values. The $\chi^{2}$ statistic is given by:
 \[
-    f(x; d_{1}, d_{2}) = \frac{s_1}{s_2},
+    \chi^{2}(x; N - 1) = \sum_{i = 1}^{N}\frac{(O_{i} - E{i})^{2}}{E_i},
 \]
-where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.
-
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/f_observations.png}
-    \caption{Observations following gaussian distribution.}
-    \label{fig:f_obs}
-\end{figure}
-
-Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a dataset, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis help researchers understand these relationships. The emphasis is on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
-
-Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. A key contributor to predictive modeling was Andrey Kolmogorov (1903–1987), who formalized probability theory and stochastic processes. His work laid the foundation for modern probabilistic models used in machine learning and artificial intelligence. Later, Vapnik and Chervonenkis (1971) developed statistical learning theory, which introduced VC dimension, a measure of a model’s ability to generalize. This work led to the development of Support Vector Machines (SVMs), a key predictive tool in machine learning.\\
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter4/f_distribution.png}
-    \caption{Representation of the Fisher distribution for given $F_{obs}$ value.}
-    \label{fig:f_dist}
-\end{figure}
-
-While Breiman’s paper emphasized the divide between the two approaches, modern data science integrates both. In many cases, understanding causal relationships (inference) can improve predictive performance, and accurate prediction can guide further investigations into causality. For example, epidemiologists use inference to understand how diseases spread, but they also use predictive models to forecast outbreaks. In finance, analysts infer factors affecting stock prices while using machine learning to predict market trends. By combining both approaches, we gain a more comprehensive understanding of data, allowing for both insightful interpretations and powerful predictions.
+It is also used to test for normality and evaluate the goodness of a fit [...].
 
 \newpage
+
 \section{Parametric and non-parametric}
 
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
-
-Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a dataset, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis help researchers understand these relationships. The emphasis is on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
-
-Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. A key contributor to predictive modeling was Andrey Kolmogorov (1903–1987), who formalized probability theory and stochastic processes. His work laid the foundation for modern probabilistic models used in machine learning and artificial intelligence. Later, Vapnik and Chervonenkis (1971) developed statistical learning theory, which introduced VC dimension, a measure of a model’s ability to generalize. This work led to the development of Support Vector Machines (SVMs), a key predictive tool in machine learning.\\
-
-While Breiman’s paper emphasized the divide between the two approaches, modern data science integrates both. In many cases, understanding causal relationships (inference) can improve predictive performance, and accurate prediction can guide further investigations into causality. For example, epidemiologists use inference to understand how diseases spread, but they also use predictive models to forecast outbreaks. In finance, analysts infer factors affecting stock prices while using machine learning to predict market trends. By combining both approaches, we gain a more comprehensive understanding of data, allowing for both insightful interpretations and powerful predictions.
+Parametric and non-parametric
 
 \newpage
+
 \section{Comparing data and normalization}
 Comparing data and normalization
 
@@ -741,14 +576,17 @@ Bayesian vs frequentist.
 Bayesian statistics.
 
 
-% Chapter - Stochasticity and Markov processes
+% Chapter - Introduction to Markov processes
 \chapter{Stochasticity and Markov processes}
 
 \section{Stochasticity and Markov processes}
+Stochasticity and Markov processes
 
-\section{Markov chains and hidden Markov models}
+\section{Markov chains}
+Markov chains
 
-\section{Modern applications}
+\section{Hidden Markov models}
+Hidden Markov models
 
 
 \backmatter

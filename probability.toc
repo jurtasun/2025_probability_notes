@@ -1,43 +1,39 @@
 \babel@toc {greek}{}\relax 
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Index}{\EnsureStandardFontEncoding {v}}{}%
+\contentsline {chapter}{Index}{\EnsureStandardFontEncoding {iii}}{}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{}%
 \contentsline {chapter}{\numberline {2}Probability and random events}{5}{}%
 \contentsline {section}{\numberline {2.1}What is probability?}{5}{}%
-\contentsline {section}{\numberline {2.2}Discrete and continuous}{6}{}%
-\contentsline {section}{\numberline {2.3}Bernoulli trials}{7}{}%
-\contentsline {section}{\numberline {2.4}Probability distributions}{8}{}%
-\contentsline {subsection}{\numberline {2.4.1}Binomial distribution}{8}{}%
-\contentsline {subsection}{\numberline {2.4.2}Poisson distribution}{10}{}%
-\contentsline {subsection}{\numberline {2.4.3}Uniform distribution}{12}{}%
-\contentsline {subsection}{\numberline {2.4.4}Gaussian distribution}{14}{}%
-\contentsline {subsection}{\numberline {2.4.5}Exponential distribution}{15}{}%
+\contentsline {section}{\numberline {2.2}Probability distributions}{7}{}%
+\contentsline {subsection}{\numberline {2.2.1}Bernoulli distribution}{7}{}%
+\contentsline {subsection}{\numberline {2.2.2}Binomial distribution}{9}{}%
+\contentsline {subsection}{\numberline {2.2.3}Poisson distribution}{11}{}%
+\contentsline {subsection}{\numberline {2.2.4}Uniform distribution}{13}{}%
+\contentsline {subsection}{\numberline {2.2.5}Gaussian distribution}{14}{}%
+\contentsline {subsection}{\numberline {2.2.6}Exponential distribution}{15}{}%
+\contentsline {section}{\numberline {2.3}Discrete and continuous}{15}{}%
 \contentsline {chapter}{\numberline {3}Parameter estimation}{17}{}%
 \contentsline {section}{\numberline {3.1}Prediction vs inference}{17}{}%
 \contentsline {section}{\numberline {3.2}Parameter estimation}{18}{}%
 \contentsline {section}{\numberline {3.3}The Law of Large Numbers}{19}{}%
-\contentsline {subsection}{\numberline {3.3.1}Definition}{19}{}%
-\contentsline {subsection}{\numberline {3.3.2}Types of LLN}{19}{}%
 \contentsline {section}{\numberline {3.4}The Central Limit Theorem}{20}{}%
-\contentsline {subsection}{\numberline {3.4.1}Definition}{20}{}%
-\contentsline {subsection}{\numberline {3.4.2}Applications}{20}{}%
 \contentsline {chapter}{\numberline {4}Introduction to statistical inference}{21}{}%
 \contentsline {section}{\numberline {4.1}Prediction vs inference}{21}{}%
 \contentsline {section}{\numberline {4.2}Hypothesis testing}{21}{}%
 \contentsline {section}{\numberline {4.3}Statistic tests, p-values and significance}{22}{}%
 \contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{22}{}%
-\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two groups - Two sample t-test}{24}{}%
-\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher test}{26}{}%
-\contentsline {subsection}{\numberline {4.3.4}Compare more than two groups - ANOVA}{28}{}%
-\contentsline {subsection}{\numberline {4.3.5}Compare distributions - $\chi ^{2}$ test}{30}{}%
-\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{32}{}%
-\contentsline {section}{\numberline {4.5}Comparing data and normalization}{33}{}%
-\contentsline {chapter}{\numberline {5}Introduction to bayesian statistics}{35}{}%
-\contentsline {section}{\numberline {5.1}The Bayes' theorem}{35}{}%
-\contentsline {section}{\numberline {5.2}Bayesian vs frequentist}{35}{}%
-\contentsline {section}{\numberline {5.3}Bayesian statistics}{35}{}%
-\contentsline {chapter}{\numberline {6}Stochasticity and Markov processes}{37}{}%
-\contentsline {section}{\numberline {6.1}Stochasticity and Markov processes}{37}{}%
-\contentsline {section}{\numberline {6.2}Markov chains and hidden Markov models}{37}{}%
-\contentsline {section}{\numberline {6.3}Modern applications}{37}{}%
+\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two groups - Two sample t-test}{23}{}%
+\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher test}{24}{}%
+\contentsline {subsection}{\numberline {4.3.4}Compare variation on more than two groups - ANOVA}{25}{}%
+\contentsline {subsection}{\numberline {4.3.5}Compare distributions and testing for normality - $\chi ^{2}$ test}{26}{}%
+\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{27}{}%
+\contentsline {section}{\numberline {4.5}Comparing data and normalization}{28}{}%
+\contentsline {chapter}{\numberline {5}Introduction to bayesian statistics}{29}{}%
+\contentsline {section}{\numberline {5.1}The Bayes' theorem}{29}{}%
+\contentsline {section}{\numberline {5.2}Bayesian vs frequentist}{29}{}%
+\contentsline {section}{\numberline {5.3}Bayesian statistics}{29}{}%
+\contentsline {chapter}{\numberline {6}Stochasticity and Markov processes}{31}{}%
+\contentsline {section}{\numberline {6.1}Stochasticity and Markov processes}{31}{}%
+\contentsline {section}{\numberline {6.2}Markov chains}{31}{}%
+\contentsline {section}{\numberline {6.3}Hidden Markov models}{31}{}%
