@@ -493,24 +493,55 @@ No matter the shape of the original distribution, when we take many samples and 
 \chapter{Introduction to statistical inference}
 
 \section{Prediction vs inference}
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
+In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory - first - and experiment - after - direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
 
 \section{Hypothesis testing}
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory and experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.\\
+The term \textit{hypothesis testing} is usually used to refer a broad set of tools addressing parameter estimation, inference, and various exploratory analysis on random measurements and observations. It was first coined by British mathematicians Pearson and Fisher [...] in early XX\textsuperscript{th} century. In the last decades, hypothesis testing, hypothesis test, statistical inference - sometimes referred to as  exploratory analysis - has gained popularity and become one of the standards in most experimental sciences, given the automatization of experiments and the large amounts of data available.\\
 
-So let's first ask ourselves the question. What is probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty. A number we will use to describe the amount of information we have about a random, or stochastic, event. For simplicity, we can make it range from 0 to 1, in the following way.
+Generally speaking, we will use hypothesis testing as a set of rules, almost as an recipe or an algorithm, to face and interpret data. Once we have covered the idea of parameter estimation, sample distributions, and the idea of estimators, we will now formulate hypothesis on the true - \textit{unkwnown} - parameters, and then build \textit{statistic tests} to quantify how far - or close - are these hypothesized values from the observed - experimental, sample - values. And finally, we will quantify how certain we are about the values obtained - how \textit{significant} they are - computing the \textit{p-value}, standing from Pearson value.\\
+
+The general approach we will follow, regardless of the kind of question we are after and the observations made, can be summarized as follows:
+\begin{itemize}
+\item Formulate \textit{null} hypothesis $H_0$ and \textit{alternative} hypothesis $H_1$ about the \textit{true} - \textit{population} parameters, generally for the mean or variance, \textit{prior to experiment}.
+\item Collect data, make observations, make measurements.
+\item Compute \textit{informative quantities} from our observed values, normally referred to as \textit{statistics}, or \textit{statistic tests}
+\item Compute p-value, probability of \textit{given the null hypothesis was true} obtained a value at leas as extreme as the one we obtained for our statistic test.
+\item Accept or reject the null hypothesis, based on the p-value.
+\end{itemize}
+
+
+About statistc tests [...].\\
+
+About p-values [...] \\
+
 
 \newpage
+
 \section{Statistic tests, p-values and significance}
+
 Statistic tests, p-values and significance
 
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
 
-The so-called \textit{one-sample t-test} is used to determine whether the mean of a single sample differs significantly from a known or hypothesized population mean. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
+The so-called \textit{one-sample t-test} is used to determine whether the mean of a single sample differs significantly from a known or hypothesized population mean. It was developed by William Gosset, a statistician working at the Guinness factory, in 1908 [1]. Due to restrictions due to the agreements with the company, he was not able to submit it with is name to the scientific journal [...], and hence it was published under the pseudonym \textit{student's t} algorithm. Originally developed to quantify if certain concentrations of barley  / rye [...].\\
+
+The student's t is used to compare the sample mean $\bar{x}$ to ha hypothesized value $\mu$. It assumes that the sample data are drawn from a normally distributed population, hence it is an example of a \textit{parametric} test. We will discuss more about parametric and non-parametric observations, and how to test for normality further in the chapter. The test statistic is given by:
 \[
-    t = \frac{\bar{x} - \mu}{\sqrt{n}},
+    t = \frac{\bar{x} - \mu}{s / \sqrt{n}},
 \]
-where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.
+
+
+where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size. It is built in such a way that, as the sample mean $\bar{x}$ gets closer to the hypothesized value $\mu$, the $t$-variable approaches zero.\\
+
+
+
+Then, given some data was observed and and we obtained a specific value for our t - let's call it \textit{t obs}, to compute a p-value we just need to compute what was the probability of that particular value. To do that, we just recall our t variable was indeed a random variable depending on our random observations, which produced some random sample mean and variance, and some degrees of freedom $n - 1$
+\[
+p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{n-1}}(x)\,dx = 2 \cdot \left[1 - F_{T_{n-1}}(|t|)\right]
+\]
+
+
+Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribution} with $n - 1$ degrees of freedom, and $F_{T_{n-1}}$ the corresponding cumulative distribution, as we discussed in chapter 2 [...]. Here, we are computing the probability of t being greater than the one we obtained, and we do that just by integrating the t-distribution [...]. Note that here we are computing a 2-sided p-value, hence te factor 2 at the beginning. 
 
 \newpage
 
@@ -522,25 +553,76 @@ The next example we will encounter is an extension of the same question. The so-
 \]
 where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.\\
 
+The computation of the p-value:
+\[
+p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{df}}(x)\,dx = 2 \cdot \left[1 - F_{T_{df}}(|t|)\right]
+\]
+
+
+Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribution} with $n_1 + n_2 - 1$ degrees of freedom, and $F_{T_{n-1}}$ the corresponding cumulative distribution
+Note here we assume equal variances. For Welch’s t-test (unequal variances), use the same form, but with Welch-adjusted [...]
+
 \newpage
 
 \subsection{Compare sample variances of two groups - Fisher test}
 
-The next example we will encounter is an extension of the same question., The so-called \textit{Fisher t-test}, or just $F$ test, is used to determine whether the sample variances of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
+The next example we will encounter is an extension of the same question., The so-called \textit{Fisher t-test}, or just $F$ test, is used to determine whether the sample variances of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population.\\
+
+The F statistic is a ratio of two independent variance estimates, each scaled by their respective degrees of freedom. It is used to test whether group variances (or group means, in ANOVA) differ significantly. The general form of the F statistic is:
 \[
-    f(x; d_{1}, d_{2}) = \frac{s_1^{2}}{s_2^{2}},
+F = \frac{S_1^2 / \nu_1}{S_2^2 / \nu_2}
 \]
+
 where $s_1^{2}$ and $s_2^{2}$ are the sample variances, and the degrees of freedom are $d_1 = n_1 - 1$ and $d_2 = n_2 - 1$.\\
+
+The computation of the p-value:
+\[
+p = \sum_{\text{all tables as or more extreme}} \frac{\binom{a+b}{a} \binom{c+d}{c}}{\binom{n}{a+c}}
+\]
+
+Under the null hypothesis, the F statistic follows the F-distribution:
+
+\[
+F \sim F(\nu_1, \nu_2)
+\]
+
+and the p-value is computed as the upper-tail probability:
+
+\[
+p = P(F_{\nu_1, \nu_2} \geq F_{\text{obs}}) = \int_{F_{\text{obs}}}^{\infty} f_{F_{\nu_1, \nu_2}}(x)\,dx
+\]
+
+Not to bo 
 
 \newpage
 
 \subsection{Compare variation on more than two groups - ANOVA}
 
-The so-called Analysis of Variance, or just \textit{ANOVAt}, is used to determine whether the variation of a dataset comes primary from variation within the samples themselves, or from variation between the groups. It is an special case of the Fisher test, where the F statistic is computed as:
+The so-called Analysis of Variance, one way ANOVA, or just ANOVA, is used to determine whether the variation of a dataset comes primary from variation within the samples themselves, or from variation between the groups. It is an extension of the Fisher test, where the F statistic is computed as:
 \[
-    f(x; d_{1}, d_{2}) = \frac{s_between^{2}}{s_within^{2}},
+    f(x; d_{1}, d_{2}) = \frac{s_\text{between}^{2}}{s_\text{within}^{2}},
 \]
 where $s_1^{2}$ and $s_2^{2}$ are the sample variances, and the degrees of freedom are $d_1 = n_1 - 1$ and $d_2 = n_2 - 1$.\\
+
+
+\[
+F = \frac{MS_{\text{between}}}{MS_{\text{within}}} = \frac{SS_{\text{between}} / (k - 1)}{SS_{\text{within}} / (N - k)}
+\]
+
+where:
+\begin{itemize}
+  \item $SS_{\text{between}}$ is the sum of squares between groups,
+  \item $SS_{\text{within}}$ is the sum of squares within groups,
+  \item $k$ is the number of groups,
+  \item $N$ is the total number of observations.
+\end{itemize}
+
+
+The computation of the p-value:
+\[
+p = \int_{F}^{\infty} f_{F_{df_1, df_2}}(x)\,dx = 1 - F_{F_{df_1, df_2}}(F)
+\]
+
 
 \newpage
 
@@ -551,6 +633,11 @@ The so-called Pearson $\chi^{2}$-test is used to determine whether the set of ob
     \chi^{2}(x; N - 1) = \sum_{i = 1}^{N}\frac{(O_{i} - E{i})^{2}}{E_i},
 \]
 It is also used to test for normality and evaluate the goodness of a fit [...].
+
+The computation of the p-value:
+\[
+p = \int_{\chi^2}^{\infty} f_{\chi^2_{df}}(x)\,dx = 1 - F_{\chi^2_{df}}(\chi^2)
+\]
 
 \newpage
 

@@ -21,19 +21,19 @@
 \contentsline {chapter}{\numberline {4}Introduction to statistical inference}{21}{}%
 \contentsline {section}{\numberline {4.1}Prediction vs inference}{21}{}%
 \contentsline {section}{\numberline {4.2}Hypothesis testing}{21}{}%
-\contentsline {section}{\numberline {4.3}Statistic tests, p-values and significance}{22}{}%
-\contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{22}{}%
-\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two groups - Two sample t-test}{23}{}%
-\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher test}{24}{}%
-\contentsline {subsection}{\numberline {4.3.4}Compare variation on more than two groups - ANOVA}{25}{}%
-\contentsline {subsection}{\numberline {4.3.5}Compare distributions and testing for normality - $\chi ^{2}$ test}{26}{}%
-\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{27}{}%
-\contentsline {section}{\numberline {4.5}Comparing data and normalization}{28}{}%
-\contentsline {chapter}{\numberline {5}Introduction to bayesian statistics}{29}{}%
-\contentsline {section}{\numberline {5.1}The Bayes' theorem}{29}{}%
-\contentsline {section}{\numberline {5.2}Bayesian vs frequentist}{29}{}%
-\contentsline {section}{\numberline {5.3}Bayesian statistics}{29}{}%
-\contentsline {chapter}{\numberline {6}Stochasticity and Markov processes}{31}{}%
-\contentsline {section}{\numberline {6.1}Stochasticity and Markov processes}{31}{}%
-\contentsline {section}{\numberline {6.2}Markov chains}{31}{}%
-\contentsline {section}{\numberline {6.3}Hidden Markov models}{31}{}%
+\contentsline {section}{\numberline {4.3}Statistic tests, p-values and significance}{23}{}%
+\contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{23}{}%
+\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two groups - Two sample t-test}{24}{}%
+\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher test}{25}{}%
+\contentsline {subsection}{\numberline {4.3.4}Compare variation on more than two groups - ANOVA}{26}{}%
+\contentsline {subsection}{\numberline {4.3.5}Compare distributions and testing for normality - $\chi ^{2}$ test}{27}{}%
+\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{28}{}%
+\contentsline {section}{\numberline {4.5}Comparing data and normalization}{29}{}%
+\contentsline {chapter}{\numberline {5}Introduction to bayesian statistics}{31}{}%
+\contentsline {section}{\numberline {5.1}The Bayes' theorem}{31}{}%
+\contentsline {section}{\numberline {5.2}Bayesian vs frequentist}{31}{}%
+\contentsline {section}{\numberline {5.3}Bayesian statistics}{31}{}%
+\contentsline {chapter}{\numberline {6}Stochasticity and Markov processes}{33}{}%
+\contentsline {section}{\numberline {6.1}Stochasticity and Markov processes}{33}{}%
+\contentsline {section}{\numberline {6.2}Markov chains}{33}{}%
+\contentsline {section}{\numberline {6.3}Hidden Markov models}{33}{}%
