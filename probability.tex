@@ -489,6 +489,104 @@ No matter the shape of the original distribution, when we take many samples and 
     \item Justifies the normality assumption in many statistical models.
 \end{itemize}
 
+\newpage
+
+\section{Maximum Likelihood Estimation (MLE)}
+
+Maximum Likelihood Estimation (MLE) is a cornerstone of modern statistical inference. Developed in the early 20th century by Sir Ronald A. Fisher, MLE provides a systematic framework for estimating the parameters of a probabilistic model. Fisher introduced the method in the 1920s, formalizing it as a rigorous alternative to the method of moments and laying the groundwork for much of classical and modern statistical theory.
+MLE has since become one of the most widely used estimation techniques due to its generality, mathematical tractability, and strong theoretical properties. It applies to a broad class of models, including both discrete and continuous distributions, and serves as the basis for many advanced statistical methods, including Generalized Linear Models (GLMs), Bayesian inference (as the likelihood term), and machine learning algorithms.
+
+\subsection{1. Motivation and Intuition}
+MLE seeks the parameter $\theta$ that makes the observed data most probable under the assumed model. In other words, it chooses the parameter that maximizes the likelihood function:
+
+\[
+L(\theta) = P(X_1 = x_1, \dots, X_n = x_n \mid \theta)
+\]
+
+\textbf{Example:} For a Bernoulli distribution with unknown probability $p$, the likelihood of observing a sequence of 0s and 1s is:
+
+\[
+L(p) = \prod_{i=1}^{n} p^{x_i}(1-p)^{1 - x_i}
+\]
+
+\subsection{2. The Likelihood and Log-Likelihood Functions}
+
+For independent and identically distributed data $X_1, \dots, X_n$ with density or mass function $f(x; \theta)$, the likelihood function is:
+
+\[
+L(\theta) = \prod_{i=1}^{n} f(x_i; \theta)
+\]
+
+To simplify differentiation, we often use the \textbf{log-likelihood}:
+
+\[
+\ell(\theta) = \log L(\theta) = \sum_{i=1}^{n} \log f(x_i; \theta)
+\]
+
+\subsection{3. Finding the MLE}
+
+To find the MLE $\hat{\theta}$:
+
+\begin{enumerate}
+    \item Write down the log-likelihood $\ell(\theta)$.
+    \item Take the derivative with respect to $\theta$: $\frac{d\ell}{d\theta}$.
+    \item Solve $\frac{d\ell}{d\theta} = 0$ to find critical points.
+    \item Check which value maximizes the likelihood (often via the second derivative or boundary checks).
+\end{enumerate}
+
+\textbf{Example: Bernoulli MLE}
+
+For $X_i \sim \text{Bernoulli}(p)$,
+
+\[
+\ell(p) = \sum_{i=1}^{n} \left[x_i \log(p) + (1 - x_i)\log(1 - p)\right]
+\]
+
+Taking derivative:
+
+\[
+\frac{d\ell}{dp} = \sum_{i=1}^{n} \left[\frac{x_i}{p} - \frac{1 - x_i}{1 - p}\right] = \frac{\sum x_i}{p} - \frac{n - \sum x_i}{1 - p}
+\]
+
+Solving yields:
+
+\[
+\hat{p} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\]
+
+\subsection{4. Properties of the MLE}
+
+The importance of MLE lies not only in its general applicability but also in its powerful theoretical properties. 
+Under regularity conditions, MLEs are asymptotically optimal estimators in the sense that they:
+\begin{itemize}
+\item \textbf{Consistency:} $\hat{\theta} \to \theta$ as $n \to \infty$
+\item \textbf{Asymptotic Normality:} $\sqrt{n}(\hat{\theta} - \theta) \xrightarrow{d} \mathcal{N}(0, I(\theta)^{-1})$, where $I(\theta)$ is the Fisher information
+\item \textbf{Efficiency:} Asymptotically achieves the Cram'er-Rao lower bound
+\item \textbf{Invariance:} If $\hat{\theta}$ is the MLE of $\theta$, then $g(\hat{\theta})$ is the MLE of $g(\theta)$ for any differentiable function $g$
+\end{itemize}
+These properties make MLE a preferred method in both theoretical and applied statistics, especially for large-sample inference. 
+In practice, these properties justify the use of MLE even when exact finite-sample distributions are hard to derive.
+
+\subsection{5. Application to Generalized Linear Models (GLMs)}
+
+Generalized Linear Models (GLMs) are an important class of models that extend linear regression to non-normal response variables by using a link function and a distribution from the exponential family. MLE plays a central role in fitting GLMs because the estimation of the model parameters is achieved by maximizing the likelihood of the observed responses.
+For instance, in logistic regression---used for binary outcomes---the log-odds of success is modeled as a linear combination of predictors:
+
+\textbf{Example: Logistic Regression}
+
+For binary response data, logistic regression models the log-odds as a linear function of predictors:
+
+\[
+\log\left( \frac{p}{1 - p} \right) = \beta_0 + \beta_1 x
+\]
+
+MLE is used to estimate the coefficients $\beta_0, \beta_1$ by maximizing the binomial log-likelihood.
+
+\subsection*{Exercises}
+\begin{enumerate}
+\item \textbf{Basic Derivation:} Show that the MLE for the rate parameter $\lambda$ of an exponential distribution $f(x; \lambda) = \lambda e^{-\lambda x}$ is $\hat{\lambda} = 1 / \bar{x}$.
+\end{enumerate}
+
 % Chapter - Introduction to statistical inference
 \chapter{Introduction to statistical inference}
 
@@ -649,6 +747,19 @@ Parametric and non-parametric
 
 \section{Comparing data and normalization}
 Comparing data and normalization
+
+% Chapter - Linear models and GLMs
+\chapter{Linear models and GLMs}
+
+\section{Simple linear regression}
+
+\section{Multiple linear regression}
+
+\section{Hypothesis testing in linear models}
+
+\section{Generalized Linear Models (GLMs)}
+
+\section{Logistic, Poisson, polynomial regression and interaction terms}
 
 % Chapter - Introduction to bayesian statistics
 \chapter{Introduction to bayesian statistics}
