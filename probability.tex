@@ -38,58 +38,58 @@
 % Chapter - Introduction
 \chapter{Introduction}
 
-In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian inference and hypothesis testing. The text is composed by six chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience or deep mathematical training.\\
+\section{A historical approach}
 
-First, we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}. We will introduce the idea of \textit{distribution}, uncertainty and variability, and we will learn how to build quantities - we will call them \textit{estimators}, or \textit{expected values} - that represent the information we have about such random measurements. 
+In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian inference and hypothesis testing. The text is composed by seven chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience or deep mathematical training.\\
 
-In the second part we will address the difference between prediction and inference, and discuss a set of subjects normally grouped under the name of \textit{hypothesis testing}. Here we will introduce how to quantify certainty and bias, how to model significance and the idea of hypothesis tests. Finally, we will briefly discuss more modern topics, such as bayesian statistics, and further stochasticity with the so-called Markov processes.\\
+First, we will introduce the idea of probability and random event with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}. We will introduce the idea of \textit{distribution}, uncertainty and variability, and we will learn how to build quantities - we will call them \textit{estimators}, or \textit{expected values} - that represent the information we have about such random measurements. 
 
-Ideas such as stochasticity and randomness have deep historical roots. Ancient civilizations, from Babylonians, Egyptians, and Greeks, faced uncertainty in games of chance, commerce, and divination, among others. The oldest known dice date back over 5,000 years, indicating an early human fascination with randomness. While these cultures did not develop formal mathematical probability, they recognized patterns in random events and attempted to predict outcomes based on empirical observations and superstitions.\\
-\indent Greek philosophers such as Democritus and Aristotle debated the nature of chance and determinism [...]. The Roman philosopher Cicero distinguished between chance events and those governed by fate, foreshadowing later discussions on probability. It would not be until medieval times, where mathematicians like Gerolamo Cardano (1501–1576) made early contributions by analyzing gambling problems and laying the groundwork for probability theory.\\
+In the second part we will address the difference between prediction and inference, and discuss a set of subjects normally grouped under the name of \textit{hypothesis testing}. Here we will introduce how to quantify certainty and bias, how to model significance and the idea of hypothesis tests. Finally, we will briefly discuss more modern topics, such as bayesian statistics, linear models, likelihood estimation, and further stochasticity with the so-called Markov processes.\\
 
-Such intuitions properly formalized probability as a mathematical discipline in the 17th century, with the correspondence between Blaise Pascal and Pierre de Fermat, who devised combinatorial methods to solve problems related to games of chance. Their work introduced fundamental ideas such as expected value and laid the foundation for later advances by Christiaan Huygens, Jacob Bernoulli, and Abraham de Moivre. Bernoulli’s \textit{Ars Conjectandi} (1713) introduced the Law of Large Numbers, establishing that observed frequencies converge to theoretical probabilities over many trials. All these names and topics will be covered in detail through chapters 2 and 3.\\
+As one could expect, probability and related areas of study date back to very early times. Ancient civilizations, from Babylonians, Egyptians, and Greeks, faced uncertainty in games of chance, commerce, and divination, among others, hence ideas like stochasticity and randomness have deep historical roots. The oldest known dice date back over 5,000 years, indicating an early human fascination with randomness. While these cultures did not develop formal mathematical probability, they recognized patterns in random events and attempted to predict outcomes based on empirical observations and superstitions [...].\\
+\indent Even though classic Greek and Roman philosophers extensively debated the nature of chance and determinism, this remained for a long time a broad philosophical area of study, still quite far from a systematical discipline that we would call today \textit{scientific}. From times of Cicero people distinguishing between chance events and those governed by fate, foreshadowing later discussions on probability. But It would not be until medieval times, where mathematicians like Gerolamo Cardano (1501–1576) made the first contributions to a mathematical theory of chance, by analyzing gambling problems and laying the groundwork for probability theory  [...].\\
 
-At the end of each chapter there will be a series of exercises and coding examples to illustrate and demonstrate the concepts discussed. To avoid misconceptions, let us emphasize here that both, probability and statistics are branches of mathematics that aim to quantify uncertainty, chance and information in the random events, \textit{much earlier} than computers, coding languages, Python, R or P-values were even conceived. The data-oriented, practical ways in which we nowadays focus probability and stats, heavily relying on computation, is just a consequence of the fact that automatized measurements are nowadays available and trendy in modern times.\\
+Such intuitions properly formalized probability as a mathematical discipline in the 17th century, with the correspondence between Blaise Pascal and Pierre de Fermat, who developed combinatorial methods to solve problems related to games of chance. Their work introduced many fundamental ideas such as expected value, variation, etc, which remain central pillars in most of our intuitions about randomness, measurement and information. Their work laid the foundation for later advances by Huygens, Bernoulli and Gauss, among others, that we will discuss in further chapters. In some textbooks, Bernoulli’s \textit{Ars Conjectandi} (1713) is usually referenced as firs probability textbook ever written [...].\\
 
-As one could guess already, a proper understanding of such topics - uncertainty, variation, probability, chance - can be applied to describing a vas amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis in physics, biology, machine learning and quantum mechanics. In the same way we learn to count and measure, we could try to assign numerical values to the likelihood of different outcomes in an experiment, or quantify the level of certainty - or \textit{surprise} - for such unknown result. The modern approach to probability and its fundamental concepts are summarized in the axioms established by the Russian mathematician Andrey Kolmogorov, in the early 1930s. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover this with a bit more detail in Chapter 1.\\
+This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are after. As one could guess already, a proper understanding of such topics - uncertainty, variation, probability, chance - can be applied to describing a vas amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis in physics, biology, machine learning and quantum mechanics. \\
 
-This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are behind.\\
+\section{A practical approach}
 
-Let's start defining a couple of quantities most people are already familiar with, and for which they may have some intuition, as a warmup example. Let's illustrate with an example how to properly define the \textit{mean} and \textit{variance} of a set of observations.\\
+Let's start defining a couple of quantities most people are already familiar with, and for which they may have some intuitions, as a warmup example. Let's illustrate with an example how to properly define the \textit{mean} and \textit{variance} of some set of observations.\\
 	
-Imagine we are doing an experiment and we measure some variable - let's call it $x$ - that can be anything (position at a given time, energy of some system, concentration, ...). We repeat the measurement three times and we get first 1, then 2, and the last time 3. That will be our set of observations, or our \textit{sample}, $x_{1}$. We could write it as a list, or a \textit{vector} - in the following way as
+Imagine we are doing an experiment where we measure some variable, and let's call it $x$ for simplicity. $x$ can be anything we could measure, like position at a given time, energy of some system, concentration of a specific substance, etc. Let's imagine we repeat the measurement three times, and we get first $x = 1$, then $x = 2$, and the last time $x = 3$. That will be our set of observations, or our \textit{sample}, $x_{1}$. We could simply write it as a list, or a \textit{vector} - in the following way:
 
 \begin{equation}
 x_{1} = \{1, 2, 3\} \nonumber. 
 \end{equation}
 
-Keep in mind that from the mathematics perspective the word \textit{vector} has a different meaning, with subtleties related to algebraic operations and relations they should satisfy, but for the purpose of this course, where we prioritize above all simplicity, a vector and a list of numbers will be essentially the same thing.\\
+Keep in mind that from the mathematics perspective the word \textit{vector} has a slightly different meaning, with subtleties related to algebraic operations and relations they should satisfy, but for the purpose of this course, where we prioritize above all simplicity, a vector and a list of numbers will be essentially the same thing.\\
 
-We define the \textit{mean} - or \textit{average} - $\bar{x}$ of an arbitrary large sample of $N$ observations, as the sum of all elements divided by the total.
+We can define a quantity called the \textit{mean} - or \textit{average} - of an arbitrary large sample of $N$ observations, as the sum of all elements divided by the total. We will write it as $\bar{x}$, and define it as follows:
 
 \begin{equation}
 \bar{x} = \frac{1}{N} (x_{1} + x_{2} + ... + x_{N}) = \frac{1}{N} \sum_{i = 1}^{N} x_{i}
 \end{equation}
 
-Here we denote the sum of all elements with the greek letter $\sum$, starting with the first one ($i = 1$) and until the last one ($i = N$). If we now substitute that expression for our set $x_{1}$, which has just $N = 3$ observations, we get
+Here we denote the sum of all elements with the greek letter $\sum$, starting with the first one ($i = 1$) and until the last one ($i = N$). If we now write that expression for our specific set $x_{1}$, which has just $N = 3$ observations, we get
 
 \begin{equation}
 \bar{x}_{1} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2 \nonumber
 \end{equation}
 
-As we see, the mean is just a quantity that captures some information about the "central" value, where the bulk of event are. In a similar way, we can define the \textit{variance} as a quantity that captures how far are the elements of the sample from the mean value.
+As we see, the mean is just a quantity that captures some information about the "central" value, where the bulk of events are. In a similar way, we can define the \textit{variance} as a quantity that captures how far are the elements of the observations set from the mean value. We will write it as $s^{2}$, for reasons that we will explain in detail later, and define it as follows:
 
 \begin{equation}
 s^{2} = \frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}. 
 \end{equation}
 
-Again, just by substituting that expression for our set $x_{1}$, which has just $N = 3$ observations, we get
+Note that the variance is just a sum of differences, a measure starting with the first one ($i = 1$) and until the last one ($i = N$), of how far is each element from the mean value. The reason we name it $s^{2}$ is to distinguish it from the so-called standard deviation $s$, but we shall not worry about that now. Again, just by substituting that expression for our set $x_{1}$, which has just $N = 3$ observations, we get
 
 \begin{equation}
 s_{1}^{2} = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \nonumber
 \end{equation}
 
-which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean.
+which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean.\\
 
 As an exercise, try to compute both the mean and variance for a second sample, let's say
 
@@ -107,14 +107,17 @@ Buy substituting in the general expressions of $\bar{x}$ and $s^{2}$ you should 
 s^{2}_{2} = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((4 - 5)^{2} + (5 - 5)^{2} + (6 - 5)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \nonumber
 \end{equation}
 
-Again, our mean $\bar{x}_{2} = 5$ encodes the information about the "central" value, where the bulk of event are. The variance $s^{2}_{2} = 1$ indicates that, as in the previous example, .\\
+Again, our mean $\bar{x}_{2} = 5$ encodes the information about the "central" value, where the bulk of event are, and the variance $s^{2}_{2} = 1$ indicates, as in the previous example, that the elements of the observation set $x{2}$ are \textit{one unit} away from the mean\\
+
 Another useful quantity used to characterize variability is the so called \textit{standard deviation}, which is just the square root of the variance
 
 \begin{equation}
 s = \sqrt{\frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}}. 
 \end{equation}
 
-Sometimes it is useful to use the standard deviation and sometimes the the variance, depending on the question and topic [...]\\
+This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the the variance, depending on the question and topic, but as we see they encode essentially the same information. \\
+
+In the figure we see [...]
 
 \begin{figure}[ht]
     \centering
@@ -130,6 +133,10 @@ Example textbooks covering introduction to probability and statistical inference
 \item A more foundational textbook, with more advanced mathematical approach, can be found at DeGroot and Schervish's \textit{Probability and Statistics} \cite{degroot2012probability}.   
 \item For a philosophical and historical perspective on probability and statistics, pleas find McFadden's \textit{The Philosophy of Statistics} \cite{mcfadden2011philosophy}.
 \end{itemize}
+
+In the same way we learn to count and measure, we could try to assign numerical values to the likelihood of different outcomes in an experiment, or quantify the level of certainty - or \textit{surprise} - for such unknown result. The modern approach to probability and its fundamental concepts are summarized in the axioms established by the Russian mathematician Andrey Kolmogorov, in the early 1930s. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover this with a bit more detail in Chapter 1.\\
+
+At the end of each chapter there will be a series of exercises and coding examples to illustrate and demonstrate the concepts discussed. To avoid misconceptions, let us emphasize here that both, probability and statistics are branches of mathematics that aim to quantify uncertainty, chance and information in the random events, \textit{much earlier} than computers, coding languages, Python, R or P-values were even conceived. The data-oriented, practical ways in which we nowadays focus probability and stats, heavily relying on computation, is just a consequence of the fact that automatized measurements are nowadays available and trendy in modern times.\\
 
 % Chapter - Introduction to probability and random events
 \chapter{Probability and random events}
@@ -182,7 +189,8 @@ There have been at least two successful attempts to formalize probability, namel
 
 \newpage
 
-\section{Probability distributions}
+\section{Discrete probability distributions}
+
 So far we have introduced the idea of random events, and the concept of probability as a number to quantify surprise. For our present chapter, we will try to model such stochastic events such that we can make predictions. For that purpose, we will model that probability we just defined to be a descriptive - even better, \textit{predictive} - quantity. Let's begin by saying that not all random phenomena are equal. Hence, a basic way to classify and separate random events, is according to how their probabilities are \textit{distributed}.
  
  \subsection{Bernoulli distribution}
@@ -259,6 +267,7 @@ This is normally referred to as a probability \textit{mass} distribution. The re
 \end{equation}\\
 
 \newpage
+
 \subsection{Poisson distribution}
 The next kind of random event we will discuss are the \textit{Poisson} distributed, named after the french mathematician Sim\'eon Denis Poisson, who tried to model to events that were random but with a known average rate, such as the number of people crossing a street per day, or the number of customers entering a store, or emails received per hour.
 As a note, this distribution was introduced in quite recent times, in the early 19th century to model rare events. It is particularly useful for counting occurrences over a fixed interval of time or space. 
@@ -307,7 +316,48 @@ Given unitarity, we can just compute it as
     P(x > 5; \lambda = 3) = 1 - P(x \leq 5; \lambda = 3) = 1 - CDF(5; \lambda = 3). \notag
 \end{equation}\\
 
+\section{Discrete and continuous}
+
+Once we have an insight on random events, and a mathematical quantity representing that uncertainty, we are ready to deal with real problems. From tossing coins, to rolling dice, to making measurements, the first thing we realize is that not \textit{all} random events are equal. In some cases, like rolling a fair dice, all outcomes are equally probable, and in other cases, such as counting, we may encounter some results which happen much more often than others. The main criteria we will use for differentiate among random events, is what we will call their \textit{distribution}.\\
+
+We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous}. [...]
+
+So far we have focused on discrete events, that is, scenarios where the number of possible outcomes was an integer number. Now we will encounter a second family of stochastic processes, the ones we will refer to as continuous. In the discrete case, we were implicitly using the frequentist definition of probability, as a number that represents the ratio of how many times we will observe a particular result, if we endlessly repeat (...).\\
+
+But let's try to face a different scenario. What would happen if we try to guess the probability of measuring something which does hace an infinite number of possible outcomes, spread on a continuous range? (e.g., the probability of measuring the height of a person an get 1.75 cm, or the temperature in a room and get 25 degrees, ...). Here we notice that, if we keep the definition of probability we used in the case of the Binomial, the Poisson, etc, we would get something like:
+
+\begin{equation}
+P(x = x_{0}) = \frac{\text{number of times I get $x_{0}$}}{\text{number of times I get any other result}}
+\end{equation}
+
+Note that now, the possible results are not just 1, 2, ..., n, but actually infinite more and spread over a continuous range. The outcome of measuring a temperature could be the $T = 25$ we want, but also $T = 24.999$ and $T = 25.001$, and there infinite other possible results between these two. No matter how precise our measurement devices, are, between any pair of results, we would have an infinite number of cases where we obtain a different result. Hence, applying the frequentist definition of probability would lead to:
+
+\begin{equation}
+P(x = x_{0}) = \frac{\text{number of times I get $x_{0}$}}{\text{number of times I get any other result}} = \frac{n}{\infty} = 0
+\end{equation}
+
+We would get that the probability of obtaining \textit{any result} would be exactly zero.\\
+
+Let's pause for a moment and think about what happened. At the very beginning of this chapter we said that the quantity $P(x)$ was used to represent information - also certainty, surprise - and computed using the frequentist approach, meaning the \textit{ratio of favorable cases and total cases}. But that was assuming we had a finite set or possibilities, or measure space.
+
+\begin{itemize}
+\item Discrete (coins, dice, counting) $\longrightarrow$ finite, \textit{countable} outcomes
+\item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ infinite, \textit{uncountable}
+\end{itemize}
+
+For such cases we will define a mathematical quantity, similar to that we called probability, which represents analogous information, but considering the fact we are dealing with a continuous event. We will call it \textit{probability density} or \textit{density} for simplicity, and we will denote it with $f(x)$. Note that we can distinguish it from the probability in discrete events $P(x_{i})$, where we used the subscript $x_{i}$ to represent that the random variable could take just a finite set of values ($x_{1}$, $x{2}$, etc).
+
+\begin{itemize}
+\item Discrete (coins, dice, counting) $\longrightarrow$ Probability $P(x_{i})$ | $\sum_{i = 1}^{\infty} P(x_{i}) = 1$
+\item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ Probability density f(x) | $\int_{i = 0}^{\infty} f(x) dx = 1$
+\end{itemize}
+
+In the same way we imposed that probability needs to obey unitarity, we will impose that property in our recently defined probability density $f(x)$. The way we represent the sum for all possible cases in the continuous case, is just imposing that the integral of the function $f(x)$ is 1. This is just an example of \textit{normalization}, that we will explore further in chapter 4.
+
 \newpage
+
+\section{Continuous probability distributions}
+
 \subsection{Uniform distribution}
 
 The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely. The probability of observing a particular result $x$ in a given range $[a, b]$ is:
@@ -356,43 +406,6 @@ The probability density function is:
     \caption{Representation of the exponential distribution of a random variable $x$, given the decay rate $\lambda$.}
     \label{fig:exponential1}
 \end{figure}
-
-\section{Discrete and continuous}
-Once we have an insight on random events, and a mathematical quantity representing that uncertainty, we are ready to deal with real problems. From tossing coins, to rolling dice, to making measurements, the first thing we realize is that not \textit{all} random events are equal. In some cases, like rolling a fair dice, all outcomes are equally probable, and in other cases, such as counting, we may encounter somre results which happen much more often than others. The main criteria we will use for differentiate among random events, is what we will call their \textit{distribution}.\\
-
-We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous}. [...]
-
-So far we have focused on discrete events, that is, scenarios where the number of possible outcomes was an integer number. Now we will encounter a second family of stochastic processes, the ones we will refer to as continuous. In the discrete case, we were implicitly using the frequentist definition of probability, as a number that represents the ratio of how many times we will observe a particular result, if we endlessly repeat (...).\\
-
-But let's try to face a different scenario. What would happen if we try to guess the probability of measuring something which does hace an infinite number of possible outcomes, spread on a continuous range? (e.g., the probability of measuring the height of a person an get 1.75 cm, or the temperature in a room and get 25 degrees, ...). Here we notice that, if we keep the definition of probability we used in the case of the Binomial, the Poisson, etc, we would get something like:
-
-\begin{equation}
-P(x = x_{0}) = \frac{\text{number of times I get $x_{0}$}}{\text{number of times I get any other result}}
-\end{equation}
-
-Note that now, the possible results are not just 1, 2, ..., n, but actually infinite more and spread over a continuous range. The outcome of measuring a temperature could be the $T = 25$ we want, but also $T = 24.999$ and $T = 25.001$, and there infinite other possible results between these two. No matter how precise our measurement devices, are, between any pair of results, we would have an infinite number of cases where we obtain a different result. Hence, applying the frequentist definition of probability would lead to:
-
-\begin{equation}
-P(x = x_{0}) = \frac{\text{number of times I get $x_{0}$}}{\text{number of times I get any other result}} = \frac{n}{\infty} = 0
-\end{equation}
-
-We would get that the probability of obtaining \textit{any result} would be exactly zero.\\
-
-Let's pause for a moment and think about what happened. At the very beginning of this chapter we said that the quantity $P(x)$ was used to represent information - also certainty, surprise - and computed using the frequentist approach, meaning the \textit{ratio of favorable cases and total cases}. But that was assuming we had a finite set or possibilities, or measure space.
-
-\begin{itemize}
-\item Discrete (coins, dice, counting) $\longrightarrow$ finite, \textit{countable} outcomes
-\item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ infinite, \textit{uncountable}
-\end{itemize}
-
-For such cases we will define a mathematical quantity, similar to that we called probability, which represents analogous information, but considering the fact we are dealing with a continuous event. We will call it \textit{probability density} or \textit{density} for simplicity, and we will denote it with $f(x)$. Note that we can distinguish it from the probability in discrete events $P(x_{i})$, where we used the subscript $x_{i}$ to represent that the random variable could take just a finite set of values ($x_{1}$, $x{2}$, etc).
-
-\begin{itemize}
-\item Discrete (coins, dice, counting) $\longrightarrow$ Probability $P(x_{i})$ | $\sum_{i = 1}^{\infty} P(x_{i}) = 1$
-\item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ Probability density f(x) | $\int_{i = 0}^{\infty} f(x) dx = 1$
-\end{itemize}
-
-In the same way we imposed that probability needs to obey unitarity, we will impose that property in our recently defined probability density $f(x)$. The way we represent the sum for all possible cases in the continuous case, is just imposing that the integral of the function $f(x)$ is 1. This is just an example of \textit{normalization}, that we will explore further in chapter 4.
 
 % Chapter - Parameter estimation
 \chapter{Parameter estimation}
@@ -777,8 +790,8 @@ Bayesian statistics.
 % Chapter - Introduction to Markov processes
 \chapter{Stochasticity and Markov processes}
 
-\section{Stochasticity and Markov processes}
-Stochasticity and Markov processes
+\section{Stochasticity}
+Stochasticity
 
 \section{Markov chains}
 Markov chains

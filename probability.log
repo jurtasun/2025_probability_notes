@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  9 MAY 2025 12:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  15 MAY 2025 10:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -656,12 +656,12 @@ Package pdftex.def Info: figures/icl_logo.jpeg  used on input line 16.
 es/icl_logo.jpeg>] [2
 
 ] (./probability.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -673,22 +673,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 No file probability.ind.
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
 
@@ -707,11 +702,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--55
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
@@ -722,7 +712,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
@@ -730,82 +730,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
 File: figures/chapter1/normal_hist.png Graphic file (type png)
 <use figures/chapter1/normal_hist.png>
 Package pdftex.def Info: figures/chapter1/normal_hist.png  used on input line 1
-21.
+24.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
-[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}] [4 <./figures/chapter1/normal_hist.png>]
-Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
+[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}] [4 <./figures/chapter1/normal_hist.png>]
+Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
 [5
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
 <figures/chapter2/bernoulli.png, id=51, 433.62pt x 289.08pt>
 File: figures/chapter2/bernoulli.png Graphic file (type png)
 <use figures/chapter2/bernoulli.png>
-Package pdftex.def Info: figures/chapter2/bernoulli.png  used on input line 203
+Package pdftex.def Info: figures/chapter2/bernoulli.png  used on input line 211
 .
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 [7 <./figures/chapter2/bernoulli.png>] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
 <figures/chapter2/binomial.png, id=59, 433.62pt x 289.08pt>
 File: figures/chapter2/binomial.png Graphic file (type png)
 <use figures/chapter2/binomial.png>
-Package pdftex.def Info: figures/chapter2/binomial.png  used on input line 240.
+Package pdftex.def Info: figures/chapter2/binomial.png  used on input line 248.
 
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 
  []
 
 [9 <./figures/chapter2/binomial.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
@@ -813,20 +823,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--260
 <figures/chapter2/poisson.png, id=69, 433.62pt x 289.08pt>
 File: figures/chapter2/poisson.png Graphic file (type png)
 <use figures/chapter2/poisson.png>
-Package pdftex.def Info: figures/chapter2/poisson.png  used on input line 274.
+Package pdftex.def Info: figures/chapter2/poisson.png  used on input line 283.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
@@ -834,92 +844,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--291
 File: figures/chapter2/poisson_highlight.png Graphic file (type png)
 <use figures/chapter2/poisson_highlight.png>
 Package pdftex.def Info: figures/chapter2/poisson_highlight.png  used on input 
-line 294.
+line 303.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
 [11 <./figures/chapter2/poisson.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--309
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 
  []
 
 [12 <./figures/chapter2/poisson_highlight.png>]
-<figures/chapter2/uniform.png, id=79, 433.62pt x 289.08pt>
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
+
+ []
+
+[13]
+<figures/chapter2/uniform.png, id=82, 433.62pt x 289.08pt>
 File: figures/chapter2/uniform.png Graphic file (type png)
 <use figures/chapter2/uniform.png>
-Package pdftex.def Info: figures/chapter2/uniform.png  used on input line 321.
+Package pdftex.def Info: figures/chapter2/uniform.png  used on input line 371.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
- [13 <./figures/chapter2/uniform.png>]
-<figures/chapter2/normal.png, id=84, 433.62pt x 289.08pt>
+ [14 <./figures/chapter2/uniform.png>]
+<figures/chapter2/normal.png, id=87, 433.62pt x 289.08pt>
 File: figures/chapter2/normal.png Graphic file (type png)
 <use figures/chapter2/normal.png>
-Package pdftex.def Info: figures/chapter2/normal.png  used on input line 338.
+Package pdftex.def Info: figures/chapter2/normal.png  used on input line 388.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
- [14 <./figures/chapter2/normal.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
+ [15 <./figures/chapter2/normal.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
  []
 
-<figures/chapter2/exponential.png, id=92, 433.62pt x 289.08pt>
+<figures/chapter2/exponential.png, id=96, 433.62pt x 289.08pt>
 File: figures/chapter2/exponential.png Graphic file (type png)
 <use figures/chapter2/exponential.png>
-Package pdftex.def Info: figures/chapter2/exponential.png  used on input line 3
-55.
+Package pdftex.def Info: figures/chapter2/exponential.png  used on input line 4
+05.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 361--362
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
-
- []
-
-[15 <./figures/chapter2/exponential.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 379--380
-
- []
-
-[16]
+[16 <./figures/chapter2/exponential.png>]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--411
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 412--413
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
 
  []
 
 [17
 
 ] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 430--431
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
@@ -927,10 +937,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 430--431
 File: figures/chapter3/law_large_numbers.png Graphic file (type png)
 <use figures/chapter3/law_large_numbers.png>
 Package pdftex.def Info: figures/chapter3/law_large_numbers.png  used on input 
-line 452.
+line 465.
 (pdftex.def)             Requested size: 328.82707pt x 164.4145pt.
 [19 <./figures/chapter3/law_large_numbers.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 467--468
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
 
  []
 
@@ -938,64 +948,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 467--468
 File: figures/chapter3/central_limit_theorem.png Graphic file (type png)
 <use figures/chapter3/central_limit_theorem.png>
 Package pdftex.def Info: figures/chapter3/central_limit_theorem.png  used on in
-put line 479.
+put line 492.
 (pdftex.def)             Requested size: 328.82707pt x 164.4145pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 484--485
+Underfull \hbox (badness 10000) in paragraph at lines 497--498
 
  []
 
 [20 <./figures/chapter3/central_limit_theorem.png>] [21] [22]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--598
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 612--613
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--612
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 
  []
 
 [23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 624--625
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--633
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 651--653
+Underfull \hbox (badness 10000) in paragraph at lines 664--666
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 667--668
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 674--675
+Underfull \hbox (badness 10000) in paragraph at lines 687--688
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 702--704
+Underfull \hbox (badness 10000) in paragraph at lines 715--717
 
  []
 
@@ -1028,7 +1038,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5815 strings out of 474116
  95044 string characters out of 5743681
- 1939187 words of memory out of 5000000
+ 1941187 words of memory out of 5000000
  28107 multiletter control sequences out of 15000+600000
  568563 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1053,7 +1063,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/te
 xmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on probability.pdf (43 pages, 493178 bytes).
+Output written on probability.pdf (43 pages, 494861 bytes).
 PDF statistics:
  268 PDF objects out of 1000 (max. 8388607)
  160 compressed objects within 2 object streams

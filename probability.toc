@@ -3,16 +3,19 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Index}{\EnsureStandardFontEncoding {iv}}{}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {section}{\numberline {1.1}A historical approach}{1}{}%
+\contentsline {section}{\numberline {1.2}A practical approach}{2}{}%
 \contentsline {chapter}{\numberline {2}Probability and random events}{5}{}%
 \contentsline {section}{\numberline {2.1}What is probability?}{5}{}%
-\contentsline {section}{\numberline {2.2}Probability distributions}{7}{}%
+\contentsline {section}{\numberline {2.2}Discrete probability distributions}{7}{}%
 \contentsline {subsection}{\numberline {2.2.1}Bernoulli distribution}{7}{}%
 \contentsline {subsection}{\numberline {2.2.2}Binomial distribution}{9}{}%
 \contentsline {subsection}{\numberline {2.2.3}Poisson distribution}{11}{}%
-\contentsline {subsection}{\numberline {2.2.4}Uniform distribution}{13}{}%
-\contentsline {subsection}{\numberline {2.2.5}Gaussian distribution}{14}{}%
-\contentsline {subsection}{\numberline {2.2.6}Exponential distribution}{15}{}%
-\contentsline {section}{\numberline {2.3}Discrete and continuous}{15}{}%
+\contentsline {section}{\numberline {2.3}Discrete and continuous}{12}{}%
+\contentsline {section}{\numberline {2.4}Continuous probability distributions}{14}{}%
+\contentsline {subsection}{\numberline {2.4.1}Uniform distribution}{14}{}%
+\contentsline {subsection}{\numberline {2.4.2}Gaussian distribution}{15}{}%
+\contentsline {subsection}{\numberline {2.4.3}Exponential distribution}{16}{}%
 \contentsline {chapter}{\numberline {3}Parameter estimation}{17}{}%
 \contentsline {section}{\numberline {3.1}Prediction vs inference}{17}{}%
 \contentsline {section}{\numberline {3.2}Parameter estimation}{18}{}%
@@ -46,6 +49,6 @@
 \contentsline {section}{\numberline {6.2}Bayesian vs frequentist}{35}{}%
 \contentsline {section}{\numberline {6.3}Bayesian statistics}{35}{}%
 \contentsline {chapter}{\numberline {7}Stochasticity and Markov processes}{37}{}%
-\contentsline {section}{\numberline {7.1}Stochasticity and Markov processes}{37}{}%
+\contentsline {section}{\numberline {7.1}Stochasticity}{37}{}%
 \contentsline {section}{\numberline {7.2}Markov chains}{37}{}%
 \contentsline {section}{\numberline {7.3}Hidden Markov models}{37}{}%
