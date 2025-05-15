@@ -35,6 +35,7 @@
 \mainmatter
 
 
+
 % Chapter - Introduction
 \chapter{Introduction}
 
@@ -42,14 +43,17 @@
 
 In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian inference and hypothesis testing. The text is composed by seven chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience or deep mathematical training.\\
 
-First, we will introduce the idea of probability and random event with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}. We will introduce the idea of \textit{distribution}, uncertainty and variability, and we will learn how to build quantities - we will call them \textit{estimators}, or \textit{expected values} - that represent the information we have about such random measurements. 
+First, we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}. We will introduce some basics concepts such as \textit{distribution}, \textit{uncertainty} and \textit{variability}, among others, and we will learn how to build quantities - we will call them \textit{estimators}, or \textit{expected values} - that represent the information we have about such random measurements. 
 
-In the second part we will address the difference between prediction and inference, and discuss a set of subjects normally grouped under the name of \textit{hypothesis testing}. Here we will introduce how to quantify certainty and bias, how to model significance and the idea of hypothesis tests. Finally, we will briefly discuss more modern topics, such as bayesian statistics, linear models, likelihood estimation, and further stochasticity with the so-called Markov processes.\\
+In the following chapters we will address the difference between prediction and inference, and discuss a group of topics commonly referred to as \textit{hypothesis testing}. Here we will introduce the idea of hypothesis, how to quantify certainty and bias, how to model significance and some examples of hypothesis tests. Finally, we will briefly discuss more modern topics, such as bayesian statistics, linear models, likelihood estimation, leading to more advanced topics, such as stochasticity and Markov processes.\\
 
-As one could expect, probability and related areas of study date back to very early times. Ancient civilizations, from Babylonians, Egyptians, and Greeks, faced uncertainty in games of chance, commerce, and divination, among others, hence ideas like stochasticity and randomness have deep historical roots. The oldest known dice date back over 5,000 years, indicating an early human fascination with randomness. While these cultures did not develop formal mathematical probability, they recognized patterns in random events and attempted to predict outcomes based on empirical observations and superstitions [...].\\
-\indent Even though classic Greek and Roman philosophers extensively debated the nature of chance and determinism, this remained for a long time a broad philosophical area of study, still quite far from a systematical discipline that we would call today \textit{scientific}. From times of Cicero people distinguishing between chance events and those governed by fate, foreshadowing later discussions on probability. But It would not be until medieval times, where mathematicians like Gerolamo Cardano (1501–1576) made the first contributions to a mathematical theory of chance, by analyzing gambling problems and laying the groundwork for probability theory  [...].\\
+As one might expect, probability and related areas of study date back to ancient times. Civilizations such as the Babylonians, Egyptians, and Greeks encountered uncertainty in various domains, including games of chance, commerce, and divination. As a result, concepts like randomness and stochasticity have deep historical roots. The oldest known dice, dating back over 5,000 years, reflect humanity's early fascination with uncertainty. While these cultures did not develop a formal mathematical theory of probability, they recognized recurring patterns in random events and often sought to predict outcomes through empirical observation or superstition.\\
 
-Such intuitions properly formalized probability as a mathematical discipline in the 17th century, with the correspondence between Blaise Pascal and Pierre de Fermat, who developed combinatorial methods to solve problems related to games of chance. Their work introduced many fundamental ideas such as expected value, variation, etc, which remain central pillars in most of our intuitions about randomness, measurement and information. Their work laid the foundation for later advances by Huygens, Bernoulli and Gauss, among others, that we will discuss in further chapters. In some textbooks, Bernoulli’s \textit{Ars Conjectandi} (1713) is usually referenced as firs probability textbook ever written [...].\\
+Although classical Greek and Roman philosophers frequently debated the nature of chance and determinism, these discussions remained broad and philosophical, far from the systematic, mathematical discipline we now regard as scientific. As early as the time of Cicero, thinkers began distinguishing between events that occurred by chance and those believed to be governed by fate, foreshadowing later developments in probability theory.\\
+
+It was not until the late medieval and early Renaissance periods that more rigorous ideas began to emerge. Mathematicians such as Gerolamo Cardano (1501–1576) made foundational contributions to the mathematical treatment of chance by analyzing gambling problems and developing early probabilistic reasoning.\\
+
+Probability was properly formalized as a mathematical discipline in the 17th century, most notably through the correspondence between Blaise Pascal and Pierre de Fermat. Their work on problems involving games of chance introduced key ideas such as combinatorics, expected value, and variance — concepts that remain central to our modern understanding of randomness, measurement, and information. These developments laid the groundwork for subsequent advances by Huygens, Bernoulli, Gauss, and others, which we will explore in later chapters. Bernoulli’s \textit{Ars Conjectandi} (1713) is often cited as the first formal textbook on probability.\\
 
 This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are after. As one could guess already, a proper understanding of such topics - uncertainty, variation, probability, chance - can be applied to describing a vas amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis in physics, biology, machine learning and quantum mechanics. \\
 
@@ -138,7 +142,9 @@ In the same way we learn to count and measure, we could try to assign numerical 
 
 At the end of each chapter there will be a series of exercises and coding examples to illustrate and demonstrate the concepts discussed. To avoid misconceptions, let us emphasize here that both, probability and statistics are branches of mathematics that aim to quantify uncertainty, chance and information in the random events, \textit{much earlier} than computers, coding languages, Python, R or P-values were even conceived. The data-oriented, practical ways in which we nowadays focus probability and stats, heavily relying on computation, is just a consequence of the fact that automatized measurements are nowadays available and trendy in modern times.\\
 
-% Chapter - Introduction to probability and random events
+
+
+% Chapter - Probability and random events
 \chapter{Probability and random events}
 
 \section{What is probability?}
@@ -407,6 +413,8 @@ The probability density function is:
     \label{fig:exponential1}
 \end{figure}
 
+
+
 % Chapter - Parameter estimation
 \chapter{Parameter estimation}
 
@@ -504,12 +512,12 @@ No matter the shape of the original distribution, when we take many samples and 
 
 \newpage
 
-\section{Maximum Likelihood Estimation (MLE)}
+\section{Maximum Likelihood Estimation}
 
 Maximum Likelihood Estimation (MLE) is a cornerstone of modern statistical inference. Developed in the early 20th century by Sir Ronald A. Fisher, MLE provides a systematic framework for estimating the parameters of a probabilistic model. Fisher introduced the method in the 1920s, formalizing it as a rigorous alternative to the method of moments and laying the groundwork for much of classical and modern statistical theory.
 MLE has since become one of the most widely used estimation techniques due to its generality, mathematical tractability, and strong theoretical properties. It applies to a broad class of models, including both discrete and continuous distributions, and serves as the basis for many advanced statistical methods, including Generalized Linear Models (GLMs), Bayesian inference (as the likelihood term), and machine learning algorithms.
 
-\subsection{1. Motivation and Intuition}
+\subsection{Motivation and intuition}
 MLE seeks the parameter $\theta$ that makes the observed data most probable under the assumed model. In other words, it chooses the parameter that maximizes the likelihood function:
 
 \[
@@ -522,7 +530,7 @@ L(\theta) = P(X_1 = x_1, \dots, X_n = x_n \mid \theta)
 L(p) = \prod_{i=1}^{n} p^{x_i}(1-p)^{1 - x_i}
 \]
 
-\subsection{2. The Likelihood and Log-Likelihood Functions}
+\subsection{The Likelihood and Log-Likelihood functions}
 
 For independent and identically distributed data $X_1, \dots, X_n$ with density or mass function $f(x; \theta)$, the likelihood function is:
 
@@ -536,7 +544,7 @@ To simplify differentiation, we often use the \textbf{log-likelihood}:
 \ell(\theta) = \log L(\theta) = \sum_{i=1}^{n} \log f(x_i; \theta)
 \]
 
-\subsection{3. Finding the MLE}
+\subsection{Computing the MLE}
 
 To find the MLE $\hat{\theta}$:
 
@@ -567,7 +575,7 @@ Solving yields:
 \hat{p} = \frac{1}{n} \sum_{i=1}^{n} x_i
 \]
 
-\subsection{4. Properties of the MLE}
+\subsection{Properties of the MLE}
 
 The importance of MLE lies not only in its general applicability but also in its powerful theoretical properties. 
 Under regularity conditions, MLEs are asymptotically optimal estimators in the sense that they:
@@ -580,10 +588,10 @@ Under regularity conditions, MLEs are asymptotically optimal estimators in the s
 These properties make MLE a preferred method in both theoretical and applied statistics, especially for large-sample inference. 
 In practice, these properties justify the use of MLE even when exact finite-sample distributions are hard to derive.
 
-\subsection{5. Application to Generalized Linear Models (GLMs)}
+\subsection{Application to Generalized Linear Models}
 
 Generalized Linear Models (GLMs) are an important class of models that extend linear regression to non-normal response variables by using a link function and a distribution from the exponential family. MLE plays a central role in fitting GLMs because the estimation of the model parameters is achieved by maximizing the likelihood of the observed responses.
-For instance, in logistic regression---used for binary outcomes---the log-odds of success is modeled as a linear combination of predictors:
+For instance, in logistic regression---used for binary outcomes---the log-odds of success is modelled as a linear combination of predictors:
 
 \textbf{Example: Logistic Regression}
 
@@ -600,13 +608,15 @@ MLE is used to estimate the coefficients $\beta_0, \beta_1$ by maximizing the bi
 \item \textbf{Basic Derivation:} Show that the MLE for the rate parameter $\lambda$ of an exponential distribution $f(x; \lambda) = \lambda e^{-\lambda x}$ is $\hat{\lambda} = 1 / \bar{x}$.
 \end{enumerate}
 
-% Chapter - Introduction to statistical inference
-\chapter{Introduction to statistical inference}
 
-\section{Prediction vs inference}
+
+% Chapter - Introduction to hypothesis testing
+\chapter{Introduction to hypothesis testing}
+
+\section{Statistical inference}
 In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory - first - and experiment - after - direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
 
-\section{Hypothesis testing}
+\section{Hypothesis, significance, p-values}
 The term \textit{hypothesis testing} is usually used to refer a broad set of tools addressing parameter estimation, inference, and various exploratory analysis on random measurements and observations. It was first coined by British mathematicians Pearson and Fisher [...] in early XX\textsuperscript{th} century. In the last decades, hypothesis testing, hypothesis test, statistical inference - sometimes referred to as  exploratory analysis - has gained popularity and become one of the standards in most experimental sciences, given the automatization of experiments and the large amounts of data available.\\
 
 Generally speaking, we will use hypothesis testing as a set of rules, almost as an recipe or an algorithm, to face and interpret data. Once we have covered the idea of parameter estimation, sample distributions, and the idea of estimators, we will now formulate hypothesis on the true - \textit{unkwnown} - parameters, and then build \textit{statistic tests} to quantify how far - or close - are these hypothesized values from the observed - experimental, sample - values. And finally, we will quantify how certain we are about the values obtained - how \textit{significant} they are - computing the \textit{p-value}, standing from Pearson value.\\
@@ -628,7 +638,7 @@ About p-values [...] \\
 
 \newpage
 
-\section{Statistic tests, p-values and significance}
+\section{Statistical tests: some examples}
 
 Statistic tests, p-values and significance
 
@@ -675,7 +685,7 @@ Note here we assume equal variances. For Welch’s t-test (unequal variances), u
 
 \newpage
 
-\subsection{Compare sample variances of two groups - Fisher test}
+\subsection{Compare sample variances of two groups - Fisher's exact test}
 
 The next example we will encounter is an extension of the same question., The so-called \textit{Fisher t-test}, or just $F$ test, is used to determine whether the sample variances of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population.\\
 
@@ -707,7 +717,7 @@ Not to bo
 
 \newpage
 
-\subsection{Compare variation on more than two groups - ANOVA}
+\subsection{Compare variation on more than two groups - Fisher's ANOVA}
 
 The so-called Analysis of Variance, one way ANOVA, or just ANOVA, is used to determine whether the variation of a dataset comes primary from variation within the samples themselves, or from variation between the groups. It is an extension of the Fisher test, where the F statistic is computed as:
 \[
@@ -761,43 +771,225 @@ Parametric and non-parametric
 \section{Comparing data and normalization}
 Comparing data and normalization
 
+
+
 % Chapter - Linear models and GLMs
 \chapter{Linear models and GLMs}
 
 \section{Simple linear regression}
+Simple linear regression.
+
+\newpage
 
 \section{Multiple linear regression}
+Multiple linear regression.
+
+\newpage
 
 \section{Hypothesis testing in linear models}
+Hypothesis testing in linear models.
+
+\newpage
 
 \section{Generalized Linear Models (GLMs)}
+Generalized Linear Models (GLMs).
 
-\section{Logistic, Poisson, polynomial regression and interaction terms}
+\newpage
 
-% Chapter - Introduction to bayesian statistics
-\chapter{Introduction to bayesian statistics}
+\section{Logistic, Poisson, polynomial regression}
+Logistic, Poisson, polynomial regression and interaction terms [...].
+
+
+
+% Chapter - Introduction to bayesian probability
+\chapter{Introduction to bayesian probability}
 
 \section{The Bayes' theorem}
-The Bayes' theorem.
+
+Imagine you're a detective trying to solve a mystery. You start with some hunches (your initial beliefs), then you gather clues (evidence), and based on those clues, you update your beliefs about what happened. This is exactly what Bayes' Theorem allows us to do — mathematically.
+
+Probability is the language of uncertainty. It helps us reason when we don’t know for sure what’s going on. There are two big ways to use probability:
+\begin{itemize}
+  \item \textbf{Forward}: If we know the cause, what are the chances of seeing this outcome?
+  \item \textbf{Backward (inference)}: Given the outcome, what’s the most likely cause?
+\end{itemize}
+
+The second one — working backwards from results to reasons — is what Bayes’ Theorem is all about. It’s how we go from data to understanding.
+
+Bayes’ Theorem shows up in spam filters, medical tests, search engines, even in how scientists interpret experiments. It’s the engine behind how we learn from evidence. Once you understand it, you’ll start seeing it everywhere — from everyday decisions to advanced machine learning.
+
+Here’s the rule in its mathematical form:
+
+\[
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+\]
+
+Where:
+\begin{itemize}
+  \item $P(A|B)$ is the probability of event $A$ given that $B$ has occurred (the \textbf{posterior}).
+  \item $P(B|A)$ is the probability of event $B$ given $A$ (the \textbf{likelihood}).
+  \item $P(A)$ is the probability of $A$ before seeing $B$ (the \textbf{prior}).
+  \item $P(B)$ is the total probability of $B$ occurring (the \textbf{evidence}).
+\end{itemize}
+
+Example: Two Dice, One Roll:
+
+Let’s say you have two dice:
+\begin{itemize}
+  \item Die 1 is \textbf{fair}, so $P(6|D_1) = \frac{1}{6}$.
+  \item Die 2 is \textbf{biased}, so $P(6|D_2) = \frac{1}{2}$.
+\end{itemize}
+
+You randomly pick one die, with no reason to favor either. So,
+\[
+P(D_1) = P(D_2) = \frac{1}{2}
+\]
+
+You roll the die and get a 6. Now you wonder: What are the chances that you picked the biased die?
+
+Let:
+\begin{itemize}
+  \item $D_1$: You picked the fair die.
+  \item $D_2$: You picked the biased die.
+  \item $S$: You rolled a 6.
+\end{itemize}
+
+We want to find $P(D_2 | S)$ — the probability that the die is biased given that we rolled a 6.\\
+
+Using Bayes’ Theorem:
+
+\[
+P(D_2 | S) = \frac{P(S | D_2) \cdot P(D_2)}{P(S)}
+\]
+
+First, we calculate $P(S)$ — the overall chance of rolling a 6:
+
+\[
+P(S) = P(S|D_1) \cdot P(D_1) + P(S|D_2) \cdot P(D_2) = \frac{1}{6} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2}
+= \frac{1}{12} + \frac{1}{4} = \frac{1}{3}
+\]
+
+Now apply Bayes' Theorem:
+
+\[
+P(D_2 | S) = \frac{\frac{1}{2} \cdot \frac{1}{2}}{\frac{1}{3}} = \frac{1}{4} \div \frac{1}{3} = \frac{3}{4}
+\]\\
+
+Even though both dice had the same chance of being picked, rolling a 6 strongly points to the biased die. Bayes’ Theorem helped us turn a gut feeling into a solid number: a \textbf{75\% chance} that the die was biased.
+
+Bayes’ Theorem isn’t just math — it’s a mindset. It’s how we learn, adapt, and update our understanding when the world surprises us. Once you see it in action, it becomes a natural way to think about uncertainty and evidence.
+
+\newpage
 
 \section{Bayesian vs frequentist}
 Bayesian vs frequentist.
 
-\section{Bayesian statistics}
-Bayesian statistics.
+\newpage
+
+\section{Computing posteriors}
+Computing posteriors.
+
 
 
 % Chapter - Introduction to Markov processes
-\chapter{Stochasticity and Markov processes}
+\chapter{Introduction to Markov processes}
 
-\section{Stochasticity}
-Stochasticity
+\section{Stochasticity and Markov processes}
+
+Why Talk About Markov Models?\\
+
+The world around us is full of uncertainty. Will it rain tomorrow? Will a website visitor click the next link? Will a cell divide or die? In many cases, the best we can do is talk in terms of probabilities — not certainties.
+
+This is where the idea of \textbf{stochasticity} comes in. Stochasticity means randomness. A \textbf{stochastic process} is a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”
+
+Many systems in nature and society follow patterns, but with noise, surprises, or variability. Markov models give us a way to describe and work with such systems — mathematically and intuitively.\\
+
+What Is a Markov Model?
+
+Imagine you're trying to predict the weather. If it’s sunny today, what are the chances it’ll be sunny tomorrow? What if it was rainy? Markov models help us answer these kinds of questions using a simple but powerful idea:
+
+\textbf{The future depends only on the present — not the past.}
+
+This is called the \textbf{Markov property}. A Markov model is a way to describe systems that move between states (like "sunny", "rainy", or "cloudy") with certain probabilities.
+
+Markov models are useful when things change over time in a somewhat random, yet patterned, way. Think of:
+
+\begin{itemize}
+  \item Weather patterns
+  \item Stock market movements
+  \item DNA sequences
+  \item Pages people click on in a website
+\end{itemize}
+
+Even if we can’t predict everything perfectly, we can model how likely one thing is to follow another.\\
+
+Key Ingredients of a Markov Model
+
+A simple Markov model has:
+\begin{itemize}
+  \item A list of possible \textbf{states} (e.g., Sunny, Rainy)
+  \item A \textbf{transition matrix}, which tells you the probabilities of moving from one state to another
+\end{itemize}
+
+Example: Predicting Weather
+
+Let’s say the weather can be either \textbf{Sunny} or \textbf{Rainy}. And based on past data, we know:
+
+\[
+\text{Transition Matrix} =
+\begin{bmatrix}
+P(\text{Sunny} \rightarrow \text{Sunny}) & P(\text{Sunny} \rightarrow \text{Rainy}) \\
+P(\text{Rainy} \rightarrow \text{Sunny}) & P(\text{Rainy} \rightarrow \text{Rainy})
+\end{bmatrix}
+=
+\begin{bmatrix}
+0.8 & 0.2 \\
+0.4 & 0.6
+\end{bmatrix}
+\]
+
+This means:
+\begin{itemize}
+  \item If today is Sunny, there's an 80\% chance tomorrow will also be Sunny, and 20\% chance of Rain.
+  \item If today is Rainy, there's a 40\% chance it clears up, and a 60\% chance it stays rainy.
+\end{itemize}
+
+Suppose today is Sunny. We can represent our current state as a vector:
+
+\[
+\text{Today} = \begin{bmatrix} 1 & 0 \end{bmatrix}
+\]
+
+Then tomorrow’s prediction is:
+
+\[
+\text{Tomorrow} = \text{Today} \times \text{Transition Matrix} = 
+\begin{bmatrix} 1 & 0 \end{bmatrix} \times
+\begin{bmatrix}
+0.8 & 0.2 \\
+0.4 & 0.6
+\end{bmatrix}
+=
+\begin{bmatrix}
+0.8 & 0.2
+\end{bmatrix}
+\]
+
+So there's an 80\% chance of Sun, 20\% chance of Rain tomorrow.\\
+
+Markov models help us make predictions, model uncertainty, and understand patterns in time-based data. They are a stepping stone to more complex tools like Hidden Markov Models (HMMs), used in speech recognition, bioinformatics, and more.\\
+
+Markov models are simple but powerful tools. They help us model systems that evolve over time, assuming that the next state only depends on the current one. Whether you’re analyzing text, tracking a robot, or predicting rain, the Markov assumption can be surprisingly useful.
+
+\newpage
 
 \section{Markov chains}
-Markov chains
+Markov chains.
+
+\newpage
 
 \section{Hidden Markov models}
-Hidden Markov models
+Hidden Markov models.
 
 
 \backmatter
