@@ -171,39 +171,41 @@ In the figure \ref{fig:histogram1} we see a representation of a set of observati
 
 \section{What is probability?}
 
-As already mentioned in the introduction, probability is a branch of mathematics dealing with information and random events. Hence, a fair question to begin with, would be what \textit{are} random events? Random events, also referred to as \textit{stochastic}, we will mean simply a process whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός}, which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events.\\
+As already mentioned in the introduction, probability is a branch of mathematics dealing with information and random events. Hence, we could begin by asking, what \textit{are} random events? Random events, also referred to as \textit{stochastic}, are simply process whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός} (stochastic), which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events and quantify our degree of certainty for a specific result.\\
 
-Let's now ask ourselves the following question. What \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a number we make up, a quantity we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way.
+Let's now ask ourselves a similar question. What is \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a \textit{number} we make up, a \textit{quantity} we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way:
 
 \begin{itemize}
 \item If I'm sure A will never happen, $P(A) = 0$.
 \item If I'm sure A will always happen,  $P(A) = 1$.
-\item For anything in between, $P(A) \in [0, 1]$.
+\item For anything in between, if I'm not certain about any of the outcomes $P(A) \in [0, 1]$.
 \end{itemize}
 
-With the symbol $ \in$ we simply denote that $P(A)$ will be a number between 0 and 1. It could also be read as $P(A)$ is \textit{contained} in the interval $[0, 1]$. In all those cases where we are not sure it we will get one result or another, we say that there is a level of \textit{uncertainty}, or \textit{surprise}. Let's think on a coins toss, as an example. To model such case, the simplest example of a stochastic process, we would have two possible outcomes: heads ($H$), and tails ($T$)
+With the symbol $ \in$ we simply denote that $P(A)$ will be a number between 0 and 1. It could also be read as $P(A)$ is \textit{contained} in the interval $[0, 1]$. In all those cases where we are not sure if we will get one result or another, we say that there is a level of \textit{uncertainty}, or \textit{surprise}.\\
+
+Let's think on a coins toss, as an example. To model such case, one of the simplest and oldest examples of a stochastic process, we would have two possible outcomes: heads ($H$), and tails ($T$).
 
 \begin{itemize}
-\item If I'm sure I will get heads, $P(H) = 1$, and $P(T) = 1$.
+\item If I'm sure I will get heads, $P(H) = 1$, and $P(T) = 0$.
 \item If I'm sure I will get tails, $P(H) = 0$, and $P(T) = 1$.
 \item For anything in between, $P(H) = P(T) = \frac{1}{2}$.
 \end{itemize}
 
-The example of the coin, where we have just two possible results, is what we will call a \textit{Bernoulli} trial, which we will describe soon, but let's use it as a prior example now to introduce the idea of probability.\\
+The example of the coin, where we have just two possible results, is what we will call a \textit{Bernoulli} trial, and we will describe it in detail soon, but let's use it now as a prior example to introduce the idea of probability.\\
 
-The cases in which I am certain, of either one case of the other, are clear. But for the third one, where we assign a value to the probability which is not 0 or 1, we should stop for a second. When we say that the probability of getting heads - or tails - in a normal coin that is not biased is $P = \frac{1}{2}$, we are implicitly assuming some things. We implicitly assume that if we repeated the toss many times, half of them we would get one result (e.g., heads), and the other half the remaining result (e.g., tails). This is normally referred to as the \textit{frequentist} definition of probability, because we are defining its value as the ratio of how many times we get a specific result $n$, and the number of total trials $N$.
+The scenarios in which I am certain, of either one case of the other, are clear. But for the third one, where we assign a value to the probability which is not 0 or 1, we should stop for a second. When we say that the probability of getting heads - or tails - in a normal coin that is not biased is $P = \frac{1}{2}$, we are implicitly assuming some things. We implicitly assume that if we repeated the toss many times, half of them we would get one result (e.g., heads), and the other half the remaining result (e.g., tails). This is normally referred to as the \textit{frequentist} definition of probability, because we are defining its value as the ratio of how many times we get a specific result $n$, and the number of total trials $N$.
 
 \begin{equation}
-	P(\text{A happening}) = \frac{\text{Number of times A happens}}{\text{Total number of trials}} = \frac{n}{N}
+	P(\text{A happening}) = \frac{\text{Number of times A happens}}{\text{Total number of trials}} = \frac{n}{N} \; . \nonumber
 \end{equation}
 
 In the case of the coin, if I toss 100 times, and obtain 55 heads against 45 tails, would lead to 
 
 \begin{equation}
-	P(\text{H}) = \frac{55}{100} \simeq \frac{1}{2} \nonumber
+	P(\text{H}) = \frac{55}{100} \simeq \frac{1}{2} ; . \nonumber
 \end{equation}
 
-Ideally we expect that these frequencies, as we increase the number of repetitions, would approach a perfect $\frac{1}{2}$. We will revisit this concept when we talk about the Law of Large Number and the Central Limit Theorem, in Chapter 2\\
+Ideally we expect that these frequencies, as we increase the number of repetitions, would approach a perfect $\frac{1}{2}$. We will revisit this concept when we talk about the Law of Large Number and the Central Limit Theorem, in Chapter 3.\\
 
 But this is not the only thing we assume about such a quantity. For probabilities to represent the real behaviour of random processes and information, they must follow another property, called \textit{unitarity}. Unitarity ensures that, if we consider and add up the probabilities for all possible events in a given experiment, we recover the total. That means, at least one of the scenarios will happen.\\
 
@@ -450,7 +452,7 @@ Prediction focuses on accuracy and generalization rather than explaining causali
 
 Focus shifted from understanding relationships to optimizing models that generalize well to unseen data [...]. In 2001, Leo Breiman, in his seminal paper "Statistical Modelling: The Two Cultures," highlighted the distinction, arguing that traditional statistics emphasized inference, whereas modern machine learning prioritized prediction.\\
 
-\section{Parameter estimation}
+\section{Parameters and variables}
 Another key difference we will discuss now, and quite a subtle one from the mathematical perspective, is that one between a \textit{variable} and a \textit{parameter}. Consider the example of a binomial experiment, e.g. tossing coins and asking for the probability of measuring a specific number of heads. There, we would write it as 
 
 \begin{equation}

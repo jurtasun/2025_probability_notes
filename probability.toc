@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {2.4.3}Exponential distribution}{17}{}%
 \contentsline {chapter}{\numberline {3}Parameter estimation}{19}{}%
 \contentsline {section}{\numberline {3.1}Prediction vs inference}{19}{}%
-\contentsline {section}{\numberline {3.2}Parameter estimation}{20}{}%
+\contentsline {section}{\numberline {3.2}Parameters and variables}{20}{}%
 \contentsline {section}{\numberline {3.3}The Law of Large Numbers}{21}{}%
 \contentsline {section}{\numberline {3.4}The Central Limit Theorem}{22}{}%
 \contentsline {section}{\numberline {3.5}Maximum Likelihood Estimation}{23}{}%
