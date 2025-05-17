@@ -232,9 +232,7 @@ Mathematically, for a single Bernoulli trial with random variable $x$,
 P(x = 1) = p \quad \text{and} \quad P(x = 0) = 1 - p,
 \end{equation}
 
-where $p \in [0, 1]$. Note that both probabilities do sum 1, and hence if they properly obey the unitarity property. As well, you can see that this is a generalization of the case of the coin, in which the two outcomes had the same probability $p = 0.1$.\\
-
-Jacob Bernoulli (1655–1705) was one indeed of the pioneers of probability theory. His work \textit{Ars Conjectandi}, published posthumously in 1713, laid the groundwork for the law of large numbers and formalized many concepts still used today.
+where $p \in [0, 1]$. Note that both probabilities do sum 1, and hence if they properly obey the unitarity property. As well, you can see that this is a generalization of the case of the coin, in which the two outcomes had the same probability $p = 0.1$ [...]. Jacob Bernoulli (1655–1705) was one indeed of the pioneers of probability theory. His work \textit{Ars Conjectandi}, published posthumously in 1713, laid the groundwork for the law of large numbers and formalized many concepts still used today.
 
 \begin{figure}[ht]
     \centering
@@ -243,9 +241,7 @@ Jacob Bernoulli (1655–1705) was one indeed of the pioneers of probability theo
     \label{fig:bernoulli1}
 \end{figure}
 
-\textbf{Example 1: Coin Toss}\\
-
-A fair coin toss is a Bernoulli trial with
+\textbf{Example 1}: A fair coin toss is a Bernoulli trial with:
 
 \begin{equation}
 p = P(\text{Heads}) = P(\text{Tails}) = 0.5.
@@ -382,7 +378,7 @@ In the same way we imposed that probability needs to obey unitarity, we will imp
 
 \subsection{Uniform distribution}
 
-The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely.\\
+The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely [...].\\
 
 The probability of observing a particular result $x$ in a given range $[a, b]$ is:
 
@@ -400,7 +396,7 @@ The probability of observing a particular result $x$ in a given range $[a, b]$ i
 \newpage
 
 \subsection{Gaussian distribution}
-Introduced by Carl Friedrich Gauss, the normal distribution became central to statistics due to the Central Limit Theorem (CLT). It describes how averages of large samples tend to form a bell-shaped curve. Intuitively, many natural and social phenomena follow a normal distribution, such as human heights and test scores.\\
+Introduced by Carl Friedrich Gauss, the normal distribution became central to statistics due to the Central Limit Theorem (CLT). It describes how averages of large samples tend to form a bell-shaped curve. Intuitively, many natural and social phenomena follow a normal distribution, such as human heights and test scores [...].\\
 
 The probability density function is:
 \begin{equation}
@@ -417,7 +413,7 @@ The probability density function is:
 \newpage
 
 \subsection{Exponential distribution}
-The exponential distribution models waiting times between. Intuitively, it describes situations where the probability of waiting a certain time between events remains constant, such as time between bus arrivals.\\
+The exponential distribution models waiting times between. Intuitively, it describes situations where the probability of waiting a certain time between events remains constant, such as time between bus arrivals [...].\\
 
 The probability density function is:
 \begin{equation}
@@ -656,8 +652,6 @@ About p-values [...] \\
 
 \section{Statistical tests: some examples}
 
-Statistic tests, p-values and significance
-
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
 
 The so-called \textit{one-sample t-test} is used to determine whether the mean of a single sample differs significantly from a known or hypothesized population mean. It was developed by William Gosset, a statistician working at the Guinness factory, in 1908 [1]. Due to restrictions due to the agreements with the company, he was not able to submit it with is name to the scientific journal [...], and hence it was published under the pseudonym \textit{student's t} algorithm. Originally developed to quantify if certain concentrations of barley  / rye [...].\\
@@ -667,16 +661,12 @@ The student's t is used to compare the sample mean $\bar{x}$ to ha hypothesized 
     t = \frac{\bar{x} - \mu}{s / \sqrt{n}},
 \]
 
-
 where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size. It is built in such a way that, as the sample mean $\bar{x}$ gets closer to the hypothesized value $\mu$, the $t$-variable approaches zero.\\
-
-
 
 Then, given some data was observed and and we obtained a specific value for our t - let's call it \textit{t obs}, to compute a p-value we just need to compute what was the probability of that particular value. To do that, we just recall our t variable was indeed a random variable depending on our random observations, which produced some random sample mean and variance, and some degrees of freedom $n - 1$
 \[
 p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{n-1}}(x)\,dx = 2 \cdot \left[1 - F_{T_{n-1}}(|t|)\right]
 \]
-
 
 Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribution} with $n - 1$ degrees of freedom, and $F_{T_{n-1}}$ the corresponding cumulative distribution, as we discussed in chapter 2 [...]. Here, we are computing the probability of t being greater than the one we obtained, and we do that just by integrating the t-distribution [...]. Note that here we are computing a 2-sided p-value, hence te factor 2 at the beginning. 
 
@@ -694,7 +684,6 @@ The computation of the p-value:
 \[
 p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{df}}(x)\,dx = 2 \cdot \left[1 - F_{T_{df}}(|t|)\right]
 \]
-
 
 Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribution} with $n_1 + n_2 - 1$ degrees of freedom, and $F_{T_{n-1}}$ the corresponding cumulative distribution
 Note here we assume equal variances. For Welch’s t-test (unequal variances), use the same form, but with Welch-adjusted [...]
@@ -921,7 +910,7 @@ Many systems in nature and society follow patterns, but with noise, surprises, o
 
 What Is a Markov Model?
 
-Imagine you're trying to predict the weather. If it’s sunny today, what are the chances it’ll be sunny tomorrow? What if it was rainy? Markov models help us answer these kinds of questions using a simple but powerful idea:
+Imagine you're trying to predict the weather. If it’s sunny today, what are the chances it’ll be sunny tomorrow? What if it was rainy? Markov models help us answer these kinds of questions using a simple but powerful idea:\\
 
 \textbf{The future depends only on the present — not the past.}
 
@@ -946,7 +935,7 @@ A simple Markov model has:
   \item A \textbf{transition matrix}, which tells you the probabilities of moving from one state to another
 \end{itemize}
 
-Example: Predicting Weather
+Example: Predicting Weather\\
 
 Let’s say the weather can be either \textbf{Sunny} or \textbf{Rainy}. And based on past data, we know:
 
