@@ -71,9 +71,9 @@ As one might expect, probability and related areas of study date back to very an
 
 Although classical Greek and Roman philosophers frequently debated the nature of chance and determinism, these discussions remained broad and philosophical, far from the systematic, mathematical discipline we now regard as scientific. As early as the time of Cicero, thinkers began distinguishing between events that occurred by chance and those believed to be governed by fate, foreshadowing later developments in probability theory [...].\\
 
-It was not until the late medieval and early Renaissance periods that more rigorous ideas began to emerge. Mathematicians such as Gerolamo Cardano (1501–1576) made foundational contributions to the mathematical treatment of chance by analyzing gambling problems and developing early probabilistic reasoning [...].\\
+It was not until the late medieval and early Renaissance periods that more rigorous ideas began to emerge. Mathematicians such as Gerolamo Cardano (1501–1576) made foundational contributions to the mathematical treatment of chance by analyzing gambling problems and developing early probabilistic reasoning.
 
-Probability was properly formalized as a mathematical discipline in the 17th century, most notably through the correspondence between Blaise Pascal and Pierre de Fermat. Their work on problems involving games of chance introduced key ideas such as combinatorics, expected value, and variance — concepts that remain central to our modern understanding of randomness, measurement, and information. These developments laid the groundwork for subsequent advances by Huygens, Bernoulli, Gauss, and others, which we will explore in later chapters. Bernoulli’s \textit{Ars Conjectandi} (1713) is often cited as the first formal textbook on probability.\\
+Probability was properly formalized as a mathematical discipline in the 17th century, most notably through the correspondence between Blaise Pascal and Pierre de Fermat. Their work on problems involving games of chance introduced key ideas such as combinatorics, expected value, and variance — concepts that remain central to our modern understanding of randomness, measurement, and information. These developments laid the groundwork for subsequent advances by Huygens, Bernoulli, Gauss, and others, which we will explore in later chapters. Bernoulli’s \textit{Ars Conjectandi} (1713) is often cited as the first formal textbook on probability [...]. \\
 
 \indent The modern approach to probability and its fundamental concepts are summarized in the axioms established by the Russian mathematician Andrey Kolmogorov, in the early 1930s [...]. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover this with a bit more detail in Chapter 2.\\
 
@@ -98,7 +98,7 @@ We can define a quantity called the \textit{mean} - or \textit{average} - of an 
 \label{mean1}
 \end{equation}
 
-We can write this in a slightly more compact way, using the greek letter $\sum$ to represent the \textit{summation} of all these elements, as follows:\\
+We can write this in a slightly more compact way as a \textit{summation}, as follows:\\
 
 \begin{equation}
 \bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_{i} \; .
@@ -107,7 +107,7 @@ We can write this in a slightly more compact way, using the greek letter $\sum$ 
 
 Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, starting with the first one ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$). The expressions (\ref{mean1}) and (\ref{mean2}) mean \textit{exactly} the same thing, just written in different ways.\\
 
-If we now write that expression for our specific set $\textbf{x}_{1}$, which has just $N = 3$ observations, we get
+If we now write that expression for our specific sample $\textbf{x}_{1}$, which has just $N = 3$ observations, we get
 
 \begin{equation}
 \bar{x}_{1} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2 \; . \nonumber
@@ -119,13 +119,20 @@ As we see, the mean is just a quantity that captures some information about the 
 s^2 = \frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2} \; . 
 \end{equation}
 
-Note that the variance is just a sum of differences, and squared just so that we obtain a positive value. It is a measure starting with the first element ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$), of how far is each element from the mean value. If all elements in our sample are very close to the mean, then the sum of differences will be a small number, and we would get a variance $s^2$ close to zero. Meanwhile, if the elements are very different, we would obtain a bigger variance. The reason we name it $s^2$ is to distinguish it from the so-called \textit{standard deviation} $s$, but we shall not worry about that now. Again, just by substituting that expression for our set $x_1$, which has just $N = 3$ observations, we get
+Note that the variance is just a sum of differences, and squared just so that we obtain a positive value. It is a measure starting with the first element ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$), of how far is each element from the mean value. If all elements in our sample are very close to the mean, then the sum of differences will be a small number, and we would get a variance $s^2$ close to zero. Meanwhile, if the elements are very different, we would obtain a bigger variance. The reason we name it $s^2$ is to distinguish it from the so-called \textit{standard deviation}, normally written as $s$, but we shall not worry about that now. Again, just by substituting that expression for our set $\textbf{x}_1$, which has just $N = 3$ observations, we get
 
 \begin{equation}
-s_1^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; . \nonumber
+s_1^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; , \nonumber
 \end{equation}
 
-which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean.\\
+which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean. In Figure \ref{fig:histogram1} we see a representation of a set of observations as a histogram, which visually displays the mean value and the variance [...]. \\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter1/normal_hist.png}
+    \caption{Histogram representing the mean and standard deviation for a set of gaussian observations. The read line shows the mean value, representing the central value where the bulk of events lie, and the dotted lines show the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean.}
+    \label{fig:histogram1}
+\end{figure}
 
 As an exercise, try to compute both the mean and variance for a second sample, let's say
 
@@ -143,7 +150,7 @@ Buy substituting in the general expressions of $\bar{x}$ and $s^2$ you should ge
 s^2_2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((4 - 5)^{2} + (5 - 5)^{2} + (6 - 5)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; . \nonumber
 \end{equation}
 
-Again, our mean $\bar{x}_2 = 5$ encodes the information about the "central" value, where the bulk of event are, and the variance $s^2_2 = 1$ indicates, as in the previous example, that the elements of the sample $\textbf{x}_2$ are also \textit{one unit} away from the mean\\
+Again, our mean $\bar{x}_2 = 5$ encodes the information about the "central" value, where the bulk of event are, and the variance $s^2_2 = 1$ indicates, as in the previous example, that the elements of the sample $\textbf{x}_2$ are also \textit{one unit} away from the mean.\\
 
 Another useful quantity used to characterize variability is the so called \textit{standard deviation}, which is just the square root of the variance
 
@@ -153,17 +160,7 @@ s = \sqrt{\frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}} \; .
 
 This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information.\\
 
-As we said, this was just a warmup example, and we will visit these definitions in further chapters when we introduce the idea of parameter estimation, and we will see in detail different ways to define and interpret them. \\
-
-In the figure \ref{fig:histogram1} we see a representation of a set of observations as a histogram, which visually displays the mean value and the variance [...]. \\ 
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter1/normal_hist.png}
-    \caption{Histogram representing the mean and standard deviation for a set of gaussian observations. The read line shows the mean value, representing the central value where the bulk of events lie, and the dotted lines show the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean.}
-    \label{fig:histogram1}
-\end{figure}
-
+As we said, this was just a warmup example, and we will visit these definitions in further chapters when we introduce the idea of parameter estimation, and we will see in detail different ways to define and interpret them [...]. \\
 
 
 % Chapter - Probability and random events
@@ -171,17 +168,17 @@ In the figure \ref{fig:histogram1} we see a representation of a set of observati
 
 \section{What is probability?}
 
-As already mentioned in the introduction, probability is a branch of mathematics dealing with information and random events. Hence, we could begin by asking, what \textit{are} random events? Random events, also referred to as \textit{stochastic}, are simply process whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός} (stochastic), which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events and quantify our degree of certainty for a specific result.\\
+As already mentioned in the introduction, probability is a branch of mathematics dealing with information and random events. Hence, we could begin by asking, what \textit{are} random events? Random events, also referred to as \textit{stochastic}, are simply processes whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός} (stochastic), which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events and quantify our degree of certainty for a specific result.\\
 
-Let's now ask ourselves a similar question. What is \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a \textit{number} we make up, a \textit{quantity} we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way:
+Let's ask ourselves a the question, what \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a \textit{number} we make up, a \textit{quantity} we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way:
 
 \begin{itemize}
-\item If I'm sure A will never happen, $P(A) = 0$.
-\item If I'm sure A will always happen,  $P(A) = 1$.
-\item For anything in between, if I'm not certain about any of the outcomes $P(A) \in [0, 1]$.
+\item If I'm sure that some event (A) will never happen, $P(A) = 0$.
+\item If I'm sure that some event (A) will always happen,  $P(A) = 1$.
+\item For anything in between, if I'm not certain about any of the outcomes, $P(A) \in [0, 1]$.
 \end{itemize}
 
-With the symbol $ \in$ we simply denote that $P(A)$ will be a number between 0 and 1. It could also be read as $P(A)$ is \textit{contained} in the interval $[0, 1]$. In all those cases where we are not sure if we will get one result or another, we say that there is a level of \textit{uncertainty}, or \textit{surprise}.\\
+With the symbol $ \in$ we simply denote that $P(A)$ will be a number between 0 and 1. It could also be read as $P(A)$ is \textit{contained} in the interval $[0, 1]$. In all those cases where we are not sure if we will get one result or another, we say that there is a level of \textit{uncertainty}, or \textit{surprise} [...].\\
 
 Let's think on a coins toss, as an example. To model such case, one of the simplest and oldest examples of a stochastic process, we would have two possible outcomes: heads ($H$), and tails ($T$).
 
@@ -191,9 +188,7 @@ Let's think on a coins toss, as an example. To model such case, one of the simpl
 \item For anything in between, $P(H) = P(T) = \frac{1}{2}$.
 \end{itemize}
 
-The example of the coin, where we have just two possible results, is what we will call a \textit{Bernoulli} trial, and we will describe it in detail soon, but let's use it now as a prior example to introduce the idea of probability.\\
-
-The scenarios in which I am certain, of either one case of the other, are clear. But for the third one, where we assign a value to the probability which is not 0 or 1, we should stop for a second. When we say that the probability of getting heads - or tails - in a normal coin that is not biased is $P = \frac{1}{2}$, we are implicitly assuming some things. We implicitly assume that if we repeated the toss many times, half of them we would get one result (e.g., heads), and the other half the remaining result (e.g., tails). This is normally referred to as the \textit{frequentist} definition of probability, because we are defining its value as the ratio of how many times we get a specific result $n$, and the number of total trials $N$.
+The scenarios in which I am certain, of either one case of the other, are clear. But for the third one, where we assign a value to the probability which is not 0 or 1, we should stop for a second. When we say that the probability of getting heads - or tails - in a normal coin that is not biased is $P = \frac{1}{2}$, we are implicitly assuming some things. We implicitly assume that if we repeated the toss many times, half of them we would get one result (e.g., heads), and the other half the remaining result (e.g., tails). This is normally referred to as the \textit{frequentist} definition of probability, because we are defining its value as the ratio of how many times we get a specific result $n$, and the number of total trials $N$. The example of the coin, where we have just two possible results, is what we will call a \textit{Bernoulli} trial, and we will describe it in detail soon, but let's use it now as a prior example to introduce the idea of probability [...] .\\
 
 \begin{equation}
 	P(\text{A happening}) = \frac{\text{Number of times A happens}}{\text{Total number of trials}} = \frac{n}{N} \; . \nonumber
@@ -202,7 +197,7 @@ The scenarios in which I am certain, of either one case of the other, are clear.
 In the case of the coin, if I toss 100 times, and obtain 55 heads against 45 tails, would lead to 
 
 \begin{equation}
-	P(\text{H}) = \frac{55}{100} \simeq \frac{1}{2} ; . \nonumber
+	P(\text{H}) = \frac{55}{100} \simeq \frac{1}{2} \; . \nonumber
 \end{equation}
 
 Ideally we expect that these frequencies, as we increase the number of repetitions, would approach a perfect $\frac{1}{2}$. We will revisit this concept when we talk about the Law of Large Number and the Central Limit Theorem, in Chapter 3.\\
@@ -213,9 +208,9 @@ The formal definition of unitarity can be written as follows. Let's denote all p
 	\sum_{i = 1}^{n} \; P(x_{i}) = 1
 \end{equation}
 
-Indeed, the literal meaning of probability comes from latin \textit{probabilis}. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances."[12] However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence.\\
+Indeed, the literal meaning of probability comes from latin \textit{probabilis}. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances." However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence [...].\\
 
-There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details.\\
+There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details [...].\\
 
 \newpage
 
@@ -312,43 +307,21 @@ Again, let's consider a couple of examples to illustrate Poisson distributed eve
     &\quad + P(x=3; \lambda = 3) + P(x=4; \lambda = 3) + P(x=5; \lambda = 3) \notag
 \end{align}\\
 
-This sum of probabilities up to a given value is normally referred to as the \textit{cumulative probability}, \textit{cumulative distribution function}, or cdf.\\
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/poisson_highlight.png}
-    \caption{Representation of the Poisson distribution of a random variable $x$, given the number of observations $\lambda$ as a parameter.}
-    \label{fig:poisson2}
-\end{figure}
-
-\textbf{Example 3:} Now let's ask the opposite question. What would be the probability of observing \textit{at least} 5 patients in that same hospital?
-\begin{align}
-    P(x \leq 5; \lambda = 3) &= P(x=0; \lambda = 3) + P(x=1; \lambda = 3) + P(x=2; \lambda = 3) \notag \\
-    &\quad + P(x=3; \lambda = 3) + P(x=4; \lambda = 3) + P(x=5; \lambda = 3) \notag
-\end{align}\\
-
-Given unitarity, we can just compute it as
-\begin{equation}
-    P(x > 5; \lambda = 3) = 1 - P(x \leq 5; \lambda = 3) = 1 - CDF(5; \lambda = 3). \notag
-\end{equation}\\
-
 \newpage
 
 \section{Discrete and continuous}
 
-Once we have an insight on random events, and a mathematical quantity representing that uncertainty, we are ready to deal with real problems. From tossing coins, to rolling dice, to making measurements, the first thing we realize is that not \textit{all} random events are equal. In some cases, like rolling a fair dice, all outcomes are equally probable, and in other cases, such as counting, we may encounter some results which happen much more often than others. The main criteria we will use for differentiate among random events, is what we will call their \textit{distribution}.\\
+We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous} [...]. \\
 
-We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous}. [...]
+So far we have focused on discrete events, that is, scenarios where the number of possible outcomes was an integer number. Now we will encounter a second family of stochastic processes, the ones we will refer to as continuous. In the discrete case, we were implicitly using the frequentist definition of probability, as a number that represents the ratio of how many times we will observe a particular result, if we endlessly repeat [...].\\
 
-So far we have focused on discrete events, that is, scenarios where the number of possible outcomes was an integer number. Now we will encounter a second family of stochastic processes, the ones we will refer to as continuous. In the discrete case, we were implicitly using the frequentist definition of probability, as a number that represents the ratio of how many times we will observe a particular result, if we endlessly repeat (...).\\
-
-But let's try to face a different scenario. What would happen if we try to guess the probability of measuring something which does hace an infinite number of possible outcomes, spread on a continuous range? (e.g., the probability of measuring the height of a person an get 1.75 cm, or the temperature in a room and get 25 degrees, ...). Here we notice that, if we keep the definition of probability we used in the case of the Binomial, the Poisson, etc, we would get something like:
+But let's face now a different scenario. What would happen if we try to guess the probability of measuring something which does hace an infinite number of possible outcomes, spread on a continuous range? - e.g., the probability of measuring the height of a person an get 1.75 cm, or the temperature in a room and get 25 degrees, etc. Here we notice that, if we keep the definition of probability we used in the case of the Binomial, the Poisson, etc, we would get something like:
 
 \begin{equation}
 P(x = x_{0}) = \frac{\text{number of times I get $x_{0}$}}{\text{number of times I get any other result}}
 \end{equation}
 
-Note that now, the possible results are not just 1, 2, ..., n, but actually infinite more and spread over a continuous range. The outcome of measuring a temperature could be the $T = 25$ we want, but also $T = 24.999$ and $T = 25.001$, and there infinite other possible results between these two. No matter how precise our measurement devices, are, between any pair of results, we would have an infinite number of cases where we obtain a different result. Hence, applying the frequentist definition of probability would lead to:
+Note that now, the possible results are not just 1, 2, ..., n, but actually infinite more and spread over a \textit{continuous} range. The outcome of measuring a temperature could be the $T = 25$ we want, but also $T = 24.999$ and $T = 25.001$, and there are \textit{infinite} other possible results between these two. No matter how precise our measurement devices, are, between any pair of results, we would have an infinite number of cases where we obtain a different result. Hence, applying the frequentist definition of probability would lead to:
 
 \begin{equation}
 P(x = x_{0}) = \frac{\text{number of times I get $x_{0}$}}{\text{number of times I get any other result}} = \frac{n}{\infty} = 0
@@ -359,18 +332,18 @@ We would get that the probability of obtaining \textit{any result} would be exac
 Let's pause for a moment and think about what happened. At the very beginning of this chapter we said that the quantity $P(x)$ was used to represent information - also certainty, surprise - and computed using the frequentist approach, meaning the \textit{ratio of favorable cases and total cases}. But that was assuming we had a finite set or possibilities, or measure space.
 
 \begin{itemize}
-\item Discrete (coins, dice, counting) $\longrightarrow$ finite, \textit{countable} outcomes
-\item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ infinite, \textit{uncountable}
+\item Discrete (coins, dice, counting) $\longrightarrow$ finite, \textit{countable} outcomes.
+\item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ infinite, \textit{uncountable} outcomes.
 \end{itemize}
 
-For such cases we will define a mathematical quantity, similar to that we called probability, which represents analogous information, but considering the fact we are dealing with a continuous event. We will call it \textit{probability density} or \textit{density} for simplicity, and we will denote it with $f(x)$. Note that we can distinguish it from the probability in discrete events $P(x_{i})$, where we used the subscript $x_{i}$ to represent that the random variable could take just a finite set of values ($x_{1}$, $x{2}$, etc).
+For such cases we will define a mathematical quantity, similar to that we called probability, which represents analogous information, but considering the fact we are dealing with a continuous event. We will call it \textit{probability density} or simply \textit{density}, and we will denote it with $f(x)$. Note that we can distinguish it from the probability in discrete events $P(x_{i})$, where we used the subscript $x_{i}$ to represent that the random variable could take just a finite set of values ($x_{1}$, $x{2}$, etc).
 
 \begin{itemize}
 \item Discrete (coins, dice, counting) $\longrightarrow$ Probability $P(x_{i})$ | $\sum_{i = 1}^{\infty} P(x_{i}) = 1$
 \item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ Probability density f(x) | $\int_{i = 0}^{\infty} f(x) dx = 1$
 \end{itemize}
 
-In the same way we imposed that probability needs to obey unitarity, we will impose that property in our recently defined probability density $f(x)$. The way we represent the sum for all possible cases in the continuous case, is just imposing that the integral of the function $f(x)$ is 1. This is just an example of \textit{normalization}, that we will explore further in chapter 4.
+In the same way we imposed that probability needs to obey unitarity, we will impose that property in our recently defined probability density $f(x)$. The way we represent the sum for all possible cases in the continuous case, is just imposing that the integral of the function $f(x)$ is 1. This is just an example of \textit{normalization}, that we will explore further in Chapter 4 [...].
 
 \newpage
 
@@ -378,18 +351,18 @@ In the same way we imposed that probability needs to obey unitarity, we will imp
 
 \subsection{Uniform distribution}
 
-The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely [...].\\
+The uniform distribution represents events where all outcomes in an interval $[a, b]$ are equally likely [...].\\
 
 The probability of observing a particular result $x$ in a given range $[a, b]$ is:
 
 \begin{equation}
-    f(x; a, b) = \frac{1}{b-a}, \quad a \leq x \leq b.
+    f(x; a, b) = \frac{1}{b-a}, \quad a \leq x \leq b \; .
 \end{equation}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/uniform.png}
-    \caption{Representation of the uniform distribution of a random variable $x$, given the boundary parameters $a$, $b$.}
+    \caption{Representation of the uniform distribution of a random variable $x$, given the boundaries $a$, $b$.}
     \label{fig:uniform1}
 \end{figure}
 
@@ -400,7 +373,7 @@ Introduced by Carl Friedrich Gauss, the normal distribution became central to st
 
 The probability density function is:
 \begin{equation}
-    f(x; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+    f(x; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \; .
 \end{equation}
 
 \begin{figure}[ht]
@@ -417,7 +390,7 @@ The exponential distribution models waiting times between. Intuitively, it descr
 
 The probability density function is:
 \begin{equation}
-    f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0.
+    f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0 \; .
 \end{equation}
 
 \begin{figure}[ht]
@@ -434,19 +407,15 @@ The probability density function is:
 
 \section{Prediction vs inference}
 
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory - prediction - experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if a given set of assumptions are compatible with the obtained data. Indeed, most modern data analysis and hypothesis testing lie in the \textit{inferential} statistics, rather than \textit{predictive} probability.\\
+In the previous chapters we have introduced the mathematical theory of probability. We have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory - prediction - experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if a given set of assumptions are compatible with the obtained data. Indeed, most modern data analysis and hypothesis testing lie in the \textit{inferential} statistics, rather than \textit{predictive} probability [...].\\
 
-Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a some set of observations, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices?
+Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a some set of observations, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? The difference between prediction and inference has been a topic of interest in statistics and data science for centuries. While both concepts involve drawing conclusions from data, their goals, methodologies, and historical development differ significantly [...].\\
 
-The difference between prediction and inference has been a topic of interest in statistics and data science for centuries. While both concepts involve drawing conclusions from data, their goals, methodologies, and historical development differ significantly.\\
+The roots of inference trace back to classical statistics, particularly the work of Laplace (1749–1827) Gauss (1777–1855), who developed probability theory and the method of least squares. Their work laid the foundation for statistical inference, which aims to understand relationships between variables and make generalizable conclusions about populations from samples. For example, Laplace used probability theory to estimate the population of France, introducing Bayesian inference, which provides a framework for updating beliefs based on observed data. Gauss contributed the normal distribution and least squares estimation, which became essential for making inferences about unknown parameters.
 
-The roots of inference trace back to classical statistics, particularly the work of Pierre-Simon Laplace (1749–1827) and Carl Friedrich Gauss (1777–1855), who developed probability theory and the method of least squares. Their work laid the foundation for statistical inference, which aims to understand relationships between variables and make generalizable conclusions about populations from samples. For example, Laplace used probability theory to estimate the population of France, introducing Bayesian inference, which provides a framework for updating beliefs based on observed data. Gauss contributed the normal distribution and least squares estimation, which became essential for making inferences about unknown parameters.\\
+Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis aim to understand and describe these relationships. The emphasis lies on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. [...].\\
 
-Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis aim to understand and describe these relationships. The emphasis lies on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions [...]. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
-
-Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data.\\
-
-Focus shifted from understanding relationships to optimizing models that generalize well to unseen data [...]. In 2001, Leo Breiman, in his seminal paper "Statistical Modelling: The Two Cultures," highlighted the distinction, arguing that traditional statistics emphasized inference, whereas modern machine learning prioritized prediction.\\
+Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. Focus shifted from understanding relationships to optimizing models that generalize well to unseen data. In 2001, Leo Breiman, in his seminal paper "Statistical Modelling: The Two Cultures," highlighted the distinction, arguing that traditional statistics emphasized inference, whereas modern machine learning prioritized prediction.\\
 
 \section{Parameters and variables}
 Another key difference we will discuss now, and quite a subtle one from the mathematical perspective, is that one between a \textit{variable} and a \textit{parameter}. Consider the example of a binomial experiment, e.g. tossing coins and asking for the probability of measuring a specific number of heads. There, we would write it as 
@@ -454,9 +423,9 @@ Another key difference we will discuss now, and quite a subtle one from the math
 \begin{equation}
     P(x; n, p) = \binom{n}{k} p^x (1-p)^{n-x},
 \end{equation}
-where $n$ is the number of trials and $p$ is the probability of success.
+where $n$ is the number of trials and $p$ is the probability of success.\\
 
-In our previous examples, we have treated just $x$ as our variable of interest, but we could think about P as a function of three independent variables. The number of times we want to observe heads, the total number of trials, and the probability of success for each toss. Normally, we will call \textit{parameters}, to all these variables we will freeze for the purpose of our calculations, and either consider them either known, or fit them from data (...).
+In our previous examples, we have treated just $x$ as our variable of interest, but we could think about P as a function of three independent variables. The number of times we want to observe heads, the total number of trials, and the probability of success for each toss. Normally, we will call \textit{parameters}, to all these variables we will freeze for the purpose of our calculations, and either consider them either known, or fit them from data [...].
  
  \newpage 
  
@@ -603,7 +572,7 @@ In practice, these properties justify the use of MLE even when exact finite-samp
 \subsection{Application to Generalized Linear Models}
 
 Generalized Linear Models (GLMs) are an important class of models that extend linear regression to non-normal response variables by using a link function and a distribution from the exponential family. MLE plays a central role in fitting GLMs because the estimation of the model parameters is achieved by maximizing the likelihood of the observed responses.
-For instance, in logistic regression---used for binary outcomes---the log-odds of success is modelled as a linear combination of predictors:
+For instance, in logistic regression---used for binary outcomes---the log-odds of success is modelled as a linear combination of predictors:\\
 
 \textbf{Example: Logistic Regression}
 
@@ -615,7 +584,7 @@ For binary response data, logistic regression models the log-odds as a linear fu
 
 MLE is used to estimate the coefficients $\beta_0, \beta_1$ by maximizing the binomial log-likelihood.
 
-\subsection*{Exercises}
+\textbf{Exercises}
 \begin{enumerate}
 \item \textbf{Basic Derivation:} Show that the MLE for the rate parameter $\lambda$ of an exponential distribution $f(x; \lambda) = \lambda e^{-\lambda x}$ is $\hat{\lambda} = 1 / \bar{x}$.
 \end{enumerate}
@@ -631,9 +600,8 @@ In the previous chapters we have introduced the mathematical theory of probabili
 \section{Hypothesis, significance, p-values}
 The term \textit{hypothesis testing} is usually used to refer a broad set of tools addressing parameter estimation, inference, and various exploratory analysis on random measurements and observations. It was first coined by British mathematicians Pearson and Fisher [...] in early XX\textsuperscript{th} century. In the last decades, hypothesis testing, hypothesis test, statistical inference - sometimes referred to as  exploratory analysis - has gained popularity and become one of the standards in most experimental sciences, given the automatization of experiments and the large amounts of data available.\\
 
-Generally speaking, we will use hypothesis testing as a set of rules, almost as an recipe or an algorithm, to face and interpret data. Once we have covered the idea of parameter estimation, sample distributions, and the idea of estimators, we will now formulate hypothesis on the true - \textit{unkwnown} - parameters, and then build \textit{statistic tests} to quantify how far - or close - are these hypothesized values from the observed - experimental, sample - values. And finally, we will quantify how certain we are about the values obtained - how \textit{significant} they are - computing the \textit{p-value}, standing from Pearson value.\\
+Once we have covered the idea of parameter estimation, sample distributions, and the idea of estimators, we will now formulate hypothesis on the true - \textit{unkwnown} - parameters, and then build \textit{statistic tests} to quantify how far - or close - are these hypothesized values from the observed - experimental, sample - values. And finally, we will quantify how certain we are about the values obtained - how \textit{significant} they are - computing the \textit{p-value}, standing from Pearson value.\\ The general approach we will follow, regardless of the kind of question we are after and the observations made, can be summarized as follows:
 
-The general approach we will follow, regardless of the kind of question we are after and the observations made, can be summarized as follows:
 \begin{itemize}
 \item Formulate \textit{null} hypothesis $H_0$ and \textit{alternative} hypothesis $H_1$ about the \textit{true} - \textit{population} parameters, generally for the mean or variance, \textit{prior to experiment}.
 \item Collect data, make observations, make measurements.
@@ -642,19 +610,11 @@ The general approach we will follow, regardless of the kind of question we are a
 \item Accept or reject the null hypothesis, based on the p-value.
 \end{itemize}
 
-
-About statistc tests [...].\\
-
-About p-values [...] \\
-
-
 \newpage
 
 \section{Statistical tests: some examples}
 
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
-
-The so-called \textit{one-sample t-test} is used to determine whether the mean of a single sample differs significantly from a known or hypothesized population mean. It was developed by William Gosset, a statistician working at the Guinness factory, in 1908 [1]. Due to restrictions due to the agreements with the company, he was not able to submit it with is name to the scientific journal [...], and hence it was published under the pseudonym \textit{student's t} algorithm. Originally developed to quantify if certain concentrations of barley  / rye [...].\\
 
 The student's t is used to compare the sample mean $\bar{x}$ to ha hypothesized value $\mu$. It assumes that the sample data are drawn from a normally distributed population, hence it is an example of a \textit{parametric} test. We will discuss more about parametric and non-parametric observations, and how to test for normality further in the chapter. The test statistic is given by:
 \[
@@ -672,11 +632,11 @@ Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribut
 
 \newpage
 
-\subsection{Compare sample means of two groups - Two sample t-test}
+\subsection{Compare sample means of two independent groups - Two sample t-test}
 
 The next example we will encounter is an extension of the same question. The so-called \textit{two-sample t-test} is used to determine whether the sample means of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
 \[
-    t = \frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{\big(n_{1} - 1)^{2} + (n_{2} - 1)^{2}\big)}},
+    t = \frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{\big(n_{1} - 1)^{2} + (n_{2} - 1)^{2}}},
 \]
 where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.\\
 
@@ -703,7 +663,7 @@ where $s_1^{2}$ and $s_2^{2}$ are the sample variances, and the degrees of freed
 
 The computation of the p-value:
 \[
-p = \sum_{\text{all tables as or more extreme}} \frac{\binom{a+b}{a} \binom{c+d}{c}}{\binom{n}{a+c}}
+p = \sum_{\text{extreme values}} \frac{\binom{a+b}{a} \binom{c+d}{c}}{\binom{n}{a+c}}
 \]
 
 Under the null hypothesis, the F statistic follows the F-distribution:
@@ -717,8 +677,6 @@ and the p-value is computed as the upper-tail probability:
 \[
 p = P(F_{\nu_1, \nu_2} \geq F_{\text{obs}}) = \int_{F_{\text{obs}}}^{\infty} f_{F_{\nu_1, \nu_2}}(x)\,dx
 \]
-
-Not to bo 
 
 \newpage
 
@@ -801,7 +759,7 @@ Generalized Linear Models (GLMs).
 \newpage
 
 \section{Logistic, Poisson, polynomial regression}
-Logistic, Poisson, polynomial regression and interaction terms [...].
+Logistic, Poisson, polynomial regression.
 
 
 
@@ -814,13 +772,13 @@ Imagine you're a detective trying to solve a mystery. You start with some hunche
 
 Probability is the language of uncertainty. It helps us reason when we don’t know for sure what’s going on. There are two big ways to use probability:
 \begin{itemize}
-  \item \textbf{Forward}: If we know the cause, what are the chances of seeing this outcome?
+  \item \textbf{Forward (prediction)}: If we know the cause, what are the chances of seeing this outcome?
   \item \textbf{Backward (inference)}: Given the outcome, what’s the most likely cause?
 \end{itemize}
 
 The second one — working backwards from results to reasons — is what Bayes’ Theorem is all about. It’s how we go from data to understanding.\\
 
-Bayes’ Theorem shows up in spam filters, medical tests, search engines, even in how scientists interpret experiments. It’s the engine behind how we learn from evidence. Once you understand it, you’ll start seeing it everywhere — from everyday decisions to advanced machine learning.
+Bayes’ Theorem shows up in spam filters, medical tests, search engines, even in how scientists interpret experiments. It’s the engine behind how we learn from evidence. Once you understand it, you’ll start seeing it everywhere — from everyday decisions to advanced machine learning.\\
 
 Here’s the rule in its mathematical form:
 
@@ -835,6 +793,8 @@ Where:
   \item $P(A)$ is the probability of $A$ before seeing $B$ (the \textbf{prior}).
   \item $P(B)$ is the total probability of $B$ occurring (the \textbf{evidence}).
 \end{itemize}
+
+\newpage
 
 Example: Two Dice, One Roll:
 
@@ -879,9 +839,7 @@ Now apply Bayes' Theorem:
 P(D_2 | S) = \frac{\frac{1}{2} \cdot \frac{1}{2}}{\frac{1}{3}} = \frac{1}{4} \div \frac{1}{3} = \frac{3}{4}
 \]\\
 
-Even though both dice had the same chance of being picked, rolling a 6 strongly points to the biased die. Bayes’ Theorem helped us turn a gut feeling into a solid number: a \textbf{75\% chance} that the die was biased.
-
-Bayes’ Theorem isn’t just math — it’s a mindset. It’s how we learn, adapt, and update our understanding when the world surprises us. Once you see it in action, it becomes a natural way to think about uncertainty and evidence.
+Even though both dice had the same chance of being picked, rolling a 6 strongly points to the biased die. Bayes’ Theorem helped us turn a gut feeling into a solid number: a \textbf{75\% chance} that the die was biased. Bayes’ Theorem isn’t just math — it’s a mindset. It’s how we learn, adapt, and update our understanding when the world surprises us. Once you see it in action, it becomes a natural way to think about uncertainty and evidence.
 
 \newpage
 
@@ -900,11 +858,7 @@ Computing posteriors.
 
 \section{Stochasticity and Markov processes}
 
-Why Talk About Markov Models?\\
-
-The world around us is full of uncertainty. Will it rain tomorrow? Will a website visitor click the next link? Will a cell divide or die? In many cases, the best we can do is talk in terms of probabilities — not certainties.\\
-
-This is where the idea of \textbf{stochasticity} comes in. Stochasticity means randomness. A \textbf{stochastic process} is a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”\\
+The world around us is full of uncertainty. Will it rain tomorrow? Will a website visitor click the next link? Will a cell divide or die? In many cases, the best we can do is talk in terms of probabilities — not certainties. This is where the idea of \textit{stochasticity} comes in. Stochasticity means randomness. A stochastic process is a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”\\
 
 Many systems in nature and society follow patterns, but with noise, surprises, or variability. Markov models give us a way to describe and work with such systems — mathematically and intuitively.\\
 
@@ -981,9 +935,9 @@ Then tomorrow’s prediction is:
 
 So there's an 80\% chance of Sun, 20\% chance of Rain tomorrow.\\
 
-Markov models help us make predictions, model uncertainty, and understand patterns in time-based data. They are a stepping stone to more complex tools like Hidden Markov Models (HMMs), used in speech recognition, bioinformatics, and more.\\
+Markov models help us make predictions, model uncertainty, and understand patterns in time-based data. They are a stepping stone to more complex tools like Hidden Markov Models (HMMs), used in speech recognition, bioinformatics, and more [...].\\
 
-Markov models are simple but powerful tools. They help us model systems that evolve over time, assuming that the next state only depends on the current one. Whether you’re analyzing text, tracking a robot, or predicting rain, the Markov assumption can be surprisingly useful.
+Markov models are simple but powerful tools. They help us model systems that evolve over time, assuming that the next state only depends on the current one. Whether you’re analyzing text, tracking a robot, or predicting rain, the Markov assumption can be surprisingly useful [...].
 
 \newpage
 
