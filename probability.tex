@@ -407,14 +407,21 @@ The probability density function is:
     \label{fig:exponential1}
 \end{figure}
 
+
+
 \newpage
 
+\section*{Exercises}
 
-\section*{Bernoulli Trials}
+% Bernoulli trials
+\subsection*{Bernoulli trials}
 
-\begin{enumerate}[label=Exercise \arabic*:]
+\begin{enumerate}
+
     \item A single coin is tossed once. What is the probability of getting heads? \\
+    
     \textbf{Solution:} \\
+    
     In a Bernoulli trial, there are exactly two possible outcomes: success or failure. Here, "success" could mean getting heads, and "failure" means tails. For a fair coin, both outcomes are equally likely. Therefore, the probability \(p\) of success (getting heads) is:
     \[
     p = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}} = \frac{1}{2} = 0.5.
@@ -422,7 +429,9 @@ The probability density function is:
     So, the probability of getting heads in one toss is \(\boxed{0.5}\).
 
     \item A biased coin is designed so that the probability of heads is 0.7. What is the probability of getting tails when the coin is tossed once? \\
+    
     \textbf{Solution:} \\
+    
     Since the coin can only land heads or tails, these two outcomes are complementary events. This means:
     \[
     P(\text{tails}) = 1 - P(\text{heads}).
@@ -434,19 +443,26 @@ The probability density function is:
     Therefore, the probability of getting tails is \(\boxed{0.3}\).
 
     \item A student answers a true/false question by guessing randomly. What is the probability that the student answers correctly? \\
+    
     \textbf{Solution:} \\
+    
     A true/false question has two possible answers, only one of which is correct. Since the student guesses without any knowledge, each answer has an equal chance of being selected. Therefore:
     \[
     P(\text{correct}) = \frac{1}{2} = 0.5.
     \]
     So, the probability the student guesses correctly is \(\boxed{0.5}\).
+    
 \end{enumerate}
 
-\section*{Binomial Distribution}
+% Binomial distribution
+\subsection*{Binomial distribution}
 
-\begin{enumerate}[label=Exercise \arabic*:]
+\begin{enumerate}
+
     \item A fair coin is tossed 5 times. What is the probability of getting exactly 3 heads? \\
+    
     \textbf{Solution:} \\
+    
     When we perform multiple Bernoulli trials (tosses), the number of successes (heads) follows a binomial distribution. The probability mass function (PMF) for the binomial distribution is:
     \[
     P(X = k) = \binom{n}{k} p^k (1-p)^{n-k},
@@ -468,7 +484,9 @@ The probability density function is:
     Therefore, the probability of exactly 3 heads in 5 tosses is \(\boxed{0.3125}\) or 31.25\%.
 
     \item Suppose a basketball player takes 4 free throws, and the probability of scoring each free throw is 0.75. What is the probability that the player scores at least 3 times? \\
+    
     \textbf{Solution:} \\
+    
     Here:
     \[
     n = 4, \quad p = 0.75, \quad \text{and we want } P(X \geq 3).
@@ -491,19 +509,26 @@ The probability density function is:
     So, the player has about a \(\boxed{73.8\%}\) chance of scoring at least 3 out of 4 free throws.
 
     \item In 10 trials, each with a success probability of 0.2, find the probability that there are no successes. \\
+    
     \textbf{Solution:} \\
+    
     This is the probability of zero successes in 10 independent trials with success probability \(p=0.2\). Using the binomial PMF:
     \[
     P(X=0) = \binom{10}{0} (0.2)^0 (0.8)^{10} = 1 \times 1 \times 0.1073741824 = 0.1073741824.
     \]
     So, the probability of no successes in 10 trials is approximately \(\boxed{0.1074}\) or 10.74\%.
+    
 \end{enumerate}
 
-\section*{Poisson Distribution}
+% Poisson distribution
+\subsection*{Poisson distribution}
 
-\begin{enumerate}[label=Exercise \arabic*:]
+\begin{enumerate}
+
     \item The average number of emails a person receives per hour is 3. What is the probability that exactly 5 emails arrive in one hour? \\
+    
     \textbf{Solution:} \\
+    
     The Poisson distribution models the probability of a given number of events happening in a fixed interval of time if these events occur with a known constant mean rate and independently of the time since the last event. The PMF of the Poisson distribution is:
     \[
     P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!},
@@ -523,7 +548,9 @@ The probability density function is:
     So, the probability of receiving exactly 5 emails in one hour is approximately \(\boxed{0.1009}\) or 10.09\%.
 
     \item On average, 2 cars pass a checkpoint per minute. What is the probability that no cars pass in a given minute? \\
+    
     \textbf{Solution:} \\
+    
     Using Poisson distribution with \(\lambda = 2\) and \(k=0\):
     \[
     P(X=0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353.
@@ -531,7 +558,9 @@ The probability density function is:
     Thus, the probability that no cars pass in one minute is about \(\boxed{0.1353}\) or 13.53\%.
 
     \item Calls arrive at a call center at an average rate of 6 per hour. Find the probability of receiving more than 7 calls in one hour. \\
+    
     \textbf{Solution:} \\
+    
     Here, \(\lambda = 6\). We want:
     \[
     P(X > 7) = 1 - P(X \leq 7) = 1 - \sum_{k=0}^7 \frac{6^k e^{-6}}{k!}.
@@ -541,13 +570,18 @@ The probability density function is:
     P(X > 7) = 1 - 0.8666 = 0.1334.
     \]
     Therefore, the chance of more than 7 calls in an hour is roughly \(\boxed{13.34\%}\).
+    
 \end{enumerate}
 
-\section*{Uniform Distribution}
+% Uniform distribution
+\subsection*{Uniform distribution}
 
-\begin{enumerate}[label=Exercise \arabic*:]
+\begin{enumerate}
+
     \item A random variable \(X\) is uniformly distributed between 0 and 10. What is the probability that \(X\) lies between 3 and 7? \\
+    
     \textbf{Solution:} \\
+    
     The uniform distribution on \([a,b]\) means \(X\) is equally likely to take any value in this interval. The probability density function (pdf) is:
     \[
     f_X(x) = \frac{1}{b-a}, \quad a \leq x \leq b.
@@ -563,7 +597,9 @@ The probability density function is:
     Thus, the probability is \(\boxed{0.4}\) or 40\%.
 
     \item If \(X \sim U(-5,5)\), what is the probability that \(X\) is less than or equal to 0? \\
+    
     \textbf{Solution:} \\
+    
     The pdf for \(X\) is constant between -5 and 5:
     \[
     f_X(x) = \frac{1}{5 - (-5)} = \frac{1}{10} = 0.1.
@@ -575,7 +611,9 @@ The probability density function is:
     So there is a 50\% chance \(X\) is less than or equal to zero, i.e., \(\boxed{0.5}\).
 
     \item Find the expected value (mean) and variance of a uniform random variable on \([2,8]\). \\
+    
     \textbf{Solution:} \\
+    
     For a uniform distribution \(U(a,b)\), the expected value and variance are given by:
     \[
     E[X] = \frac{a + b}{2}, \quad \mathrm{Var}(X) = \frac{(b - a)^2}{12}.
@@ -588,13 +626,18 @@ The probability density function is:
     \mathrm{Var}(X) = \frac{(8 - 2)^2}{12} = \frac{6^2}{12} = \frac{36}{12} = 3.
     \]
     So the expected value is \(\boxed{5}\) and the variance is \(\boxed{3}\).
+    
 \end{enumerate}
 
-\section*{Gaussian (Normal) Distribution}
+% Gaussian distribution
+\subsection*{Gaussian distribution}
 
-\begin{enumerate}[label=Exercise \arabic*:]
+\begin{enumerate}
+
     \item A random variable \(X\) is normally distributed with mean \(\mu = 100\) and standard deviation \(\sigma = 15\). Find the probability that \(X\) is less than or equal to 115. \\
+    
     \textbf{Solution:} \\
+    
     To find this probability, we standardize the variable \(X\) to a standard normal variable \(Z\) which has mean 0 and standard deviation 1. The standardization formula is:
     \[
     Z = \frac{X - \mu}{\sigma}.
@@ -612,7 +655,9 @@ The probability density function is:
     Therefore, there is an 84.13\% chance that \(X \leq 115\), so the answer is \(\boxed{0.8413}\).
 
     \item For a standard normal random variable \(Z\), find the probability that \(Z\) lies between -1.5 and 0.5. \\
+    
     \textbf{Solution:} \\
+    
     The probability that \(Z\) is between two values \(a\) and \(b\) is:
     \[
     P(a \leq Z \leq b) = P(Z \leq b) - P(Z \leq a).
@@ -628,7 +673,9 @@ The probability density function is:
     Thus, the probability is approximately \(\boxed{0.6247}\) or 62.47\%.
 
     \item Find the 90th percentile (also called the 0.9 quantile) of a normal distribution with mean 50 and variance 16. \\
+    
     \textbf{Solution:} \\
+    
     The standard deviation \(\sigma = \sqrt{16} = 4\). The 90th percentile of a normal distribution corresponds to the value \(x\) such that:
     \[
     P(X \leq x) = 0.9.
@@ -639,13 +686,18 @@ The probability density function is:
     x = \mu + z_{0.9} \sigma = 50 + 1.2816 \times 4 = 50 + 5.1264 = 55.13.
     \]
     Hence, the 90th percentile is approximately \(\boxed{55.13}\).
+    
 \end{enumerate}
 
-\section*{Exponential Distribution}
+% Exponential distribution
+\subsection*{Exponential distribution}
 
-\begin{enumerate}[label=Exercise \arabic*:]
+\begin{enumerate}
+
     \item The lifetime of a certain type of light bulb follows an exponential distribution with a mean lifetime of 1000 hours. What is the probability that a randomly chosen bulb lasts more than 1200 hours? \\
+    
     \textbf{Solution:} \\
+    
     The exponential distribution has the probability density function:
     \[
     f_X(x) = \lambda e^{-\lambda x}, \quad x \geq 0,
@@ -669,7 +721,9 @@ The probability density function is:
     Therefore, there is about a \(\boxed{30.12\%}\) chance the bulb lasts longer than 1200 hours.
 
     \item For the same light bulb, what is the probability that it lasts less than 800 hours? \\
+    
     \textbf{Solution:} \\
+    
     The probability that the lifetime is less than \(t\) is:
     \[
     P(X < t) = 1 - e^{-\lambda t}.
@@ -681,7 +735,9 @@ The probability density function is:
     So, the bulb has a \(\boxed{55.07\%}\) chance of lasting less than 800 hours.
 
     \item Find the median lifetime of the bulb. \\
+    
     \textbf{Solution:} \\
+    
     The median \(m\) is the time at which half of the bulbs fail, i.e.:
     \[
     P(X \leq m) = 0.5.
@@ -797,6 +853,15 @@ No matter the shape of the original distribution, when we take many samples and 
 
 \section{Maximum Likelihood Estimation}
 
+\paragraph{Historical Context:}
+Maximum Likelihood Estimation was introduced by the statistician Ronald Fisher in the early 20th century. Fisher’s key insight was that many statistical problems can be solved by choosing the parameters of a model that make the observed data most probable. This approach unified estimation methods and became one of the most fundamental tools in statistics. MLE connects well with probability theory and has wide applications, from genetics to machine learning.
+
+\paragraph{Why Maximum Likelihood?}
+In statistics, we often have data generated by some unknown process described by parameters. The goal of MLE is to find the parameter values that best explain the observed data. By defining a likelihood function (the probability of observing the data given parameters), MLE picks the parameters that maximize this function, thus providing the most “likely” explanation.
+
+\paragraph{Applications of MLE:}
+MLE is widely used because it produces estimates with good theoretical properties: under mild conditions, MLE estimators are consistent (they get closer to the true value as data grows) and efficient (they have the smallest possible variance among unbiased estimators). It forms the backbone of many models and is implemented in most statistical software.\\
+
 Maximum Likelihood Estimation (MLE) is a cornerstone of modern statistical inference. Developed in the early 20th century by Sir Ronald A. Fisher, MLE provides a systematic framework for estimating the parameters of a probabilistic model. Fisher introduced the method in the 1920s, formalizing it as a rigorous alternative to the method of moments and laying the groundwork for much of classical and modern statistical theory.
 MLE has since become one of the most widely used estimation techniques due to its generality, mathematical tractability, and strong theoretical properties. It applies to a broad class of models, including both discrete and continuous distributions, and serves as the basis for many advanced statistical methods, including Generalized Linear Models (GLMs), Bayesian inference (as the likelihood term), and machine learning algorithms.
 
@@ -884,128 +949,20 @@ For binary response data, logistic regression models the log-odds as a linear fu
 
 MLE is used to estimate the coefficients $\beta_0, \beta_1$ by maximizing the binomial log-likelihood.
 
+
+
 \newpage
 
-\textbf{Exercises}
+\section*{Exercises}
+
+% Parameter estimation
+\subsection*{Parameter estimation}
+
 \begin{enumerate}
-\item \textbf{Basic Derivation:} Show that the MLE for the rate parameter $\lambda$ of an exponential distribution $f(x; \lambda) = \lambda e^{-\lambda x}$ is $\hat{\lambda} = 1 / \bar{x}$.
-\end{enumerate}
 
-\section*{Part III: Maximum Likelihood Estimation (MLE)}
-
-\paragraph{Historical Context:}
-Maximum Likelihood Estimation was introduced by the statistician Ronald Fisher in the early 20th century. Fisher’s key insight was that many statistical problems can be solved by choosing the parameters of a model that make the observed data most probable. This approach unified estimation methods and became one of the most fundamental tools in statistics. MLE connects well with probability theory and has wide applications, from genetics to machine learning.
-
-\paragraph{Why Maximum Likelihood?}
-In statistics, we often have data generated by some unknown process described by parameters. The goal of MLE is to find the parameter values that best explain the observed data. By defining a likelihood function (the probability of observing the data given parameters), MLE picks the parameters that maximize this function, thus providing the most “likely” explanation.
-
-\paragraph{Applications of MLE:}
-MLE is widely used because it produces estimates with good theoretical properties: under mild conditions, MLE estimators are consistent (they get closer to the true value as data grows) and efficient (they have the smallest possible variance among unbiased estimators). It forms the backbone of many models and is implemented in most statistical software.
-
-\subsection*{Exercise 7: MLE for a Coin Toss}
-You toss a coin 10 times and observe 7 heads. Using MLE, estimate the probability of heads $p$.
-
-\subsubsection*{Solution}
-Let $p$ be the probability of heads. The likelihood function for 7 heads out of 10 tosses (binomial distribution) is:
-\[
-L(p) = \binom{10}{7} p^7 (1-p)^3
-\]
-
-Since the binomial coefficient does not depend on $p$, maximize:
-\[
-\ell(p) = p^7 (1-p)^3
-\]
-
-To maximize $\ell(p)$, it is easier to maximize the log-likelihood:
-\[
-\log \ell(p) = 7 \log p + 3 \log (1-p)
-\]
-
-Take derivative w.r.t. $p$ and set to zero:
-\[
-\frac{7}{p} - \frac{3}{1-p} = 0
-\Rightarrow 7(1-p) = 3p
-\Rightarrow 7 - 7p = 3p
-\Rightarrow 7 = 10p
-\Rightarrow p = \frac{7}{10} = 0.7
-\]
-
-Thus, the MLE estimate for the probability of heads is 0.7, matching the observed proportion.
-
-\subsection*{Exercise 8: MLE for Exponential Distribution}
-Suppose the time between phone calls follows an exponential distribution with unknown rate $\lambda$. You observe waiting times: 2, 3, 1. Find the MLE for $\lambda$.
-
-\subsubsection*{Solution}
-The exponential distribution’s PDF is:
-\[
-f(t|\lambda) = \lambda e^{-\lambda t}, \quad t \geq 0
-\]
-
-The likelihood for data points $t_1, t_2, t_3$ is:
-\[
-L(\lambda) = \prod_{i=1}^3 \lambda e^{-\lambda t_i} = \lambda^3 e^{-\lambda \sum t_i}
-\]
-
-Log-likelihood:
-\[
-\log L(\lambda) = 3 \log \lambda - \lambda \sum t_i
-\]
-
-Derivative w.r.t. $\lambda$:
-\[
-\frac{3}{\lambda} - \sum t_i = 0 \implies 3 = \lambda \sum t_i \implies \hat{\lambda} = \frac{3}{\sum t_i}
-\]
-
-Calculate sum of times:
-\[
-2 + 3 + 1 = 6
-\]
-
-Thus,
-\[
-\hat{\lambda} = \frac{3}{6} = 0.5
-\]
-
-So, the MLE estimate for $\lambda$ is 0.5 calls per unit time.
-
-\subsection*{Exercise 9: MLE for Normal Distribution Mean}
-You have data points $x = \{4, 5, 6\}$ from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2 = 1$. Find the MLE for $\mu$.
-
-\subsubsection*{Solution}
-The likelihood is:
-\[
-L(\mu) = \prod_{i=1}^3 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x_i - \mu)^2}{2}}
-\]
-
-Log-likelihood (ignoring constants):
-\[
-\log L(\mu) = -\frac{1}{2} \sum_{i=1}^3 (x_i - \mu)^2
-\]
-
-To maximize, minimize the sum of squared differences:
-\[
-\frac{d}{d\mu} \left( \sum (x_i - \mu)^2 \right) = 0
-\]
-
-\[
--2 \sum (x_i - \mu) = 0 \Rightarrow \sum x_i = 3 \mu \Rightarrow \mu = \frac{1}{3} \sum x_i
-\]
-
-Calculate:
-\[
-\mu = \frac{4 + 5 + 6}{3} = \frac{15}{3} = 5
-\]
-
-The MLE estimate for the mean is 5, which is the sample average.
-
-\newpage
-
-\section*{Parameter Estimation}
-
-\begin{enumerate}[label=Exercise \arabic*:]
     \item \textbf{Estimating the average height of students:} \\
-    A school wants to estimate the average height of its students. They randomly measure the heights of 30 students and calculate the average height to be 160 cm with a sample standard deviation of 10 cm. \\
-    \textbf{Question:} Estimate the population mean height and explain the meaning of your estimate. \\
+    A school wants to estimate the average height of its students. They randomly measure the heights of 30 students and calculate the average height to be 160 cm with a sample standard deviation of 10 cm. Estimate the population mean height and explain the meaning of your estimate. \\
+    
     \textbf{Solution:} \\
     We have a sample of 30 students with average height \(\bar{x} = 160\) cm. The goal is to estimate the true average height \(\mu\) of all students. The best estimate of \(\mu\) from this sample is simply the sample mean:
     \[
@@ -1014,8 +971,8 @@ The MLE estimate for the mean is 5, which is the sample average.
     This means we use 160 cm as our best guess for the average height of the entire student population. Because we only measured 30 students (a sample), this is an estimate, not the exact true mean, but it is the most reasonable value based on the data.
 
     \item \textbf{Estimating the probability of success in a trial:} \\
-    A factory produces light bulbs, and a quality control engineer tests 50 bulbs, finding that 5 bulbs are defective. \\
-    \textbf{Question:} Estimate the probability that a randomly selected bulb is defective. \\
+    A factory produces light bulbs, and a quality control engineer tests 50 bulbs, finding that 5 bulbs are defective. Estimate the probability that a randomly selected bulb is defective. \\
+    
     \textbf{Solution:} \\
     The total bulbs tested: \(n = 50\). Number defective (failures): \(x = 5\). We want to estimate the probability \(p\) of a bulb being defective. The natural estimate is the sample proportion:
     \[
@@ -1024,8 +981,8 @@ The MLE estimate for the mean is 5, which is the sample average.
     This means we estimate that 10\% of the bulbs are defective. This estimate assumes the sample is representative of the entire production.
 
     \item \textbf{Estimating the variance of daily sales:} \\
-    A store records the number of sales for 7 days as: 20, 22, 18, 25, 24, 20, 19. \\
-    \textbf{Question:} Estimate the variance of daily sales. \\
+    A store records the number of sales for 7 days as: 20, 22, 18, 25, 24, 20, 19. Estimate the variance of daily sales. \\
+    
     \textbf{Solution:} \\
     First, find the sample mean:
     \[
@@ -1050,12 +1007,14 @@ The MLE estimate for the mean is 5, which is the sample average.
 
 \end{enumerate}
 
-\section*{Central Limit Theorem}
+% Central limit theorem
+\subsection*{Central limit theorem}
 
-\begin{enumerate}[label=Exercise \arabic*:]
+\begin{enumerate}
+
     \item \textbf{Average weight of apples:} \\
-    Suppose the weight of apples in an orchard has an unknown distribution with mean 150 grams and standard deviation 20 grams. A random sample of 36 apples is taken. \\
-    \textbf{Question:} What is the approximate probability that the average weight of these apples is between 145 and 155 grams? \\
+    Suppose the weight of apples in an orchard has an unknown distribution with mean 150 grams and standard deviation 20 grams. A random sample of 36 apples is taken. What is the approximate probability that the average weight of these apples is between 145 and 155 grams? \\
+    
     \textbf{Solution:} \\
     Even if the original weight distribution is unknown, the Central Limit Theorem (CLT) tells us that the sampling distribution of the sample mean \(\bar{X}\) for a sample size \(n=36\) is approximately normal with:
     \[
@@ -1075,8 +1034,8 @@ The MLE estimate for the mean is 5, which is the sample average.
     So, there is about an 86.64\% chance that the sample average weight is between 145 and 155 grams.
 
     \item \textbf{Average waiting time at a bus stop:} \\
-    The waiting time for buses is skewed but has mean 10 minutes and standard deviation 5 minutes. If 50 people independently measure their waiting times, \\
-    \textbf{Question:} What is the approximate probability that the average waiting time of these 50 people is more than 12 minutes? \\
+    The waiting time for buses is skewed but has mean 10 minutes and standard deviation 5 minutes. If 50 people independently measure their waiting times. What is the approximate probability that the average waiting time of these 50 people is more than 12 minutes? \\
+    
     \textbf{Solution:} \\
     By the CLT, the sample mean \(\bar{X}\) is approximately normal with:
     \[
@@ -1093,8 +1052,8 @@ The MLE estimate for the mean is 5, which is the sample average.
     So, there is a 0.23\% chance that the average waiting time exceeds 12 minutes.
 
     \item \textbf{Average number of daily customers:} \\
-    A store knows the daily number of customers varies widely, with mean 100 and standard deviation 30. \\
-    \textbf{Question:} If we take a random sample of 64 days, what is the probability that the average customers per day is between 95 and 105? \\
+    A store knows the daily number of customers varies widely, with mean 100 and standard deviation 30. If we take a random sample of 64 days, what is the probability that the average customers per day is between 95 and 105? \\
+    
     \textbf{Solution:} \\
     Sample mean distribution approximately normal with:
     \[
@@ -1112,28 +1071,136 @@ The MLE estimate for the mean is 5, which is the sample average.
 
 \end{enumerate}
 
-\section*{Law of Large Numbers}
+% Law of large numbers
+\subsection*{Law of large numbers}
 
-\begin{enumerate}[label=Exercise \arabic*:]
+\begin{enumerate}
+
     \item \textbf{Coin toss average:} \\
-    You toss a fair coin many times, recording the proportion of heads. \\
-    \textbf{Question:} According to the Law of Large Numbers (LLN), what happens to this proportion as the number of tosses increases? Explain in simple terms. \\
+    You toss a fair coin many times, recording the proportion of heads. According to the Law of Large Numbers (LLN), what happens to this proportion as the number of tosses increases? Explain in simple terms. \\
+    
     \textbf{Solution:} \\
     The LLN states that as the number of tosses \(n\) becomes very large, the sample proportion of heads will get closer and closer to the true probability \(p = 0.5\). In simple terms, if you toss the coin only a few times, the proportion of heads may be very different from 0.5, but if you toss it thousands of times, the proportion of heads will be almost exactly 50\%. This happens because random fluctuations average out over many trials.
 
     \item \textbf{Average daily sales convergence:} \\
-    A store records daily sales, which vary widely, with an unknown distribution but average 200 sales/day. \\
-    \textbf{Question:} How does the Law of Large Numbers help the store owner understand the average sales if they calculate the average over many days? \\
+    A store records daily sales, which vary widely, with an unknown distribution but average 200 sales/day. How does the Law of Large Numbers help the store owner understand the average sales if they calculate the average over many days? \\
+    
     \textbf{Solution:} \\
     The LLN guarantees that if the store owner calculates the average sales over a large number of days, the average they get will be very close to the true average sales per day (which is 200). So, even if sales fluctuate a lot from day to day, the long-term average will stabilize and become predictable when many days are included.
 
     \item \textbf{Estimating average waiting time at a clinic:} \\
-    The waiting time for patients varies, but the average is 30 minutes. \\
-    \textbf{Question:} If a patient measures their waiting time many times over different visits, what does the Law of Large Numbers say about the average of their measured times? \\
+    The waiting time for patients varies, but the average is 30 minutes. If a patient measures their waiting time many times over different visits, what does the Law of Large Numbers say about the average of their measured times? \\
+    
     \textbf{Solution:} \\
     The LLN tells us that as the patient records more and more waiting times, the average of these recorded times will get closer and closer to 30 minutes. So, although a single visit may have a short or long wait, the average wait over many visits will reliably approach the true average.
 
 \end{enumerate}
+
+\newpage
+
+% Maximum likelihood estimation
+\subsection*{Maximum likelihood estimation}
+
+\begin{enumerate}
+
+	\item \textbf{Exercise 1: MLE for a Coin Toss}
+	You toss a coin 10 times and observe 7 heads. Using MLE, estimate the probability of heads $p$.
+
+	\subsubsection*{Solution}
+	Let $p$ be the probability of heads. The likelihood function for 7 heads out of 10 tosses (binomial distribution) is:
+	\[
+	L(p) = \binom{10}{7} p^7 (1-p)^3
+	\]
+
+	Since the binomial coefficient does not depend on $p$, maximize:
+	\[
+	\ell(p) = p^7 (1-p)^3
+	\]
+
+	To maximize $\ell(p)$, it is easier to maximize the log-likelihood:
+	\[
+	\log \ell(p) = 7 \log p + 3 \log (1-p)
+	\]
+
+	Take derivative w.r.t. $p$ and set to zero:
+	\[
+	\frac{7}{p} - \frac{3}{1-p} = 0
+	\Rightarrow 7(1-p) = 3p
+	\Rightarrow 7 - 7p = 3p
+	\Rightarrow 7 = 10p
+	\Rightarrow p = \frac{7}{10} = 0.7
+	\]
+
+	Thus, the MLE estimate for the probability of heads is 0.7, matching the observed proportion.
+
+	\item \textbf{Exercise 2: MLE for Exponential Distribution}
+	Suppose the time between phone calls follows an exponential distribution with unknown rate $\lambda$. You observe waiting times: 2, 3, 1. Find the MLE for $\lambda$.
+
+	\subsubsection*{Solution}
+	The exponential distribution’s PDF is:
+	\[
+	f(t|\lambda) = \lambda e^{-\lambda t}, \quad t \geq 0
+	\]
+
+	The likelihood for data points $t_1, t_2, t_3$ is:
+	\[
+	L(\lambda) = \prod_{i=1}^3 \lambda e^{-\lambda t_i} = \lambda^3 e^{-\lambda \sum t_i}
+	\]
+
+	Log-likelihood:
+	\[
+	\log L(\lambda) = 3 \log \lambda - \lambda \sum t_i
+	\]
+
+	Derivative w.r.t. $\lambda$:
+	\[
+	\frac{3}{\lambda} - \sum t_i = 0 \implies 3 = \lambda \sum t_i \implies \hat{\lambda} = \frac{3}{\sum t_i}
+	\]
+
+	Calculate sum of times:
+	\[
+	2 + 3 + 1 = 6
+	\]
+
+	Thus,
+	\[
+	\hat{\lambda} = \frac{3}{6} = 0.5
+	\]
+
+	So, the MLE estimate for $\lambda$ is 0.5 calls per unit time.
+
+	\item \textbf{Exercise 3: MLE for Normal Distribution Mean}
+	You have data points $x = \{4, 5, 6\}$ from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2 = 1$. Find the MLE for $\mu$.
+
+	\subsubsection*{Solution}
+	The likelihood is:
+	\[
+	L(\mu) = \prod_{i=1}^3 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x_i - \mu)^2}{2}}
+	\]
+
+	Log-likelihood (ignoring constants):
+	\[
+	\log L(\mu) = -\frac{1}{2} \sum_{i=1}^3 (x_i - \mu)^2
+	\]
+
+	To maximize, minimize the sum of squared differences:
+	\[
+	\frac{d}{d\mu} \left( \sum (x_i - \mu)^2 \right) = 0
+	\]
+
+	\[
+	-2 \sum (x_i - \mu) = 0 \Rightarrow \sum x_i = 3 \mu \Rightarrow \mu = \frac{1}{3} \sum x_i
+	\]
+
+	Calculate:
+	\[
+	\mu = \frac{4 + 5 + 6}{3} = \frac{15}{3} = 5
+	\]
+
+	The MLE estimate for the mean is 5, which is the sample average.
+
+\end{enumerate}
+
 
 
 % Chapter - Introduction to hypothesis testing
