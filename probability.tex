@@ -1351,99 +1351,7 @@ Comparing data and normalization
 \chapter{Linear models and GLMs}
 
 \section{Simple linear regression}
-\section*{Part IV: Linear Models}
-
-\paragraph{Historical Context:}
-Linear models have a long history dating back to the 19th century with pioneers like Legendre and Gauss, who developed the method of least squares. Linear regression became a cornerstone for understanding relationships between variables, especially in economics, biology, and social sciences. Over time, linear models have been generalized to include multiple variables and different types of data, remaining fundamental in statistics and machine learning.
-
-\paragraph{Why Linear Models?}
-Linear models assume a linear relationship between input variables (predictors) and the output variable. This assumption simplifies analysis and interpretation, allowing us to understand how each predictor affects the outcome. Despite their simplicity, linear models often provide surprisingly good approximations and serve as building blocks for more complex models.
-
-\paragraph{Applications of Linear Models:}
-Linear models are used for prediction, explanation, and hypothesis testing. They help in estimating how a change in one variable impacts another, controlling for other variables. Linear regression is also the foundation for generalized linear models, time series analysis, and many machine learning algorithms.
-
-\subsection*{Exercise 10: Simple Linear Regression}
-Given data points $(x, y) = \{(1, 2), (2, 3), (3, 5)\}$, find the least squares estimates of the slope $\beta$ and intercept $\alpha$ for the model $y = \alpha + \beta x$.
-
-\subsubsection*{Solution}
-The least squares estimates minimize the sum of squared residuals:
-\[
-S(\alpha, \beta) = \sum (y_i - \alpha - \beta x_i)^2
-\]
-
-Formulas for estimates:
-\[
-\hat{\beta} = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}, \quad \hat{\alpha} = \bar{y} - \hat{\beta} \bar{x}
-\]
-
-Calculate means:
-\[
-\bar{x} = \frac{1 + 2 + 3}{3} = 2, \quad \bar{y} = \frac{2 + 3 + 5}{3} = \frac{10}{3} \approx 3.33
-\]
-
-Calculate numerator and denominator for slope:
-\[
-\sum (x_i - \bar{x})(y_i - \bar{y}) = (1-2)(2-3.33) + (2-2)(3-3.33) + (3-2)(5-3.33)
-\]
-\[
-= (-1)(-1.33) + 0 + 1 \times 1.67 = 1.33 + 0 + 1.67 = 3
-\]
-
-\[
-\sum (x_i - \bar{x})^2 = (1-2)^2 + (2-2)^2 + (3-2)^2 = 1 + 0 + 1 = 2
-\]
-
-Slope:
-\[
-\hat{\beta} = \frac{3}{2} = 1.5
-\]
-
-Intercept:
-\[
-\hat{\alpha} = 3.33 - 1.5 \times 2 = 3.33 - 3 = 0.33
-\]
-
-The estimated linear model is:
-\[
-\hat{y} = 0.33 + 1.5 x
-\]
-
-\subsection*{Exercise 11: Predicting with Linear Model}
-Using the model from Exercise 10, predict $y$ when $x=4$.
-
-\subsubsection*{Solution}
-Plug $x=4$ into the model:
-\[
-\hat{y} = 0.33 + 1.5 \times 4 = 0.33 + 6 = 6.33
-\]
-
-So the predicted value of $y$ is 6.33.
-
-\subsection*{Exercise 12: Residual Sum of Squares (RSS)}
-Calculate the residual sum of squares (RSS) for the data in Exercise 10 using the fitted model.
-
-\subsubsection*{Solution}
-The residuals are:
-\[
-e_i = y_i - \hat{y_i}
-\]
-Calculate fitted values:
-\[
-\hat{y}_1 = 0.33 + 1.5 \times 1 = 1.83, \quad e_1 = 2 - 1.83 = 0.17
-\]
-\[
-\hat{y}_2 = 0.33 + 1.5 \times 2 = 3.33, \quad e_2 = 3 - 3.33 = -0.33
-\]
-\[
-\hat{y}_3 = 0.33 + 1.5 \times 3 = 4.83, \quad e_3 = 5 - 4.83 = 0.17
-\]
-
-RSS is:
-\[
-\text{RSS} = \sum e_i^2 = 0.17^2 + (-0.33)^2 + 0.17^2 = 0.0289 + 0.1089 + 0.0289 = 0.1667
-\]
-
-The residual sum of squares is approximately 0.167.
+Simple linear regression
 
 \newpage
 
@@ -1470,46 +1378,25 @@ Logistic, Poisson, polynomial regression.
 % Chapter - Introduction to bayesian probability
 \chapter{Introduction to bayesian probability}
 
-\section{The Bayes' theorem}
+\section{Bayesian vs frequentist}
 
-\paragraph{Historical Context:}
-Probability theory has its roots in gambling and games of chance studied in the 17th century. Early mathematicians like Pascal and Fermat formalized the idea of quantifying uncertainty. Over time, two main schools emerged: the frequentists, who interpret probability as the long-run frequency of events, and the Bayesians, who interpret probability as a degree of belief or certainty about an event. Thomas Bayes introduced the idea of updating probabilities based on new evidence, now called Bayes’ theorem, which was later popularized by Laplace. Both approaches offer useful perspectives for understanding and analyzing uncertainty.
-
-\paragraph{Why Bayesian and Frequentist Approaches Matter:}
-The frequentist approach relies on repeating experiments many times and observing how often events occur to estimate probabilities. It treats probability as an objective property of the physical world. In contrast, Bayesian probability treats it as a subjective measure of belief, updated as new data arrives. This difference influences how we interpret data and make predictions, and understanding both is important for a well-rounded grasp of statistics.
-
-\paragraph{How These Approaches Are Used:}
-Frequentist methods often focus on long-run behavior, like estimating probabilities from observed data or constructing confidence intervals. Bayesian methods combine prior knowledge (beliefs before seeing data) with observed data to update our understanding. In practice, many scientists and statisticians use both methods depending on the problem context.\\
-
-So far we have discussed probability and statistics assuming the \textit{frequentist} definition of probability. That is, we have implicitly assumed that the probability, that number we make up to represent uncertainty, can be defined just as a ratio of the number of times we get a specific result, and the total number of observations. But when performing any measurement, there are initial intuitions, assumed rules, that we take for granted and that affect our results. In the classic example of the coins, that we used in Chapter 2 to define probability in the first place, we are assuming, for instance, that the coin is fair [...]. But if we start tossing the same coin again and again, and encounter that the ration of heads and tails is significantly different than 0.5, maybe we should start question that first assumption in the first place.\\
-
-In the frequentist interpretation, probability is defined as the long-run relative frequency of an event occurring. For example, in the case of a fair coin:
+So far we have discussed probability and statistics assuming the \textit{frequentist} definition of probability. That is, we have implicitly assumed that the probability, that number we make up to represent uncertainty, can be defined just as a ratio of the number of times we get a specific result, and the total number of observations. In the classic example of the coins, that we used in Chapter 2 to define probability in the first place, we are assuming, for instance, that the coin is fair. In the frequentist interpretation, probability is defined as the long-run relative frequency of an event occurring. For example, in the case of a fair coin:
 
 \[
-P(\text{Heads}) = \lim_{n \to \infty} \frac{\text{Number of heads in } n \text{ tosses}}{n} = 0.5
+P(\text{H}) = \lim_{n \to \infty} \frac{\text{Number of H in } n \text{ tosses}}{n} = 0.5
 \]
 
-This approach assumes repeated experiments and well-defined probabilities that do not change.
+This approach assumes repeated experiments and well-defined probabilities that do not change. But if we start tossing the same coin again and again, and encounter that the ration of heads and tails is significantly different than 0.5, maybe we should start question that first assumption in the first place. Frequentist statistics might say we don't have enough data yet. But can we make a meaningful guess using prior knowledge and observed data? \\
 
-This way of understanding probability, as founded in some \textit{prior beliefs} that can be updated as new evidence comes available, is normally referred to as \textit{bayesian} approach, or bayesian definition. It was developed by Thomas Bayes, a British mathematician who worked primarily on [...]. In the same way a detective aiming to solve a mystery, we start with some hunches (our initial beliefs), then gather clues (evidence), and based on those clues, we update your beliefs about what happened. This is exactly what Bayes' Theorem allows us to do, mathematically.\\
+This way of understanding probability, as founded in some \textit{prior beliefs} that can be updated as new evidence comes available, is normally referred to as \textit{bayesian} approach, or bayesian definition. It was developed by Thomas Bayes, a British mathematician who worked primarily on [...]. Early mathematicians like Pascal and Fermat formalized the idea of quantifying uncertainty. Over time, two main schools emerged: the frequentists, who interpret probability as the long-run frequency of events, and the Bayesians, who interpret probability as a degree of belief or certainty about an event. Thomas Bayes introduced the idea of updating probabilities based on new evidence. His work was published posthumously and it was later popularized by Laplace, and it is nowadays referred as the \textit{Bayes’ theorem}. Both approaches offer useful perspectives for understanding and analyzing uncertainty.\\
 
+The frequentist approach relies on repeating experiments many times and observing how often events occur to estimate probabilities. It treats probability as an objective property of the physical world. In contrast, Bayesian probability treats it as a subjective measure of belief, updated as new data arrives. This difference influences how we interpret data and make predictions, and understanding both is important for a well-rounded grasp of statistics.\\
 
-But what if we don't know whether the coin is fair?
+Frequentist methods often focus on long-run behaviour, like estimating probabilities from observed data or constructing confidence intervals. Bayesian methods combine prior knowledge (beliefs before seeing data) with observed data to update our understanding. In practice, both methods are used and combined and depending on the problem context.\\
 
-\begin{itemize}
-    \item Suppose we just found a coin. Is it fair?
-    \item We've tossed it 3 times: we got 2 heads and 1 tail.
-    \item What is the probability the coin lands heads the next time?
-\end{itemize}
+\newpage
 
-Frequentist statistics might say we don't have enough data yet. But can we make a meaningful guess using prior knowledge and observed data?\\
-
-
-As we have discussed in previous chapters, probability quantifies uncertainty, and there are two main different ways to address questions about stochastic processes:
-\begin{itemize}
-  \item \textbf{Forward (prediction)}: Given the cause, what are the chances of seeing a specific outcome?
-  \item \textbf{Backward (inference)}: Given an outcome, what was the most likely cause that lead to this?
-\end{itemize}
+\section{The Bayes' Rule}
 
 The second one — working backwards from results to reasons, purely, inferential — is what Bayes’ Theorem is all about. It’s how we reconstruct from data the underlaying phenomenology. From now on, w we will ask not only what is the probability for some event to take place, but what is the probability of that event happening \textit{given that} some other phenomena, some hypothesized scenario, is already taking place.\\
 
@@ -1527,89 +1414,54 @@ Where:
   \item $P(E)$ is the total — also called \textit{marginal} — probability of $E$ occurring (the \textbf{evidence}).
 \end{itemize}
 
-Bayesian Probability: A Different Perspective. Bayesian probability treats probability as a degree of belief or confidence in a hypothesis. Rather than only relying on infinite repeated experiments, it allows us to update our beliefs in light of new evidence.\\
+With bayesian probability we face now a complete different perspective. Bayesian probability treats probability as a degree of belief or confidence in a hypothesis. Rather than only relying on infinite repeated experiments, it allows us to update our beliefs in light of new evidence. Unlike the frequentist approach, we can incorporate prior information and handle small datasets. Bayes’ Rule provides the mechanism for updating beliefs.\\
 
-Example: Belief about a Coin's Bias
-
-Let $\theta$ represent the probability of the coin landing heads. In Bayesian statistics:
-
+Let's illustrate this with an example. Imagine we are given two dice, let's call them $D_1$ and $D_2$. The first one, $D_1$, is a far dice, and hence the probability of rolling any of the faces is uniformly distributed, all with probability $\frac{1}{6}$. But $D_2$ is biased, such that the probability of rolling a 6 is almost half the times. We can write the likelihoods of rolling a 6 in both cases, in the following way:
 \begin{itemize}
-    \item We begin with a \textbf{prior} belief about $\theta$, denoted by $P(\theta)$.
-    \item We observe data $D$ (e.g., outcomes of coin tosses).
-    \item We compute the \textbf{posterior} distribution $P(\theta \mid D)$: our updated belief after seeing the data.
+  \item Dice 1 is \textbf{fair}, so $P(6|D_1) = \frac{1}{6}$.
+  \item Dice 2 is \textbf{biased}, so $P(6|D_2) = \frac{1}{2}$.
 \end{itemize}
 
-\section{Bayes' Rule}
-
-The cornerstone of Bayesian inference is Bayes' Rule:
-
-\[
-P(\theta \mid D) = \frac{P(D \mid \theta) \cdot P(\theta)}{P(D)}
-\]
-
-\begin{itemize}
-    \item $P(\theta)$: Prior belief about the parameter $\theta$.
-    \item $P(D \mid \theta)$: Likelihood of the data given $\theta$.
-    \item $P(D)$: Marginal probability of the data (normalizing constant).
-    \item $P(\theta \mid D)$: Posterior belief about $\theta$ after observing $D$.
-\end{itemize}
-
-Unlike the frequentist approach, we can incorporate prior information and handle small datasets.
-
-\section{Summary}
-
-\begin{itemize}
-    \item \textbf{Frequentist}: Probability as long-run frequency.
-    \item \textbf{Bayesian}: Probability as belief, updated with evidence.
-    \item Bayes’ Rule provides the mechanism for updating beliefs.
-\end{itemize}
-
-\newpage
-
-Example: Two Dice, One Roll:
-
-Let’s say you have two dice:
-\begin{itemize}
-  \item Die 1 is \textbf{fair}, so $P(6|D_1) = \frac{1}{6}$.
-  \item Die 2 is \textbf{biased}, so $P(6|D_2) = \frac{1}{2}$.
-\end{itemize}
-
-You randomly pick one die, with no reason to favor either. So,
+We randomly pick one die, with no reason to favor either. Since we have just two options, the probability of choosing blindly one or the other — we will call this the \textit{prior} probability — is
 \[
 P(D_1) = P(D_2) = \frac{1}{2}
 \]
 
-You roll the die and get a 6. Now you wonder: What are the chances that you picked the biased die?
+Then, after that choice is made, we roll the dice and get a 6. And here is the question: What are the chances that we picked the biased die? Let's carefully define the prior beliefs and likelihoods, so that we can apply the Bayes rule. Let:
 
-Let:
 \begin{itemize}
-  \item $D_1$: You picked the fair die.
-  \item $D_2$: You picked the biased die.
-  \item $S$: You rolled a 6.
+  \item $H_1$: You picked the fair die.
+  \item $H_2$: You picked the biased die.
+  \item $E$: You rolled a 6.
 \end{itemize}
 
-We want to find $P(D_2 | S)$ — the probability that the die is biased given that we rolled a 6.\\
+We want to find $P(H_2 | E)$ — the probability that the die is biased given that we rolled a 6.\\
 
 Using Bayes’ Theorem:
 
 \[
-P(D_2 | S) = \frac{P(S | D_2) \cdot P(D_2)}{P(S)}
+P(H_2 | E) = \frac{P(E | H_2) \cdot P(H_2)}{P(S)}
 \]
 
-First, we calculate $P(S)$ — the overall chance of rolling a 6:
+First, we calculate the marginal probability $P(E)$ — the overall chance of rolling a 6:
 
 \[
-P(S) = P(S|D_1) \cdot P(D_1) + P(S|D_2) \cdot P(D_2) = \frac{1}{6} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2}
+P(E) = P(E | D_1) \cdot P(H_1) + P(E | D_2) \cdot P(H_2) = \frac{1}{6} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2}
 = \frac{1}{12} + \frac{1}{4} = \frac{1}{3}
 \]
 
 Now apply Bayes' Theorem:
 
 \[
-P(D_2 | S) = \frac{\frac{1}{2} \cdot \frac{1}{2}}{\frac{1}{3}} = \frac{1}{4} \div \frac{1}{3} = \frac{3}{4}
+P(H_2 | E) = \frac{\frac{1}{2} \cdot \frac{1}{2}}{\frac{1}{3}} = \frac{1}{4} \div \frac{1}{3} = \frac{3}{4}
 \]\\
 
 Even though both dice had the same chance of being picked, rolling a 6 strongly points to the biased die. Bayes’ Theorem helped us turn a gut feeling into a solid number: a \textbf{75\% chance} that the die was biased. Bayes’ Theorem isn’t just math — it’s a mindset. It’s how we learn, adapt, and update our understanding when the world surprises us. Once you see it in action, it becomes a natural way to think about uncertainty and evidence.
+
+\begin{itemize}
+    \item \textbf{Frequentist}: Probability as long-run frequency.
+    \item \textbf{Bayesian}: Probability as belief, updated with evidence.
+\end{itemize}
 
 \newpage
 
@@ -1711,49 +1563,27 @@ Computing posteriors.
 
 \section{Stochasticity and Markov processes}
 
-\paragraph{Historical context:}
-The study of stochastic (random) processes began in the early 20th century, as mathematicians sought to model systems evolving randomly over time. Early work by Andrey Markov introduced Markov chains—models where the future depends only on the present state, not the past history. These models became fundamental in fields such as physics, biology, economics, and computer science for understanding complex systems affected by randomness. Over time, stochastic processes have grown into a broad discipline, providing tools for predicting and analyzing uncertain, evolving phenomena.
+The world around us is full of uncertainty. Facing questions like, will it rain tomorrow? Will a cell divide or die? Will a water drop fall in the same place after some time, or somewhere near? In many cases, the best we can do is talk in terms of probabilities — not certainties. This is where the idea of \textit{stochasticity} comes again, and why mathematicians of the 20th century deeply revisited its meaning. Stochasticity normally means randomness. From now on, we will define a stochastic process as a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”\\
 
-\paragraph{What Is stochasticity?}
-Stochasticity means randomness or unpredictability in a system. Unlike deterministic systems, where future states are exactly determined by current conditions, stochastic systems incorporate randomness, making their outcomes probabilistic. Understanding stochasticity helps in modeling real-world phenomena where uncertainty is inherent, such as stock prices, weather, or population dynamics.
+Stochasticity means randomness or unpredictability in a system, as we have seen in previous chapters. But from now on, and following the work of mathematicians like Markov in the early 20th century, we will address it with a bit more subtlety. Now we will think about \textit{stochasticity} as randomness or unpredictability in a system, in opposition to deterministic systems, where future states are exactly determined by current conditions, stochastic systems incorporate randomness, making their outcomes probabilistic. Understanding stochasticity helps in modeling real-world phenomena where uncertainty is inherent, such as stock prices, weather, or population dynamics.\\
 
-\paragraph{Markov processes and their importance:}
+Even though the study of chance and probability can be trace to very ancient roots, as we have seen in previous chapter, \textit{stochasticity} as randomness or unpredictability in a system, in opposition to deterministic systems, began in the early 20th century, as mathematicians sought to model systems evolving randomly over time. Early work by Andrey Markov introduced Markov chains—models where the future depends only on the present state, not the past history. These models became fundamental in fields such as physics, biology, economics, and computer science for understanding complex systems affected by randomness. Over time, stochastic processes have grown into a broad discipline, providing tools for predicting and analyzing uncertain, evolving phenomena.\\
+
 Markov processes are a class of stochastic models with the “memoryless” property—the future state depends only on the current state. This simplification makes analysis feasible and is surprisingly accurate for many systems. Markov chains are used in algorithms, queueing theory, genetics, and many other fields to describe how systems evolve step-by-step in time.\\
 
-The world around us is full of uncertainty. Will it rain tomorrow? Will a website visitor click the next link? Will a cell divide or die? In many cases, the best we can do is talk in terms of probabilities — not certainties. This is where the idea of \textit{stochasticity} comes in. Stochasticity means randomness. A stochastic process is a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”\\
+Many systems in nature and society follow patterns, but with noise, surprises, or variability. Markov models give us a way to describe and work with such systems — mathematically and intuitively. Imagine you're trying to predict the weather. If it’s sunny today, what are the chances it’ll be sunny tomorrow? What if it was rainy? Markov models help us answer these kinds of questions using a simple but powerful idea:\\
 
-Many systems in nature and society follow patterns, but with noise, surprises, or variability. Markov models give us a way to describe and work with such systems — mathematically and intuitively.\\
+\textbf{The future depends only on the present — not the past.}\\
 
-What Is a Markov Model?
+This is called the \textbf{Markov property}. A Markov model is a way to describe systems that move between states (like "sunny", "rainy", or "cloudy") with certain probabilities. Markov models are useful when things change over time in a somewhat random, yet patterned, way. Think of weather patterns, stock market movements, DNA sequences, pages people click on in a website, as examples. Even if we can’t predict everything perfectly, we can model how likely one thing is to follow another.\\
 
-Imagine you're trying to predict the weather. If it’s sunny today, what are the chances it’ll be sunny tomorrow? What if it was rainy? Markov models help us answer these kinds of questions using a simple but powerful idea:\\
-
-\textbf{The future depends only on the present — not the past.}
-
-This is called the \textbf{Markov property}. A Markov model is a way to describe systems that move between states (like "sunny", "rainy", or "cloudy") with certain probabilities.
-
-Markov models are useful when things change over time in a somewhat random, yet patterned, way. Think of:
-
+The key ingredients of a Markov model are:
 \begin{itemize}
-  \item Weather patterns
-  \item Stock market movements
-  \item DNA sequences
-  \item Pages people click on in a website
+  \item A list of possible \textbf{states} (e.g., sunny, rainy), we will write as vectors.
+  \item A \textbf{transition matrix}, encoding the probabilities of moving from one state to another.
 \end{itemize}
 
-Even if we can’t predict everything perfectly, we can model how likely one thing is to follow another.\\
-
-Key Ingredients of a Markov Model
-
-A simple Markov model has:
-\begin{itemize}
-  \item A list of possible \textbf{states} (e.g., Sunny, Rainy)
-  \item A \textbf{transition matrix}, which tells you the probabilities of moving from one state to another
-\end{itemize}
-
-Example: Predicting Weather\\
-
-Let’s say the weather can be either \textbf{Sunny} or \textbf{Rainy}. And based on past data, we know:
+Let's illustrate with a simple example. Let's try to predict weather in the following day, assuming stochasticity and knowledge of the previous states. For simplicity let’s say the weather can be either sunny ($S$) or rainy ($R$). And based on past data, we know:
 
 \[
 \text{Transition Matrix} =

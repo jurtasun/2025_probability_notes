@@ -43,26 +43,16 @@
 \contentsline {section}{\numberline {4.5}Comparing data and normalization}{42}{}%
 \contentsline {chapter}{\numberline {5}Linear models and GLMs}{43}{}%
 \contentsline {section}{\numberline {5.1}Simple linear regression}{43}{}%
-\contentsline {paragraph}{Historical Context:}{43}{}%
-\contentsline {paragraph}{Why Linear Models?}{43}{}%
-\contentsline {paragraph}{Applications of Linear Models:}{43}{}%
-\contentsline {section}{\numberline {5.2}Multiple linear regression}{45}{}%
-\contentsline {section}{\numberline {5.3}Hypothesis testing in linear models}{46}{}%
-\contentsline {section}{\numberline {5.4}Generalized Linear Models (GLMs)}{47}{}%
-\contentsline {section}{\numberline {5.5}Logistic, Poisson, polynomial regression}{48}{}%
+\contentsline {section}{\numberline {5.2}Multiple linear regression}{44}{}%
+\contentsline {section}{\numberline {5.3}Hypothesis testing in linear models}{45}{}%
+\contentsline {section}{\numberline {5.4}Generalized Linear Models (GLMs)}{46}{}%
+\contentsline {section}{\numberline {5.5}Logistic, Poisson, polynomial regression}{47}{}%
 \contentsline {chapter}{\numberline {6}Introduction to bayesian probability}{49}{}%
-\contentsline {section}{\numberline {6.1}The Bayes' theorem}{49}{}%
-\contentsline {paragraph}{Historical Context:}{49}{}%
-\contentsline {paragraph}{Why Bayesian and Frequentist Approaches Matter:}{49}{}%
-\contentsline {paragraph}{How These Approaches Are Used:}{49}{}%
-\contentsline {section}{\numberline {6.2}Bayes' Rule}{51}{}%
-\contentsline {section}{\numberline {6.3}Summary}{51}{}%
-\contentsline {section}{\numberline {6.4}Bayesian vs frequentist}{55}{}%
-\contentsline {section}{\numberline {6.5}Computing posteriors}{56}{}%
+\contentsline {section}{\numberline {6.1}Bayesian vs frequentist}{49}{}%
+\contentsline {section}{\numberline {6.2}The Bayes' Rule}{50}{}%
+\contentsline {section}{\numberline {6.3}Bayesian vs frequentist}{54}{}%
+\contentsline {section}{\numberline {6.4}Computing posteriors}{55}{}%
 \contentsline {chapter}{\numberline {7}Introduction to Markov processes}{57}{}%
 \contentsline {section}{\numberline {7.1}Stochasticity and Markov processes}{57}{}%
-\contentsline {paragraph}{Historical context:}{57}{}%
-\contentsline {paragraph}{What Is stochasticity?}{57}{}%
-\contentsline {paragraph}{Markov processes and their importance:}{57}{}%
 \contentsline {section}{\numberline {7.2}Markov chains}{61}{}%
 \contentsline {section}{\numberline {7.3}Hidden Markov models}{62}{}%
