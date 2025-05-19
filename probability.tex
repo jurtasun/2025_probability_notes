@@ -768,30 +768,32 @@ Logistic, Poisson, polynomial regression.
 
 \section{The Bayes' theorem}
 
-Imagine you're a detective trying to solve a mystery. You start with some hunches (your initial beliefs), then you gather clues (evidence), and based on those clues, you update your beliefs about what happened. This is exactly what Bayes' Theorem allows us to do — mathematically.\\
+So far we have discussed probability and statistics, assuming the \textit{frequentist} definition of probability. That is, we have implicitly assumed that the probability, that number we make up that represents uncertainty, can be defined just as a ratio of the number of times we get a specific result, and the total number of observations. But for the execution on any measurement, there are initial intuitions, assumed rules, that we take for granted and that affect our results. In the classic example of the coins, that we used in Chapter 2 to define probability in the first place, we are assuming, for instance, that the coin is fair. But if we start tossing the same coin again and again, and encounter that the ration of heads and tails is significantly different than 0.5, maybe we should start question that first assumption in the first place.\\
 
-Probability is the language of uncertainty. It helps us reason when we don’t know for sure what’s going on. There are two big ways to use probability:
+This way of understanding probability, as founded in some \textit{prior beliefs} that can be updated as new evidence comes available, is normally referred to as \textit{bayesian} approach, or bayesian definition. It was developed by Thomas Bayes, a British mathematician who worked primarily on [...]. In the same way a detective aiming to solve a mystery, we start with some hunches (our initial beliefs), then gather clues (evidence), and based on those clues, we update your beliefs about what happened. This is exactly what Bayes' Theorem allows us to do, mathematically.\\
+
+As we have discussed in previous chapters, probability quantifies uncertainty, and there are two main different ways to address questions about stochastic processes:
 \begin{itemize}
-  \item \textbf{Forward (prediction)}: If we know the cause, what are the chances of seeing this outcome?
-  \item \textbf{Backward (inference)}: Given the outcome, what’s the most likely cause?
+  \item \textbf{Forward (prediction)}: Given the cause, what are the chances of seeing a specific outcome?
+  \item \textbf{Backward (inference)}: Given an outcome, what was the most likely cause that lead to this?
 \end{itemize}
 
-The second one — working backwards from results to reasons — is what Bayes’ Theorem is all about. It’s how we go from data to understanding.\\
+The second one — working backwards from results to reasons, purely, inferential — is what Bayes’ Theorem is all about. It’s how we reconstruct from data the underlaying phenomenology.\\
 
 Bayes’ Theorem shows up in spam filters, medical tests, search engines, even in how scientists interpret experiments. It’s the engine behind how we learn from evidence. Once you understand it, you’ll start seeing it everywhere — from everyday decisions to advanced machine learning.\\
 
-Here’s the rule in its mathematical form:
+Here’s the rule in its mathematical form. The probability of obtaining some result, or evidence $E$, given some prior hypothesis $H$ was true:
 
-\[
-P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
-\]
+\begin{equation}
+P(E|H) = \frac{P(H|E) \cdot P(H)}{P(E)}
+\end{equation}
 
 Where:
 \begin{itemize}
-  \item $P(A|B)$ is the probability of event $A$ given that $B$ has occurred (the \textbf{posterior}).
-  \item $P(B|A)$ is the probability of event $B$ given $A$ (the \textbf{likelihood}).
-  \item $P(A)$ is the probability of $A$ before seeing $B$ (the \textbf{prior}).
-  \item $P(B)$ is the total probability of $B$ occurring (the \textbf{evidence}).
+  \item $P(E|H)$ is the probability of event $E$ given that $H$ has occurred (the \textbf{posterior}).
+  \item $P(H|E)$ is the probability of event $E$ given $H$ (the \textbf{likelihood}).
+  \item $P(H)$ is the probability of $H$ before seeing $E$ (the \textbf{prior}).
+  \item $P(E)$ is the total — also called \textit{marginal} — probability of $E$ occurring (the \textbf{evidence}).
 \end{itemize}
 
 \newpage

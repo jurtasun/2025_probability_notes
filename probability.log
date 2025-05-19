@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  18 MAY 2025 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  19 MAY 2025 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1005,7 +1005,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 771--772
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 779--780
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
 
  []
 
@@ -1014,56 +1014,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 781--782
 
  []
 
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 821--822
+
+Underfull \hbox (badness 10000) in paragraph at lines 783--784
+
+ []
+
+[37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 823--824
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 840--841
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
 
  []
 
-[38] [39] [40]
+[39] [40] [41] [42
+
+]
 Chapter 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 861--862
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 863--864
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 867--868
+Underfull \hbox (badness 10000) in paragraph at lines 865--866
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 882--883
+Underfull \hbox (badness 10000) in paragraph at lines 869--870
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 892--893
-
- []
-
-[41
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 936--937
+Underfull \hbox (badness 10000) in paragraph at lines 884--885
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 894--895
+
+ []
+
+[43]
 Underfull \hbox (badness 10000) in paragraph at lines 938--939
 
  []
 
-[42] [43] [44] [45
+
+Underfull \hbox (badness 10000) in paragraph at lines 940--941
+
+ []
+
+[44] [45] [46] [47
 
 
 ] (./probability.aux)
@@ -1104,10 +1109,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/te
 xmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on probability.pdf (49 pages, 494136 bytes).
+Output written on probability.pdf (51 pages, 495757 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
+ 291 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

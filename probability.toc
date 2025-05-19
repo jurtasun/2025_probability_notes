@@ -46,9 +46,9 @@
 \contentsline {section}{\numberline {5.5}Logistic, Poisson, polynomial regression}{35}{}%
 \contentsline {chapter}{\numberline {6}Introduction to bayesian probability}{37}{}%
 \contentsline {section}{\numberline {6.1}The Bayes' theorem}{37}{}%
-\contentsline {section}{\numberline {6.2}Bayesian vs frequentist}{39}{}%
-\contentsline {section}{\numberline {6.3}Computing posteriors}{40}{}%
-\contentsline {chapter}{\numberline {7}Introduction to Markov processes}{41}{}%
-\contentsline {section}{\numberline {7.1}Stochasticity and Markov processes}{41}{}%
-\contentsline {section}{\numberline {7.2}Markov chains}{43}{}%
-\contentsline {section}{\numberline {7.3}Hidden Markov models}{44}{}%
+\contentsline {section}{\numberline {6.2}Bayesian vs frequentist}{40}{}%
+\contentsline {section}{\numberline {6.3}Computing posteriors}{41}{}%
+\contentsline {chapter}{\numberline {7}Introduction to Markov processes}{43}{}%
+\contentsline {section}{\numberline {7.1}Stochasticity and Markov processes}{43}{}%
+\contentsline {section}{\numberline {7.2}Markov chains}{45}{}%
+\contentsline {section}{\numberline {7.3}Hidden Markov models}{46}{}%
