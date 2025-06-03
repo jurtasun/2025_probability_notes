@@ -12,43 +12,64 @@
 \contentsline {subsection}{\numberline {2.2.1}Bernoulli distribution}{9}{}%
 \contentsline {subsection}{\numberline {2.2.2}Binomial distribution}{10}{}%
 \contentsline {subsection}{\numberline {2.2.3}Poisson distribution}{11}{}%
-\contentsline {section}{\numberline {2.3}Discrete and continuous}{13}{}%
-\contentsline {section}{\numberline {2.4}Continuous probability distributions}{14}{}%
-\contentsline {subsection}{\numberline {2.4.1}Uniform distribution}{14}{}%
-\contentsline {subsection}{\numberline {2.4.2}Gaussian distribution}{15}{}%
-\contentsline {subsection}{\numberline {2.4.3}Exponential distribution}{16}{}%
-\contentsline {chapter}{\numberline {3}Parameter estimation}{17}{}%
-\contentsline {section}{\numberline {3.1}Prediction vs inference}{17}{}%
-\contentsline {section}{\numberline {3.2}Parameters and variables}{18}{}%
-\contentsline {section}{\numberline {3.3}The Law of Large Numbers}{19}{}%
-\contentsline {section}{\numberline {3.4}The Central Limit Theorem}{20}{}%
-\contentsline {section}{\numberline {3.5}Maximum Likelihood Estimation}{21}{}%
-\contentsline {subsection}{\numberline {3.5.1}Motivation and intuition}{21}{}%
-\contentsline {subsection}{\numberline {3.5.2}The Likelihood and Log-Likelihood functions}{21}{}%
-\contentsline {subsection}{\numberline {3.5.3}Properties of the MLE}{22}{}%
-\contentsline {subsection}{\numberline {3.5.4}Application to Generalized Linear Models}{22}{}%
-\contentsline {chapter}{\numberline {4}Introduction to hypothesis testing}{23}{}%
-\contentsline {section}{\numberline {4.1}Statistical inference}{23}{}%
-\contentsline {section}{\numberline {4.2}Hypothesis, significance, p-values}{23}{}%
-\contentsline {section}{\numberline {4.3}Statistical tests: some examples}{25}{}%
-\contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{25}{}%
-\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two groups - Two sample t-test}{26}{}%
-\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher's exact test}{27}{}%
-\contentsline {subsection}{\numberline {4.3.4}Compare variation on more than two groups - Fisher's ANOVA}{28}{}%
-\contentsline {subsection}{\numberline {4.3.5}Compare distributions and testing for normality - $\chi ^{2}$ test}{29}{}%
-\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{30}{}%
-\contentsline {section}{\numberline {4.5}Comparing data and normalization}{31}{}%
-\contentsline {chapter}{\numberline {5}Linear models and GLMs}{33}{}%
-\contentsline {section}{\numberline {5.1}Simple linear regression}{33}{}%
-\contentsline {section}{\numberline {5.2}Multiple linear regression}{34}{}%
-\contentsline {section}{\numberline {5.3}Hypothesis testing in linear models}{35}{}%
-\contentsline {section}{\numberline {5.4}Generalized Linear Models (GLMs)}{36}{}%
-\contentsline {section}{\numberline {5.5}Logistic, Poisson, polynomial regression}{37}{}%
-\contentsline {chapter}{\numberline {6}Introduction to bayesian probability}{39}{}%
-\contentsline {section}{\numberline {6.1}The Bayes' theorem}{39}{}%
-\contentsline {section}{\numberline {6.2}Bayesian vs frequentist}{41}{}%
-\contentsline {section}{\numberline {6.3}Computing posteriors}{42}{}%
-\contentsline {chapter}{\numberline {7}Introduction to Markov processes}{43}{}%
-\contentsline {section}{\numberline {7.1}Stochasticity and Markov processes}{43}{}%
-\contentsline {section}{\numberline {7.2}Markov chains}{45}{}%
-\contentsline {section}{\numberline {7.3}Hidden Markov models}{46}{}%
+\contentsline {section}{\numberline {2.3}Discrete and continuous}{12}{}%
+\contentsline {section}{\numberline {2.4}Continuous probability distributions}{13}{}%
+\contentsline {subsection}{\numberline {2.4.1}Uniform distribution}{13}{}%
+\contentsline {subsection}{\numberline {2.4.2}Gaussian distribution}{14}{}%
+\contentsline {subsection}{\numberline {2.4.3}Exponential distribution}{15}{}%
+\contentsline {chapter}{\numberline {3}Parameter estimation}{23}{}%
+\contentsline {section}{\numberline {3.1}Prediction vs inference}{23}{}%
+\contentsline {section}{\numberline {3.2}Parameters and variables}{24}{}%
+\contentsline {section}{\numberline {3.3}The Law of Large Numbers}{25}{}%
+\contentsline {section}{\numberline {3.4}The Central Limit Theorem}{26}{}%
+\contentsline {section}{\numberline {3.5}Maximum Likelihood Estimation}{27}{}%
+\contentsline {paragraph}{Historical Context:}{27}{}%
+\contentsline {paragraph}{Why Maximum Likelihood?}{27}{}%
+\contentsline {paragraph}{Applications of MLE:}{27}{}%
+\contentsline {subsection}{\numberline {3.5.1}Motivation and intuition}{27}{}%
+\contentsline {subsection}{\numberline {3.5.2}The Likelihood and Log-Likelihood functions}{27}{}%
+\contentsline {subsection}{\numberline {3.5.3}Properties of the MLE}{28}{}%
+\contentsline {subsection}{\numberline {3.5.4}Application to Generalized Linear Models}{28}{}%
+\contentsline {chapter}{\numberline {4}Introduction to hypothesis testing}{35}{}%
+\contentsline {section}{\numberline {4.1}Statistical inference}{35}{}%
+\contentsline {section}{\numberline {4.2}Hypothesis, significance, p-values}{35}{}%
+\contentsline {section}{\numberline {4.3}Statistical tests: some examples}{36}{}%
+\contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{36}{}%
+\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two independent groups - Two sample t-test}{37}{}%
+\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher's exact test}{38}{}%
+\contentsline {subsection}{\numberline {4.3.4}Compare variation on more than two groups - Fisher's ANOVA}{39}{}%
+\contentsline {subsection}{\numberline {4.3.5}Compare distributions and testing for normality - $\chi ^{2}$ test}{40}{}%
+\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{41}{}%
+\contentsline {section}{\numberline {4.5}Comparing data and normalization}{42}{}%
+\contentsline {chapter}{\numberline {5}Linear models and GLMs}{43}{}%
+\contentsline {section}{\numberline {5.1}Simple linear regression}{43}{}%
+\contentsline {section}{\numberline {5.2}Multiple linear regression}{44}{}%
+\contentsline {section}{\numberline {5.3}Hypothesis testing in linear models}{45}{}%
+\contentsline {section}{\numberline {5.4}Generalized Linear Models (GLMs)}{46}{}%
+\contentsline {section}{\numberline {5.5}Logistic, Poisson, polynomial regression}{47}{}%
+\contentsline {chapter}{\numberline {6}Introduction to bayesian probability}{49}{}%
+\contentsline {section}{\numberline {6.1}Bayesian vs frequentist}{49}{}%
+\contentsline {section}{\numberline {6.2}The Bayes' Rule}{50}{}%
+\contentsline {section}{\numberline {6.3}Bayesian vs frequentist}{54}{}%
+\contentsline {section}{\numberline {6.4}Computing posteriors}{55}{}%
+\contentsline {chapter}{\numberline {7}Introduction to Markov processes}{57}{}%
+\contentsline {section}{\numberline {7.1}Stochasticity and Markov processes}{57}{}%
+\contentsline {section}{\numberline {7.2}Markov chains}{61}{}%
+\contentsline {section}{\numberline {7.3}Hidden Markov models}{62}{}%
+\contentsline {chapter}{\numberline {A}Vectors and matrices: a quick review}{63}{}%
+\contentsline {section}{\numberline {A.1}Vectors and their properties}{63}{}%
+\contentsline {section}{\numberline {A.2}Matrices and linear transformations}{63}{}%
+\contentsline {section}{\numberline {A.3}Basic algebraic operations}{63}{}%
+\contentsline {chapter}{\numberline {B}Functions and derivatives: a quick review}{65}{}%
+\contentsline {section}{\numberline {B.1}From curves to calculus: functions}{65}{}%
+\contentsline {section}{\numberline {B.2}The idea of change, slope and minima}{65}{}%
+\contentsline {section}{\numberline {B.3}Derivatives}{65}{}%
+\contentsline {chapter}{\numberline {C}Integrals: a quick review}{67}{}%
+\contentsline {section}{\numberline {C.1}Indefinite integral as antiderivative}{67}{}%
+\contentsline {section}{\numberline {C.2}Define definite integral as area under a curve}{67}{}%
+\contentsline {section}{\numberline {C.3}The fundamental theorem of calculus}{67}{}%
+\contentsline {chapter}{\numberline {D}Fourier series: a quick review}{69}{}%
+\contentsline {section}{\numberline {D.1}Introduction to periodic functions}{69}{}%
+\contentsline {section}{\numberline {D.2}Orthogonality and approximating functions}{69}{}%
+\contentsline {section}{\numberline {D.3}Conditions of convergence}{69}{}%
+\contentsline {section}{\numberline {D.4}Applications: the heat equation}{69}{}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  17 MAY 2025 09:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  3 JUN 2025 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -138,15 +138,37 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@height=\dimen150
 \Gin@req@width=\dimen151
 )
+(/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip53
+\f@nch@O@elh=\skip54
+\f@nch@O@erh=\skip55
+\f@nch@O@olh=\skip56
+\f@nch@O@orh=\skip57
+\f@nch@O@elf=\skip58
+\f@nch@O@erf=\skip59
+\f@nch@O@olf=\skip60
+\f@nch@O@orf=\skip61
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip62
+\enit@outerparindent=\dimen152
+\enit@toks=\toks23
+\enit@inbox=\box53
+\enit@count@id=\count275
+\enitdp@description=\count276
+)
 (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2024/02/07 v24.2 The Babel package
-\babel@savecnt=\count275
-\U@D=\dimen152
+\babel@savecnt=\count277
+\U@D=\dimen153
 \l@unhyphenated=\language89
 
 (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count276
+\bbl@dirlevel=\count278
 
 (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
@@ -159,9 +181,9 @@ Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-greek/greek.ldf
 Language: greek 2023/10/13 1.15 Greek support for the babel system
-\bbl@monogreek=\count277
-\bbl@polygreek=\count278
-\bbl@ancientgreek=\count279
+\bbl@monogreek=\count279
+\bbl@polygreek=\count280
+\bbl@ancientgreek=\count281
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/greek-fontenc/lgrenc.def
 File: lgrenc.def 2023-09-12 2.5 LGR Greek font encoding definitions
@@ -540,23 +562,29 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count280
-\Gm@cntv=\count281
-\c@Gm@tempcnt=\count282
-\Gm@bindingoffset=\dimen153
-\Gm@wd@mp=\dimen154
-\Gm@odd@mp=\dimen155
-\Gm@even@mp=\dimen156
-\Gm@layoutwidth=\dimen157
-\Gm@layoutheight=\dimen158
-\Gm@layouthoffset=\dimen159
-\Gm@layoutvoffset=\dimen160
-\Gm@dimlist=\toks23
+\Gm@cnth=\count282
+\Gm@cntv=\count283
+\c@Gm@tempcnt=\count284
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
+\Gm@dimlist=\toks24
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count285
+\c@@ppsavesec=\count286
+\c@@ppsaveapp=\count287
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count283
-\l__pdf_internal_box=\box53
+\l__color_backend_stack_int=\count288
+\l__pdf_internal_box=\box54
 )
 (./probability.aux
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 4
@@ -571,39 +599,68 @@ LaTeX Warning: Label `fig:random' multiply defined.
 )
 \openout1 = `probability.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count284
-\scratchdimen=\dimen161
-\scratchbox=\box54
-\nofMPsegments=\count285
-\nofMParguments=\count286
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count287
-\MPscratchDim=\dimen162
-\MPnumerator=\count288
-\makeMPintoPDFobject=\count289
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count289
+\scratchdimen=\dimen162
+\scratchbox=\box55
+\nofMPsegments=\count290
+\nofMParguments=\count291
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count292
+\MPscratchDim=\dimen163
+\MPnumerator=\count293
+\makeMPintoPDFobject=\count294
+\everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -646,7 +703,7 @@ e
 <figures/icl_logo.jpeg, id=1, 461.725pt x 225.84375pt>
 File: figures/icl_logo.jpeg Graphic file (type jpg)
 <use figures/icl_logo.jpeg>
-Package pdftex.def Info: figures/icl_logo.jpeg  used on input line 16.
+Package pdftex.def Info: figures/icl_logo.jpeg  used on input line 24.
 (pdftex.def)             Requested size: 234.8775pt x 114.88586pt.
 [1
 
@@ -673,22 +730,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 No file probability.ind.
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
@@ -698,72 +755,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
 ] [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.e
 nc}]
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
-[3]
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
@@ -771,44 +803,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--159
 File: figures/chapter1/normal_hist.png Graphic file (type png)
 <use figures/chapter1/normal_hist.png>
 Package pdftex.def Info: figures/chapter1/normal_hist.png  used on input line 1
-62.
+40.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
-[5] [6 <./figures/chapter1/normal_hist.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+[5 <./figures/chapter1/normal_hist.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+
+ []
+
+[6]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 [7
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
@@ -816,311 +863,537 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--219
 <figures/chapter2/bernoulli.png, id=57, 433.62pt x 289.08pt>
 File: figures/chapter2/bernoulli.png Graphic file (type png)
 <use figures/chapter2/bernoulli.png>
-Package pdftex.def Info: figures/chapter2/bernoulli.png  used on input line 239
+Package pdftex.def Info: figures/chapter2/bernoulli.png  used on input line 242
 .
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
  [9 <./figures/chapter2/bernoulli.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
 <figures/chapter2/binomial.png, id=63, 433.62pt x 289.08pt>
 File: figures/chapter2/binomial.png Graphic file (type png)
 <use figures/chapter2/binomial.png>
-Package pdftex.def Info: figures/chapter2/binomial.png  used on input line 274.
+Package pdftex.def Info: figures/chapter2/binomial.png  used on input line 277.
 
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 
  []
 
 [10 <./figures/chapter2/binomial.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 288--290
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
 
  []
 
 <figures/chapter2/poisson.png, id=69, 433.62pt x 289.08pt>
 File: figures/chapter2/poisson.png Graphic file (type png)
 <use figures/chapter2/poisson.png>
-Package pdftex.def Info: figures/chapter2/poisson.png  used on input line 299.
+Package pdftex.def Info: figures/chapter2/poisson.png  used on input line 302.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--308
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 315--316
-
- []
-
-<figures/chapter2/poisson_highlight.png, id=70, 433.62pt x 289.08pt>
-File: figures/chapter2/poisson_highlight.png Graphic file (type png)
-<use figures/chapter2/poisson_highlight.png>
-Package pdftex.def Info: figures/chapter2/poisson_highlight.png  used on input 
-line 319.
-(pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
 [11 <./figures/chapter2/poisson.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
-
- []
-
-[12 <./figures/chapter2/poisson_highlight.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 339--340
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 381--382
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
-<figures/chapter2/uniform.png, id=82, 433.62pt x 289.08pt>
+<figures/chapter2/uniform.png, id=77, 433.62pt x 289.08pt>
 File: figures/chapter2/uniform.png Graphic file (type png)
 <use figures/chapter2/uniform.png>
-Package pdftex.def Info: figures/chapter2/uniform.png  used on input line 391.
+Package pdftex.def Info: figures/chapter2/uniform.png  used on input line 372.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
-[14 <./figures/chapter2/uniform.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
+[13 <./figures/chapter2/uniform.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
 
-<figures/chapter2/normal.png, id=87, 433.62pt x 289.08pt>
+<figures/chapter2/normal.png, id=82, 433.62pt x 289.08pt>
 File: figures/chapter2/normal.png Graphic file (type png)
 <use figures/chapter2/normal.png>
-Package pdftex.def Info: figures/chapter2/normal.png  used on input line 408.
+Package pdftex.def Info: figures/chapter2/normal.png  used on input line 389.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
-[15 <./figures/chapter2/normal.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
+[14 <./figures/chapter2/normal.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 
  []
 
-<figures/chapter2/exponential.png, id=96, 433.62pt x 289.08pt>
+<figures/chapter2/exponential.png, id=90, 433.62pt x 289.08pt>
 File: figures/chapter2/exponential.png Graphic file (type png)
 <use figures/chapter2/exponential.png>
 Package pdftex.def Info: figures/chapter2/exponential.png  used on input line 4
-25.
+06.
 (pdftex.def)             Requested size: 328.82707pt x 219.22668pt.
-[16 <./figures/chapter2/exponential.png>]
-Chapter 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
+[15 <./figures/chapter2/exponential.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 443--444
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--446
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--448
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 449--450
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
 
  []
 
-[17
 
-] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 465--466
 
  []
 
-<figures/chapter3/law_large_numbers.png, id=107, 722.7pt x 361.35pt>
-File: figures/chapter3/law_large_numbers.png Graphic file (type png)
-<use figures/chapter3/law_large_numbers.png>
-Package pdftex.def Info: figures/chapter3/law_large_numbers.png  used on input 
-line 487.
-(pdftex.def)             Requested size: 328.82707pt x 164.4145pt.
-[19 <./figures/chapter3/law_large_numbers.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
-
- []
-
-<figures/chapter3/central_limit_theorem.png, id=113, 722.7pt x 361.35pt>
-File: figures/chapter3/central_limit_theorem.png Graphic file (type png)
-<use figures/chapter3/central_limit_theorem.png>
-Package pdftex.def Info: figures/chapter3/central_limit_theorem.png  used on in
-put line 514.
-(pdftex.def)             Requested size: 328.82707pt x 164.4145pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
-
- []
-
-[20 <./figures/chapter3/central_limit_theorem.png>] [21] [22]
-Chapter 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 632--633
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 634--635
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 646--647
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
-[23
+
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--603
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--617
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 640--641
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 658--659
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 660--661
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 724--725
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--727
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
+
+ []
+
+[21] [22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 648--649
+Chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 769--770
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 782--784
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 657--658
+Underfull \hbox (badness 10000) in paragraph at lines 791--792
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
-
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 680--682
-
- []
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 695--696
+<figures/chapter3/law_large_numbers.png, id=124, 722.7pt x 361.35pt>
+File: figures/chapter3/law_large_numbers.png Graphic file (type png)
+<use figures/chapter3/law_large_numbers.png>
+Package pdftex.def Info: figures/chapter3/law_large_numbers.png  used on input 
+line 813.
+(pdftex.def)             Requested size: 328.82707pt x 164.4145pt.
+[25 <./figures/chapter3/law_large_numbers.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 828--829
 
  []
 
+<figures/chapter3/central_limit_theorem.png, id=130, 722.7pt x 361.35pt>
+File: figures/chapter3/central_limit_theorem.png Graphic file (type png)
+<use figures/chapter3/central_limit_theorem.png>
+Package pdftex.def Info: figures/chapter3/central_limit_theorem.png  used on in
+put line 840.
+(pdftex.def)             Requested size: 328.82707pt x 164.4145pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--703
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
+
+ []
+
+[26 <./figures/chapter3/central_limit_theorem.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 864--865
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 730--732
+Underfull \hbox (badness 10000) in paragraph at lines 940--942
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 759--761
-
- []
-
-[29] [30] [31] [32
-
-]
-Chapter 5.
-[33] [34] [35] [36] [37] [38
-
-]
-Chapter 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 813--814
+Underfull \hbox (badness 10000) in paragraph at lines 964--966
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 821--822
+Underfull \hbox (badness 10000) in paragraph at lines 974--976
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 984--986
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1018
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 1037--1039
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1055--1057
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1082
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1088
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1092--1094
+
+ []
+
+[31] [32] [33] [34
+
+]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1214--1215
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 1237--1238
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 1253--1255
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 1268--1269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1275--1276
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 1301--1303
 
  []
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 861--862
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 880--881
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1332
 
  []
 
 [40] [41] [42]
-Chapter 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 903--904
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 905--906
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 907--908
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 909--910
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 913--914
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 928--929
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 938--939
-
- []
-
+Chapter 5.
 [43
 
+] [44] [45] [46] [47] [48
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 982--983
+Chapter 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1390--1391
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 984--985
+Underfull \hbox (badness 10000) in paragraph at lines 1392--1393
 
  []
 
-[44] [45] [46] [47
 
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1397
+
+ []
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 1402--1403
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1418--1419
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1439--1440
+
+ []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 1458--1459
+
+ []
+
+[51] [52] [53] [54] [55] [56
+
+]
+Chapter 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1567--1568
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1569--1570
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1571--1572
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1573--1574
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1575--1576
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1577--1578
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1579--1580
+
+ []
+
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 1629--1630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1631--1632
+
+ []
+
+[58] [59] [60] [61] [62]
+Appendix A.
+[63
+
+] [64
+
+]
+Appendix B.
+[65] [66
+
+]
+Appendix C.
+[67] [68
+
+]
+Appendix D.
+[69] [70
+
+] [71
 
 ] (./probability.aux)
  ***********
@@ -1133,37 +1406,38 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5827 strings out of 474116
- 95218 string characters out of 5743681
+ 6946 strings out of 474116
+ 114849 string characters out of 5743681
  1940187 words of memory out of 5000000
- 28117 multiletter control sequences out of 15000+600000
+ 29197 multiletter control sequences out of 15000+600000
  569182 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,1062b,312s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 61i,12n,69p,1062b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr
-/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/te
-xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texli
-ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
-2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2
-024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-24/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/te
-xmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/texmf
--dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on probability.pdf (51 pages, 508246 bytes).
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pf
+b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local
+/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texliv
+e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
+024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/202
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024
+/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/202
+4/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on probability.pdf (75 pages, 558753 bytes).
 PDF statistics:
- 293 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
+ 374 PDF objects out of 1000 (max. 8388607)
+ 233 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

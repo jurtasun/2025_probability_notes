@@ -1,9 +1,17 @@
 \documentclass{book}
 
 \usepackage{makeidx, cite, indentfirst}
-\usepackage{amsmath, amssymb, amsfonts, graphicx}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx, fancyhdr, enumitem}
 \usepackage[english, greek]{babel}
 \usepackage[margin=1in]{geometry} 
+\usepackage[title]{appendix}
+
+\pagestyle{fancy}
+
+% Remove automatic uppercasing for headers:
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
 
 \begin{document}
 \selectlanguage{english} 
@@ -71,9 +79,9 @@ As one might expect, probability and related areas of study date back to very an
 
 Although classical Greek and Roman philosophers frequently debated the nature of chance and determinism, these discussions remained broad and philosophical, far from the systematic, mathematical discipline we now regard as scientific. As early as the time of Cicero, thinkers began distinguishing between events that occurred by chance and those believed to be governed by fate, foreshadowing later developments in probability theory [...].\\
 
-It was not until the late medieval and early Renaissance periods that more rigorous ideas began to emerge. Mathematicians such as Gerolamo Cardano (1501–1576) made foundational contributions to the mathematical treatment of chance by analyzing gambling problems and developing early probabilistic reasoning [...].\\
+It was not until the late medieval and early Renaissance periods that more rigorous ideas began to emerge. Mathematicians such as Gerolamo Cardano (1501–1576) made foundational contributions to the mathematical treatment of chance by analyzing gambling problems and developing early probabilistic reasoning.
 
-Probability was properly formalized as a mathematical discipline in the 17th century, most notably through the correspondence between Blaise Pascal and Pierre de Fermat. Their work on problems involving games of chance introduced key ideas such as combinatorics, expected value, and variance — concepts that remain central to our modern understanding of randomness, measurement, and information. These developments laid the groundwork for subsequent advances by Huygens, Bernoulli, Gauss, and others, which we will explore in later chapters. Bernoulli’s \textit{Ars Conjectandi} (1713) is often cited as the first formal textbook on probability.\\
+Probability was properly formalized as a mathematical discipline in the 17th century, most notably through the correspondence between Blaise Pascal and Pierre de Fermat. Their work on problems involving games of chance introduced key ideas such as combinatorics, expected value, and variance — concepts that remain central to our modern understanding of randomness, measurement, and information. These developments laid the groundwork for subsequent advances by Huygens, Bernoulli, Gauss, and others, which we will explore in later chapters. Bernoulli’s \textit{Ars Conjectandi} (1713) is often cited as the first formal textbook on probability [...]. \\
 
 \indent The modern approach to probability and its fundamental concepts are summarized in the axioms established by the Russian mathematician Andrey Kolmogorov, in the early 1930s [...]. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover this with a bit more detail in Chapter 2.\\
 
@@ -98,7 +106,7 @@ We can define a quantity called the \textit{mean} - or \textit{average} - of an 
 \label{mean1}
 \end{equation}
 
-We can write this in a slightly more compact way, using the greek letter $\sum$ to represent the \textit{summation} of all these elements, as follows:\\
+We can write this in a slightly more compact way as a \textit{summation}, as follows:\\
 
 \begin{equation}
 \bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_{i} \; .
@@ -107,7 +115,7 @@ We can write this in a slightly more compact way, using the greek letter $\sum$ 
 
 Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, starting with the first one ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$). The expressions (\ref{mean1}) and (\ref{mean2}) mean \textit{exactly} the same thing, just written in different ways.\\
 
-If we now write that expression for our specific set $\textbf{x}_{1}$, which has just $N = 3$ observations, we get
+If we now write that expression for our specific sample $\textbf{x}_{1}$, which has just $N = 3$ observations, we get
 
 \begin{equation}
 \bar{x}_{1} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2 \; . \nonumber
@@ -119,13 +127,20 @@ As we see, the mean is just a quantity that captures some information about the 
 s^2 = \frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2} \; . 
 \end{equation}
 
-Note that the variance is just a sum of differences, and squared just so that we obtain a positive value. It is a measure starting with the first element ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$), of how far is each element from the mean value. If all elements in our sample are very close to the mean, then the sum of differences will be a small number, and we would get a variance $s^2$ close to zero. Meanwhile, if the elements are very different, we would obtain a bigger variance. The reason we name it $s^2$ is to distinguish it from the so-called \textit{standard deviation} $s$, but we shall not worry about that now. Again, just by substituting that expression for our set $x_1$, which has just $N = 3$ observations, we get
+Note that the variance is just a sum of differences, and squared just so that we obtain a positive value. It is a measure starting with the first element ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$), of how far is each element from the mean value. If all elements in our sample are very close to the mean, then the sum of differences will be a small number, and we would get a variance $s^2$ close to zero. Meanwhile, if the elements are very different, we would obtain a bigger variance. The reason we name it $s^2$ is to distinguish it from the so-called \textit{standard deviation}, normally written as $s$, but we shall not worry about that now. Again, just by substituting that expression for our set $\textbf{x}_1$, which has just $N = 3$ observations, we get
 
 \begin{equation}
-s_1^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; . \nonumber
+s_1^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; , \nonumber
 \end{equation}
 
-which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean.\\
+which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean. In Figure \ref{fig:histogram1} we see a representation of a set of observations as a histogram, which visually displays the mean value and the variance [...]. \\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter1/normal_hist.png}
+    \caption{Histogram representing the mean and standard deviation for a set of gaussian observations. The read line shows the mean value, representing the central value where the bulk of events lie, and the dotted lines show the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean.}
+    \label{fig:histogram1}
+\end{figure}
 
 As an exercise, try to compute both the mean and variance for a second sample, let's say
 
@@ -143,7 +158,7 @@ Buy substituting in the general expressions of $\bar{x}$ and $s^2$ you should ge
 s^2_2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((4 - 5)^{2} + (5 - 5)^{2} + (6 - 5)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; . \nonumber
 \end{equation}
 
-Again, our mean $\bar{x}_2 = 5$ encodes the information about the "central" value, where the bulk of event are, and the variance $s^2_2 = 1$ indicates, as in the previous example, that the elements of the sample $\textbf{x}_2$ are also \textit{one unit} away from the mean\\
+Again, our mean $\bar{x}_2 = 5$ encodes the information about the "central" value, where the bulk of event are, and the variance $s^2_2 = 1$ indicates, as in the previous example, that the elements of the sample $\textbf{x}_2$ are also \textit{one unit} away from the mean.\\
 
 Another useful quantity used to characterize variability is the so called \textit{standard deviation}, which is just the square root of the variance
 
@@ -153,17 +168,7 @@ s = \sqrt{\frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}} \; .
 
 This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information.\\
 
-As we said, this was just a warmup example, and we will visit these definitions in further chapters when we introduce the idea of parameter estimation, and we will see in detail different ways to define and interpret them. \\
-
-In the figure \ref{fig:histogram1} we see a representation of a set of observations as a histogram, which visually displays the mean value and the variance [...]. \\ 
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter1/normal_hist.png}
-    \caption{Histogram representing the mean and standard deviation for a set of gaussian observations. The read line shows the mean value, representing the central value where the bulk of events lie, and the dotted lines show the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean.}
-    \label{fig:histogram1}
-\end{figure}
-
+As we said, this was just a warmup example, and we will visit these definitions in further chapters when we introduce the idea of parameter estimation, and we will see in detail different ways to define and interpret them [...]. \\
 
 
 % Chapter - Probability and random events
@@ -171,17 +176,17 @@ In the figure \ref{fig:histogram1} we see a representation of a set of observati
 
 \section{What is probability?}
 
-As already mentioned in the introduction, probability is a branch of mathematics dealing with information and random events. Hence, we could begin by asking, what \textit{are} random events? Random events, also referred to as \textit{stochastic}, are simply process whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός} (stochastic), which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events and quantify our degree of certainty for a specific result.\\
+As already mentioned in the introduction, probability is a branch of mathematics dealing with information and random events. Hence, we could begin by asking, what \textit{are} random events? Random events, also referred to as \textit{stochastic}, are simply processes whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός} (stochastic), which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events and quantify our degree of certainty for a specific result.\\
 
-Let's now ask ourselves a similar question. What is \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a \textit{number} we make up, a \textit{quantity} we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way:
+Let's ask ourselves a the question, what \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a \textit{number} we make up, a \textit{quantity} we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way:
 
 \begin{itemize}
-\item If I'm sure A will never happen, $P(A) = 0$.
-\item If I'm sure A will always happen,  $P(A) = 1$.
-\item For anything in between, if I'm not certain about any of the outcomes $P(A) \in [0, 1]$.
+\item If I'm sure that some event (A) will never happen, $P(A) = 0$.
+\item If I'm sure that some event (A) will always happen,  $P(A) = 1$.
+\item For anything in between, if I'm not certain about any of the outcomes, $P(A) \in [0, 1]$.
 \end{itemize}
 
-With the symbol $ \in$ we simply denote that $P(A)$ will be a number between 0 and 1. It could also be read as $P(A)$ is \textit{contained} in the interval $[0, 1]$. In all those cases where we are not sure if we will get one result or another, we say that there is a level of \textit{uncertainty}, or \textit{surprise}.\\
+With the symbol $ \in$ we simply denote that $P(A)$ will be a number between 0 and 1. It could also be read as $P(A)$ is \textit{contained} in the interval $[0, 1]$. In all those cases where we are not sure if we will get one result or another, we say that there is a level of \textit{uncertainty}, or \textit{surprise} [...].\\
 
 Let's think on a coins toss, as an example. To model such case, one of the simplest and oldest examples of a stochastic process, we would have two possible outcomes: heads ($H$), and tails ($T$).
 
@@ -191,9 +196,7 @@ Let's think on a coins toss, as an example. To model such case, one of the simpl
 \item For anything in between, $P(H) = P(T) = \frac{1}{2}$.
 \end{itemize}
 
-The example of the coin, where we have just two possible results, is what we will call a \textit{Bernoulli} trial, and we will describe it in detail soon, but let's use it now as a prior example to introduce the idea of probability.\\
-
-The scenarios in which I am certain, of either one case of the other, are clear. But for the third one, where we assign a value to the probability which is not 0 or 1, we should stop for a second. When we say that the probability of getting heads - or tails - in a normal coin that is not biased is $P = \frac{1}{2}$, we are implicitly assuming some things. We implicitly assume that if we repeated the toss many times, half of them we would get one result (e.g., heads), and the other half the remaining result (e.g., tails). This is normally referred to as the \textit{frequentist} definition of probability, because we are defining its value as the ratio of how many times we get a specific result $n$, and the number of total trials $N$.
+The scenarios in which I am certain, of either one case of the other, are clear. But for the third one, where we assign a value to the probability which is not 0 or 1, we should stop for a second. When we say that the probability of getting heads - or tails - in a normal coin that is not biased is $P = \frac{1}{2}$, we are implicitly assuming some things. We implicitly assume that if we repeated the toss many times, half of them we would get one result (e.g., heads), and the other half the remaining result (e.g., tails). This is normally referred to as the \textit{frequentist} definition of probability, because we are defining its value as the ratio of how many times we get a specific result $n$, and the number of total trials $N$. The example of the coin, where we have just two possible results, is what we will call a \textit{Bernoulli} trial, and we will describe it in detail soon, but let's use it now as a prior example to introduce the idea of probability [...] .\\
 
 \begin{equation}
 	P(\text{A happening}) = \frac{\text{Number of times A happens}}{\text{Total number of trials}} = \frac{n}{N} \; . \nonumber
@@ -202,7 +205,7 @@ The scenarios in which I am certain, of either one case of the other, are clear.
 In the case of the coin, if I toss 100 times, and obtain 55 heads against 45 tails, would lead to 
 
 \begin{equation}
-	P(\text{H}) = \frac{55}{100} \simeq \frac{1}{2} ; . \nonumber
+	P(\text{H}) = \frac{55}{100} \simeq \frac{1}{2} \; . \nonumber
 \end{equation}
 
 Ideally we expect that these frequencies, as we increase the number of repetitions, would approach a perfect $\frac{1}{2}$. We will revisit this concept when we talk about the Law of Large Number and the Central Limit Theorem, in Chapter 3.\\
@@ -213,9 +216,9 @@ The formal definition of unitarity can be written as follows. Let's denote all p
 	\sum_{i = 1}^{n} \; P(x_{i}) = 1
 \end{equation}
 
-Indeed, the literal meaning of probability comes from latin \textit{probabilis}. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances."[12] However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence.\\
+Indeed, the literal meaning of probability comes from latin \textit{probabilis}. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances." However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence [...].\\
 
-There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details.\\
+There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details [...].\\
 
 \newpage
 
@@ -312,43 +315,21 @@ Again, let's consider a couple of examples to illustrate Poisson distributed eve
     &\quad + P(x=3; \lambda = 3) + P(x=4; \lambda = 3) + P(x=5; \lambda = 3) \notag
 \end{align}\\
 
-This sum of probabilities up to a given value is normally referred to as the \textit{cumulative probability}, \textit{cumulative distribution function}, or cdf.\\
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/poisson_highlight.png}
-    \caption{Representation of the Poisson distribution of a random variable $x$, given the number of observations $\lambda$ as a parameter.}
-    \label{fig:poisson2}
-\end{figure}
-
-\textbf{Example 3:} Now let's ask the opposite question. What would be the probability of observing \textit{at least} 5 patients in that same hospital?
-\begin{align}
-    P(x \leq 5; \lambda = 3) &= P(x=0; \lambda = 3) + P(x=1; \lambda = 3) + P(x=2; \lambda = 3) \notag \\
-    &\quad + P(x=3; \lambda = 3) + P(x=4; \lambda = 3) + P(x=5; \lambda = 3) \notag
-\end{align}\\
-
-Given unitarity, we can just compute it as
-\begin{equation}
-    P(x > 5; \lambda = 3) = 1 - P(x \leq 5; \lambda = 3) = 1 - CDF(5; \lambda = 3). \notag
-\end{equation}\\
-
 \newpage
 
 \section{Discrete and continuous}
 
-Once we have an insight on random events, and a mathematical quantity representing that uncertainty, we are ready to deal with real problems. From tossing coins, to rolling dice, to making measurements, the first thing we realize is that not \textit{all} random events are equal. In some cases, like rolling a fair dice, all outcomes are equally probable, and in other cases, such as counting, we may encounter some results which happen much more often than others. The main criteria we will use for differentiate among random events, is what we will call their \textit{distribution}.\\
+We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous} [...]. \\
 
-We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous}. [...]
+So far we have focused on discrete events, that is, scenarios where the number of possible outcomes was an integer number. Now we will encounter a second family of stochastic processes, the ones we will refer to as continuous. In the discrete case, we were implicitly using the frequentist definition of probability, as a number that represents the ratio of how many times we will observe a particular result, if we endlessly repeat [...].\\
 
-So far we have focused on discrete events, that is, scenarios where the number of possible outcomes was an integer number. Now we will encounter a second family of stochastic processes, the ones we will refer to as continuous. In the discrete case, we were implicitly using the frequentist definition of probability, as a number that represents the ratio of how many times we will observe a particular result, if we endlessly repeat (...).\\
-
-But let's try to face a different scenario. What would happen if we try to guess the probability of measuring something which does hace an infinite number of possible outcomes, spread on a continuous range? (e.g., the probability of measuring the height of a person an get 1.75 cm, or the temperature in a room and get 25 degrees, ...). Here we notice that, if we keep the definition of probability we used in the case of the Binomial, the Poisson, etc, we would get something like:
+But let's face now a different scenario. What would happen if we try to guess the probability of measuring something which does hace an infinite number of possible outcomes, spread on a continuous range? - e.g., the probability of measuring the height of a person an get 1.75 cm, or the temperature in a room and get 25 degrees, etc. Here we notice that, if we keep the definition of probability we used in the case of the Binomial, the Poisson, etc, we would get something like:
 
 \begin{equation}
 P(x = x_{0}) = \frac{\text{number of times I get $x_{0}$}}{\text{number of times I get any other result}}
 \end{equation}
 
-Note that now, the possible results are not just 1, 2, ..., n, but actually infinite more and spread over a continuous range. The outcome of measuring a temperature could be the $T = 25$ we want, but also $T = 24.999$ and $T = 25.001$, and there infinite other possible results between these two. No matter how precise our measurement devices, are, between any pair of results, we would have an infinite number of cases where we obtain a different result. Hence, applying the frequentist definition of probability would lead to:
+Note that now, the possible results are not just 1, 2, ..., n, but actually infinite more and spread over a \textit{continuous} range. The outcome of measuring a temperature could be the $T = 25$ we want, but also $T = 24.999$ and $T = 25.001$, and there are \textit{infinite} other possible results between these two. No matter how precise our measurement devices, are, between any pair of results, we would have an infinite number of cases where we obtain a different result. Hence, applying the frequentist definition of probability would lead to:
 
 \begin{equation}
 P(x = x_{0}) = \frac{\text{number of times I get $x_{0}$}}{\text{number of times I get any other result}} = \frac{n}{\infty} = 0
@@ -359,18 +340,18 @@ We would get that the probability of obtaining \textit{any result} would be exac
 Let's pause for a moment and think about what happened. At the very beginning of this chapter we said that the quantity $P(x)$ was used to represent information - also certainty, surprise - and computed using the frequentist approach, meaning the \textit{ratio of favorable cases and total cases}. But that was assuming we had a finite set or possibilities, or measure space.
 
 \begin{itemize}
-\item Discrete (coins, dice, counting) $\longrightarrow$ finite, \textit{countable} outcomes
-\item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ infinite, \textit{uncountable}
+\item Discrete (coins, dice, counting) $\longrightarrow$ finite, \textit{countable} outcomes.
+\item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ infinite, \textit{uncountable} outcomes.
 \end{itemize}
 
-For such cases we will define a mathematical quantity, similar to that we called probability, which represents analogous information, but considering the fact we are dealing with a continuous event. We will call it \textit{probability density} or \textit{density} for simplicity, and we will denote it with $f(x)$. Note that we can distinguish it from the probability in discrete events $P(x_{i})$, where we used the subscript $x_{i}$ to represent that the random variable could take just a finite set of values ($x_{1}$, $x{2}$, etc).
+For such cases we will define a mathematical quantity, similar to that we called probability, which represents analogous information, but considering the fact we are dealing with a continuous event. We will call it \textit{probability density} or simply \textit{density}, and we will denote it with $f(x)$. Note that we can distinguish it from the probability in discrete events $P(x_{i})$, where we used the subscript $x_{i}$ to represent that the random variable could take just a finite set of values ($x_{1}$, $x{2}$, etc).
 
 \begin{itemize}
 \item Discrete (coins, dice, counting) $\longrightarrow$ Probability $P(x_{i})$ | $\sum_{i = 1}^{\infty} P(x_{i}) = 1$
 \item Continuous (temperature, energy, concentration, ...) $\longrightarrow$ Probability density f(x) | $\int_{i = 0}^{\infty} f(x) dx = 1$
 \end{itemize}
 
-In the same way we imposed that probability needs to obey unitarity, we will impose that property in our recently defined probability density $f(x)$. The way we represent the sum for all possible cases in the continuous case, is just imposing that the integral of the function $f(x)$ is 1. This is just an example of \textit{normalization}, that we will explore further in chapter 4.
+In the same way we imposed that probability needs to obey unitarity, we will impose that property in our recently defined probability density $f(x)$. The way we represent the sum for all possible cases in the continuous case, is just imposing that the integral of the function $f(x)$ is 1. This is just an example of \textit{normalization}, that we will explore further in Chapter 4 [...].
 
 \newpage
 
@@ -378,18 +359,18 @@ In the same way we imposed that probability needs to obey unitarity, we will imp
 
 \subsection{Uniform distribution}
 
-The uniform distribution represents a scenario where all outcomes in an interval $[a, b]$ are equally likely [...].\\
+The uniform distribution represents events where all outcomes in an interval $[a, b]$ are equally likely [...].\\
 
 The probability of observing a particular result $x$ in a given range $[a, b]$ is:
 
 \begin{equation}
-    f(x; a, b) = \frac{1}{b-a}, \quad a \leq x \leq b.
+    f(x; a, b) = \frac{1}{b-a}, \quad a \leq x \leq b \; .
 \end{equation}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/uniform.png}
-    \caption{Representation of the uniform distribution of a random variable $x$, given the boundary parameters $a$, $b$.}
+    \caption{Representation of the uniform distribution of a random variable $x$, given the boundaries $a$, $b$.}
     \label{fig:uniform1}
 \end{figure}
 
@@ -400,7 +381,7 @@ Introduced by Carl Friedrich Gauss, the normal distribution became central to st
 
 The probability density function is:
 \begin{equation}
-    f(x; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+    f(x; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \; .
 \end{equation}
 
 \begin{figure}[ht]
@@ -417,7 +398,7 @@ The exponential distribution models waiting times between. Intuitively, it descr
 
 The probability density function is:
 \begin{equation}
-    f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0.
+    f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0 \; .
 \end{equation}
 
 \begin{figure}[ht]
@@ -429,24 +410,369 @@ The probability density function is:
 
 
 
+\newpage
+
+\section*{Exercises}
+
+% Bernoulli trials
+\subsection*{Bernoulli trials}
+
+\begin{enumerate}
+
+    \item A single coin is tossed once. What is the probability of getting heads? \\
+    
+    \textbf{Solution:} \\
+    
+    In a Bernoulli trial, there are exactly two possible outcomes: success or failure. Here, "success" could mean getting heads, and "failure" means tails. For a fair coin, both outcomes are equally likely. Therefore, the probability \(p\) of success (getting heads) is:
+    \[
+    p = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}} = \frac{1}{2} = 0.5.
+    \]
+    So, the probability of getting heads in one toss is \(\boxed{0.5}\).
+
+    \item A biased coin is designed so that the probability of heads is 0.7. What is the probability of getting tails when the coin is tossed once? \\
+    
+    \textbf{Solution:} \\
+    
+    Since the coin can only land heads or tails, these two outcomes are complementary events. This means:
+    \[
+    P(\text{tails}) = 1 - P(\text{heads}).
+    \]
+    Given \(P(\text{heads}) = 0.7\), we calculate:
+    \[
+    P(\text{tails}) = 1 - 0.7 = 0.3.
+    \]
+    Therefore, the probability of getting tails is \(\boxed{0.3}\).
+
+    \item A student answers a true/false question by guessing randomly. What is the probability that the student answers correctly? \\
+    
+    \textbf{Solution:} \\
+    
+    A true/false question has two possible answers, only one of which is correct. Since the student guesses without any knowledge, each answer has an equal chance of being selected. Therefore:
+    \[
+    P(\text{correct}) = \frac{1}{2} = 0.5.
+    \]
+    So, the probability the student guesses correctly is \(\boxed{0.5}\).
+    
+\end{enumerate}
+
+% Binomial distribution
+\subsection*{Binomial distribution}
+
+\begin{enumerate}
+
+    \item A fair coin is tossed 5 times. What is the probability of getting exactly 3 heads? \\
+    
+    \textbf{Solution:} \\
+    
+    When we perform multiple Bernoulli trials (tosses), the number of successes (heads) follows a binomial distribution. The probability mass function (PMF) for the binomial distribution is:
+    \[
+    P(X = k) = \binom{n}{k} p^k (1-p)^{n-k},
+    \]
+    where:
+    \begin{itemize}
+        \item \(n = 5\) is the number of trials (tosses),
+        \item \(k = 3\) is the number of successes (heads),
+        \item \(p = 0.5\) is the probability of success in each trial.
+    \end{itemize}
+    First, calculate the binomial coefficient \(\binom{5}{3}\), which counts how many ways to get exactly 3 heads in 5 tosses:
+    \[
+    \binom{5}{3} = \frac{5!}{3! (5-3)!} = \frac{5 \times 4 \times 3!}{3! \times 2!} = \frac{20}{2} = 10.
+    \]
+    Now, compute the full probability:
+    \[
+    P(X=3) = 10 \times (0.5)^3 \times (0.5)^2 = 10 \times 0.125 \times 0.25 = 10 \times 0.03125 = 0.3125.
+    \]
+    Therefore, the probability of exactly 3 heads in 5 tosses is \(\boxed{0.3125}\) or 31.25\%.
+
+    \item Suppose a basketball player takes 4 free throws, and the probability of scoring each free throw is 0.75. What is the probability that the player scores at least 3 times? \\
+    
+    \textbf{Solution:} \\
+    
+    Here:
+    \[
+    n = 4, \quad p = 0.75, \quad \text{and we want } P(X \geq 3).
+    \]
+    Since "at least 3 times" means either 3 or 4 successful shots, we calculate:
+    \[
+    P(X \geq 3) = P(X=3) + P(X=4).
+    \]
+    Calculate each probability using the binomial formula:
+    \[
+    P(X=3) = \binom{4}{3} (0.75)^3 (0.25)^1 = 4 \times 0.421875 \times 0.25 = 4 \times 0.10546875 = 0.421875,
+    \]
+    \[
+    P(X=4) = \binom{4}{4} (0.75)^4 (0.25)^0 = 1 \times 0.31640625 \times 1 = 0.31640625.
+    \]
+    Adding these:
+    \[
+    P(X \geq 3) = 0.421875 + 0.31640625 = 0.73828125.
+    \]
+    So, the player has about a \(\boxed{73.8\%}\) chance of scoring at least 3 out of 4 free throws.
+
+    \item In 10 trials, each with a success probability of 0.2, find the probability that there are no successes. \\
+    
+    \textbf{Solution:} \\
+    
+    This is the probability of zero successes in 10 independent trials with success probability \(p=0.2\). Using the binomial PMF:
+    \[
+    P(X=0) = \binom{10}{0} (0.2)^0 (0.8)^{10} = 1 \times 1 \times 0.1073741824 = 0.1073741824.
+    \]
+    So, the probability of no successes in 10 trials is approximately \(\boxed{0.1074}\) or 10.74\%.
+    
+\end{enumerate}
+
+% Poisson distribution
+\subsection*{Poisson distribution}
+
+\begin{enumerate}
+
+    \item The average number of emails a person receives per hour is 3. What is the probability that exactly 5 emails arrive in one hour? \\
+    
+    \textbf{Solution:} \\
+    
+    The Poisson distribution models the probability of a given number of events happening in a fixed interval of time if these events occur with a known constant mean rate and independently of the time since the last event. The PMF of the Poisson distribution is:
+    \[
+    P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!},
+    \]
+    where \(\lambda\) is the average number of events per interval and \(k\) is the number of events we want to find the probability for. Here:
+    \[
+    \lambda = 3, \quad k = 5.
+    \]
+    Calculate:
+    \[
+    P(X=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 \times e^{-3}}{120}.
+    \]
+    Use the approximate value \(e^{-3} \approx 0.04979\):
+    \[
+    P(X=5) \approx \frac{243 \times 0.04979}{120} = \frac{12.10197}{120} = 0.10085.
+    \]
+    So, the probability of receiving exactly 5 emails in one hour is approximately \(\boxed{0.1009}\) or 10.09\%.
+
+    \item On average, 2 cars pass a checkpoint per minute. What is the probability that no cars pass in a given minute? \\
+    
+    \textbf{Solution:} \\
+    
+    Using Poisson distribution with \(\lambda = 2\) and \(k=0\):
+    \[
+    P(X=0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353.
+    \]
+    Thus, the probability that no cars pass in one minute is about \(\boxed{0.1353}\) or 13.53\%.
+
+    \item Calls arrive at a call center at an average rate of 6 per hour. Find the probability of receiving more than 7 calls in one hour. \\
+    
+    \textbf{Solution:} \\
+    
+    Here, \(\lambda = 6\). We want:
+    \[
+    P(X > 7) = 1 - P(X \leq 7) = 1 - \sum_{k=0}^7 \frac{6^k e^{-6}}{k!}.
+    \]
+    This cumulative probability \(P(X \leq 7)\) can be found using a Poisson table or a calculator. For example, the sum is approximately 0.8666, so:
+    \[
+    P(X > 7) = 1 - 0.8666 = 0.1334.
+    \]
+    Therefore, the chance of more than 7 calls in an hour is roughly \(\boxed{13.34\%}\).
+    
+\end{enumerate}
+
+% Uniform distribution
+\subsection*{Uniform distribution}
+
+\begin{enumerate}
+
+    \item A random variable \(X\) is uniformly distributed between 0 and 10. What is the probability that \(X\) lies between 3 and 7? \\
+    
+    \textbf{Solution:} \\
+    
+    The uniform distribution on \([a,b]\) means \(X\) is equally likely to take any value in this interval. The probability density function (pdf) is:
+    \[
+    f_X(x) = \frac{1}{b-a}, \quad a \leq x \leq b.
+    \]
+    The probability that \(X\) is between \(c\) and \(d\) (with \(a \leq c < d \leq b\)) is the area under the pdf from \(c\) to \(d\):
+    \[
+    P(c \leq X \leq d) = \int_c^d f_X(x) \, dx = \frac{d - c}{b - a}.
+    \]
+    Plug in \(a=0, b=10, c=3, d=7\):
+    \[
+    P(3 \leq X \leq 7) = \frac{7 - 3}{10 - 0} = \frac{4}{10} = 0.4.
+    \]
+    Thus, the probability is \(\boxed{0.4}\) or 40\%.
+
+    \item If \(X \sim U(-5,5)\), what is the probability that \(X\) is less than or equal to 0? \\
+    
+    \textbf{Solution:} \\
+    
+    The pdf for \(X\) is constant between -5 and 5:
+    \[
+    f_X(x) = \frac{1}{5 - (-5)} = \frac{1}{10} = 0.1.
+    \]
+    The probability that \(X \leq 0\) corresponds to the length from -5 up to 0:
+    \[
+    P(X \leq 0) = \frac{0 - (-5)}{5 - (-5)} = \frac{5}{10} = 0.5.
+    \]
+    So there is a 50\% chance \(X\) is less than or equal to zero, i.e., \(\boxed{0.5}\).
+
+    \item Find the expected value (mean) and variance of a uniform random variable on \([2,8]\). \\
+    
+    \textbf{Solution:} \\
+    
+    For a uniform distribution \(U(a,b)\), the expected value and variance are given by:
+    \[
+    E[X] = \frac{a + b}{2}, \quad \mathrm{Var}(X) = \frac{(b - a)^2}{12}.
+    \]
+    Substitute \(a=2\) and \(b=8\):
+    \[
+    E[X] = \frac{2 + 8}{2} = \frac{10}{2} = 5,
+    \]
+    \[
+    \mathrm{Var}(X) = \frac{(8 - 2)^2}{12} = \frac{6^2}{12} = \frac{36}{12} = 3.
+    \]
+    So the expected value is \(\boxed{5}\) and the variance is \(\boxed{3}\).
+    
+\end{enumerate}
+
+% Gaussian distribution
+\subsection*{Gaussian distribution}
+
+\begin{enumerate}
+
+    \item A random variable \(X\) is normally distributed with mean \(\mu = 100\) and standard deviation \(\sigma = 15\). Find the probability that \(X\) is less than or equal to 115. \\
+    
+    \textbf{Solution:} \\
+    
+    To find this probability, we standardize the variable \(X\) to a standard normal variable \(Z\) which has mean 0 and standard deviation 1. The standardization formula is:
+    \[
+    Z = \frac{X - \mu}{\sigma}.
+    \]
+    For \(X = 115\):
+    \[
+    Z = \frac{115 - 100}{15} = \frac{15}{15} = 1.
+    \]
+    The probability we want is:
+    \[
+    P(X \leq 115) = P(Z \leq 1).
+    \]
+    Using the standard normal distribution table, \(P(Z \leq 1) = 0.8413\).
+    
+    Therefore, there is an 84.13\% chance that \(X \leq 115\), so the answer is \(\boxed{0.8413}\).
+
+    \item For a standard normal random variable \(Z\), find the probability that \(Z\) lies between -1.5 and 0.5. \\
+    
+    \textbf{Solution:} \\
+    
+    The probability that \(Z\) is between two values \(a\) and \(b\) is:
+    \[
+    P(a \leq Z \leq b) = P(Z \leq b) - P(Z \leq a).
+    \]
+    Look up the values in the standard normal table:
+    \[
+    P(Z \leq 0.5) = 0.6915, \quad P(Z \leq -1.5) = 0.0668.
+    \]
+    So:
+    \[
+    P(-1.5 \leq Z \leq 0.5) = 0.6915 - 0.0668 = 0.6247.
+    \]
+    Thus, the probability is approximately \(\boxed{0.6247}\) or 62.47\%.
+
+    \item Find the 90th percentile (also called the 0.9 quantile) of a normal distribution with mean 50 and variance 16. \\
+    
+    \textbf{Solution:} \\
+    
+    The standard deviation \(\sigma = \sqrt{16} = 4\). The 90th percentile of a normal distribution corresponds to the value \(x\) such that:
+    \[
+    P(X \leq x) = 0.9.
+    \]
+    First, find the corresponding z-score \(z_{0.9}\) for the standard normal distribution. From tables, \(z_{0.9} = 1.2816\).
+    Then convert back to the original scale:
+    \[
+    x = \mu + z_{0.9} \sigma = 50 + 1.2816 \times 4 = 50 + 5.1264 = 55.13.
+    \]
+    Hence, the 90th percentile is approximately \(\boxed{55.13}\).
+    
+\end{enumerate}
+
+% Exponential distribution
+\subsection*{Exponential distribution}
+
+\begin{enumerate}
+
+    \item The lifetime of a certain type of light bulb follows an exponential distribution with a mean lifetime of 1000 hours. What is the probability that a randomly chosen bulb lasts more than 1200 hours? \\
+    
+    \textbf{Solution:} \\
+    
+    The exponential distribution has the probability density function:
+    \[
+    f_X(x) = \lambda e^{-\lambda x}, \quad x \geq 0,
+    \]
+    where \(\lambda\) is the rate parameter. The mean lifetime is related to \(\lambda\) by:
+    \[
+    \text{mean} = \frac{1}{\lambda}.
+    \]
+    Given the mean is 1000 hours:
+    \[
+    \lambda = \frac{1}{1000} = 0.001.
+    \]
+    The probability that the bulb lasts more than \(t\) hours is:
+    \[
+    P(X > t) = e^{-\lambda t}.
+    \]
+    For \(t = 1200\):
+    \[
+    P(X > 1200) = e^{-0.001 \times 1200} = e^{-1.2} \approx 0.3012.
+    \]
+    Therefore, there is about a \(\boxed{30.12\%}\) chance the bulb lasts longer than 1200 hours.
+
+    \item For the same light bulb, what is the probability that it lasts less than 800 hours? \\
+    
+    \textbf{Solution:} \\
+    
+    The probability that the lifetime is less than \(t\) is:
+    \[
+    P(X < t) = 1 - e^{-\lambda t}.
+    \]
+    For \(t = 800\):
+    \[
+    P(X < 800) = 1 - e^{-0.001 \times 800} = 1 - e^{-0.8} \approx 1 - 0.4493 = 0.5507.
+    \]
+    So, the bulb has a \(\boxed{55.07\%}\) chance of lasting less than 800 hours.
+
+    \item Find the median lifetime of the bulb. \\
+    
+    \textbf{Solution:} \\
+    
+    The median \(m\) is the time at which half of the bulbs fail, i.e.:
+    \[
+    P(X \leq m) = 0.5.
+    \]
+    Using the cumulative distribution function (CDF):
+    \[
+    0.5 = 1 - e^{-\lambda m} \implies e^{-\lambda m} = 0.5.
+    \]
+    Taking natural logarithms:
+    \[
+    -\lambda m = \ln(0.5) \implies m = -\frac{\ln(0.5)}{\lambda}.
+    \]
+    Since \(\ln(0.5) = -0.6931\), and \(\lambda = 0.001\):
+    \[
+    m = \frac{0.6931}{0.001} = 693.1 \text{ hours}.
+    \]
+    So, the median lifetime is approximately \(\boxed{693.1}\) hours.
+\end{enumerate}
+
+
 % Chapter - Parameter estimation
 \chapter{Parameter estimation}
 
 \section{Prediction vs inference}
 
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory - prediction - experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if a given set of assumptions are compatible with the obtained data. Indeed, most modern data analysis and hypothesis testing lie in the \textit{inferential} statistics, rather than \textit{predictive} probability.\\
+In the previous chapters we have introduced the mathematical theory of probability. We have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory - prediction - experiment direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if a given set of assumptions are compatible with the obtained data. Indeed, most modern data analysis and hypothesis testing lie in the \textit{inferential} statistics, rather than \textit{predictive} probability [...].\\
 
-Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a some set of observations, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices?
+Inference seeks to explain why and how variables relate. The key idea is causality and interpretability: given a some set of observations, inference aims to answer questions such as: Does smoking cause lung cancer, or is the correlation due to other confounding factors? How does an increase in temperature affect ice cream sales? What are the most significant predictors of house prices? The difference between prediction and inference has been a topic of interest in statistics and data science for centuries. While both concepts involve drawing conclusions from data, their goals, methodologies, and historical development differ significantly [...].\\
 
-The difference between prediction and inference has been a topic of interest in statistics and data science for centuries. While both concepts involve drawing conclusions from data, their goals, methodologies, and historical development differ significantly.\\
+The roots of inference trace back to classical statistics, particularly the work of Laplace (1749–1827) Gauss (1777–1855), who developed probability theory and the method of least squares. Their work laid the foundation for statistical inference, which aims to understand relationships between variables and make generalizable conclusions about populations from samples. For example, Laplace used probability theory to estimate the population of France, introducing Bayesian inference, which provides a framework for updating beliefs based on observed data. Gauss contributed the normal distribution and least squares estimation, which became essential for making inferences about unknown parameters.
 
-The roots of inference trace back to classical statistics, particularly the work of Pierre-Simon Laplace (1749–1827) and Carl Friedrich Gauss (1777–1855), who developed probability theory and the method of least squares. Their work laid the foundation for statistical inference, which aims to understand relationships between variables and make generalizable conclusions about populations from samples. For example, Laplace used probability theory to estimate the population of France, introducing Bayesian inference, which provides a framework for updating beliefs based on observed data. Gauss contributed the normal distribution and least squares estimation, which became essential for making inferences about unknown parameters.\\
+Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis aim to understand and describe these relationships. The emphasis lies on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions. [...].\\
 
-Statistical techniques such as hypothesis testing, confidence intervals, and regression analysis aim to understand and describe these relationships. The emphasis lies on estimating parameters and determining statistical significance rather than simply making accurate predictions. A classic example is Sir Ronald Fisher (1890–1962), who developed maximum likelihood estimation (MLE) to infer parameters of probability distributions [...]. Fisher’s work allowed statisticians to estimate relationships between variables and quantify uncertainty.\\
-
-Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data.\\
-
-Focus shifted from understanding relationships to optimizing models that generalize well to unseen data [...]. In 2001, Leo Breiman, in his seminal paper "Statistical Modelling: The Two Cultures," highlighted the distinction, arguing that traditional statistics emphasized inference, whereas modern machine learning prioritized prediction.\\
+Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. Focus shifted from understanding relationships to optimizing models that generalize well to unseen data. In 2001, Leo Breiman, in his seminal paper "Statistical Modelling: The Two Cultures," highlighted the distinction, arguing that traditional statistics emphasized inference, whereas modern machine learning prioritized prediction.\\
 
 \section{Parameters and variables}
 Another key difference we will discuss now, and quite a subtle one from the mathematical perspective, is that one between a \textit{variable} and a \textit{parameter}. Consider the example of a binomial experiment, e.g. tossing coins and asking for the probability of measuring a specific number of heads. There, we would write it as 
@@ -454,9 +780,9 @@ Another key difference we will discuss now, and quite a subtle one from the math
 \begin{equation}
     P(x; n, p) = \binom{n}{k} p^x (1-p)^{n-x},
 \end{equation}
-where $n$ is the number of trials and $p$ is the probability of success.
+where $n$ is the number of trials and $p$ is the probability of success.\\
 
-In our previous examples, we have treated just $x$ as our variable of interest, but we could think about P as a function of three independent variables. The number of times we want to observe heads, the total number of trials, and the probability of success for each toss. Normally, we will call \textit{parameters}, to all these variables we will freeze for the purpose of our calculations, and either consider them either known, or fit them from data (...).
+In our previous examples, we have treated just $x$ as our variable of interest, but we could think about P as a function of three independent variables. The number of times we want to observe heads, the total number of trials, and the probability of success for each toss. Normally, we will call \textit{parameters}, to all these variables we will freeze for the purpose of our calculations, and either consider them either known, or fit them from data [...].
  
  \newpage 
  
@@ -527,6 +853,15 @@ No matter the shape of the original distribution, when we take many samples and 
 \newpage
 
 \section{Maximum Likelihood Estimation}
+
+\paragraph{Historical Context:}
+Maximum Likelihood Estimation was introduced by the statistician Ronald Fisher in the early 20th century. Fisher’s key insight was that many statistical problems can be solved by choosing the parameters of a model that make the observed data most probable. This approach unified estimation methods and became one of the most fundamental tools in statistics. MLE connects well with probability theory and has wide applications, from genetics to machine learning.
+
+\paragraph{Why Maximum Likelihood?}
+In statistics, we often have data generated by some unknown process described by parameters. The goal of MLE is to find the parameter values that best explain the observed data. By defining a likelihood function (the probability of observing the data given parameters), MLE picks the parameters that maximize this function, thus providing the most “likely” explanation.
+
+\paragraph{Applications of MLE:}
+MLE is widely used because it produces estimates with good theoretical properties: under mild conditions, MLE estimators are consistent (they get closer to the true value as data grows) and efficient (they have the smallest possible variance among unbiased estimators). It forms the backbone of many models and is implemented in most statistical software.\\
 
 Maximum Likelihood Estimation (MLE) is a cornerstone of modern statistical inference. Developed in the early 20th century by Sir Ronald A. Fisher, MLE provides a systematic framework for estimating the parameters of a probabilistic model. Fisher introduced the method in the 1920s, formalizing it as a rigorous alternative to the method of moments and laying the groundwork for much of classical and modern statistical theory.
 MLE has since become one of the most widely used estimation techniques due to its generality, mathematical tractability, and strong theoretical properties. It applies to a broad class of models, including both discrete and continuous distributions, and serves as the basis for many advanced statistical methods, including Generalized Linear Models (GLMs), Bayesian inference (as the likelihood term), and machine learning algorithms.
@@ -603,7 +938,7 @@ In practice, these properties justify the use of MLE even when exact finite-samp
 \subsection{Application to Generalized Linear Models}
 
 Generalized Linear Models (GLMs) are an important class of models that extend linear regression to non-normal response variables by using a link function and a distribution from the exponential family. MLE plays a central role in fitting GLMs because the estimation of the model parameters is achieved by maximizing the likelihood of the observed responses.
-For instance, in logistic regression---used for binary outcomes---the log-odds of success is modelled as a linear combination of predictors:
+For instance, in logistic regression---used for binary outcomes---the log-odds of success is modelled as a linear combination of predictors:\\
 
 \textbf{Example: Logistic Regression}
 
@@ -615,9 +950,256 @@ For binary response data, logistic regression models the log-odds as a linear fu
 
 MLE is used to estimate the coefficients $\beta_0, \beta_1$ by maximizing the binomial log-likelihood.
 
-\subsection*{Exercises}
+
+
+\newpage
+
+\section*{Exercises}
+
+% Parameter estimation
+\subsection*{Parameter estimation}
+
 \begin{enumerate}
-\item \textbf{Basic Derivation:} Show that the MLE for the rate parameter $\lambda$ of an exponential distribution $f(x; \lambda) = \lambda e^{-\lambda x}$ is $\hat{\lambda} = 1 / \bar{x}$.
+
+    \item \textbf{Estimating the average height of students:} \\
+    A school wants to estimate the average height of its students. They randomly measure the heights of 30 students and calculate the average height to be 160 cm with a sample standard deviation of 10 cm. Estimate the population mean height and explain the meaning of your estimate. \\
+    
+    \textbf{Solution:} \\
+    We have a sample of 30 students with average height \(\bar{x} = 160\) cm. The goal is to estimate the true average height \(\mu\) of all students. The best estimate of \(\mu\) from this sample is simply the sample mean:
+    \[
+    \hat{\mu} = \bar{x} = 160 \text{ cm}.
+    \]
+    This means we use 160 cm as our best guess for the average height of the entire student population. Because we only measured 30 students (a sample), this is an estimate, not the exact true mean, but it is the most reasonable value based on the data.
+
+    \item \textbf{Estimating the probability of success in a trial:} \\
+    A factory produces light bulbs, and a quality control engineer tests 50 bulbs, finding that 5 bulbs are defective. Estimate the probability that a randomly selected bulb is defective. \\
+    
+    \textbf{Solution:} \\
+    The total bulbs tested: \(n = 50\). Number defective (failures): \(x = 5\). We want to estimate the probability \(p\) of a bulb being defective. The natural estimate is the sample proportion:
+    \[
+    \hat{p} = \frac{x}{n} = \frac{5}{50} = 0.1.
+    \]
+    This means we estimate that 10\% of the bulbs are defective. This estimate assumes the sample is representative of the entire production.
+
+    \item \textbf{Estimating the variance of daily sales:} \\
+    A store records the number of sales for 7 days as: 20, 22, 18, 25, 24, 20, 19. Estimate the variance of daily sales. \\
+    
+    \textbf{Solution:} \\
+    First, find the sample mean:
+    \[
+    \bar{x} = \frac{20 + 22 + 18 + 25 + 24 + 20 + 19}{7} = \frac{148}{7} \approx 21.14.
+    \]
+    Next, calculate the squared deviations from the mean:
+    \[
+    (20 - 21.14)^2 = 1.30, \quad (22 - 21.14)^2 = 0.74, \quad (18 - 21.14)^2 = 9.86,
+    \]
+    \[
+    (25 - 21.14)^2 = 14.86, \quad (24 - 21.14)^2 = 8.18, \quad (20 - 21.14)^2 = 1.30, \quad (19 - 21.14)^2 = 4.58.
+    \]
+    Sum of squared deviations:
+    \[
+    S = 1.30 + 0.74 + 9.86 + 14.86 + 8.18 + 1.30 + 4.58 = 40.82.
+    \]
+    The sample variance (unbiased estimator) is:
+    \[
+    s^2 = \frac{S}{n-1} = \frac{40.82}{6} \approx 6.80.
+    \]
+    So, the estimated variance of daily sales is \(\boxed{6.80}\).
+
+\end{enumerate}
+
+% Central limit theorem
+\subsection*{Central limit theorem}
+
+\begin{enumerate}
+
+    \item \textbf{Average weight of apples:} \\
+    Suppose the weight of apples in an orchard has an unknown distribution with mean 150 grams and standard deviation 20 grams. A random sample of 36 apples is taken. What is the approximate probability that the average weight of these apples is between 145 and 155 grams? \\
+    
+    \textbf{Solution:} \\
+    Even if the original weight distribution is unknown, the Central Limit Theorem (CLT) tells us that the sampling distribution of the sample mean \(\bar{X}\) for a sample size \(n=36\) is approximately normal with:
+    \[
+    \mu_{\bar{X}} = \mu = 150, \quad \sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} = \frac{20}{\sqrt{36}} = \frac{20}{6} = 3.33.
+    \]
+    We standardize the bounds:
+    \[
+    Z_1 = \frac{145 - 150}{3.33} = \frac{-5}{3.33} \approx -1.5,
+    \]
+    \[
+    Z_2 = \frac{155 - 150}{3.33} = \frac{5}{3.33} \approx 1.5.
+    \]
+    Using standard normal tables:
+    \[
+    P(-1.5 \leq Z \leq 1.5) = P(Z \leq 1.5) - P(Z \leq -1.5) = 0.9332 - 0.0668 = 0.8664.
+    \]
+    So, there is about an 86.64\% chance that the sample average weight is between 145 and 155 grams.
+
+    \item \textbf{Average waiting time at a bus stop:} \\
+    The waiting time for buses is skewed but has mean 10 minutes and standard deviation 5 minutes. If 50 people independently measure their waiting times. What is the approximate probability that the average waiting time of these 50 people is more than 12 minutes? \\
+    
+    \textbf{Solution:} \\
+    By the CLT, the sample mean \(\bar{X}\) is approximately normal with:
+    \[
+    \mu_{\bar{X}} = 10, \quad \sigma_{\bar{X}} = \frac{5}{\sqrt{50}} = \frac{5}{7.07} \approx 0.707.
+    \]
+    Standardize 12:
+    \[
+    Z = \frac{12 - 10}{0.707} = \frac{2}{0.707} \approx 2.83.
+    \]
+    Look up the standard normal table:
+    \[
+    P(Z > 2.83) = 1 - P(Z \leq 2.83) = 1 - 0.9977 = 0.0023.
+    \]
+    So, there is a 0.23\% chance that the average waiting time exceeds 12 minutes.
+
+    \item \textbf{Average number of daily customers:} \\
+    A store knows the daily number of customers varies widely, with mean 100 and standard deviation 30. If we take a random sample of 64 days, what is the probability that the average customers per day is between 95 and 105? \\
+    
+    \textbf{Solution:} \\
+    Sample mean distribution approximately normal with:
+    \[
+    \mu_{\bar{X}} = 100, \quad \sigma_{\bar{X}} = \frac{30}{\sqrt{64}} = \frac{30}{8} = 3.75.
+    \]
+    Standardize the bounds:
+    \[
+    Z_1 = \frac{95 - 100}{3.75} = -1.33, \quad Z_2 = \frac{105 - 100}{3.75} = 1.33.
+    \]
+    From standard normal tables:
+    \[
+    P(-1.33 \leq Z \leq 1.33) = 0.9082 - 0.0918 = 0.8164.
+    \]
+    Therefore, there's about an 81.64\% chance the sample mean is between 95 and 105 customers.
+
+\end{enumerate}
+
+% Law of large numbers
+\subsection*{Law of large numbers}
+
+\begin{enumerate}
+
+    \item \textbf{Coin toss average:} \\
+    You toss a fair coin many times, recording the proportion of heads. According to the Law of Large Numbers (LLN), what happens to this proportion as the number of tosses increases? Explain in simple terms. \\
+    
+    \textbf{Solution:} \\
+    The LLN states that as the number of tosses \(n\) becomes very large, the sample proportion of heads will get closer and closer to the true probability \(p = 0.5\). In simple terms, if you toss the coin only a few times, the proportion of heads may be very different from 0.5, but if you toss it thousands of times, the proportion of heads will be almost exactly 50\%. This happens because random fluctuations average out over many trials.
+
+    \item \textbf{Average daily sales convergence:} \\
+    A store records daily sales, which vary widely, with an unknown distribution but average 200 sales/day. How does the Law of Large Numbers help the store owner understand the average sales if they calculate the average over many days? \\
+    
+    \textbf{Solution:} \\
+    The LLN guarantees that if the store owner calculates the average sales over a large number of days, the average they get will be very close to the true average sales per day (which is 200). So, even if sales fluctuate a lot from day to day, the long-term average will stabilize and become predictable when many days are included.
+
+    \item \textbf{Estimating average waiting time at a clinic:} \\
+    The waiting time for patients varies, but the average is 30 minutes. If a patient measures their waiting time many times over different visits, what does the Law of Large Numbers say about the average of their measured times? \\
+    
+    \textbf{Solution:} \\
+    The LLN tells us that as the patient records more and more waiting times, the average of these recorded times will get closer and closer to 30 minutes. So, although a single visit may have a short or long wait, the average wait over many visits will reliably approach the true average.
+
+\end{enumerate}
+
+\newpage
+
+% Maximum likelihood estimation
+\subsection*{Maximum likelihood estimation}
+
+\begin{enumerate}
+
+	\item \textbf{Exercise 1: MLE for a Coin Toss}
+	You toss a coin 10 times and observe 7 heads. Using MLE, estimate the probability of heads $p$.
+
+	\subsubsection*{Solution}
+	Let $p$ be the probability of heads. The likelihood function for 7 heads out of 10 tosses (binomial distribution) is:
+	\[
+	L(p) = \binom{10}{7} p^7 (1-p)^3
+	\]
+
+	Since the binomial coefficient does not depend on $p$, maximize:
+	\[
+	\ell(p) = p^7 (1-p)^3
+	\]
+
+	To maximize $\ell(p)$, it is easier to maximize the log-likelihood:
+	\[
+	\log \ell(p) = 7 \log p + 3 \log (1-p)
+	\]
+
+	Take derivative w.r.t. $p$ and set to zero:
+	\[
+	\frac{7}{p} - \frac{3}{1-p} = 0
+	\Rightarrow 7(1-p) = 3p
+	\Rightarrow 7 - 7p = 3p
+	\Rightarrow 7 = 10p
+	\Rightarrow p = \frac{7}{10} = 0.7
+	\]
+
+	Thus, the MLE estimate for the probability of heads is 0.7, matching the observed proportion.
+
+	\item \textbf{Exercise 2: MLE for Exponential Distribution}
+	Suppose the time between phone calls follows an exponential distribution with unknown rate $\lambda$. You observe waiting times: 2, 3, 1. Find the MLE for $\lambda$.
+
+	\subsubsection*{Solution}
+	The exponential distribution’s PDF is:
+	\[
+	f(t|\lambda) = \lambda e^{-\lambda t}, \quad t \geq 0
+	\]
+
+	The likelihood for data points $t_1, t_2, t_3$ is:
+	\[
+	L(\lambda) = \prod_{i=1}^3 \lambda e^{-\lambda t_i} = \lambda^3 e^{-\lambda \sum t_i}
+	\]
+
+	Log-likelihood:
+	\[
+	\log L(\lambda) = 3 \log \lambda - \lambda \sum t_i
+	\]
+
+	Derivative w.r.t. $\lambda$:
+	\[
+	\frac{3}{\lambda} - \sum t_i = 0 \implies 3 = \lambda \sum t_i \implies \hat{\lambda} = \frac{3}{\sum t_i}
+	\]
+
+	Calculate sum of times:
+	\[
+	2 + 3 + 1 = 6
+	\]
+
+	Thus,
+	\[
+	\hat{\lambda} = \frac{3}{6} = 0.5
+	\]
+
+	So, the MLE estimate for $\lambda$ is 0.5 calls per unit time.
+
+	\item \textbf{Exercise 3: MLE for Normal Distribution Mean}
+	You have data points $x = \{4, 5, 6\}$ from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2 = 1$. Find the MLE for $\mu$.
+
+	\subsubsection*{Solution}
+	The likelihood is:
+	\[
+	L(\mu) = \prod_{i=1}^3 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x_i - \mu)^2}{2}}
+	\]
+
+	Log-likelihood (ignoring constants):
+	\[
+	\log L(\mu) = -\frac{1}{2} \sum_{i=1}^3 (x_i - \mu)^2
+	\]
+
+	To maximize, minimize the sum of squared differences:
+	\[
+	\frac{d}{d\mu} \left( \sum (x_i - \mu)^2 \right) = 0
+	\]
+
+	\[
+	-2 \sum (x_i - \mu) = 0 \Rightarrow \sum x_i = 3 \mu \Rightarrow \mu = \frac{1}{3} \sum x_i
+	\]
+
+	Calculate:
+	\[
+	\mu = \frac{4 + 5 + 6}{3} = \frac{15}{3} = 5
+	\]
+
+	The MLE estimate for the mean is 5, which is the sample average.
+
 \end{enumerate}
 
 
@@ -631,9 +1213,8 @@ In the previous chapters we have introduced the mathematical theory of probabili
 \section{Hypothesis, significance, p-values}
 The term \textit{hypothesis testing} is usually used to refer a broad set of tools addressing parameter estimation, inference, and various exploratory analysis on random measurements and observations. It was first coined by British mathematicians Pearson and Fisher [...] in early XX\textsuperscript{th} century. In the last decades, hypothesis testing, hypothesis test, statistical inference - sometimes referred to as  exploratory analysis - has gained popularity and become one of the standards in most experimental sciences, given the automatization of experiments and the large amounts of data available.\\
 
-Generally speaking, we will use hypothesis testing as a set of rules, almost as an recipe or an algorithm, to face and interpret data. Once we have covered the idea of parameter estimation, sample distributions, and the idea of estimators, we will now formulate hypothesis on the true - \textit{unkwnown} - parameters, and then build \textit{statistic tests} to quantify how far - or close - are these hypothesized values from the observed - experimental, sample - values. And finally, we will quantify how certain we are about the values obtained - how \textit{significant} they are - computing the \textit{p-value}, standing from Pearson value.\\
+Once we have covered the idea of parameter estimation, sample distributions, and the idea of estimators, we will now formulate hypothesis on the true - \textit{unkwnown} - parameters, and then build \textit{statistic tests} to quantify how far - or close - are these hypothesized values from the observed - experimental, sample - values. And finally, we will quantify how certain we are about the values obtained - how \textit{significant} they are - computing the \textit{p-value}, standing from Pearson value.\\ The general approach we will follow, regardless of the kind of question we are after and the observations made, can be summarized as follows:
 
-The general approach we will follow, regardless of the kind of question we are after and the observations made, can be summarized as follows:
 \begin{itemize}
 \item Formulate \textit{null} hypothesis $H_0$ and \textit{alternative} hypothesis $H_1$ about the \textit{true} - \textit{population} parameters, generally for the mean or variance, \textit{prior to experiment}.
 \item Collect data, make observations, make measurements.
@@ -642,19 +1223,11 @@ The general approach we will follow, regardless of the kind of question we are a
 \item Accept or reject the null hypothesis, based on the p-value.
 \end{itemize}
 
-
-About statistc tests [...].\\
-
-About p-values [...] \\
-
-
 \newpage
 
 \section{Statistical tests: some examples}
 
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
-
-The so-called \textit{one-sample t-test} is used to determine whether the mean of a single sample differs significantly from a known or hypothesized population mean. It was developed by William Gosset, a statistician working at the Guinness factory, in 1908 [1]. Due to restrictions due to the agreements with the company, he was not able to submit it with is name to the scientific journal [...], and hence it was published under the pseudonym \textit{student's t} algorithm. Originally developed to quantify if certain concentrations of barley  / rye [...].\\
 
 The student's t is used to compare the sample mean $\bar{x}$ to ha hypothesized value $\mu$. It assumes that the sample data are drawn from a normally distributed population, hence it is an example of a \textit{parametric} test. We will discuss more about parametric and non-parametric observations, and how to test for normality further in the chapter. The test statistic is given by:
 \[
@@ -672,11 +1245,11 @@ Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribut
 
 \newpage
 
-\subsection{Compare sample means of two groups - Two sample t-test}
+\subsection{Compare sample means of two independent groups - Two sample t-test}
 
 The next example we will encounter is an extension of the same question. The so-called \textit{two-sample t-test} is used to determine whether the sample means of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
 \[
-    t = \frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{\big(n_{1} - 1)^{2} + (n_{2} - 1)^{2}\big)}},
+    t = \frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{\big(n_{1} - 1)^{2} + (n_{2} - 1)^{2}}},
 \]
 where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.\\
 
@@ -703,7 +1276,7 @@ where $s_1^{2}$ and $s_2^{2}$ are the sample variances, and the degrees of freed
 
 The computation of the p-value:
 \[
-p = \sum_{\text{all tables as or more extreme}} \frac{\binom{a+b}{a} \binom{c+d}{c}}{\binom{n}{a+c}}
+p = \sum_{\text{extreme values}} \frac{\binom{a+b}{a} \binom{c+d}{c}}{\binom{n}{a+c}}
 \]
 
 Under the null hypothesis, the F statistic follows the F-distribution:
@@ -717,8 +1290,6 @@ and the p-value is computed as the upper-tail probability:
 \[
 p = P(F_{\nu_1, \nu_2} \geq F_{\text{obs}}) = \int_{F_{\text{obs}}}^{\infty} f_{F_{\nu_1, \nu_2}}(x)\,dx
 \]
-
-Not to bo 
 
 \newpage
 
@@ -781,7 +1352,7 @@ Comparing data and normalization
 \chapter{Linear models and GLMs}
 
 \section{Simple linear regression}
-Simple linear regression.
+Simple linear regression
 
 \newpage
 
@@ -801,87 +1372,180 @@ Generalized Linear Models (GLMs).
 \newpage
 
 \section{Logistic, Poisson, polynomial regression}
-Logistic, Poisson, polynomial regression and interaction terms [...].
+Logistic, Poisson, polynomial regression.
 
 
 
 % Chapter - Introduction to bayesian probability
 \chapter{Introduction to bayesian probability}
 
-\section{The Bayes' theorem}
+\section{Bayesian vs frequentist}
 
-Imagine you're a detective trying to solve a mystery. You start with some hunches (your initial beliefs), then you gather clues (evidence), and based on those clues, you update your beliefs about what happened. This is exactly what Bayes' Theorem allows us to do — mathematically.\\
-
-Probability is the language of uncertainty. It helps us reason when we don’t know for sure what’s going on. There are two big ways to use probability:
-\begin{itemize}
-  \item \textbf{Forward}: If we know the cause, what are the chances of seeing this outcome?
-  \item \textbf{Backward (inference)}: Given the outcome, what’s the most likely cause?
-\end{itemize}
-
-The second one — working backwards from results to reasons — is what Bayes’ Theorem is all about. It’s how we go from data to understanding.\\
-
-Bayes’ Theorem shows up in spam filters, medical tests, search engines, even in how scientists interpret experiments. It’s the engine behind how we learn from evidence. Once you understand it, you’ll start seeing it everywhere — from everyday decisions to advanced machine learning.
-
-Here’s the rule in its mathematical form:
+So far we have discussed probability and statistics assuming the \textit{frequentist} definition of probability. That is, we have implicitly assumed that the probability, that number we make up to represent uncertainty, can be defined just as a ratio of the number of times we get a specific result, and the total number of observations. In the classic example of the coins, that we used in Chapter 2 to define probability in the first place, we are assuming, for instance, that the coin is fair. In the frequentist interpretation, probability is defined as the long-run relative frequency of an event occurring. For example, in the case of a fair coin:
 
 \[
-P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+P(\text{H}) = \lim_{n \to \infty} \frac{\text{Number of H in } n \text{ tosses}}{n} = 0.5
 \]
+
+This approach assumes repeated experiments and well-defined probabilities that do not change. But if we start tossing the same coin again and again, and encounter that the ration of heads and tails is significantly different than 0.5, maybe we should start question that first assumption in the first place. Frequentist statistics might say we don't have enough data yet. But can we make a meaningful guess using prior knowledge and observed data? \\
+
+This way of understanding probability, as founded in some \textit{prior beliefs} that can be updated as new evidence comes available, is normally referred to as \textit{bayesian} approach, or bayesian definition. It was developed by Thomas Bayes, a British mathematician who worked primarily on [...]. Early mathematicians like Pascal and Fermat formalized the idea of quantifying uncertainty. Over time, two main schools emerged: the frequentists, who interpret probability as the long-run frequency of events, and the Bayesians, who interpret probability as a degree of belief or certainty about an event. Thomas Bayes introduced the idea of updating probabilities based on new evidence. His work was published posthumously and it was later popularized by Laplace, and it is nowadays referred as the \textit{Bayes’ theorem}. Both approaches offer useful perspectives for understanding and analyzing uncertainty.\\
+
+The frequentist approach relies on repeating experiments many times and observing how often events occur to estimate probabilities. It treats probability as an objective property of the physical world. In contrast, Bayesian probability treats it as a subjective measure of belief, updated as new data arrives. This difference influences how we interpret data and make predictions, and understanding both is important for a well-rounded grasp of statistics.\\
+
+Frequentist methods often focus on long-run behaviour, like estimating probabilities from observed data or constructing confidence intervals. Bayesian methods combine prior knowledge (beliefs before seeing data) with observed data to update our understanding. In practice, both methods are used and combined and depending on the problem context.\\
+
+\newpage
+
+\section{The Bayes' Rule}
+
+The second one — working backwards from results to reasons, purely, inferential — is what Bayes’ Theorem is all about. It’s how we reconstruct from data the underlaying phenomenology. From now on, w we will ask not only what is the probability for some event to take place, but what is the probability of that event happening \textit{given that} some other phenomena, some hypothesized scenario, is already taking place.\\
+
+Bayes’ theorem appears often in biological sciences and medical tests, search engines, and in most data analysis problems when experimental results requiere interpretation and inference. It’s the engine behind how we learn from evidence, and once we understand it, we will start seeing it everywhere — from everyday decisions to machine learning. Its mathematical form can be written as follows. The \textit{conditional}, or \textit{posterior} probability of observing some some event $E$ happening, given some \textit{prior} knowledge, or hypothesis $H$ was true, is given by:
+
+\begin{equation}
+P(E|H) = \frac{P(H|E) \cdot P(H)}{P(E)}
+\end{equation}
 
 Where:
 \begin{itemize}
-  \item $P(A|B)$ is the probability of event $A$ given that $B$ has occurred (the \textbf{posterior}).
-  \item $P(B|A)$ is the probability of event $B$ given $A$ (the \textbf{likelihood}).
-  \item $P(A)$ is the probability of $A$ before seeing $B$ (the \textbf{prior}).
-  \item $P(B)$ is the total probability of $B$ occurring (the \textbf{evidence}).
+  \item $P(E|H)$ is the probability of event $E$ given that $H$ has occurred (the \textbf{posterior}).
+  \item $P(H|E)$ is the probability of event $E$ given $H$ (the \textbf{likelihood}).
+  \item $P(H)$ is the probability of $H$ before seeing $E$ (the \textbf{prior}).
+  \item $P(E)$ is the total — also called \textit{marginal} — probability of $E$ occurring (the \textbf{evidence}).
 \end{itemize}
 
-Example: Two Dice, One Roll:
+With bayesian probability we face now a complete different perspective. Bayesian probability treats probability as a degree of belief or confidence in a hypothesis. Rather than only relying on infinite repeated experiments, it allows us to update our beliefs in light of new evidence. Unlike the frequentist approach, we can incorporate prior information and handle small datasets. Bayes’ Rule provides the mechanism for updating beliefs.\\
 
-Let’s say you have two dice:
+Let's illustrate this with an example. Imagine we are given two dice, let's call them $D_1$ and $D_2$. The first one, $D_1$, is a far dice, and hence the probability of rolling any of the faces is uniformly distributed, all with probability $\frac{1}{6}$. But $D_2$ is biased, such that the probability of rolling a 6 is almost half the times. We can write the likelihoods of rolling a 6 in both cases, in the following way:
 \begin{itemize}
-  \item Die 1 is \textbf{fair}, so $P(6|D_1) = \frac{1}{6}$.
-  \item Die 2 is \textbf{biased}, so $P(6|D_2) = \frac{1}{2}$.
+  \item Dice 1 is \textbf{fair}, so $P(6|D_1) = \frac{1}{6}$.
+  \item Dice 2 is \textbf{biased}, so $P(6|D_2) = \frac{1}{2}$.
 \end{itemize}
 
-You randomly pick one die, with no reason to favor either. So,
+We randomly pick one die, with no reason to favor either. Since we have just two options, the probability of choosing blindly one or the other — we will call this the \textit{prior} probability — is
 \[
 P(D_1) = P(D_2) = \frac{1}{2}
 \]
 
-You roll the die and get a 6. Now you wonder: What are the chances that you picked the biased die?
+Then, after that choice is made, we roll the dice and get a 6. And here is the question: What are the chances that we picked the biased die? Let's carefully define the prior beliefs and likelihoods, so that we can apply the Bayes rule. Let:
 
-Let:
 \begin{itemize}
-  \item $D_1$: You picked the fair die.
-  \item $D_2$: You picked the biased die.
-  \item $S$: You rolled a 6.
+  \item $H_1$: You picked the fair die.
+  \item $H_2$: You picked the biased die.
+  \item $E$: You rolled a 6.
 \end{itemize}
 
-We want to find $P(D_2 | S)$ — the probability that the die is biased given that we rolled a 6.\\
+We want to find $P(H_2 | E)$ — the probability that the die is biased given that we rolled a 6.\\
 
 Using Bayes’ Theorem:
 
 \[
-P(D_2 | S) = \frac{P(S | D_2) \cdot P(D_2)}{P(S)}
+P(H_2 | E) = \frac{P(E | H_2) \cdot P(H_2)}{P(S)}
 \]
 
-First, we calculate $P(S)$ — the overall chance of rolling a 6:
+First, we calculate the marginal probability $P(E)$ — the overall chance of rolling a 6:
 
 \[
-P(S) = P(S|D_1) \cdot P(D_1) + P(S|D_2) \cdot P(D_2) = \frac{1}{6} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2}
+P(E) = P(E | D_1) \cdot P(H_1) + P(E | D_2) \cdot P(H_2) = \frac{1}{6} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2}
 = \frac{1}{12} + \frac{1}{4} = \frac{1}{3}
 \]
 
 Now apply Bayes' Theorem:
 
 \[
-P(D_2 | S) = \frac{\frac{1}{2} \cdot \frac{1}{2}}{\frac{1}{3}} = \frac{1}{4} \div \frac{1}{3} = \frac{3}{4}
+P(H_2 | E) = \frac{\frac{1}{2} \cdot \frac{1}{2}}{\frac{1}{3}} = \frac{1}{4} \div \frac{1}{3} = \frac{3}{4}
 \]\\
 
-Even though both dice had the same chance of being picked, rolling a 6 strongly points to the biased die. Bayes’ Theorem helped us turn a gut feeling into a solid number: a \textbf{75\% chance} that the die was biased.
+Even though both dice had the same chance of being picked, rolling a 6 strongly points to the biased die. Bayes’ Theorem helped us turn a gut feeling into a solid number: a \textbf{75\% chance} that the die was biased. Bayes’ Theorem isn’t just math — it’s a mindset. It’s how we learn, adapt, and update our understanding when the world surprises us. Once you see it in action, it becomes a natural way to think about uncertainty and evidence.
 
-Bayes’ Theorem isn’t just math — it’s a mindset. It’s how we learn, adapt, and update our understanding when the world surprises us. Once you see it in action, it becomes a natural way to think about uncertainty and evidence.
+\begin{itemize}
+    \item \textbf{Frequentist}: Probability as long-run frequency.
+    \item \textbf{Bayesian}: Probability as belief, updated with evidence.
+\end{itemize}
+
+\newpage
+
+\subsection*{Exercise 1: Biased Coin (Frequentist)}
+A coin is tossed 100 times and lands heads 56 times. Estimate the probability of heads using the frequentist approach.
+
+\subsubsection*{Solution}
+In the frequentist viewpoint, probability means the proportion of times an event happens in many repeated trials. Since the coin was tossed 100 times, we look at how often heads occurred to estimate its probability.
+
+The estimated probability of heads is:
+\[
+P(\text{heads}) = \frac{\text{Number of heads}}{\text{Total tosses}} = \frac{56}{100} = 0.56
+\]
+This means we expect heads about 56\% of the time if the coin were tossed many more times.
+
+\subsection*{Exercise 2: Bayesian Update (Bayes' Theorem)}
+Suppose a disease affects 1\% of a population. A test detects the disease correctly 99\% of the time, but has a 5\% false positive rate. What is the probability that someone who tested positive actually has the disease?
+
+\subsubsection*{Solution}
+Bayesian probability helps us update our beliefs based on evidence. Here, we want to find the chance a person actually has the disease, given they tested positive.
+
+Let's define events:
+\begin{itemize}
+    \item $D$: the person has the disease
+    \item $T$: the test result is positive
+\end{itemize}
+
+We know from the problem:
+\[
+P(D) = 0.01 \quad\text{(1\% have the disease)}
+\]
+\[
+P(\neg D) = 0.99 \quad\text{(99\% do not have it)}
+\]
+\[
+P(T | D) = 0.99 \quad\text{(test is positive if disease present)}
+\]
+\[
+P(T | \neg D) = 0.05 \quad\text{(5\% false positive rate)}
+\]
+
+Bayes’ theorem tells us:
+\[
+P(D | T) = \frac{P(T|D)P(D)}{P(T|D)P(D) + P(T|\neg D)P(\neg D)}
+\]
+This formula combines the likelihood of testing positive if diseased, weighted by how common the disease is, versus testing positive if not diseased.
+
+Calculating:
+\[
+P(D | T) = \frac{0.99 \times 0.01}{0.99 \times 0.01 + 0.05 \times 0.99} = \frac{0.0099}{0.0099 + 0.0495} = \frac{0.0099}{0.0594} \approx 0.1667
+\]
+
+So, even if the test is positive, there is about a 16.7\% chance the person actually has the disease. This happens because the disease is rare, and false positives, while uncommon, happen more frequently.
+
+\subsection*{Exercise 3: Confidence Interval (Frequentist)}
+You roll a die 60 times and get the number 4 exactly 8 times. Construct a 95\% confidence interval for the probability of rolling a 4.
+
+\subsubsection*{Solution}
+A confidence interval gives a range where we expect the true probability to lie, based on our data.
+
+First, calculate the observed probability:
+\[
+\hat{p} = \frac{8}{60} = 0.1333
+\]
+
+The standard error (SE) measures uncertainty in this estimate:
+\[
+\text{SE} = \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}} = \sqrt{\frac{0.1333 \times 0.8667}{60}} \approx 0.0438
+\]
+
+For a 95\% confidence level, we use a multiplier $z=1.96$ (from the normal distribution).
+
+The confidence interval is:
+\[
+\hat{p} \pm z \cdot \text{SE} = 0.1333 \pm 1.96 \times 0.0438 \approx 0.1333 \pm 0.0859
+\]
+
+This gives:
+\[
+(0.0474, 0.2192)
+\]
+
+Interpretation: If we repeated this experiment many times, 95\% of such intervals would contain the true probability of rolling a 4.
 
 \newpage
 
@@ -900,44 +1564,27 @@ Computing posteriors.
 
 \section{Stochasticity and Markov processes}
 
-Why Talk About Markov Models?\\
+The world around us is full of uncertainty. Facing questions like, will it rain tomorrow? Will a cell divide or die? Will a water drop fall in the same place after some time, or somewhere near? In many cases, the best we can do is talk in terms of probabilities — not certainties. This is where the idea of \textit{stochasticity} comes again, and why mathematicians of the 20th century deeply revisited its meaning. Stochasticity normally means randomness. From now on, we will define a stochastic process as a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”\\
 
-The world around us is full of uncertainty. Will it rain tomorrow? Will a website visitor click the next link? Will a cell divide or die? In many cases, the best we can do is talk in terms of probabilities — not certainties.\\
+Stochasticity means randomness or unpredictability in a system, as we have seen in previous chapters. But from now on, and following the work of mathematicians like Markov in the early 20th century, we will address it with a bit more subtlety. Now we will think about \textit{stochasticity} as randomness or unpredictability in a system, in opposition to deterministic systems, where future states are exactly determined by current conditions, stochastic systems incorporate randomness, making their outcomes probabilistic. Understanding stochasticity helps in modeling real-world phenomena where uncertainty is inherent, such as stock prices, weather, or population dynamics.\\
 
-This is where the idea of \textbf{stochasticity} comes in. Stochasticity means randomness. A \textbf{stochastic process} is a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”\\
+Even though the study of chance and probability can be trace to very ancient roots, as we have seen in previous chapter, \textit{stochasticity} as randomness or unpredictability in a system, in opposition to deterministic systems, began in the early 20th century, as mathematicians sought to model systems evolving randomly over time. Early work by Andrey Markov introduced Markov chains—models where the future depends only on the present state, not the past history. These models became fundamental in fields such as physics, biology, economics, and computer science for understanding complex systems affected by randomness. Over time, stochastic processes have grown into a broad discipline, providing tools for predicting and analyzing uncertain, evolving phenomena.\\
 
-Many systems in nature and society follow patterns, but with noise, surprises, or variability. Markov models give us a way to describe and work with such systems — mathematically and intuitively.\\
+Markov processes are a class of stochastic models with the “memoryless” property—the future state depends only on the current state. This simplification makes analysis feasible and is surprisingly accurate for many systems. Markov chains are used in algorithms, queueing theory, genetics, and many other fields to describe how systems evolve step-by-step in time.\\
 
-What Is a Markov Model?
+Many systems in nature and society follow patterns, but with noise, surprises, or variability. Markov models give us a way to describe and work with such systems — mathematically and intuitively. Imagine you're trying to predict the weather. If it’s sunny today, what are the chances it’ll be sunny tomorrow? What if it was rainy? Markov models help us answer these kinds of questions using a simple but powerful idea:\\
 
-Imagine you're trying to predict the weather. If it’s sunny today, what are the chances it’ll be sunny tomorrow? What if it was rainy? Markov models help us answer these kinds of questions using a simple but powerful idea:\\
+\textbf{The future depends only on the present — not the past.}\\
 
-\textbf{The future depends only on the present — not the past.}
+This is called the \textbf{Markov property}. A Markov model is a way to describe systems that move between states (like "sunny", "rainy", or "cloudy") with certain probabilities. Markov models are useful when things change over time in a somewhat random, yet patterned, way. Think of weather patterns, stock market movements, DNA sequences, pages people click on in a website, as examples. Even if we can’t predict everything perfectly, we can model how likely one thing is to follow another.\\
 
-This is called the \textbf{Markov property}. A Markov model is a way to describe systems that move between states (like "sunny", "rainy", or "cloudy") with certain probabilities.
-
-Markov models are useful when things change over time in a somewhat random, yet patterned, way. Think of:
-
+The key ingredients of a Markov model are:
 \begin{itemize}
-  \item Weather patterns
-  \item Stock market movements
-  \item DNA sequences
-  \item Pages people click on in a website
+  \item A list of possible \textbf{states} (e.g., sunny, rainy), we will write as vectors.
+  \item A \textbf{transition matrix}, encoding the probabilities of moving from one state to another.
 \end{itemize}
 
-Even if we can’t predict everything perfectly, we can model how likely one thing is to follow another.\\
-
-Key Ingredients of a Markov Model
-
-A simple Markov model has:
-\begin{itemize}
-  \item A list of possible \textbf{states} (e.g., Sunny, Rainy)
-  \item A \textbf{transition matrix}, which tells you the probabilities of moving from one state to another
-\end{itemize}
-
-Example: Predicting Weather\\
-
-Let’s say the weather can be either \textbf{Sunny} or \textbf{Rainy}. And based on past data, we know:
+Let's illustrate with a simple example. Let's try to predict weather in the following day, assuming stochasticity and knowledge of the previous states. For simplicity let’s say the weather can be either sunny ($S$) or rainy ($R$). And based on past data, we know:
 
 \[
 \text{Transition Matrix} =
@@ -981,9 +1628,135 @@ Then tomorrow’s prediction is:
 
 So there's an 80\% chance of Sun, 20\% chance of Rain tomorrow.\\
 
-Markov models help us make predictions, model uncertainty, and understand patterns in time-based data. They are a stepping stone to more complex tools like Hidden Markov Models (HMMs), used in speech recognition, bioinformatics, and more.\\
+Markov models help us make predictions, model uncertainty, and understand patterns in time-based data. They are a stepping stone to more complex tools like Hidden Markov Models (HMMs), used in speech recognition, bioinformatics, and more [...].\\
 
-Markov models are simple but powerful tools. They help us model systems that evolve over time, assuming that the next state only depends on the current one. Whether you’re analyzing text, tracking a robot, or predicting rain, the Markov assumption can be surprisingly useful.
+Markov models are simple but powerful tools. They help us model systems that evolve over time, assuming that the next state only depends on the current one. Whether you’re analyzing text, tracking a robot, or predicting rain, the Markov assumption can be surprisingly useful [...].
+
+\newpage
+
+\subsection*{Exercise 1: Simple Random Walk}
+A person starts at position 0 and at each step moves +1 or -1 with equal probability. What is the expected position after 10 steps?
+
+\subsubsection*{Solution}
+At each step, the person moves either forward (+1) or backward (-1) with equal chance 0.5. Because the steps are symmetric, the expected value (average position) after each step is zero.
+
+Let $X_i$ represent the step at time $i$, which is +1 or -1, each with probability 0.5.
+
+The total position after 10 steps is:
+\[
+S = \sum_{i=1}^{10} X_i
+\]
+
+The expectation is linear:
+\[
+\mathbb{E}[S] = \sum_{i=1}^{10} \mathbb{E}[X_i]
+\]
+
+Since each step is equally likely +1 or -1:
+\[
+\mathbb{E}[X_i] = (0.5)(+1) + (0.5)(-1) = 0
+\]
+
+Thus:
+\[
+\mathbb{E}[S] = 10 \times 0 = 0
+\]
+
+The expected position after 10 steps is 0, meaning the walk is equally likely to be positive or negative on average.
+
+\subsection*{Exercise 2: Markov Chain Transition}
+Given a Markov chain with states $A$, $B$, and the following transition matrix:
+\[
+P = \begin{bmatrix}
+0.6 & 0.4 \\
+0.3 & 0.7 \\
+\end{bmatrix}
+\]
+If the initial state vector is $\pi_0 = [1\ 0]$ (starts at $A$), what is the state distribution after one and two steps?
+
+\subsubsection*{Solution}
+The transition matrix $P$ gives the probabilities of moving from one state to another in one step.
+
+For example, the first row means:
+- From state $A$, stay in $A$ with probability 0.6,
+- Move to $B$ with probability 0.4.
+
+The initial vector $\pi_0 = [1\ 0]$ means the system starts definitely in state $A$.
+
+To find the state distribution after one step:
+\[
+\pi_1 = \pi_0 P = [1\ 0] \times \begin{bmatrix}0.6 & 0.4 \\ 0.3 & 0.7\end{bmatrix} = [0.6\ 0.4]
+\]
+This means after one step, there's a 60\% chance the system is in state $A$ and 40\% chance it is in $B$.
+
+After two steps, multiply again:
+\[
+\pi_2 = \pi_1 P = [0.6\ 0.4] \times \begin{bmatrix}0.6 & 0.4 \\ 0.3 & 0.7\end{bmatrix}
+\]
+Calculate each element:
+\[
+\pi_2(A) = 0.6 \times 0.6 + 0.4 \times 0.3 = 0.36 + 0.12 = 0.48
+\]
+\[
+\pi_2(B) = 0.6 \times 0.4 + 0.4 \times 0.7 = 0.24 + 0.28 = 0.52
+\]
+
+So after two steps, the system is in state $A$ with probability 48\%, and in $B$ with 52\%.
+
+\subsection*{Exercise 3: Absorbing State}
+A Markov chain has three states: 1 (start), 2 (intermediate), 3 (absorbing). The transition matrix is:
+\[
+P = \begin{bmatrix}
+0 & 1 & 0 \\
+0.5 & 0 & 0.5 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+\]
+If the system starts in state 1, what is the probability it ends in state 3?
+
+\subsubsection*{Solution}
+An absorbing state is one where once entered, the system stays forever. Here, state 3 is absorbing because it transitions to itself with probability 1.
+
+We want the probability that starting from state 1, the process eventually reaches state 3.
+
+From state 1:
+- It always moves to state 2 (probability 1).
+
+From state 2:
+- With probability 0.5, it moves to state 1,
+- With probability 0.5, it moves to absorbing state 3.
+
+Because from state 2 there is a chance to return to 1, the system may loop between states 1 and 2 many times before reaching 3.
+
+Define:
+\[
+p = \text{probability of eventually reaching 3 starting from 1}
+\]
+\[
+q = \text{probability of eventually reaching 3 starting from 2}
+\]
+
+From state 1, since it always goes to 2:
+\[
+p = q
+\]
+
+From state 2:
+\[
+q = 0.5 \times 1 + 0.5 \times p
+\]
+The $0.5 \times 1$ is probability of going directly to absorbing 3, which is certain to stay there (hence probability 1 of absorption).
+
+Substitute $p = q$:
+\[
+q = 0.5 + 0.5 q
+\Rightarrow 0.5 q = 0.5
+\Rightarrow q = 1
+\]
+
+So $p = 1$ also.
+
+This means the system will reach the absorbing state 3 with probability 1 (certainty), though it might take several steps cycling between 1 and 2 first.
 
 \newpage
 
@@ -995,6 +1768,51 @@ Markov chains.
 \section{Hidden Markov models}
 Hidden Markov models.
 
+\newpage
+
+\appendix
+
+% Chapter: Vectors and matrices
+\chapter{Vectors and matrices: a quick review}
+
+\section{Vectors and their properties}
+
+\section{Matrices and linear transformations}
+
+\section{Basic algebraic operations}
+
+\newpage
+
+% Chapter: Derivatives
+\chapter{Functions and derivatives: a quick review}
+
+\section{From curves to calculus: functions}
+
+\section{The idea of change, slope and minima}
+
+\section{Derivatives}
+
+\newpage
+
+% Chapter: Integrals
+\chapter{Integrals: a quick review}
+
+\section{Indefinite integral as antiderivative}
+
+\section{Define definite integral as area under a curve}
+
+\section{The fundamental theorem of calculus}
+
+% Chapter: Fourier series
+\chapter{Fourier series: a quick review}
+
+\section{Introduction to periodic functions}
+
+\section{Orthogonality and approximating functions}
+
+\section{Conditions of convergence}
+
+\section{Applications: the heat equation}
 
 \backmatter
  
