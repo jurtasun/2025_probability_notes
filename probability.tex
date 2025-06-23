@@ -1207,7 +1207,21 @@ MLE is used to estimate the coefficients $\beta_0, \beta_1$ by maximizing the bi
 % Chapter - Introduction to hypothesis testing
 \chapter{Introduction to hypothesis testing}
 
-\section{Statistical inference}
+\section{Prediction vs inference}
+
+The philosophical divide between inference and prediction has deep roots in the evolution of scientific reasoning. Inference, rooted in the classical traditions of epistemology, seeks to illuminate the underlying structure or cause of observed data. It asks, fundamentally, why we see what we do, invoking theories, latent mechanisms, and parameters that might explain the phenomena. Prediction, by contrast, is more agnostic to explanation and more utilitarian: it is concerned with what will happen next. The rise of probabilistic models in the 20th century made it possible to quantify uncertainty in both tasks, but their goals remain distinct. Inference aims to learn about the data-generating process; prediction aims to accurately forecast future observations, regardless of the process's inner workings \cite{student1908}, \cite{fisher1925},  \cite{fisher1935}.\\
+
+This distinction becomes particularly important in statistical modeling. Predictive models, such as those deployed in machine learning, are often evaluated by their performance on unseen data, with little regard for the interpretability of parameters. Inference, however, thrives on interpretable structure—effect sizes, confidence intervals, causal assumptions—offering insights that extend beyond mere forecasting. Yet the two are not mutually exclusive: many contemporary methods, especially in Bayesian statistics, attempt to harmonize prediction and inference within unified frameworks. Still, when decisions hinge on understanding causation or evaluating mechanisms—as in medicine, economics, or the social sciences—inference retains a privileged role.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter4/probability_vs_statistics.png}
+    \caption{Representation of the predictive (from theory to experimental verification) and inferential (from data to underlying truth, descriptive and hypothesis testing) approaches to probability and statistics \cite{pearson1900}.}
+    \label{fig:prob_vs_stats1}
+\end{figure}
+
+Within this context, hypothesis testing emerges as a formal tool to carry out inference under uncertainty. Popularized in the early 20th century by Ronald A. Fisher and later formalized by Jerzy Neyman and Egon Pearson, hypothesis testing provides a structured way to assess whether observed data is consistent with a particular theoretical claim. At its core, the method pits a "null" hypothesis (typically representing chance or no effect) against an "alternative," calculating the probability of observing data as extreme as ours under the null. While often misused or misinterpreted, hypothesis testing remains foundational in the sciences—offering a bridge between data and theory, between the probabilistic world of prediction and the explanatory realm of inference \cite{fisher1925}, \cite{fisher1935}.\\
+
 In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory - first - and experiment - after - direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
 
 \section{Hypothesis, significance, p-values}
@@ -1229,7 +1243,7 @@ Once we have covered the idea of parameter estimation, sample distributions, and
 
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
 
-The t test, a cornerstone of inferential statistics, emerged from a union of practical necessity and mathematical ingenuity in the early 20th century. Its origin is entwined with the world of brewing: William Sealy Gosset, a statistician employed by the Guinness Brewery in Dublin, devised the method to address the problem of making reliable inferences from small sample sizes—a common challenge in quality control. Because Guinness forbade its employees from publishing research, Gosset adopted the pseudonym “Student,” and the t test entered the statistical canon as “Student’s t test.” Far from being a mere curiosity, this test helped lay the foundation for modern statistical thinking, offering a systematic way to evaluate whether observed differences could be attributed to chance.\\
+The t test, a cornerstone of inferential statistics, emerged from a union of practical necessity and mathematical ingenuity in the early 20th century. Its origin is entwined with the world of brewing: William Sealy Gosset, a statistician employed by the Guinness Brewery in Dublin, devised the method to address the problem of making reliable inferences from small sample sizes—a common challenge in quality control. Because Guinness forbade its employees from publishing research, Gosset adopted the pseudonym “Student,” and the t test entered the statistical canon as “Student’s t test.” Far from being a mere curiosity, this test helped lay the foundation for modern statistical thinking, offering a systematic way to evaluate whether observed differences could be attributed to chance \cite{student1908}.\\
 
 Contextually, the t test emerged during a period of growing interest in the mathematical modeling of uncertainty. While the 19th century had seen the establishment of probability theory and the development of the normal distribution by figures like Gauss and Laplace, it was not until the early 20th century that statisticians began to grapple earnestly with small samples and experimental variability. Gosset’s innovation came at a time when the rigor of scientific inquiry was undergoing transformation—where laboratory science, agricultural experimentation, and industrial quality control all demanded more precise methods of inference. The t distribution, with its heavier tails than the normal distribution, aptly modeled the added uncertainty inherent in small datasets, providing a safeguard against overconfidence in inferences drawn from limited observations.\\
 
@@ -1272,14 +1286,13 @@ The probability density function (PDF) of the \textit{t}-distribution with \( \n
 \[
 f(t) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu \pi} \, \Gamma\left(\frac{\nu}{2}\right)} \left(1 + \frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}
 \]
-
-\cite{student1908}
+Distribution and computation of the p-value as defined above.
 
 \newpage
 
 \subsection{Compare sample means of two independent groups - Two sample t-test}
 
-The two-sample t test represents a natural extension of Student’s original formulation, expanding its reach from single-sample inference to the comparison of two independent groups. This test seeks to determine whether the means of two populations differ significantly, based on sample data—often drawn from experimental and observational studies. It operates under the assumption that the underlying distributions are approximately normal and that the variances between groups are equal or at least comparable, though variants like Welch’s t test have relaxed these conditions. The test statistic itself balances the observed difference in means against the pooled standard error, weighing signal against noise.\\
+The two-sample t test represents a natural extension of Student’s original formulation, expanding its reach from single-sample inference to the comparison of two independent groups. This test seeks to determine whether the means of two populations differ significantly, based on sample data—often drawn from experimental and observational studies. It operates under the assumption that the underlying distributions are approximately normal and that the variances between groups are equal or at least comparable, though variants like Welch’s t test have relaxed these conditions. The test statistic itself balances the observed difference in means against the pooled standard error, weighing signal against noise \cite{student1908}.\\
 
 The historical roots of the two-sample t test are intertwined with the rise of controlled experimentation in the biological and social sciences during the early to mid-20th century. Ronald Fisher, Jerzy Neyman, and Egon Pearson contributed to formalizing the logic of hypothesis testing, and the t test became a practical tool within this growing paradigm. Its popularity grew not merely because it was mathematically sound, but because it was accessible—a concise, interpretable method for testing simple but essential questions in science: does treatment differ from control, or is an observed effect more than a fluke?\\
 
@@ -1321,13 +1334,20 @@ Under \( H_0: \mu_1 = \mu_2 \), the statistic follows a \textit{t}-distribution 
 \[
 t \sim t_{n+m-2}
 \]
-Distribution as defined above.
+Distribution and computation of the p-value as defined above.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter4/t_distribution.png}
+    \caption{Representation of the Student's t distribution, for different values of the degrees of freedom $\nu$.}
+    \label{fig:t_distribution}
+\end{figure}
 
 \newpage
 
 \subsection{Compare sample variances of two groups - Fisher's exact test}
 
-Fisher’s exact test, introduced by Ronald A. Fisher in the 1930s, occupies a unique place in the statistical repertoire as a method built not on approximation, but on exact combinatorial reasoning. Designed to test for nonrandom association between two categorical variables in a 2x2 contingency table, the test calculates the exact probability of obtaining the observed configuration—or one more extreme—under the null hypothesis of independence. Unlike the chi-squared test, which relies on asymptotic assumptions, Fisher’s exact test makes no concession to large-sample theory, rendering it particularly well-suited for small datasets where expected counts may be sparse.\\
+Fisher’s exact test, introduced by Ronald A. Fisher in the 1930s, occupies a unique place in the statistical repertoire as a method built not on approximation, but on exact combinatorial reasoning. Designed to test for nonrandom association between two categorical variables in a 2x2 contingency table, the test calculates the exact probability of obtaining the observed configuration—or one more extreme—under the null hypothesis of independence. Unlike the chi-squared test, which relies on asymptotic assumptions, Fisher’s exact test makes no concession to large-sample theory, rendering it particularly well-suited for small datasets where expected counts may be sparse \cite{welch1947}.\\
 
 The genesis of the test is as intellectual as it is practical. Fisher, with his characteristic synthesis of biological intuition and statistical rigor, crafted the test to address problems in genetics and experimental design. In particular, he sought a method that preserved the integrity of inference even when data were limited—a not uncommon situation in biological sciences of his time. His test exemplifies his broader philosophical stance: that statistical methods should be exact, and that inferences should reflect the full structure of the data, not rely on approximations that may distort conclusions.\\
 
@@ -1381,14 +1401,14 @@ Under the null \( H_0: \mu_1 = \mu_2 \), the distribution of \( t \) is approxim
 \[
 t \sim t_{\nu}
 \]
-
-\cite{welch1947}
+Distribution and computation of the p-value as defined above.
 
 \newpage
 
 \subsection{Compare variation on more than two groups - Fisher's ANOVA}
 
-The analysis of variance, or ANOVA, is one of the 20th century's major statistical innovations, largely credited to Ronald Fisher, who formalized it in the 1920s while working at the Rothamsted Experimental Station. Its core purpose is to partition total variation in a dataset into components attributable to different sources—typically, between-group variation and within-group (error) variation. ANOVA provides a systematic method for comparing more than two means simultaneously, resolving what would otherwise require a series of pairwise t tests and an increasing risk of Type I error.\\
+The analysis of variance, or ANOVA, is one of the 20th century's major statistical innovations, largely credited to Ronald Fisher, who formalized it in the 1920s while working at the Rothamsted Experimental Station. Its core purpose is to partition total variation in a dataset into components attributable to different sources—typically, between-group variation and within-group (error) variation. ANOVA provides a systematic method for comparing more than two means simultaneously, resolving what would otherwise require a series of pairwise t tests and an increasing risk of Type I error 
+\cite{fisher1925}.\\
 
 Conceptually, ANOVA represents a unifying idea: that observed data contain structure and randomness, and that the task of statistical inference is to disentangle them. It was particularly well-suited to agricultural experiments, where multiple treatments were applied across randomized plots, and variation needed to be measured with mathematical elegance and practical clarity. Fisher’s framework gave researchers a way to understand experimental results in terms of their statistical "signal," paving the way for rigorous design and interpretation across many scientific disciplines.\\
 
@@ -1445,13 +1465,20 @@ f(x) = \frac{1}{\mathrm{B}(d_1/2, d_2/2)} \left(\frac{d_1}{d_2}\right)^{d_1/2} \
 \]
 for \( x > 0 \).
 
-\cite{fisher1925}
+Distribution and computation of the p-value as defined above.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter4/f_distribution.png}
+    \caption{Representation of the Fisher distribution, for different values of the degrees of freedom $\nu_1$, $\nu_2$.}
+    \label{fig:f_distribution}
+\end{figure}
 
 \newpage
 
 \subsection{Compare distributions and testing for normality - $\chi^{2}$ test}
 
-The chi-squared test, with its roots in the work of Karl Pearson at the turn of the 20th century, stands as one of the earliest formal tests of goodness-of-fit and independence. Built on the comparison of observed frequencies to expected ones under a given hypothesis, the chi-squared statistic accumulates discrepancies between what is seen and what is statistically anticipated. It is asymptotic in nature, relying on the approximation of the chi-squared distribution, which becomes increasingly accurate with larger sample sizes and expected counts.\\
+The chi-squared test, with its roots in the work of Karl Pearson at the turn of the 20th century, stands as one of the earliest formal tests of goodness-of-fit and independence. Built on the comparison of observed frequencies to expected ones under a given hypothesis, the chi-squared statistic accumulates discrepancies between what is seen and what is statistically anticipated. It is asymptotic in nature, relying on the approximation of the chi-squared distribution, which becomes increasingly accurate with larger sample sizes and expected counts \cite{pearson1900}.\\
 
 Pearson’s motivation was both mathematical and empirical: to provide a quantitative measure for evaluating how well a theoretical model matched observed data, particularly in biological contexts such as Mendelian genetics. His test became a cornerstone of categorical data analysis, offering a simple yet powerful method for detecting associations in contingency tables and deviations from expected distributions. Over time, the test was expanded and refined, notably by Fisher and Yates, but it has retained its essential character as a test of fit between expectation and observation.\\
 
@@ -1460,7 +1487,7 @@ In the present day, the chi-squared test continues to serve as an indispensable 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter4/chi2_test_one_tailed.png}
-    \caption{Representation of the $chi^{2}$ statistic, following the Pearson  $chi^{2}$ distribution, for a particular value of the degrees of freedom ($\nu = 10$). The integral of the shadowed area represents the \textit{1-sided}, or \textit{1-tailed} p-value, as the probability of obtaining a result \textit{at least as extreme} as the one obtained $chi^{2}_{obs}$.}
+    \caption{Representation of the $chi^{2}$ statistic, following the Pearson $chi^{2}$ distribution, for a particular value of the degrees of freedom ($\nu = 10$). The integral of the shadowed area represents the \textit{1-sided}, or \textit{1-tailed} p-value, as the probability of obtaining a result \textit{at least as extreme} as the one obtained $chi^{2}_{obs}$.}
     \label{fig:chi2_test1}
 \end{figure}
 
@@ -1469,6 +1496,13 @@ The so-called Pearson $\chi^{2}$-test is used to determine whether the set of ob
     \chi^{2}(x; N - 1) = \sum_{i = 1}^{N}\frac{(O_{i} - E{i})^{2}}{E_i},
 \]
 It is also used to test for normality and evaluate the goodness of a fit [...].\\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter4/chi2_test_two_tailed.png}
+    \caption{Representation of the $chi^{2}$ statistic, following the Pearson $chi^{2}$ distribution, for a particular value of the degrees of freedom ($\nu = 10$). The integral of the shadowed area represents the \textit{2-sided}, or \textit{2-tailed} p-value, as the probability of obtaining a result \textit{at least as extreme} as the one obtained $chi^{2}_{obs}$.}
+    \label{fig:chi2_test2}
+\end{figure}
 
 The computation of the p-value:
 \[
@@ -1492,7 +1526,14 @@ The PDF of the chi-squared distribution with \( k \) degrees of freedom is:
 f(x) = \frac{1}{2^{k/2} \Gamma(k/2)} x^{k/2 - 1} e^{-x/2}, \quad x > 0
 \]
 
-\cite{pearson1900}
+Distribution and computation of the p-value as defined above.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter4/chi2_distribution.png}
+    \caption{Representation of the $chi^{2}$ distribution, for a particular value of the degrees of freedom ($\nu = 10$).}
+    \label{fig:chi2_distribution}
+\end{figure}
 
 \newpage
 
@@ -1527,8 +1568,8 @@ To address the limitations of assuming equal variances in the classical *t*-test
 \newpage
 
 \section{Comparing data and normalization}
-Comparing data and normalization
 
+Comparing data and normalization
 
 
 % Chapter - Linear models and GLMs
@@ -2029,11 +2070,11 @@ Kappa Research LLC, 2014.
 \bibitem{student1908}
 Student. (1908). *The probable error of a mean*. Biometrika, 6(1), 1–25.
 
-\bibitem{fisher1935}
-Fisher, R. A. (1935). *The Design of Experiments*. Edinburgh: Oliver and Boyd.
-
 \bibitem{fisher1925}
 Fisher, R. A. (1925). *Statistical Methods for Research Workers*. Edinburgh: Oliver and Boyd.
+
+\bibitem{fisher1935}
+Fisher, R. A. (1935). *The Design of Experiments*. Edinburgh: Oliver and Boyd.
 
 \bibitem{pearson1900}
 Pearson, K. (1900). *On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling*. Philosophical Magazine Series 5, 50(302), 157–175.
