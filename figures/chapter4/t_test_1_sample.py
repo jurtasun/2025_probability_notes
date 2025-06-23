@@ -1,73 +1,98 @@
-# RCDS Introduction to probability and statistical inference.
-# Jesús Urtasun Elizari. ICL 2024 / 2025.
-# Chapter 1. Parameter estimation and hypotesis testing.
-
 # Import libraries
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import ttest_1samp, t
+from scipy.stats import t, norm
 
-# Random seed
-np.random.seed(42)
 
-# One sample t-test
-print("\nOne sample t-test:\nCompare sample mean to hypothesized value")
 
-# Formulate hypotheses
-# H0 (null hypothesis): The coin is fair (p = 0.5)
-# H1 (alternative hypothesis): The coin is biased (p != 0.5)
+# Parameters
+df = 10
+t_obs = 2.2
+x = np.linspace(-4, 4, 1000)
+y = t.pdf(x, df)
 
-# Simulate 100 coin tosses (1 = heads, 0 = tails)
-observations = np.random.choice([0, 1], size = 100, p = [0.5, 0.5])
-# observations = np.random.choice([0, 1], size = 100, p = [0.3, 0.7])
 
-# Plot histogram of the observations
-plt.hist(observations, bins = 2, edgecolor = "black", alpha = 0.75)
-plt.xticks([0.25, 0.75], ["Tails (0)", "Heads (1)"])
-plt.title("Histogram of 100 coin tosses")
-plt.xlabel("Outcome")
-plt.ylabel("Frequency")
-plt.savefig("t_1_sample_observations.png")
+
+# --- ONE-TAILED PLOT ---
+x_fill_one = np.linspace(t_obs, 4, 500)
+y_fill_one = t.pdf(x_fill_one, df)
+
+fig1, ax1 = plt.subplots(figsize=(7, 4.5))
+ax1.plot(x, y, color='black', lw=2, label=f"$t$-distribution ($\\nu = {df}$)")
+ax1.fill_between(x_fill_one, y_fill_one, color='crimson', alpha=0.4, label=r"p-value area ($t > t_{\mathrm{obs}}$)")
+ax1.axvline(t_obs, color='crimson', linestyle='--', linewidth=2, label=fr"$t_{{obs}} = {t_obs}$")
+
+ax1.set_xlabel("t", fontsize=12)
+ax1.set_ylabel(r"$\mathcal{f}\; (t;\ \nu=10)$", fontsize=14)
+ax1.legend(frameon=False, fontsize=10)
+ax1.grid(True, linestyle='--', alpha=0.3)
+for spine in ax1.spines.values():
+    spine.set_visible(True)
+    spine.set_color('black')
+    spine.set_linewidth(1.0)
+
+plt.tight_layout()
+fig1.savefig("t_test_1_sample_p_one_tailed.png", dpi=300, bbox_inches='tight')
+fig1.savefig("t_test_1_sample_p_one_tailed.pdf", bbox_inches='tight')
 plt.show()
 
-# Compute observed mean and standard deviation
-n = len(observations)
-mean_observed = np.mean(observations)
-std_dev_observed = np.std(observations, ddof = 1)  # Sample standard deviation
 
-# Compute the t statistic and p-value Expected mean under H0 = 0.5
-expected_mean = 0.5
-t_stat_manual = (mean_observed - expected_mean) / (std_dev_observed / np.sqrt(n))
-p_value_manual = 2 * (1 - t.cdf(abs(t_stat_manual), df = n-1))
-print(f"\nT statistic (manual): {t_stat_manual:.4f}")
-print(f"P-value (manual): {p_value_manual:.4f}")
 
-# Compute the t statistic using a library
-t_stat_scipy, p_value_scipy = ttest_1samp(observations, popmean = 0.5)
-print(f"\nUsing SciPy library:")
-print(f"\nT statistic (library): {t_stat_scipy:.4f}")
-print(f"P-value (library): {p_value_scipy:.4f}")
+# --- TWO-TAILED PLOT ---
+x_fill_two_left = np.linspace(-4, -t_obs, 500)
+y_fill_two_left = t.pdf(x_fill_two_left, df)
+x_fill_two_right = np.linspace(t_obs, 4, 500)
+y_fill_two_right = t.pdf(x_fill_two_right, df)
 
-# Parameters for plot t-distribution
-x = np.linspace(-4, 4, 1000) # Range for t-distribution
-t_dist = t.pdf(x, df = n - 1) # Probability density function for t-distribution
+fig2, ax2 = plt.subplots(figsize=(7, 4.5))
+ax2.plot(x, y, color='black', lw=2, label=f"$t$-distribution ($\\nu = {df}$)")
+ax2.fill_between(x_fill_two_left, y_fill_two_left, color='crimson', alpha=0.4)
+ax2.fill_between(x_fill_two_right, y_fill_two_right, color='crimson', alpha=0.4, label=r"two-tailed p-value area")
+ax2.axvline(t_obs, color='crimson', linestyle='--', linewidth=2)
+ax2.axvline(-t_obs, color='crimson', linestyle='--', linewidth=2, label=fr"$\pm t_{{obs}} = \pm {t_obs}$")
 
-# Plot t-distribution
-plt.plot(x, t_dist, label = f"t-distribution (df = {n - 1})")
-plt.axvline(t_stat_manual, color = "red", linestyle = "--", label = f"T statistic = {t_stat_manual:.2f}")
-plt.axvline(-t_stat_manual, color = "red", linestyle = "--")
-plt.fill_between(x, t_dist, where = (x >= abs(t_stat_manual)), color = "red", alpha = 0.3, label = "Rejection region (one side)")
-plt.fill_between(x, t_dist, where = (x <= -abs(t_stat_manual)), color = "red", alpha = 0.3)
-plt.title("t-distribution and observed t statistic")
-plt.xlabel("t value")
-plt.ylabel("Density")
-plt.legend()
-plt.savefig("t_1_sample_distribution.png")
+ax2.set_xlabel("t", fontsize=12)
+ax2.set_ylabel(r"$\mathcal{f}\; (t;\ \nu=10)$", fontsize=14)
+ax2.legend(frameon=False, fontsize=10)
+ax2.grid(True, linestyle='--', alpha=0.3)
+for spine in ax2.spines.values():
+    spine.set_visible(True)
+    spine.set_color('black')
+    spine.set_linewidth(1.0)
+
+plt.tight_layout()
+fig2.savefig("t_test_1_sample_p_two_tailed.png", dpi=300, bbox_inches='tight')
+fig2.savefig("t_test_1_sample_p_two_tailed.pdf", bbox_inches='tight')
 plt.show()
 
-# Interpret result (significance level 0.05)
-alpha = 0.05
-if p_value_manual < alpha:
-    print("Reject H0: The coin is likely biased.")
-else:
-    print("Accept H0: No evidence of biased coin.")
+
+
+# --- THIRD PLOT: t-distribution for varying degrees of freedom ---
+dfs = [1, 5, 100]
+x = np.linspace(-5, 5, 1000)
+
+fig3, ax3 = plt.subplots(figsize=(7, 4.5))
+
+# Plot each t-distribution
+for df_i in dfs:
+    y = t.pdf(x, df_i)
+    ax3.plot(x, y, lw=2, label=fr"$\nu = {df_i}$")
+
+# Standard normal for comparison
+ax3.plot(x, norm.pdf(x), 'k--', label=r"$\mathcal{N}(0,1)$", linewidth=1.5)
+
+ax3.set_xlabel("t", fontsize=12)
+ax3.set_ylabel(r"$\mathcal{f}\; (t;\ \nu)$", fontsize=14)
+ax3.legend(frameon=False, fontsize=10, loc="upper right")
+ax3.grid(True, linestyle='--', alpha=0.3)
+for spine in ax3.spines.values():
+    spine.set_visible(True)
+    spine.set_color('black')
+    spine.set_linewidth(1.0)
+
+plt.tight_layout()
+fig3.savefig("t_distribution.png", dpi=300, bbox_inches='tight')
+fig3.savefig("t_distribution.pdf", bbox_inches='tight')
+plt.show()
+
+

@@ -35,41 +35,41 @@
 \contentsline {section}{\numberline {4.2}Hypothesis, significance, p-values}{35}{}%
 \contentsline {section}{\numberline {4.3}Statistical tests: some examples}{36}{}%
 \contentsline {subsection}{\numberline {4.3.1}Compare sample mean with hypothesized value - One sample t-test}{36}{}%
-\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two independent groups - Two sample t-test}{37}{}%
-\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher's exact test}{38}{}%
-\contentsline {subsection}{\numberline {4.3.4}Compare variation on more than two groups - Fisher's ANOVA}{39}{}%
-\contentsline {subsection}{\numberline {4.3.5}Compare distributions and testing for normality - $\chi ^{2}$ test}{40}{}%
-\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{41}{}%
-\contentsline {section}{\numberline {4.5}Comparing data and normalization}{42}{}%
-\contentsline {chapter}{\numberline {5}Linear models and GLMs}{43}{}%
-\contentsline {section}{\numberline {5.1}Simple linear regression}{43}{}%
-\contentsline {section}{\numberline {5.2}Multiple linear regression}{44}{}%
-\contentsline {section}{\numberline {5.3}Hypothesis testing in linear models}{45}{}%
-\contentsline {section}{\numberline {5.4}Generalized Linear Models (GLMs)}{46}{}%
-\contentsline {section}{\numberline {5.5}Logistic, Poisson, polynomial regression}{47}{}%
-\contentsline {chapter}{\numberline {6}Introduction to bayesian probability}{49}{}%
-\contentsline {section}{\numberline {6.1}Bayesian vs frequentist}{49}{}%
-\contentsline {section}{\numberline {6.2}The Bayes' Rule}{50}{}%
-\contentsline {section}{\numberline {6.3}Bayesian vs frequentist}{54}{}%
-\contentsline {section}{\numberline {6.4}Computing posteriors}{55}{}%
-\contentsline {chapter}{\numberline {7}Introduction to Markov processes}{57}{}%
-\contentsline {section}{\numberline {7.1}Stochasticity and Markov processes}{57}{}%
-\contentsline {section}{\numberline {7.2}Markov chains}{61}{}%
-\contentsline {section}{\numberline {7.3}Hidden Markov models}{62}{}%
-\contentsline {chapter}{\numberline {A}Vectors and matrices: a quick review}{63}{}%
-\contentsline {section}{\numberline {A.1}Vectors and their properties}{63}{}%
-\contentsline {section}{\numberline {A.2}Matrices and linear transformations}{63}{}%
-\contentsline {section}{\numberline {A.3}Basic algebraic operations}{63}{}%
-\contentsline {chapter}{\numberline {B}Functions and derivatives: a quick review}{65}{}%
-\contentsline {section}{\numberline {B.1}From curves to calculus: functions}{65}{}%
-\contentsline {section}{\numberline {B.2}The idea of change, slope and minima}{65}{}%
-\contentsline {section}{\numberline {B.3}Derivatives}{65}{}%
-\contentsline {chapter}{\numberline {C}Integrals: a quick review}{67}{}%
-\contentsline {section}{\numberline {C.1}Indefinite integral as antiderivative}{67}{}%
-\contentsline {section}{\numberline {C.2}Define definite integral as area under a curve}{67}{}%
-\contentsline {section}{\numberline {C.3}The fundamental theorem of calculus}{67}{}%
-\contentsline {chapter}{\numberline {D}Fourier series: a quick review}{69}{}%
-\contentsline {section}{\numberline {D.1}Introduction to periodic functions}{69}{}%
-\contentsline {section}{\numberline {D.2}Orthogonality and approximating functions}{69}{}%
-\contentsline {section}{\numberline {D.3}Conditions of convergence}{69}{}%
-\contentsline {section}{\numberline {D.4}Applications: the heat equation}{69}{}%
+\contentsline {subsection}{\numberline {4.3.2}Compare sample means of two independent groups - Two sample t-test}{38}{}%
+\contentsline {subsection}{\numberline {4.3.3}Compare sample variances of two groups - Fisher's exact test}{40}{}%
+\contentsline {subsection}{\numberline {4.3.4}Compare variation on more than two groups - Fisher's ANOVA}{42}{}%
+\contentsline {subsection}{\numberline {4.3.5}Compare distributions and testing for normality - $\chi ^{2}$ test}{44}{}%
+\contentsline {section}{\numberline {4.4}Parametric and non-parametric}{46}{}%
+\contentsline {section}{\numberline {4.5}Comparing data and normalization}{47}{}%
+\contentsline {chapter}{\numberline {5}Linear models and GLMs}{49}{}%
+\contentsline {section}{\numberline {5.1}Simple linear regression}{49}{}%
+\contentsline {section}{\numberline {5.2}Multiple linear regression}{50}{}%
+\contentsline {section}{\numberline {5.3}Hypothesis testing in linear models}{51}{}%
+\contentsline {section}{\numberline {5.4}Generalized Linear Models (GLMs)}{52}{}%
+\contentsline {section}{\numberline {5.5}Logistic, Poisson, polynomial regression}{53}{}%
+\contentsline {chapter}{\numberline {6}Introduction to bayesian probability}{55}{}%
+\contentsline {section}{\numberline {6.1}Bayesian vs frequentist}{55}{}%
+\contentsline {section}{\numberline {6.2}The Bayes' Rule}{56}{}%
+\contentsline {section}{\numberline {6.3}Bayesian vs frequentist}{60}{}%
+\contentsline {section}{\numberline {6.4}Computing posteriors}{61}{}%
+\contentsline {chapter}{\numberline {7}Introduction to Markov processes}{63}{}%
+\contentsline {section}{\numberline {7.1}Stochasticity and Markov processes}{63}{}%
+\contentsline {section}{\numberline {7.2}Markov chains}{67}{}%
+\contentsline {section}{\numberline {7.3}Hidden Markov models}{68}{}%
+\contentsline {chapter}{\numberline {A}Vectors and matrices: a quick review}{69}{}%
+\contentsline {section}{\numberline {A.1}Vectors and their properties}{69}{}%
+\contentsline {section}{\numberline {A.2}Matrices and linear transformations}{69}{}%
+\contentsline {section}{\numberline {A.3}Basic algebraic operations}{69}{}%
+\contentsline {chapter}{\numberline {B}Functions and derivatives: a quick review}{71}{}%
+\contentsline {section}{\numberline {B.1}From curves to calculus: functions}{71}{}%
+\contentsline {section}{\numberline {B.2}The idea of change, slope and minima}{71}{}%
+\contentsline {section}{\numberline {B.3}Derivatives}{71}{}%
+\contentsline {chapter}{\numberline {C}Integrals: a quick review}{73}{}%
+\contentsline {section}{\numberline {C.1}Indefinite integral as antiderivative}{73}{}%
+\contentsline {section}{\numberline {C.2}Define definite integral as area under a curve}{73}{}%
+\contentsline {section}{\numberline {C.3}The fundamental theorem of calculus}{73}{}%
+\contentsline {chapter}{\numberline {D}Fourier series: a quick review}{75}{}%
+\contentsline {section}{\numberline {D.1}Introduction to periodic functions}{75}{}%
+\contentsline {section}{\numberline {D.2}Orthogonality and approximating functions}{75}{}%
+\contentsline {section}{\numberline {D.3}Conditions of convergence}{75}{}%
+\contentsline {section}{\numberline {D.4}Applications: the heat equation}{75}{}%

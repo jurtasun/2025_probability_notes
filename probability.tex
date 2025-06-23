@@ -1229,6 +1229,19 @@ Once we have covered the idea of parameter estimation, sample distributions, and
 
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
 
+The t test, a cornerstone of inferential statistics, emerged from a union of practical necessity and mathematical ingenuity in the early 20th century. Its origin is entwined with the world of brewing: William Sealy Gosset, a statistician employed by the Guinness Brewery in Dublin, devised the method to address the problem of making reliable inferences from small sample sizes—a common challenge in quality control. Because Guinness forbade its employees from publishing research, Gosset adopted the pseudonym “Student,” and the t test entered the statistical canon as “Student’s t test.” Far from being a mere curiosity, this test helped lay the foundation for modern statistical thinking, offering a systematic way to evaluate whether observed differences could be attributed to chance.\\
+
+Contextually, the t test emerged during a period of growing interest in the mathematical modeling of uncertainty. While the 19th century had seen the establishment of probability theory and the development of the normal distribution by figures like Gauss and Laplace, it was not until the early 20th century that statisticians began to grapple earnestly with small samples and experimental variability. Gosset’s innovation came at a time when the rigor of scientific inquiry was undergoing transformation—where laboratory science, agricultural experimentation, and industrial quality control all demanded more precise methods of inference. The t distribution, with its heavier tails than the normal distribution, aptly modeled the added uncertainty inherent in small datasets, providing a safeguard against overconfidence in inferences drawn from limited observations.\\
+
+In the broader sweep of statistical development, the t test exemplifies the bridging of theoretical elegance and empirical utility. It stands as a testament to the democratization of statistical methods—making it feasible for practitioners across disciplines to assess hypotheses without the need for large-scale experimentation. Its adaptability, whether in comparing means between two groups or assessing paired observations, has ensured its enduring presence in the researcher’s toolkit. Over a century later, the t test remains not merely a relic of an industrial past but a living method, still invoked in clinical trials, psychological studies, and countless scientific explorations, bearing with it both the legacy of its creator and the evolving rigor of modern analysis.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter4/t_test_1_sample_p_one_tailed.png}
+    \caption{Representation of the t statistic, following the Student's t distribution, for a particular value of the degrees of freedom ($\nu = 10$). The integral of the shadowed area represents the \textit{1-sided}, or \textit{1-tailed} p-value, as the probability of obtaining a result \textit{at least as extreme} as the one obtained $t_{obs}$.}
+    \label{fig:t_test1}
+\end{figure}
+
 The student's t is used to compare the sample mean $\bar{x}$ to ha hypothesized value $\mu$. It assumes that the sample data are drawn from a normally distributed population, hence it is an example of a \textit{parametric} test. We will discuss more about parametric and non-parametric observations, and how to test for normality further in the chapter. The test statistic is given by:
 \[
     t = \frac{\bar{x} - \mu}{s / \sqrt{n}},
@@ -1241,11 +1254,43 @@ Then, given some data was observed and and we obtained a specific value for our 
 p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{n-1}}(x)\,dx = 2 \cdot \left[1 - F_{T_{n-1}}(|t|)\right]
 \]
 
+\subsection*{The t distribution}
+
 Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribution} with $n - 1$ degrees of freedom, and $F_{T_{n-1}}$ the corresponding cumulative distribution, as we discussed in chapter 2 [...]. Here, we are computing the probability of t being greater than the one we obtained, and we do that just by integrating the t-distribution [...]. Note that here we are computing a 2-sided p-value, hence te factor 2 at the beginning. 
+
+Given a sample \( X_1, \ldots, X_n \sim \mathcal{N}(\mu, \sigma^2) \), the one-sample \textit{t}-statistic is defined as:
+\[
+t = \frac{\bar{X} - \mu_0}{S / \sqrt{n}}
+\]
+where \( \bar{X} \) is the sample mean, \( S \) is the sample standard deviation, and \( \mu_0 \) is the hypothesized population mean.
+
+Under the null hypothesis \( H_0: \mu = \mu_0 \), the statistic follows a Student's \textit{t}-distribution with \( n-1 \) degrees of freedom:
+\[
+t \sim t_{n-1}
+\]
+The probability density function (PDF) of the \textit{t}-distribution with \( \nu \) degrees of freedom is:
+\[
+f(t) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu \pi} \, \Gamma\left(\frac{\nu}{2}\right)} \left(1 + \frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}
+\]
+
+\cite{student1908}
 
 \newpage
 
 \subsection{Compare sample means of two independent groups - Two sample t-test}
+
+The two-sample t test represents a natural extension of Student’s original formulation, expanding its reach from single-sample inference to the comparison of two independent groups. This test seeks to determine whether the means of two populations differ significantly, based on sample data—often drawn from experimental and observational studies. It operates under the assumption that the underlying distributions are approximately normal and that the variances between groups are equal or at least comparable, though variants like Welch’s t test have relaxed these conditions. The test statistic itself balances the observed difference in means against the pooled standard error, weighing signal against noise.\\
+
+The historical roots of the two-sample t test are intertwined with the rise of controlled experimentation in the biological and social sciences during the early to mid-20th century. Ronald Fisher, Jerzy Neyman, and Egon Pearson contributed to formalizing the logic of hypothesis testing, and the t test became a practical tool within this growing paradigm. Its popularity grew not merely because it was mathematically sound, but because it was accessible—a concise, interpretable method for testing simple but essential questions in science: does treatment differ from control, or is an observed effect more than a fluke?\\
+
+Even in today’s data-rich landscape, the two-sample t test remains remarkably resilient. Its conceptual clarity and computational simplicity make it a first recourse in evaluating differences between two conditions, from clinical trials comparing drug efficacies to educational studies assessing learning interventions. In many ways, it is the distilled essence of statistical thinking: discerning pattern from randomness, while acknowledging uncertainty. Its elegance lies not in its complexity, but in its ability to render the ordinary rigorously meaningful.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter4/t_test_1_sample_p_two_tailed.png}
+    \caption{Representation of the t statistic, following the Student's t distribution, for a particular value of the degrees of freedom ($\nu = 10$). The integral of the shadowed area represents the \textit{2-sided}, or \textit{2-tailed} p-value, as the probability of obtaining a result \textit{at least as extreme} as the one obtained $t_{obs}$.}
+    \label{fig:t_test2}
+\end{figure}
 
 The next example we will encounter is an extension of the same question. The so-called \textit{two-sample t-test} is used to determine whether the sample means of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
 \[
@@ -1261,9 +1306,39 @@ p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{df}}(x)\,dx = 2
 Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribution} with $n_1 + n_2 - 1$ degrees of freedom, and $F_{T_{n-1}}$ the corresponding cumulative distribution
 Note here we assume equal variances. For Welch’s t-test (unequal variances), use the same form, but with Welch-adjusted [...]
 
+\subsection*{The t distribution}
+
+For two independent samples \( X_1, \ldots, X_n \sim \mathcal{N}(\mu_1, \sigma^2) \) and \( Y_1, \ldots, Y_m \sim \mathcal{N}(\mu_2, \sigma^2) \), the test statistic is:
+\[
+t = \frac{\bar{X} - \bar{Y}}{S_p \sqrt{\frac{1}{n} + \frac{1}{m}}}
+\]
+with pooled variance estimate:
+\[
+S_p^2 = \frac{(n-1)S_X^2 + (m-1)S_Y^2}{n + m - 2}
+\]
+
+Under \( H_0: \mu_1 = \mu_2 \), the statistic follows a \textit{t}-distribution with \( n + m - 2 \) degrees of freedom:
+\[
+t \sim t_{n+m-2}
+\]
+Distribution as defined above.
+
 \newpage
 
 \subsection{Compare sample variances of two groups - Fisher's exact test}
+
+Fisher’s exact test, introduced by Ronald A. Fisher in the 1930s, occupies a unique place in the statistical repertoire as a method built not on approximation, but on exact combinatorial reasoning. Designed to test for nonrandom association between two categorical variables in a 2x2 contingency table, the test calculates the exact probability of obtaining the observed configuration—or one more extreme—under the null hypothesis of independence. Unlike the chi-squared test, which relies on asymptotic assumptions, Fisher’s exact test makes no concession to large-sample theory, rendering it particularly well-suited for small datasets where expected counts may be sparse.\\
+
+The genesis of the test is as intellectual as it is practical. Fisher, with his characteristic synthesis of biological intuition and statistical rigor, crafted the test to address problems in genetics and experimental design. In particular, he sought a method that preserved the integrity of inference even when data were limited—a not uncommon situation in biological sciences of his time. His test exemplifies his broader philosophical stance: that statistical methods should be exact, and that inferences should reflect the full structure of the data, not rely on approximations that may distort conclusions.\\
+
+In modern usage, Fisher’s exact test continues to shine in small-sample contexts—such as clinical trials, epidemiology, and case-control studies—where cell counts are low and the cost of misjudging association is high. Its continued relevance, despite the availability of powerful computational tools and large datasets, underscores a broader truth: that precision in reasoning often matters as much as the scale of inquiry. The test embodies an ideal of statistical craftsmanship, where fidelity to the data is preserved down to the last permutation.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter4/f_test_one_tailed.png}
+    \caption{Representation of the F statistic, following the Fisher distribution, for a particular value of the degrees of freedom ($\nu = 10$). The integral of the shadowed area represents the \textit{1-sided}, or \textit{1-tailed} p-value, as the probability of obtaining a result \textit{at least as extreme} as the one obtained $t_{obs}$.}
+    \label{fig:f_test1}
+\end{figure}
 
 The next example we will encounter is an extension of the same question., The so-called \textit{Fisher t-test}, or just $F$ test, is used to determine whether the sample variances of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population.\\
 
@@ -1291,16 +1366,46 @@ and the p-value is computed as the upper-tail probability:
 p = P(F_{\nu_1, \nu_2} \geq F_{\text{obs}}) = \int_{F_{\text{obs}}}^{\infty} f_{F_{\nu_1, \nu_2}}(x)\,dx
 \]
 
+\subsection*{The F distribution}
+
+When the assumption of equal variances is violated, the test statistic is:
+\[
+t = \frac{\bar{X} - \bar{Y}}{\sqrt{\frac{S_X^2}{n} + \frac{S_Y^2}{m}}}
+\]
+with an approximate degrees of freedom:
+\[
+\nu \approx \frac{\left(\frac{S_X^2}{n} + \frac{S_Y^2}{m}\right)^2}{\frac{(S_X^2/n)^2}{n - 1} + \frac{(S_Y^2/m)^2}{m - 1}}
+\]
+
+Under the null \( H_0: \mu_1 = \mu_2 \), the distribution of \( t \) is approximated by:
+\[
+t \sim t_{\nu}
+\]
+
+\cite{welch1947}
+
 \newpage
 
 \subsection{Compare variation on more than two groups - Fisher's ANOVA}
+
+The analysis of variance, or ANOVA, is one of the 20th century's major statistical innovations, largely credited to Ronald Fisher, who formalized it in the 1920s while working at the Rothamsted Experimental Station. Its core purpose is to partition total variation in a dataset into components attributable to different sources—typically, between-group variation and within-group (error) variation. ANOVA provides a systematic method for comparing more than two means simultaneously, resolving what would otherwise require a series of pairwise t tests and an increasing risk of Type I error.\\
+
+Conceptually, ANOVA represents a unifying idea: that observed data contain structure and randomness, and that the task of statistical inference is to disentangle them. It was particularly well-suited to agricultural experiments, where multiple treatments were applied across randomized plots, and variation needed to be measured with mathematical elegance and practical clarity. Fisher’s framework gave researchers a way to understand experimental results in terms of their statistical "signal," paving the way for rigorous design and interpretation across many scientific disciplines.\\
+
+Today, ANOVA remains foundational in experimental science, psychology, and the social sciences. Its principles have expanded into more complex models—repeated measures, factorial designs, and mixed effects frameworks—but the essential logic endures. It is a statistical lens through which variability is not merely noise, but an object of structured inquiry. In this way, ANOVA reflects a deeper epistemological commitment: that difference can be measured, that structure can be inferred, and that complexity, when properly modeled, reveals its underlying form.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter4/f_test_two_tailed.png}
+    \caption{Representation of the F statistic, following the Fisher distribution, for a particular value of the degrees of freedom ($\nu = 10$). The integral of the shadowed area represents the \textit{2-sided}, or \textit{2-tailed} p-value, as the probability of obtaining a result \textit{at least as extreme} as the one obtained $t_{obs}$.}
+    \label{fig:f_test2}
+\end{figure}
 
 The so-called Analysis of Variance, one way ANOVA, or just ANOVA, is used to determine whether the variation of a dataset comes primary from variation within the samples themselves, or from variation between the groups. It is an extension of the Fisher test, where the F statistic is computed as:
 \[
     f(x; d_{1}, d_{2}) = \frac{s_\text{between}^{2}}{s_\text{within}^{2}},
 \]
 where $s_1^{2}$ and $s_2^{2}$ are the sample variances, and the degrees of freedom are $d_1 = n_1 - 1$ and $d_2 = n_2 - 1$.\\
-
 
 \[
 F = \frac{MS_{\text{between}}}{MS_{\text{within}}} = \frac{SS_{\text{between}} / (k - 1)}{SS_{\text{within}} / (N - k)}
@@ -1319,10 +1424,45 @@ The computation of the p-value:
 p = \int_{F}^{\infty} f_{F_{df_1, df_2}}(x)\,dx = 1 - F_{F_{df_1, df_2}}(F)
 \]
 
+\subsection*{The F distribution}
+
+Assume \( k \) groups with sample sizes \( n_i \) and group means \( \bar{X}_i \). The test statistic is:
+\[
+F = \frac{MS_{\text{between}}}{MS_{\text{within}}} = \frac{SS_{\text{between}} / (k - 1)}{SS_{\text{within}} / (N - k)}
+\]
+with:
+\[
+SS_{\text{between}} = \sum_{i=1}^{k} n_i (\bar{X}_i - \bar{X})^2, \quad SS_{\text{within}} = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \bar{X}_i)^2
+\]
+
+Under \( H_0: \mu_1 = \mu_2 = \cdots = \mu_k \), the statistic follows:
+\[
+F \sim \mathcal{F}_{k-1, N-k}
+\]
+The PDF of the \( \mathcal{F}_{d_1, d_2} \) distribution is:
+\[
+f(x) = \frac{1}{\mathrm{B}(d_1/2, d_2/2)} \left(\frac{d_1}{d_2}\right)^{d_1/2} \frac{x^{d_1/2 - 1}}{\left(1 + \frac{d_1}{d_2}x\right)^{(d_1 + d_2)/2}}
+\]
+for \( x > 0 \).
+
+\cite{fisher1925}
 
 \newpage
 
 \subsection{Compare distributions and testing for normality - $\chi^{2}$ test}
+
+The chi-squared test, with its roots in the work of Karl Pearson at the turn of the 20th century, stands as one of the earliest formal tests of goodness-of-fit and independence. Built on the comparison of observed frequencies to expected ones under a given hypothesis, the chi-squared statistic accumulates discrepancies between what is seen and what is statistically anticipated. It is asymptotic in nature, relying on the approximation of the chi-squared distribution, which becomes increasingly accurate with larger sample sizes and expected counts.\\
+
+Pearson’s motivation was both mathematical and empirical: to provide a quantitative measure for evaluating how well a theoretical model matched observed data, particularly in biological contexts such as Mendelian genetics. His test became a cornerstone of categorical data analysis, offering a simple yet powerful method for detecting associations in contingency tables and deviations from expected distributions. Over time, the test was expanded and refined, notably by Fisher and Yates, but it has retained its essential character as a test of fit between expectation and observation.\\
+
+In the present day, the chi-squared test continues to serve as an indispensable tool across fields as varied as market research, epidemiology, and political science. Its ability to handle complex tables and large datasets makes it well-suited to the modern data deluge. Yet its appeal also lies in its conceptual clarity: the squared discrepancy between what the world appears to be and what a hypothesis claims it should be. It is a statistical mirror, held up to the categorical world, revealing the tensions between model and reality with a cold but elegant precision.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter4/chi2_test_one_tailed.png}
+    \caption{Representation of the $chi^{2}$ statistic, following the Pearson  $chi^{2}$ distribution, for a particular value of the degrees of freedom ($\nu = 10$). The integral of the shadowed area represents the \textit{1-sided}, or \textit{1-tailed} p-value, as the probability of obtaining a result \textit{at least as extreme} as the one obtained $chi^{2}_{obs}$.}
+    \label{fig:chi2_test1}
+\end{figure}
 
 The so-called Pearson $\chi^{2}$-test is used to determine whether the set of observations is significantly different from some expected - or hypothesized - values. The $\chi^{2}$ statistic is given by:
 \[
@@ -1335,11 +1475,54 @@ The computation of the p-value:
 p = \int_{\chi^2}^{\infty} f_{\chi^2_{df}}(x)\,dx = 1 - F_{\chi^2_{df}}(\chi^2)
 \]
 
+\subsection*{The $\chi^{2}$ distribution}
+
+For observed \( O_{ij} \) and expected counts \( E_{ij} \) in an \( r \times c \) table, the test statistic is:
+\[
+\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+\]
+
+Under the null hypothesis of independence, the distribution is:
+\[
+\chi^2 \sim \chi^2_{(r-1)(c-1)}
+\]
+
+The PDF of the chi-squared distribution with \( k \) degrees of freedom is:
+\[
+f(x) = \frac{1}{2^{k/2} \Gamma(k/2)} x^{k/2 - 1} e^{-x/2}, \quad x > 0
+\]
+
+\cite{pearson1900}
+
 \newpage
 
 \section{Parametric and non-parametric}
 
 Parametric and non-parametric
+
+\begin{enumerate}
+
+\item \textbf{Student’s *t*-Test (One-Sample and Two-Sample)}\\
+Introduced by William S. Gosset under the pseudonym “Student” in his seminal paper \cite{student1908}, this test allows inference on population means when the standard deviation is unknown and the sample size is small. The two-sample version compares the means of two independent groups under assumptions of normality and equal variances.\\
+\textit{Non-parametric alternative:} The \textbf{Mann–Whitney U test} (also called the Wilcoxon rank-sum test) for independent samples, and the \textbf{Wilcoxon signed-rank test} for paired or single-sample symmetry testing.
+
+\item \textbf{Fisher’s Exact Test}\\
+Formulated by R. A. Fisher in his 1935 treatise on experimental design \cite{fisher1935}, this exact test computes the hypergeometric probability of a given 2x2 contingency table under the null hypothesis of independence. It is particularly suited for small samples, where asymptotic methods like chi-squared tests may not be valid.\\
+\textit{Non-parametric alternative:} The test is already exact and non-parametric; however, \textbf{Barnard’s exact test} is sometimes proposed as a more powerful alternative in small-sample settings.
+
+\item \textbf{Analysis of Variance (ANOVA)}\\
+Fisher also introduced ANOVA in his earlier work \cite{fisher1925}, laying the foundation for modern experimental statistics. ANOVA decomposes total variation into between-group and within-group components, enabling testing of the equality of multiple means.\\
+\textit{Non-parametric alternative:} The \textbf{Kruskal–Wallis H test}, which operates on ranks rather than means, is used when ANOVA assumptions (e.g., normality or homoscedasticity) are violated.
+
+\item \textbf{Chi-Squared Test}\\
+Originally proposed by Karl Pearson in 1900 \cite{pearson1900}, the chi-squared test evaluates how observed frequencies compare to expected frequencies under a null model of independence or goodness-of-fit. It is widely used in contingency table analysis and categorical data testing.\\
+\textit{Non-parametric alternative:} While the chi-squared test is non-parametric in principle, \textbf{Fisher’s exact test} is often preferred for 2x2 tables with small expected counts.
+
+\item \textbf{Welch’s *t*-Test (Unequal Variance Version)}\\
+To address the limitations of assuming equal variances in the classical *t*-test, Welch proposed a generalization in 1947 \cite{welch1947} that remains robust under heteroscedasticity. It uses a weighted estimate of variance and adjusts the degrees of freedom accordingly.\\
+\textit{Non-parametric alternative:} The \textbf{Mann–Whitney U test} again serves as a distribution-free method for comparing central tendencies when variance assumptions fail.
+
+\end{enumerate}
 
 \newpage
 
@@ -1842,6 +2025,27 @@ OpenIntro, 2025.
 Hossein Pishro-Nik.
 \textit{Introduction to Probability, Statistics and Random Processes}.
 Kappa Research LLC, 2014.
+
+\bibitem{student1908}
+Student. (1908). *The probable error of a mean*. Biometrika, 6(1), 1–25.
+
+\bibitem{fisher1935}
+Fisher, R. A. (1935). *The Design of Experiments*. Edinburgh: Oliver and Boyd.
+
+\bibitem{fisher1925}
+Fisher, R. A. (1925). *Statistical Methods for Research Workers*. Edinburgh: Oliver and Boyd.
+
+\bibitem{pearson1900}
+Pearson, K. (1900). *On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling*. Philosophical Magazine Series 5, 50(302), 157–175.
+
+\bibitem{welch1947}
+Welch, B. L. (1947). *The generalization of "Student’s" problem when several different population variances are involved*. Biometrika, 34(1–2), 28–35.
+
+\bibitem{yates1934}
+Yates, F. (1934). *Contingency tables involving small numbers and the $\chi^2$ test*. Supplement to the Journal of the Royal Statistical Society, 1(2), 217–235.
+
+\bibitem{greenwood1911}
+Greenwood, M., \& Yule, G. U. (1911). *An inquiry into the nature of frequency distributions representative of multiple happenings with particular reference to the occurrence of multiple attacks of disease or of repeated accidents*. Journal of the Royal Statistical Society, 83(2), 255–279.
 
 \end{thebibliography}
 
