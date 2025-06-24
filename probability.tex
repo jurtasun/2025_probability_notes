@@ -1209,9 +1209,9 @@ MLE is used to estimate the coefficients $\beta_0, \beta_1$ by maximizing the bi
 
 \section{Prediction vs inference}
 
-The philosophical divide between inference and prediction has deep roots in the evolution of scientific reasoning. Inference, rooted in the classical traditions of epistemology, seeks to illuminate the underlying structure or cause of observed data. It asks, fundamentally, why we see what we do, invoking theories, latent mechanisms, and parameters that might explain the phenomena. Prediction, by contrast, is more agnostic to explanation and more utilitarian: it is concerned with what will happen next. The rise of probabilistic models in the 20th century made it possible to quantify uncertainty in both tasks, but their goals remain distinct. Inference aims to learn about the data-generating process; prediction aims to accurately forecast future observations, regardless of the process's inner workings \cite{student1908}, \cite{fisher1925},  \cite{fisher1935}.\\
+In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions about stochastic processes. But, contrary to what is normally explained in introductory courses, science is not always headed in the \textit{mathematical prediction followed by experimental measurement} direction. There are many cases, as we will soon see, where expectations - or \textit{hypothesis} are formulated for some given phenomena, and no prediction is made. In such cases, where we focus on interpretability rather than forecast, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability \cite{fisher1925},  \cite{fisher1935}.\\
 
-This distinction becomes particularly important in statistical modeling. Predictive models, such as those deployed in machine learning, are often evaluated by their performance on unseen data, with little regard for the interpretability of parameters. Inference, however, thrives on interpretable structure—effect sizes, confidence intervals, causal assumptions—offering insights that extend beyond mere forecasting. Yet the two are not mutually exclusive: many contemporary methods, especially in Bayesian statistics, attempt to harmonize prediction and inference within unified frameworks. Still, when decisions hinge on understanding causation or evaluating mechanisms—as in medicine, economics, or the social sciences—inference retains a privileged role.\\
+The philosophical division between prediction and inference has deep roots in the evolution of scientific reasoning. On the one hand we find prediction, which is more agnostic to explanation and utilitarian, ultimately concerned with \textit{what will happen next}. Inference, in contrast, is rooted in classical traditions of epistemology and induction, and seeks to illuminate the underlying structure or cause of observed data. It asks, fundamentally, \textit{why we see what we do}, invoking theories, latent mechanisms, and parameters that might explain the observed phenomena.\\
 
 \begin{figure}[ht]
     \centering
@@ -1220,21 +1220,24 @@ This distinction becomes particularly important in statistical modeling. Predict
     \label{fig:prob_vs_stats1}
 \end{figure}
 
-Within this context, hypothesis testing emerges as a formal tool to carry out inference under uncertainty. Popularized in the early 20th century by Ronald A. Fisher and later formalized by Jerzy Neyman and Egon Pearson, hypothesis testing provides a structured way to assess whether observed data is consistent with a particular theoretical claim. At its core, the method pits a "null" hypothesis (typically representing chance or no effect) against an "alternative," calculating the probability of observing data as extreme as ours under the null. While often misused or misinterpreted, hypothesis testing remains foundational in the sciences—offering a bridge between data and theory, between the probabilistic world of prediction and the explanatory realm of inference \cite{fisher1925}, \cite{fisher1935}.\\
+Consider the examples we saw in previous chapters: there we developed a series of mathematical tools, algorithmic-wise, that enabled us to make predictions for the so-called Bernoulli, Binomial, Gaussian, ..., distributed events. For a random variable such as the face of the coin, or dice, or any other stochastic event we could measure in a laboratory, we built \textit{probability as a theory to predict} what would happen next, without going much deeper on why a certain set of events are Binomial, or Poisson, or Gaussian distributed, or why they follow these specific mathematical expressions.\\
 
-In the previous chapters we have introduced the mathematical theory of probability. That is, we have developed a series of tools, a \textit{theory}, which enables us to make predictions in stochastic processes. But, contrary to what is normally explain in introductory courses, science is not always headed in the theory - first - and experiment - after - direction. There can be cases, as we will soon see, where hypothesis are formulated for a given phenomena, and no prediction is made. In such cases, it is from measurement that we will try to see, or \textit{infer} if our hypothesis are compatible with given data. Indeed, most modern data analysis and hypothesis testing lie in the inferential statistics, rather than predictive probability.
+This distinction becomes particularly important in statistical modeling. Predictive models, such as those deployed in machine learning, are often evaluated by their performance on unseen data, with little regard for the interpretability of parameters. Inference, however, thrives on interpretable structure — effect sizes, confidence intervals, causal assumptions — offering insights that extend beyond mere forecasting. Yet the two are not mutually exclusive: many contemporary methods, especially in Bayesian statistics, attempt to harmonize prediction and inference within unified frameworks. Still, when decisions hinge on understanding causation or evaluating mechanisms—as in medicine, economics, or the social sciences—inference retains a privileged role. We will review this topic in Chapter 6, when we focus on the Bayesian and frequentist definition of probability. Approaching modern times, the rise of probabilistic models in the 20\textsuperscript{th} century has made now possible to quantify uncertainty in both directions, but their goals remain distinct. Inference aims to learn about the data-generated process, while prediction aims to accurately forecast future observations, regardless - at times - of the process's inner interpretability \cite{fisher1925}.\cite{pearson1900}.\\
+
+Within this context, hypothesis testing emerges as a formal tool to carry out inference under uncertainty. Popularized in the early 20\textsuperscript{th} century by Karl Pearson and Ronald A. Fisher, and later formalized by Jerzy Neyman and Egon Pearson, hypothesis testing provides a structured way to assess whether observed data is consistent with a particular theoretical claim. At its core, and as we will see in the next section, the method tests a "null" hypothesis (typically representing chance or no effect) against an "alternative" (commonly representing an unexpected event). Given these assumptions, we will build \textit{estimator} quantities from data, such as sample means and variances, and combine them to compute \textit{informative quantities}, sometimes referred as \textit{statistics} or \textit{statistic tests}. Then, we will calculate the probability of observing some data as extreme as ours under the null expectation. While often misused or misinterpreted, hypothesis testing remains foundational in the sciences, offering a bridge between data and theory, between the probabilistic world of prediction and the explanatory realm of inference \cite{welch1947}.\\
 
 \section{Hypothesis, significance, p-values}
-The term \textit{hypothesis testing} is usually used to refer a broad set of tools addressing parameter estimation, inference, and various exploratory analysis on random measurements and observations. It was first coined by British mathematicians Pearson and Fisher [...] in early XX\textsuperscript{th} century. In the last decades, hypothesis testing, hypothesis test, statistical inference - sometimes referred to as  exploratory analysis - has gained popularity and become one of the standards in most experimental sciences, given the automatization of experiments and the large amounts of data available.\\
 
-Once we have covered the idea of parameter estimation, sample distributions, and the idea of estimators, we will now formulate hypothesis on the true - \textit{unkwnown} - parameters, and then build \textit{statistic tests} to quantify how far - or close - are these hypothesized values from the observed - experimental, sample - values. And finally, we will quantify how certain we are about the values obtained - how \textit{significant} they are - computing the \textit{p-value}, standing from Pearson value.\\ The general approach we will follow, regardless of the kind of question we are after and the observations made, can be summarized as follows:
+The term \textit{hypothesis testing} is normally used to refer a broad set of tools addressing parameter estimation, inference, and various exploratory analysis on random measurements and observations. In the last decades, expressions like hypothesis testing, hypothesis test, statistical inference - sometimes referred to as exploratory analysis - have gained popularity and become one of the standards in most experimental sciences, given the automatization of experiments and the large amounts of data available.\\
+
+Once we have covered the idea of parameter estimation, sample distributions, and the idea of estimators, we will now formulate hypothesis on the \textit{population}, or true - \textit{unkwnown} - parameters, and then build \textit{statistic tests} to quantify how far - or close - are these hypothesized values from the \textit{sample}, observed, experimental, values. And finally, we will quantify how certain we are about the values obtained - how \textit{significant} they are - computing the \textit{p-value}, standing from Pearson value [...].\\ The general approach we will follow, regardless of the kind of question we are after and the observations made, can be summarized as follows:
 
 \begin{itemize}
 \item Formulate \textit{null} hypothesis $H_0$ and \textit{alternative} hypothesis $H_1$ about the \textit{true} - \textit{population} parameters, generally for the mean or variance, \textit{prior to experiment}.
 \item Collect data, make observations, make measurements.
-\item Compute \textit{informative quantities} from our observed values, normally referred to as \textit{statistics}, or \textit{statistic tests}
-\item Compute p-value, probability of \textit{given the null hypothesis was true} obtained a value at leas as extreme as the one we obtained for our statistic test.
-\item Accept or reject the null hypothesis, based on the p-value.
+\item Compute \textit{estimators} and \textit{informative quantities} from our observed values, normally referred to as \textit{statistics}, or \textit{statistic tests}.
+\item Compute p-value, the probability that \textit{we obtained a value at least as extreme as the one we obtained for our statistic test}.
+\item Accept or reject the null hypothesis, based on the p-value, which quantifies how probable was to see this result.
 \end{itemize}
 
 \newpage
@@ -1243,11 +1246,11 @@ Once we have covered the idea of parameter estimation, sample distributions, and
 
 \subsection{Compare sample mean with hypothesized value - One sample t-test}
 
-The t test, a cornerstone of inferential statistics, emerged from a union of practical necessity and mathematical ingenuity in the early 20th century. Its origin is entwined with the world of brewing: William Sealy Gosset, a statistician employed by the Guinness Brewery in Dublin, devised the method to address the problem of making reliable inferences from small sample sizes—a common challenge in quality control. Because Guinness forbade its employees from publishing research, Gosset adopted the pseudonym “Student,” and the t test entered the statistical canon as “Student’s t test.” Far from being a mere curiosity, this test helped lay the foundation for modern statistical thinking, offering a systematic way to evaluate whether observed differences could be attributed to chance \cite{student1908}.\\
+The t-test, a cornerstone of inferential statistics, emerged from practical necessity in the early 20th century, in no other than the world of brewing: William Sealy Gosset, a statistician employed by the Guinness Brewery in Dublin, devised the method to address the problem of making reliable inferences from small sample sizes - a common challenge in quality control. Because Guinness forbade its employees from publishing research, Gosset adopted the pseudonym “Student,” and the t-test entered the statistical canon as “Student’s t-test.” Far from being a mere curiosity, this test helped lay the foundation for modern statistical thinking, offering a systematic way to evaluate whether observed differences could be attributed to chance \cite{student1908}.\\
 
-Contextually, the t test emerged during a period of growing interest in the mathematical modeling of uncertainty. While the 19th century had seen the establishment of probability theory and the development of the normal distribution by figures like Gauss and Laplace, it was not until the early 20th century that statisticians began to grapple earnestly with small samples and experimental variability. Gosset’s innovation came at a time when the rigor of scientific inquiry was undergoing transformation—where laboratory science, agricultural experimentation, and industrial quality control all demanded more precise methods of inference. The t distribution, with its heavier tails than the normal distribution, aptly modeled the added uncertainty inherent in small datasets, providing a safeguard against overconfidence in inferences drawn from limited observations.\\
+Contextually, the t-test emerged during a period of growing interest in the mathematical modeling of uncertainty. While the 19th century had seen the establishment of probability theory and the development of the normal distribution by figures like Gauss and Laplace, it was not until the early 20th century that statisticians began to address the problem of small samples and experimental variability. Gosset’s innovation came at a time when the rigour of scientific inquiry was undergoing a deep transformation; where laboratory science, agricultural experimentation, and industrial quality control all demanded more precise methods of inference. The t distribution, with its tails heavier than the normal distribution, conveniently modelled the added uncertainty inherent in small datasets, capturing the low confidence in inferences drawn from limited observations.\\
 
-In the broader sweep of statistical development, the t test exemplifies the bridging of theoretical elegance and empirical utility. It stands as a testament to the democratization of statistical methods—making it feasible for practitioners across disciplines to assess hypotheses without the need for large-scale experimentation. Its adaptability, whether in comparing means between two groups or assessing paired observations, has ensured its enduring presence in the researcher’s toolkit. Over a century later, the t test remains not merely a relic of an industrial past but a living method, still invoked in clinical trials, psychological studies, and countless scientific explorations, bearing with it both the legacy of its creator and the evolving rigor of modern analysis.\\
+In the broader sweep of statistical development, the t-test exemplifies the bridging of theoretical elegance and empirical utility, making it feasible for practitioners across disciplines to assess hypotheses without the need for large-scale experimentation. Its adaptability, whether in comparing means between two groups or assessing paired observations, has ensured its enduring presence in the researcher’s toolkit. Over a century later, the t-test remains not merely a relic of an industrial past but a living method, still invoked in clinical trials, psychological studies, and countless scientific explorations, bearing with it both the legacy of its creator and the evolving rigour of modern analysis.\\
 
 \begin{figure}[ht]
     \centering
@@ -1256,21 +1259,21 @@ In the broader sweep of statistical development, the t test exemplifies the brid
     \label{fig:t_test1}
 \end{figure}
 
-The student's t is used to compare the sample mean $\bar{x}$ to ha hypothesized value $\mu$. It assumes that the sample data are drawn from a normally distributed population, hence it is an example of a \textit{parametric} test. We will discuss more about parametric and non-parametric observations, and how to test for normality further in the chapter. The test statistic is given by:
-\[
+The student's t is used to compare the sample mean $\bar{x}$ of a set of observations to ha hypothesized value $\mu$. It assumes that the sample data are drawn from a normally distributed population, hence it is an example of a \textit{parametric} test. We will discuss more about parametric and non-parametric observations, and how to test for normality further in the chapter. The t \textit{statistic test}, or t \textit{statistic}, or just t \textit{variable} for simplicity, is given by:
+\begin{equation}
     t = \frac{\bar{x} - \mu}{s / \sqrt{n}},
-\]
+\end{equation}
 
-where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size. It is built in such a way that, as the sample mean $\bar{x}$ gets closer to the hypothesized value $\mu$, the $t$-variable approaches zero.\\
+where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size. As we se, it is just a measure of how far the sample mean $\bar{x}$ and the hypothesized true value $\mu$ are from each other. Indeed, it is built in such a way that, as the sample mean $\bar{x}$ gets closer to the hypothesized value $\mu$, the $t$-variable approaches zero.\\
 
-Then, given some data was observed and and we obtained a specific value for our t - let's call it \textit{t obs}, to compute a p-value we just need to compute what was the probability of that particular value. To do that, we just recall our t variable was indeed a random variable depending on our random observations, which produced some random sample mean and variance, and some degrees of freedom $n - 1$
-\[
-p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{n-1}}(x)\,dx = 2 \cdot \left[1 - F_{T_{n-1}}(|t|)\right]
-\]
+Then, given some data was observed and and we obtained a specific value for our t - let's call it \textit{$t_{obs}$}, to compute a p-value we just need to compute what was the probability of that particular value. To do that, we just recall our t variable was indeed a random variable depending on our random observations, which produced some random sample mean and variance, and some degrees of freedom $n - 1$
+\begin{equation}
+	p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{n-1}}(x)\,dx = 2 \cdot \left[1 - F_{T_{n-1}}(|t|)\right]
+\end{equation}
 
 \subsection*{The t distribution}
 
-Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribution} with $n - 1$ degrees of freedom, and $F_{T_{n-1}}$ the corresponding cumulative distribution, as we discussed in chapter 2 [...]. Here, we are computing the probability of t being greater than the one we obtained, and we do that just by integrating the t-distribution [...]. Note that here we are computing a 2-sided p-value, hence te factor 2 at the beginning. 
+Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribution} with $n - 1$ degrees of freedom, and $F_{T_{n-1}}$ the corresponding cumulative distribution, as we discussed in chapter 2 [...]. Here, we are computing the probability of t being greater than the one we obtained, and we do that just by integrating the t-distribution [...]. Note that here we are computing a 2-sided p-value, hence te factor 2 at the beginning.\\
 
 Given a sample \( X_1, \ldots, X_n \sim \mathcal{N}(\mu, \sigma^2) \), the one-sample \textit{t}-statistic is defined as:
 \[
@@ -1282,21 +1285,22 @@ Under the null hypothesis \( H_0: \mu = \mu_0 \), the statistic follows a Studen
 \[
 t \sim t_{n-1}
 \]
+
 The probability density function (PDF) of the \textit{t}-distribution with \( \nu \) degrees of freedom is:
-\[
-f(t) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu \pi} \, \Gamma\left(\frac{\nu}{2}\right)} \left(1 + \frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}
-\]
+\begin{equation}
+	f(t; \; \nu) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu \pi} \, \Gamma\left(\frac{\nu}{2}\right)} \left(1 + \frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}
+\end{equation}
 Distribution and computation of the p-value as defined above.
 
 \newpage
 
 \subsection{Compare sample means of two independent groups - Two sample t-test}
 
-The two-sample t test represents a natural extension of Student’s original formulation, expanding its reach from single-sample inference to the comparison of two independent groups. This test seeks to determine whether the means of two populations differ significantly, based on sample data—often drawn from experimental and observational studies. It operates under the assumption that the underlying distributions are approximately normal and that the variances between groups are equal or at least comparable, though variants like Welch’s t test have relaxed these conditions. The test statistic itself balances the observed difference in means against the pooled standard error, weighing signal against noise \cite{student1908}.\\
+The two-sample t-test represents a natural extension of Gosset's original formulation, expanding its reach from single-sample inference to the comparison of two independent groups. This test seeks to determine whether the sample means, $\bar{x}_1$ and $\bar{x}_2$ of two populations are significantly different. It operates under the assumption that the underlying distributions are approximately normal and that the variances between groups are equal or at least comparable, though variants like Welch’s t-test have relaxed these conditions. The test statistic itself balances the observed difference in means against the pooled standard error, weighing signal against noise \cite{welch1947}.\\
 
-The historical roots of the two-sample t test are intertwined with the rise of controlled experimentation in the biological and social sciences during the early to mid-20th century. Ronald Fisher, Jerzy Neyman, and Egon Pearson contributed to formalizing the logic of hypothesis testing, and the t test became a practical tool within this growing paradigm. Its popularity grew not merely because it was mathematically sound, but because it was accessible—a concise, interpretable method for testing simple but essential questions in science: does treatment differ from control, or is an observed effect more than a fluke?\\
+The historical roots of the two-sample t-test are intertwined with the rise of controlled experimentation in the biological and social sciences during the early to mid-20th century. Ronald Fisher, Jerzy Neyman, and Egon Pearson contributed to formalizing the logic of hypothesis testing, and the t-test became a practical tool within this growing paradigm. Its popularity grew not merely because it was mathematically sound, but because it was accessible. A concise, simple and interpretable method for testing simple but essential questions in science: does treatment differ from control, is an observed effect more than a fluke, etc.\\
 
-Even in today’s data-rich landscape, the two-sample t test remains remarkably resilient. Its conceptual clarity and computational simplicity make it a first recourse in evaluating differences between two conditions, from clinical trials comparing drug efficacies to educational studies assessing learning interventions. In many ways, it is the distilled essence of statistical thinking: discerning pattern from randomness, while acknowledging uncertainty. Its elegance lies not in its complexity, but in its ability to render the ordinary rigorously meaningful.\\
+Even in today’s data-rich landscape, the two-sample t-test remains remarkably resilient. Its conceptual clarity and computational simplicity make it a first recourse in evaluating differences between two conditions, from clinical trials comparing drug efficacies to educational studies assessing learning interventions. In many ways, it is the distilled essence of statistical thinking: discerning pattern from randomness, while acknowledging uncertainty. Its elegance lies not in its complexity, but in its ability to render the ordinary rigorously meaningful.\\
 
 \begin{figure}[ht]
     \centering
@@ -1305,16 +1309,16 @@ Even in today’s data-rich landscape, the two-sample t test remains remarkably 
     \label{fig:t_test2}
 \end{figure}
 
-The next example we will encounter is an extension of the same question. The so-called \textit{two-sample t-test} is used to determine whether the sample means of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population. The test statistic is given by:
-\[
-    t = \frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{\big(n_{1} - 1)^{2} + (n_{2} - 1)^{2}}},
-\]
-where $\bar{x}$ is the sample mean, $\mu$ is the population mean, $s$ is the sample standard deviation, and $n$ is the sample size.\\
+The so-called \textit{two-sample t-test} is used to determine whether the sample means $\bar{x}_1$ and $\bar{x}_2$ of two sets of observations are significantly different from one another. It assumes that the sample data are drawn from a normally distributed population, hence it remains an example of parametric test. The t \textit{statistic test}, or t \textit{statistic}, or just t \textit{variable} for simplicity, is given by:
+\begin{equation}
+    t = \frac{\bar{x}_{1} - \bar{x}_{2}}{\sqrt{s^2_1 \big(n_{1} - 1)^{2} + s^2_2 (n_{2} - 1)^{2}}},
+\end{equation}
+where $\bar{x}_1$ and $\bar{x}_2$ are the sample means, $s^2_1$ and $s^2_2$ are the sample variances, $n_1$ and $n_2$ the sample sizes.\\
 
 The computation of the p-value:
-\[
-p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{df}}(x)\,dx = 2 \cdot \left[1 - F_{T_{df}}(|t|)\right]
-\]
+\begin{equation}
+	p = P\left(t > t obs \right) = 2 \cdot \int_{|t|}^{\infty} f_{T_{df}}(x)\,dx = 2 \cdot \left[1 - F_{T_{df}}(|t|)\right]
+\end{equation}
 
 Being $f_{T_{n-1}}$ the PDF of the t variable, the \textit{Student's t distribution} with $n_1 + n_2 - 1$ degrees of freedom, and $F_{T_{n-1}}$ the corresponding cumulative distribution
 Note here we assume equal variances. For Welch’s t-test (unequal variances), use the same form, but with Welch-adjusted [...]

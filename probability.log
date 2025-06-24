@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  23 JUN 2025 10:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  24 JUN 2025 12:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1266,22 +1266,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 1223--1224
  []
 
 [35 <./figures/chapter4/probability_vs_statistics.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1228--1229
+Underfull \hbox (badness 10000) in paragraph at lines 1225--1226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1227--1228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1231--1232
 
  []
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1246--1247
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1248--1249
+Underfull \hbox (badness 10000) in paragraph at lines 1251--1252
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1250--1251
+Underfull \hbox (badness 10000) in paragraph at lines 1253--1254
 
  []
 
@@ -1291,25 +1301,30 @@ File: figures/chapter4/t_test_1_sample_p_one_tailed.png Graphic file (type png)
 
 <use figures/chapter4/t_test_1_sample_p_one_tailed.png>
 Package pdftex.def Info: figures/chapter4/t_test_1_sample_p_one_tailed.png  use
-d on input line 1254.
+d on input line 1257.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
 [37 <./figures/chapter4/t_test_1_sample_p_one_tailed.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1264--1265
+Underfull \hbox (badness 10000) in paragraph at lines 1267--1268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1276--1277
 
  []
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1296
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1297--1298
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1299--1300
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1301--1302
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1303--1304
 
  []
 
@@ -1319,10 +1334,10 @@ File: figures/chapter4/t_test_1_sample_p_two_tailed.png Graphic file (type png)
 
 <use figures/chapter4/t_test_1_sample_p_two_tailed.png>
 Package pdftex.def Info: figures/chapter4/t_test_1_sample_p_two_tailed.png  use
-d on input line 1303.
+d on input line 1307.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1311--1313
+Underfull \hbox (badness 10000) in paragraph at lines 1315--1317
 
  []
 
@@ -1331,20 +1346,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 1311--1313
 File: figures/chapter4/t_distribution.png Graphic file (type png)
 <use figures/chapter4/t_distribution.png>
 Package pdftex.def Info: figures/chapter4/t_distribution.png  used on input lin
-e 1341.
+e 1345.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
  [40 <./figures/chapter4/t_distribution.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1350--1351
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1352--1353
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1354--1355
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1356--1357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1358--1359
 
  []
 
@@ -1352,30 +1367,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 1354--1355
 File: figures/chapter4/f_test_one_tailed.png Graphic file (type png)
 <use figures/chapter4/f_test_one_tailed.png>
 Package pdftex.def Info: figures/chapter4/f_test_one_tailed.png  used on input 
-line 1358.
+line 1362.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1363--1364
+Underfull \hbox (badness 10000) in paragraph at lines 1367--1368
 
  []
 
 [41 <./figures/chapter4/f_test_one_tailed.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1370--1371
+Underfull \hbox (badness 10000) in paragraph at lines 1374--1375
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 1410--1412
+Underfull \hbox (badness 10000) in paragraph at lines 1414--1416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1413--1414
+Underfull \hbox (badness 10000) in paragraph at lines 1417--1418
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1415--1416
+Underfull \hbox (badness 10000) in paragraph at lines 1419--1420
 
  []
 
@@ -1383,10 +1398,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1415--1416
 File: figures/chapter4/f_test_two_tailed.png Graphic file (type png)
 <use figures/chapter4/f_test_two_tailed.png>
 Package pdftex.def Info: figures/chapter4/f_test_two_tailed.png  used on input 
-line 1419.
+line 1423.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1427--1429
+Underfull \hbox (badness 10000) in paragraph at lines 1431--1433
 
  []
 
@@ -1395,20 +1410,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 1427--1429
 File: figures/chapter4/f_distribution.png Graphic file (type png)
 <use figures/chapter4/f_distribution.png>
 Package pdftex.def Info: figures/chapter4/f_distribution.png  used on input lin
-e 1472.
+e 1476.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
  [44]
-Underfull \hbox (badness 10000) in paragraph at lines 1481--1482
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1483--1484
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1485--1486
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1487--1488
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1489--1490
 
  []
 
@@ -1416,10 +1431,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1485--1486
 File: figures/chapter4/chi2_test_one_tailed.png Graphic file (type png)
 <use figures/chapter4/chi2_test_one_tailed.png>
 Package pdftex.def Info: figures/chapter4/chi2_test_one_tailed.png  used on inp
-ut line 1489.
+ut line 1493.
 (pdftex.def)             Requested size: 328.82707pt x 209.03468pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1497--1499
+Underfull \hbox (badness 10000) in paragraph at lines 1501--1503
 
  []
 
@@ -1427,14 +1442,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1497--1499
 File: figures/chapter4/chi2_test_two_tailed.png Graphic file (type png)
 <use figures/chapter4/chi2_test_two_tailed.png>
 Package pdftex.def Info: figures/chapter4/chi2_test_two_tailed.png  used on inp
-ut line 1502.
+ut line 1506.
 (pdftex.def)             Requested size: 328.82707pt x 209.03468pt.
 [45 <./figures/chapter4/f_distribution.png>]
 <figures/chapter4/chi2_distribution.png, id=215, 497.9403pt x 316.5426pt>
 File: figures/chapter4/chi2_distribution.png Graphic file (type png)
 <use figures/chapter4/chi2_distribution.png>
 Package pdftex.def Info: figures/chapter4/chi2_distribution.png  used on input 
-line 1533.
+line 1537.
 (pdftex.def)             Requested size: 328.82707pt x 209.03468pt.
  [46 <./figures/chapter4/chi2_test_one_tailed.png>] [47 <./figures/chapter4/chi
 2_test_two_tailed.png>] [48 <./figures/chapter4/chi2_distribution.png>] [49] [5
@@ -1447,16 +1462,6 @@ Chapter 5.
 ]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1614--1615
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1616--1617
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1618--1619
 
  []
@@ -1466,23 +1471,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 1620--1621
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1622--1623
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1624--1625
+
+ []
+
 [57]
-Underfull \hbox (badness 10000) in paragraph at lines 1626--1627
+Underfull \hbox (badness 10000) in paragraph at lines 1630--1631
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1642--1643
+Underfull \hbox (badness 10000) in paragraph at lines 1646--1647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1663--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1667--1668
 
  []
 
 [58]
-Underfull \hbox (badness 10000) in paragraph at lines 1682--1683
+Underfull \hbox (badness 10000) in paragraph at lines 1686--1687
 
  []
 
@@ -1490,16 +1505,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 1682--1683
 
 ]
 Chapter 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1791--1792
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1793--1794
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 1795--1796
 
@@ -1525,13 +1530,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 1803--1804
 
  []
 
-[65]
-Underfull \hbox (badness 10000) in paragraph at lines 1853--1854
+
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1806
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1855--1856
+Underfull \hbox (badness 10000) in paragraph at lines 1807--1808
+
+ []
+
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 1857--1858
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1859--1860
 
  []
 
@@ -1572,7 +1587,7 @@ Here is how much of TeX's memory you used:
  29284 multiletter control sequences out of 15000+600000
  569182 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,12n,69p,1062b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 61i,12n,69p,1376b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -1594,7 +1609,7 @@ e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/202
 4/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on probability.pdf (83 pages, 1671862 bytes).
+Output written on probability.pdf (83 pages, 1673116 bytes).
 PDF statistics:
  419 PDF objects out of 1000 (max. 8388607)
  250 compressed objects within 3 object streams
