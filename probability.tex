@@ -2029,6 +2029,33 @@ To study algebra and vectors is to engage with tools forged across centuries---f
 
 \section{Vectors and their properties}
 
+Let us define two vectors in \( \mathbb{R}^3 \) as column vectors:
+\[
+\mathbf{v}_1 = \begin{pmatrix} v_{1x} \\ v_{1y} \\ v_{1z} \end{pmatrix}, \quad
+\mathbf{v}_2 = \begin{pmatrix} v_{2x} \\ v_{2y} \\ v_{2z} \end{pmatrix}
+\]
+
+\subsection*{Dot Product}
+
+The dot product (also called the scalar product) of \( \mathbf{v}_1 \) and \( \mathbf{v}_2 \) is given by:
+\[
+\mathbf{v}_1 \cdot \mathbf{v}_2 = v_{1x}v_{2x} + v_{1y}v_{2y} + v_{1z}v_{2z}
+\]
+This results in a scalar and measures the degree of alignment between the two vectors.
+
+\subsection*{Cross Product}
+
+The cross product (or vector product), defined only in three dimensions, yields a vector orthogonal to both \( \mathbf{v}_1 \) and \( \mathbf{v}_2 \):
+\[
+\mathbf{v}_1 \times \mathbf{v}_2 =
+\begin{pmatrix}
+v_{1y}v_{2z} - v_{1z}v_{2y} \\
+v_{1z}v_{2x} - v_{1x}v_{2z} \\
+v_{1x}v_{2y} - v_{1y}v_{2x}
+\end{pmatrix}
+\]
+This resulting vector is perpendicular to the plane defined by \( \mathbf{v}_1 \) and \( \mathbf{v}_2 \), with magnitude equal to the area of the parallelogram they span.
+
 \section{Matrices and linear transformations}
 
 \section{Basic algebraic operations}
@@ -2053,6 +2080,41 @@ The development of calculus marked a turning point in intellectual history. It g
 \section{The idea of change, slope and minima}
 
 \section{Derivatives}
+
+\section*{The Derivative of a Function}
+
+The derivative is a foundational concept in calculus, capturing the idea of \emph{change}. It measures how a function responds to small variations in its input. Intuitively, if a function \( f(x) \) describes a quantity, then its derivative \( f'(x) \) tells us how fast that quantity is changing at each point.
+
+\subsection*{Definition}
+
+Let \( f(x) \) be a real-valued function. The derivative of \( f \) at a point \( x \) is defined as the limit:
+\[
+f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\]
+This expression represents the slope of the tangent line to the graph of \( f \) at the point \( x \). If the limit exists, \( f \) is said to be \emph{differentiable} at \( x \).
+
+\subsection*{Notation}
+
+There are several notations for the derivative:
+\[
+f'(x), \quad \frac{df}{dx}, \quad \frac{dy}{dx} \quad \text{(if } y = f(x) \text{)}
+\]
+Each emphasizes a slightly different aspect—whether viewing the derivative as a function, as a rate of change, or as a formal operator.
+
+\subsection*{Geometric and Physical Interpretation}
+
+Geometrically, the derivative represents the slope of the tangent line to the curve \( y = f(x) \). Physically, if \( f(t) \) describes the position of a moving object as a function of time, then \( f'(t) \) gives its instantaneous velocity.
+
+\subsection*{Example}
+
+If \( f(x) = x^2 \), then:
+\[
+f'(x) = \lim_{\Delta x \to 0} \frac{(x + \Delta x)^2 - x^2}{\Delta x}
+= \lim_{\Delta x \to 0} \frac{2x\Delta x + (\Delta x)^2}{\Delta x}
+= 2x
+\]
+
+Thus, the derivative of \( x^2 \) is \( 2x \), meaning the rate of change increases linearly with \( x \).
 
 \newpage
 
@@ -2088,6 +2150,44 @@ The Spirit of Integral Calculus. Integral calculus teaches us to think holistica
 To learn integral calculus is to acquire a lens through which we view the continuous world---to perceive not only rates of change, but the subtle ways in which all things are built up from infinitesimal parts. It is a mathematics of synthesis, binding motion to rest, parts to whole, and analysis to intuition.
 
 \section{Indefinite integral as antiderivative}
+
+Integral calculus complements the derivative by focusing on \emph{accumulation} rather than instantaneous change. It allows us to find areas under curves, total quantities accumulated over an interval, and much more.
+
+\subsection*{Definite Integral}
+
+Given a function \( f(x) \) defined on an interval \([a, b]\), the definite integral of \( f \) from \( a \) to \( b \) is intuitively the total accumulation of the values of \( f \) over that interval. It is formally defined as the limit of Riemann sums:
+
+\[
+\int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \, \Delta x_i
+\]
+
+where the interval \([a, b]\) is partitioned into subintervals of length \(\Delta x_i\), and \(x_i^*\) is a sample point in the \(i\)-th subinterval. This sum approximates the area under the curve \( y = f(x) \) between \( x = a \) and \( x = b \).
+
+\subsection*{Fundamental Theorem of Calculus}
+
+The Fundamental Theorem of Calculus bridges differentiation and integration, showing they are inverse processes. It has two parts:
+
+\begin{itemize}
+    \item \textbf{Part 1:} If \( F(x) \) is defined by
+    \[
+    F(x) = \int_a^x f(t) \, dt,
+    \]
+    where \( f \) is continuous on \([a,b]\), then \( F \) is differentiable and
+    \[
+    F'(x) = f(x).
+    \]
+    In other words, differentiation “undoes” integration.
+
+    \item \textbf{Part 2:} If \( F \) is any antiderivative of \( f \) on \([a,b]\) (i.e., \( F'(x) = f(x) \)), then
+    \[
+    \int_a^b f(x) \, dx = F(b) - F(a).
+    \]
+    This means the definite integral can be evaluated by finding any antiderivative of \( f \).
+\end{itemize}
+
+\subsection*{Interpretation}
+
+Together, these statements tell us that the process of summing infinitesimal contributions to find total accumulation (integration) and the process of finding the instantaneous rate of change (differentiation) are fundamentally linked. This profound insight lies at the heart of calculus, enabling the solution of countless problems in physics, engineering, and beyond.
 
 \section{Define definite integral as area under a curve}
 
