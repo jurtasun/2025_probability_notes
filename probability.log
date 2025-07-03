@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  3 JUL 2025 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  3 JUL 2025 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,6 +595,12 @@ File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
 
 LaTeX Warning: Label `fig:random' multiply defined.
+
+
+LaTeX Warning: Label `fig:fourier_series_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:fourier_series_2' multiply defined.
 
 )
 \openout1 = `probability.aux'.
@@ -1762,17 +1768,17 @@ Package pdftex.def Info: figures/appendix/integrals_3_riemann.png  used on inpu
 t line 2197.
 (pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2201--2202
+Underfull \hbox (badness 10000) in paragraph at lines 2202--2203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2203--2204
+Underfull \hbox (badness 10000) in paragraph at lines 2204--2205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2205--2206
+Underfull \hbox (badness 10000) in paragraph at lines 2206--2207
 
  []
 
@@ -1785,38 +1791,88 @@ png>]
 rals_3_riemann.png>]
 Appendix D.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2250--2251
+Underfull \hbox (badness 10000) in paragraph at lines 2251--2252
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2252--2253
+Underfull \hbox (badness 10000) in paragraph at lines 2253--2254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2260--2261
+Underfull \hbox (badness 10000) in paragraph at lines 2261--2262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2268--2269
+Underfull \hbox (badness 10000) in paragraph at lines 2269--2270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2270--2271
+Underfull \hbox (badness 10000) in paragraph at lines 2271--2272
 
  []
 
 [85
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2272--2273
+Underfull \hbox (badness 10000) in paragraph at lines 2273--2274
 
  []
 
-[86] [87
+
+Underfull \hbox (badness 10000) in paragraph at lines 2288--2289
+
+ []
+
+<figures/appendix/fourier_series_1.png, id=360, 498.1812pt x 317.7471pt>
+File: figures/appendix/fourier_series_1.png Graphic file (type png)
+<use figures/appendix/fourier_series_1.png>
+Package pdftex.def Info: figures/appendix/fourier_series_1.png  used on input l
+ine 2298.
+(pdftex.def)             Requested size: 328.82707pt x 209.73796pt.
+<figures/appendix/fourier_series_2.png, id=361, 498.1812pt x 317.7471pt>
+File: figures/appendix/fourier_series_2.png Graphic file (type png)
+<use figures/appendix/fourier_series_2.png>
+Package pdftex.def Info: figures/appendix/fourier_series_2.png  used on input l
+ine 2305.
+(pdftex.def)             Requested size: 328.82707pt x 209.73796pt.
+<figures/appendix/fourier_series_3.png, id=362, 498.1812pt x 317.7471pt>
+File: figures/appendix/fourier_series_3.png Graphic file (type png)
+<use figures/appendix/fourier_series_3.png>
+Package pdftex.def Info: figures/appendix/fourier_series_3.png  used on input l
+ine 2312.
+(pdftex.def)             Requested size: 328.82707pt x 209.73796pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2326--2327
+
+ []
+
+[86]
+<figures/appendix/fourier_transform_1.png, id=366, 498.663pt x 317.7471pt>
+File: figures/appendix/fourier_transform_1.png Graphic file (type png)
+<use figures/appendix/fourier_transform_1.png>
+Package pdftex.def Info: figures/appendix/fourier_transform_1.png  used on inpu
+t line 2336.
+(pdftex.def)             Requested size: 328.82707pt x 209.52948pt.
+<figures/appendix/fourier_transform_2.png, id=367, 498.663pt x 317.7471pt>
+File: figures/appendix/fourier_transform_2.png Graphic file (type png)
+<use figures/appendix/fourier_transform_2.png>
+Package pdftex.def Info: figures/appendix/fourier_transform_2.png  used on inpu
+t line 2343.
+(pdftex.def)             Requested size: 328.82707pt x 209.52948pt.
+<figures/appendix/fourier_transform_3.png, id=368, 498.663pt x 317.7471pt>
+File: figures/appendix/fourier_transform_3.png Graphic file (type png)
+<use figures/appendix/fourier_transform_3.png>
+Package pdftex.def Info: figures/appendix/fourier_transform_3.png  used on inpu
+t line 2350.
+(pdftex.def)             Requested size: 328.82707pt x 209.52948pt.
+ [87 <./figures/appendix/fourier_series_1.png>] [88 <./figures/appendix/fourier
+_series_2.png> <./figures/appendix/fourier_series_3.png>] [89 <./figures/append
+ix/fourier_transform_1.png> <./figures/appendix/fourier_transform_2.png>]
+[90 <./figures/appendix/fourier_transform_3.png>] [91
 
 
 ] (./probability.aux)
@@ -1830,10 +1886,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7098 strings out of 474116
- 120972 string characters out of 5743681
+ 7144 strings out of 474116
+ 122968 string characters out of 5743681
  1940187 words of memory out of 5000000
- 29349 multiletter control sequences out of 15000+600000
+ 29395 multiletter control sequences out of 15000+600000
  569182 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,12n,69p,1376b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1858,10 +1914,10 @@ e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/202
 4/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on probability.pdf (91 pages, 2203061 bytes).
+Output written on probability.pdf (95 pages, 2655746 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
- 268 compressed objects within 3 object streams
+ 483 PDF objects out of 1000 (max. 8388607)
+ 276 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

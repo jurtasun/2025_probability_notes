@@ -71,5 +71,5 @@
 \contentsline {chapter}{\numberline {D}Fourier series: a quick review}{85}{}%
 \contentsline {section}{\numberline {D.1}Introduction to periodic functions}{86}{}%
 \contentsline {section}{\numberline {D.2}Orthogonality and approximating functions}{86}{}%
-\contentsline {section}{\numberline {D.3}Conditions of convergence}{86}{}%
-\contentsline {section}{\numberline {D.4}Applications: the heat equation}{86}{}%
+\contentsline {section}{\numberline {D.3}Conditions of convergence}{87}{}%
+\contentsline {section}{\numberline {D.4}Non-periodic functions}{87}{}%

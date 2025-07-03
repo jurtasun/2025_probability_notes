@@ -2,6 +2,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+
 # Parameters for plot
 plt.rcParams.update({
     "font.family": "serif",

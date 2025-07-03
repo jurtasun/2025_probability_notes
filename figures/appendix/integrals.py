@@ -1,5 +1,8 @@
+# Import libraries
 import numpy as np
 import matplotlib.pyplot as plt
+
+
 
 # Parameters and style setup
 plt.rcParams.update({

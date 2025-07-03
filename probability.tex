@@ -2195,7 +2195,8 @@ Together, these statements tell us that the process of summing infinitesimal con
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/appendix/integrals_3_riemann.png}
-    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}    \label{fig:integrals_3_riemann}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
+    \label{fig:integrals_3_riemann}
 \end{figure}
 
 Applications and Legacy.Integral calculus plays a central role in virtually every branch of science and engineering. In physics, it describes the flow of fluids, the propagation of waves, the accumulation of charge, and the work done by forces over time. In economics, it models total cost, revenue, and utility. In biology and medicine, it helps quantify rates of growth, spread of populations, and diffusion processes.\\
@@ -2277,11 +2278,83 @@ The reach of Fourier’s vision continues to expand, carried through every vibra
 
 \section{Introduction to periodic functions}
 
+
+The Heart of Fourier Analysis. At the core of Fourier’s idea lies the intuition that complex phenomena---vibrations, oscillations, signals---can be decomposed into simpler, harmonically related parts. Much like a musical chord is built from individual notes, a function $f(x)$ can be reconstructed from an infinite series of sine and cosine functions:
+
+\[
+f(x) = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos(nx) + b_n \sin(nx) \right]
+\]
+
+Each term in this series captures a different \emph{frequency} component of the original signal, and the coefficients $a_n$, $b_n$ measure the amplitude of those components. This concept of breaking a function into frequency modes gave rise to what we now call \textbf{Fourier analysis}, a field that extends far beyond periodic functions to include integrals over continuous frequencies and higher-dimensional settings.\\
+
+The development of the \textbf{Fourier transform} generalized Fourier’s ideas to non-periodic functions and continuous spectra. Where the Fourier series dissects a signal into discrete harmonics, the Fourier transform reveals a continuous distribution of frequencies:
+
+\[
+\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i \xi x} \, dx
+\]
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_series_1.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$.}
+    \label{fig:fourier_series_1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_series_2.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
+    \label{fig:fourier_series_2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_series_3.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
+    \label{fig:fourier_series_3}
+\end{figure}
+
 \section{Orthogonality and approximating functions}
+
+
+The Heart of Fourier Analysis. At the core of Fourier’s idea lies the intuition that complex phenomena---vibrations, oscillations, signals---can be decomposed into simpler, harmonically related parts. Much like a musical chord is built from individual notes, a function $f(x)$ can be reconstructed from an infinite series of sine and cosine functions:
+
+\[
+f(x) = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos(nx) + b_n \sin(nx) \right]
+\]
+
+Each term in this series captures a different \emph{frequency} component of the original signal, and the coefficients $a_n$, $b_n$ measure the amplitude of those components. This concept of breaking a function into frequency modes gave rise to what we now call \textbf{Fourier analysis}, a field that extends far beyond periodic functions to include integrals over continuous frequencies and higher-dimensional settings.\\
+
+The development of the \textbf{Fourier transform} generalized Fourier’s ideas to non-periodic functions and continuous spectra. Where the Fourier series dissects a signal into discrete harmonics, the Fourier transform reveals a continuous distribution of frequencies:
+
+\[
+\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i \xi x} \, dx
+\]
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_transform_1.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$.}
+    \label{fig:fourier_series_1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_transform_2.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
+    \label{fig:fourier_series_2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_transform_3.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
+    \label{fig:fourier_transform_3}
+\end{figure}
 
 \section{Conditions of convergence}
 
-\section{Applications: the heat equation}
+\section{Non-periodic functions}
 
 \backmatter
  
