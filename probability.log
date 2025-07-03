@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  1 JUL 2025 14:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  3 JUL 2025 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1624,51 +1624,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 2074--2075
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2076--2077
-
- []
-
-[75] [76]
-Appendix C.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2124--2125
+Underfull \hbox (badness 10000) in paragraph at lines 2078--2079
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2126--2127
+Underfull \vbox (badness 1117) has occurred while \output is active []
+
+ [75]
+Underfull \hbox (badness 10000) in paragraph at lines 2080--2081
+
+ []
+
+<figures/appendix/functions_point_1.png, id=315, 499.6266pt x 316.7835pt>
+File: figures/appendix/functions_point_1.png Graphic file (type png)
+<use figures/appendix/functions_point_1.png>
+Package pdftex.def Info: figures/appendix/functions_point_1.png  used on input 
+line 2084.
+(pdftex.def)             Requested size: 328.82707pt x 208.48804pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2089--2090
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2128--2129
+Underfull \hbox (badness 10000) in paragraph at lines 2093--2094
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2138--2139
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76 <./figures/appendix/functions_point_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2095--2096
+
+ []
+
+<figures/appendix/functions_point_2.png, id=320, 498.663pt x 315.8199pt>
+File: figures/appendix/functions_point_2.png Graphic file (type png)
+<use figures/appendix/functions_point_2.png>
+Package pdftex.def Info: figures/appendix/functions_point_2.png  used on input 
+line 2099.
+(pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2104--2105
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2140--2141
+Underfull \hbox (badness 10000) in paragraph at lines 2108--2109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2142--2143
+Underfull \vbox (badness 5288) has occurred while \output is active []
+
+ [77 <./figures/appendix/functions_point_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2110--2111
 
  []
 
-[77
+<figures/appendix/functions_point_2_shadow.png, id=325, 498.663pt x 315.8199pt>
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 2144--2145
+File: figures/appendix/functions_point_2_shadow.png Graphic file (type png)
+<use figures/appendix/functions_point_2_shadow.png>
+Package pdftex.def Info: figures/appendix/functions_point_2_shadow.png  used on
+ input line 2116.
+(pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2124--2126
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 2146--2147
+[78 <./figures/appendix/functions_point_2_shadow.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2133--2134
 
  []
 
@@ -1677,41 +1706,117 @@ Underfull \hbox (badness 10000) in paragraph at lines 2148--2149
 
  []
 
-[78] [79] [80
+[79] [80
 
 ]
-Appendix D.
+Appendix C.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2199--2200
+Underfull \hbox (badness 10000) in paragraph at lines 2155--2156
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 2157--2158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2159--2160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2169--2170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2171--2172
+
+ []
+
+<figures/appendix/integrals_1.png, id=336, 499.6266pt x 316.7835pt>
+File: figures/appendix/integrals_1.png Graphic file (type png)
+<use figures/appendix/integrals_1.png>
+Package pdftex.def Info: figures/appendix/integrals_1.png  used on input line 2
+175.
+(pdftex.def)             Requested size: 328.82707pt x 208.48804pt.
+<figures/appendix/integrals_2.png, id=337, 498.9039pt x 315.8199pt>
+File: figures/appendix/integrals_2.png Graphic file (type png)
+<use figures/appendix/integrals_2.png>
+Package pdftex.def Info: figures/appendix/integrals_2.png  used on input line 2
+182.
+(pdftex.def)             Requested size: 328.82707pt x 208.16708pt.
+<figures/appendix/integrals_2_subdivisions.png, id=338, 498.663pt x 316.5426pt>
+
+File: figures/appendix/integrals_2_subdivisions.png Graphic file (type png)
+<use figures/appendix/integrals_2_subdivisions.png>
+Package pdftex.def Info: figures/appendix/integrals_2_subdivisions.png  used on
+ input line 2189.
+(pdftex.def)             Requested size: 328.82707pt x 208.73521pt.
+[81]
+<figures/appendix/integrals_3_riemann.png, id=343, 498.663pt x 315.8199pt>
+File: figures/appendix/integrals_3_riemann.png Graphic file (type png)
+<use figures/appendix/integrals_3_riemann.png>
+Package pdftex.def Info: figures/appendix/integrals_3_riemann.png  used on inpu
+t line 2197.
+(pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2201--2202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2209--2210
+Underfull \hbox (badness 10000) in paragraph at lines 2203--2204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2217--2218
+Underfull \hbox (badness 10000) in paragraph at lines 2205--2206
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2219--2220
+Underfull \vbox (badness 1635) has occurred while \output is active []
+
+ [82 <./figures/appendix/integrals_1.png>] [83 <./figures/appendix/integrals_2.
+png>]
+[84 <./figures/appendix/integrals_2_subdivisions.png> <./figures/appendix/integ
+rals_3_riemann.png>]
+Appendix D.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2250--2251
 
  []
 
-[81]
-Underfull \hbox (badness 10000) in paragraph at lines 2221--2222
+
+Underfull \hbox (badness 10000) in paragraph at lines 2252--2253
 
  []
 
-[82] [83
+
+Underfull \hbox (badness 10000) in paragraph at lines 2260--2261
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2268--2269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2270--2271
+
+ []
+
+[85
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2272--2273
+
+ []
+
+[86] [87
 
 
 ] (./probability.aux)
@@ -1725,10 +1830,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7042 strings out of 474116
- 118581 string characters out of 5743681
+ 7098 strings out of 474116
+ 120972 string characters out of 5743681
  1940187 words of memory out of 5000000
- 29293 multiletter control sequences out of 15000+600000
+ 29349 multiletter control sequences out of 15000+600000
  569182 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,12n,69p,1376b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1753,10 +1858,10 @@ e/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/202
 4/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on probability.pdf (87 pages, 1703451 bytes).
+Output written on probability.pdf (91 pages, 2203061 bytes).
 PDF statistics:
- 432 PDF objects out of 1000 (max. 8388607)
- 259 compressed objects within 3 object streams
+ 459 PDF objects out of 1000 (max. 8388607)
+ 268 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2073,27 +2073,56 @@ Central to the language of calculus is the concept of a \textbf{function}---a ru
 
 In calculus, we study how functions behave, how they change, and how we can understand their subtleties through two great operations: \textbf{differentiation} and \textbf{integration}. Differentiation captures the idea of instantaneous change---the speed of a falling apple or the slope of a curve at a single point. Newton used it to describe acceleration and the motion of celestial bodies, revolutionizing classical mechanics. Integration, on the other hand, concerns accumulation---how quantities build up over time or space. The method of exhaustion used by \textbf{Archimedes} (287--212 BCE) was an early form of integration, but it was Newton and Leibniz who unified the concept, showing that differentiation and integration are inverse processes---a profound insight now known as the \textbf{Fundamental Theorem of Calculus}.\\
 
-The development of calculus marked a turning point in intellectual history. It gave scientists, engineers, and economists the tools to model the world with precision and predict its behavior with confidence. The mathematical machinery behind electricity, fluid dynamics, statistics, and quantum mechanics all rely on the principles laid down by Newton, Leibniz, Euler, and their successors. Yet beyond its utility, calculus offers something more enduring: a glimpse into the deep continuity that underlies the universe, where motion and form, quantity and change, are all expressions of a single, evolving logic. Through calculus and the language of functions, we do not merely calculate---we begin to understand.\\
-
 \section{From curves to calculus: functions}
+
+At its heart, calculus is the mathematics of change. It arose not from abstraction alone but from an urgent need to describe motion, growth, and the ever-shifting patterns of the natural world. Long before the formalism of equations and limits, ancient civilizations---including the Greeks, Indians, and Chinese---grappled with questions of geometry, area, and continuity. The Greek philosopher Zeno of Elea (5th century BCE) famously posed paradoxes about motion and infinity---such as the arrow that never reaches its target or Achilles who cannot overtake the tortoise---highlighting the conceptual difficulties of change and division.\\
+
+In calculus, we study how functions behave, how they change, and how we can understand their subtleties through two great operations: \textbf{differentiation} and \textbf{integration}. Differentiation captures the idea of instantaneous change---the speed of a falling apple or the slope of a curve at a single point. Newton used it to describe acceleration and the motion of celestial bodies, revolutionizing classical mechanics. Integration, on the other hand, concerns accumulation---how quantities build up over time or space. The method of exhaustion used by \textbf{Archimedes} (287--212 BCE) was an early form of integration, but it was Newton and Leibniz who unified the concept, showing that differentiation and integration are inverse processes---a profound insight now known as the \textbf{Fundamental Theorem of Calculus}.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/functions_point_1.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$.}
+    \label{fig:functions_point_1}
+\end{figure}
+
+The seeds of calculus began to germinate more concretely in the late medieval and early Renaissance periods. The Indian mathematician Bhāskara II (12th century) hinted at the idea of instantaneous rates of change, and later, the French philosopher René Descartes (1596--1650) and the English mathematician John Wallis (1616--1703) laid important groundwork in algebra and infinite series. But calculus, as a coherent system, was born in the late 17th century through the independent and nearly simultaneous efforts of \textbf{Isaac Newton} (1643--1727) in England and \textbf{Gottfried Wilhelm Leibniz} (1646--1716) in Germany. Newton, motivated by problems in physics---such as planetary motion and gravitation---developed what he called ``the method of fluxions,'' focusing on rates of change and motion. Leibniz, meanwhile, introduced a notational system and conceptual clarity that would become the foundation for the modern symbolic language of calculus. His elegant integral sign $\int$ and differential notation $dx$, $dy$ remain standard to this day.\\
 
 \section{The idea of change, slope and minima}
 
+At its heart, calculus is the mathematics of change. It arose not from abstraction alone but from an urgent need to describe motion, growth, and the ever-shifting patterns of the natural world. Long before the formalism of equations and limits, ancient civilizations---including the Greeks, Indians, and Chinese---grappled with questions of geometry, area, and continuity. The Greek philosopher Zeno of Elea (5th century BCE) famously posed paradoxes about motion and infinity---such as the arrow that never reaches its target or Achilles who cannot overtake the tortoise---highlighting the conceptual difficulties of change and division.\\
+
+In calculus, we study how functions behave, how they change, and how we can understand their subtleties through two great operations: \textbf{differentiation} and \textbf{integration}. Differentiation captures the idea of instantaneous change---the speed of a falling apple or the slope of a curve at a single point. Newton used it to describe acceleration and the motion of celestial bodies, revolutionizing classical mechanics. Integration, on the other hand, concerns accumulation---how quantities build up over time or space. The method of exhaustion used by \textbf{Archimedes} (287--212 BCE) was an early form of integration, but it was Newton and Leibniz who unified the concept, showing that differentiation and integration are inverse processes---a profound insight now known as the \textbf{Fundamental Theorem of Calculus}.\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/functions_point_2.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. The ratio between the increments in the horizontal axis, $\Delta x$, and the vertical axis $f(x_0 + \Delta x) - f(x_0)$ represents the derivative of the function at that point, that we denote by $f'(x_0)$.}
+    \label{fig:functions_point_2}
+\end{figure}
+
+The seeds of calculus began to germinate more concretely in the late medieval and early Renaissance periods. The Indian mathematician Bhāskara II (12th century) hinted at the idea of instantaneous rates of change, and later, the French philosopher René Descartes (1596--1650) and the English mathematician John Wallis (1616--1703) laid important groundwork in algebra and infinite series. But calculus, as a coherent system, was born in the late 17th century through the independent and nearly simultaneous efforts of \textbf{Isaac Newton} (1643--1727) in England and \textbf{Gottfried Wilhelm Leibniz} (1646--1716) in Germany. Newton, motivated by problems in physics---such as planetary motion and gravitation---developed what he called ``the method of fluxions,'' focusing on rates of change and motion. Leibniz, meanwhile, introduced a notational system and conceptual clarity that would become the foundation for the modern symbolic language of calculus. His elegant integral sign $\int$ and differential notation $dx$, $dy$ remain standard to this day.\\
+
 \section{Derivatives}
 
-\section*{The Derivative of a Function}
+In calculus, we study how functions behave, how they change, and how we can understand their subtleties through two great operations: \textbf{differentiation} and \textbf{integration}. Differentiation captures the idea of instantaneous change---the speed of a falling apple or the slope of a curve at a single point. Newton used it to describe acceleration and the motion of celestial bodies, revolutionizing classical mechanics. Integration, on the other hand, concerns accumulation---how quantities build up over time or space. The method of exhaustion used by \textbf{Archimedes} (287--212 BCE) was an early form of integration, but it was Newton and Leibniz who unified the concept, showing that differentiation and integration are inverse processes---a profound insight now known as the \textbf{Fundamental Theorem of Calculus}.\\
+
+The development of calculus marked a turning point in intellectual history. It gave scientists, engineers, and economists the tools to model the world with precision and predict its behavior with confidence. The mathematical machinery behind electricity, fluid dynamics, statistics, and quantum mechanics all rely on the principles laid down by Newton, Leibniz, Euler, and their successors. Yet beyond its utility, calculus offers something more enduring: a glimpse into the deep continuity that underlies the universe, where motion and form, quantity and change, are all expressions of a single, evolving logic. Through calculus and the language of functions, we do not merely calculate---we begin to understand.\\
 
 The derivative is a foundational concept in calculus, capturing the idea of \emph{change}. It measures how a function responds to small variations in its input. Intuitively, if a function \( f(x) \) describes a quantity, then its derivative \( f'(x) \) tells us how fast that quantity is changing at each point.
 
-\subsection*{Definition}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/functions_point_2_shadow.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. The ratio between the increments in the horizontal axis, $\Delta x$, and the vertical axis $f(x_0 + \Delta x) - f(x_0)$ represents the derivative of the function at that point, that we denote by $f'(x_0)$.}
+    \label{fig:functions_point_2_shadow}
+\end{figure}
 
 Let \( f(x) \) be a real-valued function. The derivative of \( f \) at a point \( x \) is defined as the limit:
 \[
 f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
 \]
-This expression represents the slope of the tangent line to the graph of \( f \) at the point \( x \). If the limit exists, \( f \) is said to be \emph{differentiable} at \( x \).
-
-\subsection*{Notation}
+This expression represents the slope of the tangent line to the graph of \( f \) at the point \( x \). If the limit exists, \( f \) is said to be \emph{differentiable} at \( x \).\\
 
 There are several notations for the derivative:
 \[
@@ -2101,7 +2130,7 @@ f'(x), \quad \frac{df}{dx}, \quad \frac{dy}{dx} \quad \text{(if } y = f(x) \text
 \]
 Each emphasizes a slightly different aspect—whether viewing the derivative as a function, as a rate of change, or as a formal operator.
 
-\subsection*{Geometric and Physical Interpretation}
+The development of calculus marked a turning point in intellectual history. It gave scientists, engineers, and economists the tools to model the world with precision and predict its behavior with confidence. The mathematical machinery behind electricity, fluid dynamics, statistics, and quantum mechanics all rely on the principles laid down by Newton, Leibniz, Euler, and their successors. Yet beyond its utility, calculus offers something more enduring: a glimpse into the deep continuity that underlies the universe, where motion and form, quantity and change, are all expressions of a single, evolving logic. Through calculus and the language of functions, we do not merely calculate---we begin to understand.\\
 
 Geometrically, the derivative represents the slope of the tangent line to the curve \( y = f(x) \). Physically, if \( f(t) \) describes the position of a moving object as a function of time, then \( f'(t) \) gives its instantaneous velocity.
 
@@ -2115,6 +2144,8 @@ f'(x) = \lim_{\Delta x \to 0} \frac{(x + \Delta x)^2 - x^2}{\Delta x}
 \]
 
 Thus, the derivative of \( x^2 \) is \( 2x \), meaning the rate of change increases linearly with \( x \).
+
+The development of calculus marked a turning point in intellectual history. It gave scientists, engineers, and economists the tools to model the world with precision and predict its behavior with confidence. The mathematical machinery behind electricity, fluid dynamics, statistics, and quantum mechanics all rely on the principles laid down by Newton, Leibniz, Euler, and their successors. Yet beyond its utility, calculus offers something more enduring: a glimpse into the deep continuity that underlies the universe, where motion and form, quantity and change, are all expressions of a single, evolving logic. Through calculus and the language of functions, we do not merely calculate---we begin to understand.\\
 
 \newpage
 
@@ -2137,9 +2168,35 @@ Their work established what we now call the \textbf{Fundamental Theorem of Calcu
 
 This theorem provided both the conceptual unity and practical tools to solve problems in geometry, physics, and beyond.\\
 
-Rigor and Expansion. Though powerful, early calculus lacked rigor. Questions arose: What precisely is a limit? What functions can be integrated? These were resolved over the 18th and 19th centuries by mathematicians such as \textbf{Augustin-Louis Cauchy} (1789--1857), who formalized limits and continuity, and \textbf{Bernhard Riemann} (1826--1866), who defined integration through Riemann sums, grounding the intuitive notion of area in precise terms.\\
+Rigor and Expansion. Though powerful, early calculus lacked rigor. Questions arose: What precisely is a limit? What functions can be integrated? These were resolved over the 18th and 19th centuries by mathematicians such as \textbf{Augustin-Louis Cauchy} (1789--1857), who formalized limits and continuity, and \textbf{Bernhard Riemann} (1826--1866), who defined integration through Riemann sums, grounding the intuitive notion of area in precise terms. Later, \textbf{Henri Lebesgue} (1875--1941) expanded the theory further with the \emph{Lebesgue integral}, which could handle more pathological functions and laid the foundation for modern measure theory. This broader framework enabled integration in more abstract contexts, from probability spaces to Hilbert spaces, and opened the door to modern analysis and functional integration.\\
 
-Later, \textbf{Henri Lebesgue} (1875--1941) expanded the theory further with the \emph{Lebesgue integral}, which could handle more pathological functions and laid the foundation for modern measure theory. This broader framework enabled integration in more abstract contexts, from probability spaces to Hilbert spaces, and opened the door to modern analysis and functional integration.\\
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/integrals_1.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$.}
+    \label{fig:integrals_1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/integrals_2.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
+    \label{fig:integrals_2}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/integrals_2_subdivisions.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}    \label{fig:integrals_2_subdivisions}
+\end{figure}
+
+Together, these statements tell us that the process of summing infinitesimal contributions to find total accumulation (integration) and the process of finding the instantaneous rate of change (differentiation) are fundamentally linked. This profound insight lies at the heart of calculus, enabling the solution of countless problems in physics, engineering, and beyond.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/appendix/integrals_3_riemann.png}
+    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}    \label{fig:integrals_3_riemann}
+\end{figure}
 
 Applications and Legacy.Integral calculus plays a central role in virtually every branch of science and engineering. In physics, it describes the flow of fluids, the propagation of waves, the accumulation of charge, and the work done by forces over time. In economics, it models total cost, revenue, and utility. In biology and medicine, it helps quantify rates of growth, spread of populations, and diffusion processes.\\
 
@@ -2163,8 +2220,6 @@ Given a function \( f(x) \) defined on an interval \([a, b]\), the definite inte
 
 where the interval \([a, b]\) is partitioned into subintervals of length \(\Delta x_i\), and \(x_i^*\) is a sample point in the \(i\)-th subinterval. This sum approximates the area under the curve \( y = f(x) \) between \( x = a \) and \( x = b \).
 
-\subsection*{Fundamental Theorem of Calculus}
-
 The Fundamental Theorem of Calculus bridges differentiation and integration, showing they are inverse processes. It has two parts:
 
 \begin{itemize}
@@ -2184,10 +2239,6 @@ The Fundamental Theorem of Calculus bridges differentiation and integration, sho
     \]
     This means the definite integral can be evaluated by finding any antiderivative of \( f \).
 \end{itemize}
-
-\subsection*{Interpretation}
-
-Together, these statements tell us that the process of summing infinitesimal contributions to find total accumulation (integration) and the process of finding the instantaneous rate of change (differentiation) are fundamentally linked. This profound insight lies at the heart of calculus, enabling the solution of countless problems in physics, engineering, and beyond.
 
 \section{Define definite integral as area under a curve}
 
