@@ -49,19 +49,25 @@
 
 \section{The purpose of these notes}
 
-In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian probability and hypothesis testing. The text is composed by seven chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience [...].\\
+In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian probability and hypothesis testing. The text is composed by seven chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience.\\
+
+Both probability as a predictive brach mathematics, and inferential - or descriptive - statistics, have deep historical roots. Indeed, nowadays they have become even trendy, given the broad set of fields dealing with data analysis. As one could guess, there are endless resources covering almost anything, rivers of ink have been written about such topics. However, after following many different courses at both bachelor and postgrad levels, and teaching such topics myself during almost three years, I have found that most resources belong, almost certainly, to one of the next three classes. Either ($i$) deeply mathematical, and hence out of reach for most of experimental or clinically oriented scientists, ($ii$) laboratory oriented, focusing on descriptive stats and experimental design, and hence missing most - if not all - of the mathematical definitions that enable simple computations, or ($iii$) with a direct focus towards programming and computation, relying on domain specific notebooks (Python, R, Matlab, SPSS, etc), and online resources with precompiled libraries for simulation, and again missing most of the mathematical and formal intuitions. Indeed, the misuse of statistics in experimental sciences is a patent topic in modern times, as mathematicians have extensively discussed during the last decades. The famous article by Ionnadis, \textit{"Why 90\% of published medical research is plain wrong"}, is just one example [...], and it may serve as motivation for a rigorous study.\\
+
+At this point I would like to challenge the reader for a second. I guess you may have heard already some intuition about concepts such as stochasticity, sampling, Gaussian, standard error, maybe statistic test, hypothesis, significance, p-value, etc. Most likely these terms are already somehow familiar, and you find them frequently used on your respective field. Meanwhile - and again, this is just a guess - they were rarely introduced or properly defined. Indeed, for most scientific or experimental bachelor degrees, they are note explained or introduced at all. Hence, developing high-quality, simple, engaging and accessible material for present and future generations, covering both probability and statistical inference from both a fundamental \textit{and} applied level, remains one of the urgent tasks of scientists and educators.\\
 
 This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are after. Additionally, all topics will be introduced alongside with some short historical discussion and context, as we believe that a purely technical knowledge just grasps the complexity - and beauty - of scientific topics. As one could anticipate already, a proper understanding of  ideas such as  uncertainty, variation, chance, probability, inference, etc, can be applied to describing a vast amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis and modelling in physics, biology, machine learning and quantum mechanics, among many others. \\
 
-First, we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}. We will introduce some basic concepts such as \textit{distribution}, \textit{uncertainty} and \textit{variability}, among others, and we will learn how to build \textit{expected values} - also referred to as \textit{estimator} quantities - that represent the information we have about such random measurements [...].
+In the first two chapters we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. From basics of measure theory we will motivate and introduce the mathematical definition of probability, and we will discuss the frequentist and bayesian approach, as the two main frameworks used in its interpretation. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}, that will enable us to make some simple computations and predictions. We will introduce some basic concepts such as \textit{distribution}, \textit{uncertainty} and \textit{variability}, among others, and we will learn how to build \textit{expected values} - also referred to as \textit{estimator} quantities - that represent the information we have about such random measurements.\\
 
-In further chapters we will address the difference between prediction and inference, and discuss a group of topics commonly referred to as \textit{hypothesis testing}. Here we will introduce the idea of hypothesis, how to quantify certainty and bias, how to model significance and some examples of hypothesis tests. Finally, we will briefly discuss more modern topics, such as bayesian statistics, linear models, stochasticity and Markov processes [...].\\
+Then we will cover the difference between prediction and inference, and discuss parameter estimation, as a way to reconstruct - or \textit{infer} - the underlying phenomena given a finite set of observations. Here we will see some general results about the law of large numbers, the central limit theorem, and we will mention the idea of likelihood and maximum likelihood estimation.\\
+
+In Chapter 3 we will revisit the difference between prediction and inference, and discuss a group of topics commonly referred to as \textit{hypothesis testing}. Here we will introduce the idea of hypothesis, how to quantify certainty and bias, how to model significance and some examples of hypothesis tests. In Chapter 4 will we will briefly discuss more modern topics, such as regression, linear models and correlation, bayesian statistic in Chapter 5, and finally stochasticity and Markov processes in Chapter 6.\\
 
 At the end of each chapter there will be a series of exercises and coding examples to illustrate and demonstrate the concepts discussed. To avoid misconceptions, let us emphasize here that both, probability and statistics are just branches of mathematics dealing chance and information in random events, \textit{much earlier} than computers, coding languages, Python, R or P-values were even conceived. The data-oriented, practical ways in which probability and statistics are usually taught, relying heavily on computation, is just a consequence of the fact that automatized measurements are nowadays available and trendy in modern times.\\
 
 \newpage
 
-Example textbooks covering introduction to probability and statistical inference, for further reading [...].
+Example textbooks covering introduction to probability and statistical inference, for further reading:
 
 \begin{itemize}
 \item A simple, intuitive introduction to statistics with few mathematical concepts is provided in Spiegelhalter's \textit{The Art of Statistics: How to Learn from Data} \cite{spiegelhalter2019art}. 
@@ -79,11 +85,11 @@ As one might expect, probability and related areas of study date back to very an
 
 Although classical Greek and Roman philosophers frequently debated the nature of chance and determinism, these discussions remained broad and philosophical, far from the systematic, mathematical discipline we now regard as scientific. As early as the time of Cicero, thinkers began distinguishing between events that occurred by chance and those believed to be governed by fate, foreshadowing later developments in probability theory [...].\\
 
-It was not until the late medieval and early Renaissance periods that more rigorous ideas began to emerge. Mathematicians such as Gerolamo Cardano (1501–1576) made foundational contributions to the mathematical treatment of chance by analyzing gambling problems and developing early probabilistic reasoning.
+It was not until the late medieval and early Renaissance periods that more rigorous ideas began to emerge. Mathematicians such as Gerolamo Cardano (1501–1576) made foundational contributions to the mathematical treatment of chance by analyzing gambling problems and developing early probabilistic reasoning. In such times, the idea of information and chance was not formalized as we know it today, and lacked mathematical language and rigour we will use in the present manuscript. If one goes to the original works of Cardano to grasp how was it to think and work in probability at such times, he will find a rather ambiguous symbolic system as the one depicted in figure [...].\\
 
 Probability was properly formalized as a mathematical discipline in the 17th century, most notably through the correspondence between Blaise Pascal and Pierre de Fermat. Their work on problems involving games of chance introduced key ideas such as combinatorics, expected value, and variance — concepts that remain central to our modern understanding of randomness, measurement, and information. These developments laid the groundwork for subsequent advances by Huygens, Bernoulli, Gauss, and others, which we will explore in later chapters. Bernoulli’s \textit{Ars Conjectandi} (1713) is often cited as the first formal textbook on probability [...]. \\
 
-\indent The modern approach to probability and its fundamental concepts are summarized in the axioms established by the Russian mathematician Andrey Kolmogorov, in the early 1930s [...]. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover this with a bit more detail in Chapter 2.\\
+\indent The modern approach to probability and its fundamental concepts are summarized in the axioms established by the Russian mathematician Andrey Kolmogorov, in the early 1930s [...]. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover this with a bit more detail in Chapter 2. Even though the formalization of probability and measure theory would date from such recent times, philosophical discussions about the interpretation and relation with the physical sciences date much earlier.\\
 
 \newpage
 
@@ -679,6 +685,41 @@ Once we have covered the idea of parameter estimation, sample distributions, and
 \item Compute p-value, the probability that \textit{we obtained a value at least as extreme as the one we obtained for our statistic test}.
 \item Accept or reject the null hypothesis, based on the p-value, which quantifies how probable was to see this result.
 \end{itemize}
+
+Here we should pause for some time, and we must review some basic concepts about integration and probabilities, as we will try to build a \textit{mathematically accurate definition} of significance and the idea of p-value. The idea of p-value was developed by Pearson in the 1920s - indeed, p comes from no other than Pearson-value, and it was built already on the framework of estimator quantities and statistic tests.\\
+
+Recall for a moment the idea of cumulative probability. Take some random variable with known distribution (e.g., the probability of obtaining 3 times heads in 10 tosses of a coin, which we know follows a Binomial distribution).
+\begin{equation}
+    P(x = x_0; n, k) = \binom{n}{x_0} p^x (1-p)^{n-x},
+\end{equation}
+
+And ask now what is the probability of obtaining \textit{more than} 3 times heads. We know that this is given by the cumulative probability, 
+\begin{equation}
+    P(x > x_0; n, k) = \sum_{x = x_0}^{x_n}\binom{n}{x_i} p^x (1-p)^{n-x},
+\end{equation}
+
+And the analogous in a continuous variable
+\begin{equation}
+    f(x > x_0) = \int_{x_0}^{\infty} \; f(x) dx \; .
+\end{equation}
+
+Now, with these concepts in mind, let's imagine a general, simple hypothesis testing scenario. We have some random variable $x$ following a gaussian distribution, and a hypothesized value $\mu$ for its true - or \textit{population} mean. As we saw in Chapter 3, we can make a set of measurements, and out of these compute an estimator, for instance, a sample mean $\bar{x}$. The real hypothesis testing problem is now to compare these two quantities, and somehow \textit{quantify} how similar - or different - they are. There are many ways of doing this, but one simple case is to compute just a difference between the two. 
+
+\begin{equation}
+	t = \frac{\bar{x} - \mu}{\sigma} \quad.
+\end{equation}
+
+This is normally called a $t$ statistic, or a $t$ \textit{statistic} test, which we will describe in detail in the next section. For now, just consider it a useful quantity representing how similar the true mean and the sample mean are to each other. Note that as $\mu$ tends to $\bar{x}$, the $t$ variable tends to zero.\\
+
+It is now, once we have computed a statistic, an informative quantity from our data, that we can ask: what was the probability, given that first assumption about the true mean, that we obtain this particular result for the $t$ variable? Note that the $t$ variable is computed out of our estimator $\bar{x}$, which was computed out of our random observations. Hence, the $t$ variable, and any other statistic test we could have built - a Fisher, a $\chi2$, etc -  \textit{is a random variable as well}, and it will follow \textit{some} distribution.\\
+
+Now, from our set of observations, we will obtain a specific value, $t_{obs}$, standing for \textit{observed} $t$. Then, the p-value is defined as the probability of obtaining a value \textit{at least as extreme} as the one we obtained for our statistic, given our hypothesized value for the true - or population - parameter. In other words, given the null hypothesis was true. The \textit{at least as extreme} part is what enables the cumulative distribution. \\
+
+\begin{equation}
+    p = P(t > t_{obs}) = \int_{t_{obs}}^{\infty} \; f(t) \; dt,
+\end{equation}
+
+For the computation of the numerical value we just need to know what is the probability density of the $t$ variable. This way, we are just left with solving a simple integral [...].
 
 \newpage
 
@@ -1314,7 +1355,7 @@ Hidden Markov models.
 \appendix
 
 % Chapter: Vectors and matrices
-\chapter{Algebra, vectors and matrices: a quick review}
+\chapter{Vectors and matrices: a quick review}
 
 \section{The roots and rise of algebra}
 
@@ -1421,7 +1462,9 @@ Once we understand the idea of vector, base and linear combination, we can try t
 
 
 % Chapter: Derivatives
-\chapter{Calculus, functions and derivatives: a quick review}
+\chapter{Functions and derivatives: a quick review}
+
+\section{From curves to calculus: functions}
 
 At its heart, calculus is the mathematics of change. It arose not from abstraction alone but from an urgent need to describe motion, growth, and the ever-shifting patterns of the natural world. Long before the formalism of equations and limits, ancient civilizations---including the Greeks, Indians, and Chinese---grappled with questions of geometry, area, and continuity. The Greek philosopher Zeno of Elea (5th century BCE) famously posed paradoxes about motion and infinity---such as the arrow that never reaches its target or Achilles who cannot overtake the tortoise---highlighting the conceptual difficulties of change and division.\\
 
@@ -1430,8 +1473,6 @@ The seeds of calculus began to germinate more concretely in the late medieval an
 Central to the language of calculus is the concept of a \textbf{function}---a rule or relationship that assigns to each input a single output. While the basic idea can be traced back to ancient times (e.g., geometric ratios in Euclid), the function began to take formal shape in the 17th and 18th centuries. Descartes’ invention of analytic geometry (linking algebra to geometry) made it possible to graph equations as curves. Later, \textbf{Leonhard Euler} (1707--1783), perhaps the most prolific mathematician of all time, introduced the modern notation for functions, such as $f(x)$, and explored their properties across a wide range of mathematical and physical contexts. Functions became the foundation for modeling everything from the arc of a cannonball to the vibrations of a violin string.\\
 
 In calculus, we study how functions behave, how they change, and how we can understand their subtleties through two great operations: \textbf{differentiation} and \textbf{integration}. Differentiation captures the idea of instantaneous change---the speed of a falling apple or the slope of a curve at a single point. Newton used it to describe acceleration and the motion of celestial bodies, revolutionizing classical mechanics. Integration, on the other hand, concerns accumulation---how quantities build up over time or space. The method of exhaustion used by \textbf{Archimedes} (287--212 BCE) was an early form of integration, but it was Newton and Leibniz who unified the concept, showing that differentiation and integration are inverse processes---a profound insight now known as the \textbf{Fundamental Theorem of Calculus}.\\
-
-\section{From curves to calculus: functions}
 
 At its heart, calculus is the mathematics of change. It arose not from abstraction alone but from an urgent need to describe motion, growth, and the ever-shifting patterns of the natural world. Long before the formalism of equations and limits, ancient civilizations---including the Greeks, Indians, and Chinese---grappled with questions of geometry, area, and continuity. The Greek philosopher Zeno of Elea (5th century BCE) famously posed paradoxes about motion and infinity---such as the arrow that never reaches its target or Achilles who cannot overtake the tortoise---highlighting the conceptual difficulties of change and division.\\
 
@@ -1446,11 +1487,9 @@ In calculus, we study how functions behave, how they change, and how we can unde
 
 The seeds of calculus began to germinate more concretely in the late medieval and early Renaissance periods. The Indian mathematician Bhāskara II (12th century) hinted at the idea of instantaneous rates of change, and later, the French philosopher René Descartes (1596--1650) and the English mathematician John Wallis (1616--1703) laid important groundwork in algebra and infinite series. But calculus, as a coherent system, was born in the late 17th century through the independent and nearly simultaneous efforts of \textbf{Isaac Newton} (1643--1727) in England and \textbf{Gottfried Wilhelm Leibniz} (1646--1716) in Germany. Newton, motivated by problems in physics---such as planetary motion and gravitation---developed what he called ``the method of fluxions,'' focusing on rates of change and motion. Leibniz, meanwhile, introduced a notational system and conceptual clarity that would become the foundation for the modern symbolic language of calculus. His elegant integral sign $\int$ and differential notation $dx$, $dy$ remain standard to this day.\\
 
-\section{The idea of change, slope and minima}
+\section{Change, slope and minima: derivatives}
 
-At its heart, calculus is the mathematics of change. It arose not from abstraction alone but from an urgent need to describe motion, growth, and the ever-shifting patterns of the natural world. Long before the formalism of equations and limits, ancient civilizations---including the Greeks, Indians, and Chinese---grappled with questions of geometry, area, and continuity. The Greek philosopher Zeno of Elea (5th century BCE) famously posed paradoxes about motion and infinity---such as the arrow that never reaches its target or Achilles who cannot overtake the tortoise---highlighting the conceptual difficulties of change and division.\\
-
-In calculus, we study how functions behave, how they change, and how we can understand their subtleties through two great operations: \textbf{differentiation} and \textbf{integration}. Differentiation captures the idea of instantaneous change---the speed of a falling apple or the slope of a curve at a single point. Newton used it to describe acceleration and the motion of celestial bodies, revolutionizing classical mechanics. Integration, on the other hand, concerns accumulation---how quantities build up over time or space. The method of exhaustion used by \textbf{Archimedes} (287--212 BCE) was an early form of integration, but it was Newton and Leibniz who unified the concept, showing that differentiation and integration are inverse processes---a profound insight now known as the \textbf{Fundamental Theorem of Calculus}.\\
+Once we are familiar with the idea of functions as a way of representing the relation between two variables, we can try to model how functions \textit{change}. As already mentioned, this builds upon the work of Newton and Leibniz, although the actual mathematical language we will use was developed much later. Consider we have a function $f(x)$, like the one represented in the figure below. Regardless of the specific shape, or dependency, of $f(x)$ we could pick a point $x_0$, and move a small amount $\Delta x$ along the $x$ axis, to $x_0 + \Delta x$. At this point, we could compute how much that change impacts the $y$ axis, just by evaluating $f(x_0)$, and after the displacement $f(x_0 + \Delta x)$
 
 \begin{figure}[ht]
     \centering
@@ -1459,15 +1498,21 @@ In calculus, we study how functions behave, how they change, and how we can unde
     \label{fig:functions_point_2}
 \end{figure}
 
-The seeds of calculus began to germinate more concretely in the late medieval and early Renaissance periods. The Indian mathematician Bhāskara II (12th century) hinted at the idea of instantaneous rates of change, and later, the French philosopher René Descartes (1596--1650) and the English mathematician John Wallis (1616--1703) laid important groundwork in algebra and infinite series. But calculus, as a coherent system, was born in the late 17th century through the independent and nearly simultaneous efforts of \textbf{Isaac Newton} (1643--1727) in England and \textbf{Gottfried Wilhelm Leibniz} (1646--1716) in Germany. Newton, motivated by problems in physics---such as planetary motion and gravitation---developed what he called ``the method of fluxions,'' focusing on rates of change and motion. Leibniz, meanwhile, introduced a notational system and conceptual clarity that would become the foundation for the modern symbolic language of calculus. His elegant integral sign $\int$ and differential notation $dx$, $dy$ remain standard to this day.\\
+To evaluate how fast a function grows - or decreases, to capturing the idea of \emph{change}, we could just compute the ratio if the difference $\Delta x$, and the corresponding change in $f(x)$, 
+\begin{equation}
+	\frac{f(x + \Delta x) - f(x)}{\Delta x} \quad.
+\end{equation}
 
-\section{Derivatives}
+The derivative of \( f \) at a point \( x_0 \) is defined just as that ratio, for an infinitesimally small $\Delta x$:
+\begin{equation}
+	f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\end{equation}
 
-In calculus, we study how functions behave, how they change, and how we can understand their subtleties through two great operations: \textbf{differentiation} and \textbf{integration}. Differentiation captures the idea of instantaneous change---the speed of a falling apple or the slope of a curve at a single point. Newton used it to describe acceleration and the motion of celestial bodies, revolutionizing classical mechanics. Integration, on the other hand, concerns accumulation---how quantities build up over time or space. The method of exhaustion used by \textbf{Archimedes} (287--212 BCE) was an early form of integration, but it was Newton and Leibniz who unified the concept, showing that differentiation and integration are inverse processes---a profound insight now known as the \textbf{Fundamental Theorem of Calculus}.\\
-
-The development of calculus marked a turning point in intellectual history. It gave scientists, engineers, and economists the tools to model the world with precision and predict its behavior with confidence. The mathematical machinery behind electricity, fluid dynamics, statistics, and quantum mechanics all rely on the principles laid down by Newton, Leibniz, Euler, and their successors. Yet beyond its utility, calculus offers something more enduring: a glimpse into the deep continuity that underlies the universe, where motion and form, quantity and change, are all expressions of a single, evolving logic. Through calculus and the language of functions, we do not merely calculate---we begin to understand.\\
-
-The derivative is a foundational concept in calculus, capturing the idea of \emph{change}. It measures how a function responds to small variations in its input. Intuitively, if a function \( f(x) \) describes a quantity, then its derivative \( f'(x) \) tells us how fast that quantity is changing at each point.
+This expression represents the slope of the tangent line to \( f(x) \) at the point \( x_0 \). If the limit exists, \( f \) is said to be \emph{differentiable} at \( x \). It measures how a function responds to small variations in its input. Intuitively, if a function \( f(x) \) describes a quantity, then its derivative \( f'(x) \) tells us how fast that quantity is changing at each point. There are several notations for the derivative, listed as follows:
+\[
+f'(x), \quad \frac{df}{dx}, \quad \frac{dy}{dx} \quad \text{(if } y = f(x) \text{)}
+\]
+Each emphasizes a slightly different aspect. The first notation, attributed to Newton, represents $f'(x)$ as a function, while Leibniz notation $df / dx$, express it as a rate of change, the ratio of increments along the function $\Delta f$ over $\Delta x$. Notations may change across books and literature sources; here we will denote $\Delta$ an increment of arbitrary size, and we will call it \textit{infinitesimal}, or \textit{differential}, when we write it as $dx$
 
 \begin{figure}[ht]
     \centering
@@ -1476,17 +1521,13 @@ The derivative is a foundational concept in calculus, capturing the idea of \emp
     \label{fig:functions_point_2_shadow}
 \end{figure}
 
-Let \( f(x) \) be a real-valued function. The derivative of \( f \) at a point \( x \) is defined as the limit:
-\[
-f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
-\]
-This expression represents the slope of the tangent line to the graph of \( f \) at the point \( x \). If the limit exists, \( f \) is said to be \emph{differentiable} at \( x \).\\
+Hence, we can characterize the equilibrium - or \textit{stationary} - points of a function, its maxima and minima, just by the condition
 
-There are several notations for the derivative:
-\[
-f'(x), \quad \frac{df}{dx}, \quad \frac{dy}{dx} \quad \text{(if } y = f(x) \text{)}
-\]
-Each emphasizes a slightly different aspect—whether viewing the derivative as a function, as a rate of change, or as a formal operator.
+\begin{equation}
+	f'(x) = 0 \quad .
+\end{equation}
+
+Wherever a change along $x$ does not affect $f(x)$, meaning $f(x_0 + \Delta x) - f(x_0) = 0$, will be either a maximum or a minimum, and we know that there is no growth around that point $x_0$.\\
 
 The development of calculus marked a turning point in intellectual history. It gave scientists, engineers, and economists the tools to model the world with precision and predict its behavior with confidence. The mathematical machinery behind electricity, fluid dynamics, statistics, and quantum mechanics all rely on the principles laid down by Newton, Leibniz, Euler, and their successors. Yet beyond its utility, calculus offers something more enduring: a glimpse into the deep continuity that underlies the universe, where motion and form, quantity and change, are all expressions of a single, evolving logic. Through calculus and the language of functions, we do not merely calculate---we begin to understand.\\
 
@@ -1504,6 +1545,8 @@ f'(x) = \lim_{\Delta x \to 0} \frac{(x + \Delta x)^2 - x^2}{\Delta x}
 Thus, the derivative of \( x^2 \) is \( 2x \), meaning the rate of change increases linearly with \( x \).
 
 The development of calculus marked a turning point in intellectual history. It gave scientists, engineers, and economists the tools to model the world with precision and predict its behavior with confidence. The mathematical machinery behind electricity, fluid dynamics, statistics, and quantum mechanics all rely on the principles laid down by Newton, Leibniz, Euler, and their successors. Yet beyond its utility, calculus offers something more enduring: a glimpse into the deep continuity that underlies the universe, where motion and form, quantity and change, are all expressions of a single, evolving logic. Through calculus and the language of functions, we do not merely calculate---we begin to understand.\\
+
+\section{Divergence and gradient: differential calculus}
 
 
 
