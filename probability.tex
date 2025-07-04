@@ -171,6 +171,7 @@ This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our n
 As we said, this was just a warmup example, and we will visit these definitions in further chapters when we introduce the idea of parameter estimation, and we will see in detail different ways to define and interpret them [...]. \\
 
 
+
 % Chapter - Probability and random events
 \chapter{Probability and random events}
 
@@ -408,355 +409,26 @@ The probability density function is:
     \label{fig:exponential1}
 \end{figure}
 
+\newpage
 
+\subsection*{Exercises}
+
+\textbf{1.} Exercise [...].\\
+
+\textbf{2.} Exercise [...].\\
+
+\textbf{3.} Exercise [...].\\
 
 \newpage
 
-\section*{Exercises}
+\subsection*{Solutions}
 
-% Bernoulli trials
-\subsection*{Bernoulli trials}
+\textbf{1.} Solution [...].\\
 
-\begin{enumerate}
+\textbf{2.} Solution [...].\\
 
-    \item A single coin is tossed once. What is the probability of getting heads? \\
-    
-    \textbf{Solution:} \\
-    
-    In a Bernoulli trial, there are exactly two possible outcomes: success or failure. Here, "success" could mean getting heads, and "failure" means tails. For a fair coin, both outcomes are equally likely. Therefore, the probability \(p\) of success (getting heads) is:
-    \[
-    p = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}} = \frac{1}{2} = 0.5.
-    \]
-    So, the probability of getting heads in one toss is \(\boxed{0.5}\).
+\textbf{3.} Solution [...].\\
 
-    \item A biased coin is designed so that the probability of heads is 0.7. What is the probability of getting tails when the coin is tossed once? \\
-    
-    \textbf{Solution:} \\
-    
-    Since the coin can only land heads or tails, these two outcomes are complementary events. This means:
-    \[
-    P(\text{tails}) = 1 - P(\text{heads}).
-    \]
-    Given \(P(\text{heads}) = 0.7\), we calculate:
-    \[
-    P(\text{tails}) = 1 - 0.7 = 0.3.
-    \]
-    Therefore, the probability of getting tails is \(\boxed{0.3}\).
-
-    \item A student answers a true/false question by guessing randomly. What is the probability that the student answers correctly? \\
-    
-    \textbf{Solution:} \\
-    
-    A true/false question has two possible answers, only one of which is correct. Since the student guesses without any knowledge, each answer has an equal chance of being selected. Therefore:
-    \[
-    P(\text{correct}) = \frac{1}{2} = 0.5.
-    \]
-    So, the probability the student guesses correctly is \(\boxed{0.5}\).
-    
-\end{enumerate}
-
-% Binomial distribution
-\subsection*{Binomial distribution}
-
-\begin{enumerate}
-
-    \item A fair coin is tossed 5 times. What is the probability of getting exactly 3 heads? \\
-    
-    \textbf{Solution:} \\
-    
-    When we perform multiple Bernoulli trials (tosses), the number of successes (heads) follows a binomial distribution. The probability mass function (PMF) for the binomial distribution is:
-    \[
-    P(X = k) = \binom{n}{k} p^k (1-p)^{n-k},
-    \]
-    where:
-    \begin{itemize}
-        \item \(n = 5\) is the number of trials (tosses),
-        \item \(k = 3\) is the number of successes (heads),
-        \item \(p = 0.5\) is the probability of success in each trial.
-    \end{itemize}
-    First, calculate the binomial coefficient \(\binom{5}{3}\), which counts how many ways to get exactly 3 heads in 5 tosses:
-    \[
-    \binom{5}{3} = \frac{5!}{3! (5-3)!} = \frac{5 \times 4 \times 3!}{3! \times 2!} = \frac{20}{2} = 10.
-    \]
-    Now, compute the full probability:
-    \[
-    P(X=3) = 10 \times (0.5)^3 \times (0.5)^2 = 10 \times 0.125 \times 0.25 = 10 \times 0.03125 = 0.3125.
-    \]
-    Therefore, the probability of exactly 3 heads in 5 tosses is \(\boxed{0.3125}\) or 31.25\%.
-
-    \item Suppose a basketball player takes 4 free throws, and the probability of scoring each free throw is 0.75. What is the probability that the player scores at least 3 times? \\
-    
-    \textbf{Solution:} \\
-    
-    Here:
-    \[
-    n = 4, \quad p = 0.75, \quad \text{and we want } P(X \geq 3).
-    \]
-    Since "at least 3 times" means either 3 or 4 successful shots, we calculate:
-    \[
-    P(X \geq 3) = P(X=3) + P(X=4).
-    \]
-    Calculate each probability using the binomial formula:
-    \[
-    P(X=3) = \binom{4}{3} (0.75)^3 (0.25)^1 = 4 \times 0.421875 \times 0.25 = 4 \times 0.10546875 = 0.421875,
-    \]
-    \[
-    P(X=4) = \binom{4}{4} (0.75)^4 (0.25)^0 = 1 \times 0.31640625 \times 1 = 0.31640625.
-    \]
-    Adding these:
-    \[
-    P(X \geq 3) = 0.421875 + 0.31640625 = 0.73828125.
-    \]
-    So, the player has about a \(\boxed{73.8\%}\) chance of scoring at least 3 out of 4 free throws.
-
-    \item In 10 trials, each with a success probability of 0.2, find the probability that there are no successes. \\
-    
-    \textbf{Solution:} \\
-    
-    This is the probability of zero successes in 10 independent trials with success probability \(p=0.2\). Using the binomial PMF:
-    \[
-    P(X=0) = \binom{10}{0} (0.2)^0 (0.8)^{10} = 1 \times 1 \times 0.1073741824 = 0.1073741824.
-    \]
-    So, the probability of no successes in 10 trials is approximately \(\boxed{0.1074}\) or 10.74\%.
-    
-\end{enumerate}
-
-% Poisson distribution
-\subsection*{Poisson distribution}
-
-\begin{enumerate}
-
-    \item The average number of emails a person receives per hour is 3. What is the probability that exactly 5 emails arrive in one hour? \\
-    
-    \textbf{Solution:} \\
-    
-    The Poisson distribution models the probability of a given number of events happening in a fixed interval of time if these events occur with a known constant mean rate and independently of the time since the last event. The PMF of the Poisson distribution is:
-    \[
-    P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!},
-    \]
-    where \(\lambda\) is the average number of events per interval and \(k\) is the number of events we want to find the probability for. Here:
-    \[
-    \lambda = 3, \quad k = 5.
-    \]
-    Calculate:
-    \[
-    P(X=5) = \frac{3^5 e^{-3}}{5!} = \frac{243 \times e^{-3}}{120}.
-    \]
-    Use the approximate value \(e^{-3} \approx 0.04979\):
-    \[
-    P(X=5) \approx \frac{243 \times 0.04979}{120} = \frac{12.10197}{120} = 0.10085.
-    \]
-    So, the probability of receiving exactly 5 emails in one hour is approximately \(\boxed{0.1009}\) or 10.09\%.
-
-    \item On average, 2 cars pass a checkpoint per minute. What is the probability that no cars pass in a given minute? \\
-    
-    \textbf{Solution:} \\
-    
-    Using Poisson distribution with \(\lambda = 2\) and \(k=0\):
-    \[
-    P(X=0) = \frac{2^0 e^{-2}}{0!} = e^{-2} \approx 0.1353.
-    \]
-    Thus, the probability that no cars pass in one minute is about \(\boxed{0.1353}\) or 13.53\%.
-
-    \item Calls arrive at a call center at an average rate of 6 per hour. Find the probability of receiving more than 7 calls in one hour. \\
-    
-    \textbf{Solution:} \\
-    
-    Here, \(\lambda = 6\). We want:
-    \[
-    P(X > 7) = 1 - P(X \leq 7) = 1 - \sum_{k=0}^7 \frac{6^k e^{-6}}{k!}.
-    \]
-    This cumulative probability \(P(X \leq 7)\) can be found using a Poisson table or a calculator. For example, the sum is approximately 0.8666, so:
-    \[
-    P(X > 7) = 1 - 0.8666 = 0.1334.
-    \]
-    Therefore, the chance of more than 7 calls in an hour is roughly \(\boxed{13.34\%}\).
-    
-\end{enumerate}
-
-% Uniform distribution
-\subsection*{Uniform distribution}
-
-\begin{enumerate}
-
-    \item A random variable \(X\) is uniformly distributed between 0 and 10. What is the probability that \(X\) lies between 3 and 7? \\
-    
-    \textbf{Solution:} \\
-    
-    The uniform distribution on \([a,b]\) means \(X\) is equally likely to take any value in this interval. The probability density function (pdf) is:
-    \[
-    f_X(x) = \frac{1}{b-a}, \quad a \leq x \leq b.
-    \]
-    The probability that \(X\) is between \(c\) and \(d\) (with \(a \leq c < d \leq b\)) is the area under the pdf from \(c\) to \(d\):
-    \[
-    P(c \leq X \leq d) = \int_c^d f_X(x) \, dx = \frac{d - c}{b - a}.
-    \]
-    Plug in \(a=0, b=10, c=3, d=7\):
-    \[
-    P(3 \leq X \leq 7) = \frac{7 - 3}{10 - 0} = \frac{4}{10} = 0.4.
-    \]
-    Thus, the probability is \(\boxed{0.4}\) or 40\%.
-
-    \item If \(X \sim U(-5,5)\), what is the probability that \(X\) is less than or equal to 0? \\
-    
-    \textbf{Solution:} \\
-    
-    The pdf for \(X\) is constant between -5 and 5:
-    \[
-    f_X(x) = \frac{1}{5 - (-5)} = \frac{1}{10} = 0.1.
-    \]
-    The probability that \(X \leq 0\) corresponds to the length from -5 up to 0:
-    \[
-    P(X \leq 0) = \frac{0 - (-5)}{5 - (-5)} = \frac{5}{10} = 0.5.
-    \]
-    So there is a 50\% chance \(X\) is less than or equal to zero, i.e., \(\boxed{0.5}\).
-
-    \item Find the expected value (mean) and variance of a uniform random variable on \([2,8]\). \\
-    
-    \textbf{Solution:} \\
-    
-    For a uniform distribution \(U(a,b)\), the expected value and variance are given by:
-    \[
-    E[X] = \frac{a + b}{2}, \quad \mathrm{Var}(X) = \frac{(b - a)^2}{12}.
-    \]
-    Substitute \(a=2\) and \(b=8\):
-    \[
-    E[X] = \frac{2 + 8}{2} = \frac{10}{2} = 5,
-    \]
-    \[
-    \mathrm{Var}(X) = \frac{(8 - 2)^2}{12} = \frac{6^2}{12} = \frac{36}{12} = 3.
-    \]
-    So the expected value is \(\boxed{5}\) and the variance is \(\boxed{3}\).
-    
-\end{enumerate}
-
-% Gaussian distribution
-\subsection*{Gaussian distribution}
-
-\begin{enumerate}
-
-    \item A random variable \(X\) is normally distributed with mean \(\mu = 100\) and standard deviation \(\sigma = 15\). Find the probability that \(X\) is less than or equal to 115. \\
-    
-    \textbf{Solution:} \\
-    
-    To find this probability, we standardize the variable \(X\) to a standard normal variable \(Z\) which has mean 0 and standard deviation 1. The standardization formula is:
-    \[
-    Z = \frac{X - \mu}{\sigma}.
-    \]
-    For \(X = 115\):
-    \[
-    Z = \frac{115 - 100}{15} = \frac{15}{15} = 1.
-    \]
-    The probability we want is:
-    \[
-    P(X \leq 115) = P(Z \leq 1).
-    \]
-    Using the standard normal distribution table, \(P(Z \leq 1) = 0.8413\).
-    
-    Therefore, there is an 84.13\% chance that \(X \leq 115\), so the answer is \(\boxed{0.8413}\).
-
-    \item For a standard normal random variable \(Z\), find the probability that \(Z\) lies between -1.5 and 0.5. \\
-    
-    \textbf{Solution:} \\
-    
-    The probability that \(Z\) is between two values \(a\) and \(b\) is:
-    \[
-    P(a \leq Z \leq b) = P(Z \leq b) - P(Z \leq a).
-    \]
-    Look up the values in the standard normal table:
-    \[
-    P(Z \leq 0.5) = 0.6915, \quad P(Z \leq -1.5) = 0.0668.
-    \]
-    So:
-    \[
-    P(-1.5 \leq Z \leq 0.5) = 0.6915 - 0.0668 = 0.6247.
-    \]
-    Thus, the probability is approximately \(\boxed{0.6247}\) or 62.47\%.
-
-    \item Find the 90th percentile (also called the 0.9 quantile) of a normal distribution with mean 50 and variance 16. \\
-    
-    \textbf{Solution:} \\
-    
-    The standard deviation \(\sigma = \sqrt{16} = 4\). The 90th percentile of a normal distribution corresponds to the value \(x\) such that:
-    \[
-    P(X \leq x) = 0.9.
-    \]
-    First, find the corresponding z-score \(z_{0.9}\) for the standard normal distribution. From tables, \(z_{0.9} = 1.2816\).
-    Then convert back to the original scale:
-    \[
-    x = \mu + z_{0.9} \sigma = 50 + 1.2816 \times 4 = 50 + 5.1264 = 55.13.
-    \]
-    Hence, the 90th percentile is approximately \(\boxed{55.13}\).
-    
-\end{enumerate}
-
-% Exponential distribution
-\subsection*{Exponential distribution}
-
-\begin{enumerate}
-
-    \item The lifetime of a certain type of light bulb follows an exponential distribution with a mean lifetime of 1000 hours. What is the probability that a randomly chosen bulb lasts more than 1200 hours? \\
-    
-    \textbf{Solution:} \\
-    
-    The exponential distribution has the probability density function:
-    \[
-    f_X(x) = \lambda e^{-\lambda x}, \quad x \geq 0,
-    \]
-    where \(\lambda\) is the rate parameter. The mean lifetime is related to \(\lambda\) by:
-    \[
-    \text{mean} = \frac{1}{\lambda}.
-    \]
-    Given the mean is 1000 hours:
-    \[
-    \lambda = \frac{1}{1000} = 0.001.
-    \]
-    The probability that the bulb lasts more than \(t\) hours is:
-    \[
-    P(X > t) = e^{-\lambda t}.
-    \]
-    For \(t = 1200\):
-    \[
-    P(X > 1200) = e^{-0.001 \times 1200} = e^{-1.2} \approx 0.3012.
-    \]
-    Therefore, there is about a \(\boxed{30.12\%}\) chance the bulb lasts longer than 1200 hours.
-
-    \item For the same light bulb, what is the probability that it lasts less than 800 hours? \\
-    
-    \textbf{Solution:} \\
-    
-    The probability that the lifetime is less than \(t\) is:
-    \[
-    P(X < t) = 1 - e^{-\lambda t}.
-    \]
-    For \(t = 800\):
-    \[
-    P(X < 800) = 1 - e^{-0.001 \times 800} = 1 - e^{-0.8} \approx 1 - 0.4493 = 0.5507.
-    \]
-    So, the bulb has a \(\boxed{55.07\%}\) chance of lasting less than 800 hours.
-
-    \item Find the median lifetime of the bulb. \\
-    
-    \textbf{Solution:} \\
-    
-    The median \(m\) is the time at which half of the bulbs fail, i.e.:
-    \[
-    P(X \leq m) = 0.5.
-    \]
-    Using the cumulative distribution function (CDF):
-    \[
-    0.5 = 1 - e^{-\lambda m} \implies e^{-\lambda m} = 0.5.
-    \]
-    Taking natural logarithms:
-    \[
-    -\lambda m = \ln(0.5) \implies m = -\frac{\ln(0.5)}{\lambda}.
-    \]
-    Since \(\ln(0.5) = -0.6931\), and \(\lambda = 0.001\):
-    \[
-    m = \frac{0.6931}{0.001} = 693.1 \text{ hours}.
-    \]
-    So, the median lifetime is approximately \(\boxed{693.1}\) hours.
-\end{enumerate}
 
 
 % Chapter - Parameter estimation
@@ -950,257 +622,25 @@ For binary response data, logistic regression models the log-odds as a linear fu
 
 MLE is used to estimate the coefficients $\beta_0, \beta_1$ by maximizing the binomial log-likelihood.
 
+\newpage
 
+\subsection*{Exercises}
+
+\textbf{1.} Exercise [...].\\
+
+\textbf{2.} Exercise [...].\\
+
+\textbf{3.} Exercise [...].\\
 
 \newpage
 
-\section*{Exercises}
+\subsection*{Solutions}
 
-% Parameter estimation
-\subsection*{Parameter estimation}
+\textbf{1.} Solution [...].\\
 
-\begin{enumerate}
+\textbf{2.} Solution [...].\\
 
-    \item \textbf{Estimating the average height of students:} \\
-    A school wants to estimate the average height of its students. They randomly measure the heights of 30 students and calculate the average height to be 160 cm with a sample standard deviation of 10 cm. Estimate the population mean height and explain the meaning of your estimate. \\
-    
-    \textbf{Solution:} \\
-    We have a sample of 30 students with average height \(\bar{x} = 160\) cm. The goal is to estimate the true average height \(\mu\) of all students. The best estimate of \(\mu\) from this sample is simply the sample mean:
-    \[
-    \hat{\mu} = \bar{x} = 160 \text{ cm}.
-    \]
-    This means we use 160 cm as our best guess for the average height of the entire student population. Because we only measured 30 students (a sample), this is an estimate, not the exact true mean, but it is the most reasonable value based on the data.
-
-    \item \textbf{Estimating the probability of success in a trial:} \\
-    A factory produces light bulbs, and a quality control engineer tests 50 bulbs, finding that 5 bulbs are defective. Estimate the probability that a randomly selected bulb is defective. \\
-    
-    \textbf{Solution:} \\
-    The total bulbs tested: \(n = 50\). Number defective (failures): \(x = 5\). We want to estimate the probability \(p\) of a bulb being defective. The natural estimate is the sample proportion:
-    \[
-    \hat{p} = \frac{x}{n} = \frac{5}{50} = 0.1.
-    \]
-    This means we estimate that 10\% of the bulbs are defective. This estimate assumes the sample is representative of the entire production.
-
-    \item \textbf{Estimating the variance of daily sales:} \\
-    A store records the number of sales for 7 days as: 20, 22, 18, 25, 24, 20, 19. Estimate the variance of daily sales. \\
-    
-    \textbf{Solution:} \\
-    First, find the sample mean:
-    \[
-    \bar{x} = \frac{20 + 22 + 18 + 25 + 24 + 20 + 19}{7} = \frac{148}{7} \approx 21.14.
-    \]
-    Next, calculate the squared deviations from the mean:
-    \[
-    (20 - 21.14)^2 = 1.30, \quad (22 - 21.14)^2 = 0.74, \quad (18 - 21.14)^2 = 9.86,
-    \]
-    \[
-    (25 - 21.14)^2 = 14.86, \quad (24 - 21.14)^2 = 8.18, \quad (20 - 21.14)^2 = 1.30, \quad (19 - 21.14)^2 = 4.58.
-    \]
-    Sum of squared deviations:
-    \[
-    S = 1.30 + 0.74 + 9.86 + 14.86 + 8.18 + 1.30 + 4.58 = 40.82.
-    \]
-    The sample variance (unbiased estimator) is:
-    \[
-    s^2 = \frac{S}{n-1} = \frac{40.82}{6} \approx 6.80.
-    \]
-    So, the estimated variance of daily sales is \(\boxed{6.80}\).
-
-\end{enumerate}
-
-% Central limit theorem
-\subsection*{Central limit theorem}
-
-\begin{enumerate}
-
-    \item \textbf{Average weight of apples:} \\
-    Suppose the weight of apples in an orchard has an unknown distribution with mean 150 grams and standard deviation 20 grams. A random sample of 36 apples is taken. What is the approximate probability that the average weight of these apples is between 145 and 155 grams? \\
-    
-    \textbf{Solution:} \\
-    Even if the original weight distribution is unknown, the Central Limit Theorem (CLT) tells us that the sampling distribution of the sample mean \(\bar{X}\) for a sample size \(n=36\) is approximately normal with:
-    \[
-    \mu_{\bar{X}} = \mu = 150, \quad \sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} = \frac{20}{\sqrt{36}} = \frac{20}{6} = 3.33.
-    \]
-    We standardize the bounds:
-    \[
-    Z_1 = \frac{145 - 150}{3.33} = \frac{-5}{3.33} \approx -1.5,
-    \]
-    \[
-    Z_2 = \frac{155 - 150}{3.33} = \frac{5}{3.33} \approx 1.5.
-    \]
-    Using standard normal tables:
-    \[
-    P(-1.5 \leq Z \leq 1.5) = P(Z \leq 1.5) - P(Z \leq -1.5) = 0.9332 - 0.0668 = 0.8664.
-    \]
-    So, there is about an 86.64\% chance that the sample average weight is between 145 and 155 grams.
-
-    \item \textbf{Average waiting time at a bus stop:} \\
-    The waiting time for buses is skewed but has mean 10 minutes and standard deviation 5 minutes. If 50 people independently measure their waiting times. What is the approximate probability that the average waiting time of these 50 people is more than 12 minutes? \\
-    
-    \textbf{Solution:} \\
-    By the CLT, the sample mean \(\bar{X}\) is approximately normal with:
-    \[
-    \mu_{\bar{X}} = 10, \quad \sigma_{\bar{X}} = \frac{5}{\sqrt{50}} = \frac{5}{7.07} \approx 0.707.
-    \]
-    Standardize 12:
-    \[
-    Z = \frac{12 - 10}{0.707} = \frac{2}{0.707} \approx 2.83.
-    \]
-    Look up the standard normal table:
-    \[
-    P(Z > 2.83) = 1 - P(Z \leq 2.83) = 1 - 0.9977 = 0.0023.
-    \]
-    So, there is a 0.23\% chance that the average waiting time exceeds 12 minutes.
-
-    \item \textbf{Average number of daily customers:} \\
-    A store knows the daily number of customers varies widely, with mean 100 and standard deviation 30. If we take a random sample of 64 days, what is the probability that the average customers per day is between 95 and 105? \\
-    
-    \textbf{Solution:} \\
-    Sample mean distribution approximately normal with:
-    \[
-    \mu_{\bar{X}} = 100, \quad \sigma_{\bar{X}} = \frac{30}{\sqrt{64}} = \frac{30}{8} = 3.75.
-    \]
-    Standardize the bounds:
-    \[
-    Z_1 = \frac{95 - 100}{3.75} = -1.33, \quad Z_2 = \frac{105 - 100}{3.75} = 1.33.
-    \]
-    From standard normal tables:
-    \[
-    P(-1.33 \leq Z \leq 1.33) = 0.9082 - 0.0918 = 0.8164.
-    \]
-    Therefore, there's about an 81.64\% chance the sample mean is between 95 and 105 customers.
-
-\end{enumerate}
-
-% Law of large numbers
-\subsection*{Law of large numbers}
-
-\begin{enumerate}
-
-    \item \textbf{Coin toss average:} \\
-    You toss a fair coin many times, recording the proportion of heads. According to the Law of Large Numbers (LLN), what happens to this proportion as the number of tosses increases? Explain in simple terms. \\
-    
-    \textbf{Solution:} \\
-    The LLN states that as the number of tosses \(n\) becomes very large, the sample proportion of heads will get closer and closer to the true probability \(p = 0.5\). In simple terms, if you toss the coin only a few times, the proportion of heads may be very different from 0.5, but if you toss it thousands of times, the proportion of heads will be almost exactly 50\%. This happens because random fluctuations average out over many trials.
-
-    \item \textbf{Average daily sales convergence:} \\
-    A store records daily sales, which vary widely, with an unknown distribution but average 200 sales/day. How does the Law of Large Numbers help the store owner understand the average sales if they calculate the average over many days? \\
-    
-    \textbf{Solution:} \\
-    The LLN guarantees that if the store owner calculates the average sales over a large number of days, the average they get will be very close to the true average sales per day (which is 200). So, even if sales fluctuate a lot from day to day, the long-term average will stabilize and become predictable when many days are included.
-
-    \item \textbf{Estimating average waiting time at a clinic:} \\
-    The waiting time for patients varies, but the average is 30 minutes. If a patient measures their waiting time many times over different visits, what does the Law of Large Numbers say about the average of their measured times? \\
-    
-    \textbf{Solution:} \\
-    The LLN tells us that as the patient records more and more waiting times, the average of these recorded times will get closer and closer to 30 minutes. So, although a single visit may have a short or long wait, the average wait over many visits will reliably approach the true average.
-
-\end{enumerate}
-
-\newpage
-
-% Maximum likelihood estimation
-\subsection*{Maximum likelihood estimation}
-
-\begin{enumerate}
-
-	\item \textbf{Exercise 1: MLE for a Coin Toss}
-	You toss a coin 10 times and observe 7 heads. Using MLE, estimate the probability of heads $p$.
-
-	\subsubsection*{Solution}
-	Let $p$ be the probability of heads. The likelihood function for 7 heads out of 10 tosses (binomial distribution) is:
-	\[
-	L(p) = \binom{10}{7} p^7 (1-p)^3
-	\]
-
-	Since the binomial coefficient does not depend on $p$, maximize:
-	\[
-	\ell(p) = p^7 (1-p)^3
-	\]
-
-	To maximize $\ell(p)$, it is easier to maximize the log-likelihood:
-	\[
-	\log \ell(p) = 7 \log p + 3 \log (1-p)
-	\]
-
-	Take derivative w.r.t. $p$ and set to zero:
-	\[
-	\frac{7}{p} - \frac{3}{1-p} = 0
-	\Rightarrow 7(1-p) = 3p
-	\Rightarrow 7 - 7p = 3p
-	\Rightarrow 7 = 10p
-	\Rightarrow p = \frac{7}{10} = 0.7
-	\]
-
-	Thus, the MLE estimate for the probability of heads is 0.7, matching the observed proportion.
-
-	\item \textbf{Exercise 2: MLE for Exponential Distribution}
-	Suppose the time between phone calls follows an exponential distribution with unknown rate $\lambda$. You observe waiting times: 2, 3, 1. Find the MLE for $\lambda$.
-
-	\subsubsection*{Solution}
-	The exponential distribution’s PDF is:
-	\[
-	f(t|\lambda) = \lambda e^{-\lambda t}, \quad t \geq 0
-	\]
-
-	The likelihood for data points $t_1, t_2, t_3$ is:
-	\[
-	L(\lambda) = \prod_{i=1}^3 \lambda e^{-\lambda t_i} = \lambda^3 e^{-\lambda \sum t_i}
-	\]
-
-	Log-likelihood:
-	\[
-	\log L(\lambda) = 3 \log \lambda - \lambda \sum t_i
-	\]
-
-	Derivative w.r.t. $\lambda$:
-	\[
-	\frac{3}{\lambda} - \sum t_i = 0 \implies 3 = \lambda \sum t_i \implies \hat{\lambda} = \frac{3}{\sum t_i}
-	\]
-
-	Calculate sum of times:
-	\[
-	2 + 3 + 1 = 6
-	\]
-
-	Thus,
-	\[
-	\hat{\lambda} = \frac{3}{6} = 0.5
-	\]
-
-	So, the MLE estimate for $\lambda$ is 0.5 calls per unit time.
-
-	\item \textbf{Exercise 3: MLE for Normal Distribution Mean}
-	You have data points $x = \{4, 5, 6\}$ from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2 = 1$. Find the MLE for $\mu$.
-
-	\subsubsection*{Solution}
-	The likelihood is:
-	\[
-	L(\mu) = \prod_{i=1}^3 \frac{1}{\sqrt{2\pi}} e^{-\frac{(x_i - \mu)^2}{2}}
-	\]
-
-	Log-likelihood (ignoring constants):
-	\[
-	\log L(\mu) = -\frac{1}{2} \sum_{i=1}^3 (x_i - \mu)^2
-	\]
-
-	To maximize, minimize the sum of squared differences:
-	\[
-	\frac{d}{d\mu} \left( \sum (x_i - \mu)^2 \right) = 0
-	\]
-
-	\[
-	-2 \sum (x_i - \mu) = 0 \Rightarrow \sum x_i = 3 \mu \Rightarrow \mu = \frac{1}{3} \sum x_i
-	\]
-
-	Calculate:
-	\[
-	\mu = \frac{4 + 5 + 6}{3} = \frac{15}{3} = 5
-	\]
-
-	The MLE estimate for the mean is 5, which is the sample average.
-
-\end{enumerate}
+\textbf{3.} Solution [...].\\
 
 
 
@@ -1575,6 +1015,27 @@ To address the limitations of assuming equal variances in the classical *t*-test
 
 Comparing data and normalization
 
+\newpage
+
+\subsection*{Exercises}
+
+\textbf{1.} Exercise [...].\\
+
+\textbf{2.} Exercise [...].\\
+
+\textbf{3.} Exercise [...].\\
+
+\newpage
+
+\subsection*{Solutions}
+
+\textbf{1.} Solution [...].\\
+
+\textbf{2.} Solution [...].\\
+
+\textbf{3.} Solution [...].\\
+
+
 
 % Chapter - Linear models and GLMs
 \chapter{Linear models and GLMs}
@@ -1601,6 +1062,26 @@ Generalized Linear Models (GLMs).
 
 \section{Logistic, Poisson, polynomial regression}
 Logistic, Poisson, polynomial regression.
+
+\newpage
+
+\subsection*{Exercises}
+
+\textbf{1.} Exercise [...].\\
+
+\textbf{2.} Exercise [...].\\
+
+\textbf{3.} Exercise [...].\\
+
+\newpage
+
+\subsection*{Solutions}
+
+\textbf{1.} Solution [...].\\
+
+\textbf{2.} Solution [...].\\
+
+\textbf{3.} Solution [...].\\
 
 
 
@@ -1694,89 +1175,6 @@ Even though both dice had the same chance of being picked, rolling a 6 strongly 
 
 \newpage
 
-\subsection*{Exercise 1: Biased Coin (Frequentist)}
-A coin is tossed 100 times and lands heads 56 times. Estimate the probability of heads using the frequentist approach.
-
-\subsubsection*{Solution}
-In the frequentist viewpoint, probability means the proportion of times an event happens in many repeated trials. Since the coin was tossed 100 times, we look at how often heads occurred to estimate its probability.
-
-The estimated probability of heads is:
-\[
-P(\text{heads}) = \frac{\text{Number of heads}}{\text{Total tosses}} = \frac{56}{100} = 0.56
-\]
-This means we expect heads about 56\% of the time if the coin were tossed many more times.
-
-\subsection*{Exercise 2: Bayesian Update (Bayes' Theorem)}
-Suppose a disease affects 1\% of a population. A test detects the disease correctly 99\% of the time, but has a 5\% false positive rate. What is the probability that someone who tested positive actually has the disease?
-
-\subsubsection*{Solution}
-Bayesian probability helps us update our beliefs based on evidence. Here, we want to find the chance a person actually has the disease, given they tested positive.
-
-Let's define events:
-\begin{itemize}
-    \item $D$: the person has the disease
-    \item $T$: the test result is positive
-\end{itemize}
-
-We know from the problem:
-\[
-P(D) = 0.01 \quad\text{(1\% have the disease)}
-\]
-\[
-P(\neg D) = 0.99 \quad\text{(99\% do not have it)}
-\]
-\[
-P(T | D) = 0.99 \quad\text{(test is positive if disease present)}
-\]
-\[
-P(T | \neg D) = 0.05 \quad\text{(5\% false positive rate)}
-\]
-
-Bayes’ theorem tells us:
-\[
-P(D | T) = \frac{P(T|D)P(D)}{P(T|D)P(D) + P(T|\neg D)P(\neg D)}
-\]
-This formula combines the likelihood of testing positive if diseased, weighted by how common the disease is, versus testing positive if not diseased.
-
-Calculating:
-\[
-P(D | T) = \frac{0.99 \times 0.01}{0.99 \times 0.01 + 0.05 \times 0.99} = \frac{0.0099}{0.0099 + 0.0495} = \frac{0.0099}{0.0594} \approx 0.1667
-\]
-
-So, even if the test is positive, there is about a 16.7\% chance the person actually has the disease. This happens because the disease is rare, and false positives, while uncommon, happen more frequently.
-
-\subsection*{Exercise 3: Confidence Interval (Frequentist)}
-You roll a die 60 times and get the number 4 exactly 8 times. Construct a 95\% confidence interval for the probability of rolling a 4.
-
-\subsubsection*{Solution}
-A confidence interval gives a range where we expect the true probability to lie, based on our data.
-
-First, calculate the observed probability:
-\[
-\hat{p} = \frac{8}{60} = 0.1333
-\]
-
-The standard error (SE) measures uncertainty in this estimate:
-\[
-\text{SE} = \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}} = \sqrt{\frac{0.1333 \times 0.8667}{60}} \approx 0.0438
-\]
-
-For a 95\% confidence level, we use a multiplier $z=1.96$ (from the normal distribution).
-
-The confidence interval is:
-\[
-\hat{p} \pm z \cdot \text{SE} = 0.1333 \pm 1.96 \times 0.0438 \approx 0.1333 \pm 0.0859
-\]
-
-This gives:
-\[
-(0.0474, 0.2192)
-\]
-
-Interpretation: If we repeated this experiment many times, 95\% of such intervals would contain the true probability of rolling a 4.
-
-\newpage
-
 \section{Bayesian vs frequentist}
 Bayesian vs frequentist.
 
@@ -1784,6 +1182,24 @@ Bayesian vs frequentist.
 
 \section{Computing posteriors}
 Computing posteriors.
+
+\subsection*{Exercises}
+
+\textbf{1.} Exercise [...].\\
+
+\textbf{2.} Exercise [...].\\
+
+\textbf{3.} Exercise [...].\\
+
+\newpage
+
+\subsection*{Solutions}
+
+\textbf{1.} Solution [...].\\
+
+\textbf{2.} Solution [...].\\
+
+\textbf{3.} Solution [...].\\
 
 
 
@@ -1862,132 +1278,6 @@ Markov models are simple but powerful tools. They help us model systems that evo
 
 \newpage
 
-\subsection*{Exercise 1: Simple Random Walk}
-A person starts at position 0 and at each step moves +1 or -1 with equal probability. What is the expected position after 10 steps?
-
-\subsubsection*{Solution}
-At each step, the person moves either forward (+1) or backward (-1) with equal chance 0.5. Because the steps are symmetric, the expected value (average position) after each step is zero.
-
-Let $X_i$ represent the step at time $i$, which is +1 or -1, each with probability 0.5.
-
-The total position after 10 steps is:
-\[
-S = \sum_{i=1}^{10} X_i
-\]
-
-The expectation is linear:
-\[
-\mathbb{E}[S] = \sum_{i=1}^{10} \mathbb{E}[X_i]
-\]
-
-Since each step is equally likely +1 or -1:
-\[
-\mathbb{E}[X_i] = (0.5)(+1) + (0.5)(-1) = 0
-\]
-
-Thus:
-\[
-\mathbb{E}[S] = 10 \times 0 = 0
-\]
-
-The expected position after 10 steps is 0, meaning the walk is equally likely to be positive or negative on average.
-
-\subsection*{Exercise 2: Markov Chain Transition}
-Given a Markov chain with states $A$, $B$, and the following transition matrix:
-\[
-P = \begin{bmatrix}
-0.6 & 0.4 \\
-0.3 & 0.7 \\
-\end{bmatrix}
-\]
-If the initial state vector is $\pi_0 = [1\ 0]$ (starts at $A$), what is the state distribution after one and two steps?
-
-\subsubsection*{Solution}
-The transition matrix $P$ gives the probabilities of moving from one state to another in one step.
-
-For example, the first row means:
-- From state $A$, stay in $A$ with probability 0.6,
-- Move to $B$ with probability 0.4.
-
-The initial vector $\pi_0 = [1\ 0]$ means the system starts definitely in state $A$.
-
-To find the state distribution after one step:
-\[
-\pi_1 = \pi_0 P = [1\ 0] \times \begin{bmatrix}0.6 & 0.4 \\ 0.3 & 0.7\end{bmatrix} = [0.6\ 0.4]
-\]
-This means after one step, there's a 60\% chance the system is in state $A$ and 40\% chance it is in $B$.
-
-After two steps, multiply again:
-\[
-\pi_2 = \pi_1 P = [0.6\ 0.4] \times \begin{bmatrix}0.6 & 0.4 \\ 0.3 & 0.7\end{bmatrix}
-\]
-Calculate each element:
-\[
-\pi_2(A) = 0.6 \times 0.6 + 0.4 \times 0.3 = 0.36 + 0.12 = 0.48
-\]
-\[
-\pi_2(B) = 0.6 \times 0.4 + 0.4 \times 0.7 = 0.24 + 0.28 = 0.52
-\]
-
-So after two steps, the system is in state $A$ with probability 48\%, and in $B$ with 52\%.
-
-\subsection*{Exercise 3: Absorbing State}
-A Markov chain has three states: 1 (start), 2 (intermediate), 3 (absorbing). The transition matrix is:
-\[
-P = \begin{bmatrix}
-0 & 1 & 0 \\
-0.5 & 0 & 0.5 \\
-0 & 0 & 1 \\
-\end{bmatrix}
-\]
-If the system starts in state 1, what is the probability it ends in state 3?
-
-\subsubsection*{Solution}
-An absorbing state is one where once entered, the system stays forever. Here, state 3 is absorbing because it transitions to itself with probability 1.
-
-We want the probability that starting from state 1, the process eventually reaches state 3.
-
-From state 1:
-- It always moves to state 2 (probability 1).
-
-From state 2:
-- With probability 0.5, it moves to state 1,
-- With probability 0.5, it moves to absorbing state 3.
-
-Because from state 2 there is a chance to return to 1, the system may loop between states 1 and 2 many times before reaching 3.
-
-Define:
-\[
-p = \text{probability of eventually reaching 3 starting from 1}
-\]
-\[
-q = \text{probability of eventually reaching 3 starting from 2}
-\]
-
-From state 1, since it always goes to 2:
-\[
-p = q
-\]
-
-From state 2:
-\[
-q = 0.5 \times 1 + 0.5 \times p
-\]
-The $0.5 \times 1$ is probability of going directly to absorbing 3, which is certain to stay there (hence probability 1 of absorption).
-
-Substitute $p = q$:
-\[
-q = 0.5 + 0.5 q
-\Rightarrow 0.5 q = 0.5
-\Rightarrow q = 1
-\]
-
-So $p = 1$ also.
-
-This means the system will reach the absorbing state 3 with probability 1 (certainty), though it might take several steps cycling between 1 and 2 first.
-
-\newpage
-
 \section{Markov chains}
 Markov chains.
 
@@ -1998,72 +1288,140 @@ Hidden Markov models.
 
 \newpage
 
+\subsection*{Exercises}
+
+\textbf{1.} Exercise [...].\\
+
+\textbf{2.} Exercise [...].\\
+
+\textbf{3.} Exercise [...].\\
+
+\newpage
+
+\subsection*{Solutions}
+
+\textbf{1.} Solution [...].\\
+
+\textbf{2.} Solution [...].\\
+
+\textbf{3.} Solution [...].\\
+
+\newpage
+
+
+
+
 \appendix
 
 % Chapter: Vectors and matrices
-\chapter{Vectors and matrices: a quick review}
+\chapter{Algebra, vectors and matrices: a quick review}
 
-Algebra and vectors form two essential branches of mathematics, each with a rich history and deep connections to the physical and abstract worlds. Algebra is the language of generality and structure, the art of manipulating symbols to uncover patterns and relationships. Vectors, on the other hand, provide the geometry of direction and magnitude---a way of describing the multi-dimensional spaces in which physical and conceptual systems evolve. Together, they offer a powerful framework for solving problems in mathematics, physics, engineering, and beyond.
+\section{The roots and rise of algebra}
 
-\subsection*{The Roots and Rise of Algebra}
+Algebra and vectors form two essential branches of mathematics, each with a rich history and deep connections to the physical and abstract worlds. Algebra is the language of generality and structure, the art of manipulating symbols to uncover patterns and relationships. Vectors, on the other hand, provide the geometry of direction and magnitude---a way of describing the multi-dimensional spaces in which physical and conceptual systems evolve. Together, they offer a powerful framework for solving problems in mathematics, physics, engineering, and beyond. The origins of algebra stretch back to the ancient civilizations of Mesopotamia, Egypt, India, and Greece. Babylonian mathematicians (as early as 2000 BCE) developed methods to solve quadratic equations using geometric reasoning, though without symbolic notation. Over time, these ideas evolved into more abstract and generalized systems.\\
 
-The origins of algebra stretch back to the ancient civilizations of Mesopotamia, Egypt, India, and Greece. Babylonian mathematicians (as early as 2000 BCE) developed methods to solve quadratic equations using geometric reasoning, though without symbolic notation. Over time, these ideas evolved into more abstract and generalized systems.\\
-
-The true birth of algebra as a systematic discipline, however, is often credited to the Persian mathematician \textbf{Muḥammad ibn Mūsā al-Khwārizmī} (c.~780--850), whose name gave rise to the word \emph{algorithm}. Working in the House of Wisdom in Baghdad during the Islamic Golden Age, Al-Khwarizmi wrote the seminal text \emph{Al-Kitab al-Mukhtaṣar fi Hisab al-Jabr wal-Muqabala} (``The Compendious Book on Calculation by Completion and Balancing''), around the year 820. This treatise gave algebra its name (from \emph{al-jabr}, meaning ``reunion of broken parts'') and presented systematic methods for solving linear and quadratic equations. His work emphasized procedures over symbolism, but it marked a turning point in mathematical thinking: problems could be abstracted, generalized, and solved by rule.\\
+The true birth of algebra as a systematic discipline, however, is often credited to the Persian mathematician \textbf{Muḥammad ibn Mūsā al-Khwārizmī} (c.~780--850), whose name gave rise to the word \emph{algorithm}. Working in the House of Wisdom in Baghdad during the Islamic Golden Age, Al-Khwarizmi wrote the seminal text \emph{Al-Kitab al-Mukhtaṣar fi Hisab al-Jabr wal-Muqabala} (``The Compendious Book on Calculation by Completion and Balancing''), around the year 820. This treatise gave algebra its name (from \emph{al-jabr}, meaning ``reunion of broken parts'') and presented systematic methods for solving linear and quadratic equations. His work emphasized procedures over symbolism, but it marked a turning point in mathematical thinking: problems could be abstracted, generalized, and solved by rule.
 
 As algebra spread into medieval Europe via translations from Arabic into Latin, it evolved in form and sophistication. During the Renaissance, algebra began to shed its rhetorical character in favor of symbolic expression. \textbf{François Viète} (1540--1603) introduced a consistent use of letters to represent both known and unknown quantities, a crucial step toward modern notation. Later, \textbf{René Descartes} (1596--1650) merged algebra with geometry in his development of coordinate geometry, enabling equations to represent curves in space.\\
 
-By the 19th century, algebra matured into a study not only of numbers and equations but of abstract structures. Mathematicians such as \textbf{Évariste Galois} (1811--1832) and \textbf{Niels Henrik Abel} (1802--1829) explored permutations, symmetries, and transformations---laying the groundwork for modern \emph{abstract algebra}, including group, ring, and field theory. These frameworks now underpin much of modern mathematics, from cryptography to topology.\\
+By the 19th century, algebra matured into a study not only of numbers and equations but of abstract structures. Mathematicians such as \textbf{Évariste Galois} (1811--1832) and \textbf{Niels Henrik Abel} (1802--1829) explored permutations, symmetries, and transformations---laying the groundwork for modern \emph{abstract algebra}, including group, ring, and field theory. These frameworks now underpin much of modern mathematics, from cryptography to topology.
 
-The Emergence of Vectors. While algebra concerns itself with operations and relations, vectors are fundamentally geometric: they describe quantities that have both magnitude and direction. The intuition behind vectors can be traced to physical concepts such as velocity and force, but the formal mathematical treatment of vectors developed much later.\\
+While algebra concerns itself with operations and relations, vectors are fundamentally geometric: they describe quantities that have both magnitude and direction. The intuition behind vectors can be traced to physical concepts such as velocity and force, but the formal mathematical treatment of vectors developed much later. In the 19th century, \textbf{Giusto Bellavitis} (1803--1880) introduced the notion of ``equipollent segments''---precursors to modern vectors. Around the same time, \textbf{William Rowan Hamilton} (1805--1865) formulated quaternions, a four-dimensional number system that extended complex numbers and described rotations in space. Though quaternions were later superseded by vector algebra in most practical contexts, they represented a major breakthrough in representing spatial transformations.\\
 
-In the 19th century, \textbf{Giusto Bellavitis} (1803--1880) introduced the notion of ``equipollent segments''---precursors to modern vectors. Around the same time, \textbf{William Rowan Hamilton} (1805--1865) formulated quaternions, a four-dimensional number system that extended complex numbers and described rotations in space. Though quaternions were later superseded by vector algebra in most practical contexts, they represented a major breakthrough in representing spatial transformations.\\
+It was through the efforts of \textbf{Josiah Willard Gibbs} (1839--1903) and \textbf{Oliver Heaviside} (1850--1925) that vector analysis was formalized in a way accessible to engineers and physicists. Their introduction of the modern operations of vector addition, scalar multiplication, dot product, and cross product allowed vectors to become a standard language in electromagnetism, mechanics, and eventually computer graphics and machine learning. Today, algebra and vectors are not isolated tools but part of a unified mathematical language. Vectors inhabit \emph{vector spaces}, which are studied using \emph{linear algebra}, a field that combines algebraic rules with geometric insight. Concepts such as span, linear independence, dimension, and eigenvectors allow us to understand systems of equations, matrix transformations, and high-dimensional data with clarity and precision.
+Algebra provides structure; vectors give form. Together, they allow us to model change, symmetry, and interaction in both abstract and physical systems. From quantum states to economic models, from neural networks to mechanical forces, the union of algebraic reasoning and vector geometry continues to shape the mathematical description of the universe [...]. They remain as vital and foundational today as when their principles were first discovered, reflecting a timeless logic that underpins both human thought and the natural world.
 
-It was through the efforts of \textbf{Josiah Willard Gibbs} (1839--1903) and \textbf{Oliver Heaviside} (1850--1925) that vector analysis was formalized in a way accessible to engineers and physicists. Their introduction of the modern operations of vector addition, scalar multiplication, dot product, and cross product allowed vectors to become a standard language in electromagnetism, mechanics, and eventually computer graphics and machine learning.\\
-
-Algebra and Vectors in Modern Mathematics. Today, algebra and vectors are not isolated tools but part of a unified mathematical language. Vectors inhabit \emph{vector spaces}, which are studied using \emph{linear algebra}, a field that combines algebraic rules with geometric insight. Concepts such as span, linear independence, dimension, and eigenvectors allow us to understand systems of equations, matrix transformations, and high-dimensional data with clarity and precision.\\
-
-Algebra provides structure; vectors give form. Together, they allow us to model change, symmetry, and interaction in both abstract and physical systems. From quantum states to economic models, from neural networks to mechanical forces, the union of algebraic reasoning and vector geometry continues to shape the mathematical description of the universe.\\
-
-To study algebra and vectors is to engage with tools forged across centuries---from Al-Khwarizmi’s algorithms in 9th-century Baghdad to 21st-century applications in AI and physics. They remain as vital and foundational today as when their principles were first discovered, reflecting a timeless logic that underpins both human thought and the natural world.
+\newpage
 
 \section{Vectors and their properties}
 
-Let us define two vectors in \( \mathbb{R}^3 \) as column vectors:
-\[
-\mathbf{v}_1 = \begin{pmatrix} v_{1x} \\ v_{1y} \\ v_{1z} \end{pmatrix}, \quad
-\mathbf{v}_2 = \begin{pmatrix} v_{2x} \\ v_{2y} \\ v_{2z} \end{pmatrix}
-\]
+We will now review, very generally, the modern idea of vector, and its basic algebraic properties. Building upon the definitions of Gibbs and Heaviside, we will just extend the intuition of a vector as a list of numbers. According to the academic background, there are mainly three definitions of vector that are ofter found. From a physicist point of view, a vector is an arrow in space, with some information about length and direction. From a computer scientist perspective, a vector is just a list of elements. Let us define two vectors in \( \mathbb{R}^3 \) as column vectors:
+\begin{equation}
+	\mathbf{v}_1 = \begin{pmatrix} v_{1x} \\ v_{1y} \\ v_{1z} \end{pmatrix}, \quad
+	\mathbf{v}_2 = \begin{pmatrix} v_{2x} \\ v_{2y} \\ v_{2z} \end{pmatrix}
+\end{equation}
 
-\subsection*{Dot Product}
+But from a mathematical, more general point of view, vectors are defined just as \textit{element of a vector space}. This may sound abstract at first, but by \textit{vector space} we just mean a set of elements that follow a given set of properties.
+
+\begin{itemize}
+\item Linearity: for any pair of vectors $\mathbf{v}_1$ and  $\mathbf{v}_2$, $f(\mathbf{v}_1 + \mathbf{v}_2) =  f(\mathbf{v}_1) + f(\mathbf{v}_2)$
+\item Scaling: given a vector $\mathbf{v}$ and a scalar $a$, we can define the product, $a \cdot \mathbf{v} = \begin{pmatrix} a \cdot v_{x} \\ b \cdot v_{y} \\ c \cdot v_{z} \end{pmatrix}$
+\end{itemize}
+
+So, any element that satisfies these two rules, which is linear and can be multiplied by a scalar would be a vector [...]. Let's now see how to write down a vector in a proper way. Normally, we are very used to seeing vectors written in terms of their \textit{components}, as follows.
+
+\begin{equation}
+	\mathbf{v}_ = \begin{pmatrix} v_{x} \\ v_{y} \\ v_{z} \end{pmatrix},
+\end{equation}
+
+but here we are implicitly writing these components in reference to something. In particular, that description is writing $\mathbf{v}_1$ in terms of the \textit{base}:
+
+\begin{equation}
+	\mathbf{i} = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \quad
+	\mathbf{j} = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \quad
+	\mathbf{k} = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} 
+\end{equation}
+
+Such that when we write $\mathbf{v}_1$ we are actually writing
+
+\begin{equation}
+	\mathbf{v} = v_x \cdot \mathbf{i} + v_y \cdot \mathbf{j} + v_z \cdot \mathbf{k} = 
+	\mathbf{v}_x \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + 
+	\mathbf{v}_y \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + 
+	\mathbf{v}_z \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} =
+	\begin{pmatrix} v_{1x} \\ v_{1y} \\ v_{1z} \end{pmatrix}
+\end{equation}
+
+Normally, we use the names $x, y, z$ to denote the three cartesian axes, and $i, j, k$ for the unitary vectors of the base. Un of the powerful features of writing vectors in this way is that we can now extend it to any number of dimensions, far beyond the 2D plane of the 3D space, and manipulate vectors in an arbitrarily large number of dimensions, $n$.
+
+\begin{equation}
+	\mathbf{v} = v_1 \cdot e_1 + v_2 \cdot e_2 + ... + v_n \cdot e_n = \sum_{i = 0}^{n} v_i \cdot e_i, 
+\end{equation}
+
+where $v_i$ are the components, and $e_i$ the vectors of the base. Note that the vectors of the base to satisfy two elementary properties. They are orthogonal to each other, and they they are unitary [...], and hence we call this an \textit{orthonormal} base.\\
+
+To compute the distance, or alignment between two vectors, we can define the dot product:
 
 The dot product (also called the scalar product) of \( \mathbf{v}_1 \) and \( \mathbf{v}_2 \) is given by:
-\[
-\mathbf{v}_1 \cdot \mathbf{v}_2 = v_{1x}v_{2x} + v_{1y}v_{2y} + v_{1z}v_{2z}
-\]
-This results in a scalar and measures the degree of alignment between the two vectors.
+\begin{equation}
+	\mathbf{v}_1 \cdot \mathbf{v}_2 = v_{1x}v_{2x} + v_{1y}v_{2y} + v_{1z}v_{2z}
+\end{equation}
+This results in a scalar and measures the degree of alignment between the two vectors.\\
 
-\subsection*{Cross Product}
-
-The cross product (or vector product), defined only in three dimensions, yields a vector orthogonal to both \( \mathbf{v}_1 \) and \( \mathbf{v}_2 \):
-\[
-\mathbf{v}_1 \times \mathbf{v}_2 =
-\begin{pmatrix}
-v_{1y}v_{2z} - v_{1z}v_{2y} \\
-v_{1z}v_{2x} - v_{1x}v_{2z} \\
-v_{1x}v_{2y} - v_{1y}v_{2x}
-\end{pmatrix}
-\]
+A similar quantity that describes the alignment is the cross product. The cross product (or vector product), defined only in three dimensions, yields a vector orthogonal to both \( \mathbf{v}_1 \) and \( \mathbf{v}_2 \):
+\begin{equation}
+	\mathbf{v}_1 \times \mathbf{v}_2 =
+	\begin{pmatrix}
+		v_{1y}v_{2z} - v_{1z}v_{2y} \\
+		v_{1z}v_{2x} - v_{1x}v_{2z} \\
+		v_{1x}v_{2y} - v_{1y}v_{2x}
+	\end{pmatrix}
+\end{equation}
 This resulting vector is perpendicular to the plane defined by \( \mathbf{v}_1 \) and \( \mathbf{v}_2 \), with magnitude equal to the area of the parallelogram they span.
 
 \section{Matrices and linear transformations}
 
+Once we understand the idea of vector, base and linear combination, we can try to describe movements, rotations and transformations, just by thinking how do they affect the vectors of the base. This is why transformations, or \textit{operators}, are represented as matrices.
+\begin{equation}
+	\mathcal{O} \cdot \mathbf{v}_1 =
+	\begin{pmatrix}
+		O_{11} O_{12} O_{13} \\
+		O_{21} O_{22} O_{23} \\
+		O_{31} O_{32} O_{33}
+	\end{pmatrix} \cdot \begin{pmatrix} \cdot v_{x} \\ \cdot v_{y} \\ \cdot v_{z} \end{pmatrix} =
+	\begin{pmatrix}
+		O_{11} v_{x} + O_{12} v_{y} + O_{13} v_{z} \\
+		O_{21} v_{x} + O_{22} v_{y} + O_{23} v_{z} \\
+		O_{31} v_{x} + O_{32} v_{y} + O_{33} v_{z}
+	\end{pmatrix}
+\end{equation}
+
 \section{Basic algebraic operations}
 
-\newpage
+
 
 % Chapter: Derivatives
-\chapter{Functions and derivatives: a quick review}
+\chapter{Calculus, functions and derivatives: a quick review}
 
 At its heart, calculus is the mathematics of change. It arose not from abstraction alone but from an urgent need to describe motion, growth, and the ever-shifting patterns of the natural world. Long before the formalism of equations and limits, ancient civilizations---including the Greeks, Indians, and Chinese---grappled with questions of geometry, area, and continuity. The Greek philosopher Zeno of Elea (5th century BCE) famously posed paradoxes about motion and infinity---such as the arrow that never reaches its target or Achilles who cannot overtake the tortoise---highlighting the conceptual difficulties of change and division.\\
 
@@ -2147,7 +1505,7 @@ Thus, the derivative of \( x^2 \) is \( 2x \), meaning the rate of change increa
 
 The development of calculus marked a turning point in intellectual history. It gave scientists, engineers, and economists the tools to model the world with precision and predict its behavior with confidence. The mathematical machinery behind electricity, fluid dynamics, statistics, and quantum mechanics all rely on the principles laid down by Newton, Leibniz, Euler, and their successors. Yet beyond its utility, calculus offers something more enduring: a glimpse into the deep continuity that underlies the universe, where motion and form, quantity and change, are all expressions of a single, evolving logic. Through calculus and the language of functions, we do not merely calculate---we begin to understand.\\
 
-\newpage
+
 
 % Chapter: Integrals
 \chapter{Integrals: a quick review}
@@ -2244,6 +1602,8 @@ The Fundamental Theorem of Calculus bridges differentiation and integration, sho
 \section{Define definite integral as area under a curve}
 
 \section{The fundamental theorem of calculus}
+
+
 
 % Chapter: Fourier series
 \chapter{Fourier series: a quick review}
