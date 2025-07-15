@@ -51,11 +51,11 @@
 
 In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian probability and hypothesis testing. The text is composed by seven chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience.\\
 
-Both probability as a predictive brach mathematics, and inferential - or descriptive - statistics, have deep historical roots. Indeed, nowadays they have become even trendy, given the broad set of fields dealing with data analysis. As one could guess, there are endless resources covering almost anything, rivers of ink have been written about such topics. However, after following many different courses at both bachelor and postgrad levels, and teaching such topics myself during almost three years, I have found that most resources belong, almost certainly, to one of the next three classes. Either ($i$) deeply mathematical, and hence out of reach for most of experimental or clinically oriented scientists, ($ii$) laboratory oriented, focusing on descriptive stats and experimental design, and hence missing most - if not all - of the mathematical definitions that enable simple computations, or ($iii$) with a direct focus towards programming and computation, relying on domain specific notebooks (Python, R, Matlab, SPSS, etc), and online resources with precompiled libraries for simulation, and again missing most of the mathematical and formal intuitions. Indeed, the misuse of statistics in experimental sciences is a patent topic in modern times, as mathematicians have extensively discussed during the last decades. The famous article by Ionnadis, \textit{"Why 90\% of published medical research is plain wrong"}, is just one example [...], and it may serve as motivation for a rigorous study.\\
+Both, predictive probability and descriptive statistics have deep historical roots, from ancient works on chance, randomness and information theory, to modern scientific topics dealing with data analysis. As one could guess, there are endless resources covering almost anything, rivers of ink have been written about such topics. However, after following many different courses at both bachelor and postgrad levels, and teaching such topics myself during almost three years, I have found that most resources belong, almost certainly, to one of the next three classes. Either ($i$) deeply mathematical, and hence out of reach for most of experimental or clinically oriented scientists, ($ii$) laboratory oriented, focusing on descriptive stats and experimental design, and hence missing most of the mathematical background, or ($iii$) with a direct focus towards programming and computation, relying on domain specific notebooks (Python, R, Matlab, SPSS, etc), and online resources with precompiled libraries for simulation, which again miss most of the mathematical and formal intuitions. Indeed, the misuse of statistics in experimental sciences is a patent topic in modern times, as mathematicians have extensively discussed during the last decades. The famous article by John P. A. Ionnadis, \textit{"Why Most Published Research Findings Are False"}, is just one example \cite{ioannidis2005why}, and it may serve as motivation for a rigorous study.\\
 
-At this point I would like to challenge the reader for a second. I guess you may have heard already some intuition about concepts such as stochasticity, sampling, Gaussian, standard error, maybe statistic test, hypothesis, significance, p-value, etc. Most likely these terms are already somehow familiar, and you find them frequently used on your respective field. Meanwhile - and again, this is just a guess - they were rarely introduced or properly defined. Indeed, for most scientific or experimental bachelor degrees, they are note explained or introduced at all. Hence, developing high-quality, simple, engaging and accessible material for present and future generations, covering both probability and statistical inference from both a fundamental \textit{and} applied level, remains one of the urgent tasks of scientists and educators.\\
+At this point I would like to challenge the reader for a second. I guess you may have already some intuition, even if superficial, about concepts such as stochasticity, randomness, sampling, Gaussian, maybe statistic test, hypothesis, significance, p-value, etc. Most likely these terms are already somehow familiar, and you find them frequently used on your respective field. Meanwhile - and again, this is just a guess - they were rarely introduced or properly defined. Indeed, for most scientific or experimental bachelor degrees, they are note explained or introduced at all. Hence, developing high-quality, simple, engaging and accessible material for present and future generations, covering both probability and statistical inference from both a fundamental \textit{and} applied level, remains one of the urgent tasks of scientists and educators.\\
 
-This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are after. Additionally, all topics will be introduced alongside with some short historical discussion and context, as we believe that a purely technical knowledge just grasps the complexity - and beauty - of scientific topics. As one could anticipate already, a proper understanding of  ideas such as  uncertainty, variation, chance, probability, inference, etc, can be applied to describing a vast amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis and modelling in physics, biology, machine learning and quantum mechanics, among many others. \\
+This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are after. Additionally, all topics will be introduced alongside with some short historical discussion and context, as we believe that a purely technical knowledge just grasps the complexity - and beauty - of scientific topics. As one could anticipate already, a proper understanding of  ideas such as  uncertainty, variation, chance, probability, inference, etc, can be applied to describing a vast amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis and modelling in physics, biology, machine learning and quantum mechanics, among many others.\\
 
 In the first two chapters we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. From basics of measure theory we will motivate and introduce the mathematical definition of probability, and we will discuss the frequentist and bayesian approach, as the two main frameworks used in its interpretation. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}, that will enable us to make some simple computations and predictions. We will introduce some basic concepts such as \textit{distribution}, \textit{uncertainty} and \textit{variability}, among others, and we will learn how to build \textit{expected values} - also referred to as \textit{estimator} quantities - that represent the information we have about such random measurements.\\
 
@@ -246,7 +246,7 @@ where $p \in [0, 1]$. Note that both probabilities do sum 1, and hence if they p
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli_1.png}
     \caption{Representation of the bernoulli distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
     \label{fig:bernoulli1}
 \end{figure}
@@ -281,7 +281,7 @@ This is normally referred to as a probability \textit{mass} distribution. The re
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial_1.png}
     \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
     \label{fig:binomial1}
 \end{figure}
@@ -306,7 +306,7 @@ Again, let's consider a couple of examples to illustrate Poisson distributed eve
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/poisson.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/poisson_1.png}
     \caption{Representation of the Poisson distribution of a random variable $x$, given the number of observations $\lambda$ as a parameter.}
     \label{fig:poisson1}
 \end{figure}
@@ -376,7 +376,14 @@ The probability of observing a particular result $x$ in a given range $[a, b]$ i
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/uniform.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/uniform_1.png}
+    \caption{Representation of the uniform distribution of a random variable $x$, given the boundaries $a$, $b$.}
+    \label{fig:uniform1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/uniform_2.png}
     \caption{Representation of the uniform distribution of a random variable $x$, given the boundaries $a$, $b$.}
     \label{fig:uniform1}
 \end{figure}
@@ -393,7 +400,14 @@ The probability density function is:
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/normal.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/gaussian_1.png}
+    \caption{Representation of the gaussian distribution of a random variable $x$, given the mean value $\mu$ and standard deviation $\sigma$ parameters.}
+    \label{fig:gaussian1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/gaussian_2.png}
     \caption{Representation of the gaussian distribution of a random variable $x$, given the mean value $\mu$ and standard deviation $\sigma$ parameters.}
     \label{fig:gaussian1}
 \end{figure}
@@ -410,7 +424,14 @@ The probability density function is:
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/exponential.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/exponential_1.png}
+    \caption{Representation of the exponential distribution of a random variable $x$, given the decay rate $\lambda$.}
+    \label{fig:exponential1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/exponential_2.png}
     \caption{Representation of the exponential distribution of a random variable $x$, given the decay rate $\lambda$.}
     \label{fig:exponential1}
 \end{figure}
@@ -1762,6 +1783,11 @@ The development of the \textbf{Fourier transform} generalized Fourier’s ideas 
 \backmatter
  
 \begin{thebibliography}{999}
+
+\bibitem{ioannidis2005why}
+John P. A. Ioannidis.
+\textit{Why Most Published Research Findings Are False}.
+PLoS Medicine, 2(8):e124, 2005.
 
 \bibitem{spiegelhalter2019art} 
 David Spiegelhalter. 
