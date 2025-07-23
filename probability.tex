@@ -51,9 +51,9 @@
 
 In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian probability and hypothesis testing. The text is composed by seven chapters, together with some appendix reviewing basic mathematical concepts, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience.\\
 
-Both, predictive probability and descriptive statistics have deep historical roots, from ancient works on chance, randomness and information theory, to modern scientific topics dealing with data analysis. As one could guess, there are endless resources covering almost anything, rivers of ink have been written about such topics. However, after following many different courses at both bachelor and postgrad levels, and teaching such topics myself during almost three years, I have found that most resources belong, almost certainly, to one of the next three classes. Either ($i$) deeply mathematical, and hence out of reach for most of experimental or clinically oriented scientists, ($ii$) laboratory oriented, focusing on descriptive stats and experimental design, and hence missing most of the mathematical background, or ($iii$) with a direct focus towards programming and computation, relying on domain specific notebooks (Python, R, Matlab, SPSS, etc), and online resources with precompiled libraries for simulation, which again miss most of the mathematical and formal intuitions. Indeed, the misuse of statistics in experimental sciences is a patent topic in modern times, as mathematicians have extensively discussed during the last decades. The famous article by John P. A. Ionnadis, \textit{"Why Most Published Research Findings Are False"}, is just one example \cite{ioannidis2005why}, and it may serve as motivation for a rigorous study.\\
+Both, predictive probability and descriptive statistics have deep historical roots, from ancient works on chance, randomness and information theory, to modern scientific topics dealing with data analysis. As one could guess, rivers of ink have been written about such topics, and endless literature sources are available. However, after following many different courses at both bachelor and postgrad levels, and teaching such topics myself during almost three years, I have found that most resources belong, almost certainly, to one of the next three classes. Either ($i$) deeply mathematical, and hence out of reach for most of experimental or clinically oriented scientists, ($ii$) laboratory oriented, focusing on descriptive stats and experimental design, and hence missing most of the mathematical background, or ($iii$) with a direct focus towards programming and computation, relying on domain specific notebooks (Python, R, Matlab, SPSS, etc), and online resources with precompiled libraries for simulation, which again miss most of the mathematical and formal intuitions. Indeed, the misuse of statistics in experimental sciences is a patent topic in modern times, as mathematicians have extensively discussed during the last decades. The well-known article by John P. A. Ioannidis, \textit{"Why Most Published Research Findings Are False"}, serves as a prominent example, \cite{ioannidis2005why}, and it may serve as motivation for a rigorous study.
 
-At this point I would like to challenge the reader for a second. I guess you may have already some intuition, even if superficial, about concepts such as stochasticity, randomness, sampling, Gaussian, maybe statistic test, hypothesis, significance, p-value, etc. Most likely these terms are already somehow familiar, and you find them frequently used on your respective field. Meanwhile - and again, this is just a guess - they were rarely introduced or properly defined. Indeed, for most scientific or experimental bachelor degrees, they are note explained or introduced at all. Hence, developing high-quality, simple, engaging and accessible material for present and future generations, covering both probability and statistical inference from both a fundamental \textit{and} applied level, remains one of the urgent tasks of scientists and educators.\\
+Indeed, when it comes to statistics and data analysis, concepts like \textit{stochasticity, randomness, sampling, hypothesis, significance, statistic test, p-value} - just to mention some of them, are frequently used in most scientific fields, but for most experimental Bachelor - even Master's  level - degrees they were rarely introduced or properly defined. Indeed, for most experimental and clinically oriented degrees, they are note explained or introduced at all, leaving the student with just a superficial knowledge relying on intuition about some particular case. Hence, developing high-quality, simple, engaging and accessible material for present and future generations, covering both probability and statistical inference from both a fundamental \textit{and} applied level, remains one of the urgent tasks of scientists and educators.\\
 
 This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that is not the symbols or the numbers, but the intuitions and the general understanding, what we are after. Additionally, all topics will be introduced alongside with some short historical discussion and context, as we believe that a purely technical knowledge just grasps the complexity - and beauty - of scientific topics. As one could anticipate already, a proper understanding of  ideas such as  uncertainty, variation, chance, probability, inference, etc, can be applied to describing a vast amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis and modelling in physics, biology, machine learning and quantum mechanics, among many others.\\
 
@@ -81,15 +81,15 @@ Example textbooks covering introduction to probability and statistical inference
 
 \section{A bit of history}
 
-As one might expect, probability and related areas of study date back to very ancient times. Civilizations such as the Babylonians, Egyptians, and Greeks encountered uncertainty in various domains, including games of chance, commerce, and divination. As a result, concepts like randomness and stochasticity have deep historical roots. As an example, the oldest known dice are nowadays dated back over 5,000 years, reflecting humanity's early fascination with uncertainty. While these cultures did not develop a formal mathematical theory of probability, they already recognized recurring patterns in random events and often sought to predict outcomes through empirical observation or superstition.\\
+As one might expect, the origins of probability and related concepts can be traced back to antiquity. Ancient civilizations such as the Babylonians, Egyptians, and Greeks encountered uncertainty in various aspects of life, including commerce, games of chance, and divination. Consequently, notions of randomness and stochasticity have deep historical roots. For instance, archaeological findings suggest that the earliest known dice date back over 5,000 years, reflecting humanity’s longstanding fascination with chance and unpredictability \cite{finkel2007ancient}. Although these early cultures did not develop a formal mathematical theory of probability, they recognized recurring patterns in random events and attempted to anticipate outcomes through empirical observation or superstition. For a detailed historical overview, see David (1962) \cite{david1962games}.\\
 
-Although classical Greek and Roman philosophers frequently debated the nature of chance and determinism, these discussions remained broad and philosophical, far from the systematic, mathematical discipline we now regard as scientific. As early as the time of Cicero, thinkers began distinguishing between events that occurred by chance and those believed to be governed by fate, foreshadowing later developments in probability theory [...].\\
+While classical Greek and Roman philosophers frequently discussed the nature of chance, necessity, and determinism, their inquiries remained primarily philosophical rather than mathematical. Thinkers such as Cicero distinguished between events occurring by chance and those determined by fate, a conceptual dichotomy that foreshadowed later developments in probability theory \cite{cicero45bce}. These early ideas, though lacking quantitative formalism, provided the intellectual foundation for later scientific inquiry into randomness and causality.\\
 
-It was not until the late medieval and early Renaissance periods that more rigorous ideas began to emerge. Mathematicians such as Gerolamo Cardano (1501–1576) made foundational contributions to the mathematical treatment of chance by analyzing gambling problems and developing early probabilistic reasoning. In such times, the idea of information and chance was not formalized as we know it today, and lacked mathematical language and rigour we will use in the present manuscript. If one goes to the original works of Cardano to grasp how was it to think and work in probability at such times, he will find a rather ambiguous symbolic system as the one depicted in figure [...].\\
+A significant shift occurred during the late medieval and early Renaissance periods, when more rigorous mathematical ideas began to take shape. Gerolamo Cardano (1501–1576), an Italian physician, mathematician, and gambler, made substantial contributions to the mathematical analysis of chance. His posthumously published work Liber de Ludo Aleae (Book on Games of Chance) \cite{cardano1663ludo}, written around 1564 but not published until 1663, is one of the earliest known texts to explore probability through the analysis of gambling problems. However, Cardano’s reasoning, while insightful, lacked the symbolic clarity and mathematical rigour of modern probability theory. Readers consulting the original manuscript will notice an ambiguous and sometimes inconsistent symbolic system, quite unlike the formal structures we now use.\\
 
-Probability was properly formalized as a mathematical discipline in the 17th century, most notably through the correspondence between Blaise Pascal and Pierre de Fermat. Their work on problems involving games of chance introduced key ideas such as combinatorics, expected value, and variance — concepts that remain central to our modern understanding of randomness, measurement, and information. These developments laid the groundwork for subsequent advances by Huygens, Bernoulli, Gauss, and others, which we will explore in later chapters. Bernoulli’s \textit{Ars Conjectandi} (1713) is often cited as the first formal textbook on probability [...]. \\
+The formalization of probability as a mathematical discipline did not occur until the 17th century, most notably through the seminal correspondence between Blaise Pascal and Pierre de Fermat. Their work, motivated by problems posed by Chevalier de Méré regarding the fair division of stakes in interrupted games of chance, introduced foundational concepts such as combinatorics, expected value, and variance [5]. These developments paved the way for later contributions by Christiaan Huygens — who wrote the first published textbook on probability, De Ratiociniis in Ludo Aleae (1657) — and Jacob Bernoulli, whose Ars Conjectandi (1713) remains one of the most influential early texts in the field \cite{hald1990history}. These works collectively laid the groundwork for the probabilistic and statistical methods that underpin modern scientific reasoning.\\
 
-\indent The modern approach to probability and its fundamental concepts are summarized in the axioms established by the Russian mathematician Andrey Kolmogorov, in the early 1930s [...]. Some people may find surprising that such an old topic was not properly formalized until such recent times. We will cover this with a bit more detail in Chapter 2. Even though the formalization of probability and measure theory would date from such recent times, philosophical discussions about the interpretation and relation with the physical sciences date much earlier.\\
+The modern axiomatic formulation of probability was introduced in the early 20th century by the Russian mathematician Andrey Kolmogorov. In his 1933 monograph Grundbegriffe der Wahrscheinlichkeitsrechnung (Foundations of the Theory of Probability) \cite{kolmogorov1933grundbegriffe}, Kolmogorov synthesized classical and frequentist ideas into a rigorous mathematical framework based on measure theory. His axioms remain the standard foundation for probability theory to this day. It may seem surprising that a concept with such ancient origins was not formally axiomatized until relatively recent times. We will return to Kolmogorov’s formulation and its implications in greater detail in Chapter 2. Nevertheless, philosophical discussions about the interpretation of probability and its relation to the physical sciences—especially in the context of determinism, quantum mechanics, and epistemology—predate Kolmogorov and continue to evolve to this day.
 
 \newpage
 
@@ -322,6 +322,7 @@ Again, let's consider a couple of examples to illustrate Poisson distributed eve
     &\quad + P(x=3; \lambda = 3) + P(x=4; \lambda = 3) + P(x=5; \lambda = 3) \notag
 \end{align}\\
 
+This is what we refer to as \textit{cumulative probability}, or \textit{cumulative distribution} [...].
 \newpage
 
 \section{Discrete and continuous}
@@ -1376,7 +1377,7 @@ Hidden Markov models.
 \appendix
 
 % Chapter: Vectors and matrices
-\chapter{Vectors and matrices: a quick review}
+\chapter{Appendix: Vectors and matrices: a quick review}
 
 \section{The roots and rise of algebra}
 
@@ -1483,7 +1484,7 @@ Once we understand the idea of vector, base and linear combination, we can try t
 
 
 % Chapter: Derivatives
-\chapter{Functions and derivatives: a quick review}
+\chapter{Appendix: Functions and derivatives: a quick review}
 
 \section{From curves to calculus: functions}
 
@@ -1572,7 +1573,7 @@ The development of calculus marked a turning point in intellectual history. It g
 
 
 % Chapter: Integrals
-\chapter{Integrals: a quick review}
+\chapter{Appendix: Integrals: a quick review}
 
 Integral calculus is the mathematics of accumulation and area, of summing infinitesimal parts to understand wholes. Where differential calculus dissects change, integral calculus assembles continuity---weaving together countless small contributions to reveal the total. It addresses fundamental questions: How much space does a shape occupy? How much work is done over a path? How do quantities build up over time? From measuring land in antiquity to solving complex equations in physics, integral calculus has served as a bridge between the discrete and the continuous, the finite and the infinite.\\
 
@@ -1670,7 +1671,7 @@ The Fundamental Theorem of Calculus bridges differentiation and integration, sho
 
 
 % Chapter: Fourier series
-\chapter{Fourier series: a quick review}
+\chapter{Appendix: Fourier series: a quick review}
 
 The work of \textbf{Joseph Fourier} (1768--1830) marked a quiet revolution in mathematics. Born in Auxerre, France, and later a scientific advisor to Napoleon's Egyptian campaign, Fourier turned his attention not to geometry or number theory, but to heat. In studying how heat diffuses through solid bodies, he formulated an idea that would echo far beyond its original domain: that any periodic function, no matter how jagged or discontinuous, could be represented as a sum of sines and cosines.\\
 
@@ -1813,6 +1814,41 @@ OpenIntro, 2025.
 Hossein Pishro-Nik.
 \textit{Introduction to Probability, Statistics and Random Processes}.
 Kappa Research LLC, 2014.
+
+\bibitem{finkel2007ancient}
+Irving L. Finkel.  
+\textit{Ancient Board Games in Perspective}.  
+British Museum Press, 2007.
+
+\bibitem{david1962games}
+Florence N. David.  
+\textit{Games, Gods and Gambling: A History of Probability and Statistical Ideas}.  
+Charles Griffin \& Company, 1962.
+
+\bibitem{cicero45bce}
+Marcus Tullius Cicero.  
+\textit{De Natura Deorum \& De Divinatione}.  
+Loeb Classical Library (various editions), ca. 45 BCE.
+
+\bibitem{cardano1663ludo}
+Gerolamo Cardano.  
+\textit{Liber de Ludo Aleae (Book on Games of Chance)}.  
+Posthumously published 1663; English translation in Oystein Ore, \textit{Cardano, The Gambling Scholar}, Princeton University Press, 1953.
+
+\bibitem{hald1990history}
+Anders Hald.  
+\textit{A History of Probability and Statistics and Their Applications before 1750}.  
+Wiley, 1990.
+
+\bibitem{bernoulli1713ars}
+Jacob Bernoulli.  
+\textit{Ars Conjectandi}.  
+Thurnisius, 1713. English translation by Edith Dudley Sylla, Johns Hopkins University Press, 2006.
+
+\bibitem{kolmogorov1933grundbegriffe}
+Andrey N. Kolmogorov.  
+\textit{Grundbegriffe der Wahrscheinlichkeitsrechnung}.  
+Springer, 1933. English translation: \textit{Foundations of the Theory of Probability}, Chelsea Publishing Company, 1956.
 
 \bibitem{student1908}
 Student. (1908). *The probable error of a mean*. Biometrika, 6(1), 1–25.
