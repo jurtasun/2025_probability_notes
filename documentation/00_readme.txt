@@ -44,4 +44,10 @@ To do / timeline:
     discuss with pressbook, how to pubilsh and share it
 
 
-    
+Bibliography (not found / no free / open source pdf):
+
+    Pishko Nik - book online but no pdf, only amazon / kindle
+    Irving L. Finkel. Ancient Board Games in Perspective. British Museum Press, 2007.
+    Marcus Tullius Cicero. De Divinatione. Loeb Classical Library (various editions), ca. 45 BCE. - only divinatione missing
+    Gerolamo Cardano. Liber de Ludo Aleae (Book on Games of Chance). Posthumously published 1663; English translation in Oystein Ore, Cardano, The Gambling Scholar, Princeton University Press, 1953.
+    Jacob Bernoulli. Ars Conjectandi. Thurnisius, 1713. English translation by Edith Dudley Sylla, Johns Hopkins University Press, 2006. - correct translation, mine from Oscar
