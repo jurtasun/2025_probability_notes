@@ -49,21 +49,35 @@
 
 \section{The purpose of these notes}
 
-In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian probability and hypothesis testing. The text is composed by seven chapters, together with some appendix sections reviewing basic mathematical notions, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience.\\
+In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian probability and hypothesis testing. The text is composed by seven chapters, together with some appendix sections reviewing basic mathematical notions, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience.
+
+\medskip
 
 Both, probability as a predictive branch of mathematics and descriptive statistics have deep historical roots, from ancient works on chance and randomness to modern scientific topics oriented towards information theory and data analysis. As one could guess, rivers of ink have been written about such topics, and endless literature sources are available. However, after following many different courses at both bachelor and postgraduate levels, and teaching such topics myself during almost three years, I have found that most resources belong, almost certainly, to one of the next three classes. Either ($i$) deeply mathematical, and hence out of reach for most experimental or clinically oriented scientists, ($ii$) laboratory oriented, focusing on inference and experimental design, and hence missing most of the mathematical background, or ($iii$) with a direct focus towards programming and computation, relying on domain specific notebooks (Python, R, Matlab, SPSS, etc), and online resources with precompiled libraries for simulation, which again miss most of the mathematical and formal intuitions. Indeed, the misuse of statistics in experimental sciences is a critical topic in modern times, as mathematicians have extensively discussed during the last decades. The well-known article by John P. A. Ioannidis, \textit{"Why most published research findings are false"} \cite{ioannidis2005why}, serves as a prominent example, and it may serve as motivation for a rigorous study.
 
-As a matter of fact, when it comes to modern statistics, data analysis or experimental design, concepts like \textit{stochasticity, randomness, sampling, hypothesis, significance, statistic test, p-value} - just to mention some of them - are frequently used in most scientific fields, but for most bachelor and even master's level degrees they are rarely introduced or properly defined. Indeed, for most experimental and clinically oriented degrees, they are not introduced at all, leaving the student with just a superficial knowledge relying on intuition about some particular cases. Hence, developing high-quality, simple, engaging and accessible open source material for present and future generations, covering both probability and statistical inference from both a fundamental \textit{and} applied level, remains an urgent task for scientists and educators.\\
+As a matter of fact, when it comes to modern statistics, data analysis or experimental design, concepts like \textit{stochasticity, randomness, sampling, hypothesis, significance, statistic test, p-value} - just to mention some of them - are frequently used in most scientific fields, but for most bachelor and even master's level degrees they are rarely introduced or properly defined. Indeed, for most experimental and clinically oriented degrees, they are not introduced at all, leaving the student with just a superficial knowledge relying on intuition about some particular cases. Hence, developing high-quality, simple, and accessible open source material for present and future generations, covering both probability and statistical inference from both a fundamental \textit{and} applied level, remains an urgent task for scientists and educators.
 
-This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that it is not the symbols or the numbers, but the intuitions and the general understanding, what we are after. Additionally, all topics will be introduced alongside with some short historical discussion and context, as we believe that a purely technical knowledge just grasps the complexity - and beauty - of scientific topics. As one could anticipate already, a proper understanding of  ideas such as uncertainty, variation, chance, probability, inference, etc, can be applied to describing a vast amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis and modelling in physics, biology, machine learning and quantum mechanics, among many others.\\
+\medskip
 
-As mentioned, the course is organised in seven chapters. In the first two chapters we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. From basics of measure theory we will motivate and introduce the mathematical definition of probability, and we will discuss the frequentist and bayesian approach, as the two main frameworks used in its interpretation. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}, that will enable us to make some simple computations and predictions. We will introduce some basic concepts such as \textit{distribution}, \textit{uncertainty} and \textit{variability}, among others, and we will learn how to build \textit{expected values} that represent the information we have about such random measurements.\\
+This is intended to be a complete introductory course, and no previous mathematical background is required. By keeping the theory simple and always followed by examples, we will build the definitions and quantities from simple to more complex. All mathematical formulas will be introduced with rigorous notation, but keeping in mind that it is not the symbols or the numbers, but the intuitions and the general understanding, what we are after. Additionally, all topics will be introduced alongside with some short historical discussion and context, as we believe that a purely technical knowledge just grasps the complexity - and beauty - of scientific topics. As one could anticipate already, a proper understanding of  ideas such as uncertainty, variation, chance, probability, inference, etc, can be applied to describing a vast amount of real-world phenomena, ranging from gambling and statistical inference, to data analysis and modelling in physics, biology, machine learning and quantum mechanics, among many others.
 
-Then we will cover the difference between prediction and inference in more detail. We will discuss parameter estimation and build \textit{estimator} quantities, in the context of descriptive statistics, as a way to reconstruct - or \textit{infer} - the underlying phenomena given a finite set of observations. Here we will see some general results which may sound familiar already, such as \textit{"The Law of Large Numbers"}, the \textit{"The Central Limit Theorem"}, or the \textit{"Maximum Likelihood Estimation"} [...].\\
+\medskip
 
-In Chapter 4 we will revisit the difference between prediction and inference, and discuss a group of topics commonly referred to as \textit{hypothesis testing}. Here we will introduce the idea of hypothesis, how to quantify certainty and bias, how to model significance with the so-called \textit{p-values}, and some common examples of statistic tests. In Chapter 5 will we will briefly address more modern topics, such as regression, linear models and correlation. Bayesian probability in Chapter 6, and finally stochasticity and Markov processes in Chapter 7 [...].\\
+As mentioned, the course is organised in seven chapters. In the first two we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. From basics of measure theory we will motivate and introduce the mathematical definition of probability, and we will discuss the frequentist and bayesian approach, as the two main frameworks used in its interpretation. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}, that will enable us to make some simple computations and predictions. We will introduce some basic concepts such as \textit{distribution}, \textit{uncertainty} and \textit{variability}, among others, and we will learn how to build \textit{expected values} that represent the information we have about such random measurements.
 
-At the end of each chapter there will be a series of exercises and coding examples to illustrate and demonstrate the concepts discussed. To avoid misconceptions, let us emphasize here that both, probability and statistics are just branches of mathematics dealing chance and information in random events, \textit{much earlier} than computers, coding languages, Python, R or P-values were even conceived. The data-oriented, practical ways in which probability and statistics are usually taught, relying heavily on computation, is just a consequence of the fact that automatized measurements are nowadays available and trendy in modern times [...].\\
+\medskip
+
+Then we will cover the difference between prediction and inference in more detail. We will discuss parameter estimation and build \textit{estimator} quantities, in the context of descriptive statistics, as a way to reconstruct - or \textit{infer} - the underlying phenomena given a finite set of observations. Here we will see some general results which may sound familiar already, such as \textit{"The Law of Large Numbers"}, the \textit{"The Central Limit Theorem"}, or the \textit{"Maximum Likelihood Estimation"} [...].
+
+\medskip
+
+In Chapter 4 we will revisit the difference between prediction and inference, and discuss a group of topics commonly referred to as \textit{hypothesis testing}. Here we will introduce the idea of hypothesis, how to quantify certainty and bias, how to model significance with the so-called \textit{p-values}, and some common examples of statistic tests. In Chapter 5 will we will briefly address more modern topics, such as regression, linear models and correlation. Bayesian probability in Chapter 6, and finally stochasticity and Markov processes in Chapter 7 [...].
+
+\medskip
+
+At the end of each chapter there will be a series of exercises and coding examples to illustrate and demonstrate the concepts discussed. To avoid misconceptions, let us emphasize here that both, probability and statistics are just branches of mathematics dealing chance and information in random events, \textit{much earlier} than computers, coding languages, Python, R or P-values were even conceived. The data-oriented, practical ways in which probability and statistics are usually taught, relying heavily on computation, is just a consequence of the fact that automatized measurements are nowadays available and trendy in modern times [...].
+
+\medskip
 
 Example textbooks covering introduction to probability and statistical inference, for further reading:
 
@@ -79,13 +93,19 @@ Example textbooks covering introduction to probability and statistical inference
 
 \section{A bit of history}
 
-As one might expect, the origins of probability and related concepts can be traced back to very ancient times. Civilizations such as the Babylonians, Egyptians, and Greeks already encountered uncertainty in various aspects of life, including commerce, games of chance, and divination. Consequently, notions of randomness and stochasticity have deep historical roots. For instance, archaeological findings suggest that the earliest known dice date back over 5,000 years, reflecting humanity’s early fascination with chance and unpredictability \cite{finkel2007ancient}. Although these cultures had not yet developed a formal mathematical theory of probability, they recognized recurring patterns in random events and attempted to anticipate outcomes through either empirical observation or superstition. For a detailed historical overview, see Florence Nightingale's 1962 manuscript \textit{"Games, Gods and Gambling"} \cite{david1962games}.\\
+As one might expect, the origins of probability and related concepts can be traced back to very ancient times. Civilizations such as the Babylonians, Egyptians, and Greeks already encountered uncertainty in various aspects of life, including commerce, games of chance, and divination. Consequently, notions of randomness and stochasticity have deep historical roots. For instance, archaeological findings suggest that the earliest known dice date back over 5,000 years, reflecting humanity’s early fascination with chance and unpredictability \cite{finkel2007ancient}. Although these cultures had not yet developed a formal mathematical theory of probability, they recognized recurring patterns in random events and attempted to anticipate outcomes through either empirical observation or superstition. For a detailed historical overview, see Florence Nightingale's 1962 manuscript \textit{"Games, Gods and Gambling"} \cite{david1962games}.
+
+\medskip
 
 While classical Greek and Roman philosophers frequently discussed the nature of chance, necessity, and determinism, their inquiries remained primarily philosophical rather than mathematical. Thinkers such as Cicero distinguished between events occurring by chance and those determined by fate, foreshadowing later developments in probability theory \cite{cicero45bce}. These early ideas, though lacking quantitative formalism, provided the intellectual foundation for later scientific inquiry into randomness and causality.
 
-A significant shift occurred during the late medieval and early Renaissance periods, when more rigorous mathematical ideas began to shape. Italian mathematician and gambler Gerolamo Cardano (1501–1576) made substantial contributions to the mathematical analysis of chance. His work \textit{"Liber de Ludo Aleae"} (\textit{"Book on Games of Chance"}) \cite{cardano1663ludo}, posthumously published in 1663, is one of the earliest known texts to explore probability through the analysis of gambling problems. However, Cardano’s reasoning, while insightful, lacked the symbolic clarity and mathematical rigour of modern probability theory. Readers consulting the original manuscript will notice an ambiguous and sometimes inconsistent symbolic system, quite unlike the formal structures we use nowadays.\\
+A significant shift occurred during the late medieval and early Renaissance periods, when more rigorous mathematical ideas began to shape. Italian mathematician and gambler Gerolamo Cardano (1501–1576) made substantial contributions to the mathematical analysis of chance. His work \textit{"Liber de Ludo Aleae"} (\textit{"Book on Games of Chance"}) \cite{cardano1663ludo}, posthumously published in 1663, is one of the earliest known texts to explore probability through the analysis of gambling problems. However, Cardano’s reasoning, while insightful, lacked the symbolic clarity and mathematical rigour of modern probability theory. Readers consulting the original manuscript will notice an ambiguous and sometimes inconsistent symbolic system, quite unlike the formal structures we use nowadays.
 
-The formalization of probability as a mathematical discipline did not occur until the 17th century, most notably through the seminal correspondence between Blaise Pascal and Pierre de Fermat. Their work, motivated by problems such as finding a fair division of stakes in interrupted games of chance, introduced foundational concepts such as combinatorics, expected value, and variance \cite{devlin2008unfinished}. These developments paved the way for later contributions by Christiaan Huygens, who in 1657 wrote the first published textbook on probability \textit{"De Ratiociniis in Ludo Aleae"} (\textit{"On Reasoning in Games of Chance"}), and Jacob Bernoulli, whose 1713 \textit{"Ars Conjectandi"} (\textit{"The Art of Conjecturing"}) remains among the most influential early texts in the field. Their works, alongside with many others, collectively laid the groundwork for the probabilistic and statistical methods that foreshadow modern scientific reasoning \cite{huygens1657ratiociniis}, \cite{bernoulli1713ars}, \cite{hald1990history}.\\
+\medskip
+
+The formalization of probability as a mathematical discipline did not occur until the 17th century, most notably through the seminal correspondence between Blaise Pascal and Pierre de Fermat. Their work, motivated by problems such as finding a fair division of stakes in interrupted games of chance, introduced foundational concepts such as combinatorics, expected value, and variance \cite{devlin2008unfinished}. These developments paved the way for later contributions by Christiaan Huygens, who in 1657 wrote the first published textbook on probability \textit{"De Ratiociniis in Ludo Aleae"} (\textit{"On Reasoning in Games of Chance"}), and Jacob Bernoulli, whose 1713 \textit{"Ars Conjectandi"} (\textit{"The Art of Conjecturing"}) remains among the most influential early texts in the field. Their works, alongside with many others, collectively laid the groundwork for the probabilistic and statistical methods that foreshadow modern scientific reasoning \cite{huygens1657ratiociniis}, \cite{bernoulli1713ars}, \cite{hald1990history}.
+
+\medskip
 
 The modern axiomatic formulation of probability was introduced in the early 20th century by the Russian mathematician Andrey Kolmogorov. In his 1933 monograph \textit{"Grundbegriffe der Wahrscheinlichkeitsrechnung"} (\textit{"Foundations of the Theory of Probability"}) \cite{kolmogorov1933grundbegriffe}, Kolmogorov synthesized classical and frequentist ideas into a rigorous mathematical framework based on measure theory. His axioms remain the standard foundation for probability theory to this day. It may seem surprising that a concept with such ancient origins was not formally axiomatized until relatively recent times, and we will return to Kolmogorov’s formulation and its implications in greater detail in Chapter 2 [...]. Nevertheless, philosophical discussions about the interpretation of probability and its relation to the physical sciences - especially in the context of determinism, epistemology and modern topics such as quantum mechanics - predate Kolmogorov's formulation and continue to evolve to this day [...].
 
@@ -93,7 +113,9 @@ The modern axiomatic formulation of probability was introduced in the early 20th
 
 \section{Warmup: some basic intuitions}
 
-Let's start defining a couple of quantities most people are already familiar with, and for which they may have some intuitions, as a warmup example. Let's illustrate with a practical case how to properly define the \textit{mean} and \textit{variance} of some set of observations.\\
+Let's start defining a couple of quantities most people are already familiar with, and for which they may have some intuitions, as a warmup example. Let's illustrate with a practical case how to properly define the \textit{mean} and \textit{variance} of some set of observations.
+
+\medskip
 	
 Imagine we are doing an experiment where we measure some variable, and let's call it $x$ for simplicity. $x$ can be anything we could measure, like number of tomatoes in a bag, position at a given time, energy of some system, concentration of a specific substance, etc. Let's imagine we repeat the measurement three times, and we get first $x = 1$, then $x = 2$, and the last time $x = 3$. That will be our set of observations, or our \textit{sample}, $\textbf{x}_{1}$. We could simply write it as a list, or a \textit{vector} - in the following way:
 
@@ -101,7 +123,9 @@ Imagine we are doing an experiment where we measure some variable, and let's cal
 \textbf{x}_{1} = \{1, 2, 3\} \; . \nonumber  
 \end{equation}
 
-Keep in mind that from the mathematics perspective the word \textit{vector} has a slightly different meaning, with subtleties related to algebraic operations and relations they should satisfy, but for the purpose of this course, where we prioritize above all simplicity, a vector and a list of numbers will be essentially the same thing.\\
+Keep in mind that from the mathematics perspective the word \textit{vector} has a slightly different meaning, with subtleties related to algebraic operations and relations they should satisfy, but for the purpose of this course, where we prioritize above all simplicity, a vector and a list of numbers will be essentially the same thing.
+
+\medskip
 
 We can define a quantity called the \textit{mean} - or \textit{average} - of an arbitrary large sample of $N$ observations, as the sum of all elements divided by the total. We will write it as $\bar{x}$, and define it as follows:
 
@@ -110,14 +134,16 @@ We can define a quantity called the \textit{mean} - or \textit{average} - of an 
 \label{mean1}
 \end{equation}
 
-We can write this in a slightly more compact way as a \textit{summation}, as follows:\\
+We can write this in a slightly more compact way as a \textit{summation}, as follows:
 
 \begin{equation}
 \bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_{i} \; .
 \label{mean2}
 \end{equation}
 
-Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, starting with the first one ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$). The expressions (\ref{mean1}) and (\ref{mean2}) mean \textit{exactly} the same thing, just written in different ways.\\
+Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, starting with the first one ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$). The expressions (\ref{mean1}) and (\ref{mean2}) mean \textit{exactly} the same thing, just written in different ways.
+
+\medskip
 
 If we now write that expression for our specific sample $\textbf{x}_{1}$, which has just $N = 3$ observations, we get
 
@@ -137,21 +163,9 @@ Note that the variance is just a sum of differences, and squared just so that we
 s_1^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; , \nonumber
 \end{equation}
 
-which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean. In Figure \ref{fig:histogram1} we see a representation of a set of observations as a histogram, which visually displays the mean value and the variance [...]. \\
+which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean. In Figure \ref{fig:histogram1} we see a representation of a set of observations as a histogram, which visually displays the mean value and the variance [...].
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial_1.png}
-    \caption{Histogram representing the mean and standard deviation for a set of Binomial observations [...]. The read line shows the mean value, representing the central value where the bulk of events lie, and the dotted lines show the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean.}
-    \label{fig:histogram1}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/poisson_1.png}
-    \caption{Histogram representing the mean and standard deviation for a set of Poisson observations [...]. The read line shows the mean value, representing the central value where the bulk of events lie, and the dotted lines show the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean.}
-    \label{fig:histogram1}
-\end{figure}
+\medskip
 
 As an exercise, try to compute both the mean and variance for a second sample, let's say
 
@@ -159,7 +173,7 @@ As an exercise, try to compute both the mean and variance for a second sample, l
 \textbf{x}_2 = \{4, 5, 6\} \; . \nonumber
 \end{equation}
 
-Buy substituting in the general expressions of $\bar{x}$ and $s^2$ you should get the following results: 
+By substituting in the general expressions of $\bar{x}$ and $s^2$ you should get the following results: 
 
 \begin{equation}
 \bar{x}_2 = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (4 + 5 + 6) = 5 \; . \nonumber
@@ -169,7 +183,9 @@ Buy substituting in the general expressions of $\bar{x}$ and $s^2$ you should ge
 s^2_2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((4 - 5)^{2} + (5 - 5)^{2} + (6 - 5)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; . \nonumber
 \end{equation}
 
-Again, our mean $\bar{x}_2 = 5$ encodes the information about the "central" value, where the bulk of event are, and the variance $s^2_2 = 1$ indicates, as in the previous example, that the elements of the sample $\textbf{x}_2$ are also \textit{one unit} away from the mean.\\
+Again, our mean $\bar{x}_2 = 5$ encodes the information about the "central" value, where the bulk of event are, and the variance $s^2_2 = 1$ indicates, as in the previous example, that the elements of the sample $\textbf{x}_2$ are also \textit{one unit} away from the mean.
+
+\medskip
 
 Another useful quantity used to characterize variability is the so called \textit{standard deviation}, which is just the square root of the variance
 
@@ -177,18 +193,62 @@ Another useful quantity used to characterize variability is the so called \texti
 s = \sqrt{\frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}} \; . 
 \end{equation}
 
-This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information.\\
+This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information. This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information.
 
-As we said, this was just a warmup example, and we will visit these definitions in further chapters when we introduce the idea of parameter estimation, and we will see in detail different ways to define and interpret them [...]. \\
+\medskip
+
+This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information. This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information.
+
+\medskip
+
+As we said, this was just a warmup example, and we will visit these definitions in further chapters when we introduce the idea of parameter estimation, and we will see in detail different ways to define and interpret them [...].
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/mean_std_violin.png}
+    \caption{Three sets of observations, with the mean value and standard deviation represented as a violin plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
+    \label{fig:histogram1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/mean_std_box.png}
+    \caption{Three sets of observations, with the mean value and standard deviation represented as a box plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
+    \label{fig:histogram1}
+\end{figure}
 
 
 
 % Chapter - Probability and random events
 \chapter{Probability and random events}
 
-\section{What is probability?}
+\section{From measure to meaning of probability}
 
-As already mentioned in the introduction, probability is a branch of mathematics dealing with information and random events. Hence, we could begin by asking, what \textit{are} random events? Random events, also referred to as \textit{stochastic}, are simply processes whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός} (stochastic), which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that allows as to describe such events and quantify our degree of certainty for a specific result.\\
+Probability theory, as we understand it today, did not emerge fully formed from games of chance, playing with coins and dice. It was gradually sculpted from the abstract yet foundational ideas of \textit{measure theory}, holding the notion that abstract spaces, and randomness, too, could be measured. At its core, and despite different formalisms, we could define probability as a branch of mathematics dealing with information, chance and \textit{random events}. To keep things simple, random events, also referred to as \textit{stochastic}, are simply processes whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός} (stochastic), which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that describes such events and quantifies our degree of certainty for a specific result.
+
+\medskip
+
+The rigorous formulation begins with the notion of \textit{sample space}, denoted by $\Omega$, introduced in the early 20th century by Henri Lebesgue, and later generalized by Carathéodory and other mathematicians. By \textit{sample space} $\Omega$, we will mean just the set of all possible outcomes of a certain measurement. As it usually happens in math, there are more abstract and general definitions for such an object, related how many collections of subsets can be found in \(\Omega\) and its countable unions. This is called normally a $\sigma$-algebra $ \mathcal{F}$. This structure was crucial in Kolmogorov's formalization \cite{kolmogorov1933}. The final key element is the \textit{measure} $\mu$, introduced in its modern form by Lebesgue in 1902 \cite{lebesgue1902}, and later adapted to probability as $\mathbb{P}$.
+
+\medskip
+
+Together they denote the \textit{measure space} $(\Omega, \mathcal{F}, \mu)$. Measure theory reached its modern form in the work of Andrey Kolmogorov in his landmark 1933 monograph \emph{Grundbegriffe der Wahrscheinlichkeitsrechnung} \cite{kolmogorov1933}, where he formalized probability spaces using measure-theoretic language.
+
+\medskip
+
+To transition from measure theory to \textit{probability}, Kolmogorov imposed a single but profound condition: the total \textit{measure} of the entire \textit{space} must equal 1. This normalization - declaring that \textit{something must happen} - turns the measure space into a probability space \((\Omega, \mathcal{F}, \mathbb{P})\), and laid the axiomatic foundations for all of modern probability \cite{kolmogorov1933}. Back to the example of the coins, where our sample space would be $\Omega = [H, T]$,
+
+\begin{equation}
+\mathbb{P} (\Omega) = 1
+\end{equation}
+
+Means that the sum of probabilities for the case \textit{heads} H and \textit{tails} T must be 1. We will come back to this result soon when we talk about unitarity.
+
+\medskip
+
+From this foundation emerged the full architecture of probability theory. \emph{Random variables} as measurable functions, further refined through the work of Wiener and Doob in the context of stochastic processes \cite{doob1953}. \emph{Expectation} defined via the Lebesgue integral, again rooted in Lebesgue’s work on integration \cite{lebesgue1902}. \emph{Convergence theorems}, including the strong and weak laws of large numbers, were developed through the efforts of Borel (1909), Cantelli (1917), and Kolmogorov (1930s) \cite{billingsley1995}.
+
+\medskip
 
 Let's ask ourselves a the question, what \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a \textit{number} we make up, a \textit{quantity} we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way:
 
@@ -228,13 +288,23 @@ The formal definition of unitarity can be written as follows. Let's denote all p
 	\sum_{i = 1}^{n} \; P(x_{i}) = 1
 \end{equation}
 
-Indeed, the literal meaning of probability comes from latin \textit{probabilis}. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances." However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence [...].\\
+Yet mathematics alone does not yield interpretation. Here, philosophy enters. The \emph{frequentist} interpretation was developed during the late 19th and early 20th centuries, most notably by Richard von Mises, who defined probability as the limit of relative frequencies in a long sequence of trials \cite{vonmises1928}. In this view, probability is an objective property of the physical world, accessible through repetition. In contrast, the \emph{Bayesian} perspective has older roots. Thomas Bayes introduced the foundational theorem in the 18th century \cite{bayes1763}, but it was Pierre-Simon Laplace who first framed probability as a logic of belief and inference \cite{laplace1812}. The modern subjective Bayesian school was revived in the 20th century by Bruno de Finetti, who emphasized coherence and personal belief as central principles \cite{definetti1974}.
+
+\medskip
+
+These two interpretations - frequentist and Bayesian - do not so much contradict as illuminate different dimensions. The frequentist roots itself in empirical regularity, the Bayesian in epistemic uncertainty. Both, however, rest on the same mathematical foundation: a probability is a measure, and measures give form to uncertainty. 
+
+\medskip
+
+Indeed, the literal meaning of probability comes from latin \textit{probabilis}. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances." However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence [...].
+
+\medskip
 
 There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details [...].\\
 
 \newpage
 
-\section{Discrete probability distributions}
+\section{Discrete random variables, mass distributions}
 
 So far we have introduced the idea of random events, and the concept of probability as a number to quantify surprise. For our present chapter, we will try to model such stochastic events such that we can make predictions. For that purpose, we will model that probability we just defined to be a descriptive - even better, \textit{predictive} - quantity. Let's begin by saying that not all random phenomena are equal. Hence, a basic way to classify and separate random events, is according to how their probabilities are \textit{distributed}.
  
@@ -368,7 +438,7 @@ In the same way we imposed that probability needs to obey unitarity, we will imp
 
 \newpage
 
-\section{Continuous probability distributions}
+\section{Continuous random variables, density distributions}
 
 \subsection{Uniform distribution}
 
@@ -493,71 +563,277 @@ In our previous examples, we have treated just $x$ as our variable of interest, 
  
 \section{The Law of Large Numbers}
 
-The Law of Large Numbers (LLN) is one of the fundamental theorems of probability theory. It was first formulated by Jacob Bernoulli in the late 17th century and later refined by other mathematicians, such as Pafnuty Chebyshev. Bernoulli's work aimed to formalize how relative frequencies of events stabilize as the number of trials increases, providing the foundation for statistical inference. LLN plays a crucial role in statistics, finance, and machine learning, ensuring that averages computed from large samples are reliable estimates of expected values.\\
+The \textit{Law of Large Numbers} (LLN) is a fundamental theorem in probability theory that formalizes the idea that averages computed from large samples tend to stabilize, and approximate the expected value of the underlying random process. In essence, it states that as the number of trials increases, the sample mean of a sequence of random observations converges to the population mean. This result justifies the very concept of statistical average, and forms the basis for almost all of empirical science, data analysis, and applied statistics.
+
+\medskip
+
+The Law of Large Numbers expresses a powerful kind of regularity that emerges from randomness. Suppose you flip a fair coin many times. While the outcome of any single flip is uncertain, the proportion of heads observed in the long run should converge to 0.5. The underlying reason for this stabilization lies in the independence of trials and the additivity of probability: large samples ``dilute" random fluctuations and reveal the structure of the distribution. The LLN can be understood as a consequence of the averaging process: the sum of independent random deviations around the mean tends to cancel out as the sample size increases, allowing the average to settle around its expected value.
+
+\medskip
+
+The earliest version of the Law of Large Numbers was proved by {Jacob Bernoulli} in 1713, posthumously published in his \textit{Ars Conjectandi}. He proved that the proportion of successes in a sequence of independent Bernoulli trials converges in probability to the success probability. This became known as the \textit{Weak Law of Large Numbers} (WLLN). In the 19th and 20th centuries, the LLN was generalized and refined. Russian mathematician Pafnuty Chebyshev extended the law beyond Bernoulli trials by introducing moment inequalities. Later, it was again Kolmogorov who provided a stronger formulation, the \textit{Strong Law of Large Numbers} (SLLN) - which guarantees almost sure convergence of the sample mean to the expected value under broader conditions.
 
 The Law of Large Numbers states that as the sample size increases, the sample mean approaches the expected value. Formally, if $X_1, X_2, \dots, X_n$ are independent and identically distributed (i.i.d.) random variables with expected value $\mathbb{E}[X] = \mu$, then:
+
 \begin{equation}
     \bar{X}_n = \frac{1}{n} \sum_{i=1}^{n} X_i \to \mu \quad \text{as } n \to \infty.
 \end{equation}
 
 Consider flipping a fair coin multiple times. The proportion of heads observed converges to 0.5 as the number of flips increases. This illustrates that the observed average stabilizes around the theoretical probability.
 
-\begin{itemize}
-    \item \textbf{Weak Law of Large Numbers (WLLN)}: Convergence in probability, i.e., for any $\epsilon > 0$, 
-    \begin{equation}
-        P(|\bar{X}_n - \mu| \geq \epsilon) \to 0 \quad \text{as } n \to \infty.
-    \end{equation}
-    \item \textbf{Strong Law of Large Numbers (SLLN)}: Almost sure convergence, i.e.,
-    \begin{equation}
-        P\left( \lim_{n \to \infty} \bar{X}_n = \mu \right) = 1.
-    \end{equation}
-\end{itemize}
+\medskip
+
+The Weak Law can be phrased as follows. Let $x_1, x_2, \dots, x_n$ be a sequence of independent and identically distributed (i.i.d.) random variables with finite expected value $\mu = \mathbb{E}[X_i]$. We could define the sample mean as we just learned in previous section:
+
+\begin{equation}
+	\overline{x}_n = \frac{1}{n} \sum_{i=1}^n n_i.
+\end{equation}
+
+Then, the \textit{Weak Law of Large Numbers} states that for any $\varepsilon > 0$,
+
+\begin{equation}
+	\lim_{n \to \infty} \mathbb{P}\left( \left| \overline{X}_n - \mu \right| > \varepsilon \right) = 0.
+\end{equation}
+
+This means that sample mean $\overline{x}_n$ converges to the true value $\mu$ ias we increase the number of trials, $n \to \infty$.
+
+\medskip
+
+The Strong Law: under the same conditions, and with the additional requirement that $mathbb{E}[|x_i|] < \infty$, the \textbf{Strong Law of Large Numbers} states that:
+
+\begin{equation}
+	\mathbb{P}\left( \lim_{n \to \infty} \overline{X}_n = \mu \right) = 1.
+\end{equation}
+
+This is a stronger mode of convergence known as \emph{almost sure convergence}, meaning that the sequence \( \overline{X}_n \) converges to \( \mu \) with probability 1. Kolmogorov proved this version in 1933 using tools from measure theory, laying the foundation for modern probability theory.
+
+\medskip
+
+\textbf{Example}: tossing coins
+
+Let \( X_i \) be a fair coin flip, coded as \( X_i = 1 \) for heads and \( X_i = 0 \) for tails. Then:
+
+\[
+	\mu = \mathbb{E}[X_i] = 0.5.
+\]
+
+Now flip a coin \( n = 10 \), then \( n = 50 \), then \( n = 500 \) times. At each step, compute the sample mean:
+
+\[
+	\overline{X}_n = \frac{1}{n} \sum_{i=1}^n X_i.
+\]
+
+You will observe that \( \overline{X}_n \) fluctuates at first, but as \( n \) increases, the value stabilizes near \( 0.5 \). This is a manifestation of the Law of Large Numbers: although the outcome of individual trials is unpredictable, the average of many trials is highly predictable and converges toward the expected value.
+
+\textbf{Example:} rolling dice. Suppose we roll a fair six-sided die multiple times. The expected value of a roll is:
+
+\[
+    \mu = \mathbb{E}[X] = \frac{1+2+3+4+5+6}{6} = 3.5.
+\]
+As we roll more dice, the sample mean of observed values gets closer to 3.5. 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter3/law_large_numbers.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/gaussian_2.png}
     \caption{Representation of the law or large numbers. The sample mean tends to the population mean as the number of rolls $n$ increases.}
     \label{fig:random}
 \end{figure}
-
-\textbf{Example:} Suppose we roll a fair six-sided die multiple times. The expected value of a roll is:
-\begin{equation}
-    \mathbb{E}[X] = \frac{1+2+3+4+5+6}{6} = 3.5.
-\end{equation}
-As we roll more dice, the sample mean of observed values gets closer to 3.5.
 
 \newpage
 
 \section{The Central Limit Theorem}
 
-The Central Limit Theorem (CLT) was first discovered in the 18th century by Abraham de Moivre and later developed by Pierre-Simon Laplace and Carl Friedrich Gauss. It formalizes the idea that the distribution of sample means tends toward a normal distribution, regardless of the shape of the original population distribution. The CLT is fundamental in inferential statistics, allowing researchers to make predictions and construct confidence intervals for population parameters based on sample data.\\
+The \textit{Central Limit Theorem} (CLT) is one of the most fundamental results of probability theory. It asserts that, under general conditions, the sum (or average) of a large number of independent random variables behaves approximately like a normally distributed variable, even if the original variables themselves are not normally distributed. This surprising and powerful result provides the mathematical explanation for the pervasive appearance of the bell-shaped curve in natural and social phenomena, and it serves as the theoretical backbone of most inferential statistics.
 
-The Central Limit Theorem states that for a large enough sample size, the sampling distribution of the sample mean follows a normal distribution, regardless of the original population distribution. Formally, if $X_1, X_2, \dots, X_n$ are i.i.d. random variables with mean $\mu$ and variance $\sigma^2$, then the standardized sample mean:
-\begin{equation}
-    Z = \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}}
-\end{equation}
-converges in distribution to a standard normal distribution $\mathcal{N}(0,1)$ as $n \to \infty$.
+\medskip
 
-No matter the shape of the original distribution, when we take many samples and compute their means, the histogram of these sample means will resemble a normal curve as the sample size grows.
+The CLT emerges from the cumulative effect of many small, independent random influences. Imagine measuring something like the height of individuals, the result of which is shaped by many genetic, nutritional, and environmental factors. These influences may individually follow different distributions - some skewed, some bounded - but together, their additive or average effect tends to "smooth out" into a normal distribution. This smoothing occurs because the distribution of the sum is shaped by the convolution of the individual distributions, and repeated convolutions (under certain conditions) tend to produce a Gaussian shape—a phenomenon akin to a probabilistic version of the law of large numbers.
+
+\medskip
+
+The intuitive reason for this is rooted in the \textit{independence} of the variables and the \textit{averaging effect} of the sum. Each random variable contributes a little "noise" to the final result, and the accumulation of many such noises results in a distribution that reflects the most probable outcome: symmetrically clustered around the mean, with tails governed by how much variability the individual sources introduce.
+
+\medskip
+
+The first instance of a central limit-like result appears in the work of Abraham de Moivre in 1733, who demonstrated that the binomial distribution could be approximated by the normal distribution under certain conditions. Then Laplace extended this in 1810 to more general discrete distributions. These early forms assumed identically distributed, bounded, and often symmetric variables.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter3/central_limit_theorem.png}
-    \caption{Representation of the law or large numbers. The sample mean follows a gaussian distribution as the sample size $n$ increases.}
+    \includegraphics[width=0.6\textwidth]{figures/chapter3/clt_1.png}
+    \caption{Histogram representing a set of observations and the central limit theorem. The sample mean follows a gaussian distribution as the sample size $n$ increases.}
     \label{fig:random}
 \end{figure}
 
-\textbf{Example}: Consider rolling a fair six-sided die multiple times and computing the average outcome for groups of $n$ rolls. As $n$ increases, the distribution of these sample means approaches a normal distribution, centered at $\mu=3.5$.\\
+A more general and rigorous version came from Russian mathematician Aleksandr Lyapunov in 1901, who removed many of these restrictions and provided a sufficient condition for convergence using higher-order moments. Later, J. W. Lindeberg refined the result further introducing the now-famous \textit{Lindeberg condition}, which allows for non-identically distributed variables and still guarantees convergence under the right circumstances.
 
-\begin{itemize}
-    \item Used in inferential statistics to approximate sampling distributions.
-    \item Forms the basis for hypothesis testing and confidence intervals.
-    \item Justifies the normality assumption in many statistical models.
-\end{itemize}
+Formal Statement (Classical Version): Let $x_1, x_2, \dots, x_n$ be a sequence of independent and identically distributed (i.i.d.) random variables with some finite expected value $\mu = \mathbb{E}[X_i]$ and finite, positive variance $\sigma^2 = \operatorname{Var}(X_i)$. We can define the sample mean as we did in previous section:
+
+\begin{equation}
+	\overline{x}_n = \frac{1}{n} \sum_{i=1}^n x_i.
+\end{equation}
+
+Then the Central Limit Theorem (in its classical form, as due to Lyapunov, 1901) states that the distribution of the \textit{normalized} - or \textit{standardized} - sample mean
+
+\begin{equation}
+	Z_n = \frac{\sqrt{n}(\overline{X}_n - \mu)}{\sigma}
+\end{equation}
+
+converges to the standard normal distribution $\mathcal{N}(0,1)$ as $n \to \infty$. That is,
+
+\begin{equation}
+	\lim_{n \to \infty} \mathbb{P}\left( \frac{\sqrt{n}(\overline{X}_n - \mu)}{\sigma} \leq z \right) = \Phi(z), \quad \text{for all } z \in \mathbb{R},
+\end{equation}
+
+where \( \Phi(z) \) is the cumulative distribution function of the standard normal distribution:
+
+\begin{equation}
+	\Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z e^{-t^2/2} \, dt.
+\end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter3/clt_2.png}
+    \caption{Histogram representing a set of observations and the central limit theorem. The sample mean follows a gaussian distribution as the sample size $n$ increases.}
+    \label{fig:random}
+\end{figure}
+
+This form of convergence—called \textit{convergence in distribution} - means that the shape of the probability distribution of $Z_n$ approaches that of a standard normal variable as the sample size increases, regardless of the original distribution of the $X_i$, provided they are i.i.d. with finite mean and variance.
+
+\medskip
+
+\textbf{Example}
+
+To illustrate the CLT in action, consider the following basic pen-and-paper experiment:
+
+Let each \( X_i \) be a discrete uniform random variable on \( \{1, 2, 3, 4, 5, 6\} \), modeling a fair die roll. Then:
+
+Compute expected, true mean value
+\[
+	\mu = \mathbb{E}[X_i] = \frac{1 + 2 + 3 + 4 + 5 + 6}{6} = 3.5,
+\]
+
+Compute variance operator
+\[
+	\sigma^2 = \operatorname{Var}(X_i) = \frac{1}{6} \sum_{k=1}^6 (k - 3.5)^2 = \frac{35}{12} \approx 2.9167.
+\]
+
+Now simulate \( n = 30 \) rolls, compute the sample mean \( \overline{X}_{30} \), and normalize:
+\[
+	Z_{30} = \frac{\sqrt{30}(\overline{X}_{30} - 3.5)}{\sqrt{35/12}}.
+\]
+
+Repeat this experiment several times (either with real dice or a random number generator). You will find that the histogram of the resulting \( Z_{30} \) values increasingly resembles the standard normal distribution. This is the Central Limit Theorem in action: even though each die roll is far from normally distributed (it’s discrete and uniform), the average of many such rolls behaves approximately normally.
+
+\medskip
+
+Conclusion, the Central Limit Theorem provides a bridge between the randomness of individual observations and the predictability of averages. It explains why normality arises in so many empirical settings and justifies the widespread use of the normal distribution in statistical methods. As sample sizes grow, the shape of the distribution of sample means stabilizes around the normal curve—allowing us to invoke Gaussian models even in non-Gaussian worlds.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter3/clt_3.png}
+    \caption{Histogram representing a set of observations and the central limit theorem. The sample mean follows a gaussian distribution as the sample size $n$ increases.}
+    \label{fig:random}
+\end{figure}
 
 \newpage
 
 \section{Maximum Likelihood Estimation}
+
+\textbf{Maximum Likelihood Estimation} (MLE) is one of the most fundamental methods in statistical inference. It provides a systematic way to estimate unknown parameters of a statistical model by selecting the parameter values that make the observed data most probable. Conceptually intuitive and mathematically powerful, MLE serves as a unifying framework across many areas of statistics, from simple models to complex machine learning systems.
+
+\subsection*{Motivation and Intuition}
+
+Suppose we observe some data that we believe arises from a probabilistic model depending on unknown parameters. The central idea of MLE is to reverse the process: rather than asking “what data might result from given parameters?”, we ask “which parameters are most likely to have generated the data we actually observed?”
+
+More formally, we treat the likelihood—the probability (or probability density) of the observed data given a parameter—as a function of the parameter. We then choose the value of the parameter that maximizes this function. This value is called the \emph{maximum likelihood estimate}.
+
+This approach aligns with our everyday reasoning: if you observe a coin come up heads 90 out of 100 times, the parameter value (e.g., probability of heads) that best explains this data is likely around 0.9, not 0.5.
+
+\subsection*{Historical Background}
+
+The method of maximum likelihood was introduced by \textbf{Ronald A. Fisher} in a series of seminal papers beginning in 1912 and formally developed in 1922. Fisher championed likelihood as a key concept in statistical inference, distinguishing it from Bayesian methods and providing it with a firm theoretical foundation. He also showed that under regularity conditions, MLEs are consistent, asymptotically normal, and efficient—properties that make them highly desirable estimators.
+
+\subsection*{Formal Definition}
+
+Let \( X_1, X_2, \dots, X_n \) be a random sample from a distribution with probability density function (pdf) or probability mass function (pmf) \( f(x; \theta) \), where \( \theta \in \Theta \subseteq \mathbb{R}^k \) is the (possibly multivariate) parameter to be estimated.
+
+The \textbf{likelihood function} is defined as:
+
+\[
+L(\theta; x_1, \dots, x_n) = \prod_{i=1}^n f(x_i; \theta),
+\]
+
+viewed as a function of \( \theta \), with the observed data \( x_1, \dots, x_n \) held fixed.
+
+The \textbf{maximum likelihood estimator} (MLE) \( \hat{\theta}_{\text{MLE}} \) is the value of \( \theta \) that maximizes this likelihood function:
+
+\[
+\hat{\theta}_{\text{MLE}} = \arg\max_{\theta \in \Theta} L(\theta; x_1, \dots, x_n).
+\]
+
+Often it is more convenient to maximize the \textbf{log-likelihood function}, since the logarithm is a monotonic transformation and turns the product into a sum:
+
+\[
+\ell(\theta) = \log L(\theta; x_1, \dots, x_n) = \sum_{i=1}^n \log f(x_i; \theta).
+\]
+
+Then the MLE is equivalently given by:
+
+\[
+\hat{\theta}_{\text{MLE}} = \arg\max_{\theta \in \Theta} \ell(\theta).
+\]
+
+\subsection*{A Simple Example: Estimating a Bernoulli Parameter}
+
+Suppose \( X_1, \dots, X_n \) are i.i.d. samples from a Bernoulli distribution with unknown parameter \( \theta \in [0,1] \), where:
+
+\[
+f(x; \theta) = \theta^x (1 - \theta)^{1 - x}, \quad x \in \{0, 1\}.
+\]
+
+Let the observed data be \( x_1, \dots, x_n \), with \( S = \sum_{i=1}^n x_i \) denoting the number of successes.
+
+Then the likelihood function is:
+
+\[
+L(\theta) = \prod_{i=1}^n \theta^{x_i}(1 - \theta)^{1 - x_i} = \theta^S (1 - \theta)^{n - S}.
+\]
+
+The log-likelihood is:
+
+\[
+\ell(\theta) = S \log \theta + (n - S) \log(1 - \theta).
+\]
+
+To find the maximum, we differentiate and set to zero:
+
+\[
+\frac{d\ell}{d\theta} = \frac{S}{\theta} - \frac{n - S}{1 - \theta} = 0.
+\]
+
+Solving:
+
+\[
+\frac{S}{\theta} = \frac{n - S}{1 - \theta} \quad \Rightarrow \quad \hat{\theta}_{\text{MLE}} = \frac{S}{n}.
+\]
+
+Thus, the MLE of \( \theta \) is the sample mean: the proportion of successes. This simple example highlights the natural interpretation of MLE: it finds the parameter that best matches the empirical data.
+
+\subsection*{Asymptotic Properties}
+
+Under regularity conditions, the MLE enjoys desirable asymptotic properties:
+
+\begin{itemize}
+  \item \textbf{Consistency:} \( \hat{\theta}_{\text{MLE}} \to \theta \) in probability as \( n \to \infty \).
+  \item \textbf{Asymptotic Normality:} \( \sqrt{n}(\hat{\theta}_{\text{MLE}} - \theta) \overset{d}{\to} \mathcal{N}(0, I(\theta)^{-1}) \), where \( I(\theta) \) is the Fisher information.
+  \item \textbf{Asymptotic Efficiency:} The MLE achieves the Cramér-Rao lower bound asymptotically.
+\end{itemize}
+
+\subsection*{Conclusion}
+
+Maximum Likelihood Estimation offers a principled and widely applicable method for estimating parameters in statistical models. It connects theory with practice: given data and a model, MLE identifies the parameter values that render the observed data most plausible. Its generality, consistency, and strong asymptotic properties make it a cornerstone of classical statistics and a workhorse of modern machine learning.
+
+\newpage
 
 \paragraph{Historical Context:}
 Maximum Likelihood Estimation was introduced by the statistician Ronald Fisher in the early 20th century. Fisher’s key insight was that many statistical problems can be solved by choosing the parameters of a model that make the observed data most probable. This approach unified estimation methods and became one of the most fundamental tools in statistics. MLE connects well with probability theory and has wide applications, from genetics to machine learning.
@@ -1864,6 +2140,33 @@ Wiley, 1990.
 Andrey N. Kolmogorov.  
 \textit{Grundbegriffe der Wahrscheinlichkeitsrechnung}.  
 Springer, 1933. English translation: \textit{Foundations of the Theory of Probability}, Chelsea Publishing Company, 1956.
+
+\bibitem{kolmogorov1933}
+A. N. Kolmogorov, \emph{Grundbegriffe der Wahrscheinlichkeitsrechnung}, Springer, 1933.
+
+\bibitem{lebesgue1902}
+H. Lebesgue, \emph{Intégrale, longueur, aire}, Annali di Matematica, 1902.
+
+\bibitem{doob1953}
+J. L. Doob, \emph{Stochastic Processes}, Wiley, 1953.
+
+\bibitem{vonmises1928}
+R. von Mises, \emph{Probability, Statistics and Truth}, 1928.
+
+\bibitem{bayes1763}
+T. Bayes, \emph{An Essay towards Solving a Problem in the Doctrine of Chances}, Philosophical Transactions of the Royal Society of London, 1763.
+
+\bibitem{laplace1812}
+P.-S. Laplace, \emph{Théorie Analytique des Probabilités}, 1812.
+
+\bibitem{definetti1974}
+B. de Finetti, \emph{Theory of Probability}, Wiley, 1974.
+
+\bibitem{billingsley1995}
+P. Billingsley, \emph{Probability and Measure}, Wiley, 1995.
+
+\bibitem{jaynes2003}
+E. T. Jaynes, \emph{Probability Theory: The Logic of Science}, Cambridge University Press, 2003.
 
 \bibitem{student1908}
 Student. (1908). *The probable error of a mean*. Biometrika, 6(1), 1–25.

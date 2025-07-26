@@ -1,45 +1,120 @@
+# Import librarie
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Style settings
-figsize = (6, 4)
-bar_color = "skyblue"
-line_color = "crimson"
-edgecolor = 'black'
-alpha = 0.7
 
-# Function to plot and save a histogram with mean and std lines (no title)
-def plot_distribution(data, filename):
-    mean_val = np.mean(data)
-    std_val = np.std(data)
-    
-    bins = 'auto' if len(np.unique(data)) > 10 else range(min(data), max(data)+2)
-    
-    fig, ax = plt.subplots(figsize=figsize)
-    ax.hist(data, bins=bins, color=bar_color, edgecolor=edgecolor, alpha=alpha)
-    
-    # Mean line
-    ax.axvline(mean_val, color=line_color, linestyle='-', linewidth=2.0, label=f'Mean = {mean_val:.2f}')
-    # ±1 SD lines
-    ax.axvline(mean_val - std_val, color=line_color, linestyle='--', linewidth=1.5, label=f'-1 SD = {mean_val - std_val:.2f}')
-    ax.axvline(mean_val + std_val, color=line_color, linestyle='--', linewidth=1.5, label=f'+1 SD = {mean_val + std_val:.2f}')
-    
-    ax.set_xlabel("Observation")
-    ax.set_ylabel("Frequency")
-    ax.legend()
-    
-    plt.tight_layout()
-    plt.savefig(filename)
-    plt.close()
 
-# 📌 1. Poisson Distribution
-poisson_data = np.random.poisson(lam=5, size=1000)
-plot_distribution(poisson_data, "poisson_hist.png")
+# --- Plot styling consistent with your aesthetic ---
+plt.rcParams.update({
+    "font.family": "serif",
+    "font.serif": ["Times New Roman", "Palatino", "Computer Modern Roman"],
+    "mathtext.fontset": "cm",
+    "axes.facecolor": "none",
+    "figure.facecolor": "white",
+})
 
-# 📌 2. Uniform (Flat) Distribution
-uniform_data = np.random.uniform(low=0, high=10, size=1000)
-plot_distribution(uniform_data, "uniform_hist.png")
+# --- Generate synthetic datasets ---
+np.random.seed(0)
+data_1 = np.random.normal(loc=0, scale=1, size=100)
+data_2 = np.random.normal(loc=1, scale=1.2, size=100)
+data_3 = np.random.normal(loc=-0.5, scale=0.8, size=100)
+datasets = [data_1, data_2, data_3]
+means = [np.mean(d) for d in datasets]
+stds = [np.std(d) for d in datasets]
 
-# 📌 3. Gaussian (Normal) Distribution
-normal_data = np.random.normal(loc=5, scale=2, size=1000)
-plot_distribution(normal_data, "normal_hist.png")
+# --- Color palette ---
+light_blue = "#4a90e2"
+highlight_color = "#d62728"  # Darker red
+x_labels = [r"$\mathcal{X}_1$", r"$\mathcal{X}_2$", r"$\mathcal{X}_3$"]
+
+
+
+# --- Violin Plot ---
+fig, ax = plt.subplots(figsize=(7, 4.5))
+parts = ax.violinplot(datasets, positions=[1, 2, 3], showmeans=False,
+                      showextrema=False, showmedians=False)
+for i, pc in enumerate(parts['bodies']):
+    pc.set_facecolor(light_blue)
+    pc.set_edgecolor('black')
+    pc.set_alpha(0.7)
+    pc.set_linewidth(1)
+
+# --- Add mean line and std fill ---
+for i, (mean, std) in enumerate(zip(means, stds), start=1):
+    # Transparent std area
+    ax.fill_betweenx([mean - std, mean + std], i - 0.3, i + 0.3,
+                     color=highlight_color, alpha=0.1)
+    # Mean horizontal line
+    ax.hlines(mean, i - 0.3, i + 0.3, color=highlight_color, linestyle='-', linewidth=2, zorder=3)
+
+# --- Axes styling ---
+ax.set_xticks([1, 2, 3])
+ax.set_xticklabels(x_labels, fontsize=13)
+ax.set_ylabel("Observation", fontsize=13)
+ax.grid(True, linestyle='--', alpha=0.3)
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(1)
+ax.tick_params(axis='both', direction='in', length=4, width=1)
+plt.tight_layout()
+
+# --- Save figures ---
+fig.savefig("mean_std_violin.png", dpi=300, bbox_inches='tight')
+fig.savefig("mean_std_violin.pdf", bbox_inches='tight')
+plt.show()
+plt.close()
+
+
+
+
+# --- 2. Box Plot ---
+fig, ax = plt.subplots(figsize=(7, 4.5))
+bp = ax.boxplot(datasets, patch_artist=True, positions=[1, 2, 3], widths=0.6,
+                medianprops=dict(color=highlight_color, linewidth=1.5))
+
+for i, (box, mean, std) in enumerate(zip(bp['boxes'], means, stds), start=1):
+    box.set(facecolor=light_blue, edgecolor='black', linewidth=1, alpha=0.6)
+    ax.fill_betweenx([mean - std, mean + std], i - 0.3, i + 0.3,
+                     color=highlight_color, alpha=0.1)
+
+ax.set_xticks([1, 2, 3])
+ax.set_xticklabels(x_labels, fontsize=13)
+ax.set_ylabel("Observation", fontsize=13)
+ax.grid(True, linestyle='--', alpha=0.3)
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(1)
+ax.tick_params(axis='both', direction='in', length=4, width=1)
+plt.tight_layout()
+fig.savefig("mean_std_box.png", dpi=300, bbox_inches='tight')
+fig.savefig("mean_std_box.pdf", bbox_inches='tight')
+plt.show()
+plt.close()
+
+
+
+# --- 3. Histogram ---
+fig, ax = plt.subplots(figsize=(7, 4.5))
+bins = np.linspace(-4, 4, 30)
+ax.hist(data_1, bins=bins, alpha=0.5, label=x_labels[0],
+        color=light_blue, edgecolor='black')
+ax.hist(data_2, bins=bins, alpha=0.5, label=x_labels[1],
+        color='mediumseagreen', edgecolor='black')
+ax.hist(data_3, bins=bins, alpha=0.5, label=x_labels[2],
+        color=highlight_color, edgecolor='black')
+
+ax.legend(frameon=False, fontsize=11)
+ax.set_xlabel("Observation", fontsize=13)
+ax.set_ylabel("Frequency", fontsize=13)
+ax.grid(True, linestyle='--', alpha=0.3)
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(1)
+ax.tick_params(axis='both', direction='in', length=4, width=1)
+plt.tight_layout()
+fig.savefig("mean_std_hist.png", dpi=300, bbox_inches='tight')
+fig.savefig("mean_std_hist.pdf", bbox_inches='tight')
+plt.show()
+plt.close()
+
+
