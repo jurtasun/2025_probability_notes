@@ -222,31 +222,13 @@ As we said, this was just a warmup example, and we will visit these definitions 
 % Chapter - Probability and random events
 \chapter{Probability and random events}
 
-\section{From measure to meaning of probability}
+\section{What is probability?}
 
-Probability theory, as we understand it today, did not emerge fully formed from games of chance, playing with coins and dice. It was gradually sculpted from the abstract yet foundational ideas of \textit{measure theory}, holding the notion that abstract spaces, and randomness, too, could be measured. At its core, and despite different formalisms, we could define probability as a branch of mathematics dealing with information, chance and \textit{random events}. To keep things simple, random events, also referred to as \textit{stochastic}, are simply processes whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός} (stochastic), which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that describes such events and quantifies our degree of certainty for a specific result.
-
-\medskip
-
-The rigorous formulation begins with the notion of \textit{sample space}, denoted by $\Omega$, introduced in the early 20th century by Henri Lebesgue, and later generalized by Carathéodory and other mathematicians. By \textit{sample space} $\Omega$, we will mean just the set of all possible outcomes of a certain measurement. As it usually happens in math, there are more abstract and general definitions for such an object, related how many collections of subsets can be found in \(\Omega\) and its countable unions. This is called normally a $\sigma$-algebra $ \mathcal{F}$. This structure was crucial in Kolmogorov's formalization \cite{kolmogorov1933}. The final key element is the \textit{measure} $\mu$, introduced in its modern form by Lebesgue in 1902 \cite{lebesgue1902}, and later adapted to probability as $\mathbb{P}$.
+Probability theory, as we understand it today, did not emerge fully formed from games of chance and repetition. It was gradually sculpted from the abstract yet foundational ideas of \textit{measure theory}, holding the notion that abstract spaces - and randomness too - could be measured. At its core, without getting lost in formalism, we could define probability as a branch of mathematics dealing with information, chance and \textit{random events}. To keep things simple, random events, also referred to as \textit{stochastic}, are simply processes whose output we \textit{ignore}. As classic examples we could think of tossing coins, rolling dice, or performing some arbitrary measurement. Indeed, the word stochastic comes from no other than the greek word \textgreek{στοχαστικός} (stochastic), which literally means \textit{to guess}. Let's try to briefly introduce the idea of probability, as a quantity that describes such events and quantifies our degree of certainty for a specific result.
 
 \medskip
 
-Together they denote the \textit{measure space} $(\Omega, \mathcal{F}, \mu)$. Measure theory reached its modern form in the work of Andrey Kolmogorov in his landmark 1933 monograph \emph{Grundbegriffe der Wahrscheinlichkeitsrechnung} \cite{kolmogorov1933}, where he formalized probability spaces using measure-theoretic language.
-
-\medskip
-
-To transition from measure theory to \textit{probability}, Kolmogorov imposed a single but profound condition: the total \textit{measure} of the entire \textit{space} must equal 1. This normalization - declaring that \textit{something must happen} - turns the measure space into a probability space \((\Omega, \mathcal{F}, \mathbb{P})\), and laid the axiomatic foundations for all of modern probability \cite{kolmogorov1933}. Back to the example of the coins, where our sample space would be $\Omega = [H, T]$,
-
-\begin{equation}
-\mathbb{P} (\Omega) = 1
-\end{equation}
-
-Means that the sum of probabilities for the case \textit{heads} H and \textit{tails} T must be 1. We will come back to this result soon when we talk about unitarity.
-
-\medskip
-
-From this foundation emerged the full architecture of probability theory. \emph{Random variables} as measurable functions, further refined through the work of Wiener and Doob in the context of stochastic processes \cite{doob1953}. \emph{Expectation} defined via the Lebesgue integral, again rooted in Lebesgue’s work on integration \cite{lebesgue1902}. \emph{Convergence theorems}, including the strong and weak laws of large numbers, were developed through the efforts of Borel (1909), Cantelli (1917), and Kolmogorov (1930s) \cite{billingsley1995}.
+The rigorous formulation begins with the notion of \textit{sample space}, denoted by $\Omega$, introduced in the early 20th century by French mathematician Henri Lebesgue, among others. By \textit{sample space} $\Omega$, we will mean just the set of all possible outcomes of a certain measurement. The other key element is the \textit{measure} $\mu$, introduced in its modern form by Lebesgue in 1902 \cite{lebesgue1902}, and later adapted to probability as $\mathbb{P}$. Together they denoted an abstract mathematical object called the \textit{measure space} $(\Omega, \mu)$, which will eventually become the mathematical language used to described probability. If you want to read more about how measure theory led to probability theory in its its modern form, navigate through the works of Andrey Kolmogorov, specially his 1933 monograph \textit{"Foundations of Theory of Probability} \cite{kolmogorov1933}, where he formalized probability spaces using measure-theoretic language.
 
 \medskip
 
@@ -284,9 +266,24 @@ Ideally we expect that these frequencies, as we increase the number of repetitio
 
 But this is not the only thing we assume about such a quantity. For probabilities to represent the real behaviour of random processes and information, they must follow another property, called \textit{unitarity}. Unitarity ensures that, if we consider and add up the probabilities for all possible events in a given experiment, we recover the total. That means, at least one of the scenarios will happen.\\
 
-The formal definition of unitarity can be written as follows. Let's denote all possible outcomes of an experiment $x_{1}$, $x_{2}$, ..., $x_{n}$. In the case of coins these will be just $x_{1} = H$, $x_{2} = T$, and with dice, $x_{1} = 1$, $x_{2} = 2$, ..., $x_{6} = 6$. By \textit{unitarity}, we mean that the sum of probabilities of all possible outcomes \text{add up to 1}. \begin{equation}
+The formal definition of unitarity can be written as follows. Let's denote all possible outcomes of an experiment $x_{1}$, $x_{2}$, ..., $x_{n}$. In the case of coins these will be just $x_{1} = H$, $x_{2} = T$, and with dice, $x_{1} = 1$, $x_{2} = 2$, ..., $x_{6} = 6$. By \textit{unitarity}, we mean that the sum of probabilities of all possible outcomes \text{add up to 1}. 
+\begin{equation}
 	\sum_{i = 1}^{n} \; P(x_{i}) = 1
 \end{equation}
+
+To transition from \textit{measure} to \textit{probability} theory, Kolmogorov imposed a single but profound condition: the total \textit{measure} $\mu$ of the entire \textit{space} $\Omega$ must equal 1. In modern language, we would call this \textit{normalization}, or \textit{unitarity}. This reflects the fact that, when performing a measurement or an observation - for instance, we are tossing a coin, our sample space would be either heads (H) and tails (T) $\Omega = [H, T]$ The we know - empirically - and we impose - mathematically, that regardless of the probabilities for H and T - same in a normal, fair coin, uneven in a biased one, the probabilities need to sum one, ensuring that either H or T is going to happen. This normalization - declaring that \textit{something must happen} - turns the measure space into a probability space \((\Omega, \mathcal{F}, \mathbb{P})\), and laid the axiomatic foundations for all of modern probability \cite{kolmogorov1933}.
+
+\begin{equation}
+\mathbb{P} (\Omega) = 1
+\end{equation}
+
+Means that the sum of probabilities for the case \textit{heads} H and \textit{tails} T must be 1. 
+
+\medskip
+
+From this foundation emerged the full architecture of probability theory. \emph{Random variables} as measurable functions, further refined through the work of Wiener and Doob in the context of stochastic processes \cite{doob1953}. \emph{Expectation} defined via the Lebesgue integral, again rooted in Lebesgue’s work on integration \cite{lebesgue1902}. \emph{Convergence theorems}, including the strong and weak laws of large numbers, were developed through the efforts of Borel (1909), Cantelli (1917), and Kolmogorov (1930s) \cite{billingsley1995}.
+
+\medskip
 
 Yet mathematics alone does not yield interpretation. Here, philosophy enters. The \emph{frequentist} interpretation was developed during the late 19th and early 20th centuries, most notably by Richard von Mises, who defined probability as the limit of relative frequencies in a long sequence of trials \cite{vonmises1928}. In this view, probability is an objective property of the physical world, accessible through repetition. In contrast, the \emph{Bayesian} perspective has older roots. Thomas Bayes introduced the foundational theorem in the 18th century \cite{bayes1763}, but it was Pierre-Simon Laplace who first framed probability as a logic of belief and inference \cite{laplace1812}. The modern subjective Bayesian school was revived in the 20th century by Bruno de Finetti, who emphasized coherence and personal belief as central principles \cite{definetti1974}.
 
