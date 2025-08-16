@@ -44,8 +44,9 @@
 
 
 
-% Chapter - Introduction
-\chapter{Introduction}
+% Introduction
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
 
 \section{The purpose of these notes}
 
@@ -109,9 +110,16 @@ The formalization of probability as a mathematical discipline did not occur unti
 
 The modern axiomatic formulation of probability was introduced in the early 20th century by the Russian mathematician Andrey Kolmogorov. In his 1933 monograph \textit{"Grundbegriffe der Wahrscheinlichkeitsrechnung"} (\textit{"Foundations of the Theory of Probability"}) \cite{kolmogorov1933grundbegriffe}, Kolmogorov synthesized classical and frequentist ideas into a rigorous mathematical framework based on measure theory. His axioms remain the standard foundation for probability theory to this day. It may seem surprising that a concept with such ancient origins was not formally axiomatized until relatively recent times, and we will return to Kolmogorov’s formulation and its implications in greater detail in Chapter 2 [...]. Nevertheless, philosophical discussions about the interpretation of probability and its relation to the physical sciences - especially in the context of determinism, epistemology and modern topics such as quantum mechanics - predate Kolmogorov's formulation and continue to evolve to this day [...].
 
-\newpage
 
-\section{Warmup: some basic intuitions}
+
+% Chapter - Descriptive statistics
+\chapter{Descriptive statistics}
+
+\section{Sampling and data types}
+
+Why descriptive statistics matter: summarizing data, understanding patterns, detecting anomalies [...]
+
+\section{Central tendency and variation}
 
 Let's start defining a couple of quantities most people are already familiar with, and for which they may have some intuitions, as a warmup example. Let's illustrate with a practical case how to properly define the \textit{mean} and \textit{variance} of some set of observations.
 
@@ -199,9 +207,29 @@ This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our n
 
 This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information. This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information.
 
+Median [...], mode [...] \\
+
+Range (max - min) as a simple measure. Variance and standard deviation: define, interpret, and connect to mean. Quantiles and interquartile range (IQR): connect to median and spread.
+
 \medskip
 
 As we said, this was just a warmup example, and we will visit these definitions in further chapters when we introduce the idea of parameter estimation, and we will see in detail different ways to define and interpret them [...].
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/mean_std_hist.png}
+    \caption{Three sets of observations, with the mean value and standard deviation represented as a violin plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
+    \label{fig:histogram1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/measurements_histogram.png}
+    \caption{Three sets of observations, with the mean value and standard deviation represented as a box plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
+    \label{fig:histogram1}
+\end{figure}
+
+\section{Data visualization}
 
 \begin{figure}[ht]
     \centering
@@ -216,6 +244,28 @@ As we said, this was just a warmup example, and we will visit these definitions 
     \caption{Three sets of observations, with the mean value and standard deviation represented as a box plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
     \label{fig:histogram1}
 \end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/measurements_boxplot.png}
+    \caption{Three sets of observations, with the mean value and standard deviation represented as a violin plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
+    \label{fig:histogram1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/measurements_violin.png}
+    \caption{Three sets of observations, with the mean value and standard deviation represented as a box plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
+    \label{fig:histogram1}
+\end{figure}
+
+\section{Dependency, linearity, correlation}
+
+Scatter plots: visualize relationships between two quantitative variables.\\
+
+Correlation: introduce Pearson correlation, interpretation, limitations.\\
+
+Optional: mention rank correlation for ordinal data.\\
 
 
 
@@ -274,7 +324,7 @@ The formal definition of unitarity can be written as follows. Let's denote all p
 To transition from \textit{measure} to \textit{probability} theory, Kolmogorov imposed a single but profound condition: the total \textit{measure} $\mu$ of the entire \textit{space} $\Omega$ must equal 1. In modern language, we would call this \textit{normalization}, or \textit{unitarity}. This reflects the fact that, when performing a measurement or an observation - for instance, we are tossing a coin, our sample space would be either heads (H) and tails (T) $\Omega = [H, T]$ The we know - empirically - and we impose - mathematically, that regardless of the probabilities for H and T - same in a normal, fair coin, uneven in a biased one, the probabilities need to sum one, ensuring that either H or T is going to happen. This normalization - declaring that \textit{something must happen} - turns the measure space into a probability space \((\Omega, \mathcal{F}, \mathbb{P})\), and laid the axiomatic foundations for all of modern probability \cite{kolmogorov1933}.
 
 \begin{equation}
-\mathbb{P} (\Omega) = 1
+	\mathbb{P} (\Omega) = 1
 \end{equation}
 
 Means that the sum of probabilities for the case \textit{heads} H and \textit{tails} T must be 1. 
@@ -299,51 +349,91 @@ Indeed, the literal meaning of probability comes from latin \textit{probabilis}.
 
 There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details [...].\\
 
-\newpage
+\section{Discrete random variables}
 
-\section{Discrete random variables, mass distributions}
-
-So far we have introduced the idea of random events, and the concept of probability as a number to quantify surprise. For our present chapter, we will try to model such stochastic events such that we can make predictions. For that purpose, we will model that probability we just defined to be a descriptive - even better, \textit{predictive} - quantity. Let's begin by saying that not all random phenomena are equal. Hence, a basic way to classify and separate random events, is according to how their probabilities are \textit{distributed}.
- 
+So far we have introduced the idea of random events, and the concept of probability as a number we define to quantify uncertainty. Now, we will try to model such events aiming to build predictions. That way, the probability we just defined will become a \textit{function} of certain input information, to be a descriptive - or \textit{predictive} - quantity. Indeed, not all random events are equal, and we will use the \textit{distribution} of such probabilities to classify different families of stochastic events.
+  
  \subsection{Bernoulli distribution}
 
-The simplest case we can think of is the \textbf{Bernoulli trial}, named after Swiss mathematician Jacob Bernoulli in late 1600s. A Bernoulli trial is a random experiment with exactly two possible outcomes: \textit{success}, usually labeled as 1, and \textit{failure}, labeled as 0. The probability of success is denoted by $p$, and the probability of failure is $1 - p$.
-Mathematically, for a single Bernoulli trial with random variable $x$,
+The simplest case we can think of is the \textbf{Bernoulli event}, or \textit{Bernoulli trial}, named after Swiss mathematician Jacob Bernoulli in late 1600s. A Bernoulli trial is a random experiment with exactly two possible outcomes: either \textit{success}, usually labeled as 1, and \textit{failure}, labeled as 0. Tossing a coin - aiming for \textit{heads} as success and \textit{tails} as failure - or rolling dice aiming for any particular face, are typical examples of Bernoulli trials. The probability of success ($1/2$ in the case of a fair coin, $1/6$ for any of the faces of the dice, is normally denoted by $p$. Since we only care about that particular case, the probability of failure is the remaining one, $1 - p$.\\
 
+Mathematically, we write a Bernoulli trial on random variable $x$ as follows:
 \begin{equation}
-P(x = 1) = p \quad \text{and} \quad P(x = 0) = 1 - p,
+	P(\text{success, when} x = 1) = p \quad \text{and} \quad P(\text{failure, when} x = 0) = 1 - p \; .
+	\label{eq:bernoulli}
 \end{equation}
 
-where $p \in [0, 1]$. Note that both probabilities do sum 1, and hence if they properly obey the unitarity property. As well, you can see that this is a generalization of the case of the coin, in which the two outcomes had the same probability $p = 0.1$ [...]. Jacob Bernoulli (1655–1705) was one indeed of the pioneers of probability theory. His work \textit{Ars Conjectandi}, published posthumously in 1713, laid the groundwork for the law of large numbers and formalized many concepts still used today.
+In the case of tossing a coin, the random variable $x$ will be just the face, either \textit{heads} ($x = 1$), with probability $p = 1/2$ or \textit{tails} ($x = 0$), with probability $p = 1/2$ and we would write it in the following way:
+\begin{equation}
+	P(x = 1; \text{heads}) = \frac{1}{2} \quad \text{and} \quad P(x = 0; \text{tails}) = \frac{1}{2} \; .
+	\label{eq:bernoulli_1}
+\end{equation}
+
+In the case of rolling a dice and aiming for, let's say, a 6 - or any other value - the random variable $x$ will be again the face, now either a successful 6 ($x = 1$), with probability $p = 1/6$ or any other result as failure ($x = 0$), with probability $p = 5/6$
+\begin{equation}
+	P(x = 1; \text{face = 6}) = \frac{1}{6} \quad \text{and} \quad P(x = 0; \text{face $\neq$ 6}) = \frac{5}{6} \; .
+	\label{eq:bernoulli_2}
+\end{equation}
+
+Note that in all cases, the probability $p$ remains a number between 0 and 1, consistent with our definition $p \in [0, 1]$ on previous section. Note as well that probabilities of both cases, success and failure, always add up to 1, conveniently fulfilling the unitarity property in the case of $n = 2$ possibilities.
+\begin{equation}
+	\sum_{i = 1}^{n} \; P(x_{i}) = P(x_1) + P(x_2) = p + (1 - p) = 1 \; .
+\end{equation}
+
+From now on, rather than just writing the probabilities, we will build a quantity called \textit{distribution}. This may sound a bit abstract at first, but it will prove extremely useful when dealing. Indeed, even familiar quantities like the mean or the variance can be defined mathematically in terms of \textit{expected values}, or \textit{momenta} of probability distributions, as we will see further in this chapter.\\
+
+The way we will write Bernoulli trials \eqref{eq:bernoulli} as a \textit{probability distribution} is 
+\begin{equation}
+	P(x; p) = 
+		\begin{cases}
+			p & \text{if $x = 1$, success} \\
+			1 - p & \text{if $x = 0$, failure}
+		\end{cases}
+\end{equation}
+
+Note that now, the probability distribution, written with upper case $P$, is a function of two input quantities, the random variable $x$, that can take two values (1 for success, 0 for failure) \textit{and} the probability for each case, $p$ when success and $(1 - p)$ when failure.
+
+In the case of tossing a coin, the distribution for Bernoulli trial  \eqref{eq:bernoulli_1} will become just 
+\begin{equation}
+	P(x; p) = 
+		\begin{cases}
+			\frac{1}{2} & \text{if $x = 1$, heads} \\
+			\frac{1}{2}& \text{if $x = 0$, tails}
+		\end{cases}
+\end{equation}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli_1.png}
-    \caption{Representation of the bernoulli distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
-    \label{fig:bernoulli1}
+    \caption{Representation of the Bernoulli distribution for a coin toss. The random variable $x$ represents the face of the coin measured after the toss, either heads ($x = 1$) or tails ($x = 0$), each with equal probability of happening $p = 1/2$.}
+    \label{fig:bernoulli_1}
 \end{figure}
 
-\textbf{Example 1}: A fair coin toss is a Bernoulli trial with:
-
+In the case of rolling, the distribution for Bernoulli trial  \eqref{eq:bernoulli_2} will become just 
 \begin{equation}
-p = P(\text{Heads}) = P(\text{Tails}) = 0.5.
+	P(x; p) = 
+		\begin{cases}
+			\frac{1}{6} & \text{if $x = 1$, face we want} \\
+			\frac{5}{6}& \text{if $x = 0$, any other value}
+		\end{cases}
 \end{equation}
 
-And we can model it as:
-\begin{equation}
-x = 
-\begin{cases}
-1 & \text{if Heads} \\
-0 & \text{if Tails}
-\end{cases}
-\end{equation}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli_2.png}
+    \caption{Representation of the Bernoulli distribution for a dice roll. The random variable $x$ represents the face of the dice measured after the roll, either a 6 - or any other face in a fair dice - ($x = 1$) or any of the remaining values, labeled as failure ($x = 0$). The probability of obtaining any of the faces is now $p = 1/6$, and any of the remaining ones appear with $1 - p = 5/6$.}
+    \label{fig:bernoulli_2}
+\end{figure}
 
-Bernoulli trials form the basis for more complex models such as the \textbf{Binomial distribution}, which models the number of successes in a fixed number of independent Bernoulli trials.
+Jacob Bernoulli stands among the foremost pioneers of probability theory. His work \textit{Ars Conjectandi}, published posthumously in 1713, provided the first systematic framework for reasoning about chance and uncertainty, as we have just seen. As we will cover in further chapters, Bernoulli articulated the law of large numbers, demonstrating that the relative frequency of an event approaches its true probability as the number of trials increases.\\
 
-\newpage
+As one could expect, this did not happen in isolation. The intellectual roots of Bernoulli’s work can be traced some decades earlier to the mid-seventeenth century, when Blaise Pascal and Pierre de Fermat corresponded on problems of games of chance [...]. Their exchange laid the early foundations of combinatorial probability, which Christiaan Huygens and later the Bernoulli family would extend with increasing rigour.\\
+
+It was within this tradition, that Jacob Bernoulli formalized the concept of what we now call a Bernoulli trial we have just covered. A simple experiment yielding one of two outcomes, often described as “success” or “failure”. This notion is elegantly expressed in its most elementary form \eqref{eq:bernoulli}, which captures the dual nature of uncertainty at the heart of probability. From this simple yet deep structure emerges the \textbf{Binomial distribution}, which we will cover next. A model that captures the number of successes in a \textit{sequence} of independent trials.
 
 \subsection{Binomial distribution}
-The simplest case of random event we will describe are the so-called \textit{binomial} events. Cases where we make a certain number of measurements $n$, each with two or more possible outcomes, and we want to know the number of successes. For instance, what would be the probability of measuring, or observing, 5 heads if I toss 10 coins? Or what would be the probability of obtaining 5 times a 6, out of a total of 100 dice rolls? In all these cases we will call $x$ the number of successes we want to observe, $n$ the total number of trials, and $p$ the probability of success in each individual trial. The binomial distribution models the number of successes in a fixed number of independent trials, each with the same probability of success. It was developed by Jacob Bernoulli in the 17th century while studying the probability of repeated Bernoulli trials. His work laid the foundation for the Law of Large Numbers.\\
+
+The simplest case of random events we will describe are the so-called \textit{binomial} events. Cases where we make a certain number of measurements $n$, each with two or more possible outcomes, and we want to know the number of successes. For instance, what would be the probability of measuring, or observing, 5 heads if I toss 10 coins? Or what would be the probability of obtaining 5 times a 6, out of a total of 100 dice rolls? In all these cases we will call $x$ the number of successes we want to observe, $n$ the total number of trials, and $p$ the probability of success in each individual trial. The binomial distribution models the number of successes in a fixed number of independent trials, each with the same probability of success. It was developed by Jacob Bernoulli in the 17th century while studying the probability of repeated Bernoulli trials. His work laid the foundation for the Law of Large Numbers.\\
 
 Intuitively, this distribution is useful when considering repeated experiments with two possible outcomes (success or failure). For example, flipping a fair coin multiple times follows a binomial pattern. We will say that the probability of observing $x$ successes in $n$ total tries, given individual probability of success $p$, is given by:
 \begin{equation}
@@ -367,6 +457,7 @@ This is normally referred to as a probability \textit{mass} distribution. The re
 \newpage
 
 \subsection{Poisson distribution}
+
 The next kind of random event we will discuss are the \textit{Poisson} distributed, named after the french mathematician Sim\'eon Denis Poisson, who tried to model to events that were random but with a known average rate, such as the number of people crossing a street per day, or the number of customers entering a store, or emails received per hour.
 As a note, this distribution was introduced in quite recent times, in the early 19th century to model rare events. It is particularly useful for counting occurrences over a fixed interval of time or space.\\
 
@@ -397,7 +488,7 @@ Again, let's consider a couple of examples to illustrate Poisson distributed eve
 This is what we refer to as \textit{cumulative probability}, or \textit{cumulative distribution} [...].
 \newpage
 
-\section{Discrete and continuous}
+\section{Continuous random variables}
 
 We will distinguish two main families of random events. These in which the number of possible outcomes is finite, or \textit{countable}, and the ones where the number of outcomes is \textit{uncountable}. The first ones will be named as \textit{discrete} events, while the second are normally referred to as \textit{continuous} [...]. \\
 
@@ -432,10 +523,6 @@ For such cases we will define a mathematical quantity, similar to that we called
 \end{itemize}
 
 In the same way we imposed that probability needs to obey unitarity, we will impose that property in our recently defined probability density $f(x)$. The way we represent the sum for all possible cases in the continuous case, is just imposing that the integral of the function $f(x)$ is 1. This is just an example of \textit{normalization}, that we will explore further in Chapter 4 [...].
-
-\newpage
-
-\section{Continuous random variables, density distributions}
 
 \subsection{Uniform distribution}
 
@@ -528,6 +615,7 @@ The probability density function is:
 \textbf{2.} Solution [...].\\
 
 \textbf{3.} Solution [...].\\
+
 
 
 
@@ -1378,54 +1466,6 @@ Comparing data and normalization
 
 
 
-% Chapter - Linear models and GLMs
-\chapter{Linear models and GLMs}
-
-\section{Simple linear regression}
-Simple linear regression
-
-\newpage
-
-\section{Multiple linear regression}
-Multiple linear regression.
-
-\newpage
-
-\section{Hypothesis testing in linear models}
-Hypothesis testing in linear models.
-
-\newpage
-
-\section{Generalized Linear Models (GLMs)}
-Generalized Linear Models (GLMs).
-
-\newpage
-
-\section{Logistic, Poisson, polynomial regression}
-Logistic, Poisson, polynomial regression.
-
-\newpage
-
-\subsection*{Exercises}
-
-\textbf{1.} Exercise [...].\\
-
-\textbf{2.} Exercise [...].\\
-
-\textbf{3.} Exercise [...].\\
-
-\newpage
-
-\subsection*{Solutions}
-
-\textbf{1.} Solution [...].\\
-
-\textbf{2.} Solution [...].\\
-
-\textbf{3.} Solution [...].\\
-
-
-
 % Chapter - Introduction to bayesian probability
 \chapter{Introduction to bayesian probability}
 
@@ -1542,11 +1582,6 @@ Computing posteriors.
 
 \textbf{3.} Solution [...].\\
 
-
-
-% Chapter - Introduction to Markov processes
-\chapter{Introduction to Markov processes}
-
 \section{Stochasticity and Markov processes}
 
 The world around us is full of uncertainty. Facing questions like, will it rain tomorrow? Will a cell divide or die? Will a water drop fall in the same place after some time, or somewhere near? In many cases, the best we can do is talk in terms of probabilities — not certainties. This is where the idea of \textit{stochasticity} comes again, and why mathematicians of the 20th century deeply revisited its meaning. Stochasticity normally means randomness. From now on, we will define a stochastic process as a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”\\
@@ -1646,8 +1681,6 @@ Hidden Markov models.
 \textbf{2.} Solution [...].\\
 
 \textbf{3.} Solution [...].\\
-
-\newpage
 
 
 

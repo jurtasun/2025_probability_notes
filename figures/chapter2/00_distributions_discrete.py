@@ -21,7 +21,7 @@ highlight_color = 'firebrick'
 
 
 # Bernoulli distribution parameters
-p = 0.6
+p = 0.5
 x_vals = [0, 1]
 y_vals = [1 - p, p]
 
@@ -61,7 +61,7 @@ plt.show()
 
 
 # Bernoulli distribution parameters
-p = 0.5
+p = 0.166
 x_vals = [0, 1]
 y_vals = [1 - p, p]
 
