@@ -22,6 +22,8 @@
 \citation{bernoulli1713ars}
 \citation{hald1990history}
 \citation{kolmogorov1933grundbegriffe}
+\citation{lebesgue1902}
+\citation{kolmogorov1933}
 \@writefile{toc}{\contentsline {section}{A bit of history}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Descriptive statistics}{5}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -30,10 +32,10 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Central tendency and variation}{6}{}\protected@file@percent }
 \newlabel{mean1}{{1.1}{6}{}{}{}}
 \newlabel{mean2}{{1.2}{6}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Data visualization}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Dependency, linearity, correlation}{7}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Three sets of observations, with the mean value and standard deviation represented as a violin plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit  {samples}, consist of 100 observations. In the case of $\chi _1$, $\chi _2$, $\chi _3$ [...].}}{8}{}\protected@file@percent }
 \newlabel{fig:histogram1}{{1.1}{8}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Data visualization}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Dependency, linearity, correlation}{8}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Three sets of observations, with the mean value and standard deviation represented as a box plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit  {samples}, consist of 100 observations. In the case of $\chi _1$, $\chi _2$, $\chi _3$ [...].}}{9}{}\protected@file@percent }
 \newlabel{fig:histogram1}{{1.2}{9}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Three sets of observations, with the mean value and standard deviation represented as a violin plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit  {samples}, consist of 100 observations. In the case of $\chi _1$, $\chi _2$, $\chi _3$ [...].}}{9}{}\protected@file@percent }
@@ -44,8 +46,6 @@
 \newlabel{fig:histogram1}{{1.5}{10}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Three sets of observations, with the mean value and standard deviation represented as a box plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit  {samples}, consist of 100 observations. In the case of $\chi _1$, $\chi _2$, $\chi _3$ [...].}}{11}{}\protected@file@percent }
 \newlabel{fig:histogram1}{{1.6}{11}{}{}{}}
-\citation{lebesgue1902}
-\citation{kolmogorov1933}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Probability and random events}{13}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -61,32 +61,33 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Discrete random variables}{15}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Bernoulli distribution}{15}{}\protected@file@percent }
 \newlabel{eq:bernoulli}{{2.3}{15}{}{}{}}
-\newlabel{eq:bernoulli_1}{{2.4}{16}{}{}{}}
-\newlabel{eq:bernoulli_2}{{2.5}{16}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Representation of the Bernoulli distribution for a coin toss. The random variable $x$ represents the face of the coin measured after the toss, either heads ($x = 1$) or tails ($x = 0$), each with equal probability of happening $p = 1/2$.}}{16}{}\protected@file@percent }
+\newlabel{eq:bernoulli_1}{{2.4}{15}{}{}{}}
+\newlabel{eq:bernoulli_2}{{2.5}{15}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Representation of the Bernoulli distribution for a coin toss. The horizontal axis displays the random variable $x$, representing the \textit  {face of the coin} measured after the toss, either \textit  {heads} ($x = 1$) or \textit  {tails} ($x = 0$), each happening with equal probability $p = 1/2$.}}{16}{}\protected@file@percent }
 \newlabel{fig:bernoulli_1}{{2.1}{16}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Representation of the Bernoulli distribution for a dice roll. The random variable $x$ represents the face of the dice measured after the roll, either a 6 - or any other face in a fair dice - ($x = 1$) or any of the remaining values, labeled as failure ($x = 0$). The probability of obtaining any of the faces is now $p = 1/6$, and any of the remaining ones appear with $1 - p = 5/6$.}}{17}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Representation of the Bernoulli distribution for a coin toss. The horizontal axis displays the random variable $x$, representing the \textit  {face of the dice} measured after the roll, either a \textit  {success} - 1, 2, ..., 6, any single face in a fair dice - ($x = 1$) or any of the remaining values, labeled as failure ($x = 0$). The probability of obtaining any of the faces is now $p = 1/6$, given by the red bar. Any of the remaining faces appear with $1 - p = 5/6$ probability, as displayed by the blue bar.}}{17}{}\protected@file@percent }
 \newlabel{fig:bernoulli_2}{{2.2}{17}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Binomial distribution}{18}{}\protected@file@percent }
-\newlabel{eq:binomial}{{2.10}{18}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Binomial distribution}{17}{}\protected@file@percent }
+\newlabel{eq:binomial}{{2.10}{17}{}{}{}}
 \newlabel{eq:combinatorial}{{2.11}{18}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}}{19}{}\protected@file@percent }
-\newlabel{fig:binomial1}{{2.3}{19}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}}{19}{}\protected@file@percent }
-\newlabel{fig:binomial1}{{2.4}{19}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Poisson distribution}{19}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Representation of the binomial distribution for a series of coin tosses. Here the random variable $x$ represents the \textit  {number of successes} - heads or tails - in $n = 10$ coin tosses, where the probability of each individual success is $p = 1/2$. Note that in such case the most probable outcome is to obtain 5 out of 10 heads, which supports expectation. Given we have only two possible outcomes, equally probable, the most likely scenario is that half of the times we obtain \textit  {heads}, and \textit  {tails} the remaining half.}}{18}{}\protected@file@percent }
+\newlabel{fig:binomial1}{{2.3}{18}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Representation of the binomial distribution for a series of dice rolls. Here the random variable $x$ represents the \textit  {number of successes} - a specific face - in $n = 10$ coin tosses, where the probability of each individual success is $p = 1/6$. Note that in such case, given the smaller probability for the successful case, the most probable outcome is to obtain 1 out of 10 heads, which supports expectation. Given we have six possible outcomes, all equally probable with $1/6$ probability, the most likely scenario is that 1.666 of the times we obtain the desired face. If we extended to 12 rolls, then we will find 2 out these 12 to be expected as a success.}}{19}{}\protected@file@percent }
+\newlabel{fig:binomial2}{{2.4}{19}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}}{20}{}\protected@file@percent }
-\newlabel{fig:binomial1}{{2.5}{20}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}}{20}{}\protected@file@percent }
-\newlabel{fig:binomial1}{{2.6}{20}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Representation of the Poisson distribution of a random variable $x$, given the number of observations $\lambda $ as a parameter.}}{21}{}\protected@file@percent }
-\newlabel{fig:poisson1}{{2.7}{21}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Continuous random variables}{22}{}\protected@file@percent }
+\newlabel{fig:binomial1_cum}{{2.5}{20}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Poisson distribution}{20}{}\protected@file@percent }
+\newlabel{eq:poisson}{{2.14}{20}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}}{21}{}\protected@file@percent }
+\newlabel{fig:binomial2_cum}{{2.6}{21}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Continuous random variables}{21}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Representation of the Poisson distribution of a random variable $x$, given the number of observations $\lambda $ as a parameter.}}{22}{}\protected@file@percent }
+\newlabel{fig:poisson1}{{2.7}{22}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Uniform distribution}{23}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Representation of the uniform distribution of a random variable $x$, given the boundaries $a$, $b$.}}{23}{}\protected@file@percent }
 \newlabel{fig:uniform1}{{2.8}{23}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Representation of the uniform distribution of a random variable $x$, given the boundaries $a$, $b$.}}{23}{}\protected@file@percent }
-\newlabel{fig:uniform1}{{2.9}{23}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Representation of the uniform distribution of a random variable $x$, given the boundaries $a$, $b$.}}{24}{}\protected@file@percent }
+\newlabel{fig:uniform1}{{2.9}{24}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Gaussian distribution}{24}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Representation of the gaussian distribution of a random variable $x$, given the mean value $\mu $ and standard deviation $\sigma $ parameters.}}{24}{}\protected@file@percent }
 \newlabel{fig:gaussian1}{{2.10}{24}{}{}{}}

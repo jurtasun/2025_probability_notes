@@ -122,6 +122,14 @@ The formalization of probability as a mathematical discipline did not occur unti
 
 The modern axiomatic formulation of probability was introduced in the early 20th century by the Russian mathematician Andrey Kolmogorov. In his 1933 monograph \textit{"Grundbegriffe der Wahrscheinlichkeitsrechnung"} (\textit{"Foundations of the Theory of Probability"}) \cite{kolmogorov1933grundbegriffe}, Kolmogorov synthesized classical and frequentist ideas into a rigorous mathematical framework based on measure theory. His axioms remain the standard foundation for probability theory to this day. It may seem surprising that a concept with such ancient origins was not formally axiomatized until relatively recent times, and we will return to Kolmogorov’s formulation and its implications in greater detail in Chapter 2 [...]. Nevertheless, philosophical discussions about the interpretation of probability and its relation to the physical sciences - especially in the context of determinism, epistemology and modern topics such as quantum mechanics - predate Kolmogorov's formulation and continue to evolve to this day [...].
 
+\medskip
+
+The rigorous formulation begins with the notion of \textit{sample space}, denoted by $\Omega$, introduced in the early 20th century by French mathematician Henri Lebesgue, among others. By \textit{sample space} $\Omega$, we will mean just the set of all possible outcomes of a certain measurement. The other key element is the \textit{measure} $\mu$, introduced in its modern form by Lebesgue in 1902 \cite{lebesgue1902}, and later adapted to probability as $\mathbb{P}$. Together they denoted an abstract mathematical object called the \textit{measure space} $(\Omega, \mu)$, which will eventually become the mathematical language used to described probability. If you want to read more about how measure theory led to probability theory in its its modern form, navigate through the works of Andrey Kolmogorov, specially his 1933 monograph \textit{"Foundations of Theory of Probability} \cite{kolmogorov1933}, where he formalized probability spaces using measure-theoretic language.
+
+\medskip
+
+There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details [...].\\
+
 
 
 % Chapter - Descriptive statistics .........................................................................................................................................................
@@ -144,7 +152,7 @@ The philosophical position adopted here is that statistics is essentially the st
 Historically, uncertainty has been associated with games of chance and gambling. The Royal Statistical Society, together with many other statistical groups, was originally set up
 to gather and publish data. This agrees with our argument about uncertainty because part of the purpose behind the data gathering was a reduction in uncertainty. It remains an essential part of statistical activity today and most Governments have statistical offices whose function is the acquisition and presentation of statistics. It did not take long before statisticians wondered how the data might best be used and modern statistical inference was born.\\
 
-The first person to make the step to decision-making seems to have been Ramsey (1926). He asked the simple question 'how should we make decisions in the face of uncertainty?'. He made some apparently reasonable assumptions and from them deduced theorems. The theorem that concerns us here is that which says that the uncertainty measures should obey the rules of the probability calculus. The conclusion is that measurements of uncertainty must obey the rules of the probability calculus.
+The first person to make the step to decision-making seems to have been Ramsey (1926). He asked the simple question 'how should we make decisions in the face of uncertainty?'. He made some apparently reasonable assumptions and from them deduced theorems. The theorem that concerns us here is that which says that the uncertainty measures should obey the rules of the probability calculus. The conclusion is that measurements of uncertainty must obey the rules of the probability calculus.\\
 
 Data types: quantitative vs. categorical.\\
 
@@ -161,7 +169,7 @@ Let's start defining a couple of quantities most people are already familiar wit
 Imagine we are doing an experiment where we measure some variable, and let's call it $x$ for simplicity. $x$ can be anything we could measure, like number of tomatoes in a bag, position at a given time, energy of some system, concentration of a specific substance, etc. Let's imagine we repeat the measurement three times, and we get first $x = 1$, then $x = 2$, and the last time $x = 3$. That will be our set of observations, or our \textit{sample}, $\textbf{x}_{1}$. We could simply write it as a list, or a \textit{vector} - in the following way:
 
 \begin{equation}
-\textbf{x}_{1} = \{1, 2, 3\} \; . \nonumber  
+	\textbf{x}_{1} = \{1, 2, 3\} \; . \nonumber  
 \end{equation}
 
 Keep in mind that from the mathematics perspective the word \textit{vector} has a slightly different meaning, with subtleties related to algebraic operations and relations they should satisfy, but for the purpose of this course, where we prioritize above all simplicity, a vector and a list of numbers will be essentially the same thing.
@@ -171,15 +179,15 @@ Keep in mind that from the mathematics perspective the word \textit{vector} has 
 We can define a quantity called the \textit{mean} - or \textit{average} - of an arbitrary large sample of $N$ observations, as the sum of all elements divided by the total. We will write it as $\bar{x}$, and define it as follows:
 
 \begin{equation}
-\bar{x} = \frac{1}{N} (x_{1} + x_{2} + ... + x_{N}) \; .
-\label{mean1}
+	\bar{x} = \frac{1}{N} (x_{1} + x_{2} + ... + x_{N}) \; .
+	\label{mean1}
 \end{equation}
 
 We can write this in a slightly more compact way as a \textit{summation}, as follows:
 
 \begin{equation}
-\bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_{i} \; .
-\label{mean2}
+	\bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_{i} \; .
+	\label{mean2}
 \end{equation}
 
 Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, starting with the first one ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$). The expressions (\ref{mean1}) and (\ref{mean2}) mean \textit{exactly} the same thing, just written in different ways.
@@ -189,19 +197,19 @@ Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, sta
 If we now write that expression for our specific sample $\textbf{x}_{1}$, which has just $N = 3$ observations, we get
 
 \begin{equation}
-\bar{x}_{1} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2 \; . \nonumber
+	\bar{x}_{1} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2 \; . \nonumber
 \end{equation}
 
 As we see, the mean is just a quantity that captures some information about the "central" value, where the bulk of events are. In a similar way, we can define the \textit{variance} as a quantity that captures how far are the elements of the observations set from the mean value. We will write it as $s^2$, for reasons that we will explain in detail later, and define it as follows:
 
 \begin{equation}
-s^2 = \frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2} \; . 
+	s^2 = \frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2} \; . 
 \end{equation}
 
 Note that the variance is just a sum of differences, and squared just so that we obtain a positive value. It is a measure starting with the first element ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$), of how far is each element from the mean value. If all elements in our sample are very close to the mean, then the sum of differences will be a small number, and we would get a variance $s^2$ close to zero. Meanwhile, if the elements are very different, we would obtain a bigger variance. The reason we name it $s^2$ is to distinguish it from the so-called \textit{standard deviation}, normally written as $s$, but we shall not worry about that now. Again, just by substituting that expression for our set $\textbf{x}_1$, which has just $N = 3$ observations, we get
 
 \begin{equation}
-s_1^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; , \nonumber
+	s_1^2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((1 - 2)^{2} + (2 - 2)^{2} + (2 - 3)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; , \nonumber
 \end{equation}
 
 which we could interpret as, on average, the elements of the list being \textit{one unit} away from the mean. In Figure \ref{fig:histogram1} we see a representation of a set of observations as a histogram, which visually displays the mean value and the variance [...].
@@ -211,17 +219,17 @@ which we could interpret as, on average, the elements of the list being \textit{
 As an exercise, try to compute both the mean and variance for a second sample, let's say
 
 \begin{equation}
-\textbf{x}_2 = \{4, 5, 6\} \; . \nonumber
+	\textbf{x}_2 = \{4, 5, 6\} \; . \nonumber
 \end{equation}
 
 By substituting in the general expressions of $\bar{x}$ and $s^2$ you should get the following results: 
 
 \begin{equation}
-\bar{x}_2 = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (4 + 5 + 6) = 5 \; . \nonumber
+	\bar{x}_2 = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (4 + 5 + 6) = 5 \; . \nonumber
 \end{equation}
 
 \begin{equation}
-s^2_2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((4 - 5)^{2} + (5 - 5)^{2} + (6 - 5)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; . \nonumber
+	s^2_2 = \frac{1}{3 - 1} \sum_{i = 1}^{3} (x_{i} - \bar{x})^{2} = \frac{1}{2} \big((4 - 5)^{2} + (5 - 5)^{2} + (6 - 5)^{2}\big) = \frac{1}{2} (1 + 0 + 1) = 1 \; . \nonumber
 \end{equation}
 
 Again, our mean $\bar{x}_2 = 5$ encodes the information about the "central" value, where the bulk of event are, and the variance $s^2_2 = 1$ indicates, as in the previous example, that the elements of the sample $\textbf{x}_2$ are also \textit{one unit} away from the mean.
@@ -231,14 +239,14 @@ Again, our mean $\bar{x}_2 = 5$ encodes the information about the "central" valu
 Another useful quantity used to characterize variability is the so called \textit{standard deviation}, which is just the square root of the variance
 
 \begin{equation}
-s = \sqrt{\frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}} \; . 
+	s = \sqrt{\frac{1}{N - 1} \sum_{i = 1}^{N} (x_{i} - \bar{x})^{2}} \; . 
 \end{equation}
 
 This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information. This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information.
 
 \medskip
 
-This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information. This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information.
+This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information. This is why we have named it in this way, such that $s = \sqrt{s^{2}}$ and our notation remains consistent. Sometimes it is useful to use the standard deviation and sometimes the variance, depending on the question and topic, but as we see they encode essentially the same information.\\
 
 Median [...], mode [...] \\
 
@@ -313,10 +321,6 @@ Probability theory, as we understand it today, did not emerge fully formed from 
 
 \medskip
 
-The rigorous formulation begins with the notion of \textit{sample space}, denoted by $\Omega$, introduced in the early 20th century by French mathematician Henri Lebesgue, among others. By \textit{sample space} $\Omega$, we will mean just the set of all possible outcomes of a certain measurement. The other key element is the \textit{measure} $\mu$, introduced in its modern form by Lebesgue in 1902 \cite{lebesgue1902}, and later adapted to probability as $\mathbb{P}$. Together they denoted an abstract mathematical object called the \textit{measure space} $(\Omega, \mu)$, which will eventually become the mathematical language used to described probability. If you want to read more about how measure theory led to probability theory in its its modern form, navigate through the works of Andrey Kolmogorov, specially his 1933 monograph \textit{"Foundations of Theory of Probability} \cite{kolmogorov1933}, where he formalized probability spaces using measure-theoretic language.
-
-\medskip
-
 Let's ask ourselves a the question, what \textit{is} probability in the first place? What do we mean by it and what does it describe? Probability is nothing more, and nothing less, that a \textit{number} we make up, a \textit{quantity} we come up with, to quantify certainty in a process whose outcome we ignore. A number we will use to describe the amount of information we have about a random - or stochastic - event. For simplicity, we can make it range from 0 to 1, in the following way:
 
 \begin{itemize}
@@ -380,10 +384,6 @@ These two interpretations - frequentist and Bayesian - do not so much contradict
 
 Indeed, the literal meaning of probability comes from latin \textit{probabilis}. American logician and philosopher Richard Jeffrey, "Before the middle of the seventeenth century, the term "probable" (Latin probabilis) meant just approvable, and was applied in that sense, univocally, to opinion and to action. A probable action or opinion was one such as sensible people would undertake or hold, in the circumstances." However, in legal contexts especially, "probable" could also apply to propositions for which there was good evidence [...].
 
-\medskip
-
-There have been at least two successful attempts to formalize probability, namely the Kolmogorov formulation and the Cox formulation. In Kolmogorov's formulation (see also probability space), sets are interpreted as events and probability as a measure on a class of sets. In Cox's theorem, probability is taken as a primitive (i.e., not further analyzed), and the emphasis is on constructing a consistent assignment of probability values to propositions. In both cases, the laws of probability are the same, except for technical details [...].\\
-
 \section{Discrete random variables}
 
 So far we have introduced the idea of random events, and the concept of probability as a number we define to quantify uncertainty. Now, we will try to model such events aiming to build predictions. That way, the probability we just defined will become a \textit{function} of certain input information, to be a descriptive - or \textit{predictive} - quantity. Indeed, not all random events are equal, and we will use the \textit{distribution} of such probabilities to classify different families of stochastic events.
@@ -413,7 +413,7 @@ In the case of rolling a dice and aiming for, let's say, a 6 - or any other valu
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli_1.png}
-    \caption{Representation of the Bernoulli distribution for a coin toss. The random variable $x$ represents the face of the coin measured after the toss, either heads ($x = 1$) or tails ($x = 0$), each with equal probability of happening $p = 1/2$.}
+    \caption{Representation of the Bernoulli distribution for a coin toss. The horizontal axis displays the random variable $x$, representing the \textit{face of the coin} measured after the toss, either \textit{heads} ($x = 1$) or \textit{tails} ($x = 0$), each happening with equal probability $p = 1/2$.}
     \label{fig:bernoulli_1}
 \end{figure}
 
@@ -425,7 +425,7 @@ Note that in all cases, the probability $p$ remains a number between 0 and 1, co
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli_2.png}
-    \caption{Representation of the Bernoulli distribution for a dice roll. The random variable $x$ represents the face of the dice measured after the roll, either a 6 - or any other face in a fair dice - ($x = 1$) or any of the remaining values, labeled as failure ($x = 0$). The probability of obtaining any of the faces is now $p = 1/6$, and any of the remaining ones appear with $1 - p = 5/6$.}
+    \caption{Representation of the Bernoulli distribution for a coin toss. The horizontal axis displays the random variable $x$, representing the \textit{face of the dice} measured after the roll, either a \textit{success} - 1, 2, ..., 6, any single face in a fair dice - ($x = 1$) or any of the remaining values, labeled as failure ($x = 0$). The probability of obtaining any of the faces is now $p = 1/6$, given by the red bar. Any of the remaining faces appear with $1 - p = 5/6$ probability, as displayed by the blue bar.}
     \label{fig:bernoulli_2}
 \end{figure}
 
@@ -472,7 +472,7 @@ Once we understand Bernoulli trials, and we are familiar with the idea of probab
 
 Back to our routine examples, what will be the probability of obtaining 5 heads if I toss 10 coins? Or what would be the probability of obtaining 5 times a 6, out of a total of 10 dice rolls? In all these cases we will call $x$ the number of successes we want to observe, $n$ the total number of trials, and $p$ the probability of success in each individual trial. We will say that the probability of observing $x$ successes in $n$ total tries, given individual probability of success $p$, is given by:
 \begin{equation}
-    P(x; n, k) = \binom{n}{x} p^x (1-p)^{n-x} \; .
+    P(x; n, p) = \binom{n}{x} p^x (1 - p)^{n - x} \; .
     \label{eq:binomial}
 \end{equation}
 Note that this is just an extension of the Bernoulli probability, or the Bernoulli \textit{distribution}, for a series of $n$ repetitions. The only difference is that we have a new variable - or \textit{parameter} - $n$ representing the number of times we are repeating the observation.\\
@@ -481,16 +481,23 @@ A quick note on syntax. Both the Bernoulli and the Binomial, together with the P
 
 Let's navigate through the expression \eqref{eq:binomial} with a couple of examples. Back to tossing coins, we could ask the question, what is the probability of obtaining 5 heads in 10 coin tosses, assuming a fair coin with equal probability of heads and tails $p = 1/2$?
 \begin{align}
-    P\bigg(x=5; \; n = 10; \; p = \frac{1}{2}\bigg) & = \binom{10}{5} \bigg(\frac{1}{2}\bigg)^5 \bigg(1 - \frac{1}{2}\bigg)^{(10 - 5)}  \notag \\
+    P\bigg(x=5; \; n = 10, \; p = \frac{1}{2}\bigg) & = \binom{10}{5} \bigg(\frac{1}{2}\bigg)^5 \bigg(1 - \frac{1}{2}\bigg)^{(10 - 5)}  \notag \\
 	& = \binom{10}{5} \bigg(\frac{1}{2}\bigg)^5 \bigg(\frac{1}{2}\bigg)^5 \notag \\
-	& = \frac{10!}{5! \; 5!} \; \frac{1}{2^5} \; \frac{1}{2^5} = 0.246 \; . \nonumber
+	& = \frac{10!}{5! \; 5!} \; \frac{1}{2^5} \; \frac{1}{2^5} = 0.246 \; , \nonumber
 \end{align}
 
-We have just substituted the specific values in the general expression for the binomial probability, and decomposed the combinatorial expression
+where we have just substituted the specific values in the general expression \eqref{eq:binomial}, and applied
 \begin{equation}
 	\binom{a}{b} = \frac{a!}{b! \; (a - b)!} \; .
 	\label{eq:combinatorial}
 \end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial_1.png}
+    \caption{Representation of the binomial distribution for a series of coin tosses. Here the random variable $x$ represents the \textit{number of successes} - heads or tails - in $n = 10$ coin tosses, where the probability of each individual success is $p = 1/2$. Note that in such case the most probable outcome is to obtain 5 out of 10 heads, which supports expectation. Given we have only two possible outcomes, equally probable, the most likely scenario is that half of the times we obtain \textit{heads}, and \textit{tails} the remaining half.}
+    \label{fig:binomial1}
+\end{figure}
 
 If you want to have a quick review on combinatorial calculus, please check [...]. If we consider another example, we could ask a similar question now concerning dice. What is the probability of obtaining 3 times a 6 heads in 10 dice rolls? Again, we need to assume some input information, such as the probability of obtaining a 6. In a fair dice, the probability of all faces is equally distributed, $p = 1/6$ for each. Then, by substituting these parameters in the general expression \eqref{eq:binomial} we obtain the result
 \begin{align}
@@ -501,46 +508,58 @@ If you want to have a quick review on combinatorial calculus, please check [...]
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/chapter2/binomial_1.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial_2.png}
+    \caption{Representation of the binomial distribution for a series of dice rolls. Here the random variable $x$ represents the \textit{number of successes} - a specific face - in $n = 10$ coin tosses, where the probability of each individual success is $p = 1/6$. Note that in such case, given the smaller probability for the successful case, the most probable outcome is to obtain 1 out of 10 heads, which supports expectation. Given we have six possible outcomes, all equally probable with $1/6$ probability, the most likely scenario is that 1.666 of the times we obtain the desired face. If we extended to 12 rolls, then we will find 2 out these 12 to be expected as a success.}
+    \label{fig:binomial2}
+\end{figure}
+
+As a last example, let's consider the probability of passing a text exam answering randomly. If we assume questions of the type (a, b, c) with only one correct answer, and the to pass we have to answer correctly 5 out of 10, this could be modelled as a binomial case. We shall just compute the binomial probability of obtaining 5 successes in 10 trials, where the probability of each correct answer is $p = 1/3$, one out of the (a, b, c). Then, by substituting these parameters in the general expression \eqref{eq:binomial} we obtain the result
+\begin{align}
+    P\bigg(x=5; \; n = 10; \; p = \frac{1}{3}\bigg) & = \binom{10}{5} \bigg(\frac{1}{3}\bigg)^5 \bigg(1 - \frac{1}{3}\bigg)^{(10 - 5)}  \notag \\
+	& = \binom{10}{5} \bigg(\frac{1}{3}\bigg)^3 \bigg(\frac{2}{3}\bigg)^5 \notag \\
+	& = \frac{10!}{5! \; 5!} \; \frac{1}{3^5} \; \frac{2^5}{3^5} = 0.137 \; . \nonumber
+\end{align}
+
+Which seems surprisingly low. Indeed, most test exams have more than three options, and incorrect answers subtract. If we implement these two adjustments in our calculation we will see the probability of pass going down to 0.018, reminding that the idea of chance is rather illusory [...].\\
+
+So far, we have only focused on the probability of observing \textit{exactly} one particular outcome. We have used the definition of the Bernoulli, or the binomial probability distribution to compute probabilities of single cases. But we could ask as well, what would be the probability observing \textit{more than} or \textit{less than} $x$ successful cases in a set of experiments. For example, we could ask what is the probability of observing 5 \textit{or less} successful \textit{heads} in 10 tosses of a coin. This can be computed as
+\begin{equation}
+    P(x \leq 5; \; n, \; p) = P(x = 0; \; n; \; p) + P(x = 1; \; n, \; p) + ... + P(x = 5; \; n, \; p) \: ,
+\end{equation}
+
+Which we can write in a compact way as the summation:
+\begin{equation}
+    P(x \leq 5; \; n, \; p) = \sum_{i = 1}^{5} \; P(x_i; \; n; \; p) \; . 
+\end{equation}
+
+This is what we refer to as \textit{cumulative probability}, or \textit{cumulative distribution} [...].\\
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial_1_cum.png}
     \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
-    \label{fig:binomial1}
+    \label{fig:binomial1_cum}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/chapter2/binomial_2.png}
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial_2_cum.png}
     \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
-    \label{fig:binomial1}
+    \label{fig:binomial2_cum}
 \end{figure}
 
-Cumulative probability [...]
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/chapter2/binomial_1_cum.png}
-    \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
-    \label{fig:binomial1}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/chapter2/binomial_2_cum.png}
-    \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
-    \label{fig:binomial1}
-\end{figure}
-
-It was developed by Jacob Bernoulli in the 17th century while studying the probability of repeated Bernoulli trials. His work laid the foundation for the Law of Large Numbers
+It was developed by Jacob Bernoulli in the 17th century while studying the probability of repeated Bernoulli trials. His work laid the foundation for the Law of Large Numbers.
 
 \subsection{Poisson distribution}
 
-The next kind of random event we will discuss are the \textit{Poisson} distributed, named after the french mathematician Sim\'eon Denis Poisson, who tried to model to events that were random but with a known average rate, such as the number of people crossing a street per day, or the number of customers entering a store, or emails received per hour.
-As a note, this distribution was introduced in quite recent times, in the early 19th century to model rare events. It is particularly useful for counting occurrences over a fixed interval of time or space.\\
+The next family of random events we will address are the \textit{Poisson} distributed. Named after the french mathematician Sim\'eon Denis Poisson, these events that are randomly distributed but with a known average rate, such as the number of people crossing a street per week, the number of customers entering a store per day, or emails received per hour. In short, rather than counting number of successes, with know probability, in a certain number of total trials, we will now just count the number of successes - or \textit{occurrences} - in a fixed interval.
 
-The probability mass function for observing a number of events $x$ if we know the average rate $\lambda$ is:
+The probability distribution for observing a certain number of events $x$ if we know the average rate $\lambda$ is written as:
 \begin{equation}
-    P(x; \lambda) = \frac{\lambda^x e^{-\lambda}}{x!},
+    P(x; \lambda) = \frac{\lambda^x e^{-\lambda}}{x!} \; .
+    \label{eq:poisson}
 \end{equation}
-Again, let's consider a couple of examples to illustrate Poisson distributed events.
+The mathematical expression in the right hand side of \eqref{eq:poisson} may seem a bit unnatural. That's a fair concern. The reason for that exponential comes from the derivation of the Poisson distribution, which arises as an extension of the binomial case for very large number of trials. If we start from the binomial distribution \eqref{eq:binomial}, it can be shown that as the total number of trials $n$ becomes larger, the number of successes $x$ becomes easier to interpret by considering frequencies $\lambda$ [...]. A explicit derivation of the Poisson distribution can be found at [...]. Again, let's consider a couple of examples to illustrate Poisson distributed events.
 
 \begin{figure}[ht]
     \centering
@@ -549,19 +568,22 @@ Again, let's consider a couple of examples to illustrate Poisson distributed eve
     \label{fig:poisson1}
 \end{figure}
 
-\textbf{Example 1:} We would like to know the probability of observing exactly 5 cancer patients in a hospital over a week, if we know the average number ($\lambda = 3$) patients per week.
+We would like to know the probability of observing exactly 5 cancer patients in a hospital over a week, Let's consider a hospital where the average is ($\lambda = 3$) patients per week. 
 \begin{equation}
-    P(x=5; \lambda = 3) = \frac{3^5 e^{-3}}{5!} = \frac{243 e^{-3}}{120} \approx 0.1008. \notag
+    P(x=5; \lambda = 3) = \frac{5^3 \; e^{-3}}{3!} = \frac{75 e^{-3}}{6} \approx 0.140. \nonumber
 \end{equation}\\
 
-\textbf{Example 2:} Let's now ask a similar, but different question. So far, we have only focused on the probability of observing \textit{exactly} one particular outcome. But we could ask as well, what would be the probability observing 5 \textit{or less} cancer patients in that same hospital ($\lambda = 3$) patients per week.
+In the same way we assumed some input information for the binomial, such as the total number of trials and the probability of individual success, in Poisson distributed events we need to know the historical rate, or \textit{average} $\lambda$.
+
+In the same way we di Let's now ask a similar, but different question. So far, we have only focused on the probability of observing \textit{exactly} one particular outcome. But we could ask as well, what would be the probability observing 5 \textit{or less} cancer patients in that same hospital ($\lambda = 3$) patients per week.
 \begin{align}
     P(x \leq 5; \lambda = 3) &= P(x=0; \lambda = 3) + P(x=1; \lambda = 3) + P(x=2; \lambda = 3) \notag \\
     &\quad + P(x=3; \lambda = 3) + P(x=4; \lambda = 3) + P(x=5; \lambda = 3) \notag
 \end{align}\\
 
-This is what we refer to as \textit{cumulative probability}, or \textit{cumulative distribution} [...].
-\newpage
+This is what we refer to as \textit{cumulative probability}, or \textit{cumulative distribution} [...].\\
+
+As a note, this distribution was introduced in quite recent times, in the early 19th century to model rare events. It is particularly useful for counting occurrences over a fixed interval of time or space.\\
 
 \section{Continuous random variables}
 
