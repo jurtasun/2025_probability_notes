@@ -33,7 +33,7 @@ bars[1].set_alpha(0.8)
 
 # Axis labels and ticks
 ax.set_xlabel(r"$x$", fontsize=14)
-ax.set_ylabel(r"$\mathbb{P}(x)$", fontsize=14)
+ax.set_ylabel(r"$\mathbb{P}(x; p)$", fontsize=14)
 ax.set_xticks([0, 1])
 ax.set_xticklabels([r"$0$", r"$1$"], fontsize=13)
 ax.set_yticks([p])
@@ -73,7 +73,7 @@ bars[1].set_alpha(0.8)
 
 # Axis labels and ticks
 ax.set_xlabel(r"$x$", fontsize=14)
-ax.set_ylabel(r"$\mathbb{P}(x)$", fontsize=14)
+ax.set_ylabel(r"$\mathbb{P}(x; p)$", fontsize=14)
 ax.set_xticks([0, 1])
 ax.set_xticklabels([r"$0$", r"$1$"], fontsize=13)
 ax.set_yticks([p])
@@ -101,7 +101,7 @@ plt.show()
 
 
 # Binomial distribution parameters
-n, p = 20, 0.5
+n, p = 10, 0.5
 x_binom = np.arange(0, n + 1)
 y_binom = binom.pmf(x_binom, n, p)
 
@@ -116,7 +116,7 @@ bars[mean_x].set_alpha(0.8)
 
 # Axis labels and ticks
 ax.set_xlabel(r"$x$", fontsize=14)
-ax.set_ylabel(r"$\mathbb{P}(x)$", fontsize=14)
+ax.set_ylabel(r"$\mathbb{P}(x; n, p)$", fontsize=14)
 ax.set_xticks(np.arange(0, n + 1, 2))
 ax.tick_params(axis='both', direction='in', length=4, width=1)
 
@@ -141,7 +141,7 @@ plt.show()
 
 
 # Binomial distribution parameters
-n, p = 20, 0.5
+n, p = 10, 0.5
 x_binom = np.arange(0, n + 1)
 y_binom = binom.pmf(x_binom, n, p)
 
@@ -157,7 +157,47 @@ for i in range(mean_x, n + 1):
 
 # Axis labels and ticks
 ax.set_xlabel(r"$x$", fontsize=14)
-ax.set_ylabel(r"$\mathbb{P}(x)$", fontsize=14)
+ax.set_ylabel(r"$\mathbb{P}(x; n, p)$", fontsize=14)
+ax.set_xticks(np.arange(0, n + 1, 2))
+ax.tick_params(axis='both', direction='in', length=4, width=1)
+
+# Grid and formatting
+ax.grid(True, linestyle='--', alpha=0.3)
+
+# Square style box
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(1)
+
+# Set limits and layout
+ax.set_xlim(-1, n + 1)
+ax.set_ylim(0, max(y_binom) * 1.15)
+plt.tight_layout()
+
+# Save and show
+fig.savefig("binomial_1_cum.png", dpi=300, bbox_inches='tight')
+fig.savefig("binomial_1_cum.pdf", bbox_inches='tight')
+plt.show()
+
+
+
+# Binomial distribution parameters
+n, p = 10, 0.166
+x_binom = np.arange(0, n + 1)
+y_binom = binom.pmf(x_binom, n, p)
+
+# Create plot
+fig, ax = plt.subplots(figsize=(7, 4.5))
+bars = ax.bar(x_binom, y_binom, color=main_color, edgecolor='black', linewidth=1.0, alpha=0.7)
+
+# Optionally highlight the mean value bar
+mean_x = int(n * p)
+bars[mean_x].set_color(highlight_color)
+bars[mean_x].set_alpha(0.8)
+
+# Axis labels and ticks
+ax.set_xlabel(r"$x$", fontsize=14)
+ax.set_ylabel(r"$\mathbb{P}(x; n, p)$", fontsize=14)
 ax.set_xticks(np.arange(0, n + 1, 2))
 ax.tick_params(axis='both', direction='in', length=4, width=1)
 
@@ -177,6 +217,47 @@ plt.tight_layout()
 # Save and show
 fig.savefig("binomial_2.png", dpi=300, bbox_inches='tight')
 fig.savefig("binomial_2.pdf", bbox_inches='tight')
+plt.show()
+
+
+
+# Binomial distribution parameters
+n, p = 10, 0.166
+x_binom = np.arange(0, n + 1)
+y_binom = binom.pmf(x_binom, n, p)
+
+# Create plot
+fig, ax = plt.subplots(figsize=(7, 4.5))
+bars = ax.bar(x_binom, y_binom, color=main_color, edgecolor='black', linewidth=1.0, alpha=0.7)
+
+# Highlight all bars from the mean and onward
+mean_x = int(n * p)
+for i in range(mean_x, n + 1):
+    bars[i].set_color(highlight_color)
+    bars[i].set_alpha(0.8)
+
+# Axis labels and ticks
+ax.set_xlabel(r"$x$", fontsize=14)
+ax.set_ylabel(r"$\mathbb{P}(x; n, p)$", fontsize=14)
+ax.set_xticks(np.arange(0, n + 1, 2))
+ax.tick_params(axis='both', direction='in', length=4, width=1)
+
+# Grid and formatting
+ax.grid(True, linestyle='--', alpha=0.3)
+
+# Square style box
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(1)
+
+# Set limits and layout
+ax.set_xlim(-1, n + 1)
+ax.set_ylim(0, max(y_binom) * 1.15)
+plt.tight_layout()
+
+# Save and show
+fig.savefig("binomial_2_cum.png", dpi=300, bbox_inches='tight')
+fig.savefig("binomial_2_cum.pdf", bbox_inches='tight')
 plt.show()
 
 

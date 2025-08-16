@@ -410,10 +410,24 @@ In the case of rolling a dice and aiming for, let's say, a 6 - or any other valu
 	\label{eq:bernoulli_2}
 \end{equation}
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli_1.png}
+    \caption{Representation of the Bernoulli distribution for a coin toss. The random variable $x$ represents the face of the coin measured after the toss, either heads ($x = 1$) or tails ($x = 0$), each with equal probability of happening $p = 1/2$.}
+    \label{fig:bernoulli_1}
+\end{figure}
+
 Note that in all cases, the probability $p$ remains a number between 0 and 1, consistent with our definition $p \in [0, 1]$ on previous section. Note as well that probabilities of both cases, success and failure, always add up to 1, conveniently fulfilling the unitarity property in the case of $n = 2$ possibilities.
 \begin{equation}
 	\sum_{i = 1}^{n} \; P(x_{i}) = P(x_1) + P(x_2) = p + (1 - p) = 1 \; .
 \end{equation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli_2.png}
+    \caption{Representation of the Bernoulli distribution for a dice roll. The random variable $x$ represents the face of the dice measured after the roll, either a 6 - or any other face in a fair dice - ($x = 1$) or any of the remaining values, labeled as failure ($x = 0$). The probability of obtaining any of the faces is now $p = 1/6$, and any of the remaining ones appear with $1 - p = 5/6$.}
+    \label{fig:bernoulli_2}
+\end{figure}
 
 From now on, rather than just writing the probabilities, we will build a quantity called \textit{distribution}. This may sound a bit abstract at first, but it will prove extremely useful when dealing. Indeed, even familiar quantities like the mean or the variance can be defined mathematically in terms of \textit{expected values}, or \textit{momenta} of probability distributions, as we will see further in this chapter.\\
 
@@ -437,13 +451,6 @@ In the case of tossing a coin, the distribution for Bernoulli trial  \eqref{eq:b
 		\end{cases}
 \end{equation}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli_1.png}
-    \caption{Representation of the Bernoulli distribution for a coin toss. The random variable $x$ represents the face of the coin measured after the toss, either heads ($x = 1$) or tails ($x = 0$), each with equal probability of happening $p = 1/2$.}
-    \label{fig:bernoulli_1}
-\end{figure}
-
 In the case of rolling, the distribution for Bernoulli trial  \eqref{eq:bernoulli_2} will become just 
 \begin{equation}
 	P(x; p) = 
@@ -452,13 +459,6 @@ In the case of rolling, the distribution for Bernoulli trial  \eqref{eq:bernoull
 			\frac{5}{6}& \text{if $x = 0$, any other value}
 		\end{cases}
 \end{equation}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/bernoulli_2.png}
-    \caption{Representation of the Bernoulli distribution for a dice roll. The random variable $x$ represents the face of the dice measured after the roll, either a 6 - or any other face in a fair dice - ($x = 1$) or any of the remaining values, labeled as failure ($x = 0$). The probability of obtaining any of the faces is now $p = 1/6$, and any of the remaining ones appear with $1 - p = 5/6$.}
-    \label{fig:bernoulli_2}
-\end{figure}
 
 Jacob Bernoulli stands among the foremost pioneers of probability theory. His work \textit{Ars Conjectandi}, published posthumously in 1713, provided the first systematic framework for reasoning about chance and uncertainty, as we have just seen. As we will cover in further chapters, Bernoulli articulated the law of large numbers, demonstrating that the relative frequency of an event approaches its true probability as the number of trials increases.\\
 
@@ -501,7 +501,30 @@ If you want to have a quick review on combinatorial calculus, please check [...]
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/chapter2/binomial_1.png}
+    \includegraphics[width=0.6\textwidth]{figures/chapter2/binomial_1.png}
+    \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
+    \label{fig:binomial1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter2/binomial_2.png}
+    \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
+    \label{fig:binomial1}
+\end{figure}
+
+Cumulative probability [...]
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter2/binomial_1_cum.png}
+    \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
+    \label{fig:binomial1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter2/binomial_2_cum.png}
     \caption{Representation of the binomial distribution of a random variable $x$, given the total number of trials $n$ and the individual probability of success $p$.}
     \label{fig:binomial1}
 \end{figure}
