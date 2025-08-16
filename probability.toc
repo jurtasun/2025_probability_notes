@@ -3,8 +3,8 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Index}{\EnsureStandardFontEncoding {iv}}{}%
 \contentsline {chapter}{Introduction}{1}{}%
-\contentsline {section}{\numberline {0.1}The purpose of these notes}{1}{}%
-\contentsline {section}{\numberline {0.2}A bit of history}{3}{}%
+\contentsline {section}{The purpose of these notes}{1}{}%
+\contentsline {section}{A bit of history}{3}{}%
 \contentsline {chapter}{\numberline {1}Descriptive statistics}{5}{}%
 \contentsline {section}{\numberline {1.1}Sampling and data types}{5}{}%
 \contentsline {section}{\numberline {1.2}Central tendency and variation}{5}{}%
