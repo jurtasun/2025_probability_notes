@@ -2,10 +2,18 @@
 
 \usepackage{makeidx, cite, indentfirst}
 \usepackage{amsmath, amssymb, amsfonts}
-\usepackage{graphicx, fancyhdr, enumitem}
+\usepackage{graphicx, fancyhdr, enumitem, epigraph}
 \usepackage[english, greek]{babel}
 \usepackage[margin=1in]{geometry} 
 \usepackage[title]{appendix}
+
+% Customize epigraph
+\setlength{\epigraphwidth}{0.4\textwidth} % width of the quote
+\setlength{\epigraphrule}{0pt} % remove horizontal line
+\setlength{\beforeepigraphskip}{0pt} % space before the epigraph
+\setlength{\afterepigraphskip}{2.5em} % space between quote and author
+\renewcommand{\epigraphflush}{flushright} % alignment
+\renewcommand{\epigraphsize}{\normalsize} % font size
 
 \pagestyle{fancy}
 
@@ -44,14 +52,16 @@
 
 
 
-% Introduction
+% Introduction .........................................................................................................................................................
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
+
+\epigraph{\textit{The theory of probabilities is at bottom nothing but common sense reduced to calculation.}}{— Pierre-Simon Laplace}
 
 \section*{The purpose of these notes}
 \addcontentsline{toc}{section}{The purpose of these notes}
 
-In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian probability and hypothesis testing. The text is composed by seven chapters, together with some appendix sections reviewing basic mathematical notions, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience.
+In the following pages one will find an introductory course to the theory of probability and statistical inference, aiming to cover both foundations and basic mathematical concepts, but also practical tools to deal with real data science problems, such as bayesian probability and hypothesis testing. The text is composed by five chapters, together with some appendix sections reviewing basic mathematical notions, and a bibliographic note. The purpose of these lecture notes is to make both probability and statistical analysis an easy, engaging and exciting topic for anyone interested, without the need for prior experience.
 
 \medskip
 
@@ -65,7 +75,7 @@ This is intended to be a complete introductory course, and no previous mathemati
 
 \medskip
 
-As mentioned, the course is organised in seven chapters. In the first two we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. From basics of measure theory we will motivate and introduce the mathematical definition of probability, and we will discuss the frequentist and bayesian approach, as the two main frameworks used in its interpretation. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}, that will enable us to make some simple computations and predictions. We will introduce some basic concepts such as \textit{distribution}, \textit{uncertainty} and \textit{variability}, among others, and we will learn how to build \textit{expected values} that represent the information we have about such random measurements.
+As mentioned, the course is organised in five chapters. In the first two we will introduce the idea of probability and random events with simple and intuitive examples, and we will see how different approaches have been used to model information and chance in different times. From basics of measure theory we will motivate and introduce the mathematical definition of probability, and we will discuss the frequentist and bayesian approach, as the two main frameworks used in its interpretation. Then we will discuss a series of mathematical ways to formally define random processes, also referred to as \textit{stochastic}, that will enable us to make some simple computations and predictions. We will introduce some basic concepts such as \textit{distribution}, \textit{uncertainty} and \textit{variability}, among others, and we will learn how to build \textit{expected values} that represent the information we have about such random measurements.
 
 \medskip
 
@@ -114,10 +124,31 @@ The modern axiomatic formulation of probability was introduced in the early 20th
 
 
 
-% Chapter - Descriptive statistics
+% Chapter - Descriptive statistics .........................................................................................................................................................
 \chapter{Descriptive statistics}
 
+\epigraph{\textit{Statistics is the grammar of science.}}{— Karl Pearson}
+
 \section{Sampling and data types}
+ 
+ [Lindley]
+ 
+The paper begins by recognizing that statistical issues concern uncertainty, going on to argue that uncertainty can only be measured by probability. This conclusion enables a systematic account of inference, based on the probability calculus, to be developed, which is shown to be different from some conventional accounts. The likelihood principle follows from the basic role played by probability. The role of data analysis in the construction of probability models and the nature of models are next discussed.
+
+\medskip
+
+The philosophical position adopted here is that statistics is essentially the study of uncertainty and that the statistician's role is to assist workers in other fields who encounter uncertainty in their work. In practice, there is a restriction in that statistics is ordinarily associated with data; and it is the link between the uncertainty, or variability, in the data and that in the topic itself that has occupied statisticians. Some writers even restrict the data to be frequency data, capable of near-identical repetition. Uncertainty, away from data, has rarely been of statistical interest. Statisticians do not have a monopoly of studies of uncertainty. Probabilists discuss how randomness in one part of a system affects other parts.
+
+\medskip
+
+Historically, uncertainty has been associated with games of chance and gambling. The Royal Statistical Society, together with many other statistical groups, was originally set up
+to gather and publish data. This agrees with our argument about uncertainty because part of the purpose behind the data gathering was a reduction in uncertainty. It remains an essential part of statistical activity today and most Governments have statistical offices whose function is the acquisition and presentation of statistics. It did not take long before statisticians wondered how the data might best be used and modern statistical inference was born.\\
+
+The first person to make the step to decision-making seems to have been Ramsey (1926). He asked the simple question 'how should we make decisions in the face of uncertainty?'. He made some apparently reasonable assumptions and from them deduced theorems. The theorem that concerns us here is that which says that the uncertainty measures should obey the rules of the probability calculus. The conclusion is that measurements of uncertainty must obey the rules of the probability calculus.
+
+Data types: quantitative vs. categorical.\\
+
+Samples vs. populations: importance of sampling, representativeness, basic sampling terminology. \\
 
 Why descriptive statistics matter: summarizing data, understanding patterns, detecting anomalies [...]
 
@@ -271,8 +302,10 @@ Optional: mention rank correlation for ordinal data.\\
 
 
 
-% Chapter - Probability and random events
+% Chapter - Probability and random events .........................................................................................................................................................
 \chapter{Probability and random events}
+
+\epigraph{\textit{It is through the calculation of probabilities that the divine order becomes visible.}}{— Jacob Bernoulli}
 
 \section{What is probability?}
 
@@ -621,8 +654,10 @@ The probability density function is:
 
 
 
-% Chapter - Parameter estimation
+% Chapter - Parameter estimation .........................................................................................................................................................
 \chapter{Parameter estimation}
+
+\epigraph{\textit{Numbers have an important story to tell. They rely on us to give them a voice.}}{— Florence Nightingale}
 
 \section{Prediction vs inference}
 
@@ -1040,8 +1075,10 @@ MLE is used to estimate the coefficients $\beta_0, \beta_1$ by maximizing the bi
 
 
 
-% Chapter - Introduction to hypothesis testing
+% Chapter - Introduction to hypothesis testing .........................................................................................................................................................
 \chapter{Introduction to hypothesis testing}
+
+\epigraph{\textit{The object of statistical science is the reduction of data to relevant information.}}{— Ronald A. Fisher}
 
 \section{Prediction vs inference}
 
@@ -1061,6 +1098,11 @@ Consider the examples we saw in previous chapters: there we developed a series o
 This distinction becomes particularly important in statistical modeling. Predictive models, such as those deployed in machine learning, are often evaluated by their performance on unseen data, with little regard for the interpretability of parameters. Inference, however, thrives on interpretable structure — effect sizes, confidence intervals, causal assumptions — offering insights that extend beyond mere forecasting. Yet the two are not mutually exclusive: many contemporary methods, especially in Bayesian statistics, attempt to harmonize prediction and inference within unified frameworks. Still, when decisions hinge on understanding causation or evaluating mechanisms—as in medicine, economics, or the social sciences—inference retains a privileged role. We will review this topic in Chapter 6, when we focus on the Bayesian and frequentist definition of probability. Approaching modern times, the rise of probabilistic models in the 20\textsuperscript{th} century has made now possible to quantify uncertainty in both directions, but their goals remain distinct. Inference aims to learn about the data-generated process, while prediction aims to accurately forecast future observations, regardless - at times - of the process's inner interpretability \cite{fisher1925}.\cite{pearson1900}.\\
 
 Within this context, hypothesis testing emerges as a formal tool to carry out inference under uncertainty. Popularized in the early 20\textsuperscript{th} century by Karl Pearson and Ronald A. Fisher, and later formalized by Jerzy Neyman and Egon Pearson, hypothesis testing provides a structured way to assess whether observed data is consistent with a particular theoretical claim. At its core, and as we will see in the next section, the method tests a "null" hypothesis (typically representing chance or no effect) against an "alternative" (commonly representing an unexpected event). Given these assumptions, we will build \textit{estimator} quantities from data, such as sample means and variances, and combine them to compute \textit{informative quantities}, sometimes referred as \textit{statistics} or \textit{statistic tests}. Then, we will calculate the probability of observing some data as extreme as ours under the null expectation. While often misused or misinterpreted, hypothesis testing remains foundational in the sciences, offering a bridge between data and theory, between the probabilistic world of prediction and the explanatory realm of inference \cite{welch1947}.\\
+
+[Lindley] Inference \\
+
+The formulation that has served statistics well throughout this century is based on the data having, for each value of a parameter, a probability distribution. This accords with the idea that the uncertainty in the data needs to be described probabilistically. It is desired to learn something about the parameter from the data. Generally not every aspect of the parameter is of interest, so write it as ($\Theta, \alpha$) where we wish to learn about $\Theta$ with $\alpha$ as a nuisance, to use the technical term [...].
+
 
 \section{Hypothesis, significance, p-values}
 
@@ -1468,8 +1510,10 @@ Comparing data and normalization
 
 
 
-% Chapter - Introduction to bayesian probability
+% Chapter - Introduction to bayesian probability .........................................................................................................................................................
 \chapter{Introduction to bayesian probability}
+
+\epigraph{\textit{Probability statements are just summaries of repeated observations.}}{— W. V. Quine}
 
 \section{Bayesian vs frequentist}
 
@@ -1686,8 +1730,10 @@ Hidden Markov models.
 
 
 
-
+% Appendix .........................................................................................................................................................
 \appendix
+
+
 
 % Chapter: Vectors and matrices
 \chapter{Appendix: Vectors and matrices: a quick review}
@@ -1794,6 +1840,8 @@ Once we understand the idea of vector, base and linear combination, we can try t
 
 \section{Basic algebraic operations}
 
+Basic algebraic operations
+
 
 
 % Chapter: Derivatives
@@ -1882,6 +1930,8 @@ Thus, the derivative of \( x^2 \) is \( 2x \), meaning the rate of change increa
 The development of calculus marked a turning point in intellectual history. It gave scientists, engineers, and economists the tools to model the world with precision and predict its behavior with confidence. The mathematical machinery behind electricity, fluid dynamics, statistics, and quantum mechanics all rely on the principles laid down by Newton, Leibniz, Euler, and their successors. Yet beyond its utility, calculus offers something more enduring: a glimpse into the deep continuity that underlies the universe, where motion and form, quantity and change, are all expressions of a single, evolving logic. Through calculus and the language of functions, we do not merely calculate---we begin to understand.\\
 
 \section{Divergence and gradient: differential calculus}
+
+Divergence and gradient: differential calculus
 
 
 
@@ -1979,121 +2029,15 @@ The Fundamental Theorem of Calculus bridges differentiation and integration, sho
 
 \section{Define definite integral as area under a curve}
 
+Define definite integral as area under a curve
+
 \section{The fundamental theorem of calculus}
 
+The fundamental theorem of calculus
 
 
-% Chapter: Fourier series
-\chapter{Appendix: Fourier series: a quick review}
 
-The work of \textbf{Joseph Fourier} (1768--1830) marked a quiet revolution in mathematics. Born in Auxerre, France, and later a scientific advisor to Napoleon's Egyptian campaign, Fourier turned his attention not to geometry or number theory, but to heat. In studying how heat diffuses through solid bodies, he formulated an idea that would echo far beyond its original domain: that any periodic function, no matter how jagged or discontinuous, could be represented as a sum of sines and cosines.\\
-
-This proposal---now known as the \textbf{Fourier series}---was published in his groundbreaking 1822 work, \emph{Théorie analytique de la chaleur} (\emph{The Analytical Theory of Heat}). The boldness of Fourier’s claim was not merely in using trigonometric functions as building blocks, but in applying them to represent functions that were not smooth or even continuous. This defied the mathematical expectations of his time and faced skepticism from giants like Lagrange and Laplace. Yet, as rigorous foundations for analysis developed over the 19th century, Fourier’s insight was vindicated and ultimately proved transformative.\\
-
-The Heart of Fourier Analysis. At the core of Fourier’s idea lies the intuition that complex phenomena---vibrations, oscillations, signals---can be decomposed into simpler, harmonically related parts. Much like a musical chord is built from individual notes, a function $f(x)$ can be reconstructed from an infinite series of sine and cosine functions:
-
-\[
-f(x) = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos(nx) + b_n \sin(nx) \right]
-\]
-
-Each term in this series captures a different \emph{frequency} component of the original signal, and the coefficients $a_n$, $b_n$ measure the amplitude of those components. This concept of breaking a function into frequency modes gave rise to what we now call \textbf{Fourier analysis}, a field that extends far beyond periodic functions to include integrals over continuous frequencies and higher-dimensional settings.\\
-
-The development of the \textbf{Fourier transform} generalized Fourier’s ideas to non-periodic functions and continuous spectra. Where the Fourier series dissects a signal into discrete harmonics, the Fourier transform reveals a continuous distribution of frequencies:
-
-\[
-\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i \xi x} \, dx
-\]
-
-This formulation became central in the analysis of signals, differential equations, quantum mechanics, and probability theory. It also laid the groundwork for modern fields such as signal processing, image compression, and wireless communications.\\
-
-Fourier’s Influence and Legacy. Fourier’s work did not exist in isolation. It catalyzed the emergence of modern mathematical analysis, particularly in understanding convergence, orthogonality, and function spaces. His ideas prompted mathematicians like \textbf{Dirichlet}, \textbf{Riemann}, and \textbf{Lebesgue} to rigorously define what it meant for a function to be “well-behaved,” leading to measure theory and functional analysis.\\
-
-In physics, Fourier’s ideas became foundational in thermodynamics, wave theory, and later, quantum mechanics. Schrödinger’s wave function, the uncertainty principle, and the solutions to the heat and wave equations all bear the imprint of Fourier’s methods. In engineering, Fourier analysis underlies digital signal processing (DSP), where signals are sampled, filtered, and reconstructed using discrete analogs of the Fourier transform. Even outside the hard sciences, Fourier methods appear in finance (to model stochastic processes), medicine (in MRI and EEG analysis), and art (in image and audio compression algorithms such as JPEG and MP3).\\
-
-A Language of Waves and Frequencies. To study Fourier’s work is to enter a world where time and frequency, shape and vibration, become dual aspects of the same reality. It invites us to see that any complex pattern---whether in sound, light, or temperature---can be understood through its fundamental oscillations. Just as algebra gives structure and calculus gives change, Fourier analysis offers a way to hear the hidden music of the world.
-
-The reach of Fourier’s vision continues to expand, carried through every vibrating string, radio signal, or digital image. His legacy is not just a method, but a mathematical philosophy: that in every apparent chaos lies an underlying harmony, waiting to be revealed through the language of waves.
-
-\section{Introduction to periodic functions}
-
-
-The Heart of Fourier Analysis. At the core of Fourier’s idea lies the intuition that complex phenomena---vibrations, oscillations, signals---can be decomposed into simpler, harmonically related parts. Much like a musical chord is built from individual notes, a function $f(x)$ can be reconstructed from an infinite series of sine and cosine functions:
-
-\[
-f(x) = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos(nx) + b_n \sin(nx) \right]
-\]
-
-Each term in this series captures a different \emph{frequency} component of the original signal, and the coefficients $a_n$, $b_n$ measure the amplitude of those components. This concept of breaking a function into frequency modes gave rise to what we now call \textbf{Fourier analysis}, a field that extends far beyond periodic functions to include integrals over continuous frequencies and higher-dimensional settings.\\
-
-The development of the \textbf{Fourier transform} generalized Fourier’s ideas to non-periodic functions and continuous spectra. Where the Fourier series dissects a signal into discrete harmonics, the Fourier transform reveals a continuous distribution of frequencies:
-
-\[
-\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i \xi x} \, dx
-\]
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_series_1.png}
-    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$.}
-    \label{fig:fourier_series_1}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_series_2.png}
-    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
-    \label{fig:fourier_series_2}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_series_3.png}
-    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
-    \label{fig:fourier_series_3}
-\end{figure}
-
-\section{Orthogonality and approximating functions}
-
-
-The Heart of Fourier Analysis. At the core of Fourier’s idea lies the intuition that complex phenomena---vibrations, oscillations, signals---can be decomposed into simpler, harmonically related parts. Much like a musical chord is built from individual notes, a function $f(x)$ can be reconstructed from an infinite series of sine and cosine functions:
-
-\[
-f(x) = a_0 + \sum_{n=1}^{\infty} \left[ a_n \cos(nx) + b_n \sin(nx) \right]
-\]
-
-Each term in this series captures a different \emph{frequency} component of the original signal, and the coefficients $a_n$, $b_n$ measure the amplitude of those components. This concept of breaking a function into frequency modes gave rise to what we now call \textbf{Fourier analysis}, a field that extends far beyond periodic functions to include integrals over continuous frequencies and higher-dimensional settings.\\
-
-The development of the \textbf{Fourier transform} generalized Fourier’s ideas to non-periodic functions and continuous spectra. Where the Fourier series dissects a signal into discrete harmonics, the Fourier transform reveals a continuous distribution of frequencies:
-
-\[
-\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i \xi x} \, dx
-\]
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_transform_1.png}
-    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$.}
-    \label{fig:fourier_series_1}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_transform_2.png}
-    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
-    \label{fig:fourier_series_2}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/appendix/fourier_transform_3.png}
-    \caption{Representation of a function $f(x)$, a given point $x_0$ and its image $f(x_0)$, and an increment $\Delta x$ from $x_0$ to $x_0 + \Delta x$. Here we divide the $\Delta x$ increment in smaller steps, aiming to approximate the area under the function. As the subdivisions become smaller, they become a better approximation of the area, and in the limit $\Delta x \rightarrow \infty$ they converge to the Riemann definition.}
-    \label{fig:fourier_transform_3}
-\end{figure}
-
-\section{Conditions of convergence}
-
-\section{Non-periodic functions}
-
+% Bibliography .........................................................................................................................................................
 \backmatter
  
 \begin{thebibliography}{999}
