@@ -1,7 +1,6 @@
 # Import libraries
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import binom, poisson, norm
 
 # Plot styling
 plt.rcParams.update({
@@ -15,92 +14,94 @@ plt.rcParams.update({
 # Colors
 main_color = "#1f77b4"
 highlight_color = 'firebrick'
+extra_color = "#2ca02c"
+
+colors = [main_color, highlight_color, extra_color]
 
 # Common formatting function
 def format_axes(ax):
-    ax.grid(True, linestyle='--', alpha=0.3)
+    ax.grid(True, linestyle='--', alpha=0.1)
     ax.tick_params(axis='both', direction='in', length=4, width=1)
     for spine in ax.spines.values():
         spine.set_visible(True)
         spine.set_linewidth(1)
 
-
 # =============================
-# 1. Binomial Distribution
+# Measurements Visualization
 # =============================
-n, p = 10, 0.5
-samples_binom = np.random.binomial(n, p, size=10000)
-x_vals = np.arange(0, n + 1)
-pmf_vals = binom.pmf(x_vals, n, p)
 
+# Generate three small sets of measurements
+np.random.seed(42)
+measurements1 = np.random.normal(loc=45, scale=2, size=30)
+measurements2 = np.random.normal(loc=50, scale=2, size=25)
+measurements3 = np.random.normal(loc=55, scale=3, size=20)
+
+groups = [measurements1, measurements2, measurements3]
+labels = ["Set 1", "Set 2", "Set 3"]
+
+# 1. Histogram (overlayed)
 fig, ax = plt.subplots(figsize=(7, 4.5))
-ax.hist(samples_binom, bins=np.arange(-0.5, n + 1.5, 1),
-        density=True, color=main_color, alpha=0.6,
-        edgecolor="black", linewidth=1.0, label="Samples")
-ax.plot(x_vals, pmf_vals, 'o-', color=highlight_color, lw=2, label="PMF")
+bins = np.linspace(40, 60, 15)
+for data, c, lab in zip(groups, colors, labels):
+    ax.hist(data, bins=bins, alpha=0.6, color=c, edgecolor="black", linewidth=1.0, label=lab)
 
-ax.set_xlabel(r"$x$", fontsize=14)
-ax.set_ylabel("Probability", fontsize=14)
-ax.set_xlim(-0.5, n + 0.5)
-ax.set_ylim(0, 0.3)
+ax.set_xlabel("Measurement value", fontsize=14)
+ax.set_ylabel("Frequency", fontsize=14)
 ax.legend()
 format_axes(ax)
 
 plt.tight_layout()
-fig.savefig("sampling_binomial.png", dpi=300, bbox_inches='tight')
-fig.savefig("sampling_binomial.pdf", bbox_inches='tight')
+fig.savefig("measurements_histogram.png", dpi=300, bbox_inches='tight')
+fig.savefig("measurements_histogram.pdf", bbox_inches='tight')
 plt.show()
 
-
-# =============================
-# 2. Poisson Distribution
-# =============================
-lam = 4
-samples_pois = np.random.poisson(lam, size=10000)
-x_vals = np.arange(0, 15)
-pmf_vals = poisson.pmf(x_vals, lam)
-
+# 2. Box plot
 fig, ax = plt.subplots(figsize=(7, 4.5))
-ax.hist(samples_pois, bins=np.arange(-0.5, 15.5, 1),
-        density=True, color=main_color, alpha=0.6,
-        edgecolor="black", linewidth=1.0, label="Samples")
-ax.plot(x_vals, pmf_vals, 'o-', color=highlight_color, lw=2, label="PMF")
+box = ax.boxplot(groups, patch_artist=True, labels=labels,
+                 boxprops=dict(color="black"),
+                 medianprops=dict(color="black", linewidth=2),
+                 whiskerprops=dict(color="black"),
+                 capprops=dict(color="black"),
+                 flierprops=dict(marker='o', markersize=5, linestyle="none", alpha=0.7))
 
-ax.set_xlabel(r"$x$", fontsize=14)
-ax.set_ylabel("Probability", fontsize=14)
-ax.set_xlim(-0.5, 15)
-ax.set_ylim(0, 0.25)
-ax.legend()
+# Color each box
+for patch, c in zip(box['boxes'], colors):
+    patch.set_facecolor(c)
+    patch.set_alpha(0.6)
+for med in box['medians']:
+    med.set_color(highlight_color)
+    med.set_linewidth(2)
+
+ax.set_ylabel("Value", fontsize=14)
 format_axes(ax)
 
 plt.tight_layout()
-fig.savefig("sampling_poisson.png", dpi=300, bbox_inches='tight')
-fig.savefig("sampling_poisson.pdf", bbox_inches='tight')
+fig.savefig("measurements_boxplot.png", dpi=300, bbox_inches='tight')
+fig.savefig("measurements_boxplot.pdf", bbox_inches='tight')
 plt.show()
 
-
-# =============================
-# 3. Normal Distribution
-# =============================
-mu, sigma = 0, 1
-samples_norm = np.random.normal(mu, sigma, size=10000)
-x_vals = np.linspace(-4, 4, 200)
-pdf_vals = norm.pdf(x_vals, mu, sigma)
-
+# 3. Violin plot
 fig, ax = plt.subplots(figsize=(7, 4.5))
-ax.hist(samples_norm, bins=30, density=True,
-        color=main_color, alpha=0.6,
-        edgecolor="black", linewidth=1.0, label="Samples")
-ax.plot(x_vals, pdf_vals, '-', color=highlight_color, lw=2, label="PDF")
+parts = ax.violinplot(groups, showmedians=True, showextrema=True)
 
-ax.set_xlabel(r"$x$", fontsize=14)
-ax.set_ylabel("Density", fontsize=14)
-ax.set_xlim(-4, 4)
-ax.set_ylim(0, 0.45)
-ax.legend()
+# Style violins
+for pc, c in zip(parts['bodies'], colors):
+    pc.set_facecolor(c)
+    pc.set_edgecolor("black")
+    pc.set_alpha(0.6)
+parts['cmedians'].set_color("black")
+parts['cmedians'].set_linewidth(2)
+for partname in ('cbars','cmins','cmaxes'):
+    vp = parts[partname]
+    vp.set_edgecolor("black")
+    vp.set_linewidth(1)
+
+ax.set_xticks([1, 2, 3])
+ax.set_xticklabels(labels, fontsize=13)
+ax.set_ylabel("Value", fontsize=14)
 format_axes(ax)
 
 plt.tight_layout()
-fig.savefig("sampling_normal.png", dpi=300, bbox_inches='tight')
-fig.savefig("sampling_normal.pdf", bbox_inches='tight')
+fig.savefig("measurements_violin.png", dpi=300, bbox_inches='tight')
+fig.savefig("measurements_violin.pdf", bbox_inches='tight')
 plt.show()
