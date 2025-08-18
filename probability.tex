@@ -137,24 +137,22 @@ There have been at least two successful attempts to formalize probability, namel
 
 \epigraph{\textit{Statistics is the grammar of science.}}{— Karl Pearson}
  
- A large part of history of science could be summarized as a record of the continuous human striving for a formulation of concepts which permit description of the real world in mathematical terms. To define mathematically some part of the natural world and phenomena we see, it is necessary to develop an appropriate mathematical model relating the one or more relevant quantities - sometimes called \textit{variables}, cause they relate and change depending on one another. The purpose of modelling might be, for instance, to determine the distance of the earth to the sun, to estimate the number of stars [...], or - deeply related to statistical sciences, relate the boiling point of water to the external pressure. Or relate number of cancer patients to smoking areas, or pollution levels [...].\\
+ A large part of history of science could be summarized as [...]. A record of the continuous human striving for a formulation of concepts which permit description of the real world in mathematical terms. To define mathematically the phenomena we find in the natural world, it is necessary to develop tools that relate the one or more relevant quantities - sometimes called \textit{variables}, cause they relate and change depending on one another. The purpose of modelling might be, for instance, to determine the distance of the earth to the sun, to estimate the number of stars in the observable universe, relate the boiling point of water to the external pressure, or the number of cancer patients to smoking areas, or pollution levels [...].\\
  
- Colombian mathematician Lucho Recalde explained that mathematics can be reduced to count, measure, and sort. When it comes to the description of chance, variation and uncertainty, the fields of statistics and probability add the idea of randomness, relation and correlation [...], confidence and reproducibility.
-   
- \medskip
- 
-The paper begins by recognizing that statistical issues concern uncertainty, going on to argue that uncertainty can only be measured by probability. This conclusion enables a systematic account of inference, based on the probability calculus, to be developed, which is shown to be different from some conventional accounts. The likelihood principle follows from the basic role played by probability. The role of data analysis in the construction of probability models and the nature of models are next discussed.
+Colombian mathematician Lucho Recalde explained that mathematics can be reduced to count, measure, and sort. When it comes to the description of chance, variation and uncertainty, the fields of statistics and probability add the idea of randomness, relation and correlation [...], confidence and reproducibility. All statistical issues concern \textit{uncertainty}, or \textit{variation} among observations, and hence building \textit{likelihoods} or probabilities, through data analysis and modelling [...].
 
 \medskip
 
-The philosophical position adopted here is that statistics is essentially the study of uncertainty and that the statistician's role is to assist workers in other fields who encounter uncertainty in their work. In practice, there is a restriction in that statistics is ordinarily associated with data; and it is the link between the uncertainty, or variability, in the data and that in the topic itself that has occupied statisticians. Some writers even restrict the data to be frequency data, capable of near-identical repetition. Uncertainty, away from data, has rarely been of statistical interest. Statisticians do not have a monopoly of studies of uncertainty. Probabilists discuss how randomness in one part of a system affects other parts.
+A philosophical often adopted is that statistics is essentially the study of uncertainty, and that the statistician's role is to assist workers in other fields who encounter uncertainty in their work. In practice, there is a restriction in that statistics is ordinarily associated with data; and it is the link between the uncertainty, or variability, in the data and that in the topic itself that has occupied statisticians. Statistics does not have a monopoly of studies of uncertainty. Probability discusses how randomness in one part of a system affects other parts.
 
 \medskip
 
 Historically, uncertainty has been associated with games of chance and gambling. The Royal Statistical Society, together with many other statistical groups, was originally set up
-to gather and publish data. This agrees with our argument about uncertainty because part of the purpose behind the data gathering was a reduction in uncertainty. It remains an essential part of statistical activity today and most Governments have statistical offices whose function is the acquisition and presentation of statistics. It did not take long before statisticians wondered how the data might best be used and modern statistical inference was born.\\
+to gather and publish data, as an attempt to reduction in uncertainty. It remains an essential part of statistical activity today and most Governments have statistical offices whose function is the acquisition and presentation of statistics. It did not take long before statisticians wondered how the data might best be used and modern \textit{statistical inference} was born.
 
-The first person to make the step to decision-making seems to have been Ramsey (1926). He asked the simple question 'how should we make decisions in the face of uncertainty?'. He made some apparently reasonable assumptions and from them deduced theorems. The theorem that concerns us here is that which says that the uncertainty measures should obey the rules of the probability calculus. The conclusion is that measurements of uncertainty must obey the rules of the probability calculus.\\
+\medskip
+
+The mathematical formalization of decision-making is actually quite a recent development. It is usually attributed to British mathematician Frank P. Ramsey (1903–1930), who in his 1926 paper \textit{Truth and Probability} \cite{ramsey1926} introduced a formal, subjective interpretation of probability, laying the groundwork for what later became expected utility theory in decision-making under uncertainty. In short, Ramsey formalized how rational agents should assign probabilities and make decisions based on personal beliefs and preferences. All starting from the apparantley-simple question \textit{'how should we make decisions in the face of uncertainty?'}.\\
 
 \section{Sampling and data types}
  
@@ -163,33 +161,85 @@ All statistical inquiries begins with observations and measurements, which we no
 	\mathcal{P} = \{x_1, x_2, \dots, x_N\} \; .
 \end{equation}
 
-The \textit{sample} on the other hand, is the finite subset actually collected. For a series of $N$ observations $x_1$, $x_2$, ..., $x_N$, a sample of just $n$ elements - less than the total, denoted by the upper case $N$ - is defined as
+The \textit{sample}, on the other hand, is the finite subset actually collected. For a series of $N$ observations $x_1$, $x_2$, ..., $x_N$, a sample of just $n$ elements - less than the total, which are denoted by the upper case $N$ - is defined as
 \begin{equation}
 	\mathcal{S} = \{x_{i_1}, x_{i_2}, \dots, x_{i_n}\}, \quad n \ll N \; ,
 \end{equation}
 
-where the $i$-subscripts remind us that the sample consists of selected observations from the population, not necessarily consecutive or all of them. The population represents the ideal object of inference, while the sample is the concrete, finite evidence available to us. This distinction is far from trivial; a poorly chosen sample misrepresents the population and may induce bias, whereas a carefully constructed one mirrors its essential features, and can be used to describe the underlying nature.
+where the $i$-subscripts remind us that the sample consists of selected observations from the population, not necessarily consecutive or all of them. The population represents the ideal object of inference, while the sample is the concrete, finite evidence available to us. This distinction is far from trivial; a poorly chosen sample often misrepresents the population and may induce bias, whereas a carefully constructed one mirrors its essential features, and can be used to describe the underlying nature.
 
 \medskip
 
-Equally important is the recognition that not all data are of the same kind. \textit{Categorical}, or \textit{qualitative} data describes qualities or labels such as the eye colour of students in a classroom (blue, brown, green), the brand of a purchased smartphone, etc. Some times they are further divided into \textit{nominal} categories, with no natural order, the eye colour or the smartphone brand, and \textbf{ordinal} categories with a meaningful order. Examples of these would be the finishing places in a race (first, second, third), survey responses ranging from “strongly disagree” to “strongly agree”, etc.\\
-\indent The other big group is normally referred to as \textit{numerical}, or \textit{quantitative} data. These measure quantities and can also be subdivided into \textbf{discrete}, countable numbers, e.g., the number of books on a shelf (4, 5, 6) or the number of goals scored in a match, and \textbf{continuous} values that can take any number within a range, e.g., the time a sprinter takes to run 100 meters, or the height of a person measured with arbitrary precision.
+Equally important is the recognition that not all data are of the same kind. A common distinction is to  consider \textit{categorical} and {numerical} data. Categorical - or \textit{qualitative} -  data describes qualities or labels such as the eye colour of students in a classroom (blue, brown, green), the brand of a purchased smartphone, etc. Sometimes they are further divided into \textit{nominal} categories, with no natural order, like the eye colour or the smartphone brand, and \textbf{ordinal} categories with a meaningful order. Examples of these would be the finishing places in a race (first, second, third), survey responses ranging from \textit{strongly disagree} to \textit{strongly agree}, etc.
 
 \medskip
 
-Distinguishing between these types is no mere pedantry; it shapes the tools one may legitimately apply. It would not make sense to compute a mean of smartphone brands, but to compute the mean of their prices is informative. Similarly, the distribution of finishing places after a race might be summarized by a median position, whereas heights of athletes could be studied with averages and measures of spread. A correct classification of data is thus a safeguard against misuse and a guide toward insight.
+The other big group is normally referred to as numerical, or \textit{quantitative} data. These measure numerical quantities and are often subdivided into \textbf{discrete}, countable numbers, such as the number of books on a shelf (4, 5, 6) or the number of goals scored in a match, and \textbf{continuous} values that can take any number within a range, such as the time a sprinter takes to run 100 meters, or the height of a person measured with arbitrary precision.
 
 \medskip
 
-Sampling and proper description of data establish the ground upon which of statistics is built. Before calculating, summarizing, or diving into inference, one must ensure that the information collected is both representative and properly understood. Without these foundations, descriptive measures risk floating unmoored, detached from the reality they claim to represent. Accurate sampling and rigorous description of the quantities under study will lead to a faithful representation of the phenomena under study and their relations, detecting anomalies, and even building accurate predictions.
+Distinguishing between these types is no mere slang; different types of observations require different tools, and will be described in different ways. For example, it would not make sense to compute a mean out of smartphone brands, but to compute the mean of their prices is informative. Similarly, the distribution of finishing places after a race might be summarized by a median position, whereas heights of athletes could be studied with averages and measures of spread. A correct classification of data is thus a safeguard against misuse and a guide toward insight.
+
+\medskip
+
+As a summary, sampling and proper description of data establish the ground upon which statistics is built. Before calculating, summarizing, or diving into inference, one must ensure that the information collected is both representative and properly understood. Without these foundations, descriptive measures risk floating unmoored, detached from the reality they claim to represent. Accurate sampling and rigorous description will lead to a faithful representation of the phenomena under study and their relations, detecting anomalies, and even building accurate predictions.
+
+\medskip
+
+Andrew Lang's famous quote \textit{"most people use statistics as a drunken man uses lamp-posts—for support rather than illumination"}, highlights the tendency to use statistics as a crutch, relying on them for validation rather than seeking genuine understanding. Lang's observation serves as a cautionary reminder to approach statistical data with critical thinking and not merely as a tool to bolster preconceived notions.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/mean_std_hist.png}
+    \caption{Three sets of observations, with the mean value and standard deviation represented as a violin plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
+    \label{fig:histogram1}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/measurements_histogram.png}
+    \caption{Three sets of observations, with the mean value and standard deviation represented as a box plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
+    \label{fig:histogram1}
+\end{figure}
 
 \section{Central tendency and variation}
 
-Once observations have been collected, a natural question arises: what is the \textit{center}, or\textit{typical} value of this data set? Mathematical quantities that measure the central tendency will be useful to summarize our data with a single representative number, providing an immediate sense of location within the distribution.
+Once observations have been collected, a natural question arises: what is the \textit{center}, or \textit{typical} value of this data set? Mathematical quantities that measure the central tendency will be useful to summarize our data with a single representative number, providing an immediate sense of location within the distribution.
 
 The \textit{mean}, or \textit{average} is perhaps the most familiar measure of central tendency. For a sample of $n$ observations $x_1$, $x_2$, $\dots$, $x_n$, the sample mean is defined as
+
+Imagine we are doing an experiment where we measure some variable, and let's call it $x$ for simplicity. $x$ can be anything we could measure, like number of tomatoes in a bag, position at a given time, energy of some system, concentration of a specific substance, etc. Let's imagine we repeat the measurement three times, and we get first $x = 1$, then $x = 2$, and the last time $x = 3$. That will be our set of observations, or our \textit{sample}, $\textbf{x}_{1}$. We could simply write it as a list, or a \textit{vector} - in the following way:
+
 \begin{equation}
-	\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i \; .
+	\textbf{x}_{1} = \{1, 2, 3\} \; . \nonumber  
+\end{equation}
+
+Keep in mind that from the mathematics perspective the word \textit{vector} has a slightly different meaning, with subtleties related to algebraic operations and relations they should satisfy, but for the purpose of this course, where we prioritize above all simplicity, a vector and a list of numbers will be essentially the same thing.
+
+\medskip
+
+We can define a quantity called the \textit{mean} - or \textit{average} - of an arbitrary large sample of $N$ observations, as the sum of all elements divided by the total. We will write it as $\bar{x}$, and define it as follows:
+
+\begin{equation}
+	\bar{x} = \frac{1}{N} (x_{1} + x_{2} + ... + x_{N}) \; .
+	\label{mean1}
+\end{equation}
+
+We can write this in a slightly more compact way as a \textit{summation}, as follows:
+
+\begin{equation}
+	\bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_{i} \; .
+	\label{mean2}
+\end{equation}
+
+Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, starting with the first one ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$). The expressions (\ref{mean1}) and (\ref{mean2}) mean \textit{exactly} the same thing, just written in different ways.
+
+\medskip
+
+If we now write that expression for our specific sample $\textbf{x}_{1}$, which has just $N = 3$ observations, we get
+
+\begin{equation}
+	\bar{x}_{1} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2 \; . \nonumber
 \end{equation}
 
 If considering a population of $N$ elements $X_1, X_2, \dots, X_N$, the population mean is
@@ -241,40 +291,6 @@ In summary, **mean, median, mode, variance, standard deviation, and quantiles** 
 
 \newpage
 	
-Imagine we are doing an experiment where we measure some variable, and let's call it $x$ for simplicity. $x$ can be anything we could measure, like number of tomatoes in a bag, position at a given time, energy of some system, concentration of a specific substance, etc. Let's imagine we repeat the measurement three times, and we get first $x = 1$, then $x = 2$, and the last time $x = 3$. That will be our set of observations, or our \textit{sample}, $\textbf{x}_{1}$. We could simply write it as a list, or a \textit{vector} - in the following way:
-
-\begin{equation}
-	\textbf{x}_{1} = \{1, 2, 3\} \; . \nonumber  
-\end{equation}
-
-Keep in mind that from the mathematics perspective the word \textit{vector} has a slightly different meaning, with subtleties related to algebraic operations and relations they should satisfy, but for the purpose of this course, where we prioritize above all simplicity, a vector and a list of numbers will be essentially the same thing.
-
-\medskip
-
-We can define a quantity called the \textit{mean} - or \textit{average} - of an arbitrary large sample of $N$ observations, as the sum of all elements divided by the total. We will write it as $\bar{x}$, and define it as follows:
-
-\begin{equation}
-	\bar{x} = \frac{1}{N} (x_{1} + x_{2} + ... + x_{N}) \; .
-	\label{mean1}
-\end{equation}
-
-We can write this in a slightly more compact way as a \textit{summation}, as follows:
-
-\begin{equation}
-	\bar{x} = \frac{1}{N} \sum_{i = 1}^{N} x_{i} \; .
-	\label{mean2}
-\end{equation}
-
-Here we denote the sum of all elements $x_{i}$ with the greek letter $\sum$, starting with the first one ($x_1$, for $i = 1$) and until the last one ($x_N$, for $i = N$). The expressions (\ref{mean1}) and (\ref{mean2}) mean \textit{exactly} the same thing, just written in different ways.
-
-\medskip
-
-If we now write that expression for our specific sample $\textbf{x}_{1}$, which has just $N = 3$ observations, we get
-
-\begin{equation}
-	\bar{x}_{1} = \frac{1}{3} \sum_{i = 1}^{3} x_{i} = \frac{1}{3} (1 + 2 + 3) = 2 \; . \nonumber
-\end{equation}
-
 As we see, the mean is just a quantity that captures some information about the "central" value, where the bulk of events are. In a similar way, we can define the \textit{variance} as a quantity that captures how far are the elements of the observations set from the mean value. We will write it as $s^2$, for reasons that we will explain in detail later, and define it as follows:
 
 \begin{equation}
@@ -337,14 +353,14 @@ These measures do more than summarize; they prepare the ground for comparison an
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/chapter1/mean_std_hist.png}
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/mean_std_violin.png}
     \caption{Three sets of observations, with the mean value and standard deviation represented as a violin plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
     \label{fig:histogram1}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/chapter1/measurements_histogram.png}
+    \includegraphics[width=0.6\textwidth]{figures/chapter1/mean_std_box.png}
     \caption{Three sets of observations, with the mean value and standard deviation represented as a box plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
     \label{fig:histogram1}
 \end{figure}
@@ -356,6 +372,10 @@ While numerical summaries useful, the human mind often understands patterns much
 \medskip
 
 Among the oldest and most fundamental visualization tools is the \textit{histogram}. The concept of dividing data into intervals to visualize frequency dates back to Karl Pearson in the late 19th century (1891) \cite{pearson1892}, who formalized it as a graphical representation of probability distributions. A histogram divides the range of a dataset into consecutive intervals, or \textit{bins}, and represents the frequency of observations falling within each bin as the height of a bar. This simple yet powerful plot provides an immediate visual impression of the dataset’s distribution, allowing one to identify symmetry, skewness, concentration of values, and potential gaps. For example, a symmetric histogram, like the one in figure [...] suggests a roughly balanced distribution around the mean, while a right-skewed histogram, like the one displayed in [...], indicates that higher values are less frequent but can influence measures like the mean. This is the state of the art in physical sciences and whenever data is supposed to fit a mathematical prediction. For instance, in figure [...] we can see a histogram which is very well described by a linear fit, with a small deviation in [...]. Figure [...] shows.
+
+\medskip
+
+Look for natural divisions in the data, and as general practise keep all bins the same size with cover the whole range under study. Figure [...] Outliers can skew, so they must be treated carefully. Figure [...]. A histogram is useful to study the symmetry or skewness of data, as we can see in Figure [...]. For skewed distributions (e.g. ...) would be better to use the median and the IQR.
 
 \medskip
 
@@ -372,20 +392,6 @@ Underlying these graphics is the concept of \textit{quantiles}. The median is th
 \medskip
 
 Graphs and diagrams are not mere decoration but instruments of analysis. They allow patterns to leap from obscurity, invite hypotheses, and sometimes contradict our assumptions. In practice, visualization is both a beginning and a test: a first impression of data, and a final check on the reasonableness of results derived through calculation.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/chapter1/mean_std_violin.png}
-    \caption{Three sets of observations, with the mean value and standard deviation represented as a violin plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
-    \label{fig:histogram1}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/chapter1/mean_std_box.png}
-    \caption{Three sets of observations, with the mean value and standard deviation represented as a box plot [...]. The red line shows the mean value, representing the central value where the bulk of events lie, and the shadowed area the standard deviation, as measure of the variability, or how spread the observations are with respect to the mean. In this case the three observation sets, or \textit{samples}, consist of 100 observations. In the case of $\chi_1$, $\chi_2$, $\chi_3$ [...].}
-    \label{fig:histogram1}
-\end{figure}
 
 \begin{figure}[ht]
     \centering
@@ -417,26 +423,63 @@ where $a$ is the intercept and $b$ the slope, chosen to minimize the sum of squa
 
 \medskip
 
-Correlation quantifies the strength and direction of this relationship. The \textit{Pearson correlation coefficient} $\rho_{x, y}$, sometimes called $r$
+Correlation is a fundamental measure of association between two random variables, quantifying how strongly they vary together. The most widely used form is the \textit{Pearson correlation coefficient}, introduced by Karl Pearson in the 1890s, which is built upon the idea of covariance normalized by variability. For two random variables $X$ and $Y$, the population correlation $\rho$ is defined as
 \begin{equation}
-	r = \rho_{x, y} = \frac{\text{cov}(x, y)}{\sigma_x \: \sigma_y} \; ,
-	\label{eq:correlation}
+	\rho = \frac{\mathrm{Cov}(X, Y)}{\sigma_X \, \sigma_Y}
+\end{equation}
+where the covariance is [...], hence the correlation remains
+\begin{equation}
+	\rho = \frac{\mathbb{E}\big[(X - \mu_X)(Y - \mu_Y)\big]}{\sqrt{\mathbb{E}\big[(X - \mu_X)^2\big]}\sqrt{\mathbb{E}\big[(Y - \mu_Y)^2\big]}} ,
 \end{equation}
 
-where $\textit{cov}$ is the covariance, defined in terms of the expectation value
+where $\mu_X, \mu_Y$ are the expected values and $\sigma_X, \sigma_Y$ the standard deviations of $X$ and $Y$. By construction, $\rho$ takes values in $[-1,1]$, with $+1$ indicating perfect positive linear association, $-1$ perfect negative association, and $0$ the absence of linear correlation.
+
+In practice, population parameters are unknown, and we compute a sample correlation $r$ from observed data. For a dataset of $n$ paired observations $\{(x_i, y_i)\}_{i=1}^n$, the formula becomes
 \begin{equation}
-	cov(x, y) = \mathbb{E}[(x - \mu_x) \; (y - \mu_y)]
+	r = \frac{\sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y})}{\sqrt{\sum_{i=1}^n (x_i - \overline{x})^2} \, \sqrt{\sum_{i=1}^n (y_i - \overline{y})^2}} ,
+\end{equation}
+where $\overline{x}$ and $\overline{y}$ are the sample means. This expression reveals $r$ as the normalized sample covariance, measuring co-movement relative to the independent variation of each variable.
+
+\medskip
+
+To illustrate, consider a small dataset of study hours $X$ and exam scores $Y$ for four students:
+\begin{equation}
+	(2, \, 65), \quad (4, \, 70), \quad (6, \, 75), \quad (8, \, 85).
+\end{equation}
+The sample means are $\overline{x} = (2+4+6+8)/4 = 5$ and $\overline{y} = (65+70+75+85)/4 = 73.75$. Computing the numerator,
+\begin{equation}
+	\sum_{i=1}^4 (x_i - \overline{x})(y_i - \overline{y}) = (2-5)(65-73.75) + (4-5)(70-73.75) + (6-5)(75-73.75) + (8-5)(85-73.75) = 65.
+\end{equation}
+The denominators are
+\[
+\sqrt{\sum_{i=1}^4 (x_i - \overline{x})^2} = \sqrt{9+1+1+9} = \sqrt{20}, \quad 
+\sqrt{\sum_{i=1}^4 (y_i - \overline{y})^2} = \sqrt{76.56+14.06+1.56+126.56} \approx \sqrt{218.75}.
+\]
+Hence
+\begin{equation}
+	r = \frac{65}{\sqrt{20} \cdot \sqrt{218.75}} \approx 0.98.
 \end{equation}
 
-ranges between -1 and +1, measuring how tightly the points cluster around a line. A value near +1 suggests strong positive association, near -1 strong negative association, and near 0 little linear relationship.
+\medskip
+
+This high positive correlation ($r \approx 0.98$) reflects the intuitive fact that, in this dataset, students who study more hours tend to achieve higher exam scores. Such a simple example shows how Pearson's $r$ provides a precise, normalized measure of linear association, bridging the abstract definition in terms of expectations with concrete calculations on observed data.
+
+Interpretation of $r$ is straightforward for linear relationships: values close to $\pm 1$ indicate strong linear association, while values near $0$ suggest weak or no linear correlation. However, Pearson's $r$ has limitations: it is sensitive to outliers, only captures linear relationships, and can be misleading if the relationship is nonlinear. Additionally, it assumes interval or ratio-scale data and homoscedasticity of variability across the range of $X$. Homoscedasticity, in statistics, refers to the assumption that the variance of the error terms in a regression model is constant across all levels of the independent variables. In simpler terms, it means the spread of data points around the regression line should be roughly the same, regardless of where you are on the line. This is crucial for accurate model predictions and reliable statistical inference
+
+\medskip
+
+A classic demonstration of Pearson's limitations is \textit{Anscombe's quartet} (1973), four datasets with nearly identical summary statistics, including mean, variance, and correlation, yet exhibiting dramatically different distributions and patterns when plotted. This highlights the necessity of visualizing data and not relying solely on numeric summaries.
+
+\medskip
+
+For ordinal data, where rankings rather than numeric differences matter, the \textit{Spearman rank correlation} $\rho_s$ is more appropriate. It is computed as the Pearson correlation of the ranks of the data rather than the raw values:
+\begin{equation}
+	\rho_s = r(\mathrm{rank}(X), \mathrm{rank}(Y)).
+\end{equation}
+
+This allows measurement of monotonic relationships without assuming equal spacing between values and provides a robust alternative to Pearson's $r$ when the underlying scale is ordinal or heavily skewed.
 
 The study of dependency, linearity, and correlation bridges description and inference. It transforms data from isolated measurements into networks of relationship, hinting at the structures that govern phenomena. Beyond linearity, one may explore nonlinear regression, rank correlation (Spearman’s $\rho$), or more advanced dependence measures, but the basic notions of regression and Pearson’s $r$ remain indispensable first steps.\\
-
-Scatter plots: visualize relationships between two quantitative variables.\\
-
-Correlation: introduce Pearson correlation, interpretation, limitations.\\
-
-Optional: mention rank correlation for ordinal data.\\
 
 
 
@@ -863,8 +906,9 @@ Statistical techniques such as hypothesis testing, confidence intervals, and reg
 
 Prediction focuses on accuracy and generalization rather than explaining causality. The goal is to create a model that performs well on new, unseen data, even if the underlying relationships between variables are not fully understood. For example, in modern deep learning, neural networks can recognize faces with high accuracy but offer little interpretability in how they make decisions. Unlike inference, which aims to understand why a pattern exists, prediction is about making the best possible guess given the available data. Focus shifted from understanding relationships to optimizing models that generalize well to unseen data. In 2001, Leo Breiman, in his seminal paper "Statistical Modelling: The Two Cultures," highlighted the distinction, arguing that traditional statistics emphasized inference, whereas modern machine learning prioritized prediction.\\
 
-\section{Parameters and variables}
-Another key difference we will discuss now, and quite a subtle one from the mathematical perspective, is that one between a \textit{variable} and a \textit{parameter}. Consider the example of a binomial experiment, e.g. tossing coins and asking for the probability of measuring a specific number of heads. There, we would write it as 
+\section{Parameters, variables, statistics}
+
+A \textit{parameter} is a number that describes the population, theoretical quantity, cannot be observed. A \textit{statistic} is a number calculated from data, used to describe / summarie data [...]. Another key difference we will discuss now, and quite a subtle one from the mathematical perspective, is that one between a \textit{variable} and a \textit{parameter}. Consider the example of a binomial experiment, e.g. tossing coins and asking for the probability of measuring a specific number of heads. There, we would write it as 
 
 \begin{equation}
     P(x; n, p) = \binom{n}{k} p^x (1-p)^{n-x},
@@ -1723,7 +1767,24 @@ The frequentist approach relies on repeating experiments many times and observin
 
 Frequentist methods often focus on long-run behaviour, like estimating probabilities from observed data or constructing confidence intervals. Bayesian methods combine prior knowledge (beliefs before seeing data) with observed data to update our understanding. In practice, both methods are used and combined and depending on the problem context.\\
 
-\newpage
+\section{Foundations of Probability and Bayes’ Theorem}
+
+The story of Bayesian probability begins with an attempt to formalize the logic of inference under uncertainty. Probability, in its classical sense, had long been tied to games of chance, but with the work of Thomas Bayes (1702--1761) and later Pierre-Simon Laplace (1749--1827), it acquired a more profound interpretation: a mathematical language for reasoning about what is known and unknown. Bayes’ posthumously published \textit{Essay towards solving a Problem in the Doctrine of Chances} (1763) introduced a method for updating beliefs when new evidence arises, laying the foundation for what we now call \textit{Bayes’ theorem}.
+
+At its heart, Bayes’ theorem provides a way to invert conditional probabilities: to move from $P(B \mid A)$, the probability of observing data given a hypothesis, to $P(A \mid B)$, the probability of the hypothesis given the data. The general form reads:
+\[
+P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)} ,
+\]
+where $P(A)$ is the \textit{prior probability}, $P(B \mid A)$ the \textit{likelihood}, and $P(A \mid B)$ the \textit{posterior probability}.
+
+The denominator $P(B)$, often called the \textit{marginal likelihood} or \textit{evidence}, ensures normalization:
+\[
+P(B) = \sum_{a} P(B \mid a) P(a) \quad \text{(discrete case)}, \qquad  
+P(B) = \int P(B \mid a) P(a) \, da \quad \text{(continuous case)} .
+\]
+It represents the probability of the observed data under all possible hypotheses.
+
+This simple formula conceals a revolution. By providing a systematic procedure for learning from data, Bayes’ theorem transforms probability from a passive measure of chance into an \textit{active calculus of belief revision}. It is this capacity for sequential updating --- to incorporate new evidence into prior understanding --- that makes Bayesian probability both philosophically compelling and practically indispensable.
 
 \section{The Bayes' Rule}
 
@@ -1792,30 +1853,102 @@ Even though both dice had the same chance of being picked, rolling a 6 strongly 
     \item \textbf{Bayesian}: Probability as belief, updated with evidence.
 \end{itemize}
 
-\newpage
+\section{Priors: Expressing Initial Beliefs}
 
-\section{Computing posteriors}
-Computing posteriors.
+Central to Bayesian reasoning is the notion of the \textit{prior distribution}. Unlike frequentist statistics, which resists introducing subjective knowledge, Bayesian analysis embraces it, allowing the investigator to encode assumptions or prior knowledge about the parameters of interest. The prior $P(\theta)$ represents one’s belief about the parameter $\theta$ before observing data.
 
-\subsection*{Exercises}
+Priors come in many forms. An \textit{uninformative prior} may be chosen to exert minimal influence, often expressed as a uniform distribution. A \textit{conjugate prior}, by contrast, is selected for mathematical convenience, as it produces a posterior of the same functional form. For example, when modeling a sequence of Bernoulli trials, the \textit{Beta distribution} serves as a conjugate prior for the probability of success $p$.
 
-\textbf{1.} Exercise [...].\\
+The Beta distribution is given by:
+\[
+\text{Beta}(\alpha, \beta): \quad f(p) = \frac{1}{B(\alpha, \beta)} p^{\alpha-1}(1-p)^{\beta-1}, \quad 0 < p < 1,
+\]
+where $\alpha, \beta > 0$ and $B(\alpha,\beta)$ is the Beta function. Choosing $\alpha = 1, \beta = 1$ recovers the uniform distribution, while larger values encode stronger prior beliefs about likely values of $p$.
 
-\textbf{2.} Exercise [...].\\
+The choice of prior is not trivial; it is both a philosophical and practical decision. Some criticize Bayesian methods for their ``subjectivity,'' yet this subjectivity reflects the very reality of knowledge: inference always begins from a starting point. By making priors explicit, Bayesian probability renders assumptions transparent, open to debate, and --- most importantly --- to revision through data.
 
-\textbf{3.} Exercise [...].\\
+\section{Likelihood and Posterior Updating}
 
-\newpage
+If priors express what we believe before seeing data, the \textit{likelihood} tells us how plausible the data are under different assumptions. Formally, the likelihood is
+\[
+L(\theta \mid x) = P(x \mid \theta),
+\]
+considered as a function of the parameter $\theta$ given observed data $x$. The likelihood thus captures the information that the data provide about competing hypotheses.
 
-\subsection*{Solutions}
+Bayes’ theorem elegantly combines prior and likelihood into the posterior distribution:
+\[
+P(\theta \mid x) \propto P(x \mid \theta) \, P(\theta).
+\]
+This relation emphasizes that the posterior is proportional to the product of prior and likelihood; the normalizing constant is the marginal likelihood.
 
-\textbf{1.} Solution [...].\\
+A simple but powerful illustration comes from diagnostic testing. Suppose a disease has prior prevalence $P(D) = 0.01$, and a test has sensitivity $P(+ \mid D) = 0.99$ and false positive rate $P(+ \mid \neg D) = 0.05$. Upon observing a positive result, Bayes’ theorem yields:
+\[
+P(D \mid +) = \frac{0.99 \times 0.01}{0.99 \times 0.01 + 0.05 \times 0.99} \approx 0.17 .
+\]
+Even with a highly accurate test, the posterior probability of disease is only 17\% --- an instructive reminder of how base rates and likelihoods interact.
 
-\textbf{2.} Solution [...].\\
+Posterior updating allows beliefs to evolve systematically as evidence accumulates. A prior distribution combined with one set of data produces a posterior, which may itself serve as the prior for subsequent analysis. This recursive property endows Bayesian inference with a natural adaptability, mirroring the iterative way knowledge advances in science.
 
-\textbf{3.} Solution [...].\\
+\section{Likelihood and posterior updating}
+
+If priors express what we believe before seeing data, the \textit{likelihood} tells us how plausible the data are under different assumptions. Formally, the likelihood is
+\[
+L(\theta \mid x) = P(x \mid \theta),
+\]
+considered as a function of the parameter $\theta$ given observed data $x$. The likelihood thus captures the information that the data provide about competing hypotheses.
+
+Bayes’ theorem elegantly combines prior and likelihood into the posterior distribution:
+\[
+P(\theta \mid x) \propto P(x \mid \theta) \, P(\theta).
+\]
+This relation emphasizes that the posterior is proportional to the product of prior and likelihood; the normalizing constant is the marginal likelihood.
+
+A simple but powerful illustration comes from diagnostic testing. Suppose a disease has prior prevalence $P(D) = 0.01$, and a test has sensitivity $P(+ \mid D) = 0.99$ and false positive rate $P(+ \mid \neg D) = 0.05$. Upon observing a positive result, Bayes’ theorem yields:
+\[
+P(D \mid +) = \frac{0.99 \times 0.01}{0.99 \times 0.01 + 0.05 \times 0.99} \approx 0.17 .
+\]
+Even with a highly accurate test, the posterior probability of disease is only 17\% --- an instructive reminder of how base rates and likelihoods interact.
+
+Posterior updating allows beliefs to evolve systematically as evidence accumulates. A prior distribution combined with one set of data produces a posterior, which may itself serve as the prior for subsequent analysis. This recursive property endows Bayesian inference with a natural adaptability, mirroring the iterative way knowledge advances in science.
+
+\section{Bayesian Inference and Decision Making}
+
+Beyond producing posterior distributions, Bayesian probability provides a full framework for \textit{statistical inference and decision-making under uncertainty}. One central concept is the \textit{credible interval}, defined as an interval $[a, b]$ such that
+\[
+P(a \leq \theta \leq b \mid x) = 0.95 ,
+\]
+for example, directly reflecting the probability that the parameter lies in the interval, unlike frequentist confidence intervals.
+
+Bayesian inference also extends to \textit{posterior predictive distributions}, which describe future observations given past data:
+\[
+P(x_{\text{new}} \mid x) = \int P(x_{\text{new}} \mid \theta) P(\theta \mid x) \, d\theta .
+\]
+This makes the framework inherently predictive, not just descriptive.
+
+Decision-making enters when actions must be chosen under uncertainty. Bayesian decision theory introduces a \textit{loss function} $L(\theta, a)$, representing the cost of taking action $a$ when the true parameter is $\theta$. The optimal action minimizes the \textit{expected posterior loss}:
+\[
+a^* = \arg \min_a \int L(\theta, a) P(\theta \mid x) \, d\theta .
+\]
+This connection between probability and utility renders Bayesian analysis not only a tool for understanding but also a guide for acting.
+
+Through this lens, Bayesian probability becomes a philosophy of rational behavior. It bridges statistics and decision theory, grounding choices in transparent, quantitative reasoning while always remaining open to revision when new data arrive.
 
 \section{Stochasticity and Markov processes}
+
+One of the most profound consequences of Bayesian thinking is its natural compatibility with the study of stochastic processes. Real-world phenomena often unfold not in isolation but over time, with present states depending on past ones. This temporal dependence introduces the concept of \textit{Markov processes}, mathematical models for sequences of random variables where the future depends only on the present and not on the full history. Formally, a sequence $\{X_t\}_{t \geq 0}$ satisfies the \textit{Markov property} if
+\[
+P(X_{t+1} \mid X_t, X_{t-1}, \dots, X_0) = P(X_{t+1} \mid X_t) .
+\]
+
+Stochasticity here refers to the intrinsic randomness of these evolving systems. The Markov assumption, while simplifying, often captures essential features of processes in physics, biology, finance, and computer science. Weather modeling, for instance, frequently treats tomorrow’s conditions as dependent only on today’s, rather than on the entire climatic past.
+
+Bayesian probability provides a unifying framework for inference on such processes. A central tool is the \textit{transition probability matrix} $P$, where $P_{ij} = P(X_{t+1} = j \mid X_t = i)$. When combined with prior beliefs about states or transitions, Bayesian updating allows us to learn the structure of the process from data. For example, in a hidden Markov model (HMM), the underlying states are not directly observed, but Bayesian inference makes it possible to estimate both the hidden states and the parameters of the transition dynamics.
+
+The connection extends even further in modern computation. Methods such as \textit{Markov Chain Monte Carlo} (MCMC) deliberately exploit Markov processes to generate samples from complex posterior distributions. Here, the Markov property ensures that after sufficient iterations, the simulated chain converges to the target distribution $P(\theta \mid x)$. Thus, stochasticity, far from being an obstacle, becomes an indispensable tool: randomness is harnessed to approximate intractable Bayesian calculations.
+
+In this way, the study of stochasticity and Markov processes both enriches Bayesian probability and is enriched by it. Bayesian methods provide principled ways to learn and update in dynamic, uncertain environments, while Markov processes supply both a model of temporal dependence and a computational engine. Together, they form the foundation of many modern probabilistic methods in statistics, machine learning, and the natural sciences.
+
+\newpage
 
 The world around us is full of uncertainty. Facing questions like, will it rain tomorrow? Will a cell divide or die? Will a water drop fall in the same place after some time, or somewhere near? In many cases, the best we can do is talk in terms of probabilities — not certainties. This is where the idea of \textit{stochasticity} comes again, and why mathematicians of the 20th century deeply revisited its meaning. Stochasticity normally means randomness. From now on, we will define a stochastic process as a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”\\
 
@@ -2300,33 +2433,36 @@ Andrey N. Kolmogorov.
 \textit{Grundbegriffe der Wahrscheinlichkeitsrechnung}.  
 Springer, 1933. English translation: \textit{Foundations of the Theory of Probability}, Chelsea Publishing Company, 1956.
 
+\bibitem{ramsey1926}
+Ramsey, F. P. (1926). 
+\textit{Truth and Probability}. In D. H. Mellor (Ed.), \textit{The Foundations of Mathematics and Other Logical Essays} (pp. 156–198). London: Routledge \& Kegan Paul.
+
 \bibitem{pearson1892}
-Pearson, K. (1892). 
-\"The Grammar of Science.\" 
-London: Adam and Charles Black. 
-(Contains the introduction of the term and concept of histogram).
+Pearson, K. (1892).
+\textit{The Grammar of Science.}
+London: Adam and Charles Black. (Contains the introduction of the term and concept of histogram).
 
 \bibitem{tukey1977}
 Tukey, J.W. (1977). 
-\"Exploratory Data Analysis.\" 
-Addison-Wesley. 
-(First book introducing the box plot as a graphical method).
+\textit{Exploratory Data Analysis.}
+Addison-Wesley.  (First book introducing the box plot as a graphical method).
 
 \bibitem{hintze1997}
 Hintze, J.L., \& Nelson, R.D. (1997).
-\"Violin Plots: A Box Plot-Density Trace Synergism.\" 
-The American Statistician, 52(2), 181–184. 
-doi:10.1080/00031305.1998.10480559
-(Introduced the violin plot in statistics).
+\textit{Violin Plots: A Box Plot-Density Trace Synergism.}
+The American Statistician, 52(2), 181–184. doi:10.1080/00031305.1998.10480559 (Introduced the violin plot in statistics).
 
 \bibitem{kolmogorov1933}
-A. N. Kolmogorov, \emph{Grundbegriffe der Wahrscheinlichkeitsrechnung}, Springer, 1933.
+A. N. Kolmogorov, \emph{Grundbegriffe der Wahrscheinlichkeitsrechnung}.
+Springer, 1933.
 
 \bibitem{lebesgue1902}
-H. Lebesgue, \emph{Intégrale, longueur, aire}, Annali di Matematica, 1902.
+H. Lebesgue, \emph{Intégrale, longueur, aire}.
+Annali di Matematica, 1902.
 
 \bibitem{doob1953}
-J. L. Doob, \emph{Stochastic Processes}, Wiley, 1953.
+J. L. Doob, \emph{Stochastic Processes}.
+ Wiley, 1953.
 
 \bibitem{vonmises1928}
 R. von Mises, \emph{Probability, Statistics and Truth}, 1928.
@@ -2338,34 +2474,44 @@ T. Bayes, \emph{An Essay towards Solving a Problem in the Doctrine of Chances}, 
 P.-S. Laplace, \emph{Théorie Analytique des Probabilités}, 1812.
 
 \bibitem{definetti1974}
-B. de Finetti, \emph{Theory of Probability}, Wiley, 1974.
+B. de Finetti, \emph{Theory of Probability}.
+Wiley, 1974.
 
 \bibitem{billingsley1995}
-P. Billingsley, \emph{Probability and Measure}, Wiley, 1995.
+P. Billingsley, \emph{Probability and Measure}.
+Wiley, 1995.
 
 \bibitem{jaynes2003}
-E. T. Jaynes, \emph{Probability Theory: The Logic of Science}, Cambridge University Press, 2003.
+E. T. Jaynes, \emph{Probability Theory: The Logic of Science}.
+Cambridge University Press, 2003.
 
 \bibitem{student1908}
-Student. (1908). *The probable error of a mean*. Biometrika, 6(1), 1–25.
+Student. (1908). *The probable error of a mean*.
+Biometrika, 6(1), 1–25.
 
 \bibitem{fisher1925}
-Fisher, R. A. (1925). *Statistical Methods for Research Workers*. Edinburgh: Oliver and Boyd.
+Fisher, R. A. (1925). *Statistical Methods for Research Workers*.
+Edinburgh: Oliver and Boyd.
 
 \bibitem{fisher1935}
-Fisher, R. A. (1935). *The Design of Experiments*. Edinburgh: Oliver and Boyd.
+Fisher, R. A. (1935). *The Design of Experiments*.
+Edinburgh: Oliver and Boyd.
 
 \bibitem{pearson1900}
-Pearson, K. (1900). *On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling*. Philosophical Magazine Series 5, 50(302), 157–175.
+Pearson, K. (1900). *On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling*.
+Philosophical Magazine Series 5, 50(302), 157–175.
 
 \bibitem{welch1947}
-Welch, B. L. (1947). *The generalization of "Student’s" problem when several different population variances are involved*. Biometrika, 34(1–2), 28–35.
+Welch, B. L. (1947). *The generalization of "Student’s" problem when several different population variances are involved*. 
+Biometrika, 34(1–2), 28–35.
 
 \bibitem{yates1934}
-Yates, F. (1934). *Contingency tables involving small numbers and the $\chi^2$ test*. Supplement to the Journal of the Royal Statistical Society, 1(2), 217–235.
+Yates, F. (1934). *Contingency tables involving small numbers and the $\chi^2$ test*.
+Supplement to the Journal of the Royal Statistical Society, 1(2), 217–235.
 
 \bibitem{greenwood1911}
-Greenwood, M., \& Yule, G. U. (1911). *An inquiry into the nature of frequency distributions representative of multiple happenings with particular reference to the occurrence of multiple attacks of disease or of repeated accidents*. Journal of the Royal Statistical Society, 83(2), 255–279.
+Greenwood, M., \& Yule, G. U. (1911). *An inquiry into the nature of frequency distributions representative of multiple happenings with particular reference to the occurrence of multiple attacks of disease or of repeated accidents*.
+Journal of the Royal Statistical Society, 83(2), 255–279.
 
 \end{thebibliography}
 
