@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  21 AUG 2025 17:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.16)  21 AUG 2025 21:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -114,6 +114,17 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/epigraph/epigraph.sty
+Package: epigraph 2020/01/02 v1.5e typesetting epigraphs
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/nextpage/nextpage.sty
+Package: nextpage 2009/09/03 v1.1a additional page commands
+)
+\beforeepigraphskip=\skip53
+\afterepigraphskip=\skip54
+\epigraphwidth=\skip55
+\epigraphrule=\skip56
+)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -138,48 +149,63 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@height=\dimen150
 \Gin@req@width=\dimen151
 )
+(/usr/local/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen152
+\captionmargin=\dimen153
+\caption@leftmargin=\dimen154
+\caption@rightmargin=\dimen155
+\caption@width=\dimen156
+\caption@indent=\dimen157
+\caption@parindent=\dimen158
+\caption@hangindent=\dimen159
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count275
+\c@continuedfloat=\count276
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count277
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count278
+)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip53
-\f@nch@O@elh=\skip54
-\f@nch@O@erh=\skip55
-\f@nch@O@olh=\skip56
-\f@nch@O@orh=\skip57
-\f@nch@O@elf=\skip58
-\f@nch@O@erf=\skip59
-\f@nch@O@olf=\skip60
-\f@nch@O@orf=\skip61
+\f@nch@headwidth=\skip57
+\f@nch@O@elh=\skip58
+\f@nch@O@erh=\skip59
+\f@nch@O@olh=\skip60
+\f@nch@O@orh=\skip61
+\f@nch@O@elf=\skip62
+\f@nch@O@erf=\skip63
+\f@nch@O@olf=\skip64
+\f@nch@O@orf=\skip65
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip62
-\enit@outerparindent=\dimen152
+\labelindent=\skip66
+\enit@outerparindent=\dimen160
 \enit@toks=\toks23
 \enit@inbox=\box53
-\enit@count@id=\count275
-\enitdp@description=\count276
-)
-(/usr/local/texlive/2024/texmf-dist/tex/latex/epigraph/epigraph.sty
-Package: epigraph 2020/01/02 v1.5e typesetting epigraphs
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/nextpage/nextpage.sty
-Package: nextpage 2009/09/03 v1.1a additional page commands
-)
-\beforeepigraphskip=\skip63
-\afterepigraphskip=\skip64
-\epigraphwidth=\skip65
-\epigraphrule=\skip66
+\enit@count@id=\count279
+\enitdp@description=\count280
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2024/02/07 v24.2 The Babel package
-\babel@savecnt=\count277
-\U@D=\dimen153
+\babel@savecnt=\count281
+\U@D=\dimen161
 \l@unhyphenated=\language89
 
 (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count278
+\bbl@dirlevel=\count282
 
 (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
@@ -192,9 +218,9 @@ Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 )
 (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-greek/greek.ldf
 Language: greek 2023/10/13 1.15 Greek support for the babel system
-\bbl@monogreek=\count279
-\bbl@polygreek=\count280
-\bbl@ancientgreek=\count281
+\bbl@monogreek=\count283
+\bbl@polygreek=\count284
+\bbl@ancientgreek=\count285
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/greek-fontenc/lgrenc.def
 File: lgrenc.def 2023-09-12 2.5 LGR Greek font encoding definitions
@@ -573,28 +599,28 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count282
-\Gm@cntv=\count283
-\c@Gm@tempcnt=\count284
-\Gm@bindingoffset=\dimen154
-\Gm@wd@mp=\dimen155
-\Gm@odd@mp=\dimen156
-\Gm@even@mp=\dimen157
-\Gm@layoutwidth=\dimen158
-\Gm@layoutheight=\dimen159
-\Gm@layouthoffset=\dimen160
-\Gm@layoutvoffset=\dimen161
+\Gm@cnth=\count286
+\Gm@cntv=\count287
+\c@Gm@tempcnt=\count288
+\Gm@bindingoffset=\dimen162
+\Gm@wd@mp=\dimen163
+\Gm@odd@mp=\dimen164
+\Gm@even@mp=\dimen165
+\Gm@layoutwidth=\dimen166
+\Gm@layoutheight=\dimen167
+\Gm@layouthoffset=\dimen168
+\Gm@layoutvoffset=\dimen169
 \Gm@dimlist=\toks24
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count285
-\c@@ppsavesec=\count286
-\c@@ppsaveapp=\count287
+\c@@pps=\count289
+\c@@ppsavesec=\count290
+\c@@ppsaveapp=\count291
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count288
+\l__color_backend_stack_int=\count292
 \l__pdf_internal_box=\box54
 )
 (./probability.aux
@@ -605,10 +631,10 @@ LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 4
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
 
-LaTeX Warning: Label `fig:histogram1' multiply defined.
+LaTeX Warning: Label `fig:histogram_comparison' multiply defined.
 
 
-LaTeX Warning: Label `fig:histogram1' multiply defined.
+LaTeX Warning: Label `fig:histogram_comparison' multiply defined.
 
 
 LaTeX Warning: Label `fig:histogram1' multiply defined.
@@ -658,16 +684,16 @@ LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count289
-\scratchdimen=\dimen162
+\scratchcounter=\count293
+\scratchdimen=\dimen170
 \scratchbox=\box55
-\nofMPsegments=\count290
-\nofMParguments=\count291
+\nofMPsegments=\count294
+\nofMParguments=\count295
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count292
-\MPscratchDim=\dimen163
-\MPnumerator=\count293
-\makeMPintoPDFobject=\count294
+\MPscratchCnt=\count296
+\MPscratchDim=\dimen171
+\MPnumerator=\count297
+\makeMPintoPDFobject=\count298
 \everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -707,6 +733,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -795,288 +824,324 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--156
 [5
 
 ]
-<figures/chapter1/mean_std_hist.png, id=42, 498.4221pt x 317.5062pt>
+<figures/chapter1/histogram_1.png, id=42, 498.4221pt x 317.5062pt>
+File: figures/chapter1/histogram_1.png Graphic file (type png)
+<use figures/chapter1/histogram_1.png>
+Package pdftex.def Info: figures/chapter1/histogram_1.png  used on input line 1
+95.
+(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
+<figures/chapter1/histogram_2.png, id=44, 498.4221pt x 317.5062pt>
+File: figures/chapter1/histogram_2.png Graphic file (type png)
+<use figures/chapter1/histogram_2.png>
+Package pdftex.def Info: figures/chapter1/histogram_2.png  used on input line 2
+02.
+(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
+<figures/chapter1/histogram1_bins_small.png, id=45, 498.4221pt x 317.5062pt>
+File: figures/chapter1/histogram1_bins_small.png Graphic file (type png)
+<use figures/chapter1/histogram1_bins_small.png>
+Package pdftex.def Info: figures/chapter1/histogram1_bins_small.png  used on in
+put line 215.
+(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
+<figures/chapter1/histogram2_bins_small.png, id=46, 498.4221pt x 317.5062pt>
+File: figures/chapter1/histogram2_bins_small.png Graphic file (type png)
+<use figures/chapter1/histogram2_bins_small.png>
+Package pdftex.def Info: figures/chapter1/histogram2_bins_small.png  used on in
+put line 222.
+(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
+<figures/chapter1/histogram1_bins_large.png, id=47, 498.4221pt x 317.5062pt>
+File: figures/chapter1/histogram1_bins_large.png Graphic file (type png)
+<use figures/chapter1/histogram1_bins_large.png>
+Package pdftex.def Info: figures/chapter1/histogram1_bins_large.png  used on in
+put line 234.
+(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
+<figures/chapter1/histogram2_bins_large.png, id=48, 498.4221pt x 317.5062pt>
+File: figures/chapter1/histogram2_bins_large.png Graphic file (type png)
+<use figures/chapter1/histogram2_bins_large.png>
+Package pdftex.def Info: figures/chapter1/histogram2_bins_large.png  used on in
+put line 241.
+(pdftex.def)             Requested size: 225.4819pt x 157.83704pt.
+ [6] [7 <./figures/chapter1/histogram_1.png> <./figures/chapter1/histogram_2.pn
+g>] [8 <./figures/chapter1/histogram1_bins_small.png> <./figures/chapter1/histo
+gram2_bins_small.png>] [9 <./figures/chapter1/histogram1_bins_large.png> <./fig
+ures/chapter1/histogram2_bins_large.png>]
+<figures/chapter1/box_1.png, id=74, 498.4221pt x 317.0244pt>
+File: figures/chapter1/box_1.png Graphic file (type png)
+<use figures/chapter1/box_1.png>
+Package pdftex.def Info: figures/chapter1/box_1.png  used on input line 410.
+(pdftex.def)             Requested size: 225.4819pt x 157.8394pt.
+<figures/chapter1/box_2.png, id=75, 498.4221pt x 317.0244pt>
+File: figures/chapter1/box_2.png Graphic file (type png)
+<use figures/chapter1/box_2.png>
+Package pdftex.def Info: figures/chapter1/box_2.png  used on input line 417.
+(pdftex.def)             Requested size: 225.4819pt x 157.8394pt.
+<figures/chapter1/violin_1.png, id=76, 498.4221pt x 317.0244pt>
+File: figures/chapter1/violin_1.png Graphic file (type png)
+<use figures/chapter1/violin_1.png>
+Package pdftex.def Info: figures/chapter1/violin_1.png  used on input line 429.
+
+(pdftex.def)             Requested size: 225.4819pt x 157.8394pt.
+<figures/chapter1/violin_2.png, id=77, 498.4221pt x 317.0244pt>
+File: figures/chapter1/violin_2.png Graphic file (type png)
+<use figures/chapter1/violin_2.png>
+Package pdftex.def Info: figures/chapter1/violin_2.png  used on input line 436.
+
+(pdftex.def)             Requested size: 225.4819pt x 157.8394pt.
+ [10]
+<figures/chapter1/mean_std_hist.png, id=81, 498.4221pt x 317.5062pt>
 File: figures/chapter1/mean_std_hist.png Graphic file (type png)
 <use figures/chapter1/mean_std_hist.png>
 Package pdftex.def Info: figures/chapter1/mean_std_hist.png  used on input line
- 193.
+ 460.
 (pdftex.def)             Requested size: 281.85587pt x 179.5512pt.
-<figures/chapter1/measurements_histogram.png, id=44, 498.9039pt x 317.988pt>
-File: figures/chapter1/measurements_histogram.png Graphic file (type png)
-<use figures/chapter1/measurements_histogram.png>
-Package pdftex.def Info: figures/chapter1/measurements_histogram.png  used on i
-nput line 200.
-(pdftex.def)             Requested size: 281.85587pt x 179.65384pt.
- [6] [7 <./figures/chapter1/mean_std_hist.png>] [8 <./figures/chapter1/measurem
-ents_histogram.png>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 342--343
-
- []
-
-<figures/chapter1/mean_std_violin.png, id=68, 498.4221pt x 316.5426pt>
-File: figures/chapter1/mean_std_violin.png Graphic file (type png)
-<use figures/chapter1/mean_std_violin.png>
-Package pdftex.def Info: figures/chapter1/mean_std_violin.png  used on input li
-ne 356.
-(pdftex.def)             Requested size: 281.85587pt x 179.00629pt.
-<figures/chapter1/mean_std_box.png, id=69, 498.4221pt x 316.5426pt>
+<figures/chapter1/mean_std_box.png, id=82, 498.4221pt x 316.5426pt>
 File: figures/chapter1/mean_std_box.png Graphic file (type png)
 <use figures/chapter1/mean_std_box.png>
 Package pdftex.def Info: figures/chapter1/mean_std_box.png  used on input line 
-363.
+467.
 (pdftex.def)             Requested size: 281.85587pt x 179.00629pt.
-[11 <./figures/chapter1/mean_std_violin.png>] [12 <./figures/chapter1/mean_std_
-box.png>]
-<figures/chapter1/measurements_boxplot.png, id=78, 498.9039pt x 317.7471pt>
-File: figures/chapter1/measurements_boxplot.png Graphic file (type png)
-<use figures/chapter1/measurements_boxplot.png>
-Package pdftex.def Info: figures/chapter1/measurements_boxplot.png  used on inp
-ut line 398.
-(pdftex.def)             Requested size: 281.85587pt x 179.51773pt.
-<figures/chapter1/measurements_violin.png, id=79, 498.9039pt x 317.7471pt>
-File: figures/chapter1/measurements_violin.png Graphic file (type png)
-<use figures/chapter1/measurements_violin.png>
-Package pdftex.def Info: figures/chapter1/measurements_violin.png  used on inpu
-t line 405.
-(pdftex.def)             Requested size: 281.85587pt x 179.51773pt.
- [13 <./figures/chapter1/measurements_boxplot.png>] [14 <./figures/chapter1/mea
-surements_violin.png>] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 526--527
+<figures/chapter1/mean_std_violin.png, id=83, 498.4221pt x 316.5426pt>
+File: figures/chapter1/mean_std_violin.png Graphic file (type png)
+<use figures/chapter1/mean_std_violin.png>
+Package pdftex.def Info: figures/chapter1/mean_std_violin.png  used on input li
+ne 474.
+(pdftex.def)             Requested size: 281.85587pt x 179.00629pt.
+ [11 <./figures/chapter1/box_1.png> <./figures/chapter1/box_2.png>] [12 <./figu
+res/chapter1/violin_1.png> <./figures/chapter1/violin_2.png>] [13 <./figures/ch
+apter1/mean_std_hist.png>]
+[14 <./figures/chapter1/mean_std_box.png>] [15 <./figures/chapter1/mean_std_vio
+lin.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 609--610
 
  []
 
 [16]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--550
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 641--642
 
  []
 
 [17
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 573--574
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 610--611
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
 
  []
 
-<figures/chapter2/bernoulli_1.png, id=102, 497.2176pt x 317.988pt>
+<figures/chapter2/bernoulli_1.png, id=117, 497.2176pt x 317.988pt>
 File: figures/chapter2/bernoulli_1.png Graphic file (type png)
 <use figures/chapter2/bernoulli_1.png>
-Package pdftex.def Info: figures/chapter2/bernoulli_1.png  used on input line 6
-32.
+Package pdftex.def Info: figures/chapter2/bernoulli_1.png  used on input line 7
+14.
 (pdftex.def)             Requested size: 328.82707pt x 210.30455pt.
-<figures/chapter2/bernoulli_2.png, id=103, 497.2176pt x 317.988pt>
+<figures/chapter2/bernoulli_2.png, id=118, 497.2176pt x 317.988pt>
 File: figures/chapter2/bernoulli_2.png Graphic file (type png)
 <use figures/chapter2/bernoulli_2.png>
-Package pdftex.def Info: figures/chapter2/bernoulli_2.png  used on input line 6
-44.
+Package pdftex.def Info: figures/chapter2/bernoulli_2.png  used on input line 7
+26.
 (pdftex.def)             Requested size: 328.82707pt x 210.30455pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 649--650
+Underfull \hbox (badness 10000) in paragraph at lines 731--732
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 680--681
+Underfull \hbox (badness 10000) in paragraph at lines 762--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--683
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
 
  []
 
 [20 <./figures/chapter2/bernoulli_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 688--689
+Underfull \hbox (badness 10000) in paragraph at lines 770--771
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 694--696
+Underfull \hbox (badness 10000) in paragraph at lines 776--778
 
  []
 
 [21 <./figures/chapter2/bernoulli_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 697--698
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
 
  []
 
-<figures/chapter2/binomial_1.png, id=117, 497.4585pt x 317.988pt>
+<figures/chapter2/binomial_1.png, id=132, 497.4585pt x 317.988pt>
 File: figures/chapter2/binomial_1.png Graphic file (type png)
 <use figures/chapter2/binomial_1.png>
-Package pdftex.def Info: figures/chapter2/binomial_1.png  used on input line 71
-4.
+Package pdftex.def Info: figures/chapter2/binomial_1.png  used on input line 79
+6.
 (pdftex.def)             Requested size: 328.82707pt x 210.20267pt.
 [22 <./figures/chapter2/binomial_1.png>]
-<figures/chapter2/binomial_2.png, id=122, 497.4585pt x 317.988pt>
+<figures/chapter2/binomial_2.png, id=137, 497.4585pt x 317.988pt>
 File: figures/chapter2/binomial_2.png Graphic file (type png)
 <use figures/chapter2/binomial_2.png>
-Package pdftex.def Info: figures/chapter2/binomial_2.png  used on input line 72
-8.
+Package pdftex.def Info: figures/chapter2/binomial_2.png  used on input line 81
+0.
 (pdftex.def)             Requested size: 328.82707pt x 210.20267pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--741
+Underfull \hbox (badness 10000) in paragraph at lines 822--823
 
  []
 
 [23 <./figures/chapter2/binomial_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 752--753
+Underfull \hbox (badness 10000) in paragraph at lines 834--835
 
  []
 
-<figures/chapter2/binomial_1_cum.png, id=127, 497.4585pt x 317.988pt>
+<figures/chapter2/binomial_1_cum.png, id=142, 497.4585pt x 317.988pt>
 File: figures/chapter2/binomial_1_cum.png Graphic file (type png)
 <use figures/chapter2/binomial_1_cum.png>
 Package pdftex.def Info: figures/chapter2/binomial_1_cum.png  used on input lin
-e 756.
+e 838.
 (pdftex.def)             Requested size: 328.82707pt x 210.20267pt.
-<figures/chapter2/binomial_2_cum.png, id=128, 497.4585pt x 317.988pt>
+<figures/chapter2/binomial_2_cum.png, id=143, 497.4585pt x 317.988pt>
 File: figures/chapter2/binomial_2_cum.png Graphic file (type png)
 <use figures/chapter2/binomial_2_cum.png>
 Package pdftex.def Info: figures/chapter2/binomial_2_cum.png  used on input lin
-e 763.
+e 845.
 (pdftex.def)             Requested size: 328.82707pt x 210.20267pt.
 [24 <./figures/chapter2/binomial_1_cum.png>]
-<figures/chapter2/poisson_1.png, id=133, 497.4585pt x 317.7471pt>
+<figures/chapter2/poisson_1.png, id=148, 497.4585pt x 317.7471pt>
 File: figures/chapter2/poisson_1.png Graphic file (type png)
 <use figures/chapter2/poisson_1.png>
-Package pdftex.def Info: figures/chapter2/poisson_1.png  used on input line 783
+Package pdftex.def Info: figures/chapter2/poisson_1.png  used on input line 865
 .
 (pdftex.def)             Requested size: 328.82707pt x 210.04341pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 791--792
+Underfull \hbox (badness 10000) in paragraph at lines 873--874
+
+ []
+
+[25 <./figures/chapter2/binomial_2_cum.png> <./figures/chapter2/poisson_1.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 881--882
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 799--800
+Underfull \hbox (badness 10000) in paragraph at lines 883--884
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 801--802
+Underfull \hbox (badness 10000) in paragraph at lines 885--886
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 803--804
+Underfull \hbox (badness 10000) in paragraph at lines 889--890
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 807--808
-
- []
-
-[25 <./figures/chapter2/binomial_2_cum.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 809--810
+Underfull \hbox (badness 10000) in paragraph at lines 891--892
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--824
+Underfull \hbox (badness 10000) in paragraph at lines 905--906
 
  []
 
-[26 <./figures/chapter2/poisson_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 843--844
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 925--926
 
  []
 
-<figures/chapter2/uniform_1.png, id=142, 498.663pt x 317.0244pt>
+<figures/chapter2/uniform_1.png, id=157, 498.663pt x 317.0244pt>
 File: figures/chapter2/uniform_1.png Graphic file (type png)
 <use figures/chapter2/uniform_1.png>
-Package pdftex.def Info: figures/chapter2/uniform_1.png  used on input line 853
+Package pdftex.def Info: figures/chapter2/uniform_1.png  used on input line 935
 .
 (pdftex.def)             Requested size: 328.82707pt x 209.05292pt.
-<figures/chapter2/uniform_2.png, id=143, 498.663pt x 317.0244pt>
+<figures/chapter2/uniform_2.png, id=158, 498.663pt x 317.0244pt>
 File: figures/chapter2/uniform_2.png Graphic file (type png)
 <use figures/chapter2/uniform_2.png>
-Package pdftex.def Info: figures/chapter2/uniform_2.png  used on input line 860
+Package pdftex.def Info: figures/chapter2/uniform_2.png  used on input line 942
 .
 (pdftex.def)             Requested size: 328.82707pt x 209.05292pt.
 [27 <./figures/chapter2/uniform_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 868--869
+Underfull \hbox (badness 10000) in paragraph at lines 950--951
 
  []
 
-<figures/chapter2/gaussian_1.png, id=149, 498.663pt x 317.0244pt>
+<figures/chapter2/gaussian_1.png, id=164, 498.663pt x 317.0244pt>
 File: figures/chapter2/gaussian_1.png Graphic file (type png)
 <use figures/chapter2/gaussian_1.png>
-Package pdftex.def Info: figures/chapter2/gaussian_1.png  used on input line 87
-7.
+Package pdftex.def Info: figures/chapter2/gaussian_1.png  used on input line 95
+9.
 (pdftex.def)             Requested size: 328.82707pt x 209.05292pt.
-<figures/chapter2/gaussian_2.png, id=150, 498.663pt x 317.0244pt>
+<figures/chapter2/gaussian_2.png, id=165, 498.663pt x 317.0244pt>
 File: figures/chapter2/gaussian_2.png Graphic file (type png)
 <use figures/chapter2/gaussian_2.png>
-Package pdftex.def Info: figures/chapter2/gaussian_2.png  used on input line 88
-4.
+Package pdftex.def Info: figures/chapter2/gaussian_2.png  used on input line 96
+6.
 (pdftex.def)             Requested size: 328.82707pt x 209.05292pt.
 [28 <./figures/chapter2/uniform_2.png> <./figures/chapter2/gaussian_1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 892--893
+Underfull \hbox (badness 10000) in paragraph at lines 974--975
 
  []
 
-<figures/chapter2/exponential_1.png, id=157, 498.663pt x 317.0244pt>
+<figures/chapter2/exponential_1.png, id=172, 498.663pt x 317.0244pt>
 File: figures/chapter2/exponential_1.png Graphic file (type png)
 <use figures/chapter2/exponential_1.png>
 Package pdftex.def Info: figures/chapter2/exponential_1.png  used on input line
- 901.
+ 983.
 (pdftex.def)             Requested size: 328.82707pt x 209.05292pt.
-<figures/chapter2/exponential_2.png, id=158, 498.663pt x 317.0244pt>
+<figures/chapter2/exponential_2.png, id=173, 498.663pt x 317.0244pt>
 File: figures/chapter2/exponential_2.png Graphic file (type png)
 <use figures/chapter2/exponential_2.png>
 Package pdftex.def Info: figures/chapter2/exponential_2.png  used on input line
- 908.
+ 990.
 (pdftex.def)             Requested size: 328.82707pt x 209.05292pt.
 [29 <./figures/chapter2/gaussian_2.png> <./figures/chapter2/exponential_1.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 917--918
+Underfull \hbox (badness 10000) in paragraph at lines 999--1000
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 919--920
+Underfull \hbox (badness 10000) in paragraph at lines 1001--1002
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 921--922
+Underfull \hbox (badness 10000) in paragraph at lines 1003--1004
 
  []
 
 [30 <./figures/chapter2/exponential_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 927--928
+Underfull \hbox (badness 10000) in paragraph at lines 1009--1010
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 929--930
+Underfull \hbox (badness 10000) in paragraph at lines 1011--1012
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 931--932
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
 
  []
 
@@ -1085,142 +1150,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 931--932
 ]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 943--944
+Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 945--946
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1028
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--950
+Underfull \hbox (badness 10000) in paragraph at lines 1031--1032
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 951--952
+Underfull \hbox (badness 10000) in paragraph at lines 1033--1034
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 959--961
+Underfull \hbox (badness 10000) in paragraph at lines 1041--1043
 
  []
 
 [34] [35]
 File: figures/chapter2/gaussian_2.png Graphic file (type png)
 <use figures/chapter2/gaussian_2.png>
-Package pdftex.def Info: figures/chapter2/gaussian_2.png  used on input line 10
-39.
+Package pdftex.def Info: figures/chapter2/gaussian_2.png  used on input line 11
+21.
 (pdftex.def)             Requested size: 328.82707pt x 209.05292pt.
  [36]
-<figures/chapter3/clt_1.png, id=187, 498.9039pt x 317.988pt>
+<figures/chapter3/clt_1.png, id=202, 498.9039pt x 317.988pt>
 File: figures/chapter3/clt_1.png Graphic file (type png)
 <use figures/chapter3/clt_1.png>
-Package pdftex.def Info: figures/chapter3/clt_1.png  used on input line 1064.
+Package pdftex.def Info: figures/chapter3/clt_1.png  used on input line 1146.
 (pdftex.def)             Requested size: 281.85587pt x 179.65384pt.
  [37 <./figures/chapter3/clt_1.png>]
-<figures/chapter3/clt_2.png, id=192, 498.9039pt x 317.988pt>
+<figures/chapter3/clt_2.png, id=207, 498.9039pt x 317.988pt>
 File: figures/chapter3/clt_2.png Graphic file (type png)
 <use figures/chapter3/clt_2.png>
-Package pdftex.def Info: figures/chapter3/clt_2.png  used on input line 1097.
+Package pdftex.def Info: figures/chapter3/clt_2.png  used on input line 1179.
 (pdftex.def)             Requested size: 281.85587pt x 179.65384pt.
  [38 <./figures/chapter3/clt_2.png>]
-<figures/chapter3/clt_3.png, id=197, 498.9039pt x 317.7471pt>
+<figures/chapter3/clt_3.png, id=212, 498.9039pt x 317.7471pt>
 File: figures/chapter3/clt_3.png Graphic file (type png)
 <use figures/chapter3/clt_3.png>
-Package pdftex.def Info: figures/chapter3/clt_3.png  used on input line 1135.
+Package pdftex.def Info: figures/chapter3/clt_3.png  used on input line 1217.
 (pdftex.def)             Requested size: 281.85587pt x 179.51773pt.
  [39 <./figures/chapter3/clt_3.png>] [40] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1248
+Underfull \hbox (badness 10000) in paragraph at lines 1329--1330
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 1323--1325
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1407
 
  []
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 1340--1341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1342--1343
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1344--1345
-
- []
-
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 1350--1351
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1352--1353
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1354--1355
-
- []
-
-[45] [46
-
-]
-Chapter 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1365--1366
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1367--1368
-
- []
-
-<figures/chapter4/probability_vs_statistics.png, id=226, 508.5399pt x 216.81pt>
-
-File: figures/chapter4/probability_vs_statistics.png Graphic file (type png)
-<use figures/chapter4/probability_vs_statistics.png>
-Package pdftex.def Info: figures/chapter4/probability_vs_statistics.png  used o
-n input line 1371.
-(pdftex.def)             Requested size: 281.85587pt x 120.16556pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1376--1377
-
- []
-
-[47 <./figures/chapter4/probability_vs_statistics.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1378--1379
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1380--1381
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1382--1383
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1389--1390
-
- []
-
-[48]
-Underfull \hbox (badness 10000) in paragraph at lines 1401--1402
+Underfull \hbox (badness 10000) in paragraph at lines 1422--1423
 
  []
 
@@ -1234,86 +1223,112 @@ Underfull \hbox (badness 10000) in paragraph at lines 1426--1427
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1428--1429
-
- []
-
-[49] [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1442--1443
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 1432--1433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1444--1445
+Underfull \hbox (badness 10000) in paragraph at lines 1434--1435
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1446--1447
+Underfull \hbox (badness 10000) in paragraph at lines 1436--1437
 
  []
 
-<figures/chapter4/t_test_1_sample_p_one_tailed.png, id=240, 498.1812pt x 317.02
-44pt>
-File: figures/chapter4/t_test_1_sample_p_one_tailed.png Graphic file (type png)
+[45] [46
 
-<use figures/chapter4/t_test_1_sample_p_one_tailed.png>
-Package pdftex.def Info: figures/chapter4/t_test_1_sample_p_one_tailed.png  use
-d on input line 1450.
-(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
-[51 <./figures/chapter4/t_test_1_sample_p_one_tailed.png>]
+]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1447--1448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1449--1450
+
+ []
+
+<figures/chapter4/probability_vs_statistics.png, id=241, 508.5399pt x 216.81pt>
+
+File: figures/chapter4/probability_vs_statistics.png Graphic file (type png)
+<use figures/chapter4/probability_vs_statistics.png>
+Package pdftex.def Info: figures/chapter4/probability_vs_statistics.png  used o
+n input line 1453.
+(pdftex.def)             Requested size: 281.85587pt x 120.16556pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1458--1459
+
+ []
+
+[47 <./figures/chapter4/probability_vs_statistics.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1460--1461
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1469--1470
-
- []
-
-[52]
-Underfull \hbox (badness 10000) in paragraph at lines 1492--1493
+Underfull \hbox (badness 10000) in paragraph at lines 1462--1463
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1494--1495
+Underfull \hbox (badness 10000) in paragraph at lines 1464--1465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1496--1497
+Underfull \hbox (badness 10000) in paragraph at lines 1471--1472
 
  []
 
-<figures/chapter4/t_test_1_sample_p_two_tailed.png, id=249, 498.1812pt x 317.02
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 1483--1484
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1506--1507
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1508--1509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1510--1511
+
+ []
+
+[49] [50]
+Underfull \hbox (badness 10000) in paragraph at lines 1524--1525
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1526--1527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1528--1529
+
+ []
+
+<figures/chapter4/t_test_1_sample_p_one_tailed.png, id=255, 498.1812pt x 317.02
 44pt>
-File: figures/chapter4/t_test_1_sample_p_two_tailed.png Graphic file (type png)
+File: figures/chapter4/t_test_1_sample_p_one_tailed.png Graphic file (type png)
 
-<use figures/chapter4/t_test_1_sample_p_two_tailed.png>
-Package pdftex.def Info: figures/chapter4/t_test_1_sample_p_two_tailed.png  use
-d on input line 1500.
+<use figures/chapter4/t_test_1_sample_p_one_tailed.png>
+Package pdftex.def Info: figures/chapter4/t_test_1_sample_p_one_tailed.png  use
+d on input line 1532.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1508--1510
-
- []
-
-[53 <./figures/chapter4/t_test_1_sample_p_two_tailed.png>]
-<figures/chapter4/t_distribution.png, id=254, 498.1812pt x 317.0244pt>
-File: figures/chapter4/t_distribution.png Graphic file (type png)
-<use figures/chapter4/t_distribution.png>
-Package pdftex.def Info: figures/chapter4/t_distribution.png  used on input lin
-e 1538.
-(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
- [54 <./figures/chapter4/t_distribution.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1547--1548
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1549--1550
+[51 <./figures/chapter4/t_test_1_sample_p_one_tailed.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1542--1543
 
  []
 
@@ -1322,122 +1337,172 @@ Underfull \hbox (badness 10000) in paragraph at lines 1551--1552
 
  []
 
-<figures/chapter4/f_test_one_tailed.png, id=259, 498.1812pt x 317.0244pt>
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 1574--1575
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1576--1577
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1578--1579
+
+ []
+
+<figures/chapter4/t_test_1_sample_p_two_tailed.png, id=264, 498.1812pt x 317.02
+44pt>
+File: figures/chapter4/t_test_1_sample_p_two_tailed.png Graphic file (type png)
+
+<use figures/chapter4/t_test_1_sample_p_two_tailed.png>
+Package pdftex.def Info: figures/chapter4/t_test_1_sample_p_two_tailed.png  use
+d on input line 1582.
+(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1590--1592
+
+ []
+
+[53 <./figures/chapter4/t_test_1_sample_p_two_tailed.png>]
+<figures/chapter4/t_distribution.png, id=269, 498.1812pt x 317.0244pt>
+File: figures/chapter4/t_distribution.png Graphic file (type png)
+<use figures/chapter4/t_distribution.png>
+Package pdftex.def Info: figures/chapter4/t_distribution.png  used on input lin
+e 1620.
+(pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
+ [54 <./figures/chapter4/t_distribution.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1629--1630
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1631--1632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1633--1634
+
+ []
+
+<figures/chapter4/f_test_one_tailed.png, id=274, 498.1812pt x 317.0244pt>
 File: figures/chapter4/f_test_one_tailed.png Graphic file (type png)
 <use figures/chapter4/f_test_one_tailed.png>
 Package pdftex.def Info: figures/chapter4/f_test_one_tailed.png  used on input 
-line 1555.
+line 1637.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1560--1561
+Underfull \hbox (badness 10000) in paragraph at lines 1642--1643
 
  []
 
 [55 <./figures/chapter4/f_test_one_tailed.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1567--1568
+Underfull \hbox (badness 10000) in paragraph at lines 1649--1650
 
  []
 
 [56]
-Underfull \hbox (badness 10000) in paragraph at lines 1607--1609
+Underfull \hbox (badness 10000) in paragraph at lines 1689--1691
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1610--1611
+Underfull \hbox (badness 10000) in paragraph at lines 1692--1693
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1612--1613
+Underfull \hbox (badness 10000) in paragraph at lines 1694--1695
 
  []
 
-<figures/chapter4/f_test_two_tailed.png, id=267, 498.1812pt x 317.0244pt>
+<figures/chapter4/f_test_two_tailed.png, id=282, 498.1812pt x 317.0244pt>
 File: figures/chapter4/f_test_two_tailed.png Graphic file (type png)
 <use figures/chapter4/f_test_two_tailed.png>
 Package pdftex.def Info: figures/chapter4/f_test_two_tailed.png  used on input 
-line 1616.
+line 1698.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1624--1626
+Underfull \hbox (badness 10000) in paragraph at lines 1706--1708
 
  []
 
 [57 <./figures/chapter4/f_test_two_tailed.png>]
-<figures/chapter4/f_distribution.png, id=273, 498.1812pt x 317.0244pt>
+<figures/chapter4/f_distribution.png, id=288, 498.1812pt x 317.0244pt>
 File: figures/chapter4/f_distribution.png Graphic file (type png)
 <use figures/chapter4/f_distribution.png>
 Package pdftex.def Info: figures/chapter4/f_distribution.png  used on input lin
-e 1669.
+e 1751.
 (pdftex.def)             Requested size: 328.82707pt x 209.26093pt.
  [58]
-Underfull \hbox (badness 10000) in paragraph at lines 1678--1679
+Underfull \hbox (badness 10000) in paragraph at lines 1760--1761
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1680--1681
+Underfull \hbox (badness 10000) in paragraph at lines 1762--1763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1682--1683
+Underfull \hbox (badness 10000) in paragraph at lines 1764--1765
 
  []
 
-<figures/chapter4/chi2_test_one_tailed.png, id=277, 497.9403pt x 316.5426pt>
+<figures/chapter4/chi2_test_one_tailed.png, id=292, 497.9403pt x 316.5426pt>
 File: figures/chapter4/chi2_test_one_tailed.png Graphic file (type png)
 <use figures/chapter4/chi2_test_one_tailed.png>
 Package pdftex.def Info: figures/chapter4/chi2_test_one_tailed.png  used on inp
-ut line 1686.
+ut line 1768.
 (pdftex.def)             Requested size: 328.82707pt x 209.03468pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1694--1696
+Underfull \hbox (badness 10000) in paragraph at lines 1776--1778
 
  []
 
-<figures/chapter4/chi2_test_two_tailed.png, id=278, 497.9403pt x 316.5426pt>
+<figures/chapter4/chi2_test_two_tailed.png, id=293, 497.9403pt x 316.5426pt>
 File: figures/chapter4/chi2_test_two_tailed.png Graphic file (type png)
 <use figures/chapter4/chi2_test_two_tailed.png>
 Package pdftex.def Info: figures/chapter4/chi2_test_two_tailed.png  used on inp
-ut line 1699.
+ut line 1781.
 (pdftex.def)             Requested size: 328.82707pt x 209.03468pt.
 [59 <./figures/chapter4/f_distribution.png>]
-<figures/chapter4/chi2_distribution.png, id=285, 497.9403pt x 316.5426pt>
+<figures/chapter4/chi2_distribution.png, id=300, 497.9403pt x 316.5426pt>
 File: figures/chapter4/chi2_distribution.png Graphic file (type png)
 <use figures/chapter4/chi2_distribution.png>
 Package pdftex.def Info: figures/chapter4/chi2_distribution.png  used on input 
-line 1730.
+line 1812.
 (pdftex.def)             Requested size: 328.82707pt x 209.03468pt.
  [60 <./figures/chapter4/chi2_test_one_tailed.png>] [61 <./figures/chapter4/chi
 2_test_two_tailed.png>] [62 <./figures/chapter4/chi2_distribution.png>] [63]
-Underfull \hbox (badness 10000) in paragraph at lines 1775--1776
+Underfull \hbox (badness 10000) in paragraph at lines 1857--1858
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1777--1778
+Underfull \hbox (badness 10000) in paragraph at lines 1859--1860
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1779--1780
+Underfull \hbox (badness 10000) in paragraph at lines 1861--1862
 
  []
 
 [64]
-Underfull \hbox (badness 10000) in paragraph at lines 1785--1786
+Underfull \hbox (badness 10000) in paragraph at lines 1867--1868
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1787--1788
+Underfull \hbox (badness 10000) in paragraph at lines 1869--1870
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1789--1790
+Underfull \hbox (badness 10000) in paragraph at lines 1871--1872
 
  []
 
@@ -1446,106 +1511,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 1789--1790
 ]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1806--1807
+Underfull \hbox (badness 10000) in paragraph at lines 1888--1889
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1808--1809
+Underfull \hbox (badness 10000) in paragraph at lines 1890--1891
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1810--1811
+Underfull \hbox (badness 10000) in paragraph at lines 1892--1893
 
  []
 
 [67]
-Underfull \hbox (badness 10000) in paragraph at lines 1812--1813
+Underfull \hbox (badness 10000) in paragraph at lines 1894--1895
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1835--1836
+Underfull \hbox (badness 10000) in paragraph at lines 1917--1918
 
  []
 
 [68]
-Underfull \hbox (badness 10000) in paragraph at lines 1851--1852
+Underfull \hbox (badness 10000) in paragraph at lines 1933--1934
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1872--1873
+Underfull \hbox (badness 10000) in paragraph at lines 1954--1955
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1891--1892
+Underfull \hbox (badness 10000) in paragraph at lines 1973--1974
 
  []
 
 [69] [70] [71] [72]
-Underfull \hbox (badness 10000) in paragraph at lines 1997--1998
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1999--2000
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2001--2002
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2003--2004
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2005--2006
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2007--2008
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2009--2010
-
- []
-
-[73]
-Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2061--2062
-
- []
-
-[74]
-Underfull \hbox (badness 10000) in paragraph at lines 2075--2076
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2077--2078
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 2079--2080
 
  []
 
-[75]
+
+Underfull \hbox (badness 10000) in paragraph at lines 2081--2082
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2083--2084
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 2085--2086
 
  []
@@ -1560,77 +1580,122 @@ Underfull \hbox (badness 10000) in paragraph at lines 2089--2090
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 2091--2092
+
+ []
+
+[73]
+Underfull \hbox (badness 10000) in paragraph at lines 2141--2142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2143--2144
+
+ []
+
+[74]
+Underfull \hbox (badness 10000) in paragraph at lines 2157--2158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2159--2160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2161--2162
+
+ []
+
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 2167--2168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2169--2170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2171--2172
+
+ []
+
 [76]
 Appendix A.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2103--2104
+Underfull \hbox (badness 10000) in paragraph at lines 2185--2186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2107--2108
+Underfull \hbox (badness 10000) in paragraph at lines 2189--2190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2111--2112
+Underfull \hbox (badness 10000) in paragraph at lines 2193--2194
 
  []
 
 [77
 
 ] [78]
-Underfull \hbox (badness 10000) in paragraph at lines 2163--2164
+Underfull \hbox (badness 10000) in paragraph at lines 2245--2246
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2170--2172
+Underfull \hbox (badness 10000) in paragraph at lines 2252--2254
 
  []
 
 [79] [80]
 Appendix B.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2212--2213
+Underfull \hbox (badness 10000) in paragraph at lines 2294--2295
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2214--2215
+Underfull \hbox (badness 10000) in paragraph at lines 2296--2297
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2216--2217
+Underfull \hbox (badness 10000) in paragraph at lines 2298--2299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2218--2219
+Underfull \hbox (badness 10000) in paragraph at lines 2300--2301
 
  []
 
 [81
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2220--2221
+Underfull \hbox (badness 10000) in paragraph at lines 2302--2303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2222--2223
+Underfull \hbox (badness 10000) in paragraph at lines 2304--2305
 
  []
 
-<figures/appendix/functions_point_1.png, id=359, 499.6266pt x 316.7835pt>
+<figures/appendix/functions_point_1.png, id=374, 499.6266pt x 316.7835pt>
 File: figures/appendix/functions_point_1.png Graphic file (type png)
 <use figures/appendix/functions_point_1.png>
 Package pdftex.def Info: figures/appendix/functions_point_1.png  used on input 
-line 2226.
+line 2308.
 (pdftex.def)             Requested size: 328.82707pt x 208.48804pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2231--2232
+Underfull \hbox (badness 10000) in paragraph at lines 2313--2314
 
  []
 
@@ -1638,31 +1703,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 2231--2232
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [82 <./figures/appendix/functions_point_1.png>]
-<figures/appendix/functions_point_2.png, id=364, 498.663pt x 315.8199pt>
+<figures/appendix/functions_point_2.png, id=379, 498.663pt x 315.8199pt>
 File: figures/appendix/functions_point_2.png Graphic file (type png)
 <use figures/appendix/functions_point_2.png>
 Package pdftex.def Info: figures/appendix/functions_point_2.png  used on input 
-line 2239.
+line 2321.
 (pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
-<figures/appendix/functions_point_2_shadow.png, id=365, 498.663pt x 315.8199pt>
+<figures/appendix/functions_point_2_shadow.png, id=380, 498.663pt x 315.8199pt>
 
 File: figures/appendix/functions_point_2_shadow.png Graphic file (type png)
 <use figures/appendix/functions_point_2_shadow.png>
 Package pdftex.def Info: figures/appendix/functions_point_2_shadow.png  used on
- input line 2262.
+ input line 2344.
 (pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
- [83 <./figures/appendix/functions_point_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2273--2274
+
+Underfull \hbox (badness 10000) in paragraph at lines 2355--2356
+
+ []
+
+[83 <./figures/appendix/functions_point_2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2357--2358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2275--2276
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2290--2291
+Underfull \hbox (badness 10000) in paragraph at lines 2372--2373
 
  []
 
@@ -1671,73 +1736,73 @@ Underfull \hbox (badness 10000) in paragraph at lines 2290--2291
 ]
 Appendix C.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2301--2302
+Underfull \hbox (badness 10000) in paragraph at lines 2383--2384
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2303--2304
+Underfull \hbox (badness 10000) in paragraph at lines 2385--2386
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2305--2306
+Underfull \hbox (badness 10000) in paragraph at lines 2387--2388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2315--2316
+Underfull \hbox (badness 10000) in paragraph at lines 2397--2398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2317--2318
+Underfull \hbox (badness 10000) in paragraph at lines 2399--2400
 
  []
 
-<figures/appendix/integrals_1.png, id=380, 499.6266pt x 316.7835pt>
+<figures/appendix/integrals_1.png, id=395, 499.6266pt x 316.7835pt>
 File: figures/appendix/integrals_1.png Graphic file (type png)
 <use figures/appendix/integrals_1.png>
 Package pdftex.def Info: figures/appendix/integrals_1.png  used on input line 2
-321.
+403.
 (pdftex.def)             Requested size: 328.82707pt x 208.48804pt.
-<figures/appendix/integrals_2.png, id=381, 498.9039pt x 315.8199pt>
+<figures/appendix/integrals_2.png, id=396, 498.9039pt x 315.8199pt>
 File: figures/appendix/integrals_2.png Graphic file (type png)
 <use figures/appendix/integrals_2.png>
 Package pdftex.def Info: figures/appendix/integrals_2.png  used on input line 2
-328.
+410.
 (pdftex.def)             Requested size: 328.82707pt x 208.16708pt.
-<figures/appendix/integrals_2_subdivisions.png, id=382, 498.663pt x 316.5426pt>
+<figures/appendix/integrals_2_subdivisions.png, id=397, 498.663pt x 316.5426pt>
 
 File: figures/appendix/integrals_2_subdivisions.png Graphic file (type png)
 <use figures/appendix/integrals_2_subdivisions.png>
 Package pdftex.def Info: figures/appendix/integrals_2_subdivisions.png  used on
- input line 2335.
+ input line 2417.
 (pdftex.def)             Requested size: 328.82707pt x 208.73521pt.
 [87]
-<figures/appendix/integrals_3_riemann.png, id=387, 498.663pt x 315.8199pt>
+<figures/appendix/integrals_3_riemann.png, id=402, 498.663pt x 315.8199pt>
 File: figures/appendix/integrals_3_riemann.png Graphic file (type png)
 <use figures/appendix/integrals_3_riemann.png>
 Package pdftex.def Info: figures/appendix/integrals_3_riemann.png  used on inpu
-t line 2343.
+t line 2425.
 (pdftex.def)             Requested size: 328.82707pt x 208.25865pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2348--2349
+Underfull \hbox (badness 10000) in paragraph at lines 2430--2431
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2350--2351
+Underfull \hbox (badness 10000) in paragraph at lines 2432--2433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2352--2353
+Underfull \hbox (badness 10000) in paragraph at lines 2434--2435
 
  []
 
 
-Underfull \vbox (badness 1635) has occurred while \output is active []
+Underfull \vbox (badness 1867) has occurred while \output is active []
 
  [88 <./figures/appendix/integrals_1.png>] [89 <./figures/appendix/integrals_2.
 png>]
@@ -1757,13 +1822,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7322 strings out of 474116
- 127325 string characters out of 5743681
+ 8868 strings out of 474116
+ 158018 string characters out of 5743681
  1945187 words of memory out of 5000000
- 29565 multiletter control sequences out of 15000+600000
- 569182 words of font info for 76 fonts, out of 8000000 for 9000
+ 31101 multiletter control sequences out of 15000+600000
+ 569481 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,12n,69p,1523b,412s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,12n,77p,1523b,506s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -1776,18 +1841,19 @@ al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
 /texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/te
 xlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texli
 ve/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
-2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2
-024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-24/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/te
-xmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/texmf
--dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on probability.pdf (98 pages, 3714319 bytes).
+2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/202
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2024
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf
+-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/texlive/2024/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texm
+f-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on probability.pdf (98 pages, 4085729 bytes).
 PDF statistics:
- 502 PDF objects out of 1000 (max. 8388607)
- 280 compressed objects within 3 object streams
+ 521 PDF objects out of 1000 (max. 8388607)
+ 283 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 
