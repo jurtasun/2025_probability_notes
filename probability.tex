@@ -367,31 +367,31 @@ These measures do more than summarize; they prepare the ground for comparison an
 
 \section{Data visualization}
 
-While numerical summaries useful, the human mind often understands patterns much faster through vision than calculation. Data visualization transforms sequences of numbers into shapes, colours and structures that can be grasped at a glance. It turns abstraction into perception and often reveals regularities invisible to formulas alone. Nowadays, the sole filed of \textit{data visualization} has become one of the pillars of any scientific or data related topic.
+While numerical summaries are useful, the human mind often understands patterns much faster through vision than calculation. By \textit{data visualization} we mean a series of techniques used to transform numbers and sequences into shapes, colours and structures that are easier to interpret, and that can be grasped at a glance. It turns abstraction into perception and often reveals regularities invisible to formulas alone. Nowadays, a broad series of fields falling under the name of data visualization - or data \textit{representation} - have become among the pillars of any scientific or data related topic.
 
 \medskip
 
-Among the oldest and most fundamental visualization tools is the \textit{histogram}. The concept of dividing data into intervals to visualize frequency dates back to Karl Pearson in the late 19th century (1891) \cite{pearson1892}, who formalized it as a graphical representation of probability distributions. A histogram divides the range of a dataset into consecutive intervals, or \textit{bins}, and represents the frequency of observations falling within each bin as the height of a bar. This simple yet powerful plot provides an immediate visual impression of the dataset’s distribution, allowing one to identify symmetry, skewness, concentration of values, and potential gaps. For example, a symmetric histogram, like the one in figure [...] suggests a roughly balanced distribution around the mean, while a right-skewed histogram, like the one displayed in [...], indicates that higher values are less frequent but can influence measures like the mean. This is the state of the art in physical sciences and whenever data is supposed to fit a mathematical prediction. For instance, in figure [...] we can see a histogram which is very well described by a linear fit, with a small deviation in [...]. Figure [...] shows.
+The \textit{histogram} is fund among the oldest and most fundamental visualization tools. The concept of dividing data into intervals to visualize frequency dates back to Karl Pearson in the late 19th century, who formalized it as a graphical representation of probability distributions \cite{pearson1892}. A histogram divides the range of a dataset into consecutive intervals, or \textit{bins}, and represents the the amount - or relative \textit{frequency}- of observations falling within each bin as the height of a bar. This simple yet powerful plot provides an immediate visual impression of the dataset’s distribution, allowing one to identify symmetry, skewness, concentration of values, and potential gaps. For example, a symmetric histogram, like the one in figure [...] suggests a roughly balanced distribution around the mean, while a right-skewed histogram, like the one displayed in [...], indicates that higher values are less frequent  - or less \textit{probable} - but can yet influence measures like the mean. This is the state of the art in physical sciences and whenever data is supposed to fit a mathematical prediction. For instance, in Figure [...] we can see a real example of a histogram which is very well described by a linear fit, with a small deviation in [...]. Figure [...] shows.
 
 \medskip
 
-Look for natural divisions in the data, and as general practise keep all bins the same size with cover the whole range under study. Figure [...] Outliers can skew, so they must be treated carefully. Figure [...]. A histogram is useful to study the symmetry or skewness of data, as we can see in Figure [...]. For skewed distributions (e.g. ...) would be better to use the median and the IQR.
+Building a histogram in an informative way is extremely powerful, and there are some subtleties to consider. As a rule of thumb, look for natural divisions in the data, and keep all bins the same size, covering the whole range under study. Figure [...] Outliers can skew, so they must be treated carefully. Figure [...]. A histogram is useful to study the symmetry or skewness of data, as we can see in Figure [...]. For skewed distributions (e.g. ...) would be better to use the median and the IQR.
 
 \medskip
 
-The box plot, also known as the box-and-whisker plot, was introduced by John Tukey in 1970 as part of his work on exploratory data analysis \cite{tukey1977}. The box plot offers a compact summary of a dataset’s central tendency, spread, and potential outliers. Constructed from five key statistics - the minimum, first quartile ($Q_1$), median ($Q_2$), third quartile ($Q_3$), and maximum - it clearly shows the interquartile range (IQR = $Q_3 - Q_1$) and highlights points that fall outside 1.5 times the IQR as outliers. This representation allows for quick comparisons across multiple groups, and it is particularly useful for detecting asymmetry and variability without being overly influenced by extreme values. It is widely used in biological and clinical sciences where an experiment can be repeated many times with relatively small sizes.
+The box plot, also known as the \textit{box-and-whisker} plot, was introduced by John Tukey in 1970 as part of his work on exploratory data analysis \cite{tukey1977}. The box plot offers a compact summary of a dataset’s central tendency, spread, and potential outliers. Constructed from five key statistics - the minimum, first quartile ($Q_1$), median ($Q_2$), third quartile ($Q_3$), and maximum - it clearly shows the \textit{interquartile range} (IQR = $Q_3 - Q_1$) and highlights points that fall outside 1.5 times the IQR as outliers. This representation allows for quick comparisons across multiple groups, and it is particularly useful for detecting asymmetry and variability without being overly influenced by extreme values. It is widely used in biological and clinical sciences where an experiment can be repeated many times with relatively small sizes. Figure [...]
 
 \medskip
 
-The violin plot is a more recent innovation, combining the box plot with a kernel density estimate to visualize the shape of the distribution. While the precise origin is less formally documented, it gained prominence in the late 20th century in statistical software environments, such as R, during the 1990s. \cite{hintze1997} The violin plot extends the concept of the box plot by combining it with a kernel density estimate of the data. This plot not only displays the median and quartiles but also provides a smooth depiction of the distribution’s shape, revealing features such as multimodality or skewness that might be obscured in a simple box plot. By showing both summary statistics and the underlying density, the violin plot gives a richer, more nuanced view of the dataset, particularly when comparing several groups side by side.
+Finally, the \textit{violin} plot is a more recent innovation, combining the box plot with a series of mathematical tools that represent as well the shape of the distribution. While the precise origin is less formally documented, it gained prominence in the late 20th century in statistical software environments, such as R, during the 1990s \cite{hintze1997}. Essentially, the violin plot extends the concept of the box plot by combining it with a kernel density estimate of the data. This plot not only displays the median and quartiles but also provides a smooth depiction of the distribution’s shape, revealing features such as multimodality or skewness that might be obscured in a simple box plot. By showing both summary statistics and the underlying density, the violin plot gives a richer, more nuanced view of the dataset, particularly when comparing several groups side by side. As an example of such comparison, see Figure [...].
 
 \medskip
 
-Underlying these graphics is the concept of \textit{quantiles}. The median is the 50th percentile, quartiles mark the 25th and 75th percentiles, and finer partitions yield deciles or percentiles. Mathematically, the $p$-quantile of a dataset is the value $q$ p such that at least a proportion $p$ of the data lies below it. Quantiles give a language for describing position within a distribution.
+Underlying these graphics we have mentioned the concept of \textit{quantiles}. Put simple, quantiles provide a language for describing position of an observation within a distribution. Mathematically, the $p$-quantile of a dataset is the value $q$ p such that at least a proportion $p$ of the data lies below it. The median is the 50th percentile, quartiles mark the 25th and 75th percentiles, and finer partitions yield deciles or percentiles. 
 
 \medskip
 
-Graphs and diagrams are not mere decoration but instruments of analysis. They allow patterns to leap from obscurity, invite hypotheses, and sometimes contradict our assumptions. In practice, visualization is both a beginning and a test: a first impression of data, and a final check on the reasonableness of results derived through calculation.
+To conclude, let us emphasize that graphs and diagrams are not mere decoration but deeply useful instruments of analysis. They allow patterns to leap from obscurity in shallow data, invite hypotheses, and sometimes contradict assumptions and expectation. In practice, visualization is both a beginning and a test: a first impression of data, and a final check on the reasonableness of results derived through calculation.
 
 \begin{figure}[ht]
     \centering
@@ -409,60 +409,104 @@ Graphs and diagrams are not mere decoration but instruments of analysis. They al
 
 \section{Dependency, linearity, correlation}
 
-Data seldom lives in isolation. More often, one variable depends upon another: rainfall influences crop yields, study hours affect exam results, and economic indicators move in concert. Recognizing and describing such dependencies lies at the heart of descriptive statistics and prepares the way for predictive models.
+Data rarely lives in isolation. Often, even in the simplest case, one variable depends upon another: rainfall influences crop yields, study hours affect exam results, the brightness of a star relates to its temperature, and atmospheric carbon levels affect global temperatures, just to list some examples. Hence, recognizing and describing such dependencies lies at the heart of descriptive statistics and prepares the way for predictive models.
 
 \medskip
 
-The simplest and most widely studied form of dependency is linearity. When one variable tends to increase in proportion to another, the relation can be sketched as a straight line. In regression, the best-fitting line is expressed as
+The simplest and most widely studied form of dependency is \textit{linearity}. When one variable $y$ tends to increase in proportion to another $x$, the relation can be sketched as a straight line. In the language of calculus - also called some times \textit{analysis}, or \textit{regression}, the best-fitting line is expressed as
 \begin{equation}
-	y = a + b \: x
+	y(x) = a x + b \; ,
 	\label{eq:linear}
 \end{equation}
-
-where $a$ is the intercept and $b$ the slope, chosen to minimize the sum of squared deviations between observed and predicted values.
-
-\medskip
-
-Correlation is a fundamental measure of association between two random variables, quantifying how strongly they vary together. The most widely used form is the \textit{Pearson correlation coefficient}, introduced by Karl Pearson in the 1890s, which is built upon the idea of covariance normalized by variability. For two random variables $X$ and $Y$, the population correlation $\rho$ is defined as
-\begin{equation}
-	\rho = \frac{\mathrm{Cov}(X, Y)}{\sigma_X \, \sigma_Y}
-\end{equation}
-where the covariance is [...], hence the correlation remains
-\begin{equation}
-	\rho = \frac{\mathbb{E}\big[(X - \mu_X)(Y - \mu_Y)\big]}{\sqrt{\mathbb{E}\big[(X - \mu_X)^2\big]}\sqrt{\mathbb{E}\big[(Y - \mu_Y)^2\big]}} ,
-\end{equation}
-
-where $\mu_X, \mu_Y$ are the expected values and $\sigma_X, \sigma_Y$ the standard deviations of $X$ and $Y$. By construction, $\rho$ takes values in $[-1,1]$, with $+1$ indicating perfect positive linear association, $-1$ perfect negative association, and $0$ the absence of linear correlation.
-
-In practice, population parameters are unknown, and we compute a sample correlation $r$ from observed data. For a dataset of $n$ paired observations $\{(x_i, y_i)\}_{i=1}^n$, the formula becomes
-\begin{equation}
-	r = \frac{\sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y})}{\sqrt{\sum_{i=1}^n (x_i - \overline{x})^2} \, \sqrt{\sum_{i=1}^n (y_i - \overline{y})^2}} ,
-\end{equation}
-where $\overline{x}$ and $\overline{y}$ are the sample means. This expression reveals $r$ as the normalized sample covariance, measuring co-movement relative to the independent variation of each variable.
+where $a$ is called the \textit{slope} and $b$ stands for the \textit{intercept}, or \textit{independent term}. Different sources and fields name these variables slightly different, so it is work to pause here for a second. Mathematicians and physicists use to call $x$ simply the \textit{independent} variable, and $y$ the \textit{dependent} one, often writing it as $y(x)$. Meanwhile, biologists and clinical scientists often use the term \textit{explanatory} variable for $x$, and \textit{response} variable for $y$, which can feel a bit odd at first. The reason for such naming is that, in the same way physicists would say that $y(x)$ \textit{depends} on $x$, clinicians would say that it is a \textit{response}, or \textit{explained by} $x$. Figure [...].
 
 \medskip
 
-To illustrate, consider a small dataset of study hours $X$ and exam scores $Y$ for four students:
+Yet, not all relationships in nature—or data—are as simple as the linear. Indeed, many processes curve and deviate from a straight dependency. For instance, the trajectory of a projectile follows a \textit{quadratic} path, as does the kinetic energy of a particle with respect to its velocity, or the area of a square, which depends quadratically on the length of its side. The quadratic dependency can be written mathematically as
 \begin{equation}
-	(2, \, 65), \quad (4, \, 70), \quad (6, \, 75), \quad (8, \, 85).
+	y(x) = a x^2 + b x + c \; ,
+	\label{eq:quadratic}
 \end{equation}
-The sample means are $\overline{x} = (2+4+6+8)/4 = 5$ and $\overline{y} = (65+70+75+85)/4 = 73.75$. Computing the numerator,
+
+where the squared term introduces the curvature. More generally, one may consider \textit{polynomial} relationships, where higher powers of $x$ capture increasingly intricate bends in the data
 \begin{equation}
-	\sum_{i=1}^4 (x_i - \overline{x})(y_i - \overline{y}) = (2-5)(65-73.75) + (4-5)(70-73.75) + (6-5)(75-73.75) + (8-5)(85-73.75) = 65.
+	y(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n \; .
+	\label{eq:polynomial}
 \end{equation}
-The denominators are
-\[
-\sqrt{\sum_{i=1}^4 (x_i - \overline{x})^2} = \sqrt{9+1+1+9} = \sqrt{20}, \quad 
-\sqrt{\sum_{i=1}^4 (y_i - \overline{y})^2} = \sqrt{76.56+14.06+1.56+126.56} \approx \sqrt{218.75}.
-\]
-Hence
-\begin{equation}
-	r = \frac{65}{\sqrt{20} \cdot \sqrt{218.75}} \approx 0.98.
-\end{equation}
+
+Beyond polynomials, the mathematical modelling admits much broader and richer forms, such as exponential growth and decay, logarithmic compression, trigonometric oscillations, and nonlinear interactions of multiple variables. Such models can are used describe the subtleties of physical, biological, and social systems with remarkable fidelity. Yet, statistics has long placed linearity at its center, for two main reasons: mathematical convenience and interpretive clarity. Straight lines are tractable - they allow for analytic and simple solutions, and clear geometric intuition. More importantly, linear models often suffice as approximations, capturing the dominant trend even when the world curves beneath. For these reasons, linearity remains the default language of statistical dependency, and the first lens through which we attempt to see structure in scattered data.
 
 \medskip
 
-This high positive correlation ($r \approx 0.98$) reflects the intuitive fact that, in this dataset, students who study more hours tend to achieve higher exam scores. Such a simple example shows how Pearson's $r$ provides a precise, normalized measure of linear association, bridging the abstract definition in terms of expectations with concrete calculations on observed data.
+The idea of \textit{correlation} is a fundamental measure of association between two random variables, quantifying how strongly they vary together. The most widely used mathematical description is the \textit{Pearson correlation coefficient}, introduced by Karl Pearson in the 1890s, which is built upon the idea of covariance normalized by variability. For two random variables $x$ and $y$, the population correlation $\rho_{x, y}$ is defined as
+
+\begin{equation}
+    \rho_{x, y} = \frac{\mathrm{Cov}(x, y)}{\sigma_x \, \sigma_y}
+    \label{eq:correlation}
+\end{equation}
+
+where the covariance is defined as
+\begin{equation}
+    \mathrm{Cov}(x, y) = \mathbb{E}[(x - \mu_x)(y - \mu_y)]
+    \label{eq:covariance}
+\end{equation}
+
+with $\mu_x = \mathbb{E}[x]$ and $\mu_y = \mathbb{E}[y]$ denoting the \textit{expected values} of $x$ and $y$. The expected value of a random variable is, intuitively, its long-term average or center of mass; it summarizes the \textit{typical} value the variable takes. For a discrete random variable $x$ with outcomes $x_i$ and probabilities $p_i$, the expected value is  
+
+\begin{equation}
+	\mathbb{E}[x] = \sum_i p_i x_i.
+	\label{eq:expected_value}
+\end{equation}
+
+The computation of expected values is not such a trivial topic. In next chapter we will revisit this concept with more detail, in the context of random variables and probability distributions. For now, and for practical purposes with finite datasets, we can approximate the expected value just by the \textit{arithmetic mean}, or \textit{sample mean} of the observations, $\bar{x}$ and $\bar{y}$. 
+\begin{equation}
+	\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i \; , \qquad \bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i \; . \nonumber
+\end{equation}
+
+Let's illustrate with an example. Consider the dataset  
+\begin{equation}
+	x = \{1, 2, 3\} \; , \quad y = \{2, 4, 5\} \; .
+\end{equation}
+
+The sample means are trivial to compute
+\begin{equation}
+	\bar{x} = \frac{1 + 2 + 3}{3} = 2 \; , \quad 
+	\bar{y} = \frac{2 + 4 + 5}{3} = 3.67 \; , \nonumber
+\end{equation}
+
+and the covariance is then
+\begin{align}
+	\mathrm{Cov}(x, y) 
+	&= \frac{1}{3} \sum_{i=1}^3 (x_i - \bar{x})(y_i - \bar{y}) \nonumber \\[2mm]
+	&= \frac{1}{3} \Big[ (1-2)(2-3.67) + (2-2)(4-3.67) + (3-2)(5-3.67) \Big] \nonumber \\[1mm]
+	&= \frac{1}{3} \Big[ (-1)(-1.67) + 0 \cdot 0.33 + 1 \cdot 1.33 \Big] \nonumber \\[1mm]
+	&= \frac{1}{3} \big[ 1.67 + 0 + 1.33 \big] = 1 \; .\nonumber
+\end{align}
+
+The standard deviations are  
+\begin{align}
+	\sigma_x 
+	&= \sqrt{\frac{1}{3} \sum_{i=1}^3 (x_i - \bar{x})^2} \nonumber \\[1mm]
+	&= \sqrt{\frac{(1-2)^2 + (2-2)^2 + (3-2)^2}{3}} \nonumber \\[1mm]
+	&= \sqrt{\frac{1 + 0 + 1}{3}} = \sqrt{\frac{2}{3}} \approx 0.816 \; , \nonumber
+\end{align}
+
+\begin{align}
+	\sigma_y 
+	&= \sqrt{\frac{1}{3} \sum_{i=1}^3 (y_i - \bar{y})^2} \nonumber \\[1mm]
+	&= \sqrt{\frac{(2-3.67)^2 + (4-3.67)^2 + (5-3.67)^2}{3}} \nonumber \\[1mm]
+	&= \sqrt{\frac{2.78 + 0.11 + 1.76}{3}} = \sqrt{\frac{4.65}{3}} \approx 1.24 \; . \nonumber
+\end{align}
+
+
+Finally, the Pearson correlation coefficient is obtained by combining all these as we saw in \eqref{eq:correlation}
+\begin{equation}
+	\rho_{x, y} = \frac{\mathrm{Cov}(x, y)}{\sigma_x \sigma_y}  = \frac{1}{0.816 \cdot 1.24} \approx 0.99 \; .
+\end{equation}
+
+This positive value close to 1 indicates a strong positive linear association between $x$ and $y$. We could also visualize these observations with a scatter plot, as the one displayed in Figure [...].
+
+\medskip
 
 Interpretation of $r$ is straightforward for linear relationships: values close to $\pm 1$ indicate strong linear association, while values near $0$ suggest weak or no linear correlation. However, Pearson's $r$ has limitations: it is sensitive to outliers, only captures linear relationships, and can be misleading if the relationship is nonlinear. Additionally, it assumes interval or ratio-scale data and homoscedasticity of variability across the range of $X$. Homoscedasticity, in statistics, refers to the assumption that the variance of the error terms in a regression model is constant across all levels of the independent variables. In simpler terms, it means the spread of data points around the regression line should be roughly the same, regardless of where you are on the line. This is crucial for accurate model predictions and reliable statistical inference
 
