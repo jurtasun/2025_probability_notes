@@ -608,6 +608,27 @@ There are ways of defining correlation in more subtle cases, but they lie outsid
 
 This allows measurement of monotonic relationships without assuming equal spacing between values and provides a robust alternative to Pearson's $r$ when the underlying scale is ordinal or heavily skewed..\\
 
+\newpage
+
+\subsection*{Exercises}
+
+\textbf{1.} Exercise [...].\\
+
+\textbf{2.} Exercise [...].\\
+
+\textbf{3.} Exercise [...].\\
+
+\newpage
+
+\subsection*{Solutions}
+
+\textbf{1.} Solution [...].\\
+
+\textbf{2.} Solution [...].\\
+
+\textbf{3.} Solution [...].\\
+
+
 
 % Chapter - Probability and random events .........................................................................................................................................................
 \chapter{Probability and random events}
@@ -1877,278 +1898,95 @@ Comparing data and normalization
 
 \epigraph{\textit{Probability statements are just summaries of repeated observations.}}{— W. V. Quine}
 
-\section{Bayesian vs frequentist}
+\section{Motivation and philosophy}
 
-So far we have discussed probability and statistics assuming the \textit{frequentist} definition of probability. That is, we have implicitly assumed that the probability, that number we make up to represent uncertainty, can be defined just as a ratio of the number of times we get a specific result, and the total number of observations. In the classic example of the coins, that we used in Chapter 2 to define probability in the first place, we are assuming, for instance, that the coin is fair. In the frequentist interpretation, probability is defined as the long-run relative frequency of an event occurring. For example, in the case of a fair coin:
+Human reasoning has always been entangled with uncertainty. Whether deciding whether dark clouds herald rain, or whether a patient’s symptoms imply disease, we rely on judgments that are conditional on partial evidence. The language of probability emerged to give structure to this uncertainty. In particular, conditional probability provides a disciplined way of asking: how does the plausibility of one event shift when another is known to occur? Without such a concept, reasoning under uncertainty would remain vague, prone to bias, and resistant to mathematical analysis \cite{hacking1965logic}.
 
+\medskip
+
+The Bayesian perspective takes this idea further, treating probability as a measure of belief that can be updated in light of new evidence. Originating with Thomas Bayes in the 18th century \cite{bayes1763essay}, this approach formalized how one ought to revise expectations when confronted with data. Pierre-Simon Laplace expanded Bayes’ insight into a universal method of reasoning, claiming that “probability is common sense reduced to calculation” \cite{laplace1814philosophical}. This philosophical orientation views uncertainty not only as randomness in the world, but as incompleteness in our knowledge.
+
+\medskip
+
+From its inception, probability has had two competing interpretations: the frequentist view, which grounds probability in long-run relative frequencies of repeated events, and the Bayesian view, which interprets probability as rational degrees of belief. This tension has fueled centuries of debate. Yet, whichever interpretation one adopts, conditional probability and Bayes’ theorem remain central: both perspectives agree that information alters the structure of uncertainty. To study these concepts is not merely to learn a technique, but to touch upon the foundations of rational inference itself.
+
+\section{Foundations of conditional probability}
+
+At its simplest, conditional probability quantifies how the likelihood of an event changes once we restrict our attention to a smaller world of possibilities. If $A$ and $B$ are events with $P(B) > 0$, the conditional probability of $A$ given $B$ is defined by
 \[
-P(\text{H}) = \lim_{n \to \infty} \frac{\text{Number of H in } n \text{ tosses}}{n} = 0.5
+P(A \mid B) = \frac{P(A \cap B)}{P(B)} .
 \]
+This definition encapsulates the intuition that to assess $A$ under the knowledge of $B$, one rescales the probability measure to the reduced universe where $B$ is certain.
 
-This approach assumes repeated experiments and well-defined probabilities that do not change. But if we start tossing the same coin again and again, and encounter that the ration of heads and tails is significantly different than 0.5, maybe we should start question that first assumption in the first place. Frequentist statistics might say we don't have enough data yet. But can we make a meaningful guess using prior knowledge and observed data? \\
+\medskip
 
-This way of understanding probability, as founded in some \textit{prior beliefs} that can be updated as new evidence comes available, is normally referred to as \textit{bayesian} approach, or bayesian definition. It was developed by Thomas Bayes, a British mathematician who worked primarily on [...]. Early mathematicians like Pascal and Fermat formalized the idea of quantifying uncertainty. Over time, two main schools emerged: the frequentists, who interpret probability as the long-run frequency of events, and the Bayesians, who interpret probability as a degree of belief or certainty about an event. Thomas Bayes introduced the idea of updating probabilities based on new evidence. His work was published posthumously and it was later popularized by Laplace, and it is nowadays referred as the \textit{Bayes’ theorem}. Both approaches offer useful perspectives for understanding and analyzing uncertainty.\\
+Independence of events is naturally expressed through this lens. Two events $A$ and $B$ are independent precisely when
+\[
+P(A \mid B) = P(A) ,
+\]
+that is, knowledge of $B$ alters nothing about the chance of $A$. Conversely, when $P(A \mid B) \neq P(A)$, we have dependence, the essential source of informational value in probabilistic reasoning. For example, in medical testing, the presence of a symptom significantly alters the probability of a disease, making the conditional perspective indispensable \cite{feller1950probability}.
 
-The frequentist approach relies on repeating experiments many times and observing how often events occur to estimate probabilities. It treats probability as an objective property of the physical world. In contrast, Bayesian probability treats it as a subjective measure of belief, updated as new data arrives. This difference influences how we interpret data and make predictions, and understanding both is important for a well-rounded grasp of statistics.\\
+\medskip
 
-Frequentist methods often focus on long-run behaviour, like estimating probabilities from observed data or constructing confidence intervals. Bayesian methods combine prior knowledge (beliefs before seeing data) with observed data to update our understanding. In practice, both methods are used and combined and depending on the problem context.\\
-
-\section{Foundations of Probability and Bayes’ Theorem}
-
-The story of Bayesian probability begins with an attempt to formalize the logic of inference under uncertainty. Probability, in its classical sense, had long been tied to games of chance, but with the work of Thomas Bayes (1702--1761) and later Pierre-Simon Laplace (1749--1827), it acquired a more profound interpretation: a mathematical language for reasoning about what is known and unknown. Bayes’ posthumously published \textit{Essay towards solving a Problem in the Doctrine of Chances} (1763) introduced a method for updating beliefs when new evidence arises, laying the foundation for what we now call \textit{Bayes’ theorem}.
-
-At its heart, Bayes’ theorem provides a way to invert conditional probabilities: to move from $P(B \mid A)$, the probability of observing data given a hypothesis, to $P(A \mid B)$, the probability of the hypothesis given the data. The general form reads:
+Two fundamental tools arise from the definition: the \emph{law of total probability}, which expresses the probability of an event as a weighted sum over a partition of the sample space, and \emph{Bayes’ theorem}, which inverts conditional probabilities. Bayes’ theorem states that for events $A$ and $B$,
 \[
 P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)} ,
 \]
-where $P(A)$ is the \textit{prior probability}, $P(B \mid A)$ the \textit{likelihood}, and $P(A \mid B)$ the \textit{posterior probability}.
+providing the precise mechanism by which evidence ($B$) reshapes our belief in a hypothesis ($A$). In applied contexts, this formula underlies diagnostic testing, spam detection, and machine learning classifiers.
 
-The denominator $P(B)$, often called the \textit{marginal likelihood} or \textit{evidence}, ensures normalization:
+\section{Bayesian reasoning and applications}
+
+While Bayes’ theorem can be presented as a mere algebraic identity, its deeper power lies in its interpretation. In Bayesian reasoning, probabilities represent not just frequencies, but subjective degrees of belief. Bayes’ rule then formalizes the principle of learning: one begins with a prior probability $P(A)$, updates with the likelihood $P(B \mid A)$, and arrives at a posterior probability $P(A \mid B)$. Symbolically,
 \[
-P(B) = \sum_{a} P(B \mid a) P(a) \quad \text{(discrete case)}, \qquad  
-P(B) = \int P(B \mid a) P(a) \, da \quad \text{(continuous case)} .
+\text{Posterior} \;\propto\; \text{Likelihood} \times \text{Prior}.
 \]
-It represents the probability of the observed data under all possible hypotheses.
+This deceptively simple formula encodes the cycle of rational inference: hypotheses are weighted, tested against data, and refined \cite{jaynes2003probability}.
 
-This simple formula conceals a revolution. By providing a systematic procedure for learning from data, Bayes’ theorem transforms probability from a passive measure of chance into an \textit{active calculus of belief revision}. It is this capacity for sequential updating --- to incorporate new evidence into prior understanding --- that makes Bayesian probability both philosophically compelling and practically indispensable.
-
-\section{The Bayes' Rule}
-
-The second one — working backwards from results to reasons, purely, inferential — is what Bayes’ Theorem is all about. It’s how we reconstruct from data the underlaying phenomenology. From now on, w we will ask not only what is the probability for some event to take place, but what is the probability of that event happening \textit{given that} some other phenomena, some hypothesized scenario, is already taking place.\\
-
-Bayes’ theorem appears often in biological sciences and medical tests, search engines, and in most data analysis problems when experimental results requiere interpretation and inference. It’s the engine behind how we learn from evidence, and once we understand it, we will start seeing it everywhere — from everyday decisions to machine learning. Its mathematical form can be written as follows. The \textit{conditional}, or \textit{posterior} probability of observing some some event $E$ happening, given some \textit{prior} knowledge, or hypothesis $H$ was true, is given by:
-
-\begin{equation}
-P(E|H) = \frac{P(H|E) \cdot P(H)}{P(E)}
-\end{equation}
-
-Where:
-\begin{itemize}
-  \item $P(E|H)$ is the probability of event $E$ given that $H$ has occurred (the \textbf{posterior}).
-  \item $P(H|E)$ is the probability of event $E$ given $H$ (the \textbf{likelihood}).
-  \item $P(H)$ is the probability of $H$ before seeing $E$ (the \textbf{prior}).
-  \item $P(E)$ is the total — also called \textit{marginal} — probability of $E$ occurring (the \textbf{evidence}).
-\end{itemize}
-
-With bayesian probability we face now a complete different perspective. Bayesian probability treats probability as a degree of belief or confidence in a hypothesis. Rather than only relying on infinite repeated experiments, it allows us to update our beliefs in light of new evidence. Unlike the frequentist approach, we can incorporate prior information and handle small datasets. Bayes’ Rule provides the mechanism for updating beliefs.\\
-
-Let's illustrate this with an example. Imagine we are given two dice, let's call them $D_1$ and $D_2$. The first one, $D_1$, is a far dice, and hence the probability of rolling any of the faces is uniformly distributed, all with probability $\frac{1}{6}$. But $D_2$ is biased, such that the probability of rolling a 6 is almost half the times. We can write the likelihoods of rolling a 6 in both cases, in the following way:
-\begin{itemize}
-  \item Dice 1 is \textbf{fair}, so $P(6|D_1) = \frac{1}{6}$.
-  \item Dice 2 is \textbf{biased}, so $P(6|D_2) = \frac{1}{2}$.
-\end{itemize}
-
-We randomly pick one die, with no reason to favor either. Since we have just two options, the probability of choosing blindly one or the other — we will call this the \textit{prior} probability — is
+Consider medical diagnostics. Suppose a disease has prevalence $P(D) = 0.01$, and a test has sensitivity $P(\text{Positive} \mid D) = 0.99$ and false positive rate $P(\text{Positive} \mid \neg D) = 0.05$. If a patient tests positive, the posterior probability of disease is
 \[
-P(D_1) = P(D_2) = \frac{1}{2}
+P(D \mid \text{Positive}) = \frac{0.99 \times 0.01}{0.99 \times 0.01 + 0.05 \times 0.99} \approx 0.167.
 \]
+Contrary to intuition, a positive test does not imply near certainty of disease; the rarity of the disease weighs heavily against it. Such examples illustrate the necessity of Bayesian reasoning to temper human judgment, which often underestimates the influence of base rates.
 
-Then, after that choice is made, we roll the dice and get a 6. And here is the question: What are the chances that we picked the biased die? Let's carefully define the prior beliefs and likelihoods, so that we can apply the Bayes rule. Let:
+Beyond medicine, Bayesian inference permeates contemporary science and technology. From machine learning algorithms that classify emails as spam, to Bayesian networks that model causal dependencies, to posterior simulations that calibrate cosmological models, the Bayesian framework provides a unifying language of uncertainty. It offers not merely a computational trick, but a philosophy: knowledge grows not by abandoning prior beliefs, but by systematically updating them in light of new evidence.
 
-\begin{itemize}
-  \item $H_1$: You picked the fair die.
-  \item $H_2$: You picked the biased die.
-  \item $E$: You rolled a 6.
-\end{itemize}
+\section{Rigorous mathematical formalism}
 
-We want to find $P(H_2 | E)$ — the probability that the die is biased given that we rolled a 6.\\
+To study probability rigorously, one typically begins with the idea of a \emph{probability space}. This consists of three parts: a sample space $\Omega$ of all possible outcomes, a collection $\mathcal{F}$ of events (subsets of $\Omega$) that are considered measurable, and a probability measure $P$ that assigns numbers between $0$ and $1$ to these events, with $P(\Omega) = 1$. This framework, developed systematically by Kolmogorov \cite{kolmogorov1933foundations}, ensures that probability rests on a consistent mathematical foundation.
 
-Using Bayes’ Theorem:
-
+Conditional probability, as defined earlier, fits neatly into this setting. When $P(B) > 0$, we define
 \[
-P(H_2 | E) = \frac{P(E | H_2) \cdot P(H_2)}{P(S)}
+P(A \mid B) = \frac{P(A \cap B)}{P(B)} .
 \]
+This formula can be seen as constructing a new probability measure in which $B$ is certain. Under this measure, the probabilities of other events are recalibrated accordingly.
 
-First, we calculate the marginal probability $P(E)$ — the overall chance of rolling a 6:
-
+Bayes’ theorem can also be expressed in this language. If events $A_1, A_2, \dots, A_n$ form a partition of $\Omega$, then for any event $B$ with $P(B) > 0$,
 \[
-P(E) = P(E | D_1) \cdot P(H_1) + P(E | D_2) \cdot P(H_2) = \frac{1}{6} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2}
-= \frac{1}{12} + \frac{1}{4} = \frac{1}{3}
+P(A_i \mid B) = \frac{P(B \mid A_i)\, P(A_i)}{\sum_{j=1}^n P(B \mid A_j) P(A_j)} .
 \]
-
-Now apply Bayes' Theorem:
-
-\[
-P(H_2 | E) = \frac{\frac{1}{2} \cdot \frac{1}{2}}{\frac{1}{3}} = \frac{1}{4} \div \frac{1}{3} = \frac{3}{4}
-\]\\
-
-Even though both dice had the same chance of being picked, rolling a 6 strongly points to the biased die. Bayes’ Theorem helped us turn a gut feeling into a solid number: a \textbf{75\% chance} that the die was biased. Bayes’ Theorem isn’t just math — it’s a mindset. It’s how we learn, adapt, and update our understanding when the world surprises us. Once you see it in action, it becomes a natural way to think about uncertainty and evidence.
-
-\begin{itemize}
-    \item \textbf{Frequentist}: Probability as long-run frequency.
-    \item \textbf{Bayesian}: Probability as belief, updated with evidence.
-\end{itemize}
-
-\section{Priors: Expressing Initial Beliefs}
-
-Central to Bayesian reasoning is the notion of the \textit{prior distribution}. Unlike frequentist statistics, which resists introducing subjective knowledge, Bayesian analysis embraces it, allowing the investigator to encode assumptions or prior knowledge about the parameters of interest. The prior $P(\theta)$ represents one’s belief about the parameter $\theta$ before observing data.
-
-Priors come in many forms. An \textit{uninformative prior} may be chosen to exert minimal influence, often expressed as a uniform distribution. A \textit{conjugate prior}, by contrast, is selected for mathematical convenience, as it produces a posterior of the same functional form. For example, when modeling a sequence of Bernoulli trials, the \textit{Beta distribution} serves as a conjugate prior for the probability of success $p$.
-
-The Beta distribution is given by:
-\[
-\text{Beta}(\alpha, \beta): \quad f(p) = \frac{1}{B(\alpha, \beta)} p^{\alpha-1}(1-p)^{\beta-1}, \quad 0 < p < 1,
-\]
-where $\alpha, \beta > 0$ and $B(\alpha,\beta)$ is the Beta function. Choosing $\alpha = 1, \beta = 1$ recovers the uniform distribution, while larger values encode stronger prior beliefs about likely values of $p$.
-
-The choice of prior is not trivial; it is both a philosophical and practical decision. Some criticize Bayesian methods for their ``subjectivity,'' yet this subjectivity reflects the very reality of knowledge: inference always begins from a starting point. By making priors explicit, Bayesian probability renders assumptions transparent, open to debate, and --- most importantly --- to revision through data.
-
-\section{Likelihood and Posterior Updating}
-
-If priors express what we believe before seeing data, the \textit{likelihood} tells us how plausible the data are under different assumptions. Formally, the likelihood is
-\[
-L(\theta \mid x) = P(x \mid \theta),
-\]
-considered as a function of the parameter $\theta$ given observed data $x$. The likelihood thus captures the information that the data provide about competing hypotheses.
-
-Bayes’ theorem elegantly combines prior and likelihood into the posterior distribution:
-\[
-P(\theta \mid x) \propto P(x \mid \theta) \, P(\theta).
-\]
-This relation emphasizes that the posterior is proportional to the product of prior and likelihood; the normalizing constant is the marginal likelihood.
-
-A simple but powerful illustration comes from diagnostic testing. Suppose a disease has prior prevalence $P(D) = 0.01$, and a test has sensitivity $P(+ \mid D) = 0.99$ and false positive rate $P(+ \mid \neg D) = 0.05$. Upon observing a positive result, Bayes’ theorem yields:
-\[
-P(D \mid +) = \frac{0.99 \times 0.01}{0.99 \times 0.01 + 0.05 \times 0.99} \approx 0.17 .
-\]
-Even with a highly accurate test, the posterior probability of disease is only 17\% --- an instructive reminder of how base rates and likelihoods interact.
-
-Posterior updating allows beliefs to evolve systematically as evidence accumulates. A prior distribution combined with one set of data produces a posterior, which may itself serve as the prior for subsequent analysis. This recursive property endows Bayesian inference with a natural adaptability, mirroring the iterative way knowledge advances in science.
-
-\section{Likelihood and posterior updating}
-
-If priors express what we believe before seeing data, the \textit{likelihood} tells us how plausible the data are under different assumptions. Formally, the likelihood is
-\[
-L(\theta \mid x) = P(x \mid \theta),
-\]
-considered as a function of the parameter $\theta$ given observed data $x$. The likelihood thus captures the information that the data provide about competing hypotheses.
-
-Bayes’ theorem elegantly combines prior and likelihood into the posterior distribution:
-\[
-P(\theta \mid x) \propto P(x \mid \theta) \, P(\theta).
-\]
-This relation emphasizes that the posterior is proportional to the product of prior and likelihood; the normalizing constant is the marginal likelihood.
-
-A simple but powerful illustration comes from diagnostic testing. Suppose a disease has prior prevalence $P(D) = 0.01$, and a test has sensitivity $P(+ \mid D) = 0.99$ and false positive rate $P(+ \mid \neg D) = 0.05$. Upon observing a positive result, Bayes’ theorem yields:
-\[
-P(D \mid +) = \frac{0.99 \times 0.01}{0.99 \times 0.01 + 0.05 \times 0.99} \approx 0.17 .
-\]
-Even with a highly accurate test, the posterior probability of disease is only 17\% --- an instructive reminder of how base rates and likelihoods interact.
-
-Posterior updating allows beliefs to evolve systematically as evidence accumulates. A prior distribution combined with one set of data produces a posterior, which may itself serve as the prior for subsequent analysis. This recursive property endows Bayesian inference with a natural adaptability, mirroring the iterative way knowledge advances in science.
-
-\section{Bayesian Inference and Decision Making}
-
-Beyond producing posterior distributions, Bayesian probability provides a full framework for \textit{statistical inference and decision-making under uncertainty}. One central concept is the \textit{credible interval}, defined as an interval $[a, b]$ such that
-\[
-P(a \leq \theta \leq b \mid x) = 0.95 ,
-\]
-for example, directly reflecting the probability that the parameter lies in the interval, unlike frequentist confidence intervals.
-
-Bayesian inference also extends to \textit{posterior predictive distributions}, which describe future observations given past data:
-\[
-P(x_{\text{new}} \mid x) = \int P(x_{\text{new}} \mid \theta) P(\theta \mid x) \, d\theta .
-\]
-This makes the framework inherently predictive, not just descriptive.
-
-Decision-making enters when actions must be chosen under uncertainty. Bayesian decision theory introduces a \textit{loss function} $L(\theta, a)$, representing the cost of taking action $a$ when the true parameter is $\theta$. The optimal action minimizes the \textit{expected posterior loss}:
-\[
-a^* = \arg \min_a \int L(\theta, a) P(\theta \mid x) \, d\theta .
-\]
-This connection between probability and utility renders Bayesian analysis not only a tool for understanding but also a guide for acting.
-
-Through this lens, Bayesian probability becomes a philosophy of rational behavior. It bridges statistics and decision theory, grounding choices in transparent, quantitative reasoning while always remaining open to revision when new data arrive.
+This form emphasizes that posterior probabilities are simply normalized weights: the numerator favors hypotheses that make the evidence likely, while the denominator ensures the probabilities sum to one. This balance between rigor and intuition makes conditional probability accessible to students without advanced measure theory, while still preserving mathematical precision.
 
 \section{Stochasticity and Markov processes}
 
-One of the most profound consequences of Bayesian thinking is its natural compatibility with the study of stochastic processes. Real-world phenomena often unfold not in isolation but over time, with present states depending on past ones. This temporal dependence introduces the concept of \textit{Markov processes}, mathematical models for sequences of random variables where the future depends only on the present and not on the full history. Formally, a sequence $\{X_t\}_{t \geq 0}$ satisfies the \textit{Markov property} if
+So far, our discussion has treated probability as static, focused on isolated events and their interrelations. Yet in much of life, uncertainty unfolds dynamically over time: stock markets rise and fall, patients progress through stages of illness, and the weather changes from day to day. To capture such phenomena, probability theory turns to \emph{stochastic processes}, families of random variables indexed by time. A stochastic process $\{X_t\}_{t \ge 0}$ represents the evolution of uncertainty itself \cite{doob1953stochastic}.
+
+Among these, the class of \emph{Markov processes} is especially influential. A process is Markovian if its future depends only on its present state, not on its full history:
 \[
 P(X_{t+1} \mid X_t, X_{t-1}, \dots, X_0) = P(X_{t+1} \mid X_t) .
 \]
+This “memoryless” property is both a simplifying assumption and a powerful modeling principle: the present state contains all the relevant information from the past needed to predict the future.
 
-Stochasticity here refers to the intrinsic randomness of these evolving systems. The Markov assumption, while simplifying, often captures essential features of processes in physics, biology, finance, and computer science. Weather modeling, for instance, frequently treats tomorrow’s conditions as dependent only on today’s, rather than on the entire climatic past.
-
-Bayesian probability provides a unifying framework for inference on such processes. A central tool is the \textit{transition probability matrix} $P$, where $P_{ij} = P(X_{t+1} = j \mid X_t = i)$. When combined with prior beliefs about states or transitions, Bayesian updating allows us to learn the structure of the process from data. For example, in a hidden Markov model (HMM), the underlying states are not directly observed, but Bayesian inference makes it possible to estimate both the hidden states and the parameters of the transition dynamics.
-
-The connection extends even further in modern computation. Methods such as \textit{Markov Chain Monte Carlo} (MCMC) deliberately exploit Markov processes to generate samples from complex posterior distributions. Here, the Markov property ensures that after sufficient iterations, the simulated chain converges to the target distribution $P(\theta \mid x)$. Thus, stochasticity, far from being an obstacle, becomes an indispensable tool: randomness is harnessed to approximate intractable Bayesian calculations.
-
-In this way, the study of stochasticity and Markov processes both enriches Bayesian probability and is enriched by it. Bayesian methods provide principled ways to learn and update in dynamic, uncertain environments, while Markov processes supply both a model of temporal dependence and a computational engine. Together, they form the foundation of many modern probabilistic methods in statistics, machine learning, and the natural sciences.
-
-\newpage
-
-The world around us is full of uncertainty. Facing questions like, will it rain tomorrow? Will a cell divide or die? Will a water drop fall in the same place after some time, or somewhere near? In many cases, the best we can do is talk in terms of probabilities — not certainties. This is where the idea of \textit{stochasticity} comes again, and why mathematicians of the 20th century deeply revisited its meaning. Stochasticity normally means randomness. From now on, we will define a stochastic process as a system that evolves over time in a way that involves some degree of randomness. Instead of asking, “What exactly will happen?” we ask, “What is likely to happen?”\\
-
-Stochasticity means randomness or unpredictability in a system, as we have seen in previous chapters. But from now on, and following the work of mathematicians like Markov in the early 20th century, we will address it with a bit more subtlety. Now we will think about \textit{stochasticity} as randomness or unpredictability in a system, in opposition to deterministic systems, where future states are exactly determined by current conditions, stochastic systems incorporate randomness, making their outcomes probabilistic. Understanding stochasticity helps in modeling real-world phenomena where uncertainty is inherent, such as stock prices, weather, or population dynamics.\\
-
-Even though the study of chance and probability can be trace to very ancient roots, as we have seen in previous chapter, \textit{stochasticity} as randomness or unpredictability in a system, in opposition to deterministic systems, began in the early 20th century, as mathematicians sought to model systems evolving randomly over time. Early work by Andrey Markov introduced Markov chains—models where the future depends only on the present state, not the past history. These models became fundamental in fields such as physics, biology, economics, and computer science for understanding complex systems affected by randomness. Over time, stochastic processes have grown into a broad discipline, providing tools for predicting and analyzing uncertain, evolving phenomena.\\
-
-Markov processes are a class of stochastic models with the “memoryless” property—the future state depends only on the current state. This simplification makes analysis feasible and is surprisingly accurate for many systems. Markov chains are used in algorithms, queueing theory, genetics, and many other fields to describe how systems evolve step-by-step in time.\\
-
-Many systems in nature and society follow patterns, but with noise, surprises, or variability. Markov models give us a way to describe and work with such systems — mathematically and intuitively. Imagine you're trying to predict the weather. If it’s sunny today, what are the chances it’ll be sunny tomorrow? What if it was rainy? Markov models help us answer these kinds of questions using a simple but powerful idea:\\
-
-\textbf{The future depends only on the present — not the past.}\\
-
-This is called the \textbf{Markov property}. A Markov model is a way to describe systems that move between states (like "sunny", "rainy", or "cloudy") with certain probabilities. Markov models are useful when things change over time in a somewhat random, yet patterned, way. Think of weather patterns, stock market movements, DNA sequences, pages people click on in a website, as examples. Even if we can’t predict everything perfectly, we can model how likely one thing is to follow another.\\
-
-The key ingredients of a Markov model are:
-\begin{itemize}
-  \item A list of possible \textbf{states} (e.g., sunny, rainy), we will write as vectors.
-  \item A \textbf{transition matrix}, encoding the probabilities of moving from one state to another.
-\end{itemize}
-
-Let's illustrate with a simple example. Let's try to predict weather in the following day, assuming stochasticity and knowledge of the previous states. For simplicity let’s say the weather can be either sunny ($S$) or rainy ($R$). And based on past data, we know:
-
+A classic example is weather forecasting. Suppose tomorrow’s weather depends only on today’s, not on the sequence of previous days. Let the states be Sunny (S) and Rainy (R). We specify a transition matrix:
 \[
-\text{Transition Matrix} =
-\begin{bmatrix}
-P(\text{Sunny} \rightarrow \text{Sunny}) & P(\text{Sunny} \rightarrow \text{Rainy}) \\
-P(\text{Rainy} \rightarrow \text{Sunny}) & P(\text{Rainy} \rightarrow \text{Rainy})
-\end{bmatrix}
-=
+P = 
 \begin{bmatrix}
 0.8 & 0.2 \\
 0.4 & 0.6
-\end{bmatrix}
+\end{bmatrix},
 \]
+where the first row gives $P(\text{next} \mid S)$ and the second row gives $P(\text{next} \mid R)$. If today is sunny, there is an 80\% chance tomorrow will also be sunny, and a 20\% chance of rain. This simple model already captures persistence and variability in weather patterns.
 
-This means:
-\begin{itemize}
-  \item If today is Sunny, there's an 80\% chance tomorrow will also be Sunny, and 20\% chance of Rain.
-  \item If today is Rainy, there's a 40\% chance it clears up, and a 60\% chance it stays rainy.
-\end{itemize}
-
-Suppose today is Sunny. We can represent our current state as a vector:
-
-\[
-\text{Today} = \begin{bmatrix} 1 & 0 \end{bmatrix}
-\]
-
-Then tomorrow’s prediction is:
-
-\[
-\text{Tomorrow} = \text{Today} \times \text{Transition Matrix} = 
-\begin{bmatrix} 1 & 0 \end{bmatrix} \times
-\begin{bmatrix}
-0.8 & 0.2 \\
-0.4 & 0.6
-\end{bmatrix}
-=
-\begin{bmatrix}
-0.8 & 0.2
-\end{bmatrix}
-\]
-
-So there's an 80\% chance of Sun, 20\% chance of Rain tomorrow.\\
-
-Markov models help us make predictions, model uncertainty, and understand patterns in time-based data. They are a stepping stone to more complex tools like Hidden Markov Models (HMMs), used in speech recognition, bioinformatics, and more [...].\\
-
-Markov models are simple but powerful tools. They help us model systems that evolve over time, assuming that the next state only depends on the current one. Whether you’re analyzing text, tracking a robot, or predicting rain, the Markov assumption can be surprisingly useful [...].
-
-\section{Markov chains}
-Markov chains.
-
-\section{Hidden Markov models}
-Hidden Markov models.
+The weather example illustrates both the limitations and the strengths of the Markov assumption. Of course, real weather depends on far more than just today’s state; yet the Markov chain offers a tractable first approximation. More generally, Markov processes underpin statistical physics, genetics, economics, and machine learning, where complexity is tamed by assuming that the present state suffices to chart the course of uncertainty.
 
 \newpage
 
@@ -2480,9 +2318,12 @@ The fundamental theorem of calculus
 
 
 % Bibliography .........................................................................................................................................................
+
 \backmatter
  
 \begin{thebibliography}{999}
+
+% Introduction
 
 \bibitem{ioannidis2005why}
 John P. A. Ioannidis.
@@ -2559,6 +2400,8 @@ Andrey N. Kolmogorov.
 \textit{Grundbegriffe der Wahrscheinlichkeitsrechnung}.  
 Springer, 1933. English translation: \textit{Foundations of the Theory of Probability}, Chelsea Publishing Company, 1956.
 
+% Chapter 1. Descriptive statistics
+
 \bibitem{ramsey1926}
 Ramsey, F. P. (1926). 
 \textit{Truth and Probability}. In D. H. Mellor (Ed.), \textit{The Foundations of Mathematics and Other Logical Essays} (pp. 156–198). 
@@ -2588,6 +2431,8 @@ The American Statistician, 27(1), 17--21.
 Spearman, C. (1904),
 \textit{The proof and measurement of association between two things}. 
 The American Journal of Psychology, 15(1), 72--101.
+
+% Chapter 2. Probability and random events
 
 \bibitem{kolmogorov1933}
 A. N. Kolmogorov,
@@ -2630,6 +2475,10 @@ Wiley, 1995.
 E. T. Jaynes, \textit{Probability Theory: The Logic of Science}.
 Cambridge University Press, 2003.
 
+% Chapter 3. Parameter estimation
+
+% Chapter 4. Introduction to hypothesis testing
+
 \bibitem{student1908}
 Student. (1908). \textit{The probable error of a mean}.
 Biometrika, 6(1), 1–25.
@@ -2661,6 +2510,47 @@ Supplement to the Journal of the Royal Statistical Society, 1(2), 217–235.
 Greenwood, M., \& Yule, G. U. (1911), 
 \textit{An inquiry into the nature of frequency distributions representative of multiple happenings with particular reference to the occurrence of multiple attacks of disease or of repeated accidents}.
 Journal of the Royal Statistical Society, 83(2), 255–279.
+
+\bibitem{pascal1654}
+B. Pascal and P. de Fermat, 
+\textit{Correspondence on the theory of probability}, 1654.
+
+% Chapter 5. Introduction to bayesian probability
+
+\bibitem{hacking1965logic}
+Ian Hacking, 
+\textit{The Logic of Statistical Inference}, 
+Cambridge University Press, 1965.
+
+\bibitem{bayes1763essay}
+Thomas Bayes, 
+\textit{An Essay towards Solving a Problem in the Doctrine of Chances}, 
+Philosophical Transactions of the Royal Society of London, 1763.
+
+\bibitem{laplace1814philosophical}
+Pierre-Simon Laplace, 
+\textit{Essai philosophique sur les probabilités}, 
+Paris: Courcier, 1814.
+
+\bibitem{feller1950probability}
+William Feller, 
+\textit{An Introduction to Probability Theory and Its Applications}, 
+Vol. 1, Wiley, 1950.
+
+\bibitem{jaynes2003probability}
+E. T. Jaynes, 
+\textit{Probability Theory: The Logic of Science}, 
+Cambridge University Press, 2003.
+
+\bibitem{kolmogorov1933foundations}
+Andrey Kolmogorov, 
+\textit{Grundbegriffe der Wahrscheinlichkeitsrechnung}, 
+Springer, 1933.
+
+\bibitem{doob1953stochastic}
+Joseph L. Doob, 
+\textit{Stochastic Processes}, 
+Wiley, 1953.
 
 \end{thebibliography}
 
