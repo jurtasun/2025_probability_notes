@@ -727,57 +727,27 @@ These two traditions, frequentist and Bayesian, illuminate different facets of t
 
 \section{Discrete random variables}
 
-So far we have introduced the idea of random events, and the concept of probability as a number we define to quantify uncertainty. Now, we will try to model such events aiming to build predictions. That way, the probability we just defined will become a \textit{function} of certain input information, to be a descriptive - or \textit{predictive} - quantity. Indeed, not all random events are equal, and we will use the \textit{distribution} of such probabilities to classify different families of stochastic events.
+The study of randomness begins with the idea of an \textit{event}. An event is a possible outcome of some uncertain process: a coin landing heads, a die showing a particular face, or a light bulb failing after a certain number of hours. To such events we attach probabilities, which are numbers between zero and one quantifying how likely they are to occur. Probability, as we defined it in the previous section, is therefore the language for describing uncertainty in a precise and quantitative way.
 
 \medskip
 
-The Bernoulli distribution, named after Jakob Bernoulli, represents the simplest probabilistic experiment: a single trial with two possible outcomes. Bernoulli's seminal work \emph{Ars Conjectandi} (1713) \cite{bernoulli-ars} formalized the law of large numbers, laying the foundation for modern probability. The Bernoulli distribution captures the essence of success and failure. If $X \sim \text{Bernoulli}(p)$, then
-\[
-\mathbb{P}(X=1)=p, \quad \mathbb{P}(X=0)=1-p, \quad \mathbb{E}[X] = p, \quad \mathrm{Var}(X) = p(1-p).
-\]
+Yet events rarely appear in isolation. A single coin flip may be simple to describe, but when tossing many coins, rolling dice repeatedly, counting the number of calls arriving in a given interval, or measuring the number of defective parts in a batch, randomness begins to reveal patterns. These patterns are not entirely chaotic: they show structure and regularities that can be described and modelled. To capture such patterns, we use the concept of a \textit{random variable}, which is a numerical representation of random events. The probability of outcomes becomes not just a single number, but a function defined over all possible values of the random variable. It is common to denote random variables with an upper case letter, such as $X$, and then write $\mathbb{P}(X = k)$ for the probability that $X$ takes the value $k$.
 
-\textbf{Example:} Suppose a biased coin lands heads with probability $p=0.3$. Then $\mathbb{P}(X=1)=0.3$, $\mathbb{E}[X]=0.3$, and $\mathrm{Var}(X)=0.21$.
+\medskip
 
-To explain intuitively: imagine you flip a coin just once. There are only two possible outcomes: heads (success) or tails (failure). The Bernoulli distribution tells us how likely each outcome is. Even if you don't use formulas, you can understand it as the “yes-no” or “true-false” scenario.
+The set of all such probabilities is called a \textit{distribution}. A distribution is more than a table of numbers: it is a model, a \textit{function}, a mathematical story about how chance unfolds in a given situation. Different phenomena give rise to different families of distributions, each with its own characteristic features. In what follows, we will introduce some of the most fundamental distributions: the Bernoulli, Binomial, Poisson, and the discrete Uniform.
 
-Another way to see it: if you repeat the experiment many times, the proportion of successes you observe tends to the probability $p$. This makes the Bernoulli distribution the building block of all more complex discrete models.
+\medskip
 
-From this elementary building block arises the Binomial distribution, describing the aggregate outcomes of $n$ independent Bernoulli trials. Introduced by Bernoulli, later analyzed by De Moivre, and refined by Laplace, the Binomial distribution became central to early probability theory. If $X \sim \text{Binomial}(n, p)$,
-\[
-\mathbb{P}(X=k)=\binom{n}{k} p^k (1-p)^{n-k}, \quad 
-\mathbb{E}[X] = np, \quad \mathrm{Var}(X)=np(1-p).
-\]
+\subsection*{Bernoulli distribution}
 
-\textbf{Example:} Flipping the same biased coin $n=10$ times, the probability of observing exactly 3 heads is $\binom{10}{3}0.3^3 0.7^7 \approx 0.266$, with $\mathbb{E}[X]=3$ and $\mathrm{Var}(X)=2.1$.
+The Bernoulli distribution, named after Jacob Bernoulli, represents the simplest probabilistic experiment: a single trial with two possible outcomes. It is sometimes called a \textit{Bernoulli trial}, or a \textit{Bernoulli experiment}. Bernoulli's seminal work \emph{Ars Conjectandi} (1713) \cite{bernoulli-ars} formalized the law of large numbers, laying the foundation for modern probability. The Bernoulli distribution captures the essence of success and failure. If $X \sim \text{Bernoulli}(p)$, then
+\begin{equation}
+	\mathbb{P}(X = 1) = p, \qquad \mathbb{P}(X = 0)= 1 - p \; .
+	\label{eq:bernoulli1}
+\end{equation}
 
-In simple terms: the Binomial distribution answers questions like, “If I flip a coin 10 times, how likely am I to get 3 heads?” It extends the single-trial idea of Bernoulli to repeated trials. The Binomial distribution is everywhere: counting defective items in a batch, survey responses, or successes in repeated experiments.
-
-It can also help students reason probabilistically without formulas: one can imagine all the possible combinations of successes and failures, and understand why some outcomes are more likely than others.
-
-The Poisson distribution, formulated by Siméon-Denis Poisson in \emph{Recherches sur la probabilité des jugements} (1837) \cite{poisson-judgements}, models the occurrence of rare events over a fixed interval. It elegantly describes phenomena ranging from telephone call arrivals to radioactive decay. For $X \sim \text{Poisson}(\lambda)$,
-\[
-\mathbb{P}(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}, \quad 
-\mathbb{E}[X]=\lambda, \quad \mathrm{Var}(X)=\lambda.
-\]
-
-\textbf{Example:} If an average of $\lambda=4$ meteors fall per night, the probability of observing exactly 6 meteors is $e^{-4}4^6/6! \approx 0.104$, with expected value 4 and variance 4.
-
-To visualize: imagine counting rare events in a fixed time or space, like how many emails arrive in an hour. Most of the time you get around the average, sometimes more, sometimes fewer. The Poisson distribution tells you the probabilities of each count.
-
-Another simple interpretation: think of it as “random counting” where each event happens independently. Even without calculus, one can grasp that rare events cluster around an average but have variability.
-
-Finally, the discrete uniform distribution reflects the symmetry inherent in classical games of chance, assigning equal likelihood to each outcome. It was historically motivated by fair dice and lotteries. For $X$ uniformly distributed over $\{1,2,\ldots,n\}$,
-\[
-\mathbb{P}(X=k)=\frac{1}{n}, \qquad
-\mathbb{E}[X]=\frac{n+1}{2}, \qquad
-\mathrm{Var}(X)=\frac{n^2-1}{12}.
-\]
-
-\textbf{Example:} Rolling a fair six-sided die yields $\mathbb{P}(X=3)=1/6$, with $\mathbb{E}[X]=3.5$ and $\mathrm{Var}(X)=35/12 \approx 2.92$.
-
-In plain language: a uniform distribution is “completely fair.” Every outcome is equally likely. If you roll a die, each number from 1 to 6 has the same chance. There is no favoritism; this is what makes it simple and intuitive.
-
-Another way to understand: the expected value, $3.5$ in our example, is not an outcome you can roll, but an average over many rolls. This shows how even fair randomness has a predictable center.
+Here, $p$ is the probability of success (often denoted as $X=1$), while $1-p$ is the probability of failure ($X=0$). The Bernoulli distribution is thus the mathematical way of describing any yes/no or true/false experiment.
 
 \begin{figure}[ht]
     \centering
@@ -794,204 +764,563 @@ Another way to understand: the expected value, $3.5$ in our example, is not an o
         \caption{Dice roll.}
         \label{fig:bernoulli2}
     \end{subfigure}
-    \caption{Representation of the Bernoulli distribution as a histogram. The horizontal axis displays the random variable $x$.}
+    \caption{Representation of the Bernoulli distribution as a histogram. The horizontal axis displays the random variable $X$, and the height of the bars in the vertical axis the probability for each value of $X$.}
     \label{fig:bernoulli_comparison}
 \end{figure}
+
+\subsection*{Binomial distribution}
+
+From this elementary building block arises the Binomial distribution, which describes the total number of successes in $n$ independent Bernoulli trials. Introduced by Bernoulli, later analyzed by De Moivre, and refined by Laplace, the Binomial distribution became central to early probability theory. If $X \sim \text{Binomial}(n, p)$,
+\begin{equation}
+	\mathbb{P}(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}.
+	\label{eq:binomial1}
+\end{equation}
+
+Here, $n$ is the number of trials, $p$ is the probability of success in each trial, and $k$ is the total number of successes. The binomial coefficient $\binom{n}{k}$ counts the number of possible arrangements of $k$ successes among $n$ trials.
+
+\medskip
+
+Let's illustrate with an example. Flipping the same biased coin $n=10$ times, what is the probability of observing exactly $k=3$ heads?
+\begin{equation}
+	\mathbb{P}(X=3) = \binom{10}{3} (0.3)^3 (0.7)^7.
+\end{equation}
+
+We compute each part:
+\begin{equation}
+	\binom{10}{3} = \frac{10!}{3! \cdot 7!} = 120,
+\end{equation}
+
+substitute
+\begin{equation}
+	(0.3)^3 = 0.027, \quad (0.7)^7 \approx 0.08235.
+\end{equation}
+
+Thus
+\begin{equation}
+	\mathbb{P}(X=3) \approx 120 \times 0.027 \times 0.08235 \approx 0.266.
+\end{equation}
+So there is about a 26.6\% chance of seeing exactly three heads.
+
+\medskip
+
+Let's illustrate with an example (cumulative). What is the probability of observing at most $2$ heads in $10$ flips?
+\begin{equation}
+	\mathbb{P}(X \leq 2) = \sum_{k=0}^2 \binom{10}{k} (0.3)^k (0.7)^{10-k}.
+\end{equation}
+
+Compute each term:
+\begin{equation}
+	\mathbb{P}(X=0) = \binom{10}{0} (0.3)^0 (0.7)^{10} = (0.7)^{10} \approx 0.028,
+\end{equation}
+
+substitute
+\begin{equation}
+	\mathbb{P}(X=1) = \binom{10}{1} (0.3)^1 (0.7)^9 = 10 \cdot 0.3 \cdot (0.7)^9 \approx 0.121,
+\end{equation}
+
+and
+\begin{equation}
+	\mathbb{P}(X=2) = \binom{10}{2} (0.3)^2 (0.7)^8 = 45 \cdot 0.09 \cdot (0.7)^8 \approx 0.233.
+\end{equation}
+
+Thus
+\begin{equation}
+	\mathbb{P}(X \leq 2) \approx 0.028 + 0.121 + 0.233 = 0.382.
+\end{equation}
+
+So there is about a 38\% chance of observing two or fewer heads.
 
 \begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/binomial_1.png}
-        \caption{Coin toss.}
+        \caption{Probability of single event $\mathbb{P} (X = k)$.}
         \label{fig:binomial1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/binomial_2.png}
-        \caption{Dice roll.}
-        \label{fig:binomial2}
+        \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/binomial_1_cum.png}
+        \caption{Cumulative probability $\mathbb{P} (X > k)$.}
+        \label{fig:binomial1_cum}
     \end{subfigure}
-    \caption{Representation of the Binomial distribution as a histogram. The horizontal axis displays the random variable $x$.}
+    \caption{Representation of the Binomial distribution as a histogram. The horizontal axis displays the random variable $X$, and the height of the bars in the vertical axis the probability for each value of $X$.}
     \label{fig:binomial_comparison}
 \end{figure}
+
+\subsection*{Poisson distribution}
+
+The Poisson distribution, formulated by Siméon-Denis Poisson in \emph{Recherches sur la probabilité des jugements} (1837) \cite{poisson-judgements}, models the occurrence of rare events over a fixed interval. It describes phenomena ranging from telephone call arrivals to radioactive decay. If $X \sim \text{Poisson}(\lambda)$,
+\begin{equation}
+	\mathbb{P}(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}.
+	\label{eq:poisson1}
+\end{equation}
+
+Here, $\lambda$ is the expected number of events in the interval, while $k$ is the observed count of events.
+
+\medskip
+
+Let's illustrate with an example. If an average of $\lambda=4$ meteors fall per night, the probability of observing exactly $6$ meteors is
+\begin{equation}
+	\mathbb{P}(X=6) = \frac{e^{-4} \cdot 4^6}{6!}.
+\end{equation}
+
+Compute step by step:
+\begin{equation}
+	4^6 = 4096, \qquad 6! = 720,
+\end{equation}
+
+substitue
+\begin{equation}
+	\frac{4096}{720} \approx 5.69, \qquad e^{-4} \approx 0.0183,
+\end{equation}
+
+and
+\begin{equation}
+	\mathbb{P}(X=6) \approx 5.69 \times 0.0183 \approx 0.104.
+\end{equation}
+
+So there is about a 10.4\% chance of exactly six meteors.
+
+\medskip
+
+Let's illustrate with an example (cumulative). What is the probability of observing at most $2$ meteors?
+\begin{equation}
+	\mathbb{P}(X \leq 2) = \sum_{k=0}^2 \frac{e^{-4} \cdot 4^k}{k!}.
+\end{equation}
+
+Compute each term:
+\begin{equation}
+	\mathbb{P}(X=0) = e^{-4} \frac{4^0}{0!} = e^{-4} \cdot 1 \approx 0.018,
+\end{equation}
+
+and
+\begin{equation}
+	\mathbb{P}(X=1) = e^{-4} \frac{4^1}{1!} = e^{-4} \cdot 4 \approx 0.073,
+\end{equation}
+
+and
+\begin{equation}
+	\mathbb{P}(X=2) = e^{-4} \frac{4^2}{2!} = e^{-4} \cdot 8 \approx 0.146.
+\end{equation}
+
+Thus
+\begin{equation}
+	\mathbb{P}(X \leq 2) \approx 0.018 + 0.073 + 0.146 = 0.237.
+\end{equation}
+
+So there is about a 24\% chance of seeing two or fewer meteors.
 
 \begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/poisson_1.png}
-        \caption{Coin toss.}
+        \caption{Probability of single event $\mathbb{P} (X = k)$.}
         \label{fig:poisson1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/poisson_2.png}
-        \caption{Dice roll.}
-        \label{fig:poisson2}
+        \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/poisson_1_cum.png}
+        \caption{Cumulative probability $\mathbb{P} (X = k)$.}
+        \label{fig:poisson1_cum}
     \end{subfigure}
-    \caption{Representation of the Poisson distribution as a histogram. The horizontal axis displays the random variable $x$.}
-    \label{fig:binomial_comparison}
+    \caption{Representation of the Poisson distribution as a histogram. The horizontal axis displays the random variable $X$, and the height of the bars in the vertical axis the probability for each value of $X$.}
+    \label{fig:poisson_comparison}
 \end{figure}
 
-\section{Continuous Distributions}
+\subsection*{Discrete uniform distribution}
 
-Continuous distributions arise when the outcomes are not countable, but can take any value within an interval. In real life, many quantities—like height, weight, or time—vary smoothly rather than in discrete steps. We need continuous distributions to model such phenomena accurately.
+Finally, the discrete uniform distribution reflects the symmetry inherent in classical games of chance, assigning equal likelihood to each outcome. It was historically motivated by fair dice and lotteries. For $X$ uniformly distributed over $\{1,2,\ldots,n\}$,
+\begin{equation}
+	\mathbb{P}(X = k) = \frac{1}{n}.
+	\label{eq:discrete_uniform}
+\end{equation}
 
-Unlike discrete distributions, we no longer assign probabilities to individual points; instead, we talk about probability densities over intervals. The integral of the density over a range tells us the probability that the variable falls within that range. This allows for very fine-grained modeling of uncertainty in natural and social phenomena.
+Here, $n$ is the number of equally possible outcomes, and each $k$ from $1$ to $n$ is assigned the same probability.
 
-Continuous distributions are particularly important in physics, engineering, and social sciences, where measurements can take infinitely many values. They allow for precise modeling, statistical inference, and understanding of variability in populations, systems, and experiments.
+\medskip
+
+Let's illustrate with an example. Rolling a fair six-sided die yields
+\begin{equation}
+	\mathbb{P}(X=3) = \frac{1}{6}.
+\end{equation}
+
+\medskip
+
+Let's illustrate with another example (cumulative). What is the probability of rolling a number less than or equal to $4$? Since all outcomes are equally likely,
+\begin{equation}
+	\mathbb{P}(X \leq 4) = \frac{4}{6} = \frac{2}{3}.
+\end{equation}
+
+This captures a natural intuition: when all outcomes are equally probable, cumulative probabilities simply count favourable cases over total cases.
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/duniform_1.png}
+        \caption{Probability of single event $\mathbb{P} (X = k)$.}
+        \label{fig:uniform1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/duniform_1_cum.png}
+        \caption{Cumulative probability $\mathbb{P} (X > k)$.}
+        \label{fig:uniform1_cum}
+    \end{subfigure}
+    \caption{Representation of the discrete Uniform distribution as a histogram. The horizontal axis displays the random variable $X$, and the height of the bars in the vertical axis the probability for each value of $X$.}
+    \label{fig:uniform_comparison}
+\end{figure}
+
+\section{Continuous random variables}
+
+In the discrete case, random variables can only take a countable set of values: tossing coins, rolling dice, the number of calls in an hour, or the number of defective items in a sample. Yet many of the most important phenomena in science and daily life are not discrete, but \textit{continuous}. A person’s height is not limited to a few centimeters; the waiting time at a bus stop is not restricted to whole minutes; the voltage in a circuit does not jump in steps. Instead, these quantities can vary \textit{smoothly}, taking infinitely many possible values, in what we call a continuous interval.
+
+\medskip
+
+To model such phenomena, we need a new kind of probability distribution. In the continuous setting, the probability that a variable takes any exact value (say, “exactly 10.0000 minutes”) is zero, since there are infinitely many possible values. Instead, we will assign probabilities to \textit{intervals}, such as “between 9 and 11 minutes.” This is done through a \textit{probability density function} (pdf), denoted $f(x)$. While $f(x)$ itself is not itself a probability, its integral over an interval gives the probability of the random variable falling in that interval:
+\begin{equation}
+	\mathbb{P}(a \leq X \leq b) = \int_a^b f(x) \, dx.
+\end{equation}
+
+This shift from individual points to continuous densities is profound: it allows us to describe uncertainty with infinite resolution. Continuous distributions thus play a central role in physics, engineering, biology, economics, and the social sciences. They provide not only mathematical elegance, but also a remarkably accurate reflection of how the world behaves when measured with fine instruments.
+
+\subsection*{Continuous uniform distribution}
 
 The continuous uniform distribution generalizes the principle of indifference, elegantly articulated by Laplace \cite{laplace-probability}. By assigning equal probability density across an interval, it models complete ignorance about a continuous quantity. For $X \sim \text{Uniform}(a,b)$,
-\[
-f(x) = \frac{1}{b-a} \quad (a \leq x \leq b), \qquad
-\mathbb{E}[X] = \frac{a+b}{2}, \qquad
-\mathrm{Var}(X)=\frac{(b-a)^2}{12}.
-\]
+\begin{equation}
+	f(x) = \frac{1}{b - a} \quad (a \leq x \leq b) \; .
+	\label{eq:continuous_uniform}
+\end{equation}
 
-\textbf{Example:} If a bus arrives uniformly between 5 and 15 minutes past the hour, $\mathbb{E}[X]=10$ minutes, $\mathrm{Var}(X) \approx 8.33$, and $f(x)=0.1$ per minute.
+The parameters $a$ and $b$ mark the left and right endpoints of the interval of possible values. Every sub-interval of the same length is equally likely, because the density is constant at $1/(b-a)$. The mean is the midpoint $(a+b)/2$, reflecting the symmetry; the variance depends only on the width $b-a$, becoming larger as the interval widens.
 
-Intuitively, continuous uniform means “every moment is equally likely.” Waiting for the bus, you are equally likely to arrive at any minute within the interval.
+\medskip
 
-Another simple perspective: the average of all possible times is the midpoint, 10 minutes, and the variability is moderate because all times are equally spread out.
+\textbf{Example 1 (basic properties).} A bus is equally likely to arrive at any time between 5 and 15 minutes past the hour. Then $X \sim \mathrm{Uniform}(5,15)$, so
+\begin{equation}
+	f(x) \;=\; \frac{1}{15-5} \;=\; 0.1 \quad \text{for } 5 \le x \le 15.
+\end{equation}
 
-The exponential distribution, arising naturally in actuarial science and queuing theory, elegantly captures the memoryless property: the probability of an event occurring in the next interval is independent of the past. For $X \sim \text{Exp}(\lambda)$,
-\[
-f(x) = \lambda e^{-\lambda x}, \quad x \geq 0, \qquad 
-\mathbb{E}[X]=\frac{1}{\lambda}, \qquad
-\mathrm{Var}(X)=\frac{1}{\lambda^2}.
-\]
+The constant density expresses that no minute in the window $[5,15]$ is preferred; the average waiting time is exactly the midpoint.
 
-\textbf{Example:} For a system with failure rate $\lambda=0.2$ per hour, the expected time to failure is 5 hours, variance 25, and the probability of failure within 3 hours is $1-e^{-0.2\cdot3} \approx 0.451$.
+\medskip
 
-For students: “memoryless” means the system doesn’t ‘remember’ how long it has been operating. The chance of failure in the next hour is always the same, no matter how long it has run.
+\textbf{Example 2 (cumulative).} What is the probability the bus arrives between 5 and 13 minutes past the hour?
+\begin{equation}
+	\mathbb{P}(5 \le X \le 13) \;=\; \int_{5}^{13} 0.1 \, dx.
+\end{equation}
 
-Another way: if you look at the time between events—like buses arriving or calls coming in—the exponential distribution gives a simple, smooth way to model the randomness over time.
+Compute the integral:
+\begin{equation}
+	\int_{5}^{13} 0.1 \, dx \;=\; 0.1 \times (13-5) \;=\; 0.1 \times 8 \;=\; 0.8.
+\end{equation}
 
-The Gaussian (normal) distribution, introduced rigorously by Carl Friedrich Gauss in his 1809 study of least squares \cite{gauss-astronomy}, formalizes the archetype of natural variation. Prefigured by De Moivre, it underlies the Central Limit Theorem and pervades modern statistics:
-\[
-f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\!\left( -\frac{(x-\mu)^2}{2\sigma^2} \right), \qquad
-\mathbb{E}[X]=\mu, \qquad
-\mathrm{Var}(X)=\sigma^2.
-\]
-
-\textbf{Example:} Heights of a population may be modeled with $\mu=170$ cm, $\sigma=10$ cm. The probability of an individual being taller than 180 cm is $\mathbb{P}(X>180) \approx 0.159$, with expected value 170 cm and variance 100 cm\(^2\).
-
-Intuitively, most values are near the mean, and extreme values are rare. The bell shape shows the smooth concentration around the average.
-
-Another perspective: even if you cannot calculate the probability exactly, the normal distribution tells us roughly where most observations will fall. This helps in planning, prediction, and understanding natural variation.
+With a uniform density, probabilities are proportional to lengths. The interval $[5,13]$ covers four-fifths of the full window $[5,15]$, so the probability is $0.8$.
 
 \begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/uniform_1.png}
-        \caption{Coin toss.}
+        \caption{Probability density $f(x)$.}
         \label{fig:uniform1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/uniform_2.png}
-        \caption{Dice roll.}
+        \caption{Cumulative probability $\int_a^b f(x) \, dx$.}
         \label{fig:uniform2}
     \end{subfigure}
     \caption{Representation of the Uniform distribution as a continuous function. The horizontal axis displays the random variable $x$.}
     \label{fig:uniform_comparison}
 \end{figure}
 
+\subsection*{Exponential distribution}
+
+The exponential distribution arises naturally in contexts where events occur randomly over time, such as radioactive decay, system failures, or arrivals in a queue. Its distinctive property is sometimes referred as \emph{memoryless}: the probability of an event occurring in the next interval does not depend on how much time has already passed. For $X \sim \text{Exp}(\lambda)$,
+\begin{equation}
+	f(x) = \lambda e^{-\lambda x}, \quad x \geq 0 \; .
+	\label{eq:exponential}
+\end{equation}
+
+The parameter $\lambda$ is the average \emph{rate} of occurrence (events per unit time). Large $\lambda$ means events happen frequently and waiting times are typically short; small $\lambda$ means events are rare and waits are longer. The hallmark “memoryless” property means: given that no event has occurred up to time $t$, the remaining waiting time is distributed exactly as if we were starting afresh.
+
+\medskip
+
+\textbf{Example 1 (probability within a time window).} A system has failure rate $\lambda=0.2$ per hour. What is the probability it fails within 3 hours?
+\begin{equation}
+	\mathbb{P}(X \le 3) \;=\; \int_{0}^{3} 0.2\, e^{-0.2x} \, dx.
+\end{equation}
+
+Compute integral
+\begin{equation}
+	\int 0.2\, e^{-0.2x} \, dx \;=\; -\, e^{-0.2x} + C.
+\end{equation}
+
+Evaluate from $0$ to $3$:
+\begin{equation}
+	\mathbb{P}(X \le 3) \;=\; \big[-e^{-0.2x}\big]_{0}^{3} \;=\; \big(-e^{-0.6}\big) - \big(-e^{0}\big) \;=\; 1 - e^{-0.6}.
+\end{equation}
+
+Numerically,
+\begin{equation}
+	e^{-0.6} \approx 0.5488 
+	\quad \Rightarrow \quad 
+	\mathbb{P}(X \le 3) \approx 1 - 0.5488 \approx 0.4512.
+\end{equation}
+
+There is about a $45\%$ chance of failure within 3 hours; the complement ($\approx 55\%$) is the chance it lasts longer than 3 hours.
+
+\medskip
+
+\textbf{Example 2 (cumulative over an interval).} Calls arrive with rate $\lambda=0.5$ per minute. What is the probability the waiting time until the next call is between 2 and 5 minutes?
+\begin{equation}
+\mathbb{P}(2 \le X \le 5) \;=\; \int_{2}^{5} 0.5\, e^{-0.5x} \, dx.
+\end{equation}
+
+Compute integegral:
+\begin{equation}
+	\int 0.5\, e^{-0.5x} \, dx \;=\; -\, e^{-0.5x} + C.
+\end{equation}
+
+Evaluate:
+\begin{equation}
+	\mathbb{P}(2 \le X \le 5) \;=\; \big[-e^{-0.5x}\big]_{2}^{5} \;=\; e^{-1} \,-\, e^{-2.5}.
+\end{equation}
+
+Approximate numerically:
+\begin{equation}
+	e^{-1} \approx 0.3679, \qquad
+	e^{-2.5} \approx 0.0821, \qquad
+	\Rightarrow \quad \mathbb{P}(2 \le X \le 5) \approx 0.3679 - 0.0821 \approx 0.2858.
+\end{equation}
+
+There is roughly a $29\%$ chance the next call arrives between 2 and 5 minutes. Exponential tails decrease smoothly, so longer waits are progressively less likely.
+
 \begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/exponential_1.png}
-        \caption{Coin toss.}
+        \caption{Probability density $f(x)$.}
         \label{fig:exponential1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/exponential_2.png}
-        \caption{Dice roll.}
+        \caption{Cumulative probability $\int_a^b f(x) \, dx$.}
         \label{fig:exponential2}
     \end{subfigure}
     \caption{Representation of the Exponential distribution as a continuous function. The horizontal axis displays the random variable $x$.}
     \label{fig:exponential_comparison}
 \end{figure}
 
+\subsection*{Gaussian distribution}
+
+The Gaussian (normal) distribution, introduced rigorously by Carl Friedrich Gauss in his 1809 study of least squares \cite{gauss-astronomy}, formalizes the archetype of natural variation. Prefigured by De Moivre, it underlies the Central Limit Theorem and pervades modern statistics:
+\begin{equation}
+	f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\!\left( -\frac{(x-\mu)^2}{2\sigma^2} \right),
+	\label{eq:gaussian}
+\end{equation}
+
+The parameter $\mu$ is the centre (mean) of the bell curve and $\sigma$ measures spread: most values lie within a few $\sigma$ of $\mu$, with probabilities tapering smoothly in the tails. The distribution is symmetric about $\mu$, so values equally far above and below the mean are equally likely.
+
+\textbf{Example 1 (upper tail).} Suppose adult heights are approximately normal with $\mu=170$ cm and $\sigma=10$ cm. What is the probability that a randomly chosen person is taller than $180$ cm?
+\begin{equation}
+	\mathbb{P}(X>180) \;=\; \mathbb{P}\!\left(\frac{X-\mu}{\sigma} > \frac{180-170}{10}\right)
+	\;=\; \mathbb{P}(Z>1),
+\end{equation}
+
+where $Z \sim \mathcal{N}(0,1)$ is standard normal. Using the standard normal cdf $\Phi$,
+\begin{equation}
+	\mathbb{P}(Z>1) \;=\; 1 - \Phi(1).
+\end{equation}
+
+From tables (or software),
+\begin{equation}
+	\Phi(1) \approx 0.8413 \quad \Rightarrow \quad \mathbb{P}(X>180) \approx 1 - 0.8413 \approx 0.1587.
+\end{equation}
+
+About $16\%$ of individuals exceed $180$ cm in this model—consistent with the bell shape: one standard deviation above the mean lies in the upper tail.
+
+\textbf{Example 2 (between two bounds).} What is the probability that a height lies between $160$ cm and $185$ cm?
+\begin{equation}
+	\mathbb{P}(160 \le X \le 185) 
+	\;=\; \mathbb{P}\!\left(\frac{160-170}{10} \le \frac{X-\mu}{\sigma} \le \frac{185-170}{10}\right)
+	\;=\; \mathbb{P}(-1 \le Z \le 1.5).
+\end{equation}
+
+Express this via $\Phi$:
+\begin{equation}
+	\mathbb{P}(-1 \le Z \le 1.5) \;=\; \Phi(1.5) - \Phi(-1).
+\end{equation}
+
+Use symmetry $\Phi(-z)=1-\Phi(z)$ (or a table value for $-1$):
+\begin{equation}
+	\Phi(1.5) \approx 0.9332, \qquad \Phi(-1) \approx 0.1587,
+\end{equation}
+
+so
+\begin{equation}
+	\mathbb{P}(160 \le X \le 185) \;\approx\; 0.9332 - 0.1587 \;=\; 0.7745.
+\end{equation}
+
+Roughly $77\%$ of heights fall in this range. The interval spans slightly more than one standard deviation below the mean up to one and a half above, capturing most of the bell curve’s mass.
+
 \begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/gaussian_1.png}
-        \caption{Coin toss.}
+        \caption{Probability density $f(x)$.}
         \label{fig:gaussian1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth, height=0.7\textwidth]{figures/chapter2/gaussian_2.png}
-        \caption{Dice roll.}
+        \caption{Cumulative probability $\int_a^b f(x) \, dx$.}
         \label{fig:gaussian2}
     \end{subfigure}
     \caption{Representation of the Gaussian distribution as a continuous function. The horizontal axis displays the random variable $x$.}
-    \label{fig:gaussan_comparison}
+    \label{fig:gaussian_comparison}
 \end{figure}
-
-\newpage
 
 \section{Expectation values}
 
-The abstract notion of a random variable emerged in the nineteenth century as probability theory shifted from combinatorics to measure theory. Chebyshev, Markov, and Kolmogorov all contributed to establishing expectation as an essential tool for understanding stochastic processes. The concept resonates with the idea of the “mathematical expectation” already employed by Huygens (1657) in his treatise on games of chance \cite{huygens-games}.
+An essential concept in probability theory and statistics is the \emph{expected value}, sometimes called the \emph{mathematical expectation}. Intuitively, the expected value represents the long-run average outcome of a random experiment if it were repeated many times. This provides a systematic way to capture the ``center'' of a distribution of outcomes.
 
-Mathematically, a random variable $X$ is a measurable function from $\Omega$ to $\mathbb{R}$. Its expectation is defined by
-\[
-\mathbb{E}[X] = 
-\begin{cases}
-\sum_{x} x \, p(x), & \text{if $X$ discrete}, \\
-\int_{-\infty}^\infty x f(x)\, dx, & \text{if $X$ continuous},
-\end{cases}
-\]
-where $p(x)$ is a probability mass function and $f(x)$ a probability density function. The variance and higher moments, defined as $\mathrm{Var}(X) = \mathbb{E}[(X-\mathbb{E}[X])^2]$ and $\mu_n = \mathbb{E}[(X-\mathbb{E}[X])^n]$, extend this notion of expectation to describe distributions in greater depth.
+The expected value is best understood as a weighted average, where each possible outcome of a random variable is multiplied by the probability of its occurrence. For a discrete random variable, we sum over all possible values; for a continuous random variable, we integrate against the probability density. Beyond the mean, we can also measure the \emph{spread} of the distribution: the variance, defined as the expected squared deviation from the mean. Higher moments extend this principle, capturing skewness and kurtosis.
 
-The Bernoulli distribution was introduced in essence by Jakob Bernoulli, who formalized the notion of repeated experiments in \emph{Ars Conjectandi} (1713) \cite{bernoulli-ars}. If $X \sim \text{Bernoulli}(p)$, then
+Formally, if $X$ is a random variable, its expectation is defined as follows.
+
 \[
-\mathbb{P}(X=1)=p, \quad \mathbb{P}(X=0)=1-p, \quad \mathbb{E}[X] = p, \quad \mathrm{Var}(X) = p(1-p).
+\mathbb{E}[X] = \sum_{x} x \, p(x), \qquad \text{if $X$ is discrete},
 \]
 
-From this arises the Binomial distribution, central to early probability: introduced by Bernoulli, analysed by De Moivre, and extended by Laplace in his work on approximations. If $X \sim \text{Binomial}(n, p)$,
+\[
+\mathbb{E}[X] = \int_{-\infty}^\infty x f(x)\, dx, \qquad \text{if $X$ is continuous},
+\]
+
+where $p(x)$ is a probability mass function and $f(x)$ a probability density function. The variance is given by
+\[
+\mathrm{Var}(X) = \mathbb{E}\!\big[(X-\mathbb{E}[X])^2\big].
+\]
+
+\medskip
+
+\subsection*{Warmup Examples}
+
+\textbf{Discrete case.} Suppose $X$ represents the outcome of rolling a fair die. Then
+\[
+\mathbb{E}[X] = \sum_{k=1}^6 k \cdot \tfrac{1}{6} = \frac{1+2+3+4+5+6}{6} = 3.5.
+\]
+The variance is
+\[
+\mathrm{Var}(X) = \frac{1}{6}\sum_{k=1}^6 (k-3.5)^2 = \frac{35}{12}.
+\]
+
+\textbf{Continuous case.} Suppose $X \sim \text{Uniform}(0,1)$. Then
+\[
+\mathbb{E}[X] = \int_0^1 x \, dx = \tfrac{1}{2}, \qquad 
+\mathrm{Var}(X) = \int_0^1 (x-\tfrac{1}{2})^2 \, dx = \tfrac{1}{12}.
+\]
+
+\medskip
+
+\subsection*{Distributions}
+
+\textbf{Bernoulli.} If $X \sim \text{Bernoulli}(p)$,
+\[
+\mathbb{P}(X=1)=p, \quad \mathbb{P}(X=0)=1-p, \quad 
+\mathbb{E}[X] = p, \quad \mathrm{Var}(X) = p(1-p).
+\]
+
+\medskip
+
+\textbf{Binomial.} If $X \sim \text{Binomial}(n, p)$,
 \[
 \mathbb{P}(X=k)=\binom{n}{k} p^k (1-p)^{n-k}, \quad 
 \mathbb{E}[X] = np, \quad \mathrm{Var}(X)=np(1-p).
 \]
 
-The Poisson distribution was proposed by Siméon-Denis Poisson (1837) in his treatise \emph{Recherches sur la probabilité des jugements} \cite{poisson-judgements}. It describes counts of rare events:
+\medskip
+
+\textbf{Poisson.} If $X \sim \text{Poisson}(\lambda)$,
 \[
 \mathbb{P}(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}, \quad 
 \mathbb{E}[X]=\lambda, \quad \mathrm{Var}(X)=\lambda.
 \]
 
-Finally, the discrete uniform distribution traces back to classical games of chance, reflecting complete symmetry. For $X$ uniformly distributed over $\{1,2,\ldots,n\}$,
+\medskip
+
+\textbf{Discrete Uniform.} If $X \sim \text{Uniform}\{1,2,\ldots,n\}$,
 \[
 \mathbb{P}(X=k)=\frac{1}{n}, \qquad
 \mathbb{E}[X]=\frac{n+1}{2}, \qquad
 \mathrm{Var}(X)=\frac{n^2-1}{12}.
 \]
 
-\section{Moments and Their Role in Probability}
+\medskip
 
-Moments were systematically employed by Pafnuty Chebyshev in the mid-nineteenth century to prove inequalities and the weak law of large numbers. They later became central to the work of Karl Pearson, who introduced skewness and kurtosis as moment-based measures of distributional shape \cite{pearson-skewness}. The use of the moment-generating function, $M_X(t) = \mathbb{E}[e^{tX}]$, was an innovation of the early twentieth century, providing a bridge between analysis and probability.
-
-The general $n$th moment of a random variable $X$ is given by
+\textbf{Continuous Uniform.} If $X \sim \text{Uniform}(a,b)$,
 \[
-m_n = \mathbb{E}[X^n], \qquad
-\mu_n = \mathbb{E}[(X-\mathbb{E}[X])^n].
+f(x) = \frac{1}{b-a} \quad (a \leq x \leq b), \qquad
+\mathbb{E}[X] = \frac{a+b}{2}, \qquad
+\mathrm{Var}(X)=\frac{(b-a)^2}{12}.
 \]
-Here $m_n$ is the $n$th raw moment, while $\mu_n$ is the $n$th central moment. The second central moment is the variance, $\mu_2 = \mathrm{Var}(X)$, while $\mu_3$ and $\mu_4$ encode skewness and kurtosis, respectively. Cumulants, derived from the logarithm of the MGF, provide an alternative set of descriptors often more tractable in theory.
 
-In summary, moments capture essential geometric features of probability distributions, serving as both summary statistics and analytical tools. Their historical trajectory, from Huygens through Chebyshev to Pearson, mirrors the development of probability theory from gambling practice to rigorous science.
+\medskip
+
+\textbf{Exponential.} If $X \sim \text{Exp}(\lambda)$,
+\[
+f(x) = \lambda e^{-\lambda x}, \quad x \geq 0, \qquad 
+\mathbb{E}[X]=\frac{1}{\lambda}, \qquad
+\mathrm{Var}(X)=\frac{1}{\lambda^2}.
+\]
+
+\medskip
+
+\textbf{Normal.} If $X \sim \mathcal{N}(\mu,\sigma^2)$,
+\[
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\!\left( -\frac{(x-\mu)^2}{2\sigma^2} \right), \qquad
+\mathbb{E}[X]=\mu, \qquad
+\mathrm{Var}(X)=\sigma^2.
+\]
+
+\medskip
+
+More generally, the expectation provides the foundation for defining the \emph{moments} of a random variable. 
+For a random variable $X$, the $n$-th moment about the mean is
+\[
+\mu_n = \mathbb{E}\!\left[(X - \mathbb{E}[X])^n\right].
+\]
+
+\begin{itemize}
+    \item The \textbf{first moment} $\mu_1 = 0$ by construction, but the raw moment $\mathbb{E}[X]$ is the \emph{mean}.
+    \item The \textbf{second central moment} $\mu_2$ is the \emph{variance}, measuring spread.
+    \item The \textbf{third central moment} $\mu_3$ leads to the \emph{skewness}, a normalized measure of asymmetry:
+    \[
+    \gamma_1 = \frac{\mu_3}{\mu_2^{3/2}}.
+    \]
+    \item The \textbf{fourth central moment} $\mu_4$ leads to the \emph{kurtosis}, a normalized measure of tail heaviness:
+    \[
+    \gamma_2 = \frac{\mu_4}{\mu_2^{2}}.
+    \]
+\end{itemize}
+
+Thus the mean, variance, skewness, and kurtosis can all be seen as successive refinements in describing a distribution, moving from its center to its spread, asymmetry, and tail behaviour.
+
+\medskip
+
+Moments were systematically employed by Pafnuty Chebyshev in the mid-nineteenth century to prove inequalities and the weak law of large numbers. They later became central to the work of Karl Pearson, who introduced skewness and kurtosis as moment-based measures of distributional shape \cite{pearson-skewness}. The use of the moment-generating function, $M_X(t) = \mathbb{E}[e^{tX}]$, was an innovation of the early twentieth century, providing a bridge between analysis and probability. In summary, moments capture essential geometric features of probability distributions, serving as both summary statistics and analytical tools. Their historical trajectory, from Huygens through Chebyshev to Pearson, mirrors the development of probability theory from gambling practice to rigorous science.
 
 \newpage
 
