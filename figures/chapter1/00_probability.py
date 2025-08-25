@@ -2,7 +2,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# --- Plot styling ---
+
+
+# Parameters for plot
 plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["Times New Roman", "Palatino", "Computer Modern Roman"],
@@ -11,7 +13,9 @@ plt.rcParams.update({
     "figure.facecolor": "white",
 })
 
-# --- Generate synthetic datasets ---
+
+
+# Generate datasets
 np.random.seed(0)
 data_1 = np.random.normal(loc=-1, scale=1, size=100)
 data_2 = np.random.normal(loc=0, scale=0.7, size=100)

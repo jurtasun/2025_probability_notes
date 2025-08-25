@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 
-# --- Plot styling ---
+# Parameters for plot
 plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["Times New Roman", "Palatino", "Computer Modern Roman"],
@@ -13,7 +13,9 @@ plt.rcParams.update({
     "figure.facecolor": "white",
 })
 
-# --- Generate datasets ---
+
+
+# Generate datasets
 np.random.seed(0)
 # Original normal sample
 data_1 = np.random.normal(loc=0, scale=1, size=100)
