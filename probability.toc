@@ -12,7 +12,7 @@
 \contentsline {section}{\numberline {1.4}Dependency, linearity, correlation}{12}{}%
 \contentsline {chapter}{\numberline {2}Probability and random events}{21}{}%
 \contentsline {section}{\numberline {2.1}What is probability?}{21}{}%
-\contentsline {section}{\numberline {2.2}Discrete random variables}{23}{}%
+\contentsline {section}{\numberline {2.2}Discrete random variables}{24}{}%
 \contentsline {section}{\numberline {2.3}Continuous random variables}{27}{}%
 \contentsline {section}{\numberline {2.4}Expectation values}{31}{}%
 \contentsline {chapter}{\numberline {3}Parameter estimation}{37}{}%

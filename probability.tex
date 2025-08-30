@@ -638,116 +638,128 @@ This allows measurement of monotonic relationships without assuming equal spacin
 The study of probability, though having very ancient roots, began its modern development in the seventeenth century through the famous correspondence between Blaise Pascal and Pierre de Fermat. Their discussion on games of chance, and in particular the ``problem of the division of stakes,'' laid the groundwork for the systematic analysis of uncertain events. Years later, Jacob Bernoulli’s \textit{Ars Conjectandi} established the first classical definition of probability, providing the study of random events with mathematical clarity. Refinements by De Moivre and Laplace transformed it into a powerful analytical theory, while its true axiomatic structure only crystallised in the twentieth century with Kolmogorov’s \textit{Grundbegriffe der Wahrscheinlichkeitsrechnung} in 1933 \cite{kolmogorov1933}.
 \medskip
 
-At its heart, probability is a branch of mathematics developed to describe random events, also referred to as \textit{stochastic}, and quantify uncertainty. Indeed, the word “stochastic” comes from the Greek word \textgreek{στοχαστικός}, which literally means “to guess” or “to aim.” The way we describe such events is by defining a quantity we call $\mathbb(P)$ between $0$ and $1$, which reflects the degree of uncertainty, or \textit{surprise}, with which they occurs. For an event $A$, such as observing a specific face when tossing a coin, or a given face when rolling dice, the numerical convention is written as follows,
+At its heart, probability is nothing more - and nothing less - a branch of mathematics developed to describe random events, also referred to as \textit{stochastic}. Indeed, the word “stochastic” comes from the Greek word \textgreek{στοχαστικός}, which literally means “to guess” or “to aim.” The way we describe such events, characterized by the uncertainty of their outcome, is by defining a quantity we will call $\mathbb{P}$, of probability. That quantity $\mathbb{P}$ will denote a number between $0$ and $1$, which reflects the degree of uncertainty, or \textit{surprise}, with which the random event produces a specific outcome. For an event $A$, such as observing a heads when tossing a coin, or a given face when rolling dice, the numerical convention is written as follows,
 \begin{itemize}
     \item If I am sure $A$ will never occur, $\mathbb{P}(A)=0$.
     \item If I am sure $A$ will always occur, $\mathbb{P}(A)=1$.
-    \item For anything in between, if $A$ is \textit{uncertain}, then $\mathbb{P}(A) \in (0,1)$.
+    \item For anything in between, if $A$ is \textit{uncertain}, then $\mathbb{P}(A) \in (0,1)$,
 \end{itemize}
-Thus, probability measures the whole span between impossibility and absolute certainty. 
+where the $\in$ symbol just means "belongs to". Thus, probability measures the whole span between impossibility and absolute certainty. 
 
 \medskip
 
-Consider the classic example of tossing a coin. Let $H$ denote heads and $T$ denote tails. If a coin is symmetric and fair, we would name the space of outcomes, or \textit{sample space} $\Omega = \{H,T\}$. If we are certain of we will get heads heads, then $\mathbb{P}(H)=1$ and $\mathbb{P}(T)=0$; if we are certain we will get tails, the roles reverse, $\mathbb{P}(H) = 0$ and $\mathbb{P}(T) = 1$. In the general case, where both outcomes can happen with equal probability, we would write
+Consider the classic example of tossing a coin. Let $H$ denote heads and $T$ denote tails. If a coin is symmetric and fair, we would name the number of possible outcomes, or \textit{sample space} $\Omega = \{H,T\}$. Those with less mathematical training may find this notation rather odd. Plain and simple, ideas such as sample space or measure space come from the underlying mathematical theory that was used to build modern probability. For the purpose of this course \textit{sample space} will essentially mean \textit{set of possible outcomes}. 
+
+If we are certain  we will get heads heads, then $\mathbb{P}(H)=1$ and $\mathbb{P}(T)=0$; On the other hand, if we are certain we will get tails, the roles reverse, and then $\mathbb{P}(H) = 0$ and $\mathbb{P}(T) = 1$. In the general case, where both outcomes can happen with equal probability, we would write
 \begin{equation}
-	\mathbb{P}(H) = \mathbb{P}(T) = \frac{1}{2} \; .
+	\mathbb{P}(H) = \mathbb{P}(T) = \frac{1}{2} \; . \nonumber
 	\label{eq:prob_coin}
 \end{equation}
 
-This assignment of probability is not an arbitrary choice. It reflects both a symmetry of the physical system and an idealisation of experimental repetition. Indeed, the way we define probabilities for a given event $A$ is just by computing the ratio of how many times we get that event $n(A)$, and the total number of trials $N$.
+This assignment of $1/2$ probability is not an arbitrary choice. It reflects both a symmetry of the physical system and an idealisation of experimental repetition. Indeed, the way we define probabilities for a given event $A$ is just by computing the ratio of how many times we get that event $n(A)$, and the total number of trials $N$.
 \begin{equation}
     \mathbb{P}(A) = \lim_{N\to\infty} \frac{n(A)}{N} \; .
     \label{eq:prob_frequentist}
 \end{equation}
 
-This is called the \textit{frequentist} definition of probability, since it relies on the frequency with which each results occur. Tossing a fair coin many times, the observed frequencies of heads and tails converge towards the probabilistic assignment $1/2$. The frequentist definition is built upon the idea of repetition and reproducibility. We \textit{expect} that , if we repeat the toss many times, the number of times we get $H$ and $T$ tend to a perfect half.
+This is called the \textit{frequentist} definition of probability, since it relies on the frequency with which each results occur. Tossing a fair coin many times, the observed frequencies of heads and tails converge towards the probabilistic assignment $1/2$. The frequentist definition is built upon the idea of repetition and reproducibility. We \textit{expect} that, if we repeat the toss many times, the number of times we get $H$ and $T$ will approach to a perfect half, as $N$ increases.
 \begin{equation}
-	\mathbb{P}(H) = \mathbb{P}(T) \simeq \frac{1}{2} \; .
+	\mathbb{P}(H) = \mathbb{P}(T) \simeq \frac{1}{2} \; . \nonumber
 	\label{eq:prob_coin}
 \end{equation}
 
-This convergence principle is formalised in Bernoulli’s Law of Large Numbers and later generalised in the Central Limit Theorem, as we will discuss in next chapter.
+This convergence principle is formalised in Bernoulli’s Law of Large Numbers and later generalised in the Central Limit Theorem, as we will discuss in next chapter. Further approaches to the definition of probability, such as the \textit{bayesian}, will be discussed in Chapter 5.
 
 \medskip
 
-Beyond frequencies, probability must also obey the principle of \textit{unitarity} or \textit{normalisation}: the sum of the probabilities of all mutually exclusive outcomes must equal 1. For a finite experiment with outcomes $\{x_1,\ldots, x_n\}$,
+Beyond frequencies, probability must also obey the principle of \textit{unitarity} or \textit{normalisation}. This is the mathematical formalization of quite a natural intuition: at least one of the possible events must take place. By imposing that the sum of the probabilities of all mutually exclusive outcomes must equal 1, we ensure we have assigned the numerical values in a consistent way. For a finite experiment with outcomes $\{x_1,\ldots, x_n\}$, the unitarity property is written as
 \begin{equation}
-    \sum_{i=1}^{n} \mathbb{P}(x_i) = 1.
+    \sum_{i=1}^{n} \mathbb{P}(x_i) = 1 \; .
     \label{eq:unitarity}
 \end{equation}
 
-For the coin toss, this reduces to $\mathbb{P}(H)+\mathbb{P}(T)=1$. With this single normalisation condition imposed, a measure space $(\Omega,\mathcal{F},\mu)$ can be transformed into a probability space $(\Omega,\mathcal{F},\mathbb{P})$.
+For a coin toss, this reduces to
+\begin{equation}
+    \mathbb{P}(\text{H}) + \mathbb{P}(\text{T}) = \frac{1}{2} + \frac{1}{2} = 1 \; . \nonumber
+\end{equation}
+
+For a dice roll, where each face appears with a probability $P = 1/6$, we would write
+\begin{equation}
+    \mathbb{P}(\text{1}) + \mathbb{P}(\text{2}) + \dots + P(6) = \frac{1}{6} + \frac{1}{6} + \dots + \frac{1}{6} = 1 \; . \nonumber
+\end{equation}
+
+Unitarity is one of the most fundamental properties of probability, and it will prove useful to make calculations further on this very chapter. In addition, just as a note on the formal development of all this framework, it is only once this normalisation condition imposed, that the \textit{probability} space $(\Omega,\mathcal{F},\mathbb{P})$ can be defined from the abstract notion of \textit{measure} space $(\Omega,\mathcal{F},\mu)$.
 
 \medskip
 
-Throughout the nineteenth and twentieth centuries, probability theory was recast in the language of analysis: expectation became formally defined via the Lebesgue integral \cite{lebesgue1902}, stochastic processes were studied by Wiener and Doob \cite{doob1953}, and convergence in probability and almost sure convergence were explored by Borel, Cantelli, and Kolmogorov \cite{billingsley1995}. From gambling practice, probability grew into a highly abstract and powerful theory.
+These three notions suffice for now. We have seen probability as a number that quantifies uncertainty, the frequentist definition in terms of ratio, and the idea of unitarity. Let us emphasize, though, that this formulation is actually quite recent. Even though the basic intuitions were already introduce by Bernoulli and Laplace, as we discussed, it was not until the nineteenth and twentieth centuries, that probability theory was properly formalized in the language of analysis. The idea of expectation became formally defined via the Lebesgue integral \cite{lebesgue1902}, stochastic processes were studied by Wiener and Doob \cite{doob1953}, and the idea of convergence - that lied the foundations for unitarity - were explored by Borel, Cantelli, and Kolmogorov \cite{billingsley1995}. From gambling practice, probability grew into a highly abstract and powerful theory.
 
 \medskip
 
-The way probability was mathematically defined is based on the idea of \textit{probability space}. This may seem quite abstract at first, so let's illustrate with an example. Imagine that every experiment we perform - tossing a coin, rolling a dice, or measuring the brightness of a star - has a collection of possible outcomes. This collection is what mathematicians call the \textit{sample space}, often written as $\Omega$. Within this space, we may be interested in particular groups of outcomes, such as ``getting an even number'' from a dice roll or ``obtaining heads'' from a coin toss. These groups of outcomes are what we call \textit{events}. As a quick note on syntax, the way mathematicians define events in this framework of probability spaces lies on a mathematical object called the $\sigma$-algebra, normally denoted by $\mathcal{F}$. In case you ever encounter one, $\mathcal{F}$ represents just an the collection of all events, or of outcomes from the complete sample space $\Omega$. Finally, to each of these events we will assign a number between $0$ and $1$ that represents how likely it is to happen. This number is the event’s \textit{probability}, denoted by $\mathbb{P}$. 
+The way probability was mathematically defined is based on the idea of \textit{probability space}. This may seem quite abstract at first, so let's illustrate with an example. Imagine that every experiment we perform - tossing a coin, rolling a dice, or measuring the brightness of a star - has a collection of possible outcomes. This collection is what mathematicians call the \textit{sample space}, often written as $\Omega$. Within this space, we may be interested in particular groups of outcomes, such as ``getting an even number'' from a dice roll or ``obtaining heads'' from a coin toss. These groups of outcomes are what we call \textit{events}.
 
 \medskip
 
-Formally, a probability space is defined as a collection of three mathematical objects $(\Omega, \mathcal{F}, \mathbb{P})$, where $\Omega$ is the \emph{sample space} of possible outcomes, $\mathcal{F}$ is a $\sigma$-algebra of measurable events, and $\mathbb{P}$ is a measure assigning real numbers between $0$ and $1$. It is simply a structured way of saying (1) the list of all possible outcomes of an experiment, (2) the events we are interested in within that list, and (3) a systematic assignment of likelihoods to those events. The more abstract terminology - $\sigma$-algebras and measures - becomes indispensable when probability theory is extended to complicated or infinite cases, but in everyday examples such as coins, dice, or cards, it suffices to remember these three key ingredients: outcomes, events, and probabilities.
+Formally, a probability space is defined as a collection of three mathematical objects $(\Omega, \mathcal{F}, \mathbb{P})$, where $\Omega$ is the \emph{sample space} of possible outcomes, $\mathcal{F}$ is a collection of measurable events (for mathematicians, a $\sigma$-algebra), and $\mathbb{P}$ is a measure assigning real numbers between $0$ and $1$. It is simply a structured way of saying (1) the set of all possible outcomes of an experiment, (2) the events we are interested in within that set, and (3) a systematic assignment of likelihoods to those events. The more abstract terminology - $\sigma$-algebras and measures - becomes indispensable when probability theory is extended to complicated or infinite cases, but in everyday examples such as coins, dice, or cards, it suffices to remember these three key ingredients: outcomes, events, and probabilities.
 
-\medskip The way we define and assign probabilities to these events is done in accordance with Kolmogorov’s axioms, which can be summarized as follows:
+\medskip The way we define and assign probabilities to random events is done in accordance with Kolmogorov’s axioms, which we summarize as follows:
 
 \begin{itemize}
   \item \textbf{Non-negativity:} The probability of any event is never negative. Probabilities are numbers that represent likelihood, so they must satisfy $\mathbb{P}(A) \geq 0$. In simple terms, it makes no sense to say an event happens with ``negative chance.'' 
 \begin{equation}
-  	\mathbb{P}(A) \;\geq\; 0, \qquad \forall A \in \mathcal{F} \; .
+  	\mathbb{P}(A) \;\geq\; 0 \; , \qquad \forall A \in \mathcal{F} \; .
 \end{equation}
 
   \item \textbf{Normalisation:} The probability of the whole sample space $\Omega$ is exactly $1$. This expresses the fact that ``something will happen.'' If $\Omega$ is the complete list of possible outcomes of an experiment, then we are certain that the final outcome will be one of them.
 \begin{equation}
- 	\mathbb{P}(\Omega) \;=\; 1
+ 	\mathbb{P}(\Omega) \;=\; 1 \; .
 \end{equation}
 
-  \item \textbf{Countable additivity:} If we have several events $A_1, A_2, \ldots$ that cannot overlap (e.g.\ they are mutually exclusive or disjoint), then the probability that one or another occurs is the sum of their probabilities. For instance, in rolling a die, the probability of rolling ``1 or 2'' is $P(\{1\})+P(\{2\})$ because the two outcomes cannot happen at the same time. 
+  \item \textbf{Countable additivity:} If we have several events $A_1, A_2, \ldots$ that cannot overlap (e.g.\ they are mutually exclusive or disjoint), then the probability that one or another occurs is the sum of their probabilities. For instance, in rolling a die, the probability of rolling ``1 or 2'' is $P(1)+P(2)$ because the two outcomes cannot happen at the same time. 
 \begin{equation}
- 	\mathbb{P}\!\left(\bigcup_{i=1}^\infty A_i\right) \;=\; \sum_{i=1}^\infty \mathbb{P}(A_i),
+ 	\mathbb{P}\!\left(\bigcup_{i=1}^\infty A_i\right) \;=\; \sum_{i=1}^\infty \mathbb{P}(A_i) \; ,
 	\qquad \text{for disjoint } A_i \in \mathcal{F}
 \end{equation}
 
 \end{itemize}
 
-Together, these three axioms form the rigorous foundation of probability theory and ensure consistency in reasoning about uncertainty.
+where the symbol $\bigcup$ just means the \textit{reunion} of all events $A_i$. Together, these three axioms form the rigorous foundation of probability theory and ensure consistency in reasoning about uncertainty.
 
 \medskip
 
-This framework allows one to treat uncertainty with mathematical precision, applicable not only to games of chance but also to infinite-dimensional spaces, stochastic processes, financial modelling, machine learning, and the natural sciences. It is this generality that transformed probability theory from a tool of gamblers and actuaries into one of the central languages of modern science.
+This framework allows one to treat uncertainty with mathematical precision, applicable not only to games of chance but also to infinite-dimensional spaces, stochastic processes, and mathematical modelling of various and broad scenarios within the natural sciences. It is this generality that transformed probability theory from a tool of gamblers and actuaries into one of the central languages of modern science.
 
 \medskip
 
-Of course, mathematics provides structure, but interpretation provides meaning. Two main schools of interpretation emerged. The \emph{frequentist} definition, associated with Richard von Mises \cite{vonmises1928}, identifies probability with long-run frequency in repeated trials: it is an objective property of the physical world, revealed through repetition. The \emph{Bayesian} tradition, with origins in Thomas Bayes’ posthumous essay (1763) \cite{bayes1763} and the systematic refinement of Laplace \cite{laplace1812}, conceives probability as a measure of rational belief, updated by evidence through Bayes’ theorem. In the twentieth century, Bruno de Finetti further emphasized that probability expresses degrees of personal belief coherent under rational rules of betting \cite{definetti1974}. 
+Of course, mathematics provides structure, but actual meaning requires interpretation. As we mentioned already, two main schools of interpretation emerged from this axiomatic development of probability theory. The \textit{frequentist} definition, associated with Richard von Mises \cite{vonmises1928}, identifies probability as we did in \eqref{prob_frequentist}, with long-run frequency in repeated trials: it is then an objective property of the physical world, revealed through repetition. On the other hand, the \textit{Bayesian} tradition, with origins in Thomas Bayes’ posthumous essay \textit{Towards solving a Problem in the Doctrine of Chances} back in 1763 \cite{bayes1763}, conceives probability as a measure of rational belief, updated by evidence through what we call nowadays Bayes’ rule, or Bayes' theorem. Such idea was later refined by Laplace \cite{laplace1812} and further developed by Bruno de Finetti, who further emphasized that probability expresses degrees of personal belief coherent under rational rules of betting \cite{definetti1974}.
 
 \medskip
 
-These two traditions, frequentist and Bayesian, illuminate different facets of the same mathematical object. One interprets probability as an empirical limit of frequencies, the other as a calculus of information and belief. Both, however, are grounded in the modern axiomatic formulation: probability is a measure, and measures assign form and consistency to uncertainty. 
+These two traditions, frequentist and Bayesian, illuminate different facets of the same mathematical object. One interprets probability as an empirical limit of frequencies, the other as a calculus of information and belief. Both, however, are grounded in the modern axiomatic formulation: probability is a measure, and measures assign form and consistency to uncertainty.
 
 \section{Discrete random variables}
 
-The study of randomness begins with the idea of an \textit{event}. An event is a possible outcome of some uncertain process: a coin landing heads, a die showing a particular face, or a light bulb failing after a certain number of hours. To such events we attach probabilities, which are numbers between zero and one quantifying how likely they are to occur. Probability, as we defined it in the previous section, is therefore the language for describing uncertainty in a precise and quantitative way.
+The study of randomness begins with the idea of an \textit{event}. An event is a possible outcome of some uncertain process: a coin landing heads, a dice showing a particular face, or a light bulb failing after a certain number of hours. To such events we attach probabilities, which are numbers between zero and one quantifying how likely they are to occur. Probability, as we defined it in the previous section, is therefore the language for describing uncertainty in a precise and quantitative way.
 
 \medskip
 
-Yet events rarely appear in isolation. A single coin flip may be simple to describe, but when tossing many coins, rolling dice repeatedly, counting the number of calls arriving in a given interval, or measuring the number of defective parts in a batch, randomness begins to reveal patterns. These patterns are not entirely chaotic: they show structure and regularities that can be described and modelled. To capture such patterns, we use the concept of a \textit{random variable}, which is a numerical representation of random events. The probability of outcomes becomes not just a single number, but a function defined over all possible values of the random variable. It is common to denote random variables with an upper case letter, such as $X$, and then write $\mathbb{P}(X = k)$ for the probability that $X$ takes the value $k$.
+Yet events rarely appear in isolation. A single coin flip may be simple to describe, but when tossing many coins, rolling dice repeatedly, or counting the number of calls arriving in a given time interval, randomness begins to reveal patterns. These patterns are not entirely chaotic. Indeed, they show structure and regularities that can be modelled. To capture such patterns, we use the concept of a \textit{random variable}. With that, he probability of obtaining a specific outcome becomes not just a single number, but a function defined over all possible values of the random variable. It is common to denote random variables with an upper case letter, such as $X$, and then write $\mathbb{P}(X = k)$ for the probability that $X$ takes the value $k$.
 
 \medskip
 
-The set of all such probabilities is called a \textit{distribution}. A distribution is more than a table of numbers: it is a model, a \textit{function}, a mathematical story about how chance unfolds in a given situation. Different phenomena give rise to different families of distributions, each with its own characteristic features. In what follows, we will introduce some of the most fundamental distributions: the Bernoulli, Binomial, Poisson, and the discrete Uniform.
+The set of all such probabilities is called a \textit{distribution}. A distribution is hence a model, a \textit{function}, a mathematical story about how chance unfolds in a given situation. Different phenomena give rise to different families of distributions, each with its own characteristic features. In what follows, we will introduce some of the most fundamental distributions: the Bernoulli, Binomial, Poisson, and Gaussian, among others. To begin with, we will address the so-called \textit{discrete} random variables, and by discrete we mean they can only take a countable set of values. Tossing coins, which can be either "heads" or "tails", rolling dice, which can only yield either $1, 2, \dots, 6$, or counting the number of calls in an hour, are some examples.
 
 \medskip
 
 \subsection*{Bernoulli distribution}
 
-The Bernoulli distribution, named after Jacob Bernoulli, represents the simplest probabilistic experiment: a single trial with two possible outcomes. It is sometimes called a \textit{Bernoulli trial}, or a \textit{Bernoulli experiment}. Bernoulli's seminal work \emph{Ars Conjectandi} (1713) \cite{bernoulli-ars} formalized the law of large numbers, laying the foundation for modern probability. The Bernoulli distribution captures the essence of success and failure. If $X \sim \text{Bernoulli}(p)$, then
+The Bernoulli distribution, named after Jacob Bernoulli, represents the simplest probabilistic experiment: a single trial with two possible outcomes. It is sometimes called a Bernoulli \textit{trial}, or a Bernoulli \textit{experiment}. A random variable $X$ follows a Bernoulli distribution if
 \begin{equation}
-	\mathbb{P}(X = 1) = p, \qquad \mathbb{P}(X = 0)= 1 - p \; .
+	\mathbb{P}(X = 1) = p, \qquad \mathbb{P}(X = 0) = 1 - p \; .
 	\label{eq:bernoulli1}
 \end{equation}
 
-Here, $p$ is the probability of success (often denoted as $X=1$), while $1-p$ is the probability of failure ($X=0$). The Bernoulli distribution is thus the mathematical way of describing any yes/no or true/false experiment.
+Here, $p$ is the probability of success (often denoted as $X=1$), while $1-p$ is the probability of failure (written as $X=0$). The Bernoulli distribution is thus the mathematical way of describing any yes/no or true/false experiment, capturing the essence of success and failure. For a given probability of success $p$, a random variable $X$ following a Bernoulli distribution is written as $X \sim \text{Bernoulli}(p)$.
 
 \begin{figure}[ht]
     \centering
@@ -770,65 +782,38 @@ Here, $p$ is the probability of success (often denoted as $X=1$), while $1-p$ is
 
 \subsection*{Binomial distribution}
 
-From this elementary building block arises the Binomial distribution, which describes the total number of successes in $n$ independent Bernoulli trials. Introduced by Bernoulli, later analyzed by De Moivre, and refined by Laplace, the Binomial distribution became central to early probability theory. If $X \sim \text{Binomial}(n, p)$,
+From the Bernoulli trial as an elementary building block arises the Binomial distribution, which describes the total number of successes in $n$ independent Bernoulli trials. Introduced by Bernoulli and later refined by De Moivre and Laplace, the Binomial distribution became central to early probability theory. If a random variable $X$ takes a specific value - we call it a success - with probability $p$, the probability of observing $k$ successes out of $n$ total trials, follows a Binomial distribution
 \begin{equation}
-	\mathbb{P}(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}.
+	\mathbb{P}(X = k; n, p) = \binom{n}{k} p^k (1 - p)^{n - k} \; .
 	\label{eq:binomial1}
 \end{equation}
 
-Here, $n$ is the number of trials, $p$ is the probability of success in each trial, and $k$ is the total number of successes. The binomial coefficient $\binom{n}{k}$ counts the number of possible arrangements of $k$ successes among $n$ trials.
+Here, $n$ is the number of trials, $p$ is the probability of success in each trial, and $k$ is the total number of successes. The binomial coefficient $\binom{n}{k}$ counts the number of possible arrangements of $k$ successes among $n$ trials. It is normally written as $X \sim \text{Binomial}(k; n, p)$, or just $X \sim \text{Binomial}(n, p)$
 
 \medskip
 
-Let's illustrate with an example. Flipping the same biased coin $n=10$ times, what is the probability of observing exactly $k=3$ heads?
+Let's illustrate with an example. Imagine flipping a biased coin $n=10$ times, where the probability of getting heads in $P = 1/2$. What is the probability of observing exactly $k=3$ heads? By substituting in \eqref{eq:binomial1} we get
 \begin{equation}
-	\mathbb{P}(X=3) = \binom{10}{3} (0.3)^3 (0.7)^7.
+	\mathbb{P}(X = 3; \; n = 10, \; p = 0.7) = \binom{10}{3} \; (0.3)^3 \; (0.7)^7 \nonumber = \frac{10!}{3! \cdot 7!} \; (0.3)^3 \; (0.7)^7 \approx 0.266 \; . \nonumber
 \end{equation}
 
-We compute each part:
-\begin{equation}
-	\binom{10}{3} = \frac{10!}{3! \cdot 7!} = 120,
-\end{equation}
-
-substitute
-\begin{equation}
-	(0.3)^3 = 0.027, \quad (0.7)^7 \approx 0.08235.
-\end{equation}
-
-Thus
-\begin{equation}
-	\mathbb{P}(X=3) \approx 120 \times 0.027 \times 0.08235 \approx 0.266.
-\end{equation}
 So there is about a 26.6\% chance of seeing exactly three heads.
 
 \medskip
 
-Let's illustrate with an example (cumulative). What is the probability of observing at most $2$ heads in $10$ flips?
+We can compute more than just the probability of observing a single outcome. If we ask for the probability of $X$ taking a value \textit{less than} or \textit{greater than} $k$, we would be computing a \textit{cumulative} probability. Such quantity is computed by just adding the Binomial probabilities of all the individual cases. For example, what is the probability of observing \textit{at most} $2$ heads in $10$ flips of the same biased coin? We will compute the Binomial probability of observing none, then one, then two, and add them together.
 \begin{equation}
-	\mathbb{P}(X \leq 2) = \sum_{k=0}^2 \binom{10}{k} (0.3)^k (0.7)^{10-k}.
+	\mathbb{P}(X \leq 2; \; 10, \; 0.7) = \sum_{k=0}^2 \binom{10}{k} \; (0.3)^k \; (0.7)^{10-k} \; . \nonumber
 \end{equation}
 
 Compute each term:
-\begin{equation}
-	\mathbb{P}(X=0) = \binom{10}{0} (0.3)^0 (0.7)^{10} = (0.7)^{10} \approx 0.028,
-\end{equation}
+\begin{align}
+	\mathbb{P}(X = 0; \; 10, \; 0.7) &= \binom{10}{0} \; (0.3)^0 \; (0.7)^10 = 1 \cdot (0.7)^{10} \approx 0.028, \nonumber \\
+	\mathbb{P}(X = 1; \; 10, \; 0.7) &= \binom{10}{1} \; (0.3)^1 \; (0.7)^9 = 10 \cdot 0.3 \cdot (0.7)^9 \approx 0.121, \nonumber \\
+	\mathbb{P}(X = 2; \; 10, \; 0.7) &= \binom{10}{2} \; (0.3)^2 \; (0.7)^8 = 45 \cdot 0.09 \cdot (0.7)^8 \approx 0.233. \nonumber
+\end{align}
 
-substitute
-\begin{equation}
-	\mathbb{P}(X=1) = \binom{10}{1} (0.3)^1 (0.7)^9 = 10 \cdot 0.3 \cdot (0.7)^9 \approx 0.121,
-\end{equation}
-
-and
-\begin{equation}
-	\mathbb{P}(X=2) = \binom{10}{2} (0.3)^2 (0.7)^8 = 45 \cdot 0.09 \cdot (0.7)^8 \approx 0.233.
-\end{equation}
-
-Thus
-\begin{equation}
-	\mathbb{P}(X \leq 2) \approx 0.028 + 0.121 + 0.233 = 0.382.
-\end{equation}
-
-So there is about a 38\% chance of observing two or fewer heads.
+Thus $\mathbb{P}(X \leq 2) \approx 0.028 + 0.121 + 0.233 = 0.382$, so there is about a 38\% chance of observing two or fewer heads.
 
 \begin{figure}[ht]
     \centering
@@ -851,66 +836,38 @@ So there is about a 38\% chance of observing two or fewer heads.
 
 \subsection*{Poisson distribution}
 
-The Poisson distribution, formulated by Siméon-Denis Poisson in \emph{Recherches sur la probabilité des jugements} (1837) \cite{poisson-judgements}, models the occurrence of rare events over a fixed interval. It describes phenomena ranging from telephone call arrivals to radioactive decay. If $X \sim \text{Poisson}(\lambda)$,
+The Poisson distribution, formulated by Siméon-Denis Poisson in \textit{Recherches sur la probabilité des jugements} back in 1837 \cite{poisson-judgements}, models the occurrence of rare events over a fixed interval. If we ask what is the probability of observing a specific number $k$ of events, given a certain average $\lambda$, that probability follows a Poisson distribution 
 \begin{equation}
-	\mathbb{P}(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}.
+	\mathbb{P}(X = k; \lambda) = \frac{e^{-\lambda} \; \lambda^k}{k!} \; .
 	\label{eq:poisson1}
 \end{equation}
 
-Here, $\lambda$ is the expected number of events in the interval, while $k$ is the observed count of events.
+Here, $\lambda$ is the expected number of events in the interval, while $k$ is the observed count of events. It is written $X \sim \text{Poisson}(k; \; \lambda)$, or just $X \sim \text{Poisson}(\lambda)$. The Poisson distribution models a very broad set of phenomena, ranging from telephone call arrivals to radioactive decay.
 
 \medskip
 
-Let's illustrate with an example. If an average of $\lambda=4$ meteors fall per night, the probability of observing exactly $6$ meteors is
+Let's illustrate with an example. If the average of meteors falling per night in a given area is $\lambda = 4$, what would be the probability of observing exactly $6$ meteors in one night? By substituting in \eqref{eq:poisson1} we get
 \begin{equation}
-	\mathbb{P}(X=6) = \frac{e^{-4} \cdot 4^6}{6!}.
-\end{equation}
-
-Compute step by step:
-\begin{equation}
-	4^6 = 4096, \qquad 6! = 720,
-\end{equation}
-
-substitue
-\begin{equation}
-	\frac{4096}{720} \approx 5.69, \qquad e^{-4} \approx 0.0183,
-\end{equation}
-
-and
-\begin{equation}
-	\mathbb{P}(X=6) \approx 5.69 \times 0.0183 \approx 0.104.
+	\mathbb{P}(X = 6; \; \lambda = 4) = \frac{e^{-4} \cdot 4^6}{6!} = \frac{0.0183 \cdot 4096}{720} \approx 0.104 \; . \nonumber
 \end{equation}
 
 So there is about a 10.4\% chance of exactly six meteors.
 
 \medskip
 
-Let's illustrate with an example (cumulative). What is the probability of observing at most $2$ meteors?
+Again, we could ask a cumulative probability. What is the probability of observing \textit{less than} $2$ meteors in that same place?
 \begin{equation}
-	\mathbb{P}(X \leq 2) = \sum_{k=0}^2 \frac{e^{-4} \cdot 4^k}{k!}.
+	\mathbb{P}(X \leq 2; \; \lambda = 4) = \sum_{k=0}^2 \frac{e^{-4} \cdot 4^k}{k!} \; .
 \end{equation}
 
 Compute each term:
-\begin{equation}
-	\mathbb{P}(X=0) = e^{-4} \frac{4^0}{0!} = e^{-4} \cdot 1 \approx 0.018,
-\end{equation}
+\begin{align}
+	\mathbb{P}(X = 0; \; 4) &= e^{-4} \; \frac{4^0}{0!} = e^{-4} \cdot 1 \approx 0.018 \; , \nonumber \\
+	\mathbb{P}(X = 1; \; 4) &= e^{-4} \; \frac{4^1}{1!} = e^{-4} \cdot 4 \approx 0.073 \; , \nonumber \\
+	\mathbb{P}(X = 2; \; 4) &= e^{-4} \; \frac{4^2}{2!} = e^{-4} \cdot 8 \approx 0.146 \; . \nonumber
+\end{align}
 
-and
-\begin{equation}
-	\mathbb{P}(X=1) = e^{-4} \frac{4^1}{1!} = e^{-4} \cdot 4 \approx 0.073,
-\end{equation}
-
-and
-\begin{equation}
-	\mathbb{P}(X=2) = e^{-4} \frac{4^2}{2!} = e^{-4} \cdot 8 \approx 0.146.
-\end{equation}
-
-Thus
-\begin{equation}
-	\mathbb{P}(X \leq 2) \approx 0.018 + 0.073 + 0.146 = 0.237.
-\end{equation}
-
-So there is about a 24\% chance of seeing two or fewer meteors.
+Thus $\mathbb{P}(X \leq 2) \approx 0.018 + 0.073 + 0.146 = 0.237$, so there is about a 24\% chance of seeing two or fewer meteors.
 
 \begin{figure}[ht]
     \centering
@@ -933,26 +890,26 @@ So there is about a 24\% chance of seeing two or fewer meteors.
 
 \subsection*{Discrete uniform distribution}
 
-Finally, the discrete uniform distribution reflects the symmetry inherent in classical games of chance, assigning equal likelihood to each outcome. It was historically motivated by fair dice and lotteries. For $X$ uniformly distributed over $\{1,2,\ldots,n\}$,
+Finally, the discrete uniform distribution is in a way the simplest one. It reflects the symmetry inherent in classical games of chance, assigning equal likelihood to each outcome. It was historically motivated by fair dice and lotteries, and it is attributed to Cardano's \textit{Liber de Ludo Aleae}, back in the late sixteenth century \cite{cardano-ludo}. For $X$ uniformly distributed over $\{1, 2, \dots, n\}$ possible outcomes,
 \begin{equation}
-	\mathbb{P}(X = k) = \frac{1}{n}.
+	\mathbb{P}(X = k; \; n) = \frac{1}{n}.
 	\label{eq:discrete_uniform}
 \end{equation}
 
-Here, $n$ is the number of equally possible outcomes, and each $k$ from $1$ to $n$ is assigned the same probability.
+Here, $n$ is the number of equally possible outcomes, and each $k$ from $1$ to $n$ is assigned the same probability. We see that the $1/2$ probabilities for heads and tails in a fair coin, or the flat $1/6$ for the faces of the dice, are just some example of the discrete uniform distribution.
 
 \medskip
 
-Let's illustrate with an example. Rolling a fair six-sided die yields
+The examples here are quite trivial. Obtaining $X = 3$ on a fair six-sided dice just yields
 \begin{equation}
-	\mathbb{P}(X=3) = \frac{1}{6}.
+	\mathbb{P}(X = 3; \; n = 6) = \frac{1}{6} \; . \nonumber
 \end{equation}
 
 \medskip
 
-Let's illustrate with another example (cumulative). What is the probability of rolling a number less than or equal to $4$? Since all outcomes are equally likely,
+Let's go for the cumulative case. Computing the probability of rolling a number \textit{less than or equal} to $4$, since all outcomes are equally likely, 
 \begin{equation}
-	\mathbb{P}(X \leq 4) = \frac{4}{6} = \frac{2}{3}.
+	\mathbb{P}(X \leq 4; 6) = \frac{4}{6} = \frac{2}{3} \; . \nonumber
 \end{equation}
 
 This captures a natural intuition: when all outcomes are equally probable, cumulative probabilities simply count favourable cases over total cases.
@@ -978,16 +935,17 @@ This captures a natural intuition: when all outcomes are equally probable, cumul
 
 \section{Continuous random variables}
 
-In the discrete case, random variables can only take a countable set of values: tossing coins, rolling dice, the number of calls in an hour, or the number of defective items in a sample. Yet many of the most important phenomena in science and daily life are not discrete, but \textit{continuous}. A person’s height is not limited to a few centimeters; the waiting time at a bus stop is not restricted to whole minutes; the voltage in a circuit does not jump in steps. Instead, these quantities can vary \textit{smoothly}, taking infinitely many possible values, in what we call a continuous interval.
+So far we have just discussed the discrete case, where random variables can only take a countable set of values: tossing coins, rolling dice, counting the number of calls in an hour, or the number of defective items in a sample. Yet many of the most important phenomena in science and daily life are not discrete, but \textit{continuous}. A person’s height is not limited to a few centimeters, the waiting time at a bus stop is not restricted to whole minutes, the voltage in a circuit does not jump in steps, etc. Instead, these quantities can vary \textit{smoothly}, taking infinitely many possible values, in what we call a continuous interval.
 
 \medskip
 
-To model such phenomena, we need a new kind of probability distribution. In the continuous setting, the probability that a variable takes any exact value (say, “exactly 10.0000 minutes”) is zero, since there are infinitely many possible values. Instead, we will assign probabilities to \textit{intervals}, such as “between 9 and 11 minutes.” This is done through a \textit{probability density function} (pdf), denoted $f(x)$. While $f(x)$ itself is not itself a probability, its integral over an interval gives the probability of the random variable falling in that interval:
+To model such phenomena, we need a new kind of probability distribution. Imagine we try to compute the probability of measuring a specific temperature in a room. For any value, if we try to apply the frequentist definition of probability, the probability of obtaining exact value (say, “exactly 25 degrees”) is exactly zero, since there are infinitely many possible values. Instead, we will define a new mathematical object, a \textit{probability density function} (pdf), denoted $f(x)$. While $f(x)$ itself is not itself a probability, its integral over an interval gives the probability of the random variable falling in that interval:
 \begin{equation}
-	\mathbb{P}(a \leq X \leq b) = \int_a^b f(x) \, dx.
+	\mathbb{P}(a \leq X \leq b) = \int_a^b f(x) \, dx \; .
+	\label{eq:prob_continous}
 \end{equation}
 
-This shift from individual points to continuous densities is profound: it allows us to describe uncertainty with infinite resolution. Continuous distributions thus play a central role in physics, engineering, biology, economics, and the social sciences. They provide not only mathematical elegance, but also a remarkably accurate reflection of how the world behaves when measured with fine instruments.
+the assign probabilities to \textit{intervals}, such as “between 20 and 25 degrees". This shift from individual points to continuous densities is profound: it allows us to describe uncertainty with infinite resolution. Continuous distributions thus play a central role in physics, engineering, biology, economics, and the social sciences. They provide not only mathematical elegance, but also a remarkably accurate reflection of how the world behaves when measured with fine instruments.
 
 \subsection*{Continuous uniform distribution}
 
@@ -2773,6 +2731,11 @@ P.-S. Laplace, \textit{Théorie analytique des probabilités} (1812).
 
 \bibitem{poisson-judgements}
 S.-D. Poisson, \textit{Recherches sur la probabilité des jugements} (1837).
+
+\bibitem{cardano-ludo}
+Gerolamo Cardano.  
+\textit{Liber de Ludo Aleae (Book on Games of Chance)}.  
+Posthumously published 1663; English translation in Oystein Ore, \textit{Cardano, The Gambling Scholar}, Princeton University Press, 1953.
 
 \bibitem{gauss-astronomy}
 C. F. Gauss, \textit{Theoria motus corporum coelestium} (1809).
