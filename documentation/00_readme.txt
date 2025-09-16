@@ -51,3 +51,17 @@ Bibliography (not found / no free / open source pdf):
     Marcus Tullius Cicero. De Divinatione. Loeb Classical Library (various editions), ca. 45 BCE. - only divinatione missing
     Gerolamo Cardano. Liber de Ludo Aleae (Book on Games of Chance). Posthumously published 1663; English translation in Oystein Ore, Cardano, The Gambling Scholar, Princeton University Press, 1953.
     Jacob Bernoulli. Ars Conjectandi. Thurnisius, 1713. English translation by Edith Dudley Sylla, Johns Hopkins University Press, 2006. - correct translation, mine from Oscar
+
+
+
+16/09/2025
+
+Meeting Steel Wagstaff at Pressboks
+
+    Equations with: \[ \], and in-text equations (...)
+    Histogtrams with: add media. align both left (...)
+
+    RHS Appearance: Cascading Styling Sheets (CSS) is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+    Style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML.
+
+    Visit book, inspect item in figure (...)
