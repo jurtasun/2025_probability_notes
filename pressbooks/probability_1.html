@@ -1,0 +1,63 @@
+<p class="p1"><em>Statistics is the grammar of science.</em></p>
+<p class="p1">— Karl Pearson</p>
+&nbsp;
+<p style="text-align: justify">A large part of history of science could be summarized as an effort to translate observations of reality into precise, mathematical understanding. A record of the continuous human striving for a formulation and description of the real world in mathematical terms. To define mathematically the phenomena we find in the natural world, it is necessary to develop tools that relate the one or more relevant quantities—sometimes called <em>variables—</em>and how they relate or change depending on one another. The purpose of modelling might be, for instance, to determine the distance from the earth to the sun, to estimate the number of stars in the observable universe, or relating the number of lung cancer patients to pollution levels around smoking areas.</p>
+<p style="text-align: justify">Colombian mathematician Luis C. Recalde marvellously summarizes the mathematical endeavour as three core tasks. For him, mathematics could be reduced to all tasks related to <em>count</em>, <em>measure</em>, and <em>sort</em>. When it comes to the description of populations, sampling, and chance, the fields of statistics and probability further develop ideas such as randomness, relationship, correlation, confidence and reproducibility, among others. Inspired by Recalde's aim to simplify, we could summarize all statistical issues as concern with <em>uncertainty</em>, or <em>variation</em> among observations.</p>
+<p style="text-align: justify">Hence, a philosophical position often adopted is that statistics is essentially the study of uncertainty, and that the statistician's role is to assist workers in other fields who encounter uncertainty in their work. In practice, there is a restriction in that statistics is ordinarily associated with data; and it is the link between the uncertainty, or variability, in the data and that in the topic itself that has occupied statisticians. Statistics does not have the monopoly of studies of uncertainty. Probability discusses how randomness in one part of a system affects other parts.</p>
+<p style="text-align: justify">Historically, uncertainty has been associated with games of chance and gambling. The Royal Statistical Society, together with many other statistical groups, was originally set up to just <em>gather and publish data</em>, as an attempt to reduce its uncertainty. It remains an essential part of statistical activity today, and most Governments have statistical offices whose function is the plain acquisition and presentation of statistics. It did not take long before statisticians wondered how the data might best be used, and modern <em>statistical inference</em> was born.</p>
+<p style="text-align: justify">The mathematical formalization of decision-making is actually quite a recent development. It is usually attributed to British mathematician Frank P. Ramsey (1903–1930), who in his 1926 paper <em>"Truth and Probability"</em> [...] introduced a formal, subjective interpretation of probability, laying the groundwork for what later became expected utility theory in decision-making under uncertainty. In short, Ramsey formalized how rational agents should assign probabilities and make decisions based on personal beliefs and preferences. All starting from the apparently simple question <em>"how should we make decisions in the face of uncertainty?"</em>.</p>
+&nbsp;
+<h3>1.1. Sampling and data types</h3>
+<p class="p1" style="text-align: justify">All statistical inquiries begin with observations and measurements, which we normally refer to as <em>data</em>. And data begins with the act of selection, or <em>sampling</em>. The natural world overflows with phenomena, offering endless opportunities for observation, but only a finite subset can ever be recorded. This distinction gives rise to two central notions: the <em>population</em> \(\mathcal{P}\), and the <em>sample</em> \(\mathcal{S}\). By <em>population</em> we mean the complete set of all possible observations under study, normally written as
+\[
+\mathcal{P} = \{x_1, x_2, \dots, x_N\} \; .
+\]The <em>sample</em>, on the other hand, is the finite subset actually collected. For a series of \(N\) observations \(x_1\), \(x_2\), ..., \(x_N\), a sample of just \(n\) elements—less than the total, which is normally denoted by the upper case \(N\)—is defined as
+\[
+\mathcal{S} = \{x_{i_1}, x_{i_2}, \dots, x_{i_n}\}, \quad n &lt; N \; ,
+\]
+<div>
+
+where the \(i\)-subscripts remind us that the sample consists of selected observations from the population, not necessarily consecutive or all of them. The population represents the ideal object of inference, while the sample is the concrete, finite evidence available to us. This distinction is far from trivial; a poorly chosen sample often misrepresents the population and may induce bias, whereas a carefully constructed one mirrors its essential features, and can be used to describe the underlying nature.
+<p style="text-align: justify">Equally important is the recognition that not all data are of the same kind. A common distinction is to consider <em>categorical</em> and <em>numerical</em> data. Categorical—or <em>qualitative—</em>data describes qualities or labels such as the eye colour of students in a classroom (blue, brown, green), the brand of a purchased smartphone, etc. Sometimes they are further divided into <em>nominal</em> categories, with no natural order, like the eye colour or the smartphone brand, and <em>ordinal</em> categories with a meaningful order. Examples of these would be the finishing places in a race (first, second, third), survey responses ranging from <em>strongly disagree</em> to <em>strongly agree</em>, etc.</p>
+<p style="text-align: justify">The other big group is normally referred to as numerical—or <em>quantitative—</em>data. These measure numerical quantities and are often subdivided into <em>discrete</em>, countable numbers, such as the number of books on a shelf (4, 5, 6) or the number of goals scored in a match, and <em>continuous</em> values that can take any number within a range, such as the time a sprinter takes to run 100 meters, or the height of a person measured with some arbitrary precision.</p>
+<p style="text-align: justify">Distinguishing between these types is no mere slang; different types of observations require different mathematical tools, and will be described in different ways. For example, it would not make sense to compute a mean out of smartphone brands, but to compute the mean of their prices is informative. Similarly, the distribution of finishing places after a race might be summarized by a median position, whereas heights of athletes could be studied with averages and measures of spread. A correct classification of data is thus a safeguard against misuse and a guide toward insight.</p>
+<p style="text-align: justify">As a summary, sampling and proper description of data establish the ground upon which statistics is built. Before calculating, summarizing, or diving into inference, one must ensure that the information collected is both representative and properly understood. Without these foundations, descriptive measures risk floating unmoored, detached from the reality they claim to represent. Accurate sampling and rigorous description will lead to a faithful representation of the phenomena under study and their relationships, detecting anomalies, and even building accurate predictions.</p>
+<p style="text-align: justify">Andrew Lang's famous quote <em>"most people use statistics as a drunken man uses lamp-posts—for support rather than illumination"</em>, highlights the tendency to use statistics as a crutch, relying on them for validation rather than seeking genuine understanding. Lang's observation serves as a cautionary reminder to approach statistical data with critical thinking and not merely as a tool to bolster preconceived notions.</p>
+
+</div>
+<div></div>
+<h3>1.2. Central tendency and variation</h3>
+Once observations have been collected, a natural question arises: what is the \textit{center}, or \textit{typical} value of this data set? Mathematical quantities that measure the central tendency will be useful to summarize our data with a single representative number, providing an immediate sense of location within the distribution.
+<div>
+
+&nbsp;
+
+Population mean
+\[
+\mu = \frac{1}{N} \sum_{i = 1}^{N} x_{i} \;
+\]
+
+Sample mean
+\[
+\bar{x} = \frac{1}{n} \sum_{i = 1}^{n} x_{i} \;
+\]
+
+Some figures representing a histogram
+
+[caption id="attachment_54" align="alignleft" width="300"]<img class="size-medium wp-image-54" src="https://pressbooks.pub/app/uploads/sites/24882/2025/08/histogram_1-300x191.png" alt="Symmetric Gaussian" width="300" height="191" /> Symmetric Gaussian[/caption]
+
+[caption id="attachment_55" align="alignleft" width="300"]<img class="size-medium wp-image-55" src="https://pressbooks.pub/app/uploads/sites/24882/2025/08/histogram_2-300x191.png" alt="Skewed Gaussian" width="300" height="191" /> Skewed Gaussian[/caption]
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+<div></div>
+<div></div>
+</div>
+</div>
