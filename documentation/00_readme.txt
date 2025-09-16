@@ -65,3 +65,9 @@ Meeting Steel Wagstaff at Pressboks
     Style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML.
 
     Visit book, inspect item in figure (...)
+
+
+
+Equation vs in-line equation.
+Add ordered references.
+How to access presaved versions, apart from manually pressing "Save". Ctrl+S does not really save content.
