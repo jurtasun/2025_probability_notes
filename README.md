@@ -1,13 +1,13 @@
-## RCDS 2025 - Introduction to probability theory and statistical infarence
+## Introduction to probability theory and statistical infarence
+
+<img src="/src/readme_figures/imperial_ecri.png" width = 700>
+<img src="/src/readme_figures/imperial-college-logo.png" width = 700>
 
 ### Jesús Urtasun Elizari, ICL Research Computing & Data Science
 
 ICL email address `jurtasun@ic.ac.uk`
 
 LMS email address `Jesus.Urtasun@lms.mrc.ac.uk`
-
-<img src="/src/readme_figures/imperial_ecri.png" width = 700>
-<img src="/src/readme_figures/imperial-college-logo.png" width = 700>
 
 ### Find the Open-Source content on `Pressbooks` and `Github`:
 [https://github.com/jurtasun/2025_probability_notes](https://github.com/jurtasun/2025_probability_notes)
