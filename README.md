@@ -7,10 +7,10 @@ ICL email address `jurtasun@ic.ac.uk`
 LMS email address `Jesus.Urtasun@lms.mrc.ac.uk`
 
 <img src="/src/readme_figures/imperial_ecri.png" width = 700>
-<img src="/src/readme_figures/nextflow-logo.png" width = 700>
+<img src="/src/readme_figures/imperial_college_logo.png" width = 700>
 
 ### Find the Open-Source content on `Pressbooks` and `Github`:
-[https://github.com/ImperialCollegeLondon/rcds_introduction_sampling_hypothesis_testing](https://github.com/ImperialCollegeLondon/rcds_introduction_sampling_hypothesis_testing)
+[https://github.com/jurtasun/2025_probability_notes](https://github.com/jurtasun/2025_probability_notes)
 
 This course provides an introduction to the field of probability and statistical inference.
 Based on the content of the ECRI courses [...], the topics covered will include basic concepts on probability theory, inference, distributions, and hypothesis testing. 
