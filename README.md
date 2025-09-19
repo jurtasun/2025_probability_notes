@@ -7,7 +7,7 @@ ICL email address `jurtasun@ic.ac.uk`
 LMS email address `Jesus.Urtasun@lms.mrc.ac.uk`
 
 <img src="/src/readme_figures/imperial_ecri.png" width = 700>
-<img src="/src/readme_figures/imperial_college_logo.png" width = 700>
+<img src="/src/readme_figures/imperial-college-logo.png" width = 700>
 
 ### Find the Open-Source content on `Pressbooks` and `Github`:
 [https://github.com/jurtasun/2025_probability_notes](https://github.com/jurtasun/2025_probability_notes)
