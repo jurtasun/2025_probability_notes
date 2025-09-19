@@ -1,7 +1,7 @@
 ## Introduction to probability theory and statistical infarence
 
-<img src="/src/readme_figures/imperial_ecri.png" width = 700>
-<img src="/src/readme_figures/imperial-college-logo.png" width = 700>
+<img src="/src/readme_figures/imperial_ecri.png" width = 600>
+<img src="/src/readme_figures/imperial-college-logo.png" width = 600>
 
 ### Jesús Urtasun Elizari, ICL Research Computing & Data Science
 
