@@ -11,7 +11,7 @@ LMS email address `Jesus.Urtasun@lms.mrc.ac.uk`
 
 ### Access the Open-Source content on `Pressbooks`:
 
-The content of the course is currently being edited and revised by the [https://pressbooks.pub](https://pressbooks.pub) open-source platform. Meanwhile, please find the available pdf version of the notes `statistics_course.pdf`.
+This course [https://github.com/jurtasun/2025_probability_notes](https://github.com/jurtasun/2025_probability_notes) provides an introduction to the field of probability and statistical inference. The content of the course is currently being edited and revised by the [https://pressbooks.pub](https://pressbooks.pub) open-source platform. Meanwhile, please find the available pdf version of the notes `statistics_course.pdf`.
 
 The course is organized in five chapters, covering the topics listed below:
 
