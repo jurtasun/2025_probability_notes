@@ -10,10 +10,8 @@ ICL email address `jurtasun@ic.ac.uk`
 LMS email address `Jesus.Urtasun@lms.mrc.ac.uk`
 
 ### Access the Open-Source content on `Github`:
-[https://github.com/jurtasun/2025_probability_notes](https://github.com/jurtasun/2025_probability_notes)
 
-This course provides an introduction to the field of probability and statistical inference.
-Based on the content of the ECRI courses at Imperial College London
+This course [https://github.com/jurtasun/2025_probability_notes](https://github.com/jurtasun/2025_probability_notes) provides an introduction to the field of probability and statistical inference. It is based on the content of the following ECRI courses at Imperial College London:
 
 - Introduction to sampling and hypothess testing
 [https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/sampling-hypothesis-testing/](https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/sampling-hypothesis-testing/)
@@ -27,7 +25,7 @@ The aim of these lecture notes course is to provide strong foundations at the ma
 
 ### Access the Open-Source content on `Pressbooks`:
 
-The content of the course is currently being edited and revised by [https://pressbooks.pub](https://pressbooks.pub) open-source platform. Meanwhile, please find the available pdf version of the notes `statistics_course.pdf`.
+The content of the course is currently being edited and revised by the [https://pressbooks.pub](https://pressbooks.pub) open-source platform. Meanwhile, please find the available pdf version of the notes `statistics_course.pdf`.
 
 The course is organized in five chapters, covering the topics listed below:
 
@@ -35,7 +33,7 @@ The course is organized in five chapters, covering the topics listed below:
 - Probability and random events
 - Parameter estimation
 - Introduction to hypothesis testing
-- Introduction to bayesian probability
+- Introduction to Bayesian probability
 - Appendix 1: Vectors and matrices: a quick review 
 - Appendix 2: Functions and derivatives: a quick review 
 - Appendix 3: Integrals: a quick review 
