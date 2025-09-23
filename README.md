@@ -31,11 +31,10 @@ All will be followed by a practical session and hands-on coding, both in Python 
 This course [https://github.com/jurtasun/2025_probability_notes](https://github.com/jurtasun/2025_probability_notes) provides an introduction to the field of probability and statistical inference. It is based on the content of the following ECRI courses at Imperial College London:
 
 - Introduction to sampling and hypothess testing
-[https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/sampling-hypothesis-testing/](https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/sampling-hypothesis-testing/)
+[Introduction to sampling and hypothesis testing](https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/sampling-hypothesis-testing/)
 
 - Further hypothesis testing
-[https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/further-hypothesis-testing/]
-(https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/further-hypothesis-testing/)
+[Durtherhypothesis testing](https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/further-hypothesis-testing/)
 
 the topics covered will include basic concepts on probability theory, inference, distributions, and hypothesis testing. 
 The aim of these lecture notes course is to provide strong foundations at the mathematical and theoretical level, while providing practical exercises to work on real data.
