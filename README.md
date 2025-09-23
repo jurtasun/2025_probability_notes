@@ -26,10 +26,18 @@ the topics covered will include basic concepts on probability theory, inference,
 The aim of these lecture notes course is to provide strong foundations at the mathematical and theoretical level, while providing practical exercises to work on real data.
 
 ### Access the Open-Source content on `Pressbooks`:
-[https://pressbooks.pub](https://pressbooks.pub)
 
-The course is organized in five chapters, covering the topics listed below. 
-All will be followed by a practical session and hands-on coding, both in Python and R. 
-No prior experience on statistics or programming is required for the attendance of this course.
+The content of the course is currently being edited and revised by [https://pressbooks.pub](https://pressbooks.pub) open-source platform. Meanwhile, please find the available pdf version of the notes `statistics_course.pdf`.
 
-The content of the course is currently being edited and revised by `Pressbooks` open-source platform. Meanwhile, please find the available pdf version of the notes `statistics_course.pdf`. For exercises and detailed descriptions, the handwritten version of the work-in-progress chapters can be found at the appendices `statistics_couse_app1.pdf` and `statistics_course_app2.pdf`.
+The course is organized in five chapters, covering the topics listed below:
+
+- Descriptive statistics
+- Probability and random events
+- Parameter estimation
+- Introduction to hypothesis testing
+- Introduction to bayesian probability
+- Appendix 1: Vectors and matrices: a quick review 
+- Appendix 2: Functions and derivatives: a quick review 
+- Appendix 3: Integrals: a quick review 
+
+All will be followed by a practical session and hands-on coding, both in Python and R. No prior experience in statistics or programming is required for the attendance of this course. For exercises and detailed descriptions, the handwritten version of the *work-in-progress* chapters can be found at the appendices `statistics_couse_app1.pdf` and `statistics_course_app2.pdf`.
